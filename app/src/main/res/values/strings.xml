@@ -1,0 +1,164 @@
+<resources>
+    <string name="app_name">EMPOVE2018</string>
+    <string name="title_activity_encuesta">EncuestaActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="content_logo_inei">logo inei</string>
+    <string name="nombre_encuesta">ENCUESTA DIRIGIDA A LA POBLACION VENEZOLANA QUE RESIDE EN EL PAÍS</string>
+    <string name="login_texto_usuario">Usuario</string>
+    <string name="login_texto_password">Contraseña</string>
+    <string name="login_texto_boton">INGRESAR</string>
+    <string name="nombre_modulo_caratula">Carátula</string>
+    <string name="nombre_modulo_entrevista_supervision">Entrevistas y Supervisión</string>
+    <string name="nombre_modulo_funcionarios_encuesta">Funcionarios de la Encuesta</string>
+
+
+    <!--Strings asociados al módulo 3: SITUACIÓN MIGRATORIA DE LA PERSONA-->
+    <string name="modulo_3_nombre">III. SITUACIÓN MIGRATORIA DE LA PERSONA (Todas las personas)</string>
+    <string name="modulo_3_menu">Módulo III: Situación Migratoria</string>
+    <string name="modulo_3_submenu_1">Preguntas 301 - 305</string>
+    <string name="modulo_3_submenu_2">Preguntas 306 - 308</string>
+    <string name="modulo_3_submenu_3">Preguntas 309</string>
+    <string name="modulo_3_submenu_4">Preguntas 310 - 314</string>
+    <string name="modulo_3_submenu_5">Preguntas 315 - 317</string>
+    <string name="modulo_3_submenu_6">Preguntas 318</string>
+
+    <string name="modulo_3_p301">301.¿EN QUE DÍA, MES Y AÑO NACIÓ?</string>
+    <string name="modulo_3_p301_dia">Día</string>
+    <string name="modulo_3_p301_mes">Mes</string>
+    <string name="modulo_3_p301_anio">Año</string>
+
+    <string name="modulo_3_p302">302.¿CUÁL ES SU PAÍS NACIMIENTO?</string>
+    <string name="modulo_3_p302_especifique">(Especifique)</string>
+
+    <string name="modulo_3_p303">303.¿EN QUÉ MES Y AÑO INGRESÓ AL PERÚ?</string>
+    <string name="modulo_3_p303_mes">MES</string>
+    <string name="modulo_3_p303_anio">AÑO</string>
+    <string name="modulo_3_p303_no_nacido">Aún no había nacido</string>
+
+    <string name="modulo_3_p304">304.LA ÚLTIMA VEZ QUE USTED INGRESÓ AL PERÚ, ¿REGISTRÓ SU ENTRADA EN UN PUESTO DE CONTROL MIGRATORIO?</string>
+    <string name="modulo_3_p304_sp1">Si</string>
+    <string name="modulo_3_p304_sp2">No</string>
+
+    <string name="modulo_3_p305">305.¿CUÁL ES EL PUESTO DE CONTROL MIGRATORIO POR DONDE INGRESÓ AL PERÚ?</string>
+    <string name="modulo_3_p305_sp1">1.Tumbes</string>
+    <string name="modulo_3_p305_sp2">2.Tacna</string>
+    <string name="modulo_3_p305_sp3">3.Lima</string>
+    <string name="modulo_3_p305_sp4">4.Otro</string>
+    <string name="modulo_3_p305_especifique">Especifique</string>
+
+    <string name="modulo_3_p306">¿QUÉ DOCUMENTO DE SU PAÍS DE ORIGEN, UTILIZÓ PARA INGRESAR A PERÚ?</string>
+    <string name="modulo_3_p306_sp1">1.Pasaporte vigente</string>
+    <string name="modulo_3_p306_sp2">2.Pasaporte vencido</string>
+    <string name="modulo_3_p306_sp3">3.Cédula de identidad o DNI</string>
+    <string name="modulo_3_p306_sp4">4.Certificado o Partida de Nacimiento</string>
+    <string name="modulo_3_p306_sp5">5.Otro documento</string>
+    <string name="modulo_3_p306_sp6">6.NO TIENE</string>
+    <string name="modulo_3_p306_especifique">Especifique</string>
+
+    <string name="modulo_3_p307">307.¿EN QUÉ FECHA INICIÓ SU VIAJE DESDE QUE DEJÓ SU CIUDAD DE RESIDENCIA EN VENEZUELA?</string>
+    <string name="modulo_3_p307_dia">Día</string>
+    <string name="modulo_3_p307_mes">Mes</string>
+    <string name="modulo_3_p307_anio">Año</string>
+
+    <string name="modulo_3_p308">308.¿EN QUÉ ESTADO DE VENEZUELA INICIÓ SU VIAJE?</string>
+    <string name="modulo_3_p308_sp1">Estado:</string>
+    <string name="modulo_3_p308_sp2">Municipio:</string>
+
+    <string name="modulo_3_p309">309.USTED, PODRÍA DESCRIBIR LA RUTA QUE SIGUIÓ PARA LLEGAR AL PERÚ, DESDE SU PUNTO DE PARTIDA:</string>
+    <string name="modulo_3_p309_descripcion">(Describa la ruta desde el punto de partida en Venezuela)</string>
+
+    <string name="modulo_3_p310">¿CON QUIÉN O QUIENES VIAJÓ?</string>
+    <string name="modulo_3_p310_sp1">1.Con un grupo familiar</string>
+    <string name="modulo_3_p310_sp2">2.Con un grupo no familiar</string>
+    <string name="modulo_3_p310_sp3">3.Solo(a)</string>
+    <string name="modulo_3_p310_sp4">4.Otro</string>
+    <string name="modulo_3_p310_sp5">5.Otro</string>
+    <string name="modulo_3_p310_especifique">Especifique</string>
+
+    <string name="modulo_3_p311">311.DESDE QUE LLEGÓ AL PERÚ. ¿HA VIVIDO SIEMPRE EN ESTE DISTRITO?</string>
+    <string name="modulo_3_p311_sp1">1.Sí</string>
+    <string name="modulo_3_p311_sp2">2.No</string>
+
+    <string name="modulo_3_p312">312.¿CUÁL FUE EL ÚLTIMO DISTRITO EN EL QUE VIVIÓ, ANTES DE LLEGAR A ESTE LUGAR?</string>
+    <string name="modulo_3_p312_sp1">Distrito:</string>
+    <string name="modulo_3_p312_sp2">Provincia:</string>
+    <string name="modulo_3_p312_sp3">Departamento:</string>
+
+    <string name="modulo_3_p313">313.USTED, ¿PIENSA QUEDARSE A VIVIR EN PERÚ O VA A CONTINUAR SU VIAJE A OTRO PAÍS?</string>
+    <string name="modulo_3_p313_sp1">1.Sí</string>
+    <string name="modulo_3_p313_sp2">2.No</string>
+
+    <string name="modulo_3_p314">314.¿CUÁL ES EL PAÍS A DONDE PIENSA CONTINUAR SU VIAJE?</string>
+    <string name="modulo_3_p314_sp1">1.Chile</string>
+    <string name="modulo_3_p314_sp2">2.Argentina</string>
+    <string name="modulo_3_p314_sp3">3.Otro país</string>
+    <string name="modulo_3_p314_sp_especifique">Especifique</string>
+
+    <string name="modulo_3_p315">315.ACTUALMENTE, ¿CUÁL ES SU SITUACIÓN MIGRATORIA EN EL PERÚ?</string>
+    <string name="modulo_3_p315_sp1">1.Visa de turista</string>
+    <string name="modulo_3_p315_sp2">2.Visa de trabajo</string>
+    <string name="modulo_3_p315_sp3">3.Visa de estudiante</string>
+    <string name="modulo_3_p315_sp4">4.Solicitante de PTP</string>
+    <string name="modulo_3_p315_sp5">5.Con Permiso Temporal de Trabajo – PTP</string>
+    <string name="modulo_3_p315_sp6">6.Solicitante de refugio</string>
+    <string name="modulo_3_p315_sp7">7.Refugiado</string>
+    <string name="modulo_3_p315_sp8">8.Carta andina</string>
+    <string name="modulo_3_p315_sp9">9.Carnet de Extranjería</string>
+    <string name="modulo_3_p315_sp10">10.DNI</string>
+    <string name="modulo_3_p315_sp11">11.Otra situación</string>
+    <string name="modulo_3_p315_sp12">12.NINGUNA DE LAS SITUACIONES</string>
+    <string name="modulo_3_p315_especifique">Especifique</string>
+
+    <string name="modulo_3_p316">316.EN EL PERÚ, ¿CON QUIÉN ESTÁ VIVIENDO:</string>
+    <string name="modulo_3_p316_sp1">Con su familia</string>
+    <string name="modulo_3_p316_sp2">Con amigos(as)</string>
+    <string name="modulo_3_p316_sp3">Con su familia y amigos(as)</string>
+    <string name="modulo_3_p316_sp4">Solo(a)</string>
+    <string name="modulo_3_p316_sp5">Otro</string>
+    <string name="modulo_3_p316_especifique">Especifique</string>
+
+    <string name="modulo_3_p317">317.LA HABITACIÓN QUE UTILIZA PARA DORMIR, ¿CON CUÁNTAS PERSONAS COMPARTE?</string>
+    <string name="modulo_3_p317_sp1">1.Con 1 persona</string>
+    <string name="modulo_3_p317_sp2">2.Con 2 a 3 personas</string>
+    <string name="modulo_3_p317_sp3">3.Con 4 a más personas</string>
+    <string name="modulo_3_p317_sp4">4.Otro</string>
+    <string name="modulo_3_p317_especifique">Especifique</string>
+
+    <string name="modulo_3_p318">318.USTED, ¿DEJÓ EN VENEZUELA, PARTE DE SU FAMILIA CON QUIENES VIVÍA?</string>
+    <string name="modulo_3_p318_sp1">1.Sí</string>
+    <string name="modulo_3_p318_sp2">1.No</string>
+
+
+    <!--Strings asociados al módulo 4: SALUD-->
+    <string name="modulo_4_nombre">IV. SALUD(Todas las personas)</string>
+    <string name="modulo_4_menu">Módulo IV: Salud</string>
+
+
+    <!--Strings asociados al módulo 5: EDUCACIÓN-->
+    <string name="modulo_5_nombre">V. EDUCACIÓN (Para personas de 3 años a más de edad)</string>
+    <string name="modulo_5_menu">Módulo V: Educación</string>
+
+    <!--Strings asociados al módulo 6: EMPLEO-->
+    <string name="modulo_6_nombre">VI. EMPLEO (Para personas de 5 años a más de edad)</string>
+    <string name="modulo_6_menu">Módulo VI: Empleo</string>
+
+
+    <!--Strings asociados al módulo 7: DISCRIMINACIÓN -->
+    <string name="modulo_7_nombre">VII. DISCRIMINACIÓN (Para personas de 5 años a más edad)</string>
+    <string name="modulo_7_menu">Módulo VII: Discriminación</string>
+
+    <!--Strings asociados al módulo 8: GÉNERO Y VICTIMIZACIÓN-->
+    <string name="modulo_8_nombre">VIII. GÉNERO Y VICTIMIZACIÓN (Para personas de 18 años a más edad)</string>
+    <string name="modulo_8_menu">Módulo VIII: Género y Victimización</string>
+    <string name="siglas_encuesta">EMPOVE 2018</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
