@@ -10,5 +10,11 @@
     <dimen name="texto_large">25sp</dimen>
     <dimen name="texto_xlarge">30sp</dimen>
     <dimen name="margen_small">8dp</dimen>
-    <dimen name="margen_large">16dp</dimen>
+    <dimen name="margen_medium">16dp</dimen>
+    <dimen name="margen_large">24dp</dimen>
+    <dimen name="margen_layout_pregunta">8dp</dimen>
+    <dimen name="padding_layout_pregunta">16dp</dimen>
+    <dimen name="width_input_especifique">300dp</dimen>
+    <dimen name="altura_cabecera">40dp</dimen>
+    <dimen name="longitud_input_n">50dp</dimen>
 </resources>

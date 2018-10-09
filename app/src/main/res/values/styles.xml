@@ -38,4 +38,23 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="TemaTextoPregunta" parent="AppTheme">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/texto_small</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TemaCabeceraP309" parent="AppTheme">
+        <item name="android:paddingLeft">@dimen/margen_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/texto_small</item>
+        <item name="android:textColor">@color/colorIcons</item>
+    </style>
+    <style name="TemaCabeceraP318" parent="AppTheme">
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">@dimen/margen_small</item>
+        <item name="android:textSize">@dimen/texto_small</item>
+        <item name="android:textColor">@color/colorIcons</item>
+    </style>
 </resources>

@@ -16,6 +16,12 @@
     <string name="nombre_modulo_entrevista_supervision">Entrevistas y Supervisión</string>
     <string name="nombre_modulo_funcionarios_encuesta">Funcionarios de la Encuesta</string>
 
+    <!--Strings asociados a la Cabecera-->
+    <string name="cabecera_persona_n">Persona N°</string>
+    <string name="cabecera_nombre">Nombre: </string>
+    <string name="cabecera_informante_n">Informante N°</string>
+
+
 
     <!--Strings asociados al módulo 3: SITUACIÓN MIGRATORIA DE LA PERSONA-->
     <string name="modulo_3_nombre">III. SITUACIÓN MIGRATORIA DE LA PERSONA (Todas las personas)</string>
@@ -41,8 +47,8 @@
     <string name="modulo_3_p303_no_nacido">Aún no había nacido</string>
 
     <string name="modulo_3_p304">304.LA ÚLTIMA VEZ QUE USTED INGRESÓ AL PERÚ, ¿REGISTRÓ SU ENTRADA EN UN PUESTO DE CONTROL MIGRATORIO?</string>
-    <string name="modulo_3_p304_sp1">Si</string>
-    <string name="modulo_3_p304_sp2">No</string>
+    <string name="modulo_3_p304_sp1">1.Sí</string>
+    <string name="modulo_3_p304_sp2">2.No</string>
 
     <string name="modulo_3_p305">305.¿CUÁL ES EL PUESTO DE CONTROL MIGRATORIO POR DONDE INGRESÓ AL PERÚ?</string>
     <string name="modulo_3_p305_sp1">1.Tumbes</string>
@@ -51,7 +57,7 @@
     <string name="modulo_3_p305_sp4">4.Otro</string>
     <string name="modulo_3_p305_especifique">Especifique</string>
 
-    <string name="modulo_3_p306">¿QUÉ DOCUMENTO DE SU PAÍS DE ORIGEN, UTILIZÓ PARA INGRESAR A PERÚ?</string>
+    <string name="modulo_3_p306">306.¿QUÉ DOCUMENTO DE SU PAÍS DE ORIGEN, UTILIZÓ PARA INGRESAR A PERÚ?</string>
     <string name="modulo_3_p306_sp1">1.Pasaporte vigente</string>
     <string name="modulo_3_p306_sp2">2.Pasaporte vencido</string>
     <string name="modulo_3_p306_sp3">3.Cédula de identidad o DNI</string>
@@ -66,18 +72,28 @@
     <string name="modulo_3_p307_anio">Año</string>
 
     <string name="modulo_3_p308">308.¿EN QUÉ ESTADO DE VENEZUELA INICIÓ SU VIAJE?</string>
-    <string name="modulo_3_p308_sp1">Estado:</string>
-    <string name="modulo_3_p308_sp2">Municipio:</string>
+    <string name="modulo_3_p308_sp1">Estado</string>
+    <string name="modulo_3_p308_sp2">Municipio</string>
 
     <string name="modulo_3_p309">309.USTED, PODRÍA DESCRIBIR LA RUTA QUE SIGUIÓ PARA LLEGAR AL PERÚ, DESDE SU PUNTO DE PARTIDA:</string>
     <string name="modulo_3_p309_descripcion">(Describa la ruta desde el punto de partida en Venezuela)</string>
+    <string name="modulo_3_p309_cab1">País</string>
+    <string name="modulo_3_p309_cab2">Ciudad</string>
+    <string name="modulo_3_p309_cab3">Modo de tránsito</string>
+    <string name="modulo_3_p309_cab4">Fecha</string>
+    <string name="modulo_3_p309_sp_op1">1.Aire</string>
+    <string name="modulo_3_p309_sp_op2">2.Bus</string>
+    <string name="modulo_3_p309_sp_op3">3.A pie</string>
+    <string name="modulo_3_p309_sp_op4">4.Mar</string>
 
-    <string name="modulo_3_p310">¿CON QUIÉN O QUIENES VIAJÓ?</string>
+
+
+    <string name="modulo_3_p310">310.¿CON QUIÉN O QUIENES VIAJÓ?</string>
     <string name="modulo_3_p310_sp1">1.Con un grupo familiar</string>
     <string name="modulo_3_p310_sp2">2.Con un grupo no familiar</string>
     <string name="modulo_3_p310_sp3">3.Solo(a)</string>
     <string name="modulo_3_p310_sp4">4.Otro</string>
-    <string name="modulo_3_p310_sp5">5.Otro</string>
+    <string name="modulo_3_p310_sp5">5.NO DESEA RESPONDER</string>
     <string name="modulo_3_p310_especifique">Especifique</string>
 
     <string name="modulo_3_p311">311.DESDE QUE LLEGÓ AL PERÚ. ¿HA VIVIDO SIEMPRE EN ESTE DISTRITO?</string>
@@ -85,9 +101,9 @@
     <string name="modulo_3_p311_sp2">2.No</string>
 
     <string name="modulo_3_p312">312.¿CUÁL FUE EL ÚLTIMO DISTRITO EN EL QUE VIVIÓ, ANTES DE LLEGAR A ESTE LUGAR?</string>
-    <string name="modulo_3_p312_sp1">Distrito:</string>
-    <string name="modulo_3_p312_sp2">Provincia:</string>
-    <string name="modulo_3_p312_sp3">Departamento:</string>
+    <string name="modulo_3_p312_sp1">Distrito</string>
+    <string name="modulo_3_p312_sp2">Provincia</string>
+    <string name="modulo_3_p312_sp3">Departamento</string>
 
     <string name="modulo_3_p313">313.USTED, ¿PIENSA QUEDARSE A VIVIR EN PERÚ O VA A CONTINUAR SU VIAJE A OTRO PAÍS?</string>
     <string name="modulo_3_p313_sp1">1.Sí</string>
@@ -97,7 +113,7 @@
     <string name="modulo_3_p314_sp1">1.Chile</string>
     <string name="modulo_3_p314_sp2">2.Argentina</string>
     <string name="modulo_3_p314_sp3">3.Otro país</string>
-    <string name="modulo_3_p314_sp_especifique">Especifique</string>
+    <string name="modulo_3_p314_especifique">Especifique</string>
 
     <string name="modulo_3_p315">315.ACTUALMENTE, ¿CUÁL ES SU SITUACIÓN MIGRATORIA EN EL PERÚ?</string>
     <string name="modulo_3_p315_sp1">1.Visa de turista</string>
@@ -115,23 +131,33 @@
     <string name="modulo_3_p315_especifique">Especifique</string>
 
     <string name="modulo_3_p316">316.EN EL PERÚ, ¿CON QUIÉN ESTÁ VIVIENDO:</string>
-    <string name="modulo_3_p316_sp1">Con su familia</string>
-    <string name="modulo_3_p316_sp2">Con amigos(as)</string>
-    <string name="modulo_3_p316_sp3">Con su familia y amigos(as)</string>
-    <string name="modulo_3_p316_sp4">Solo(a)</string>
-    <string name="modulo_3_p316_sp5">Otro</string>
+    <string name="modulo_3_p316_sp1">1.Con su familia</string>
+    <string name="modulo_3_p316_sp2">2.Con amigos(as)</string>
+    <string name="modulo_3_p316_sp3">3.Con su familia y amigos(as)</string>
+    <string name="modulo_3_p316_sp4">4.Solo(a)</string>
+    <string name="modulo_3_p316_sp5">5.Otro</string>
     <string name="modulo_3_p316_especifique">Especifique</string>
 
     <string name="modulo_3_p317">317.LA HABITACIÓN QUE UTILIZA PARA DORMIR, ¿CON CUÁNTAS PERSONAS COMPARTE?</string>
-    <string name="modulo_3_p317_sp1">1.Con 1 persona</string>
-    <string name="modulo_3_p317_sp2">2.Con 2 a 3 personas</string>
-    <string name="modulo_3_p317_sp3">3.Con 4 a más personas</string>
-    <string name="modulo_3_p317_sp4">4.Otro</string>
+    <string name="modulo_3_p317_sp1">1.Duerme solo en la habitación</string>
+    <string name="modulo_3_p317_sp2">2.Con 1 persona</string>
+    <string name="modulo_3_p317_sp3">3.Con 2 a 3 personas</string>
+    <string name="modulo_3_p317_sp4">4.Con 4 a más personas</string>
+    <string name="modulo_3_p317_sp5">5.Otro</string>
     <string name="modulo_3_p317_especifique">Especifique</string>
 
     <string name="modulo_3_p318">318.USTED, ¿DEJÓ EN VENEZUELA, PARTE DE SU FAMILIA CON QUIENES VIVÍA?</string>
     <string name="modulo_3_p318_sp1">1.Sí</string>
     <string name="modulo_3_p318_sp2">1.No</string>
+    <string name="modulo_3_p318_cab1">¿A quienes dejó en venezuela?</string>
+    <string name="modulo_3_p318_cab2">Sexo</string>
+    <string name="modulo_3_p318_cab3">Edad</string>
+    <string name="modulo_3_p318_cab4">¿Piensa en traer a sus familiares en los próximos 12 meses?</string>
+    <string name="modulo_3_p318_sexo_op1">1.Hombre</string>
+    <string name="modulo_3_p318_sexo_op2">2.Mujer</string>
+    <string name="modulo_3_p318_12meses_si">1.Sí</string>
+    <string name="modulo_3_p318_12meses_no">2.No</string>
+
 
 
     <!--Strings asociados al módulo 4: SALUD-->

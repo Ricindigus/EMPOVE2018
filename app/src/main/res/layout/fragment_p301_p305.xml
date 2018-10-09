@@ -2,8 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".fragments.modulo3.FragmentP301P305">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_small"
+            android:orientation="vertical">
+            <include layout="@layout/cabecera"/>
+            <include layout="@layout/modulo3_p301"/>
+            <include layout="@layout/modulo3_p302"/>
+            <include layout="@layout/modulo3_p303"/>
+            <include layout="@layout/modulo3_p304"/>
+            <include layout="@layout/modulo3_p305"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
