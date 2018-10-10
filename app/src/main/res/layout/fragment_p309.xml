@@ -5,6 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".fragments.modulo3.FragmentP309">
 
-
+    <include layout="@layout/modulo3_p309"/>
 
 </LinearLayout>

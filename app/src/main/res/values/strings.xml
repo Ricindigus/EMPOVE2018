@@ -22,7 +22,6 @@
     <string name="cabecera_informante_n">Informante N°</string>
 
 
-
     <!--Strings asociados al módulo 3: SITUACIÓN MIGRATORIA DE LA PERSONA-->
     <string name="modulo_3_nombre">III. SITUACIÓN MIGRATORIA DE LA PERSONA (Todas las personas)</string>
     <string name="modulo_3_menu">Módulo III: Situación Migratoria</string>
@@ -85,7 +84,6 @@
     <string name="modulo_3_p309_sp_op2">2.Bus</string>
     <string name="modulo_3_p309_sp_op3">3.A pie</string>
     <string name="modulo_3_p309_sp_op4">4.Mar</string>
-
 
 
     <string name="modulo_3_p310">310.¿CON QUIÉN O QUIENES VIAJÓ?</string>
@@ -158,29 +156,52 @@
     <string name="modulo_3_p318_12meses_si">1.Sí</string>
     <string name="modulo_3_p318_12meses_no">2.No</string>
 
-
-
     <!--Strings asociados al módulo 4: SALUD-->
     <string name="modulo_4_nombre">IV. SALUD(Todas las personas)</string>
     <string name="modulo_4_menu">Módulo IV: Salud</string>
-
+    <string name="modulo_4_submenu_1">Preguntas 401 - 404</string>
+    <string name="modulo_4_submenu_2">Preguntas 405 - 407</string>
+    <string name="modulo_4_submenu_3">Preguntas 408 - 410</string>
+    <string name="modulo_4_submenu_4">Preguntas 411 - 414</string>
+    <string name="modulo_4_submenu_5">Preguntas 415 - 416</string>
 
     <!--Strings asociados al módulo 5: EDUCACIÓN-->
     <string name="modulo_5_nombre">V. EDUCACIÓN (Para personas de 3 años a más de edad)</string>
     <string name="modulo_5_menu">Módulo V: Educación</string>
+    <string name="modulo_5_submenu_1">Preguntas 501 - 503</string>
+    <string name="modulo_5_submenu_2">Preguntas 504 - 507</string>
+    <string name="modulo_5_submenu_3">Preguntas 508 - 511</string>
+    <string name="modulo_5_submenu_4">Preguntas 512 - 513</string>
 
     <!--Strings asociados al módulo 6: EMPLEO-->
     <string name="modulo_6_nombre">VI. EMPLEO (Para personas de 5 años a más de edad)</string>
     <string name="modulo_6_menu">Módulo VI: Empleo</string>
-
+    <string name="modulo_6_submenu_1">Preguntas 601 - 604</string>
+    <string name="modulo_6_submenu_2">Preguntas 605 - 608</string>
+    <string name="modulo_6_submenu_3">Preguntas 609 - 612</string>
+    <string name="modulo_6_submenu_4">Preguntas 613 - 618</string>
+    <string name="modulo_6_submenu_5">Preguntas 619 - 622</string>
+    <string name="modulo_6_submenu_6">Preguntas 623 - 625</string>
+    <string name="modulo_6_submenu_7">Preguntas 626 - 628</string>
+    <string name="modulo_6_submenu_8">Preguntas 629</string>
+    <string name="modulo_6_submenu_9">Preguntas 630</string>
 
     <!--Strings asociados al módulo 7: DISCRIMINACIÓN -->
     <string name="modulo_7_nombre">VII. DISCRIMINACIÓN (Para personas de 5 años a más edad)</string>
     <string name="modulo_7_menu">Módulo VII: Discriminación</string>
+    <string name="modulo_7_submenu_1">Preguntas 701 - 705</string>
+    <string name="modulo_7_submenu_2">Preguntas 706 - 709</string>
 
     <!--Strings asociados al módulo 8: GÉNERO Y VICTIMIZACIÓN-->
     <string name="modulo_8_nombre">VIII. GÉNERO Y VICTIMIZACIÓN (Para personas de 18 años a más edad)</string>
     <string name="modulo_8_menu">Módulo VIII: Género y Victimización</string>
+    <string name="modulo_8_submenu_1">Preguntas 801 - 804</string>
+    <string name="modulo_8_submenu_2">Preguntas 805 - 808</string>
+    <string name="modulo_8_submenu_3">Preguntas 809 - 812</string>
+    <string name="modulo_8_submenu_4">Preguntas 813 - 816</string>
+    <string name="modulo_8_submenu_5">Preguntas 817 - 820</string>
+    <string name="modulo_8_submenu_6">Preguntas 821 - 823</string>
+
     <string name="siglas_encuesta">EMPOVE 2018</string>
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -76,26 +76,57 @@ public class EncuestaActivity extends AppCompatActivity{
         listDataHeader.add(getString(R.string.modulo_7_menu));
         listDataHeader.add(getString(R.string.modulo_8_menu));
 
-        List<String> ingresoCajas = new ArrayList<String>();
-        ingresoCajas.add("Entrada de Cajas");
+        List<String> modulo3 = new ArrayList<String>();
+        modulo3.add(getString(R.string.modulo_3_submenu_1));
+        modulo3.add(getString(R.string.modulo_3_submenu_2));
+        modulo3.add(getString(R.string.modulo_3_submenu_3));
+        modulo3.add(getString(R.string.modulo_3_submenu_4));
+        modulo3.add(getString(R.string.modulo_3_submenu_5));
+        modulo3.add(getString(R.string.modulo_3_submenu_6));
 
-        List<String> salidaCajas = new ArrayList<String>();
-        salidaCajas.add("Salida de Cajas");
 
-        List<String> asistenciaRAs = new ArrayList<String>();
-        asistenciaRAs.add("Asistencia RA");
+        List<String> modulo4 = new ArrayList<String>();
+        modulo4.add(getString(R.string.modulo_4_submenu_1));
+        modulo4.add(getString(R.string.modulo_4_submenu_2));
+        modulo4.add(getString(R.string.modulo_4_submenu_3));
+        modulo4.add(getString(R.string.modulo_4_submenu_4));
+        modulo4.add(getString(R.string.modulo_4_submenu_5));
 
-        List<String> reportes = new ArrayList<String>();
-        reportes.add("Listado Ingreso Cajas a Local");
-        reportes.add("Listado Registro Asistencia RA");
-        reportes.add("Listado Salida de Cajas del Local");
-        reportes.add("Cuadro Resumen Ingreso Cajas");
-        reportes.add("Cuadro Resumen Salida Cajas");
+        List<String> modulo5 = new ArrayList<String>();
+        modulo5.add(getString(R.string.modulo_5_submenu_1));
+        modulo5.add(getString(R.string.modulo_5_submenu_2));
+        modulo5.add(getString(R.string.modulo_5_submenu_3));
+        modulo5.add(getString(R.string.modulo_5_submenu_4));
 
-        listDataChild.put(listDataHeader.get(0), ingresoCajas);
-        listDataChild.put(listDataHeader.get(1), asistenciaRAs);
-        listDataChild.put(listDataHeader.get(2), salidaCajas);
-        listDataChild.put(listDataHeader.get(3), reportes);
+        List<String> modulo6 = new ArrayList<String>();
+        modulo6.add(getString(R.string.modulo_6_submenu_1));
+        modulo6.add(getString(R.string.modulo_6_submenu_2));
+        modulo6.add(getString(R.string.modulo_6_submenu_3));
+        modulo6.add(getString(R.string.modulo_6_submenu_4));
+        modulo6.add(getString(R.string.modulo_6_submenu_5));
+        modulo6.add(getString(R.string.modulo_6_submenu_6));
+        modulo6.add(getString(R.string.modulo_6_submenu_7));
+        modulo6.add(getString(R.string.modulo_6_submenu_8));
+        modulo6.add(getString(R.string.modulo_6_submenu_9));
+
+        List<String> modulo7 = new ArrayList<String>();
+        modulo7.add(getString(R.string.modulo_7_submenu_1));
+        modulo7.add(getString(R.string.modulo_7_submenu_2));
+
+        List<String> modulo8 = new ArrayList<String>();
+        modulo8.add(getString(R.string.modulo_8_submenu_1));
+        modulo8.add(getString(R.string.modulo_8_submenu_2));
+        modulo8.add(getString(R.string.modulo_8_submenu_3));
+        modulo8.add(getString(R.string.modulo_8_submenu_4));
+        modulo8.add(getString(R.string.modulo_8_submenu_5));
+        modulo8.add(getString(R.string.modulo_8_submenu_6));
+
+        listDataChild.put(listDataHeader.get(0), modulo3);
+        listDataChild.put(listDataHeader.get(1), modulo4);
+        listDataChild.put(listDataHeader.get(2), modulo5);
+        listDataChild.put(listDataHeader.get(3), modulo6);
+        listDataChild.put(listDataHeader.get(4), modulo7);
+        listDataChild.put(listDataHeader.get(5), modulo8);
 
     }
 
