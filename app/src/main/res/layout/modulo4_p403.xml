@@ -87,7 +87,7 @@
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_4_p403_sp14"/>
         <EditText
-            android:id="@+id/mod3_403_inputEspecifique"
+            android:id="@+id/mod4_403_inputEspecifique"
             android:layout_width="@dimen/width_input_especifique"
             android:background="@drawable/input_text_disabled"
             android:hint="@string/modulo_4_p403_especifique"

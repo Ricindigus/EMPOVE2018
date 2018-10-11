@@ -13,50 +13,62 @@
         android:text="@string/modulo_4_p407"/>
 
     <CheckBox
+        android:id="@+id/mod4_407_ck1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp1"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp2"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp3"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp4"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp5"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp6"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp7"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp8"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp9"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp10"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp11"/>
     <CheckBox
+        android:id="@+id/mod4_407_ck12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p407_sp12"/>
@@ -66,12 +78,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <CheckBox
+            android:id="@+id/mod4_407_ck13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_4_p407_sp13"/>
         <EditText
-            android:id="@+id/mod3_407_inputEspecifique"
+            android:id="@+id/mod4_407_inputEspecifique"
             android:layout_width="@dimen/width_input_especifique"
             android:background="@drawable/input_text_disabled"
             android:hint="@string/modulo_4_p407_especifique"

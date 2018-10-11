@@ -12,18 +12,22 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_4_p410"/>
     <CheckBox
+        android:id="@+id/mod4_410_ck1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p410_sp1"/>
     <CheckBox
+        android:id="@+id/mod4_410_ck2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p410_sp2"/>
     <CheckBox
+        android:id="@+id/mod4_410_ck3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p410_sp3"/>
     <CheckBox
+        android:id="@+id/mod4_410_ck4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p410_sp4"/>

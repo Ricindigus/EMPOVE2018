@@ -11,4 +11,58 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_4_p415"/>
+    <CheckBox
+        android:id="@+id/mod4_415_ck1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p415_sp1"/>
+    <CheckBox
+        android:id="@+id/mod4_415_ck2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p415_sp2"/>
+    <CheckBox
+        android:id="@+id/mod4_415_ck3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p415_sp3"/>
+    <CheckBox
+        android:id="@+id/mod4_415_ck4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p415_sp4"/>
+    <CheckBox
+        android:id="@+id/mod4_415_ck5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p415_sp5"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/mod4_415_ck6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_4_p415_sp6"/>
+        <EditText
+            android:id="@+id/mod4_415_especifique"
+            android:layout_width="@dimen/width_input_especifique"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margen_small"
+            android:hint="@string/modulo_4_p415_especifique"
+            android:background="@drawable/input_text_disabled"/>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/mod4_415_ck7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p415_sp7"/>
+    <CheckBox
+        android:id="@+id/mod4_415_ck8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p415_sp8"/>
+
 </LinearLayout>

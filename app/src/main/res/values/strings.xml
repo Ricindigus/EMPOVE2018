@@ -291,6 +291,8 @@
     <string name="modulo_4_p415_especifique">Especifique</string>
 
     <string name="modulo_4_p416">416.¿TIENE UD. LIMITACIONES DE FORMA PERMANENTE, PARA:</string>
+    <string name="modulo_4_p416_si">Sí</string>
+    <string name="modulo_4_p416_no">No</string>
     <string name="modulo_4_p416_sp1">1.Moverse o caminar, para usar brazos o piernas?</string>
     <string name="modulo_4_p416_sp2">2.Ver, aun usando anteojos?</string>
     <string name="modulo_4_p416_sp3">3.Hablar o comunicarse, aun usando lenguaje de señas u otro?</string>
@@ -359,17 +361,17 @@
     <string name="modulo_5_p507_departamento">Departamento</string>
 
     <string name="modulo_5_p508">508.¿CUÁL ES LA PRINCIPAL RAZÓN POR LA QUE NO ESTÁ INSCRITO / MATRICULADO O NO ASISTE A ALGÚN CENTRO O PROGRAMA DE EDUCACIÓN BÁSICA O SUPERIOR?</string>
-    <string name="modulo_5_p508_sp1">Problemas económicos</string>
-    <string name="modulo_5_p508_sp2">Estoy trabajando</string>
-    <string name="modulo_5_p508_sp3">Problemas familiares</string>
-    <string name="modulo_5_p508_sp4">No tiene documentos</string>
-    <string name="modulo_5_p508_sp5">Desconocimiento del Sistema Educativo (No sabe cómo acceder)</string>
-    <string name="modulo_5_p508_sp6">No me interesa / No me gusta el estudio</string>
-    <string name="modulo_5_p508_sp7">Se dedica a los quehaceres del hogar</string>
-    <string name="modulo_5_p508_sp8">Familiares no lo dejan estudiar</string>
-    <string name="modulo_5_p508_sp9">Está embarazada</string>
-    <string name="modulo_5_p508_sp10">El centro educativo se encuentra muy lejos</string>
-    <string name="modulo_5_p508_sp11">Otra razón</string>
+    <string name="modulo_5_p508_sp1">1.Problemas económicos</string>
+    <string name="modulo_5_p508_sp2">2.Estoy trabajando</string>
+    <string name="modulo_5_p508_sp3">3.Problemas familiares</string>
+    <string name="modulo_5_p508_sp4">4.No tiene documentos</string>
+    <string name="modulo_5_p508_sp5">5.Desconocimiento del Sistema Educativo (No sabe cómo acceder)</string>
+    <string name="modulo_5_p508_sp6">6.No me interesa / No me gusta el estudio</string>
+    <string name="modulo_5_p508_sp7">7.Se dedica a los quehaceres del hogar</string>
+    <string name="modulo_5_p508_sp8">8.Familiares no lo dejan estudiar</string>
+    <string name="modulo_5_p508_sp9">9.Está embarazada</string>
+    <string name="modulo_5_p508_sp10">10.El centro educativo se encuentra muy lejos</string>
+    <string name="modulo_5_p508_sp11">11.Otra razón</string>
     <string name="modulo_5_p508_especifique">Especifique</string>
 
     <string name="modulo_5_p509">509.¿OBTUVO USTED EL TÍTULO QUE ACREDITA SUS ESTUDIOS?</string>
@@ -380,14 +382,14 @@
     <string name="modulo_5_p510_sp1">1.Sí</string>
     <string name="modulo_5_p510_sp2">2.No</string>
 
-    <string name="modulo_5_p511">504.¿POR QUÉ NO HA HOMOLOGADO SU TÍTULO?</string>
+    <string name="modulo_5_p511">511.¿POR QUÉ NO HA HOMOLOGADO SU TÍTULO?</string>
     <string name="modulo_5_p511_sp1">1.No conozco el procedimiento</string>
     <string name="modulo_5_p511_sp2">2.No traje mis diplomas</string>
     <string name="modulo_5_p511_sp3">3.No tengo dinero</string>
     <string name="modulo_5_p511_sp4">4.Otra razón</string>
     <string name="modulo_5_p511_especifique">Especifique</string>
 
-    <string name="modulo_5_p512">505.POR SUS COSTUMBRES Y SUS ANTEPASADOS, ¿UD. SE SIENTE O SE CONSIDERA:</string>
+    <string name="modulo_5_p512">512.POR SUS COSTUMBRES Y SUS ANTEPASADOS, ¿UD. SE SIENTE O SE CONSIDERA:</string>
     <string name="modulo_5_p512_sp1">1.Indígena?</string>
     <string name="modulo_5_p512_sp2">2.Afrodescendiente?</string>
     <string name="modulo_5_p512_sp3">3.Blanco(a)?</string>
@@ -397,7 +399,7 @@
     <string name="modulo_5_p512_sp7">7.NO SABE</string>
     <string name="modulo_5_p512_especifique">Especifique</string>
 
-    <string name="modulo_5_p513">506.DE ACUERDO A SU ORIENTACIÓN SEXUAL ¿USTED ACTUALMENTE SE CONSIDERA:</string>
+    <string name="modulo_5_p513">513.DE ACUERDO A SU ORIENTACIÓN SEXUAL ¿USTED ACTUALMENTE SE CONSIDERA:</string>
     <string name="modulo_5_p513_sp1">1.Heterosexual?</string>
     <string name="modulo_5_p513_sp2">2.Gay?</string>
     <string name="modulo_5_p513_sp3">3.Lesbiana?</string>
@@ -420,6 +422,9 @@
     <string name="modulo_6_submenu_7">Preguntas 626 - 628</string>
     <string name="modulo_6_submenu_8">Preguntas 629</string>
     <string name="modulo_6_submenu_9">Preguntas 630</string>
+
+    <string name="modulo_6_p601"></string>
+    <string name="modulo_6_p601_sp1"></string>
 
 
     <!--Strings asociados al módulo 7: DISCRIMINACIÓN -->

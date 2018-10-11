@@ -11,4 +11,20 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_4_p414"/>
+    <RadioGroup
+        android:id="@+id/mod4_414_rg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/mod4_414_rbSi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_4_p414_sp1"/>
+        <RadioButton
+            android:id="@+id/mod4_414_rbNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_4_p414_sp2"/>
+    </RadioGroup>
 </LinearLayout>

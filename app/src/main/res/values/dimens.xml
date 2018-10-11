@@ -17,4 +17,6 @@
     <dimen name="width_input_especifique">300dp</dimen>
     <dimen name="altura_cabecera">40dp</dimen>
     <dimen name="longitud_input_n">50dp</dimen>
+    <dimen name="longitud_radio">200dp</dimen>
+    <dimen name="longitud_ubicacion">300dp</dimen>
 </resources>

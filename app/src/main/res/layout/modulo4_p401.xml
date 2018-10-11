@@ -37,7 +37,7 @@
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_4_p401_sp4"/>
         <EditText
-            android:id="@+id/mod3_401_inputEspecifique"
+            android:id="@+id/mod4_401_inputEspecifique"
             android:layout_width="@dimen/width_input_especifique"
             android:background="@drawable/input_text_disabled"
             android:hint="@string/modulo_4_p401_especifique"
