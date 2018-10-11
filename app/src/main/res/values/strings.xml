@@ -423,9 +423,167 @@
     <string name="modulo_6_submenu_8">Preguntas 629</string>
     <string name="modulo_6_submenu_9">Preguntas 630</string>
 
-    <string name="modulo_6_p601"></string>
-    <string name="modulo_6_p601_sp1"></string>
+    <string name="modulo_6_p601">601.LA SEMANA PASADA, DEL… AL… ¿TUVO UD. ALGÚN TRABAJO? (sin contar con los quehaceres del hogar)?</string>
+    <string name="modulo_6_p601_sp1">1.Si</string>
+    <string name="modulo_6_p601_sp2">2.No</string>
 
+    <string name="modulo_6_p602">602.AUNQUE NO TRABAJÓ LA SEMANA PASADA, ¿TIENE ALGÚN EMPLEO FIJO AL QUE PRÓXIMAMENTE VOLVERÁ?</string>
+    <string name="modulo_6_p602_sp1">1.Si</string>
+    <string name="modulo_6_p602_sp2">2.No</string>
+
+    <string name="modulo_6_p603">603.AUNQUE NO TRABAJÓ LA SEMANA PASADA, ¿TIENE ALGÚN NEGOCIO PROPIO AL QUE PRÓXIMAMENTE VOLVERÁ?</string>
+    <string name="modulo_6_p603_sp1">1.Si</string>
+    <string name="modulo_6_p603_sp2">2.No</string>
+
+    <string name="modulo_6_p604">604.LA SEMANA PASADA REALIZÓ ALGUNA ACTIVIDAD AL MENOS UNA HORA PARA OBTENER INGRESOS EN DINERO O EN ESPECIE, COMO:</string>
+    <string name="modulo_6_p604_sp1">1.¿Trabajando en un negocio propio o de un familiar?</string>
+    <string name="modulo_6_p604_sp2">2.¿Ofreciendo algún servicio personal?</string>
+    <string name="modulo_6_p604_sp3">3.¿Haciendo algo en casa para vender?</string>
+    <string name="modulo_6_p604_sp4">4.¿Vendiendo productos de belleza, ropa, joyas, etc?</string>
+    <string name="modulo_6_p604_sp5">5.¿Realizando alguna labor artesanal?</string>
+    <string name="modulo_6_p604_sp6">6.¿Haciendo prácticas pagadas en un centro de trabajo?</string>
+    <string name="modulo_6_p604_sp7">7.¿Trabajando para un hogar particular?</string>
+    <string name="modulo_6_p604_sp8">8.¿Fabricando algún producto?</string>
+    <string name="modulo_6_p604_sp9">9.¿Realizando labores en la chacra o cuidado de animales?</string>
+    <string name="modulo_6_p604_sp10">10.¿Ayudando a un familiar sin remuneración?</string>
+    <string name="modulo_6_p604_sp11">11.¿Otra?</string>
+    <string name="modulo_6_p604_especifique">Especifique</string>
+    <string name="modulo_6_p604_no">Sí</string>
+    <string name="modulo_6_p604_si">No</string>
+
+    <string name="modulo_6_p605">605.¿CUÁL ES LA OCUPACIÓN PRINCIPAL QUE DESEMPEÑÓ?</string>
+    <string name="modulo_6_p605_especifique">Especifique</string>
+
+    <string name="modulo_6_p606">606.¿QUÉ TAREAS REALIZÓ EN SU OCUPACIÓN PRINCIPAL?</string>
+    <string name="modulo_6_p606_especifique">Especifique</string>
+
+    <string name="modulo_6_p607">607.¿A QUÉ SE DEDICA EL NEGOCIO, ORGANISMO O EMPRESA EN LA QUE TRABAJÓ EN SU OCUPACIÓN PRINCIPAL?</string>
+    <string name="modulo_6_p607_especifique">Especifique</string>
+
+    <string name="modulo_6_p608">608.UD. SE DESEMPEÑÓ EN SU OCUPACIÓN PRINCIPAL O NEGOCIO COMO:</string>
+    <string name="modulo_6_p608_sp1">1.¿Empleador o patrono?</string>
+    <string name="modulo_6_p608_sp2">2.¿Trabajador independiente?</string>
+    <string name="modulo_6_p608_sp3">3.¿Empleado?</string>
+    <string name="modulo_6_p608_sp4">4.¿Obrero?</string>
+    <string name="modulo_6_p608_sp5">5.¿Trabajador familiar no remunerado?</string>
+    <string name="modulo_6_p608_sp6">6.¿Trabajador del hogar?</string>
+    <string name="modulo_6_p608_sp7">7.¿Otro?</string>
+    <string name="modulo_6_p608_especifique">Especifique</string>
+
+    <string name="modulo_6_p609">609.USTED, ¿HA FIRMADO ALGÚN CONTRATO LABORAL O BRINDA ALGÚN COMPROBANTE POR SERVICIOS?</string>
+    <string name="modulo_6_p609_si">1.Sí</string>
+    <string name="modulo_6_p609_no">2.No</string>
+
+    <string name="modulo_6_p610">610.¿LA SEMANA PASADA, DEL...... AL......... ¿CUÁNTAS HORAS TRABAJÓ EN SU OCUPACIÓN PRINCIPAL Y OCUPACIÓN(ES)  SECUNDARIA(S)?</string>
+    <string name="modulo_6_p610_sp1">Ocupación Principal</string>
+    <string name="modulo_6_p610_sp2">Ocupación(es) Secundaria(s)</string>
+    <string name="modulo_6_p610_dom">Dom</string>
+    <string name="modulo_6_p610_lun">Lun</string>
+    <string name="modulo_6_p610_mar">Mar</string>
+    <string name="modulo_6_p610_mier">Mier</string>
+    <string name="modulo_6_p610_jue">Jue</string>
+    <string name="modulo_6_p610_vie">Vie</string>
+    <string name="modulo_6_p610_sab">Sab</string>
+    <string name="modulo_6_p610_total">Total</string>
+
+
+    <string name="modulo_6_p611"></string>
+    <string name="modulo_6_p611_sp1"></string>
+
+    <string name="modulo_6_p612"></string>
+    <string name="modulo_6_p612_sp1"></string>
+
+    <string name="modulo_6_p613"></string>
+    <string name="modulo_6_p613_sp1"></string>
+
+    <string name="modulo_6_p614"></string>
+    <string name="modulo_6_p614_sp1"></string>
+
+
+
+
+
+    Dom	Lun	Mar	Mier	Jue 	Vie	Sab
+
+
+
+    Dom	Lun	Mar	Mier	Jue 	Vie	Sab
+
+    611.  NORMALMENTE, ¿CUÁNTAS HORAS TRABAJA A LA SEMANA EN TODAS SUS OCUPACIONES?
+
+    Nº de horas
+
+    612.	EN SU OCUPACIÓN PRINCIPAL, NEGOCIO O EMPRESA INCLUYENDOSE USTED, LABORARON:
+    ¿Menos de 100 personas? 	1
+    ¿De 100 personas a más? 	2
+
+
+    Las preguntas 613 y 614, es solo para empleado, obrero o trabajador del hogar
+    613.	EN SU OCUPACIÓN PRINCIPAL, ¿LA FRECUENCIA CON QUE A UD. LE PAGAN ES:
+    (Lea cada alternativa y encierre en un círculo solo una alternativa)
+    Diario? 	1
+    Semanal?	2
+    Quincenal?	3
+    Mensual?	4
+
+
+
+    614.	¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN EL (LA)…………………… ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?
+
+    En Dinero		En Especie
+    S/.		S/.
+    (En enteros)		(En enteros)
+
+
+
+
+    <string name="modulo_6_p615"></string>
+    <string name="modulo_6_p615_sp1"></string>
+
+    <string name="modulo_6_p616"></string>
+    <string name="modulo_6_p616_sp1"></string>
+
+    <string name="modulo_6_p617"></string>
+    <string name="modulo_6_p617_sp1"></string>
+
+    <string name="modulo_6_p618"></string>
+    <string name="modulo_6_p618_sp1"></string>
+
+    <string name="modulo_6_p619"></string>
+    <string name="modulo_6_p619_sp1"></string>
+
+    <string name="modulo_6_p620"></string>
+    <string name="modulo_6_p620_sp1"></string>
+
+    <string name="modulo_6_p621"></string>
+    <string name="modulo_6_p621_sp1"></string>
+
+    <string name="modulo_6_p622"></string>
+    <string name="modulo_6_p622_sp1"></string>
+
+    <string name="modulo_6_p623"></string>
+    <string name="modulo_6_p623_sp1"></string>
+
+    <string name="modulo_6_p624"></string>
+    <string name="modulo_6_p624_sp1"></string>
+
+    <string name="modulo_6_p625"></string>
+    <string name="modulo_6_p625_sp1"></string>
+
+    <string name="modulo_6_p626"></string>
+    <string name="modulo_6_p626_sp1"></string>
+
+    <string name="modulo_6_p627"></string>
+    <string name="modulo_6_p627_sp1"></string>
+
+    <string name="modulo_6_p628"></string>
+    <string name="modulo_6_p628_sp1"></string>
+
+    <string name="modulo_6_p629"></string>
+    <string name="modulo_6_p629_sp1"></string>
+
+    <string name="modulo_6_p630"></string>
+    <string name="modulo_6_p630_sp1"></string>
 
     <!--Strings asociados al módulo 7: DISCRIMINACIÓN -->
     <string name="modulo_7_nombre">VII. DISCRIMINACIÓN (Para personas de 5 años a más edad)</string>
