@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</android.support.constraint.ConstraintLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/margen_layout_pregunta"
+    android:padding="@dimen/padding_layout_pregunta"
+    android:background="@drawable/marco_pregunta">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TemaTextoPregunta"
+        android:text="@string/modulo_4_p401"/>
+    <CheckBox
+        android:id="@+id/mod4_401_ck1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p401_sp1"/>
+    <CheckBox
+        android:id="@+id/mod4_401_ck2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p401_sp2"/>
+    <CheckBox
+        android:id="@+id/mod4_401_ck3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p401_sp3"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/mod4_401_ck4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_4_p401_sp4"/>
+        <EditText
+            android:id="@+id/mod3_401_inputEspecifique"
+            android:layout_width="@dimen/width_input_especifique"
+            android:background="@drawable/input_text_disabled"
+            android:hint="@string/modulo_4_p401_especifique"
+            android:paddingLeft="@dimen/margen_small"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/mod4_401_ck5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p401_sp5"/>
+</LinearLayout>

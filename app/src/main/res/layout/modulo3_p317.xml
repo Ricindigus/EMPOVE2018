@@ -47,6 +47,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_3_p317_sp5"/>
             <EditText
+                android:id="@+id/mod3_317_inputEspecifique"
                 android:layout_width="@dimen/width_input_especifique"
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/margen_small"

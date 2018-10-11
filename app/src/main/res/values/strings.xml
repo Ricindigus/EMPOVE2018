@@ -165,6 +165,139 @@
     <string name="modulo_4_submenu_4">Preguntas 411 - 414</string>
     <string name="modulo_4_submenu_5">Preguntas 415 - 416</string>
 
+    <string name="modulo_4_p401">401.¿EL SISTEMA DE SEGURO DE SALUD AL CUAL UD. ESTÁ AFILIADO ACTUALMENTE, ES:</string>
+    <string name="modulo_4_p401_sp1">1.ESSALUD?</string>
+    <string name="modulo_4_p401_sp2">2.Seguro de Privado de Salud?</string>
+    <string name="modulo_4_p401_sp3">3.Seguro Integral de Salud – SIS?</string>
+    <string name="modulo_4_p401_sp4">4.Otro?</string>
+    <string name="modulo_4_p401_sp5">5.NO ESTA AFILIADO</string>
+    <string name="modulo_4_p401_especifique">Especifique</string>
+
+    <string name="modulo_4_p402">402.¿PADECE DE ALGUNA ENFERMEDAD O MALESTAR CRÓNICO? (Artritis, hipertensión, asma, reumatismo, diabetes, tuberculosis, VIH, colesterol, etc.)</string>
+    <string name="modulo_4_p402_sp1">1.Sí</string>
+    <string name="modulo_4_p402_sp2">2.No</string>
+
+    <string name="modulo_4_p403">403.¿QUÉ ENFERMEDAD O MALESTAR CRÓNICO PADECE?</string>
+    <string name="modulo_4_p403_sp1">1.Artritis</string>
+    <string name="modulo_4_p403_sp2">2.Hipertensión</string>
+    <string name="modulo_4_p403_sp3">3.Asma</string>
+    <string name="modulo_4_p403_sp4">4.Reumatismo</string>
+    <string name="modulo_4_p403_sp5">5.Diabetes</string>
+    <string name="modulo_4_p403_sp6">6.Tuberculosis</string>
+    <string name="modulo_4_p403_sp7">7.Colesterol</string>
+    <string name="modulo_4_p403_sp8">8.Enfermedad pulmonar</string>
+    <string name="modulo_4_p403_sp9">9.Cáncer</string>
+    <string name="modulo_4_p403_sp10">10.Alteraciones de salud mental</string>
+    <string name="modulo_4_p403_sp11">11.Enfermedad del corazón</string>
+    <string name="modulo_4_p403_sp12">12.VIH/ SIDA</string>
+    <string name="modulo_4_p403_sp13">13.Otras infecciones de transmisión sexual</string>
+    <string name="modulo_4_p403_sp14">14.Otro</string>
+    <string name="modulo_4_p403_especifique">Especifique</string>
+
+    <string name="modulo_4_p404">404.¿RECIBE USTED TRATAMIENTO EN EL PERÚ PARA SU ENFERMEDAD O MALESTAR CRÓNICO QUE PADECE?</string>
+    <string name="modulo_4_p404_sp1">1.Sí, con la frecuencia necesaria</string>
+    <string name="modulo_4_p404_sp2">2.Sí, pero no con la frecuencia necesaria</string>
+    <string name="modulo_4_p404_sp3">3.No recibe tratamiento</string>
+
+    <string name="modulo_4_p405">405.DESDE SU LLEGADA AL PERÚ ¿PRESENTÓ USTED ALGÚN(A):</string>
+    <string name="modulo_4_p405_sp1">1.Síntoma o malestar (tos, dolor de cabeza, fiebre, nauseas)?</string>
+    <string name="modulo_4_p405_sp2">2.Enfermedad (gripe, colitis, etc.)?</string>
+    <string name="modulo_4_p405_sp3">3.Recaída de enfermedad crónica?</string>
+    <string name="modulo_4_p405_sp4">4.Accidente?</string>
+    <string name="modulo_4_p405_sp5">5.Síntomas mentales, como depresión, miedo, enojo, ansiedad, estrés, etc.?</string>
+    <string name="modulo_4_p405_sp6">6.Embarazo?</string>
+    <string name="modulo_4_p405_sp7">7.No tuvo enfermedad, síntoma, recaída, accidente</string>
+
+    <string name="modulo_4_p406">406.¿A DÓNDE ACUDIÓ PARA CONSULTAR POR ESTA ENFERMEDAD, SÍNTOMA O MALESTAR Y/O ACCIDENTE?</string>
+    <string name="modulo_4_p406_sp1">1.Centro de Salud MINSA</string>
+    <string name="modulo_4_p406_sp2">2.Centro de atención ESSALUD</string>
+    <string name="modulo_4_p406_sp3">3.Consultorio particular</string>
+    <string name="modulo_4_p406_sp4">4.Clínica particular</string>
+    <string name="modulo_4_p406_sp5">5.Farmacia o botica</string>
+    <string name="modulo_4_p406_sp6">6.Se auto medicó</string>
+    <string name="modulo_4_p406_sp7">7.Otro</string>
+    <string name="modulo_4_p406_sp8">8.NO BUSCO ATENCIÓN</string>
+    <string name="modulo_4_p406_especifique">Especifique</string>
+
+    <string name="modulo_4_p407">407.¿CUÁLES SON LAS RAZONES POR LAS QUE NO ACUDIÓ A UN CENTRO O ESTABLECIMIENTO DE SALUD?</string>
+    <string name="modulo_4_p407_sp1">1.No tuvo dinero</string>
+    <string name="modulo_4_p407_sp2">2.Se encuentra lejos</string>
+    <string name="modulo_4_p407_sp3">3.Demora mucho en atender</string>
+    <string name="modulo_4_p407_sp4">4.No confía en los médicos</string>
+    <string name="modulo_4_p407_sp5">5.No era tan grave / No fue necesario</string>
+    <string name="modulo_4_p407_sp6">6.No tiene seguro</string>
+    <string name="modulo_4_p407_sp7">7.Se auto receto o repitió receta anterior</string>
+    <string name="modulo_4_p407_sp8">8.Falta de tiempo</string>
+    <string name="modulo_4_p407_sp9">9.Por maltrato de personal de salud</string>
+    <string name="modulo_4_p407_sp10">10.Por falta de documentos</string>
+    <string name="modulo_4_p407_sp11">11.Temor por su situación migratoria</string>
+    <string name="modulo_4_p407_sp12">12.No confía en las prácticas de salud y parto</string>
+    <string name="modulo_4_p407_sp13">13.Otro</string>
+    <string name="modulo_4_p407_especifique">Especifique</string>
+
+    <string name="modulo_4_p408">408.EN EL ÚLTIMO MES, ¿HA MOSTRADO CAMBIOS FUERTES EN SU HUMOR O ACTITUDES, TALES COMO:</string>
+    <string name="modulo_4_p408_sp1">1.Alejamiento de la familia y amigos?</string>
+    <string name="modulo_4_p408_sp2">2.Estallidos agresivos o de enojo?</string>
+    <string name="modulo_4_p408_sp3">3.Cambios de apetito o de hábitos alimenticios?</string>
+    <string name="modulo_4_p408_sp4">4.Dolores de cabeza?</string>
+    <string name="modulo_4_p408_sp5">5.Mojar la cama de nuevo o recurrentemente?</string>
+    <string name="modulo_4_p408_sp6">6.Pesadillas o alteraciones del sueño?</string>
+    <string name="modulo_4_p408_sp7">7.Malestar estomacal o dolor de estómago?</string>
+    <string name="modulo_4_p408_sp8">8.Miedos nuevos o recurrentes (a la oscuridad, a estar solo, a personas extrañas)?</string>
+    <string name="modulo_4_p408_sp9">9.Aferrado, no quiere perderle de vista a usted u otros miembros de la familia?</string>
+    <string name="modulo_4_p408_sp10">10.Llanto excesivo?</string>
+    <string name="modulo_4_p408_sp11">11.Regreso a conductas presentes en una edad más temprana?</string>
+    <string name="modulo_4_p408_sp12">12.Se asusta fácilmente?</string>
+    <string name="modulo_4_p408_sp13">13.Otro</string>
+    <string name="modulo_4_p408_sp14">14.NO HA MOSTRADO CAMBIOS DE ACTITUD</string>
+    <string name="modulo_4_p408_especifique">Especifique</string>
+
+    <string name="modulo_4_p409">409.EN EL ÚLTIMO MES, ¿ALGUNO DE SUS HIJOS FUE CASTIGADO POR SU MAL COMPORTAMIENTO?</string>
+    <string name="modulo_4_p409_sp1">1.Sí</string>
+    <string name="modulo_4_p409_sp2">2.No</string>
+
+    <string name="modulo_4_p410">410.¿ESTAS SITUACIONES DE MAL COMPORTAMIENTO DE SUS HIJOS, SON:</string>
+    <string name="modulo_4_p410_sp1">1.Más frecuentes que cuando vivía en Venezuela?</string>
+    <string name="modulo_4_p410_sp2">2.Menos frecuentes que cuando vivía en Venezuela?</string>
+    <string name="modulo_4_p410_sp3">3.Igual de frecuentes que cuando vivía en Venezuela?</string>
+    <string name="modulo_4_p410_sp4">4.NO APLICA /NACIÓ EN PERÚ</string>
+
+    <string name="modulo_4_p411">411.¿ESTÁ USTED, ACTUALMENTE EMBARAZADA?</string>
+    <string name="modulo_4_p411_sp1">1.Sí</string>
+    <string name="modulo_4_p411_sp2">2.No</string>
+    <string name="modulo_4_p411_sp3">3.NO SABE / NO ESTA SEGURA</string>
+
+    <string name="modulo_4_p412">412.¿SE HA HECHO CONTROL DEL EMBARAZO?</string>
+    <string name="modulo_4_p412_sp1">1.Sí</string>
+    <string name="modulo_4_p412_sp2">2.No</string>
+
+    <string name="modulo_4_p413">413.USTED, ¿TIENE NIÑOS MEÑORES DE 2 AÑOS QUE SE ENCUENTREN LACTANDO?</string>
+    <string name="modulo_4_p413_sp1">1.Sí</string>
+    <string name="modulo_4_p413_sp2">2.No</string>
+
+    <string name="modulo_4_p414">414.DESDE SU LLEGADA AL PERÚ, ¿HA VIVIDO SITUACIONES DE ACOSO DE ALGÚN TIPO: SEXUAL, LABORAL, EN LA CALLE?</string>
+    <string name="modulo_4_p414_sp1">1.Sí</string>
+    <string name="modulo_4_p414_sp2">2.No</string>
+
+    <string name="modulo_4_p415">415.AHORA ME GUSTARÍA CONVERSAR CON USTED SOBRE SALUD SEXUAL Y REPRODUCTIVA, ES DECIR ACERCA DE LAS DIFERENTES FORMAS O MÉTODOS QUE UNA PAREJA PUEDE USAR PARA EVITAR UN EMBARAZO ¿HA TENIDO USTED ACCESO A LOS SERVICIOS DE:</string>
+    <string name="modulo_4_p415_sp1">1.Método tradicional (ritmo, coito interrumpido, temperatura corporal, moco cervical, lactancia materna)?</string>
+    <string name="modulo_4_p415_sp2">2.Método moderno (Hormonal, barrera, dispositivos, definitivo)?</string>
+    <string name="modulo_4_p415_sp3">3.Método de emergencia (Píldoras del día siguiente, entre otros)?</string>
+    <string name="modulo_4_p415_sp4">4.Prueba de VIH y otras infecciones de transmisión sexual?</string>
+    <string name="modulo_4_p415_sp5">5.Educación y consejería?</string>
+    <string name="modulo_4_p415_sp6">6.Otro servicio?</string>
+    <string name="modulo_4_p415_sp7">7.NO TIENE ACCESO A ESTOS SERVICIOS</string>
+    <string name="modulo_4_p415_sp8">8.NO TIENE CONOCIMIENTO</string>
+    <string name="modulo_4_p415_especifique">Especifique</string>
+
+    <string name="modulo_4_p416">416.¿TIENE UD. LIMITACIONES DE FORMA PERMANENTE, PARA:</string>
+    <string name="modulo_4_p416_sp1">1.Moverse o caminar, para usar brazos o piernas?</string>
+    <string name="modulo_4_p416_sp2">2.Ver, aun usando anteojos?</string>
+    <string name="modulo_4_p416_sp3">3.Hablar o comunicarse, aun usando lenguaje de señas u otro?</string>
+    <string name="modulo_4_p416_sp4">4.Oír, aun usando audífonos?</string>
+    <string name="modulo_4_p416_sp5">5.Entender o aprender (concentrarse y recordar)?</string>
+    <string name="modulo_4_p416_sp6">6.Relacionarse con los demás, por sus pensamientos, sentimientos, emociones o conductas?</string>
+
     <!--Strings asociados al módulo 5: EDUCACIÓN-->
     <string name="modulo_5_nombre">V. EDUCACIÓN (Para personas de 3 años a más de edad)</string>
     <string name="modulo_5_menu">Módulo V: Educación</string>
@@ -172,6 +305,108 @@
     <string name="modulo_5_submenu_2">Preguntas 504 - 507</string>
     <string name="modulo_5_submenu_3">Preguntas 508 - 511</string>
     <string name="modulo_5_submenu_4">Preguntas 512 - 513</string>
+
+    <string name="modulo_5_p501">501.¿CUÁL ES EL ÚLTIMO NIVEL DE ESTUDIOS QUE APROBÓ?</string>
+    <string name="modulo_5_p501_sp1">1.Sin nivel</string>
+    <string name="modulo_5_p501_sp2">2.Preescolar</string>
+    <string name="modulo_5_p501_sp3">3.Educación Básica Incompleta</string>
+    <string name="modulo_5_p501_sp4">4.Educación Básica Completa</string>
+    <string name="modulo_5_p501_sp5">5.Educación Media Diversificada Incompleta</string>
+    <string name="modulo_5_p501_sp6">6.Educación Media Diversificada Completa</string>
+    <string name="modulo_5_p501_sp7">7.Técnico Superior Incompleta</string>
+    <string name="modulo_5_p501_sp8">8.Técnico Superior Completa</string>
+    <string name="modulo_5_p501_sp9">9.Superior Universitaria Incompleta</string>
+    <string name="modulo_5_p501_sp10">10.Superior Universitaria Completa</string>
+    <string name="modulo_5_p501_sp11">11.Maestría/ Doctorado</string>
+
+    <string name="modulo_5_p502">502.¿CUÁL ES LA CARRERA SUPERIOR UNIVERSITARIA O NO UNIVERSITARIA QUE UD. ESTUDIA O HA ESTUDIADO?</string>
+    <string name="modulo_5_p502_especifique">Especifique</string>
+    <string name="modulo_5_p502_sp1">1.NO SABE</string>
+
+
+    <string name="modulo_5_p503">503.EL AÑO PASADO 2017, ¿ESTUVO INSCRITO / MATRICULADO EN ALGÚN CENTRO O PROGRAMA DE EDUCACIÓN BÁSICA O SUPERIOR?</string>
+    <string name="modulo_5_p503_sp1">1.Sí</string>
+    <string name="modulo_5_p503_sp2">2.No</string>
+
+
+    <string name="modulo_5_p504">504.ESTE AÑO, ¿ESTÁ INSCRITO / MATRICULADO EN ALGÚN CENTRO O PROGRAMA DE EDUCACIÓN BÁSICA O SUPERIOR EN PERÚ?:</string>
+    <string name="modulo_5_p504_sp1">1.Sí</string>
+    <string name="modulo_5_p504_sp2">2.No</string>
+
+
+    <string name="modulo_5_p505">505.ACTUALMENTE, ¿ASISTE A ALGÚN CENTRO O PROGRAMA DE EDUCACIÓN BÁSICA O SUPERIOR?</string>
+    <string name="modulo_5_p505_sp1">1.Sí</string>
+    <string name="modulo_5_p505_sp2">2.No</string>
+
+    <string name="modulo_5_p506">506.¿CUÁL ES EL AÑO O GRADO DE ESTUDIOS EN EL QUE ESTÁ INSCRITO / MATRICULADO Y ASISTIENDO?</string>
+    <string name="modulo_5_p506_sp1">1.Educación Inicial</string>
+    <string name="modulo_5_p506_sp2">2.Primaria</string>
+    <string name="modulo_5_p506_sp3">3.Secundaria</string>
+    <string name="modulo_5_p506_sp4">4.Superior no universitaria</string>
+    <string name="modulo_5_p506_sp5">5.Superior universitaria</string>
+    <string name="modulo_5_p506_sp6">6.Maestría/ Doctorado</string>
+    <string name="modulo_5_p506_anio">Año</string>
+    <string name="modulo_5_p506_grado">Grado</string>
+    <string name="modulo_5_p506_cent_est">Centro Estudios</string>
+    <string name="modulo_5_p506_estatal">Estatal</string>
+    <string name="modulo_5_p506_no_estatal">No Estatal</string>
+
+    <string name="modulo_5_p507">507.LA INSTITUCIÓN EDUCATIVA O COLEGIO, INSTITUTO SUPERIOR O UNIVERSIDAD A LA QUE ASISTE ¿ESTÁ UBICADA:</string>
+    <string name="modulo_5_p507_sp1">1.Aquí en este Distrito?</string>
+    <string name="modulo_5_p507_sp2">2.En otro Distrito?</string>
+    <string name="modulo_5_p507_distrito">Distrito</string>
+    <string name="modulo_5_p507_provincia">Provincia</string>
+    <string name="modulo_5_p507_departamento">Departamento</string>
+
+    <string name="modulo_5_p508">508.¿CUÁL ES LA PRINCIPAL RAZÓN POR LA QUE NO ESTÁ INSCRITO / MATRICULADO O NO ASISTE A ALGÚN CENTRO O PROGRAMA DE EDUCACIÓN BÁSICA O SUPERIOR?</string>
+    <string name="modulo_5_p508_sp1">Problemas económicos</string>
+    <string name="modulo_5_p508_sp2">Estoy trabajando</string>
+    <string name="modulo_5_p508_sp3">Problemas familiares</string>
+    <string name="modulo_5_p508_sp4">No tiene documentos</string>
+    <string name="modulo_5_p508_sp5">Desconocimiento del Sistema Educativo (No sabe cómo acceder)</string>
+    <string name="modulo_5_p508_sp6">No me interesa / No me gusta el estudio</string>
+    <string name="modulo_5_p508_sp7">Se dedica a los quehaceres del hogar</string>
+    <string name="modulo_5_p508_sp8">Familiares no lo dejan estudiar</string>
+    <string name="modulo_5_p508_sp9">Está embarazada</string>
+    <string name="modulo_5_p508_sp10">El centro educativo se encuentra muy lejos</string>
+    <string name="modulo_5_p508_sp11">Otra razón</string>
+    <string name="modulo_5_p508_especifique">Especifique</string>
+
+    <string name="modulo_5_p509">509.¿OBTUVO USTED EL TÍTULO QUE ACREDITA SUS ESTUDIOS?</string>
+    <string name="modulo_5_p509_sp1">1.Sí</string>
+    <string name="modulo_5_p509_sp2">2.No</string>
+
+    <string name="modulo_5_p510">510.¿HA HOMOLOGADO SU TÍTULO EN PERÚ?</string>
+    <string name="modulo_5_p510_sp1">1.Sí</string>
+    <string name="modulo_5_p510_sp2">2.No</string>
+
+    <string name="modulo_5_p511">504.¿POR QUÉ NO HA HOMOLOGADO SU TÍTULO?</string>
+    <string name="modulo_5_p511_sp1">1.No conozco el procedimiento</string>
+    <string name="modulo_5_p511_sp2">2.No traje mis diplomas</string>
+    <string name="modulo_5_p511_sp3">3.No tengo dinero</string>
+    <string name="modulo_5_p511_sp4">4.Otra razón</string>
+    <string name="modulo_5_p511_especifique">Especifique</string>
+
+    <string name="modulo_5_p512">505.POR SUS COSTUMBRES Y SUS ANTEPASADOS, ¿UD. SE SIENTE O SE CONSIDERA:</string>
+    <string name="modulo_5_p512_sp1">1.Indígena?</string>
+    <string name="modulo_5_p512_sp2">2.Afrodescendiente?</string>
+    <string name="modulo_5_p512_sp3">3.Blanco(a)?</string>
+    <string name="modulo_5_p512_sp4">4.Mestizo(a)?</string>
+    <string name="modulo_5_p512_sp5">5.Grupo Étnico?</string>
+    <string name="modulo_5_p512_sp6">6.Otro?</string>
+    <string name="modulo_5_p512_sp7">7.NO SABE</string>
+    <string name="modulo_5_p512_especifique">Especifique</string>
+
+    <string name="modulo_5_p513">506.DE ACUERDO A SU ORIENTACIÓN SEXUAL ¿USTED ACTUALMENTE SE CONSIDERA:</string>
+    <string name="modulo_5_p513_sp1">1.Heterosexual?</string>
+    <string name="modulo_5_p513_sp2">2.Gay?</string>
+    <string name="modulo_5_p513_sp3">3.Lesbiana?</string>
+    <string name="modulo_5_p513_sp4">4.Bisexual?</string>
+    <string name="modulo_5_p513_sp5">5.Pansexual?</string>
+    <string name="modulo_5_p513_sp6">6.Asexual?</string>
+    <string name="modulo_5_p513_sp7">7.Otro?</string>
+    <string name="modulo_5_p513_sp8">8.NO SABE</string>
+    <string name="modulo_5_p513_especifique">Especifique</string>
 
     <!--Strings asociados al módulo 6: EMPLEO-->
     <string name="modulo_6_nombre">VI. EMPLEO (Para personas de 5 años a más de edad)</string>
@@ -185,6 +420,7 @@
     <string name="modulo_6_submenu_7">Preguntas 626 - 628</string>
     <string name="modulo_6_submenu_8">Preguntas 629</string>
     <string name="modulo_6_submenu_9">Preguntas 630</string>
+
 
     <!--Strings asociados al módulo 7: DISCRIMINACIÓN -->
     <string name="modulo_7_nombre">VII. DISCRIMINACIÓN (Para personas de 5 años a más edad)</string>
