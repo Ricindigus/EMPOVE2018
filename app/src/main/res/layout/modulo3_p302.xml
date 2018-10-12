@@ -14,6 +14,7 @@
     <AutoCompleteTextView
         android:id="@+id/mod3_p302_txtPais"
         android:layout_width="match_parent"
+        android:inputType="text"
         android:layout_height="wrap_content"/>
     <TextView
         android:layout_width="match_parent"

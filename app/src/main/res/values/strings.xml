@@ -16,6 +16,14 @@
     <string name="nombre_modulo_entrevista_supervision">Entrevistas y Supervisión</string>
     <string name="nombre_modulo_funcionarios_encuesta">Funcionarios de la Encuesta</string>
 
+
+    <!--Strings asociados a la pantalla marco-->
+    <string name="marco_anio">AÑO</string>
+    <string name="marco_mes">MES</string>
+    <string name="marco_periodo">PERIODO</string>
+    <string name="marco_conglomerado">CONGLOMERADO</string>
+
+
     <!--Strings asociados a la Cabecera-->
     <string name="cabecera_persona_n">Persona N°</string>
     <string name="cabecera_nombre">Nombre: </string>
@@ -423,7 +431,7 @@
     <string name="modulo_6_submenu_8">Preguntas 629</string>
     <string name="modulo_6_submenu_9">Preguntas 630</string>
 
-    <string name="modulo_6_p601">601.LA SEMANA PASADA, DEL… AL… ¿TUVO UD. ALGÚN TRABAJO? (sin contar con los quehaceres del hogar)?</string>
+    <string name="modulo_6_p601">601.LA SEMANA PASADA, DEL… AL… ¿TUVO UD. ALGÚN TRABAJO? (sin contar con los quehaceres del hogar)</string>
     <string name="modulo_6_p601_sp1">1.Si</string>
     <string name="modulo_6_p601_sp2">2.No</string>
 
@@ -448,8 +456,8 @@
     <string name="modulo_6_p604_sp10">10.¿Ayudando a un familiar sin remuneración?</string>
     <string name="modulo_6_p604_sp11">11.¿Otra?</string>
     <string name="modulo_6_p604_especifique">Especifique</string>
-    <string name="modulo_6_p604_no">Sí</string>
-    <string name="modulo_6_p604_si">No</string>
+    <string name="modulo_6_p604_si">Sí</string>
+    <string name="modulo_6_p604_no">No</string>
 
     <string name="modulo_6_p605">605.¿CUÁL ES LA OCUPACIÓN PRINCIPAL QUE DESEMPEÑÓ?</string>
     <string name="modulo_6_p605_especifique">Especifique</string>
@@ -471,8 +479,8 @@
     <string name="modulo_6_p608_especifique">Especifique</string>
 
     <string name="modulo_6_p609">609.USTED, ¿HA FIRMADO ALGÚN CONTRATO LABORAL O BRINDA ALGÚN COMPROBANTE POR SERVICIOS?</string>
-    <string name="modulo_6_p609_si">1.Sí</string>
-    <string name="modulo_6_p609_no">2.No</string>
+    <string name="modulo_6_p609_sp1">1.Sí</string>
+    <string name="modulo_6_p609_sp2">2.No</string>
 
     <string name="modulo_6_p610">610.¿LA SEMANA PASADA, DEL...... AL......... ¿CUÁNTAS HORAS TRABAJÓ EN SU OCUPACIÓN PRINCIPAL Y OCUPACIÓN(ES)  SECUNDARIA(S)?</string>
     <string name="modulo_6_p610_sp1">Ocupación Principal</string>

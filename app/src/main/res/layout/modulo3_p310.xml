@@ -41,6 +41,7 @@
             android:layout_width="@dimen/width_input_especifique"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/margen_small"
+            android:inputType="text"
             android:hint="@string/modulo_3_p310_especifique"
             android:background="@drawable/input_text_disabled"/>
     </LinearLayout>

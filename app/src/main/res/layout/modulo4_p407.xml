@@ -89,6 +89,7 @@
             android:background="@drawable/input_text_disabled"
             android:hint="@string/modulo_4_p407_especifique"
             android:paddingLeft="@dimen/margen_small"
+            android:inputType="text"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 </LinearLayout>

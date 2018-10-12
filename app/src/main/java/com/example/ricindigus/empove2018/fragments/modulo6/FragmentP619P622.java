@@ -24,7 +24,7 @@ public class FragmentP619P622 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_p619_p622, container, false);
+        return inflater.inflate(R.layout.fragment_p619_p622, container, false);
     }
 
 }

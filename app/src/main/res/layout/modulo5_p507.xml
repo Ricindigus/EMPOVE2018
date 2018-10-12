@@ -40,6 +40,7 @@
                 android:id="@+id/mod5_507_input_distrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:hint="@string/modulo_5_p507_distrito"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
@@ -49,6 +50,7 @@
                 android:id="@+id/mod5_507_input_provincia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:hint="@string/modulo_5_p507_provincia"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
@@ -58,6 +60,7 @@
                 android:id="@+id/mod5_507_input_departamento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:hint="@string/modulo_5_p507_departamento"/>
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>

@@ -19,4 +19,8 @@
     <dimen name="longitud_input_n">50dp</dimen>
     <dimen name="longitud_radio">200dp</dimen>
     <dimen name="longitud_ubicacion">300dp</dimen>
+    <dimen name="altura_toolbar">60dp</dimen>
+    <dimen name="altura_spinner">30dp</dimen>
+    <dimen name="altura_input_especifique">50dp</dimen>
+    <dimen name="altura_input_multilinea">100dp</dimen>
 </resources>

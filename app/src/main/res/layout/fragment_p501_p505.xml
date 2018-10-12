@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".fragments.modulo4.FragmentP401P404">
+    tools:context=".fragments.modulo5.FragmentP501P505">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,10 +15,11 @@
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
             <include layout="@layout/cabecera"/>
-            <include layout="@layout/modulo4_p401"/>
-            <include layout="@layout/modulo4_p402"/>
-            <include layout="@layout/modulo4_p403"/>
-            <include layout="@layout/modulo4_p404"/>
+            <include layout="@layout/modulo5_p501"/>
+            <include layout="@layout/modulo5_p502"/>
+            <include layout="@layout/modulo5_p503"/>
+            <include layout="@layout/modulo5_p504"/>
+            <include layout="@layout/modulo5_p505"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

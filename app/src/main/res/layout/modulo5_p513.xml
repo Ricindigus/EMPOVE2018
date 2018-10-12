@@ -61,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/margen_small"
                 android:hint="@string/modulo_5_p513_especifique"
+                android:inputType="text"
                 android:background="@drawable/input_text_disabled"/>
         </LinearLayout>
         <RadioButton

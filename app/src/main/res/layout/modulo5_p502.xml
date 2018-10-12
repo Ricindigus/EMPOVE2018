@@ -15,6 +15,7 @@
         android:layout_marginTop="@dimen/margen_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="@string/modulo_5_p502_especifique"/>
     <CheckBox
         android:layout_width="wrap_content"

@@ -75,6 +75,7 @@
             android:id="@+id/mod5_508_especifique"
             android:layout_width="@dimen/width_input_especifique"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:background="@drawable/input_text_disabled"/>
     </LinearLayout>
 </LinearLayout>
