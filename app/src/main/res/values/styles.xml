@@ -23,6 +23,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TemaBoldCenterMedium" parent="AppTheme">
+        <item name="android:textSize">@dimen/texto_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextInput" parent="Theme.AppCompat.Light">
         <item name="android:textColorHint">@color/colorPrimary</item>
         <item name="android:textSize">@dimen/texto_large</item>

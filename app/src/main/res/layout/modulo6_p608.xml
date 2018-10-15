@@ -12,37 +12,37 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p608"/>
     <RadioGroup
-        android:id="@+id/mod5_513_rg"
+        android:id="@+id/mod5_608_rg"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
-            android:id="@+id/mod5_513_rb1"
+            android:id="@+id/mod5_608_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p608_sp1"/>
         <RadioButton
-            android:id="@+id/mod5_513_rb2"
+            android:id="@+id/mod5_608_rb2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p608_sp2"/>
         <RadioButton
-            android:id="@+id/mod5_513_rb3"
+            android:id="@+id/mod5_608_rb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p608_sp3"/>
         <RadioButton
-            android:id="@+id/mod5_513_rb4"
+            android:id="@+id/mod5_608_rb4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p608_sp4"/>
         <RadioButton
-            android:id="@+id/mod5_513_rb5"
+            android:id="@+id/mod5_608_rb5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p608_sp5"/>
         <RadioButton
-            android:id="@+id/mod5_513_rb6"
+            android:id="@+id/mod5_608_rb6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p608_sp6"/>
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <RadioButton
-                android:id="@+id/mod5_513_rb7"
+                android:id="@+id/mod5_608_rb7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"

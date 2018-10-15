@@ -16,19 +16,197 @@
     <string name="nombre_modulo_entrevista_supervision">Entrevistas y Supervisión</string>
     <string name="nombre_modulo_funcionarios_encuesta">Funcionarios de la Encuesta</string>
 
-
-    <!--Strings asociados a la pantalla marco-->
-    <string name="marco_anio">AÑO</string>
+    <!--Strings asociados al marco-->
     <string name="marco_mes">MES</string>
+    <string name="marco_anio">ANIO</string>
     <string name="marco_periodo">PERIODO</string>
     <string name="marco_conglomerado">CONGLOMERADO</string>
-
 
     <!--Strings asociados a la Cabecera-->
     <string name="cabecera_persona_n">Persona N°</string>
     <string name="cabecera_nombre">Nombre: </string>
     <string name="cabecera_informante_n">Informante N°</string>
 
+    <!--Strings asociados al módulo : CARACTERÍSTICAS DE LA VIVIENDA Y DEL HOGAR-->
+    <string name="modulo_1_nombre">I.CARACTERÍSTICAS DE LA VIVIENDA Y DEL HOGAR</string>
+    <string name="modulo_1_menu">Módulo I: CARACTERÍSTICAS DE LA VIVIENDA Y DEL HOGAR</string>
+    <string name="modulo_1_submenu_1">Preguntas 101 - 102</string>
+    <string name="modulo_1_submenu_2">Preguntas 103 - 104</string>
+    <string name="modulo_1_submenu_3">Preguntas 105 - 107</string>
+    <string name="modulo_1_submenu_4">Preguntas 108 - 109</string>
+    <string name="modulo_1_submenu_5">Preguntas 110 - 112</string>
+    <string name="modulo_1_submenu_6">Preguntas 113</string>
+
+    <string name="sub_modulo_1_1">DATOS DE LA VIVIENDA</string>
+    <string name="sub_modulo_1_1_101">POR OBSERVACIÓN</string>
+
+    <string name="modulo_1_p101">101.TIPO DE VIVIENDA:</string>
+    <string name="modulo_1_p101_ind">(Observe la vivienda y seleccione solo un código)</string>
+    <string name="modulo_1_p101_sp1">1.Casa independiente</string>
+    <string name="modulo_1_p101_sp2">2.Departamento en edificio</string>
+    <string name="modulo_1_p101_sp3">3.Vivienda en quinta</string>
+    <string name="modulo_1_p101_sp4">4.Vivienda en casa de vecindad (callejón, solar o corralón)</string>
+    <string name="modulo_1_p101_sp5">5.Choza o cabaña</string>
+    <string name="modulo_1_p101_sp6">6.Vivienda improvisada</string>
+    <string name="modulo_1_p101_sp7">7.Local no destinado para habitación humana</string>
+    <string name="modulo_1_p101_sp8">8.	Otro</string>
+    <string name="modulo_1_p101_especifique">Especifique</string>
+
+    <string name="modulo_1_p102">102.¿EL MATERIAL DE CONSTRUCCIÓN PREDOMINANTE EN LAS PAREDES EXTERIORES ES:</string>
+    <string name="modulo_1_p102_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_1_p102_sp1">1.Ladrillo o bloque de cemento?</string>
+    <string name="modulo_1_p102_sp2">2.Piedra, sillar con cal o cemento?</string>
+    <string name="modulo_1_p102_sp3">3.Adobe?</string>
+    <string name="modulo_1_p102_sp4">4.Tapia?</string>
+    <string name="modulo_1_p102_sp5">5.Quincha (caña con barro)?</string>
+    <string name="modulo_1_p102_sp6">6.Piedra con barro?</string>
+    <string name="modulo_1_p102_sp7">7.Madera (pona, tornillo, etc.)?</string>
+    <string name="modulo_1_p102_sp8">8.Estera/triplay/calamina?</string>
+    <string name="modulo_1_p102_sp9">9.Otro material?</string>
+    <string name="modulo_1_p102_especifique">Especifique</string>
+
+    <string name="modulo_1_p103">103.¿EL MATERIAL DE CONSTRUCCIÓN PREDOMINANTE EN LOS TECHOS ES:</string>
+    <string name="modulo_1_p103_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_1_p103_sp1">1.Concreto armado?</string>
+    <string name="modulo_1_p103_sp2">2.Madera?</string>
+    <string name="modulo_1_p103_sp3">3.Tejas?</string>
+    <string name="modulo_1_p103_sp4">4.Planchas de calamina, fibra de cemento o similares?</string>
+    <string name="modulo_1_p103_sp5">5.Caña o estera con torta de barro o cemento?</string>
+    <string name="modulo_1_p103_sp6">6.Triplay/estera/carrizo?</string>
+    <string name="modulo_1_p103_sp7">7.Paja, hojas de palmera, etc.?</string>
+    <string name="modulo_1_p103_sp8">8.Otro material?</string>
+    <string name="modulo_1_p103_especifique">Especifique</string>
+
+    <string name="modulo_1_p104">104.¿EL MATERIAL DE CONSTRUCCIÓN PREDOMINANTE EN LOS PISOS ES:</string>
+    <string name="modulo_1_p104_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_1_p104_sp1">1.Parquet o madera pulida?</string>
+    <string name="modulo_1_p104_sp2">2.Láminas asfálticas, vinílicos o similares?</string>
+    <string name="modulo_1_p104_sp3">3.Losetas, terrazos o similares?</string>
+    <string name="modulo_1_p104_sp4">4.Madera (pona, tornillo, etc.)?</string>
+    <string name="modulo_1_p104_sp5">5.Cemento?</string>
+    <string name="modulo_1_p104_sp6">6.Tierra?</string>
+    <string name="modulo_1_p104_sp7">7.Otro material?</string>
+    <string name="modulo_1_p104_especifique">Especifique</string>
+
+    <string name="modulo_1_p105">105.¿CUÁNTAS HABITACIONES EN TOTAL TIENE LA VIVIENDA, SIN CONTAR EL BAÑO, LA COCINA, LOS PASADIZOS Y GARAGE?</string>
+    <string name="modulo_1_p105_ind">Anote la respuesta en el recuadro</string>
+
+    <string name="modulo_1_p106">106.¿CUÁNTAS HABITACIONES SE USAN EXCLUSIVAMENTE PARA DORMIR?</string>
+    <string name="modulo_1_p106_ind">Nº de habitaciones exclusivas para dormir:</string>
+
+    <string name="modulo_1_p107">107.¿CUÁNTOS GRUPOS DE PERSONAS, INCLUYENDO EL SUYO; COMPARTEN ESTA VIVIENDA PERO COCINAN SUS ALIMENTOS POR SEPARADO?</string>
+    <string name="modulo_1_p107_ind">Nº de grupos de personas:</string>
+
+    <string name="sub_modulo_1_2">DATOS DEL HOGAR</string>
+
+    <string name="modulo_1_p108">108.¿LA VIVIENDA QUE OCUPA SU HOGAR ES:</string>
+    <string name="modulo_1_p108_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_1_p108_sp1">1.Alquilada?</string>
+    <string name="modulo_1_p108_sp2">2.Hogar temporal?</string>
+    <string name="modulo_1_p108_sp3">3.Cedida por otro hogar?</string>
+    <string name="modulo_1_p108_sp4">4.Vivienda propia?</string>
+    <string name="modulo_1_p108_sp5">5.Albergue?</string>
+    <string name="modulo_1_p108_sp6">6.Otro?</string>
+    <string name="modulo_1_p108_especifique">Especifique</string>
+
+    <string name="modulo_1_p109">109.¿EL TIPO DE ALUMBRADO QUE TIENE EN EL HOGAR ES:</string>
+    <string name="modulo_1_p109_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_1_p109_sp1">1.Electricidad?</string>
+    <string name="modulo_1_p109_sp2">2.Petróleo/gas (lámpara)?</string>
+    <string name="modulo_1_p109_sp3">3.Vela?</string>
+    <string name="modulo_1_p109_sp4">4.Generador?</string>
+    <string name="modulo_1_p109_sp5">5.Otro?</string>
+    <string name="modulo_1_p109_especifique">Especifique</string>
+    <string name="modulo_1_p109_sp6">6.NO UTILIZA</string>
+
+    <string name="modulo_1_p110">110.EL AGUA QUE UTILIZAN EN EL HOGAR ¿PROCEDE PRINCIPALMENTE DE:</string>
+    <string name="modulo_1_p110_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_1_p110_sp1">1.Red pública, dentro de la vivienda?</string>
+    <string name="modulo_1_p110_sp2">2.Red pública, fuera de la vivienda pero dentro del edificio?</string>
+    <string name="modulo_1_p110_sp3">3.Pilón o pileta de uso público?</string>
+    <string name="modulo_1_p110_sp4">4.Camión cisterna u otro similar?</string>
+    <string name="modulo_1_p110_sp5">5.Pozo (agua subterránea)?</string>
+    <string name="modulo_1_p110_sp6">6.Manantial o puquio?</string>
+    <string name="modulo_1_p110_sp7">7.Río, acequia, lago, laguna?</string>
+    <string name="modulo_1_p110_sp8">8.Otro?</string>
+    <string name="modulo_1_p110_especifique">Especifique</string>
+
+    <string name="modulo_1_p111">111.EN SU HOGAR, ¿LA ENERGÍA O COMBUSTIBLE QUE UTILIZAN PARA COCINAR SUS ALIMENTOS ES:</string>
+    <string name="modulo_1_p111_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_1_p111_sp1">1.Electricidad?</string>
+    <string name="modulo_1_p111_sp2">2.Gas (balón GLP)?</string>
+    <string name="modulo_1_p111_sp3">3.Gas natural (Sistema de tuberías)?</string>
+    <string name="modulo_1_p111_sp4">4.Otro?</string>
+    <string name="modulo_1_p111_especifique">Especifique</string>
+    <string name="modulo_1_p111_sp5">5.NO COCINAN</string>
+
+    <string name="modulo_1_p112">112.¿EL BAÑO O SERVICIO HIGIÉNICO QUE TIENE SU HOGAR ESTÁ CONECTADO A:</string>
+    <string name="modulo_1_p112_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_1_p112_sp1">1.Red pública de desagüe dentro de la vivienda?</string>
+    <string name="modulo_1_p112_sp2">2.Red pública de desagüe fuera de la vivienda pero dentro del edificio?</string>
+    <string name="modulo_1_p112_sp3">3.Letrina (con tratamiento)?</string>
+    <string name="modulo_1_p112_sp4">4.Pozo séptico, tanque séptico o biodigestor?</string>
+    <string name="modulo_1_p112_sp5">5.Pozo ciego o negro?</string>
+    <string name="modulo_1_p112_sp6">6.Río, acequia, canal o similar?</string>
+    <string name="modulo_1_p112_sp7">7.Campo abierto o al aire libre? </string>
+    <string name="modulo_1_p112_sp8">8.Otro?</string>
+    <string name="modulo_1_p112_especifique">Especifique</string>
+
+    <string name="modulo_1_p113">113.SU HOGAR TIENE:</string>
+    <string name="modulo_1_p113_ind">(Lea cada una de las alternativas y seleccione solo un código para cada una de ellas)</string>
+    <string name="modulo_1_p113_sp1">1.¿Televisor a color?</string>
+    <string name="modulo_1_p113_sp2">2.¿Cocina a gas?</string>
+    <string name="modulo_1_p113_sp3">3.¿Licuadora?</string>
+    <string name="modulo_1_p113_sp4">4.¿Plancha eléctrica?</string>
+    <string name="modulo_1_p113_sp5">5.¿Computador/Laptop/Tableta? </string>
+    <string name="modulo_1_p113_sp6">6.¿Telefono celular? </string>
+    <string name="modulo_1_p113_sp7">7.¿Otro?</string>
+    <string name="modulo_1_p113_sp8">8.¿Otro?</string>
+    <string name="modulo_1_p113_sp9">9.¿Otro?</string>
+    <string name="modulo_1_p113_especifique">Especifique</string>
+    <string name="modulo_1_p113_si">1.Sí</string>
+    <string name="modulo_1_p113_no">2.No</string>
+
+    <!--Strings asociados al módulo : CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR-->
+    <string name="modulo_2_nombre">II.CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR</string>
+    <string name="modulo_2_menu">Módulo II: CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR</string>
+    <string name="modulo_2_submenu_1">Preguntas 202 - 203</string>
+    <string name="modulo_2_submenu_2">Preguntas 204 - 206</string>
+
+    <string name="modulo_2_p202">202.¿CUÁL ES EL PRIMER NOMBRE DE CADA UNA DE LAS PERSONAS QUE VIVEN PERMANENTEMENTE EN ESTE HOGAR Y DE LAS QUE ESTÁN ALOJADAS AQUÍ?</string>
+    <string name="modulo_2_p202_ind">(No olvide registrar a los miembros del hogar ausentes y recién nacidos)</string>
+
+    <string name="modulo_2_p203">203.¿CUÁL ES LA RELACIÓN DE PARENTESCO CON EL (LA) JEFE/A DEL HOGAR?</string>
+    <string name="modulo_2_p203_sp1">1.Jefe/a del hogar</string>
+    <string name="modulo_2_p203_sp2">2.Esposo/a o compañero/a</string>
+    <string name="modulo_2_p203_sp3">3.Hijo/a o hijastro/a</string>
+    <string name="modulo_2_p203_sp4">4.Yerno/Nuera</string>
+    <string name="modulo_2_p203_sp5">5.Nieto/a</string>
+    <string name="modulo_2_p203_sp6">6.Padres/Suegros</string>
+    <string name="modulo_2_p203_sp7">7.Hermano/a</string>
+    <string name="modulo_2_p203_sp8">8.Otro pariente</string>
+    <string name="modulo_2_p203_sp9">9.Trabajador/a del hogar</string>
+    <string name="modulo_2_p203_sp10">10.Pensionista</string>
+    <string name="modulo_2_p203_sp11">11.Otro No Pariente</string>
+
+    <string name="modulo_2_p204">204.SEXO</string>
+    <string name="modulo_2_p204_sp1">1.H</string>
+    <string name="modulo_2_p204_sp2">2.M</string>
+
+    <string name="modulo_2_p205">205¿QUÉ EDAD TIENE EN AÑOS CUMPLIDOS?</string>
+    <string name="modulo_2_p205_anio">Años</string>
+    <string name="modulo_2_p205_mes">Meses</string>
+    <string name="modulo_2_p205_mes_ind">Sólo para menores de 1 año</string>
+
+    <string name="sub_modulo_2_1">PARA 12 AÑOS Y MÁS DE EDAD</string>
+
+    <string name="modulo_2_p206">206.ACTUALMENTE, ¿CUÁL ES SU ESTADO CIVIL O CONYUGAL?</string>
+    <string name="modulo_2_p206_sp1">1.Conviviente</string>
+    <string name="modulo_2_p206_sp2">2.Casado/a</string>
+    <string name="modulo_2_p206_sp3">3.Viudo/a</string>
+    <string name="modulo_2_p206_sp4">4.Divorciado/a</string>
+    <string name="modulo_2_p206_sp5">5.Separado/a o Ex conviviente</string>
+    <string name="modulo_2_p206_sp6">6.Soltero/a</string>
 
     <!--Strings asociados al módulo 3: SITUACIÓN MIGRATORIA DE LA PERSONA-->
     <string name="modulo_3_nombre">III. SITUACIÓN MIGRATORIA DE LA PERSONA (Todas las personas)</string>
@@ -58,6 +236,7 @@
     <string name="modulo_3_p304_sp2">2.No</string>
 
     <string name="modulo_3_p305">305.¿CUÁL ES EL PUESTO DE CONTROL MIGRATORIO POR DONDE INGRESÓ AL PERÚ?</string>
+    <string name="modulo_3_p305_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_3_p305_sp1">1.Tumbes</string>
     <string name="modulo_3_p305_sp2">2.Tacna</string>
     <string name="modulo_3_p305_sp3">3.Lima</string>
@@ -65,6 +244,7 @@
     <string name="modulo_3_p305_especifique">Especifique</string>
 
     <string name="modulo_3_p306">306.¿QUÉ DOCUMENTO DE SU PAÍS DE ORIGEN, UTILIZÓ PARA INGRESAR A PERÚ?</string>
+    <string name="modulo_3_p306_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_3_p306_sp1">1.Pasaporte vigente</string>
     <string name="modulo_3_p306_sp2">2.Pasaporte vencido</string>
     <string name="modulo_3_p306_sp3">3.Cédula de identidad o DNI</string>
@@ -78,11 +258,12 @@
     <string name="modulo_3_p307_mes">Mes</string>
     <string name="modulo_3_p307_anio">Año</string>
 
-    <string name="modulo_3_p308">308.¿EN QUÉ ESTADO DE VENEZUELA INICIÓ SU VIAJE?</string>
+    <string name="modulo_3_p308">308. ¿EN QUÉ ESTADO DE VENEZUELA INICIÓ SU VIAJE?</string>
     <string name="modulo_3_p308_sp1">Estado</string>
     <string name="modulo_3_p308_sp2">Municipio</string>
 
-    <string name="modulo_3_p309">309.USTED, PODRÍA DESCRIBIR LA RUTA QUE SIGUIÓ PARA LLEGAR AL PERÚ, DESDE SU PUNTO DE PARTIDA:</string>
+    <string name="modulo_3_p309">309.USTED, ¿PODRÍA DESCRIBIR LA RUTA QUE SIGUIÓ PARA LLEGAR AL PERÚ, DESDE SU PUNTO DE PARTIDA?</string>
+    <string name="modulo_3_p309_ind">(Describa la ruta desde el punto de partida en Venezuela)</string>
     <string name="modulo_3_p309_descripcion">(Describa la ruta desde el punto de partida en Venezuela)</string>
     <string name="modulo_3_p309_cab1">País</string>
     <string name="modulo_3_p309_cab2">Ciudad</string>
@@ -95,6 +276,7 @@
 
 
     <string name="modulo_3_p310">310.¿CON QUIÉN O QUIENES VIAJÓ?</string>
+    <string name="modulo_3_p310_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_3_p310_sp1">1.Con un grupo familiar</string>
     <string name="modulo_3_p310_sp2">2.Con un grupo no familiar</string>
     <string name="modulo_3_p310_sp3">3.Solo(a)</string>
@@ -116,12 +298,14 @@
     <string name="modulo_3_p313_sp2">2.No</string>
 
     <string name="modulo_3_p314">314.¿CUÁL ES EL PAÍS A DONDE PIENSA CONTINUAR SU VIAJE?</string>
+    <string name="modulo_3_p314_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_3_p314_sp1">1.Chile</string>
     <string name="modulo_3_p314_sp2">2.Argentina</string>
     <string name="modulo_3_p314_sp3">3.Otro país</string>
     <string name="modulo_3_p314_especifique">Especifique</string>
 
     <string name="modulo_3_p315">315.ACTUALMENTE, ¿CUÁL ES SU SITUACIÓN MIGRATORIA EN EL PERÚ?</string>
+    <string name="modulo_3_p315_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_3_p315_sp1">1.Visa de turista</string>
     <string name="modulo_3_p315_sp2">2.Visa de trabajo</string>
     <string name="modulo_3_p315_sp3">3.Visa de estudiante</string>
@@ -137,6 +321,7 @@
     <string name="modulo_3_p315_especifique">Especifique</string>
 
     <string name="modulo_3_p316">316.EN EL PERÚ, ¿CON QUIÉN ESTÁ VIVIENDO:</string>
+    <string name="modulo_3_p316_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_3_p316_sp1">1.Con su familia</string>
     <string name="modulo_3_p316_sp2">2.Con amigos(as)</string>
     <string name="modulo_3_p316_sp3">3.Con su familia y amigos(as)</string>
@@ -145,6 +330,7 @@
     <string name="modulo_3_p316_especifique">Especifique</string>
 
     <string name="modulo_3_p317">317.LA HABITACIÓN QUE UTILIZA PARA DORMIR, ¿CON CUÁNTAS PERSONAS COMPARTE?</string>
+    <string name="modulo_3_p317_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_3_p317_sp1">1.Duerme solo en la habitación</string>
     <string name="modulo_3_p317_sp2">2.Con 1 persona</string>
     <string name="modulo_3_p317_sp3">3.Con 2 a 3 personas</string>
@@ -156,6 +342,7 @@
     <string name="modulo_3_p318_sp1">1.Sí</string>
     <string name="modulo_3_p318_sp2">1.No</string>
     <string name="modulo_3_p318_cab1">¿A quienes dejó en venezuela?</string>
+    <string name="modulo_3_p318_ind">(Relación de parentesco)</string>
     <string name="modulo_3_p318_cab2">Sexo</string>
     <string name="modulo_3_p318_cab3">Edad</string>
     <string name="modulo_3_p318_cab4">¿Piensa en traer a sus familiares en los próximos 12 meses?</string>
@@ -174,6 +361,7 @@
     <string name="modulo_4_submenu_5">Preguntas 415 - 416</string>
 
     <string name="modulo_4_p401">401.¿EL SISTEMA DE SEGURO DE SALUD AL CUAL UD. ESTÁ AFILIADO ACTUALMENTE, ES:</string>
+    <string name="modulo_4_p401_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_4_p401_sp1">1.ESSALUD?</string>
     <string name="modulo_4_p401_sp2">2.Seguro de Privado de Salud?</string>
     <string name="modulo_4_p401_sp3">3.Seguro Integral de Salud – SIS?</string>
@@ -182,10 +370,12 @@
     <string name="modulo_4_p401_especifique">Especifique</string>
 
     <string name="modulo_4_p402">402.¿PADECE DE ALGUNA ENFERMEDAD O MALESTAR CRÓNICO? (Artritis, hipertensión, asma, reumatismo, diabetes, tuberculosis, VIH, colesterol, etc.)</string>
+    <string name="modulo_4_p402_ind">(Artritis, hipertensión, asma, reumatismo, diabetes, tuberculosis, VIH, colesterol, etc.)</string>
     <string name="modulo_4_p402_sp1">1.Sí</string>
     <string name="modulo_4_p402_sp2">2.No</string>
 
     <string name="modulo_4_p403">403.¿QUÉ ENFERMEDAD O MALESTAR CRÓNICO PADECE?</string>
+    <string name="modulo_4_p403_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_4_p403_sp1">1.Artritis</string>
     <string name="modulo_4_p403_sp2">2.Hipertensión</string>
     <string name="modulo_4_p403_sp3">3.Asma</string>
@@ -203,11 +393,13 @@
     <string name="modulo_4_p403_especifique">Especifique</string>
 
     <string name="modulo_4_p404">404.¿RECIBE USTED TRATAMIENTO EN EL PERÚ PARA SU ENFERMEDAD O MALESTAR CRÓNICO QUE PADECE?</string>
+    <string name="modulo_4_p404_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_4_p404_sp1">1.Sí, con la frecuencia necesaria</string>
     <string name="modulo_4_p404_sp2">2.Sí, pero no con la frecuencia necesaria</string>
     <string name="modulo_4_p404_sp3">3.No recibe tratamiento</string>
 
     <string name="modulo_4_p405">405.DESDE SU LLEGADA AL PERÚ ¿PRESENTÓ USTED ALGÚN(A):</string>
+    <string name="modulo_4_p405_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_4_p405_sp1">1.Síntoma o malestar (tos, dolor de cabeza, fiebre, nauseas)?</string>
     <string name="modulo_4_p405_sp2">2.Enfermedad (gripe, colitis, etc.)?</string>
     <string name="modulo_4_p405_sp3">3.Recaída de enfermedad crónica?</string>
@@ -217,6 +409,7 @@
     <string name="modulo_4_p405_sp7">7.No tuvo enfermedad, síntoma, recaída, accidente</string>
 
     <string name="modulo_4_p406">406.¿A DÓNDE ACUDIÓ PARA CONSULTAR POR ESTA ENFERMEDAD, SÍNTOMA O MALESTAR Y/O ACCIDENTE?</string>
+    <string name="modulo_4_p406_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_4_p406_sp1">1.Centro de Salud MINSA</string>
     <string name="modulo_4_p406_sp2">2.Centro de atención ESSALUD</string>
     <string name="modulo_4_p406_sp3">3.Consultorio particular</string>
@@ -228,6 +421,7 @@
     <string name="modulo_4_p406_especifique">Especifique</string>
 
     <string name="modulo_4_p407">407.¿CUÁLES SON LAS RAZONES POR LAS QUE NO ACUDIÓ A UN CENTRO O ESTABLECIMIENTO DE SALUD?</string>
+    <string name="modulo_4_p407_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_4_p407_sp1">1.No tuvo dinero</string>
     <string name="modulo_4_p407_sp2">2.Se encuentra lejos</string>
     <string name="modulo_4_p407_sp3">3.Demora mucho en atender</string>
@@ -243,7 +437,10 @@
     <string name="modulo_4_p407_sp13">13.Otro</string>
     <string name="modulo_4_p407_especifique">Especifique</string>
 
+    <string name="sub_modulo_4_1">Para personas de 0 a 17 años de edad</string>
+
     <string name="modulo_4_p408">408.EN EL ÚLTIMO MES, ¿HA MOSTRADO CAMBIOS FUERTES EN SU HUMOR O ACTITUDES, TALES COMO:</string>
+    <string name="modulo_4_p408_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_4_p408_sp1">1.Alejamiento de la familia y amigos?</string>
     <string name="modulo_4_p408_sp2">2.Estallidos agresivos o de enojo?</string>
     <string name="modulo_4_p408_sp3">3.Cambios de apetito o de hábitos alimenticios?</string>
@@ -265,6 +462,7 @@
     <string name="modulo_4_p409_sp2">2.No</string>
 
     <string name="modulo_4_p410">410.¿ESTAS SITUACIONES DE MAL COMPORTAMIENTO DE SUS HIJOS, SON:</string>
+    <string name="modulo_4_p410_ind">(Lea cada una de las alternativas y seleccione un código)</string>
     <string name="modulo_4_p410_sp1">1.Más frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_4_p410_sp2">2.Menos frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_4_p410_sp3">3.Igual de frecuentes que cuando vivía en Venezuela?</string>
@@ -287,7 +485,10 @@
     <string name="modulo_4_p414_sp1">1.Sí</string>
     <string name="modulo_4_p414_sp2">2.No</string>
 
+    <string name="sub_modulo_4_2">Para personas de 15 y más años de edad</string>
+
     <string name="modulo_4_p415">415.AHORA ME GUSTARÍA CONVERSAR CON USTED SOBRE SALUD SEXUAL Y REPRODUCTIVA, ES DECIR ACERCA DE LAS DIFERENTES FORMAS O MÉTODOS QUE UNA PAREJA PUEDE USAR PARA EVITAR UN EMBARAZO ¿HA TENIDO USTED ACCESO A LOS SERVICIOS DE:</string>
+    <string name="modulo_4_p415_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_4_p415_sp1">1.Método tradicional (ritmo, coito interrumpido, temperatura corporal, moco cervical, lactancia materna)?</string>
     <string name="modulo_4_p415_sp2">2.Método moderno (Hormonal, barrera, dispositivos, definitivo)?</string>
     <string name="modulo_4_p415_sp3">3.Método de emergencia (Píldoras del día siguiente, entre otros)?</string>
@@ -298,7 +499,11 @@
     <string name="modulo_4_p415_sp8">8.NO TIENE CONOCIMIENTO</string>
     <string name="modulo_4_p415_especifique">Especifique</string>
 
+    <string name="sub_modulo_4_3">DISCAPACIDAD</string>
+    <string name="sub_modulo_4_3_ind">A continuación, le haré algunas preguntas para saber si Ud. presenta alguna limitación o dificultad PERMANENTE, que le impida o dificulte desarrollarse normalmente en sus actividades diarias.</string>
+
     <string name="modulo_4_p416">416.¿TIENE UD. LIMITACIONES DE FORMA PERMANENTE, PARA:</string>
+    <string name="modulo_4_p416_ind">(Lea cada alternativa y seleccione un código para cada una de ellas)</string>
     <string name="modulo_4_p416_si">Sí</string>
     <string name="modulo_4_p416_no">No</string>
     <string name="modulo_4_p416_sp1">1.Moverse o caminar, para usar brazos o piernas?</string>
@@ -317,6 +522,7 @@
     <string name="modulo_5_submenu_4">Preguntas 512 - 513</string>
 
     <string name="modulo_5_p501">501.¿CUÁL ES EL ÚLTIMO NIVEL DE ESTUDIOS QUE APROBÓ?</string>
+    <string name="modulo_5_p501_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_5_p501_sp1">1.Sin nivel</string>
     <string name="modulo_5_p501_sp2">2.Preescolar</string>
     <string name="modulo_5_p501_sp3">3.Educación Básica Incompleta</string>
@@ -349,6 +555,7 @@
     <string name="modulo_5_p505_sp2">2.No</string>
 
     <string name="modulo_5_p506">506.¿CUÁL ES EL AÑO O GRADO DE ESTUDIOS EN EL QUE ESTÁ INSCRITO / MATRICULADO Y ASISTIENDO?</string>
+    <string name="modulo_5_p506_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_5_p506_sp1">1.Educación Inicial</string>
     <string name="modulo_5_p506_sp2">2.Primaria</string>
     <string name="modulo_5_p506_sp3">3.Secundaria</string>
@@ -368,7 +575,10 @@
     <string name="modulo_5_p507_provincia">Provincia</string>
     <string name="modulo_5_p507_departamento">Departamento</string>
 
+    <string name="sub_modulo_5_1">Para PERSONAS DE 03 A 25 AÑOS DE EDAD que actualmente no asisten a un centro de educación básica o superior</string>
+
     <string name="modulo_5_p508">508.¿CUÁL ES LA PRINCIPAL RAZÓN POR LA QUE NO ESTÁ INSCRITO / MATRICULADO O NO ASISTE A ALGÚN CENTRO O PROGRAMA DE EDUCACIÓN BÁSICA O SUPERIOR?</string>
+    <string name="modulo_5_p508_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_5_p508_sp1">1.Problemas económicos</string>
     <string name="modulo_5_p508_sp2">2.Estoy trabajando</string>
     <string name="modulo_5_p508_sp3">3.Problemas familiares</string>
@@ -382,6 +592,8 @@
     <string name="modulo_5_p508_sp11">11.Otra razón</string>
     <string name="modulo_5_p508_especifique">Especifique</string>
 
+    <string name="sub_modulo_5_2">Para personas que respondieron Códigos 10 y 11 en la pregunta 501.</string>
+
     <string name="modulo_5_p509">509.¿OBTUVO USTED EL TÍTULO QUE ACREDITA SUS ESTUDIOS?</string>
     <string name="modulo_5_p509_sp1">1.Sí</string>
     <string name="modulo_5_p509_sp2">2.No</string>
@@ -391,13 +603,17 @@
     <string name="modulo_5_p510_sp2">2.No</string>
 
     <string name="modulo_5_p511">511.¿POR QUÉ NO HA HOMOLOGADO SU TÍTULO?</string>
+    <string name="modulo_5_p511_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_5_p511_sp1">1.No conozco el procedimiento</string>
     <string name="modulo_5_p511_sp2">2.No traje mis diplomas</string>
     <string name="modulo_5_p511_sp3">3.No tengo dinero</string>
     <string name="modulo_5_p511_sp4">4.Otra razón</string>
     <string name="modulo_5_p511_especifique">Especifique</string>
 
+    <string name="sub_modulo_5_3">ETNICIDAD (14 y más años de edad)</string>
+
     <string name="modulo_5_p512">512.POR SUS COSTUMBRES Y SUS ANTEPASADOS, ¿UD. SE SIENTE O SE CONSIDERA:</string>
+    <string name="modulo_5_p512_ind">(Entregue la tarjeta, espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_5_p512_sp1">1.Indígena?</string>
     <string name="modulo_5_p512_sp2">2.Afrodescendiente?</string>
     <string name="modulo_5_p512_sp3">3.Blanco(a)?</string>
@@ -407,7 +623,10 @@
     <string name="modulo_5_p512_sp7">7.NO SABE</string>
     <string name="modulo_5_p512_especifique">Especifique</string>
 
+    <string name="sub_modulo_5_4">LGTBI (14 y más años de edad)</string>
+
     <string name="modulo_5_p513">513.DE ACUERDO A SU ORIENTACIÓN SEXUAL ¿USTED ACTUALMENTE SE CONSIDERA:</string>
+    <string name="modulo_5_p513_ind">(Entregue la tarjeta, espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_5_p513_sp1">1.Heterosexual?</string>
     <string name="modulo_5_p513_sp2">2.Gay?</string>
     <string name="modulo_5_p513_sp3">3.Lesbiana?</string>
@@ -431,7 +650,7 @@
     <string name="modulo_6_submenu_8">Preguntas 629</string>
     <string name="modulo_6_submenu_9">Preguntas 630</string>
 
-    <string name="modulo_6_p601">601.LA SEMANA PASADA, DEL… AL… ¿TUVO UD. ALGÚN TRABAJO? (sin contar con los quehaceres del hogar)</string>
+    <string name="modulo_6_p601">601.LA SEMANA PASADA, DEL… AL… ¿TUVO UD. ALGÚN TRABAJO? (sin contar con los quehaceres del hogar)?</string>
     <string name="modulo_6_p601_sp1">1.Si</string>
     <string name="modulo_6_p601_sp2">2.No</string>
 
@@ -444,6 +663,7 @@
     <string name="modulo_6_p603_sp2">2.No</string>
 
     <string name="modulo_6_p604">604.LA SEMANA PASADA REALIZÓ ALGUNA ACTIVIDAD AL MENOS UNA HORA PARA OBTENER INGRESOS EN DINERO O EN ESPECIE, COMO:</string>
+    <string name="modulo_6_p604_ind">(Lea cada alternativa y seleccione un código para cada una de ellas)</string>
     <string name="modulo_6_p604_sp1">1.¿Trabajando en un negocio propio o de un familiar?</string>
     <string name="modulo_6_p604_sp2">2.¿Ofreciendo algún servicio personal?</string>
     <string name="modulo_6_p604_sp3">3.¿Haciendo algo en casa para vender?</string>
@@ -456,8 +676,8 @@
     <string name="modulo_6_p604_sp10">10.¿Ayudando a un familiar sin remuneración?</string>
     <string name="modulo_6_p604_sp11">11.¿Otra?</string>
     <string name="modulo_6_p604_especifique">Especifique</string>
-    <string name="modulo_6_p604_si">Sí</string>
-    <string name="modulo_6_p604_no">No</string>
+    <string name="modulo_6_p604_no">Sí</string>
+    <string name="modulo_6_p604_si">No</string>
 
     <string name="modulo_6_p605">605.¿CUÁL ES LA OCUPACIÓN PRINCIPAL QUE DESEMPEÑÓ?</string>
     <string name="modulo_6_p605_especifique">Especifique</string>
@@ -469,6 +689,7 @@
     <string name="modulo_6_p607_especifique">Especifique</string>
 
     <string name="modulo_6_p608">608.UD. SE DESEMPEÑÓ EN SU OCUPACIÓN PRINCIPAL O NEGOCIO COMO:</string>
+    <string name="modulo_6_p608_ind">(Lea cada alternativa y seleccione solo un código)</string>
     <string name="modulo_6_p608_sp1">1.¿Empleador o patrono?</string>
     <string name="modulo_6_p608_sp2">2.¿Trabajador independiente?</string>
     <string name="modulo_6_p608_sp3">3.¿Empleado?</string>
@@ -492,112 +713,273 @@
     <string name="modulo_6_p610_jue">Jue</string>
     <string name="modulo_6_p610_vie">Vie</string>
     <string name="modulo_6_p610_sab">Sab</string>
-    <string name="modulo_6_p610_total">Total</string>
+    <string name="modulo_6_p610_total">TOTAL</string>
+
+    <string name="modulo_6_p611">611.NORMALMENTE, ¿CUÁNTAS HORAS TRABAJA A LA SEMANA EN TODAS SUS OCUPACIONES?</string>
+    <string name="modulo_6_p611_sp1">Nº DE HORAS</string>
+
+    <string name="modulo_6_p612">612.EN SU OCUPACIÓN PRINCIPAL, NEGOCIO O EMPRESA INCLUYENDOSE USTED, LABORARON:</string>
+    <string name="modulo_6_p612_sp1">1.¿Menos de 100 personas? </string>
+    <string name="modulo_6_p612_sp2">2.¿De 100 personas a más? </string>
+    <string name="modulo_6_p612_npersonas">N° de personas</string>
+
+    <string name="sub_modulo_6_1">Las preguntas 613 y 614, es solo para empleado, obrero o trabajador del hogar</string>
+
+    <string name="modulo_6_p613">613.EN SU OCUPACIÓN PRINCIPAL, ¿LA FRECUENCIA CON QUE A UD. LE PAGAN ES:</string>
+    <string name="modulo_6_p613_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p613_sp1">1.Diario?</string>
+    <string name="modulo_6_p613_sp2">2.Semanal?</string>
+    <string name="modulo_6_p613_sp3">3.Quincenal?</string>
+    <string name="modulo_6_p613_sp4">4.Mensual?</string>
+
+    <string name="modulo_6_p614">614.¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN EL (LA)……… ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?</string>
+    <string name="modulo_6_p614_dinero">En Dinero</string>
+    <string name="modulo_6_p614_especie">En Especie</string>
+    <string name="modulo_6_p614_entero">(En enteros)</string>
+
+    <string name="sub_modulo_6_2">Solo para Empleador o Patrono/Trabajador independiente</string>
+
+    <string name="modulo_6_p615">615.EN SU OCUPACION PRINCIPAL, ¿CUÁL FUE SU GANANCIA NETA EN EL MES ANTERIOR?</string>
+    <string name="modulo_6_p615_dinero">En Dinero</string>
+    <string name="modulo_6_p615_especie">En Especie</string>
+    <string name="modulo_6_p615_entero">(En enteros)</string>
+
+    <string name="modulo_6_p616">616.EN SU/S OCUPACIÓN/ES SECUNDARIA/S, ¿CUÁL FUE SU INGRESO EN EL MES ANTERIOR?</string>
+    <string name="modulo_6_p616_dinero">En Dinero</string>
+    <string name="modulo_6_p616_especie">En Especie</string>
+    <string name="modulo_6_p616_entero">(En enteros)</string>
+
+    <string name="modulo_6_p617">617.EL CENTRO DE TRABAJO DONDE DESEMPEÑA SU OCUPACIÓN PRINCIPAL, ¿ESTÁ UBICADO:</string>
+    <string name="modulo_6_p617_sp1">1.Aquí, en este distrito</string>
+    <string name="modulo_6_p617_sp2">2.En otro distrito</string>
+    <string name="modulo_6_p617_dist">Distrito</string>
+    <string name="modulo_6_p617_prov">Provincia:</string>
+    <string name="modulo_6_p617_dep">Departamento:</string>
+
+    <string name="sub_modulo_6_3">Verifique el MÓDULO II, si se registró a personas menores de 18 años de edad.</string>
+
+    <string name="modulo_6_p618">618.¿CON QUIÉN DEJA A LOS/AS MENORES DE EDAD DEL HOGAR, CUANDO ESTÁ TRABAJANDO?</string>
+    <string name="modulo_6_p618_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p618_sp1">1.Con familiares y parientes</string>
+    <string name="modulo_6_p618_sp2">2.En la cuna/colegio</string>
+    <string name="modulo_6_p618_sp3">3.Con amigos/as</string>
+    <string name="modulo_6_p618_sp4">4.Con vecinos/as</string>
+    <string name="modulo_6_p618_sp5">5.Se lo lleva al trabajo</string>
+    <string name="modulo_6_p618_sp6">6.Otro</string>
+    <string name="modulo_6_p618_especifique">Especifique</string>
+
+    <string name="sub_modulo_6_4">DESOCUPADOS</string>
+
+    <string name="modulo_6_p619">619.LA SEMANA PASADA, ¿HIZO ALGO PARA CONSEGUIR TRABAJO?</string>
+    <string name="modulo_6_p619_sp1">1.Sí</string>
+    <string name="modulo_6_p619_sp2">2.No</string>
+
+    <string name="modulo_6_p620">620.¿QUÉ ESTUVO HACIENDO LA SEMANA PASADA:</string>
+    <string name="modulo_6_p620_ind">(Lea la pregunta y seleccione un código de respuesta)</string>
+    <string name="modulo_6_p620_sp1">1.Hizo trámites, busco local, gestionó préstamos para establecer su propio negocio?</string>
+    <string name="modulo_6_p620_sp2">2.Reparando sus activos (local, máquina, equipo)?</string>
+    <string name="modulo_6_p620_sp3">3.Esperando el inicio de un trabajo dependiente, (obrero, empleado o trabajador del hogar)?</string>
+    <string name="modulo_6_p620_sp4">4.Estudiando? (Solo enseñanza regular)</string>
+    <string name="modulo_6_p620_sp5">5.Quehaceres del hogar?</string>
+    <string name="modulo_6_p620_sp6">6.Cuidado de hijos menores, adultos mayores o personas menores?</string>
+    <string name="modulo_6_p620_sp7">7.Vivía de su pensión o jubilación u otras rentas?</string>
+    <string name="modulo_6_p620_sp8">8.Enfermo o incapacitado?</string>
+    <string name="modulo_6_p620_sp9">9.Otro?</string>
+    <string name="modulo_6_p620_especifique">Especifique</string>
+
+    <string name="modulo_6_p621">621.LA SEMANA PASADA, ¿QUERÍA USTED TRABAJAR? </string>
+    <string name="modulo_6_p621_si">1.Sí</string>
+    <string name="modulo_6_p621_no">2.No</string>
+
+    <string name="modulo_6_p622">622.¿HUBIERA PODIDO TRABAJAR EN CUALQUIER MOMENTO? </string>
+    <string name="modulo_6_p622_si">1.Sí</string>
+    <string name="modulo_6_p622_no">2.No</string>
+
+    <string name="modulo_6_p623">623.¿POR QUÉ NO BUSCÓ TRABAJO?</string>
+    <string name="modulo_6_p623_ind">(Espere la respuesta y seleccione solo un código)</string>
+    <string name="modulo_6_p623_sp1">1.No hay trabajo</string>
+    <string name="modulo_6_p623_sp2">2.Se cansó de esperar</string>
+    <string name="modulo_6_p623_sp3">3.Por su edad</string>
+    <string name="modulo_6_p623_sp4">4.Falta de experiencia</string>
+    <string name="modulo_6_p623_sp5">5.Los quehaceres del hogar no le permiten</string>
+    <string name="modulo_6_p623_sp6">6.Cuidando a niños, personas enfermas y/o adulto mayor</string>
+    <string name="modulo_6_p623_sp7">7.Razones de salud</string>
+    <string name="modulo_6_p623_sp8">8.Familiares no permiten trabajar fuera de casa</string>
+    <string name="modulo_6_p623_sp9">9.Falta de capital</string>
+    <string name="modulo_6_p623_sp10">10.Otro</string>
+    <string name="modulo_6_p623_especifique">Especifique</string>
+    <string name="modulo_6_p623_sp11">11.YA ENCONTRÓ TRABAJO</string>
+    <string name="modulo_6_p623_sp12">12.SI BUSCÓ TRABAJO</string>
+
+    <string name="modulo_6_p624">624.¿QUÉ HIZO LA SEMANA PASADA PARA CONSEGUIR TRABAJO?</string>
+    <string name="modulo_6_p624_ind">(Espere la respuesta y seleccione solo un código)</string>
+    <string name="modulo_6_p624_sp1">1.Empleador/patrono</string>
+    <string name="modulo_6_p624_sp2">2.Agencia de empleo/Bolsa de trabajo</string>
+    <string name="modulo_6_p624_sp3">3.Solo amigos y parientes</string>
+    <string name="modulo_6_p624_sp4">4.Solo leyó avisos</string>
+    <string name="modulo_6_p624_sp5">5.Búsqueda a través de INTERNET</string>
+    <string name="modulo_6_p624_sp6">6.Otro</string>
+    <string name="modulo_6_p624_especifique">Especifique</string>
+    <string name="modulo_6_p624_sp7">7.NO HIZO NADA PARA CONSEGUIR TRABAJO</string>
 
 
-    <string name="modulo_6_p611"></string>
-    <string name="modulo_6_p611_sp1"></string>
+    <string name="modulo_6_p625">625¿CUÁNTAS SEMANAS HA ESTADO BUSCANDO TRABAJO, SIN INTERRUPCIONES?</string>
+    <string name="modulo_6_p625_semana">¿N° de semanas?</string>
 
-    <string name="modulo_6_p612"></string>
-    <string name="modulo_6_p612_sp1"></string>
+    <string name="sub_modulo_6_5">TRABAJO EN PERÚ</string>
 
-    <string name="modulo_6_p613"></string>
-    <string name="modulo_6_p613_sp1"></string>
+    <string name="modulo_6_p626">626.USTED, ¿HA TRABAJADO O HA DESEMPEÑADO ALGUNA ACTIVIDAD SIN RECIBIR EL PAGO ACORDADO?</string>
+    <string name="modulo_6_p626_ind">(Espere la respuesta y seleccione solo un código)</string>
+    <string name="modulo_6_p626_sp1">1.Sí, recibió menos de lo establecido</string>
+    <string name="modulo_6_p626_sp2">2.Sí, no recibió pago alguno</string>
+    <string name="modulo_6_p626_sp3">3.No</string>
+    <string name="modulo_6_p626_sp4">4.No sabe</string>
+    <string name="modulo_6_p626_sp5">5.Prefiere no responder</string>
 
-    <string name="modulo_6_p614"></string>
-    <string name="modulo_6_p614_sp1"></string>
+    <string name="sub_modulo_6_7">TRABAJO ANTERIOR</string>
+    <string name="sub_modulo_6_7_ind">(Para todas las personas de 5 años y más de edad)</string>
 
+    <string name="modulo_6_p627">627.EN VENEZUELA, ¿TENÍA USTED TRABAJO ANTES DE INICIAR SU VIAJE? </string>
+    <string name="modulo_6_p627_si">1.Sí</string>
+    <string name="modulo_6_p627_no">2.No</string>
 
+    <string name="modulo_6_p628">628.¿CUÁL ES LA OCUPACIÓN PRINCIPAL QUE DESEMPEÑÓ?</string>
+    <string name="modulo_6_p628_especifique">Especifique</string>
 
+    <string name="sub_modulo_6_8">INGRESOS NO LABORALES </string>
+    <string name="sub_modulo_6_8_ind">(Personas de 14 años y más de edad)</string>
 
+    <string name="modulo_6_p629">629.EN LOS ÚLTIMOS 6 MESES DE …… A …… ¿RECIBIÓ INGRESOS POR CONCEPTO DE:</string>
+    <string name="modulo_6_p629_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p629_sp1">a.Pensión de divorcio, alimentos y/o jubilación</string>
+    <string name="modulo_6_p629_sp2">b.Arrendamiento de casas, maquinarias, vehículos?</string>
+    <string name="modulo_6_p629_sp3">c.Ingresos financieros?</string>
+    <string name="modulo_6_p629_sp4">d.Otros ingresos?</string>
+    <string name="modulo_6_p629_especifique">Especifique</string>
+    <string name="modulo_6_p629_si">1.Sí</string>
+    <string name="modulo_6_p629_no">2.No</string>
+    <string name="modulo_6_p629_frecuencia">Frecuencia</string>
+    <string name="modulo_6_p629_frec1">1.Mensual</string>
+    <string name="modulo_6_p629_frec2">2.Bimestral </string>
+    <string name="modulo_6_p629_frec3">3.Semestral</string>
+    <string name="modulo_6_p629_frec4">4.Anual</string>
+    <string name="modulo_6_p629_monto">Monto S/.</string>
 
-    Dom	Lun	Mar	Mier	Jue 	Vie	Sab
+    <string name="sub_modulo_6_9">ENVÍO DE REMESAS</string>
+    <string name="sub_modulo_6_9_ind">(Personas de 14 años y más de edad)</string>
 
-
-
-    Dom	Lun	Mar	Mier	Jue 	Vie	Sab
-
-    611.  NORMALMENTE, ¿CUÁNTAS HORAS TRABAJA A LA SEMANA EN TODAS SUS OCUPACIONES?
-
-    Nº de horas
-
-    612.	EN SU OCUPACIÓN PRINCIPAL, NEGOCIO O EMPRESA INCLUYENDOSE USTED, LABORARON:
-    ¿Menos de 100 personas? 	1
-    ¿De 100 personas a más? 	2
-
-
-    Las preguntas 613 y 614, es solo para empleado, obrero o trabajador del hogar
-    613.	EN SU OCUPACIÓN PRINCIPAL, ¿LA FRECUENCIA CON QUE A UD. LE PAGAN ES:
-    (Lea cada alternativa y encierre en un círculo solo una alternativa)
-    Diario? 	1
-    Semanal?	2
-    Quincenal?	3
-    Mensual?	4
-
-
-
-    614.	¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN EL (LA)…………………… ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?
-
-    En Dinero		En Especie
-    S/.		S/.
-    (En enteros)		(En enteros)
-
-
-
-
-    <string name="modulo_6_p615"></string>
-    <string name="modulo_6_p615_sp1"></string>
-
-    <string name="modulo_6_p616"></string>
-    <string name="modulo_6_p616_sp1"></string>
-
-    <string name="modulo_6_p617"></string>
-    <string name="modulo_6_p617_sp1"></string>
-
-    <string name="modulo_6_p618"></string>
-    <string name="modulo_6_p618_sp1"></string>
-
-    <string name="modulo_6_p619"></string>
-    <string name="modulo_6_p619_sp1"></string>
-
-    <string name="modulo_6_p620"></string>
-    <string name="modulo_6_p620_sp1"></string>
-
-    <string name="modulo_6_p621"></string>
-    <string name="modulo_6_p621_sp1"></string>
-
-    <string name="modulo_6_p622"></string>
-    <string name="modulo_6_p622_sp1"></string>
-
-    <string name="modulo_6_p623"></string>
-    <string name="modulo_6_p623_sp1"></string>
-
-    <string name="modulo_6_p624"></string>
-    <string name="modulo_6_p624_sp1"></string>
-
-    <string name="modulo_6_p625"></string>
-    <string name="modulo_6_p625_sp1"></string>
-
-    <string name="modulo_6_p626"></string>
-    <string name="modulo_6_p626_sp1"></string>
-
-    <string name="modulo_6_p627"></string>
-    <string name="modulo_6_p627_sp1"></string>
-
-    <string name="modulo_6_p628"></string>
-    <string name="modulo_6_p628_sp1"></string>
-
-    <string name="modulo_6_p629"></string>
-    <string name="modulo_6_p629_sp1"></string>
-
-    <string name="modulo_6_p630"></string>
-    <string name="modulo_6_p630_sp1"></string>
+    <string name="modulo_6_p630">630.EN LOS ÚLTIMOS TRES MESES, ¿USTED HA ENVIADO REMESAS/DINERO A:</string>
+    <string name="modulo_6_p630_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p630_sp1">a.Venezuela?</string>
+    <string name="modulo_6_p630_sp2">b.Otro país?</string>
+    <string name="modulo_6_p630_si">1.Sí</string>
+    <string name="modulo_6_p630_no">2.No</string>
+    <string name="modulo_6_p630_medios">Medios de envío</string>
+    <string name="modulo_6_p630_med1">Transferencias bancarias y/o agencia de envío</string>
+    <string name="modulo_6_p630_med2">Personas independientes</string>
+    <string name="modulo_6_p630_med3">Otro</string>
+    <string name="modulo_6_p630_especifique">Especifique</string>
+    <string name="modulo_6_p630_frecuencia">Frecuencia</string>
+    <string name="modulo_6_p630_frec1">1.Diario</string>
+    <string name="modulo_6_p630_frec2">2.Semanal </string>
+    <string name="modulo_6_p630_frec3">3.Quincenal</string>
+    <string name="modulo_6_p630_frec4">4.Mensual</string>
+    <string name="modulo_6_p630_frec5">5.Bimestral</string>
+    <string name="modulo_6_p630_frec6">6.Otro</string>
+    <string name="modulo_6_p630_monto">Monto S/.</string>
+    <string name="modulo_6_p630_mont1">1.¿S/.0.00 - 100.00 soles?</string>
+    <string name="modulo_6_p630_mont2">2.¿S/.101.00 - 200.00 soles? </string>
+    <string name="modulo_6_p630_mont3">3.¿S/.201.00 - más soles?</string>
 
     <!--Strings asociados al módulo 7: DISCRIMINACIÓN -->
     <string name="modulo_7_nombre">VII. DISCRIMINACIÓN (Para personas de 5 años a más edad)</string>
     <string name="modulo_7_menu">Módulo VII: Discriminación</string>
     <string name="modulo_7_submenu_1">Preguntas 701 - 705</string>
     <string name="modulo_7_submenu_2">Preguntas 706 - 709</string>
+
+    <string name="modulo_7_p701">701.¿USTED, SE HA SENTIDO DISCRIMINADO POR SER PERSONA VENEZOLANA DESDE QUE LLEGÓ AL PERÚ?</string>
+    <string name="modulo_7_p701_si">1.Sí</string>
+    <string name="modulo_7_p701_no">2.No</string>
+
+    <string name="modulo_7_p702">702.USTED, ¿EN QUÉ LUGARES SE HA SENTIDO DISCRIMINADO?</string>
+    <string name="modulo_7_p702_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_7_p702_sp1">1.En su centro de trabajo</string>
+    <string name="modulo_7_p702_sp2">2.En la Institución Educativa</string>
+    <string name="modulo_7_p702_sp3">3.En el establecimiento de salud</string>
+    <string name="modulo_7_p702_sp4">4.En las Instituciones de Justicia</string>
+    <string name="modulo_7_p702_sp5">5.En la calle/lugares públicos</string>
+    <string name="modulo_7_p702_sp6">6.En el transporte público (bus, colectivo, Metro de Lima, Corredor azul, Metropolitano, entre otros)</string>
+    <string name="modulo_7_p702_sp7">7.En las oficinas de Migración</string>
+    <string name="modulo_7_p702_sp8">8.En las oficinas de la Cancillería</string>
+    <string name="modulo_7_p702_sp9">9.En tu comunidad/barrio</string>
+    <string name="modulo_7_p702_sp10">10.Otro lugar</string>
+    <string name="modulo_7_p702_especifique">Especifique</string>
+
+    <string name="modulo_7_p703">703.DESDE QUE LLEGÓ AL PERÚ, ¿HA RECIBIDO USTED ALGÚN TIPO DE AYUDA INSTITUCIONAL?</string>
+    <string name="modulo_7_p703_si">1.Sí</string>
+    <string name="modulo_7_p703_no">2.No</string>
+
+    <string name="modulo_7_p704">704.¿QUÉ TIPO DE AYUDA HA RECIBIDO?</string>
+    <string name="modulo_7_p704_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_7_p704_sp1">1.Alimentos</string>
+    <string name="modulo_7_p704_sp2">2.Alojamiento</string>
+    <string name="modulo_7_p704_sp3">3.Apoyo en salud</string>
+    <string name="modulo_7_p704_sp4">4.Apoyo emocional</string>
+    <string name="modulo_7_p704_sp5">5.Orientación legal</string>
+    <string name="modulo_7_p704_sp6">6.Otro</string>
+    <string name="modulo_7_p704_especifique">Especifique</string>
+
+    <string name="modulo_7_p705">705.¿QUÉ INSTITUCIÓN LE BRINDO LA AYUDA?</string>
+    <string name="modulo_7_p705_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_7_p705_sp1">1.Iglesia</string>
+    <string name="modulo_7_p705_sp2">2.Institución internacional</string>
+    <string name="modulo_7_p705_sp3">3.ONG/organización de sociedad civil</string>
+    <string name="modulo_7_p705_sp4">4.Institución del Estado (DEMUNA, Centro de Emergencia Mujer -CEM, Defensoría del Pueblo, Comisaria)</string>
+    <string name="modulo_7_p705_sp5">5.Organización de venezolanos</string>
+    <string name="modulo_7_p705_sp6">6.Otra institución</string>
+    <string name="modulo_7_p705_especifique">Especifique</string>
+    <string name="modulo_7_p705_sp7">7.NO SABE/NO RESPONDE</string>
+
+    <string name="modulo_7_p706">706.EN VENEZUELA, ¿USTED PARTICIPABA DE ASOCIACIONES/ESPACIOS DE REUNIÓN COMUNITARIOS?</string>
+    <string name="modulo_7_p706_si">1.Sí</string>
+    <string name="modulo_7_p706_no">2.No</string>
+
+    <string name="modulo_7_p707">707.EN LA COMUNIDAD O BARRIO, DONDE VIVE, ¿PARTICIPA USTED EN ASOCIACIONES/ESPACIOS DE REUNIÓN COMUNITARIOS, COMO:</string>
+    <string name="modulo_7_p707_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_7_p707_sp1">1.Iglesia</string>
+    <string name="modulo_7_p707_sp2">2.Junta de vecinos</string>
+    <string name="modulo_7_p707_sp3">3.Asociaciones de padres</string>
+    <string name="modulo_7_p707_sp4">4.Asociación de venezolanos</string>
+    <string name="modulo_7_p707_sp5">5.Asociación de refugiados</string>
+    <string name="modulo_7_p707_sp6">6.Grupos juveniles</string>
+    <string name="modulo_7_p707_sp7">7.Grupos deportivos</string>
+    <string name="modulo_7_p707_sp8">8.Otra institución</string>
+    <string name="modulo_7_p707_especifique">Especifique</string>
+    <string name="modulo_7_p707_sp9">9.NO PARTICIPA</string>
+
+    <string name="modulo_7_p708">708.¿PERTENECE A ALGUNA COMUNIDAD VIRTUAL DE VENEZOLANOS?</string>
+    <string name="modulo_7_p708_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_7_p708_sp1">1.Redes sociales por Facebook</string>
+    <string name="modulo_7_p708_sp2">2.Redes sociales por Twitter</string>
+    <string name="modulo_7_p708_sp3">3.Grupos de WhatsApp</string>
+    <string name="modulo_7_p708_sp4">4.YouTube</string>
+    <string name="modulo_7_p708_sp5">5.NO PARTICIPA</string>
+
+    <string name="modulo_7_p709">709. ¿CUÁLES SERÍAN LAS TRES PRINCIPALES NECESIDADES, QUE NO ESTÁN SIENDO CUBIERTAS EN SU HOGAR HOY EN DÍA?</string>
+    <string name="modulo_7_p709_ind">(Espere la respuesta y seleccione solo las tres principales razones)</string>
+    <string name="modulo_7_p709_sp1">1.Alimentos</string>
+    <string name="modulo_7_p709_sp2">2.Ayuda médica</string>
+    <string name="modulo_7_p709_sp3">3.Asistencia para regularizar la situación migratoria y/o estatus de refugiado</string>
+    <string name="modulo_7_p709_sp4">4.Generación de ingresos/empleo</string>
+    <string name="modulo_7_p709_sp5">5.Educación y capacitación</string>
+    <string name="modulo_7_p709_sp6">6.Artículos no alimentarios (ropa/cuidado personal, etc.)</string>
+    <string name="modulo_7_p709_sp7">7.Alojamiento</string>
+    <string name="modulo_7_p709_sp8">8.Reunificación familiar</string>
+    <string name="modulo_7_p709_sp9">9.Otra necesidad</string>
+    <string name="modulo_7_p709_especifique">Especifique</string>
+    <string name="modulo_7_p709_sp10">10.SUS NECESIDADES YA ESTAN CUBIERTAS</string>
+
+
 
     <!--Strings asociados al módulo 8: GÉNERO Y VICTIMIZACIÓN-->
     <string name="modulo_8_nombre">VIII. GÉNERO Y VICTIMIZACIÓN (Para personas de 18 años a más edad)</string>
@@ -609,10 +991,235 @@
     <string name="modulo_8_submenu_5">Preguntas 817 - 820</string>
     <string name="modulo_8_submenu_6">Preguntas 821 - 823</string>
 
-    <string name="siglas_encuesta">EMPOVE 2018</string>
+    <string name="modulo_8_p801">801.DIRÍA QUE EL DINERO QUE USTED GANA, ¿ES MÁS, MENOS O IGUAL DE LO QUE GANA SU ESPOSO/A O COMPAÑERO/A?</string>
+    <string name="modulo_8_p801_ind">(Espere la respuesta y seleccione solo un código)</string>
+    <string name="modulo_8_p801_sp1">1.Más que su esposo/a o compañero/a</string>
+    <string name="modulo_8_p801_sp2">2.Menos que su esposo/a o compañero/a	</string>
+    <string name="modulo_8_p801_sp3">3.Igual a su esposo/a o compañero/a</string>
+    <string name="modulo_8_p801_sp4">4.Esposo/a o compañero/a no ganan</string>
+    <string name="modulo_8_p801_sp5">5.VIVE SOLO(A) / NO APLICA</string>
+    <string name="modulo_8_p801_sp6">6.NO SABE</string>
+
+    <string name="modulo_8_p802">802.EN VENEZUELA, ¿TAMBIÉN SE PRESENTABA LA MISMA SITUACIÓN?</string>
+    <string name="modulo_8_p802_si">1.Sí</string>
+    <string name="modulo_8_p802_no">2.No</string>
+    <string name="modulo_8_p802_sp3">3.VIVÍA SOLO(A) / NO APLICA</string>
+
+    <string name="modulo_8_p803">QUIÉN DECIDE PRINCIPALMENTE CÓMO SE GASTA EL DINERO QUE USTED GANA?  </string>
+    <string name="modulo_8_p803_ind">(Espere la respuesta y seleccione solo un código)</string>
+    <string name="modulo_8_p803_sp1">1.Persona entrevistada</string>
+    <string name="modulo_8_p803_sp2">2.Esposo/a o compañero/a</string>
+    <string name="modulo_8_p803_sp3">3.Ambos</string>
+    <string name="modulo_8_p803_sp4">4.Alguien más</string>
+    <string name="modulo_8_p803_sp5">5.Persona entrevistada y alguien más</string>
+
+    <string name="modulo_8_p804">804.EN VENEZUELA, ¿TAMBIÉN SE PRESENTABA LA MISMA SITUACIÓN?</string>
+    <string name="modulo_8_p804_si">1.Sí</string>
+    <string name="modulo_8_p804_no">2.No</string>
+    <string name="modulo_8_p804_sp3">3.VIVÍA SOLO(A) / NO APLICA</string>
+
+    <string name="modulo_8_p805">805.A VECES EL/LA ESPOSO/A O COMPAÑERO/A SE MOLESTAN POR COSAS QUE SUCEDEN EN EL HOGAR. EN SU OPINIÓN USTED ESTÁ DE ACUERDO QUE EL O ELLA GOLPEEN A SU ESPOSO/A O COMPAÑERO/A, SI:</string>
+    <string name="modulo_8_p805_ind">(Lea cada una de las alternativas y seleccione solo un código para cada una de ellas)</string>
+    <string name="modulo_8_p805_sp1">a.¿Salen de la casa sin comunicar a las personas miembros del hogar?</string>
+    <string name="modulo_8_p805_sp2">b.¿Descuidan a los/as niños/as miembros del hogar?</string>
+    <string name="modulo_8_p805_sp3">c.¿Discuten entre las personas miembros del hogar?</string>
+    <string name="modulo_8_p805_sp4">d.¿Alguna de las personas miembros del hogar, queman la comida?</string>
+    <string name="modulo_8_p805_sp5">e.¿La pareja entre ellos, se niega a tener relaciones sexuales?</string>
+    <string name="modulo_8_p805_si">1.Sí</string>
+    <string name="modulo_8_p805_no">2.No</string>
+    <string name="modulo_8_p805_nosabe">3.No Sabe</string>
+
+    <string name="modulo_8_p806">806.EN SU HOGAR, ¿QUIÉN TIENE LA ÚLTIMA PALABRA EN LAS SIGUIENTES DECISIONES:</string>
+    <string name="modulo_8_p806_ind">(Lea cada una de las alternativas y seleccione solo un código para cada una de ellas)</string>
+    <string name="modulo_8_p806_sp1">a.El cuidado de su salud?</string>
+    <string name="modulo_8_p806_sp2">b.Hacer compras grandes del hogar?</string>
+    <string name="modulo_8_p806_sp3">c.Hacer compras grandes para necesidades diarias del hogar?</string>
+    <string name="modulo_8_p806_sp4">d.Visitar a familia, amigos/as o parientes?</string>
+    <string name="modulo_8_p806_sp5">e.Qué comida se debe cocinar cada día?</string>
+    <string name="modulo_8_p806_sp6">f.Envío de remesas a Venezuela?</string>
+    <string name="modulo_8_p806_ult1">1.Persona Entrevistada</string>
+    <string name="modulo_8_p806_ult2">2.Esposo/a o compañero/a</string>
+    <string name="modulo_8_p806_ult3">3.Ambos</string>
+    <string name="modulo_8_p806_ult4">4.Otro miembro del hogar</string>
+    <string name="modulo_8_p806_ult5">5.Persona entrevistada y miembro del hogar</string>
+    <string name="modulo_8_p806_ult6">6.Cualquier otra persona, no miembro del hogar</string>
+
+    <string name="modulo_8_p807">807.DESDE QUE LLEGÓ AL PERÚ, ¿SABE O CONOCE DE ALGUNA PERSONA VENEZOLANA QUE HA SIDO VÍCTIMA DE MALTRATO VERBAL?</string>
+    <string name="modulo_8_p807_si">1.Sí</string>
+    <string name="modulo_8_p807_no">2.No</string>
+
+    <string name="modulo_8_p808">808.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ? </string>
+    <string name="modulo_8_p808_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p808_sp1">1.Esposo/a o compañero/a</string>
+    <string name="modulo_8_p808_sp2">2.Padre</string>
+    <string name="modulo_8_p808_sp3">3.Madre</string>
+    <string name="modulo_8_p808_sp4">4.Otro familiar femenino</string>
+    <string name="modulo_8_p808_sp5">5.Otro familiar masculino</string>
+    <string name="modulo_8_p808_sp6">6.Empleador/a </string>
+    <string name="modulo_8_p808_sp7">7.Profesor/a </string>
+    <string name="modulo_8_p808_sp8">8.Empleado/a público</string>
+    <string name="modulo_8_p808_sp9">9.Fuerzas del orden</string>
+    <string name="modulo_8_p808_sp10">10.Empleado/a privado</string>
+    <string name="modulo_8_p808_sp11">11.Extraño/a </string>
+    <string name="modulo_8_p808_sp12">12.Compañero/a de estudio</string>
+    <string name="modulo_8_p808_sp13">13.Otro</string>
+    <string name="modulo_8_p808_especifique">Especifique</string>
+
+    <string name="modulo_8_p809">809.DESDE QUE LLEGÓ AL PERÚ, ¿SABE O CONOCE DE ALGUNA PERSONA VENEZOLANA QUE HA SIDO VÍCTIMA DE MALTRATO FÍSICO?</string>
+    <string name="modulo_8_p809_si">1.Sí</string>
+    <string name="modulo_8_p809_no">2.No</string>
+
+    <string name="modulo_8_p810">810.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ?</string>
+    <string name="modulo_8_p810_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p810_sp1">1.Esposo/a o compañero/a</string>
+    <string name="modulo_8_p810_sp2">2.Padre</string>
+    <string name="modulo_8_p810_sp3">3.Madre</string>
+    <string name="modulo_8_p810_sp4">4.Otro familiar femenino</string>
+    <string name="modulo_8_p810_sp5">5.Otro familiar masculino</string>
+    <string name="modulo_8_p810_sp6">6.Empleador/a </string>
+    <string name="modulo_8_p810_sp7">7.Profesor/a </string>
+    <string name="modulo_8_p810_sp8">8.Empleado/a público</string>
+    <string name="modulo_8_p810_sp9">9.Fuerzas del orden</string>
+    <string name="modulo_8_p810_sp10">10.Empleado/a privado</string>
+    <string name="modulo_8_p810_sp11">11.Extraño/a </string>
+    <string name="modulo_8_p810_sp12">12.Compañero/a de estudio</string>
+    <string name="modulo_8_p810_sp13">13.Otro</string>
+    <string name="modulo_8_p810_especifique">Especifique</string>
+
+    <string name="modulo_8_p811">811.ESTAS SITUACIONES DE MALTRATO FÍSICO, SON:</string>
+    <string name="modulo_8_p811_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_8_p811_sp1">1.¿Más frecuentes que cuando vivía en Venezuela)?</string>
+    <string name="modulo_8_p811_sp2">2.¿Menos frecuentes que cuando vivía en Venezuela?</string>
+    <string name="modulo_8_p811_sp3">3.¿Igual de frecuentes que cuando vivía en Venezuela?</string>
+
+    <string name="modulo_8_p812">812.SABE USTED, ¿SI ESTA PERSONA ACUDIÓ A PEDIR AYUDA A ALGUNA PERSONA O INSTITUCIÓN?</string>
+    <string name="modulo_8_p812_si">1.Sí</string>
+    <string name="modulo_8_p812_no">2.No</string>
+
+    <string name="modulo_8_p813">813.USTED TIENE CONOCIMIENTO, ¿A QUIÉN O A DÓNDE RECURRIÓ?</string>
+    <string name="modulo_8_p813_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p813_sp1">1.Esposo/a o compañero/a</string>
+    <string name="modulo_8_p813_sp2">2.Padre o madre</string>
+    <string name="modulo_8_p813_sp3">3.Familiar</string>
+    <string name="modulo_8_p813_sp4">4.Amigo/a o vecino/a</string>
+    <string name="modulo_8_p813_sp5">5.Iglesia</string>
+    <string name="modulo_8_p813_sp6">6.Comisaria</string>
+    <string name="modulo_8_p813_sp7">7.Juzgado/Fiscalía</string>
+    <string name="modulo_8_p813_sp8">8.Establecimiento de salud</string>
+    <string name="modulo_8_p813_sp9">9.DEMUNA</string>
+    <string name="modulo_8_p813_sp10">10.Centro de Emergencia Mujer – CEM/MIMP</string>
+    <string name="modulo_8_p813_sp11">11.Defensoría del Pueblo</string>
+    <string name="modulo_8_p813_sp12">12.Organización privada</string>
+    <string name="modulo_8_p813_sp13">13.ONG</string>
+    <string name="modulo_8_p813_sp14">14.Otro</string>
+    <string name="modulo_8_p813_especifique">Especifique</string>
+
+    <string name="modulo_8_p814">814.SABE USTED, ¿PORQUE NO PIDIÓ AYUDA LA PERSONA QUE FUE VÍCTIMA DE MALTRATO FÍSICO?</string>
+    <string name="modulo_8_p814_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p814_sp1">1.No sabía a donde ir/ no conoce los servicios</string>
+    <string name="modulo_8_p814_sp2">2.De nada sirve</string>
+    <string name="modulo_8_p814_sp3">3.Miedo a las consecuencias</string>
+    <string name="modulo_8_p814_sp4">4.Vergüenza</string>
+    <string name="modulo_8_p814_sp5">5.No tenía acceso por ser venezolano/a</string>
+    <string name="modulo_8_p814_sp6">6.Falta de recursos económicos</string>
+    <string name="modulo_8_p814_sp7">7.Falta de tiempo</string>
+    <string name="modulo_8_p814_sp8">8.Miedo a ser enviado de vuelta a Venezuela</string>
+
+    <string name="modulo_8_p815">815.¿DESDE QUE LLEGÓ AL PERÚ, SABE O CONOCE DE ALGUNA PERSONA VENEZOLANA QUE HA SIDO VÍCTIMA DE VIOLENCIA SEXUAL?</string>
+    <string name="modulo_8_p815_si">1.Sí</string>
+    <string name="modulo_8_p815_no">2.No</string>
+
+    <string name="modulo_8_p816">816.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ SEXUALMENTE? </string>
+    <string name="modulo_8_p816_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p816_sp1">1.Esposo/a o compañero/a</string>
+    <string name="modulo_8_p816_sp2">2.Padre</string>
+    <string name="modulo_8_p816_sp3">3.Madre</string>
+    <string name="modulo_8_p816_sp4">4.Otro familiar femenino</string>
+    <string name="modulo_8_p816_sp5">5.Otro familiar masculino</string>
+    <string name="modulo_8_p816_sp6">6.Empleador/a </string>
+    <string name="modulo_8_p816_sp7">7.Profesor/a </string>
+    <string name="modulo_8_p816_sp8">8.Empleado/a público</string>
+    <string name="modulo_8_p816_sp9">9.Fuerzas del orden</string>
+    <string name="modulo_8_p816_sp10">10.Empleado/a privado</string>
+    <string name="modulo_8_p816_sp11">11.Extraño/a </string>
+    <string name="modulo_8_p816_sp12">12.Compañero/a de estudio</string>
+    <string name="modulo_8_p816_sp13">13.Otro</string>
+    <string name="modulo_8_p816_especifique">Especifique</string>
+
+    <string name="modulo_8_p817">817.ESTAS SITUACIONES, SOBRE VIOLENCIA SEXUAL SON:</string>
+    <string name="modulo_8_p817_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_8_p817_sp1">1.¿Más frecuentes que cuando vivía en Venezuela)?</string>
+    <string name="modulo_8_p817_sp2">2.¿Menos frecuentes que cuando vivía en Venezuela?</string>
+    <string name="modulo_8_p817_sp3">3.¿Igual de frecuentes que cuando vivía en Venezuela?</string>
+
+    <string name="modulo_8_p818">818.¿SABE USTED SI ESTA PERSONA, QUE SUFRIÓ VIOLENCIA SEXUAL, ACUDIÓ A ALGUNA PERSONA O INSTITUCIÓN PARA PEDIR AYUDA?</string>
+    <string name="modulo_8_p818_si">1.Sí</string>
+    <string name="modulo_8_p818_no">2.No</string>
+
+    <string name="modulo_8_p819">819.	USTED SABE, ¿A QUIÉN O A DÓNDE RECURRIÓ?</string>
+    <string name="modulo_8_p819_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p819_sp1">1.Esposo/a o compañero/a</string>
+    <string name="modulo_8_p819_sp2">2.Padre o madre</string>
+    <string name="modulo_8_p819_sp3">3.Familiar</string>
+    <string name="modulo_8_p819_sp4">4.Amigo/a o vecino/a</string>
+    <string name="modulo_8_p819_sp5">5.Iglesia</string>
+    <string name="modulo_8_p819_sp6">6.Comisaria</string>
+    <string name="modulo_8_p819_sp7">7.Juzgado/Fiscalía</string>
+    <string name="modulo_8_p819_sp8">8.Establecimiento de salud</string>
+    <string name="modulo_8_p819_sp9">9.DEMUNA</string>
+    <string name="modulo_8_p819_sp10">10.Centro de Emergencia Mujer – CEM/MIMP</string>
+    <string name="modulo_8_p819_sp11">11.Defensoría del Pueblo</string>
+    <string name="modulo_8_p819_sp12">12.Organización privada</string>
+    <string name="modulo_8_p819_sp13">13.ONG</string>
+    <string name="modulo_8_p819_sp14">14.Otro</string>
+    <string name="modulo_8_p819_especifique">Especifique</string>
+
+    <string name="modulo_8_p820">820.EN SU OPINIÓN, ESTAS SITUACIONES DE VIOLENCIA SEXUAL SE PRESENTAN CON MÁS FRECUENCIA EN:</string>
+    <string name="modulo_8_p820_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p820_sp1">1.¿El hogar?</string>
+    <string name="modulo_8_p820_sp2">2.¿Residencia de alguien más?</string>
+    <string name="modulo_8_p820_sp3">3.¿Lugar de trabajo?</string>
+    <string name="modulo_8_p820_sp4">4.¿Centro educativo o de salud?</string>
+    <string name="modulo_8_p820_sp5">5.¿Dependencia pública (ministerios, municipalidad, otras)?</string>
+    <string name="modulo_8_p820_sp6">6.¿Comisaria?</string>
+    <string name="modulo_8_p820_sp7">7.¿Al solicitar un empleo?</string>
+    <string name="modulo_8_p820_sp8">8.¿En un local público (club, restaurante, tienda, discoteca)?</string>
+    <string name="modulo_8_p820_sp9">9.¿En un local u oficina privada (banco, compañías de servicios públicos, etc.)? </string>
+    <string name="modulo_8_p820_sp10">10.¿En la calle?</string>
+    <string name="modulo_8_p820_sp11">11.¿Otro?</string>
+    <string name="modulo_8_p820_especifique">Especifique</string>
+
+    <string name="modulo_8_p821">821.SABE USTED, ¿PORQUÉ NO PIDIÓ AYUDA LA PERSONA QUE FUE VÍCTIMA DE VIOLENCIA SEXUAL?</string>
+    <string name="modulo_8_p821_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p821_sp1">1.No sabía a donde ir/ no conoce los servicios</string>
+    <string name="modulo_8_p821_sp2">2.De nada sirve</string>
+    <string name="modulo_8_p821_sp3">3.Miedo a las consecuencias</string>
+    <string name="modulo_8_p821_sp4">4.Vergüenza</string>
+    <string name="modulo_8_p821_sp5">5.No tenía acceso por ser venezolano/a</string>
+    <string name="modulo_8_p821_sp6">6.Falta de recursos económicos</string>
+    <string name="modulo_8_p821_sp7">7.Falta de tiempo</string>
+    <string name="modulo_8_p821_sp8">8.Miedo a ser enviado de vuelta a Venezuela</string>
+
+    <string name="modulo_8_p822">822.DESDE QUE LLEGÓ AL PERÚ, SABE O CONOCE DE ALGUNA PERSONA VENEZOLANA QUE SE HA VISTO EN LA NECESIDAD DE TENER SEXO A CAMBIO DE ALGÚN BIEN O SERVICIO?</string>
+    <string name="modulo_8_p822_si">1.Sí</string>
+    <string name="modulo_8_p822_no">2.No</string>
+
+    <string name="modulo_8_p823">823.SABE USTED, SI ÉSTA SITUACIÓN SE DIÓ PARA ACCEDER A:</string>
+    <string name="modulo_8_p823_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p823_sp1">1.¿Una oportunidad laboral?</string>
+    <string name="modulo_8_p823_sp2">2.¿Dinero?</string>
+    <string name="modulo_8_p823_sp3">3.¿Vivienda, ropa o comida?</string>
+    <string name="modulo_8_p823_sp4">4.¿Por protección?</string>
+    <string name="modulo_8_p823_sp5">5.¿Otra situación?</string>
+    <string name="modulo_8_p823_especifique">Especifique</string>
+
+    <string name="agradecimeinto">Agradezco a usted la oportunidad de colaborar con esta investigación de gran importancia para la integración de la población migrante en la sociedad peruana. La información recolectada se mantendrá privada y confidencial. Muchas gracias.</string>
+
+    <string name="siglas_encuesta">ENPOVE 2018</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
+

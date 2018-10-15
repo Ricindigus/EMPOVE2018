@@ -12,17 +12,17 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p609"/>
     <RadioGroup
-        android:id="@+id/mod6_603_rg"
+        android:id="@+id/mod6_609_rg"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
-            android:id="@+id/mod6_603_rbSi"
+            android:id="@+id/mod6_609_rbSi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p609_sp1"/>
         <RadioButton
-            android:id="@+id/mod6_603_rbNo"
+            android:id="@+id/mod6_609_rbNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p609_sp2"/>

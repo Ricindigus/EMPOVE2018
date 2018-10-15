@@ -12,6 +12,8 @@
     <dimen name="margen_small">8dp</dimen>
     <dimen name="margen_medium">16dp</dimen>
     <dimen name="margen_large">24dp</dimen>
+    <dimen name="margen_xlarge">32dp</dimen>
+
     <dimen name="margen_layout_pregunta">8dp</dimen>
     <dimen name="padding_layout_pregunta">16dp</dimen>
     <dimen name="width_input_especifique">300dp</dimen>
@@ -23,4 +25,6 @@
     <dimen name="altura_spinner">30dp</dimen>
     <dimen name="altura_input_especifique">50dp</dimen>
     <dimen name="altura_input_multilinea">100dp</dimen>
+    <dimen name="longitud_input_n_horas">150dp</dimen>
+    <dimen name="altura_input_solo">50dp</dimen>
 </resources>
