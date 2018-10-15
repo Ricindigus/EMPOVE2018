@@ -11,4 +11,41 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p618"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp1"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp2"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp3"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp4"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp5"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_6_p618_sp6"/>
+        <EditText
+            android:layout_width="@dimen/width_input_especifique"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margen_small"
+            android:hint="@string/modulo_6_p618_especifique"
+            android:background="@drawable/input_text_disabled"/>
+    </LinearLayout>
+
 </LinearLayout>

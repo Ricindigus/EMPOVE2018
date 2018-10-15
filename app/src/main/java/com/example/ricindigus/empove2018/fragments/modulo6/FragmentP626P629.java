@@ -12,10 +12,10 @@ import com.example.ricindigus.empove2018.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP626P628 extends Fragment {
+public class FragmentP626P629 extends Fragment {
 
 
-    public FragmentP626P628() {
+    public FragmentP626P629() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class FragmentP626P628 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_p626_p628, container, false);
+        return inflater.inflate(R.layout.fragment_p626_p629, container, false);
     }
 
 }

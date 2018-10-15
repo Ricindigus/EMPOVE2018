@@ -23,8 +23,10 @@
     <dimen name="longitud_ubicacion">300dp</dimen>
     <dimen name="altura_toolbar">60dp</dimen>
     <dimen name="altura_spinner">30dp</dimen>
-    <dimen name="altura_input_especifique">50dp</dimen>
+    <dimen name="altura_input_especifique">30dp</dimen>
     <dimen name="altura_input_multilinea">100dp</dimen>
     <dimen name="longitud_input_n_horas">150dp</dimen>
     <dimen name="altura_input_solo">50dp</dimen>
+    <dimen name="altura_layout_dividido">40dp</dimen>
+    <dimen name="longitud_radio_3">300dp</dimen>
 </resources>

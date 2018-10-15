@@ -785,6 +785,8 @@
     <string name="modulo_6_p620_sp7">7.Vivía de su pensión o jubilación u otras rentas?</string>
     <string name="modulo_6_p620_sp8">8.Enfermo o incapacitado?</string>
     <string name="modulo_6_p620_sp9">9.Otro?</string>
+    <string name="modulo_6_p620_si">(1)Sí</string>
+    <string name="modulo_6_p620_no">(2)No</string>
     <string name="modulo_6_p620_especifique">Especifique</string>
 
     <string name="modulo_6_p621">621.LA SEMANA PASADA, ¿QUERÍA USTED TRABAJAR? </string>
@@ -858,11 +860,13 @@
     <string name="modulo_6_p629_especifique">Especifique</string>
     <string name="modulo_6_p629_si">1.Sí</string>
     <string name="modulo_6_p629_no">2.No</string>
-    <string name="modulo_6_p629_frecuencia">Frecuencia</string>
-    <string name="modulo_6_p629_frec1">1.Mensual</string>
-    <string name="modulo_6_p629_frec2">2.Bimestral </string>
-    <string name="modulo_6_p629_frec3">3.Semestral</string>
-    <string name="modulo_6_p629_frec4">4.Anual</string>
+    <string-array name="modulo_6_p629_frecuencia">
+        <item>Frecuencia</item>
+        <item>1.Mensual</item>
+        <item>2.Bimestral</item>
+        <item>3.Semestral</item>
+        <item>4.Anual</item>
+    </string-array>
     <string name="modulo_6_p629_monto">Monto S/.</string>
 
     <string name="sub_modulo_6_9">ENVÍO DE REMESAS</string>
@@ -874,22 +878,28 @@
     <string name="modulo_6_p630_sp2">b.Otro país?</string>
     <string name="modulo_6_p630_si">1.Sí</string>
     <string name="modulo_6_p630_no">2.No</string>
-    <string name="modulo_6_p630_medios">Medios de envío</string>
+    <string name="modulo_6_p630_medios">MEDIOS DE ENVÍO</string>
     <string name="modulo_6_p630_med1">Transferencias bancarias y/o agencia de envío</string>
     <string name="modulo_6_p630_med2">Personas independientes</string>
     <string name="modulo_6_p630_med3">Otro</string>
     <string name="modulo_6_p630_especifique">Especifique</string>
-    <string name="modulo_6_p630_frecuencia">Frecuencia</string>
-    <string name="modulo_6_p630_frec1">1.Diario</string>
-    <string name="modulo_6_p630_frec2">2.Semanal </string>
-    <string name="modulo_6_p630_frec3">3.Quincenal</string>
-    <string name="modulo_6_p630_frec4">4.Mensual</string>
-    <string name="modulo_6_p630_frec5">5.Bimestral</string>
-    <string name="modulo_6_p630_frec6">6.Otro</string>
-    <string name="modulo_6_p630_monto">Monto S/.</string>
-    <string name="modulo_6_p630_mont1">1.¿S/.0.00 - 100.00 soles?</string>
-    <string name="modulo_6_p630_mont2">2.¿S/.101.00 - 200.00 soles? </string>
-    <string name="modulo_6_p630_mont3">3.¿S/.201.00 - más soles?</string>
+    <string name="modulo_6_p630_frecuencia">FRECUENCIA</string>
+    <string-array name="modulo_6_p630_frecuencia">
+        <item>Seleccione frecuencia</item>
+        <item>1.Diario</item>
+        <item>2.Semanal</item>
+        <item>3.Quincenal</item>
+        <item>4.Mensual</item>
+        <item>5.Bimestral</item>
+        <item>6.Otro</item>
+    </string-array>
+    <string name="modulo_6_p630_monto">MONTO S/.</string>
+    <string-array name="modulo_6_p630_monto">
+        <item>Seleccione monto</item>
+        <item>1.¿S/.0.00 - 100.00 soles?</item>
+        <item>2.¿S/.101.00 - 200.00 soles?</item>
+        <item>3.¿S/.201.00 - más soles?</item>
+    </string-array>
 
     <!--Strings asociados al módulo 7: DISCRIMINACIÓN -->
     <string name="modulo_7_nombre">VII. DISCRIMINACIÓN (Para personas de 5 años a más edad)</string>
@@ -1001,8 +1011,8 @@
     <string name="modulo_8_p801_sp6">6.NO SABE</string>
 
     <string name="modulo_8_p802">802.EN VENEZUELA, ¿TAMBIÉN SE PRESENTABA LA MISMA SITUACIÓN?</string>
-    <string name="modulo_8_p802_si">1.Sí</string>
-    <string name="modulo_8_p802_no">2.No</string>
+    <string name="modulo_8_p802_sp1">1.Sí</string>
+    <string name="modulo_8_p802_sp2">2.No</string>
     <string name="modulo_8_p802_sp3">3.VIVÍA SOLO(A) / NO APLICA</string>
 
     <string name="modulo_8_p803">QUIÉN DECIDE PRINCIPALMENTE CÓMO SE GASTA EL DINERO QUE USTED GANA?  </string>
@@ -1014,8 +1024,8 @@
     <string name="modulo_8_p803_sp5">5.Persona entrevistada y alguien más</string>
 
     <string name="modulo_8_p804">804.EN VENEZUELA, ¿TAMBIÉN SE PRESENTABA LA MISMA SITUACIÓN?</string>
-    <string name="modulo_8_p804_si">1.Sí</string>
-    <string name="modulo_8_p804_no">2.No</string>
+    <string name="modulo_8_p804_sp1">1.Sí</string>
+    <string name="modulo_8_p804_sp2">2.No</string>
     <string name="modulo_8_p804_sp3">3.VIVÍA SOLO(A) / NO APLICA</string>
 
     <string name="modulo_8_p805">805.A VECES EL/LA ESPOSO/A O COMPAÑERO/A SE MOLESTAN POR COSAS QUE SUCEDEN EN EL HOGAR. EN SU OPINIÓN USTED ESTÁ DE ACUERDO QUE EL O ELLA GOLPEEN A SU ESPOSO/A O COMPAÑERO/A, SI:</string>
@@ -1037,13 +1047,15 @@
     <string name="modulo_8_p806_sp4">d.Visitar a familia, amigos/as o parientes?</string>
     <string name="modulo_8_p806_sp5">e.Qué comida se debe cocinar cada día?</string>
     <string name="modulo_8_p806_sp6">f.Envío de remesas a Venezuela?</string>
-    <string name="modulo_8_p806_ult1">1.Persona Entrevistada</string>
-    <string name="modulo_8_p806_ult2">2.Esposo/a o compañero/a</string>
-    <string name="modulo_8_p806_ult3">3.Ambos</string>
-    <string name="modulo_8_p806_ult4">4.Otro miembro del hogar</string>
-    <string name="modulo_8_p806_ult5">5.Persona entrevistada y miembro del hogar</string>
-    <string name="modulo_8_p806_ult6">6.Cualquier otra persona, no miembro del hogar</string>
-
+    <string-array name="modulo_8_p806_array">
+        <item>Seleccione</item>
+        <item>1.Persona Entrevistada</item>
+        <item>2.Esposo/a o compañero/a</item>
+        <item>3.Ambos</item>
+        <item>4.Otro miembro del hogar</item>
+        <item>5.Persona entrevistada y miembro del hogar</item>
+        <item>6.Cualquier otra persona, no miembro del hogar</item>
+    </string-array>
     <string name="modulo_8_p807">807.DESDE QUE LLEGÓ AL PERÚ, ¿SABE O CONOCE DE ALGUNA PERSONA VENEZOLANA QUE HA SIDO VÍCTIMA DE MALTRATO VERBAL?</string>
     <string name="modulo_8_p807_si">1.Sí</string>
     <string name="modulo_8_p807_no">2.No</string>

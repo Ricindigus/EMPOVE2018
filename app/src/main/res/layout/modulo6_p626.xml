@@ -11,4 +11,36 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p626"/>
+    <RadioGroup
+        android:id="@+id/mod5_626_rg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/mod5_626_rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p626_sp1"/>
+        <RadioButton
+            android:id="@+id/mod5_626_rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p626_sp2"/>
+        <RadioButton
+            android:id="@+id/mod5_626_rb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p626_sp3"/>
+        <RadioButton
+            android:id="@+id/mod5_626_rb4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p626_sp4"/>
+        <RadioButton
+            android:id="@+id/mod5_626_rb5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p626_sp5"/>
+
+    </RadioGroup>
 </LinearLayout>

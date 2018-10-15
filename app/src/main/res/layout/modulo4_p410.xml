@@ -11,24 +11,25 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_4_p410"/>
-    <CheckBox
-        android:id="@+id/mod4_410_ck1"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p410_sp1"/>
-    <CheckBox
-        android:id="@+id/mod4_410_ck2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p410_sp2"/>
-    <CheckBox
-        android:id="@+id/mod4_410_ck3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p410_sp3"/>
-    <CheckBox
-        android:id="@+id/mod4_410_ck4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p410_sp4"/>
+        android:orientation="vertical">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_4_p410_sp1"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_4_p410_sp2"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_4_p410_sp3"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_4_p410_sp4"/>
+    </RadioGroup>
 </LinearLayout>
