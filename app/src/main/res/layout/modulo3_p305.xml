@@ -13,7 +13,7 @@
         android:text="@string/modulo_3_p305"/>
 
     <RadioGroup
-        android:id="@+id/mod3_305_rg"
+        android:id="@+id/mod3_305_radiogroup_C3_P305"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
@@ -44,13 +44,8 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_3_p305_sp4"/>
             <EditText
-                android:id="@+id/mod3_305_inputEspecifique"
-                android:layout_width="@dimen/width_input_especifique"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/margen_small"
-                android:inputType="text"
-                android:background="@drawable/input_text_disabled"
-                android:hint="@string/modulo_3_p305_especifique"/>
+                android:id="@+id/mod3_305_edittext_C3_P305_O"
+                style="@style/TemaInputEspecifique"/>
         </LinearLayout>
     </RadioGroup>
 

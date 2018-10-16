@@ -22,7 +22,7 @@
             android:gravity="center"
             android:orientation="vertical">
             <NumberPicker
-                android:id="@+id/mod3_p303_npMes"
+                android:id="@+id/mod3_p303_numpicker_C3_P303_M"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margen_medium"/>
@@ -39,7 +39,7 @@
             android:gravity="center"
             android:orientation="vertical">
             <NumberPicker
-                android:id="@+id/mod3_p303_npAnio"
+                android:id="@+id/mod3_p303_numpicker_C3_P303_A"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margen_medium"/>
@@ -51,7 +51,7 @@
                 android:text="@string/modulo_3_p303_anio"/>
         </LinearLayout>
         <CheckBox
-            android:id="@+id/mod3_p303_ckNoNacido"
+            android:id="@+id/mod3_p303_checkbox_C3_P303"
             android:layout_marginLeft="@dimen/margen_large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

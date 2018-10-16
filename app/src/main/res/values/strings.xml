@@ -15,6 +15,8 @@
     <string name="nombre_modulo_caratula">Carátula</string>
     <string name="nombre_modulo_entrevista_supervision">Entrevistas y Supervisión</string>
     <string name="nombre_modulo_funcionarios_encuesta">Funcionarios de la Encuesta</string>
+    <string name="texto_especifique">Especifique</string>
+
 
     <!--Strings asociados al marco-->
     <string name="marco_mes">MES</string>
@@ -497,6 +499,7 @@
     <string name="modulo_4_p415_sp6">6.Otro servicio?</string>
     <string name="modulo_4_p415_sp7">7.NO TIENE ACCESO A ESTOS SERVICIOS</string>
     <string name="modulo_4_p415_sp8">8.NO TIENE CONOCIMIENTO</string>
+    <string name="modulo_4_p415_sp9">9.NO APLICA</string>
     <string name="modulo_4_p415_especifique">Especifique</string>
 
     <string name="sub_modulo_4_3">DISCAPACIDAD</string>
@@ -748,6 +751,8 @@
     <string name="modulo_6_p616_dinero">En Dinero</string>
     <string name="modulo_6_p616_especie">En Especie</string>
     <string name="modulo_6_p616_entero">(En enteros)</string>
+    <string name="modulo_6_p616_nas">No tiene actividad secundaria</string>
+
 
     <string name="modulo_6_p617">617.EL CENTRO DE TRABAJO DONDE DESEMPEÑA SU OCUPACIÓN PRINCIPAL, ¿ESTÁ UBICADO:</string>
     <string name="modulo_6_p617_sp1">1.Aquí, en este distrito</string>

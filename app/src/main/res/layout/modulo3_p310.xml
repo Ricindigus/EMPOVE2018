@@ -12,41 +12,36 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_3_p310"/>
     <CheckBox
-        android:id="@+id/mod3_310_ck1"
+        android:id="@+id/mod3_310_checkbox_C3_P310_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_3_p310_sp1"/>
     <CheckBox
-        android:id="@+id/mod3_310_ck2"
+        android:id="@+id/mod3_310_checkbox_C3_P310_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_3_p310_sp2"/>
     <CheckBox
-        android:id="@+id/mod3_310_ck3"
+        android:id="@+id/mod3_310_checkbox_C3_P310_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_3_p310_sp3"/>
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <CheckBox
-            android:id="@+id/mod3_310_ck4"
+            android:id="@+id/mod3_310_checkbox_C3_P310_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_3_p310_sp4"/>
         <EditText
-            android:id="@+id/mod3_310_inputEspecifique"
-            android:layout_width="@dimen/width_input_especifique"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/margen_small"
-            android:inputType="text"
-            android:hint="@string/modulo_3_p310_especifique"
-            android:background="@drawable/input_text_disabled"/>
+            android:id="@+id/mod3_310_edittext_C3_P310_O"
+            style="@style/TemaInputEspecifique"/>
     </LinearLayout>
     <CheckBox
-        android:id="@+id/mod3_310_ck5"
+        android:id="@+id/mod3_310_checkbox_C3_P310_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_3_p310_sp5"/>

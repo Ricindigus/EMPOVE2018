@@ -47,13 +47,8 @@
                     android:layout_marginRight="@dimen/margen_small"
                     android:text="@string/modulo_6_p629_sp4"/>
                 <EditText
-                    android:id="@+id/mod6_629_especifique"
-                    android:layout_width="@dimen/width_input_especifique"
-                    android:layout_height="@dimen/altura_input_especifique"
-                    android:inputType="text"
-                    android:paddingLeft="@dimen/margen_small"
-                    android:hint="@string/modulo_6_p629_especifique"
-                    android:background="@drawable/input_text_disabled"/>
+                    android:id="@+id/mod6_629_edittext_C6_P629_O"
+                    style="@style/TemaInputEspecifique"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -64,6 +59,7 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
             <RadioGroup
+                android:id="@+id/mod6_629_radiogroup_C6_P629_1"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_layout_dividido"
                 android:gravity="center"
@@ -79,6 +75,7 @@
                     android:text="@string/modulo_6_p629_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod6_629_radiogroup_C6_P629_2"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_layout_dividido"
                 android:gravity="center"
@@ -94,6 +91,7 @@
                     android:text="@string/modulo_6_p629_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod6_629_radiogroup_C6_P629_3"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_layout_dividido"
                 android:gravity="center"
@@ -109,6 +107,7 @@
                     android:text="@string/modulo_6_p629_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod6_629_radiogroup_C6_P629_4"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_layout_dividido"
                 android:gravity="center"
@@ -124,40 +123,50 @@
                     android:text="@string/modulo_6_p629_no"/>
             </RadioGroup>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <Spinner
+                android:id="@+id/mod6_629_spinner_C6_P629_1_F"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/altura_spinner"
                 android:layout_margin="5dp"
                 android:drawSelectorOnTop="true"
-                android:entries="@array/modulo_6_p629_frecuencia"/>
+                android:entries="@array/modulo_6_p629_frecuencia" />
+
             <Spinner
+                android:id="@+id/mod6_629_spinner_C6_P629_2_F"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:drawSelectorOnTop="true"
+                android:entries="@array/modulo_6_p629_frecuencia" />
+
+            <Spinner
+                android:id="@+id/mod6_629_spinner_C6_P629_3_F"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/altura_spinner"
                 android:layout_margin="5dp"
                 android:drawSelectorOnTop="true"
-                android:entries="@array/modulo_6_p629_frecuencia"/>
+                android:entries="@array/modulo_6_p629_frecuencia" />
+
             <Spinner
+                android:id="@+id/mod6_629_spinner_C6_P629_4_F"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/altura_spinner"
                 android:layout_margin="5dp"
                 android:drawSelectorOnTop="true"
-                android:entries="@array/modulo_6_p629_frecuencia"/>
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/altura_spinner"
-                android:layout_margin="5dp"
-                android:drawSelectorOnTop="true"
-                android:entries="@array/modulo_6_p629_frecuencia"/>
+                android:entries="@array/modulo_6_p629_frecuencia" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
+                android:id="@+id/mod6_629_edittext_C6_P629_1_M"
                 android:layout_width="@dimen/longitud_input_n_horas"
                 android:paddingLeft="@dimen/margen_small"
                 android:paddingRight="@dimen/margen_small"
@@ -166,6 +175,7 @@
                 android:background="@drawable/input_text_disabled"
                 android:text="@string/modulo_6_p629_monto"/>
             <EditText
+                android:id="@+id/mod6_629_edittext_C6_P629_2_M"
                 android:layout_width="@dimen/longitud_input_n_horas"
                 android:paddingLeft="@dimen/margen_small"
                 android:paddingRight="@dimen/margen_small"
@@ -174,6 +184,7 @@
                 android:background="@drawable/input_text_disabled"
                 android:text="@string/modulo_6_p629_monto"/>
             <EditText
+                android:id="@+id/mod6_629_edittext_C6_P629_3_M"
                 android:layout_width="@dimen/longitud_input_n_horas"
                 android:paddingLeft="@dimen/margen_small"
                 android:paddingRight="@dimen/margen_small"
@@ -182,6 +193,7 @@
                 android:background="@drawable/input_text_disabled"
                 android:text="@string/modulo_6_p629_monto"/>
             <EditText
+                android:id="@+id/mod6_629_edittext_C6_P629_4_M"
                 android:layout_width="@dimen/longitud_input_n_horas"
                 android:paddingLeft="@dimen/margen_small"
                 android:paddingRight="@dimen/margen_small"

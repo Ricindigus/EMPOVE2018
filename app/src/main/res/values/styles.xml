@@ -66,6 +66,7 @@
 
     <style name="TemaInputEspecifique" parent="AppTheme">
         <item name="android:inputType">text</item>
+        <item name="android:hint">@string/texto_especifique</item>
         <item name="android:paddingLeft">@dimen/margen_small</item>
         <item name="android:background">@drawable/input_text_disabled</item>
         <item name="android:layout_height">@dimen/altura_input_especifique</item>

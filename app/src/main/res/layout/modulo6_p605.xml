@@ -13,9 +13,9 @@
         android:inputType="text"
         android:text="@string/modulo_6_p605"/>
     <EditText
-        android:id="@+id/mod6_605_input_sp1"
+        android:id="@+id/mod6_605_edittext_C6_P605"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/altura_input_especifique"
+        android:layout_height="wrap_content"
         android:hint="@string/modulo_6_p605_especifique"
         />
 </LinearLayout>

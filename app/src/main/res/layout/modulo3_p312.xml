@@ -10,37 +10,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
+        android:layout_marginBottom="@dimen/margen_medium"
         android:text="@string/modulo_3_p312"/>
-    <android.support.design.widget.TextInputLayout
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margen_small">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/mod3_312_inputDistrito"
-            android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/altura_spinner">
+        <TextView
+            android:layout_width="@dimen/width_desc_ubigeo"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="@string/modulo_3_p312_sp1"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
+            android:textSize="@dimen/margen_medium"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_3_p312_sp1"/>
+        <Spinner
+            android:layout_width="@dimen/width_spinner_ubigeo"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margen_small">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/mod3_312_inputProvincia"
-            android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/altura_spinner">
+        <TextView
+            android:layout_width="@dimen/width_desc_ubigeo"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="@string/modulo_3_p312_sp2"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
+            android:textSize="@dimen/margen_medium"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_3_p312_sp2"/>
+        <Spinner
+            android:layout_width="@dimen/width_spinner_ubigeo"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/mod3_312_inputDepartamento"
-            android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/altura_spinner">
+        <TextView
+            android:layout_width="@dimen/width_desc_ubigeo"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="@string/modulo_3_p312_sp3"/>
-    </android.support.design.widget.TextInputLayout>
+            android:textSize="@dimen/margen_medium"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_3_p312_sp3"/>
+        <Spinner
+            android:layout_width="@dimen/width_spinner_ubigeo"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
 </LinearLayout>

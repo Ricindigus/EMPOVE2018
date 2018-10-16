@@ -12,14 +12,17 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p617"/>
     <RadioGroup
+        android:id="@+id/mod6_617_radiogroup_C6_P617"
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <RadioButton
+            android:id="@+id/mod6_617_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p617_sp1"/>
         <RadioButton
+            android:id="@+id/mod6_617_rb2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p617_sp2"/>

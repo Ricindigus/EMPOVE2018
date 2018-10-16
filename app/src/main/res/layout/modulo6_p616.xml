@@ -17,7 +17,7 @@
         android:layout_marginTop="@dimen/margen_small"
         android:gravity="center">
         <EditText
-            android:id="@+id/mod6_616_edittext_dinero"
+            android:id="@+id/mod6_616_edittext_C6_P616_MON"
             android:layout_width="@dimen/longitud_input_n_horas"
             android:layout_height="@dimen/altura_input_especifique"
             android:background="@drawable/input_text_enabled"
@@ -25,11 +25,18 @@
             android:layout_marginRight="@dimen/margen_large"
             android:hint="@string/modulo_6_p616_dinero"/>
         <EditText
-            android:id="@+id/mod6_616_edittext_especie"
+            android:id="@+id/mod6_616_edittext_C6_P616_ESP"
             android:layout_width="@dimen/longitud_input_n_horas"
             android:layout_height="@dimen/altura_input_especifique"
             android:background="@drawable/input_text_enabled"
             android:paddingLeft="@dimen/margen_small"
             android:hint="@string/modulo_6_p616_especie"/>
     </LinearLayout>
+    <CheckBox
+        android:id="@+id/mod6_616_checkbox_C6_P616_NAS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_small"
+        android:layout_gravity="center"
+        android:text="@string/modulo_6_p616_nas"/>
 </LinearLayout>

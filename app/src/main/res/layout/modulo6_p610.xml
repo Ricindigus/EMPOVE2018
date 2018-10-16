@@ -23,43 +23,43 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <EditText
-            android:id="@+id/mod6_610_input_prim_dom"
+            android:id="@+id/mod6_610_edittext_C6_P610_PD"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_prim_lun"
+            android:id="@+id/mod6_610_edittext_C6_P610_PL"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_prim_mar"
+            android:id="@+id/mod6_610_edittext_C6_P610_PM"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_prim_mier"
+            android:id="@+id/mod6_610_edittext_C6_P610_PMI"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_prim_jue"
+            android:id="@+id/mod6_610_edittext_C6_P610_PJ"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_prim_vie"
+            android:id="@+id/mod6_610_edittext_C6_P610_PV"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_prim_sab"
+            android:id="@+id/mod6_610_edittext_C6_P610_PS"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
@@ -123,43 +123,43 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <EditText
-            android:id="@+id/mod6_610_input_sec_dom"
+            android:id="@+id/mod6_610_edittext_C6_P610_SD"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_sec_lun"
+            android:id="@+id/mod6_610_edittext_C6_P610_SL"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_sec_mar"
+            android:id="@+id/mod6_610_edittext_C6_P610_SM"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_sec_mier"
+            android:id="@+id/mod6_610_edittext_C6_P610_SMI"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_sec_jue"
+            android:id="@+id/mod6_610_edittext_C6_P610_SJ"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_sec_vie"
+            android:id="@+id/mod6_610_edittext_C6_P610_SV"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
             android:background="@drawable/input_text_enabled"/>
         <EditText
-            android:id="@+id/mod6_610_input_sec_sab"
+            android:id="@+id/mod6_610_edittext_C6_P610_SS"
             android:layout_width="0dp"
             android:layout_height="@dimen/altura_input_especifique"
             android:layout_weight="1"
@@ -226,6 +226,7 @@
             android:textSize="@dimen/texto_medium"
             android:text="@string/modulo_6_p610_total"/>
         <EditText
+            android:id="@+id/mod6_610_edittext_C6_P610_T"
             android:layout_width="@dimen/longitud_input_n_horas"
             android:layout_height="@dimen/altura_input_solo"
             android:background="@drawable/input_text_enabled"/>

@@ -12,12 +12,14 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_5_p502"/>
     <EditText
+        android:id="@+id/mod5_502_edittext_C5_P502_C"
         android:layout_marginTop="@dimen/margen_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="@string/modulo_5_p502_especifique"/>
     <CheckBox
+        android:id="@+id/mod5_502_checkbox_C5_P502"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_5_p502_sp1"/>

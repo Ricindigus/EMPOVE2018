@@ -23,6 +23,7 @@
             android:layout_marginRight="@dimen/margen_medium"
             android:text="@string/modulo_6_p625_semana"/>
         <EditText
+            android:id="@+id/mod6_625_edittext_C6_P625"
             android:layout_width="@dimen/longitud_input_n_horas"
             android:layout_height="@dimen/altura_input_especifique"
             android:background="@drawable/input_text_enabled"/>

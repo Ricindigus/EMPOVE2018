@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_4_p416_sp1"/>
         <RadioGroup
-            android:id="@+id/mod4_416_rg1"
+            android:id="@+id/mod4_416_radiogroup_C4_P416_1"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_4_p416_sp2"/>
         <RadioGroup
-            android:id="@+id/mod4_416_rg2"
+            android:id="@+id/mod4_416_radiogroup_C4_P416_2"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_4_p416_sp3"/>
         <RadioGroup
-            android:id="@+id/mod4_416_rg3"
+            android:id="@+id/mod4_416_radiogroup_C4_P416_3"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_4_p416_sp4"/>
         <RadioGroup
-            android:id="@+id/mod4_416_rg4"
+            android:id="@+id/mod4_416_radiogroup_C4_P416_4"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -138,7 +138,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_4_p416_sp5"/>
         <RadioGroup
-            android:id="@+id/mod4_416_rg5"
+            android:id="@+id/mod4_416_radiogroup_C4_P416_5"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -167,7 +167,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_4_p416_sp6"/>
         <RadioGroup
-            android:id="@+id/mod4_416_rg6"
+            android:id="@+id/mod4_416_radiogroup_C4_P416_6"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"

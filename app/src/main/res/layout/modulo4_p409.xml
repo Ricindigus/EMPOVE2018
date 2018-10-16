@@ -12,7 +12,7 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_4_p409"/>
     <RadioGroup
-        android:id="@+id/mod4_409_rg"
+        android:id="@+id/mod4_409_radiogroup_C4_P409"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

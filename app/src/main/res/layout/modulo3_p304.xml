@@ -13,7 +13,7 @@
         android:text="@string/modulo_3_p304"/>
 
     <RadioGroup
-        android:id="@+id/mod3_304_rg"
+        android:id="@+id/mod3_304_radiogroup_C3_P304"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

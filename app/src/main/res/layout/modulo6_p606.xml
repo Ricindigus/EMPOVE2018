@@ -12,7 +12,7 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p606"/>
     <EditText
-        android:id="@+id/mod6_606_input_sp1"
+        android:id="@+id/mod6_606_edittext_C6_P606"
         android:layout_width="match_parent"
         android:inputType="textMultiLine"
         android:gravity="start|left"

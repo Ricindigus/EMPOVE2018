@@ -12,7 +12,7 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_5_p512"/>
     <RadioGroup
-        android:id="@+id/mod5_512_rg"
+        android:id="@+id/mod5_512_radiogroup_C5_P512"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -52,6 +52,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p512_sp6"/>
             <EditText
+                android:id="@+id/mod5_512_edittext_C5_P512_O"
                 android:layout_width="@dimen/width_input_especifique"
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/margen_small"

@@ -12,7 +12,7 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_5_p507"/>
     <RadioGroup
-        android:id="@+id/mod5_507_rg"
+        android:id="@+id/mod5_507_radiogroup_C5_P507"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <RadioButton
@@ -33,35 +33,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/marco_subpregunta">
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="@dimen/longitud_ubicacion"
-            android:layout_height="wrap_content">
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/mod5_507_input_distrito"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
+            <Spinner
+                android:id="@+id/mod5_507_edittext_C5_P507_DIST"
+                android:layout_width="@dimen/width_spinner_ubigeo"
+                android:layout_height="@dimen/altura_spinner"
                 android:inputType="text"
+                android:layout_margin="@dimen/margen_small"
                 android:hint="@string/modulo_5_p507_distrito"/>
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="@dimen/longitud_ubicacion"
-            android:layout_height="wrap_content">
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/mod5_507_input_provincia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
+            <Spinner
+                android:id="@+id/mod5_507_edittext_C5_P507_PROV"
+                android:layout_width="@dimen/width_spinner_ubigeo"
+                android:layout_height="@dimen/altura_spinner"
+                android:layout_margin="@dimen/margen_small"
                 android:inputType="text"
                 android:hint="@string/modulo_5_p507_provincia"/>
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="@dimen/longitud_ubicacion"
-            android:layout_height="wrap_content">
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/mod5_507_input_departamento"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
+            <Spinner
+                android:id="@+id/mod5_507_edittext_C5_P507_DEP"
+                android:layout_width="@dimen/width_spinner_ubigeo"
+                android:layout_height="@dimen/altura_spinner"
+                android:layout_margin="@dimen/margen_small"
                 android:inputType="text"
                 android:hint="@string/modulo_5_p507_departamento"/>
-        </android.support.design.widget.TextInputLayout>
+
     </LinearLayout>
 </LinearLayout>

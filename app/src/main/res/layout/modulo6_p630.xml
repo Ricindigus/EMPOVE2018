@@ -22,6 +22,7 @@
             android:textSize="@dimen/texto_small"
             android:text="@string/modulo_6_p630_sp1"/>
         <RadioGroup
+            android:id="@+id/mod6_630_radiogroup_C6_P630_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -48,6 +49,7 @@
             android:textStyle="bold"
             android:text="@string/modulo_6_p630_medios"/>
         <RadioGroup
+            android:id="@+id/mod6_630_radiogroup_C6_P630_1_MED"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -68,11 +70,8 @@
                     android:layout_marginRight="@dimen/margen_small"
                     android:text="@string/modulo_6_p630_med3"/>
                 <EditText
-                    android:layout_width="@dimen/width_input_especifique"
-                    android:layout_height="@dimen/altura_input_especifique"
-                    android:paddingLeft="@dimen/margen_small"
-                    android:hint="@string/modulo_6_p630_especifique"
-                    android:background="@drawable/input_text_disabled"/>
+                    android:id="@+id/mod6_630_edittext_C6_P630_1_O"
+                    style="@style/TemaInputEspecifique"/>
             </LinearLayout>
         </RadioGroup>
         <TextView
@@ -82,6 +81,7 @@
             android:layout_marginTop="@dimen/margen_medium"
             android:text="@string/modulo_6_p630_frecuencia"/>
         <Spinner
+            android:id="@+id/mod6_630_spinner_C6_P630_1_FREC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
@@ -94,6 +94,7 @@
             android:layout_marginTop="@dimen/margen_medium"
             android:text="@string/modulo_6_p630_monto"/>
         <Spinner
+            android:id="@+id/mod6_630_spinner_C6_P630_1_MONT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
@@ -111,6 +112,7 @@
             android:textSize="@dimen/texto_small"
             android:text="@string/modulo_6_p630_sp2"/>
         <RadioGroup
+            android:id="@+id/mod6_630_radiogroup_C6_P630_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -137,6 +139,7 @@
             android:textStyle="bold"
             android:text="@string/modulo_6_p630_medios"/>
         <RadioGroup
+            android:id="@+id/mod6_630_radiogroup_C6_P630_2_MED"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -157,11 +160,8 @@
                     android:layout_marginRight="@dimen/margen_small"
                     android:text="@string/modulo_6_p630_med3"/>
                 <EditText
-                    android:layout_width="@dimen/width_input_especifique"
-                    android:layout_height="@dimen/altura_input_especifique"
-                    android:paddingLeft="@dimen/margen_small"
-                    android:hint="@string/modulo_6_p630_especifique"
-                    android:background="@drawable/input_text_disabled"/>
+                    android:id="@+id/mod6_630_edittext_C6_P630_2_O"
+                    style="@style/TemaInputEspecifique"/>
             </LinearLayout>
         </RadioGroup>
         <TextView
@@ -171,6 +171,7 @@
             android:layout_marginTop="@dimen/margen_medium"
             android:text="@string/modulo_6_p630_frecuencia"/>
         <Spinner
+            android:id="@+id/mod6_630_spinner_C6_P630_2_FREC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
@@ -183,6 +184,7 @@
             android:layout_marginTop="@dimen/margen_medium"
             android:text="@string/modulo_6_p630_monto"/>
         <Spinner
+            android:id="@+id/mod6_630_spinner_C6_P630_2_MONT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"

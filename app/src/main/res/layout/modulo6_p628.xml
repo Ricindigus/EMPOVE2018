@@ -12,6 +12,7 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p628"/>
     <EditText
+        android:id="@+id/mod6_628_edittext_C6_P628"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView

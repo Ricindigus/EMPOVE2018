@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp1"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg1"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_1"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp2"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg2"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_2"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp3"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg3"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_3"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp4"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg4"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_4"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -138,7 +138,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp5"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg5"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_5"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -167,7 +167,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp6"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg6"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_6"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -196,7 +196,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp7"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg7"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_7"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -225,7 +225,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp8"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg8"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_8"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -254,7 +254,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp9"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg9"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_9"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -283,7 +283,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p604_sp10"/>
         <RadioGroup
-            android:id="@+id/mod6_604_rg10"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_10"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -316,15 +316,12 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_6_p604_sp11"/>
             <EditText
-                android:id="@+id/mod6_604_especifique"
-                android:layout_width="@dimen/width_input_especifique"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:background="@drawable/input_text_disabled"/>
+                android:id="@+id/mod6_604_edittext_C6_P604_O"
+                style="@style/TemaInputEspecifique"/>
         </LinearLayout>
 
         <RadioGroup
-            android:id="@+id/mod6_604_rg11"
+            android:id="@+id/mod6_604_radiogroup_C6_P604_11"
             android:layout_width="@dimen/longitud_radio"
             android:layout_height="wrap_content"
             android:gravity="center"

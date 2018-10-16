@@ -12,7 +12,7 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_5_p506"/>
     <RadioGroup
-        android:id="@+id/mod5_506_rg"
+        android:id="@+id/mod5_506_radiogroup_C5_P506_1"
         android:padding="@dimen/margen_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -35,7 +35,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
             <TextView
-                android:id="@+id/mod5_506_sp1_anio"
+                android:id="@+id/mod5_506_sp1_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_text_enabled"/>
@@ -45,7 +45,7 @@
                 android:layout_marginLeft="@dimen/margen_large"
                 android:text="@string/modulo_5_p506_cent_est"/>
             <RadioGroup
-                android:id="@+id/mod5_506_sp1_rg_ce"
+                android:id="@+id/mod5_506_sp1_radiogroup_C5_P506_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -81,7 +81,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_grado"/>
             <TextView
-                android:id="@+id/mod5_506_sp2_anio"
+                android:id="@+id/mod5_506_sp2_textview_C5_P506_3"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_text_enabled"/>
@@ -91,7 +91,7 @@
                 android:layout_marginLeft="@dimen/margen_large"
                 android:text="@string/modulo_5_p506_cent_est"/>
             <RadioGroup
-                android:id="@+id/mod5_506_sp2_rg_ce"
+                android:id="@+id/mod5_506_sp2_radiogroup_C5_P506_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -127,7 +127,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
             <TextView
-                android:id="@+id/mod5_506_sp3_anio"
+                android:id="@+id/mod5_506_sp3_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_text_enabled"/>
@@ -137,7 +137,7 @@
                 android:layout_marginLeft="@dimen/margen_large"
                 android:text="@string/modulo_5_p506_cent_est"/>
             <RadioGroup
-                android:id="@+id/mod5_506_sp3_rg_ce"
+                android:id="@+id/mod5_506_sp3_radiogroup_C5_P506_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -173,7 +173,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
             <TextView
-                android:id="@+id/mod5_506_sp4_anio"
+                android:id="@+id/mod5_506_sp4_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_text_enabled"/>
@@ -183,7 +183,7 @@
                 android:layout_marginLeft="@dimen/margen_large"
                 android:text="@string/modulo_5_p506_cent_est"/>
             <RadioGroup
-                android:id="@+id/mod5_506_sp4_rg_ce"
+                android:id="@+id/mod5_506_sp4_radiogroup_C5_P506_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -219,7 +219,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
             <TextView
-                android:id="@+id/mod5_506_sp5_anio"
+                android:id="@+id/mod5_506_sp5_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_text_enabled"/>
@@ -229,7 +229,7 @@
                 android:layout_marginLeft="@dimen/margen_large"
                 android:text="@string/modulo_5_p506_cent_est"/>
             <RadioGroup
-                android:id="@+id/mod5_506_sp5_rg_ce"
+                android:id="@+id/mod5_506_sp5_radiogroup_C5_P506_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -265,7 +265,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
             <TextView
-                android:id="@+id/mod5_506_sp6_anio"
+                android:id="@+id/mod5_506_sp6_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_text_enabled"/>
@@ -275,7 +275,7 @@
                 android:layout_marginLeft="@dimen/margen_large"
                 android:text="@string/modulo_5_p506_cent_est"/>
             <RadioGroup
-                android:id="@+id/mod5_506_sp6_rg_ce"
+                android:id="@+id/mod5_506_sp6_radiogroup_C5_P506_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">

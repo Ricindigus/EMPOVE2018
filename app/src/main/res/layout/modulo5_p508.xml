@@ -12,52 +12,52 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_5_p508"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck1"
+        android:id="@+id/mod5_508_checkbox_C5_P508_1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp1"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck2"
+        android:id="@+id/mod5_508_checkbox_C5_P508_2"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp2"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck3"
+        android:id="@+id/mod5_508_checkbox_C5_P508_3"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp3"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck4"
+        android:id="@+id/mod5_508_checkbox_C5_P508_4"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp4"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck5"
+        android:id="@+id/mod5_508_checkbox_C5_P508_5"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp5"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck6"
+        android:id="@+id/mod5_508_checkbox_C5_P508_6"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp6"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck7"
+        android:id="@+id/mod5_508_checkbox_C5_P508_7"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp7"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck8"
+        android:id="@+id/mod5_508_checkbox_C5_P508_8"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp8"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck9"
+        android:id="@+id/mod5_508_checkbox_C5_P508_9"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp9"/>
     <CheckBox
-        android:id="@+id/mod5_508_ck10"
+        android:id="@+id/mod5_508_checkbox_C5_P508_10"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_5_p508_sp10"/>
@@ -66,16 +66,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <CheckBox
-            android:id="@+id/mod5_508_ck11"
+            android:id="@+id/mod5_508_checkbox_C5_P508_11"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_5_p508_sp11"/>
         <EditText
-            android:id="@+id/mod5_508_especifique"
-            android:layout_width="@dimen/width_input_especifique"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:background="@drawable/input_text_disabled"/>
+            android:id="@+id/mod5_508_edittext_C5_P508_O"
+            style="@style/TemaInputEspecifique"/>
     </LinearLayout>
 </LinearLayout>
