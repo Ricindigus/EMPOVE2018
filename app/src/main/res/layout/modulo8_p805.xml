@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_8_p805_sp1"/>
         <RadioGroup
+            android:id="@+id/mod8_805_radiogroup_C8_P805_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -53,6 +54,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_8_p805_sp2"/>
         <RadioGroup
+            android:id="@+id/mod8_805_radiogroup_C8_P805_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -84,6 +86,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_8_p805_sp3"/>
         <RadioGroup
+            android:id="@+id/mod8_805_radiogroup_C8_P805_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -115,6 +118,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_8_p805_sp4"/>
         <RadioGroup
+            android:id="@+id/mod8_805_radiogroup_C8_P805_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -146,6 +150,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_8_p805_sp5"/>
         <RadioGroup
+            android:id="@+id/mod8_805_radiogroup_C8_P805_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
