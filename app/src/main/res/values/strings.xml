@@ -24,6 +24,44 @@
     <string name="marco_periodo">PERIODO</string>
     <string name="marco_conglomerado">CONGLOMERADO</string>
 
+    <!--Strings asociados a la caratula-->
+    <string name="caratula_ubicacion_geografica">UBICACIÓN GEOGRÁFICA</string>
+    <string name="caratula_departamento">1.DEPARTAMENTO</string>
+    <string name="caratula_provincia">2.PROVINCIA</string>
+    <string name="caratula_distrito">3.DISTRITO</string>
+    <string name="caratula_centro_poblado">4.CENTRO POBLADO</string>
+
+    <string name="caratula_ubicacion_muestral">UBICACIÓN MUESTRAL</string>
+    <string name="caratula_zona">5.ZONA N°</string>
+    <string name="caratula_n_manzana">6.MANZANA N°</string>
+    <string name="caratula_aer">7.AER N°</string>
+    <string name="caratula_n_vivienda">8.VIVIENDA N°</string>
+
+    <string name="caratula_direccion">9.DIRECCIÓN DE LA VIVIENDA</string>
+    <string-array name="caratula_array_tipo_via">
+        <item>Seleccione</item>
+        <item>1.Avenida</item>
+        <item>2.Jirón</item>
+        <item>3.Calle</item>
+        <item>4.Pasaje</item>
+        <item>5.Carretera</item>
+        <item>6.Prolongación</item>
+        <item>7.Otro</item>
+    </string-array>
+    <string name="caratula_tipo_via">Tipo de vía</string>
+    <string name="caratula_nombre_via">Nombre de vía</string>
+    <string name="caratula_n_puerta">N° Puerta</string>
+    <string name="caratula_block">Block</string>
+    <string name="caratula_interior">Interior</string>
+    <string name="caratula_piso">Piso</string>
+    <string name="caratula_manzana">Manzana</string>
+    <string name="caratula_lote">Lote</string>
+    <string name="caratula_km">Km</string>
+    <string name="caratula_n_telefono">N° de Teléfono</string>
+
+    <string name="caratula_total_hogares">10.TOTAL DE HOGARES QUE OCUPAN LA VIVIENDA</string>
+    <string name="caratula_n_hogares">¿CUANTOS HOGARES OCUPAN ESTA VIVIENDA?</string>
+
     <!--Strings asociados a la Cabecera-->
     <string name="cabecera_persona_n">Persona N°</string>
     <string name="cabecera_nombre">Nombre: </string>
