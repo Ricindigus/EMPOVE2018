@@ -49,7 +49,7 @@
                 <EditText
                     android:id="@+id/mod6_629_especifique"
                     android:layout_width="@dimen/width_input_especifique"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/altura_input_especifique"
                     android:inputType="text"
                     android:paddingLeft="@dimen/margen_small"
                     android:hint="@string/modulo_6_p629_especifique"

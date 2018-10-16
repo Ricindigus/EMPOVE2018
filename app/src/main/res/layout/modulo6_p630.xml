@@ -70,6 +70,8 @@
                 <EditText
                     android:layout_width="@dimen/width_input_especifique"
                     android:layout_height="@dimen/altura_input_especifique"
+                    android:paddingLeft="@dimen/margen_small"
+                    android:hint="@string/modulo_6_p630_especifique"
                     android:background="@drawable/input_text_disabled"/>
             </LinearLayout>
         </RadioGroup>
@@ -157,6 +159,8 @@
                 <EditText
                     android:layout_width="@dimen/width_input_especifique"
                     android:layout_height="@dimen/altura_input_especifique"
+                    android:paddingLeft="@dimen/margen_small"
+                    android:hint="@string/modulo_6_p630_especifique"
                     android:background="@drawable/input_text_disabled"/>
             </LinearLayout>
         </RadioGroup>
