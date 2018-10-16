@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
-            <TextView
+            <EditText
                 android:id="@+id/mod5_506_sp1_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_grado"/>
-            <TextView
+            <EditText
                 android:id="@+id/mod5_506_sp2_textview_C5_P506_3"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
-            <TextView
+            <EditText
                 android:id="@+id/mod5_506_sp3_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
-            <TextView
+            <EditText
                 android:id="@+id/mod5_506_sp4_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
@@ -218,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
-            <TextView
+            <EditText
                 android:id="@+id/mod5_506_sp5_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"
@@ -264,7 +264,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_5_p506_anio"/>
-            <TextView
+            <EditText
                 android:id="@+id/mod5_506_sp6_textview_C5_P506_2"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="wrap_content"

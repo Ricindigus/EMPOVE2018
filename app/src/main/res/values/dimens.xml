@@ -31,4 +31,5 @@
     <dimen name="longitud_radio_3">300dp</dimen>
     <dimen name="width_spinner_ubigeo">500dp</dimen>
     <dimen name="width_desc_ubigeo">120dp</dimen>
+    <dimen name="longitud_pregunta_ubicacion">150dp</dimen>
 </resources>
