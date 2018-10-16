@@ -44,6 +44,13 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="RaisedButtonActivitiesAgregar" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/texto_medium</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <style name="TemaTextoPregunta" parent="AppTheme">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/texto_small</item>

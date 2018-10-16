@@ -1272,6 +1272,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="modulo_3_p318_boton">Guardar Persona</string>
+    <string name="modulo_3_p309_titulo_agregar">AGREGAR RUTA</string>
+    <string name="modulo_3_p318_titulo_agregar">AGREGAR PERSONA</string>
 
 
 </resources>

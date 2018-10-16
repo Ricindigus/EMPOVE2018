@@ -7,6 +7,14 @@
     android:padding="@dimen/margen_medium"
     android:orientation="vertical"
     tools:context=".activities.agregacion.P318Activity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_3_p318_titulo_agregar"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/texto_medium"
+        android:textColor="@color/colorPrimary"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,11 +53,63 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margen_medium"
                 android:text="@string/modulo_3_p318_sexo_op1"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/modulo_3_p318_sexo_op1"/>
+                android:text="@string/modulo_3_p318_sexo_op2"/>
         </RadioGroup>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margen_small"
+        android:padding="@dimen/margen_small"
+        android:orientation="horizontal"
+        android:background="@drawable/marco_pregunta">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_3_p318_cab3"
+            style="@style/TemaTextoPregunta"/>
+        <EditText
+            android:layout_width="@dimen/longitud_input_n_horas"
+            android:layout_height="@dimen/altura_input_especifique"
+            android:background="@drawable/input_text_enabled"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margen_small"
+        android:padding="@dimen/margen_small"
+        android:orientation="vertical"
+        android:background="@drawable/marco_pregunta">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_3_p318_cab4"
+            style="@style/TemaTextoPregunta"/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margen_medium"
+                android:text="@string/modulo_3_p318_12meses_si"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modulo_3_p318_12meses_no"/>
+        </RadioGroup>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margen_small"
+        android:theme="@style/RaisedButtonActivitiesAgregar"
+        android:text="@string/modulo_3_p318_boton"/>
 </LinearLayout>

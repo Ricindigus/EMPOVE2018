@@ -7,6 +7,14 @@
     android:padding="@dimen/margen_medium"
     android:orientation="vertical"
     tools:context=".activities.agregacion.P309Activity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_3_p309_titulo_agregar"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/texto_medium"
+        android:textColor="@color/colorPrimary"/>
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -99,7 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margen_medium"
-        android:theme="@style/RaisedButtonDark"
+        android:theme="@style/RaisedButtonActivitiesAgregar"
         android:text="@string/modulo_3_p309_boton"
         />
 </LinearLayout>
