@@ -175,25 +175,41 @@
     <string name="modulo_2_submenu_1">Preguntas 202 - 203</string>
     <string name="modulo_2_submenu_2">Preguntas 204 - 206</string>
 
-    <string name="modulo_2_p202">202.¿CUÁL ES EL PRIMER NOMBRE DE CADA UNA DE LAS PERSONAS QUE VIVEN PERMANENTEMENTE EN ESTE HOGAR Y DE LAS QUE ESTÁN ALOJADAS AQUÍ?</string>
+    <string name="modulo_2_p202_pregunta_miembros">¿CUÁLES SON LAS PERSONAS QUE VIVEN PERMANENTEMENTE EN ESTE HOGAR Y DE LAS QUE ESTÁN ALOJADAS AQUÍ?</string>
     <string name="modulo_2_p202_ind">(No olvide registrar a los miembros del hogar ausentes y recién nacidos)</string>
 
+    <string name="modulo_2_cab_nro">N°</string>
+    <string name="modulo_2_cab_nombre">Nombre</string>
+    <string name="modulo_2_cab_parentesco">Parentesco</string>
+    <string name="modulo_2_cab_sexo">Sexo</string>
+    <string name="modulo_2_cab_edad">Edad</string>
+    <string name="modulo_2_cab_estado_civil">Estado Civil</string>
+
+    <string name="modulo_2_p202_nombre">Primer Nombre</string>
+    <string name="modulo_2_p202_boton_guardar">guardar persona</string>
+
+
+    <string name="modulo_2_p202">202.¿CUÁL ES EL PRIMER NOMBRE DE LAS PERSONA?</string>
     <string name="modulo_2_p203">203.¿CUÁL ES LA RELACIÓN DE PARENTESCO CON EL (LA) JEFE/A DEL HOGAR?</string>
-    <string name="modulo_2_p203_sp1">1.Jefe/a del hogar</string>
-    <string name="modulo_2_p203_sp2">2.Esposo/a o compañero/a</string>
-    <string name="modulo_2_p203_sp3">3.Hijo/a o hijastro/a</string>
-    <string name="modulo_2_p203_sp4">4.Yerno/Nuera</string>
-    <string name="modulo_2_p203_sp5">5.Nieto/a</string>
-    <string name="modulo_2_p203_sp6">6.Padres/Suegros</string>
-    <string name="modulo_2_p203_sp7">7.Hermano/a</string>
-    <string name="modulo_2_p203_sp8">8.Otro pariente</string>
-    <string name="modulo_2_p203_sp9">9.Trabajador/a del hogar</string>
-    <string name="modulo_2_p203_sp10">10.Pensionista</string>
-    <string name="modulo_2_p203_sp11">11.Otro No Pariente</string>
+
+    <string-array name="modulo_2_p203_parentescos">
+        <item>Seleccione Parentesco</item>
+        <item>1.Jefe/a del hogar</item>
+        <item>2.Esposo/a o compañero/a</item>
+        <item>3.Hijo/a o hijastro/a</item>
+        <item>4.Yerno/Nuera</item>
+        <item>5.Nieto/a</item>
+        <item>6.Padres/Suegros</item>
+        <item>7.Hermano/a</item>
+        <item>8.Otro pariente</item>
+        <item>9.Trabajador/a del hogar</item>
+        <item>10.Pensionista</item>
+        <item>11.Otro No Pariente</item>
+    </string-array>
 
     <string name="modulo_2_p204">204.SEXO</string>
-    <string name="modulo_2_p204_sp1">1.H</string>
-    <string name="modulo_2_p204_sp2">2.M</string>
+    <string name="modulo_2_p204_sp1">1.Masculino</string>
+    <string name="modulo_2_p204_sp2">2.Femenino</string>
 
     <string name="modulo_2_p205">205¿QUÉ EDAD TIENE EN AÑOS CUMPLIDOS?</string>
     <string name="modulo_2_p205_anio">Años</string>
@@ -203,12 +219,15 @@
     <string name="sub_modulo_2_1">PARA 12 AÑOS Y MÁS DE EDAD</string>
 
     <string name="modulo_2_p206">206.ACTUALMENTE, ¿CUÁL ES SU ESTADO CIVIL O CONYUGAL?</string>
-    <string name="modulo_2_p206_sp1">1.Conviviente</string>
-    <string name="modulo_2_p206_sp2">2.Casado/a</string>
-    <string name="modulo_2_p206_sp3">3.Viudo/a</string>
-    <string name="modulo_2_p206_sp4">4.Divorciado/a</string>
-    <string name="modulo_2_p206_sp5">5.Separado/a o Ex conviviente</string>
-    <string name="modulo_2_p206_sp6">6.Soltero/a</string>
+    <string-array name="modulo_2_p206_estado_civil">
+        <item>Seleccione Estado Civil</item>
+        <item>1.Conviviente</item>
+        <item>2.Casado/a</item>
+        <item>3.Viudo/a</item>
+        <item>4.Divorciado/a</item>
+        <item>5.Separado/a o Ex conviviente</item>
+        <item>6.Soltero/a</item>
+    </string-array>
 
     <!--Strings asociados al módulo 3: SITUACIÓN MIGRATORIA DE LA PERSONA-->
     <string name="modulo_3_nombre">III. SITUACIÓN MIGRATORIA DE LA PERSONA (Todas las personas)</string>
@@ -271,12 +290,18 @@
     <string name="modulo_3_p309_cab2">Ciudad</string>
     <string name="modulo_3_p309_cab3">Modo de tránsito</string>
     <string name="modulo_3_p309_cab4">Fecha</string>
-    <string name="modulo_3_p309_sp_op1">1.Aire</string>
-    <string name="modulo_3_p309_sp_op2">2.Bus</string>
-    <string name="modulo_3_p309_sp_op3">3.A pie</string>
-    <string name="modulo_3_p309_sp_op4">4.Mar</string>
+    <string name="modulo_3_p309_cab4_mes">Mes</string>
+    <string name="modulo_3_p309_cab4_anio">Año</string>
+    <string name="modulo_3_p309_boton">guardar ruta</string>
 
 
+    <string-array name="modulo_3_p309_array_modo_transito">
+        <item>Seleccione</item>
+        <item>1.Aire</item>
+        <item>2.Bus</item>
+        <item>3.A pie</item>
+        <item>4.Mar</item>
+    </string-array>
     <string name="modulo_3_p310">310.¿CON QUIÉN O QUIENES VIAJÓ?</string>
     <string name="modulo_3_p310_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_3_p310_sp1">1.Con un grupo familiar</string>
@@ -352,6 +377,18 @@
     <string name="modulo_3_p318_sexo_op2">2.Mujer</string>
     <string name="modulo_3_p318_12meses_si">1.Sí</string>
     <string name="modulo_3_p318_12meses_no">2.No</string>
+    <string-array name="modulo_3_p318_array_parentesco">
+        <item>Seleccione relación parentesco</item>
+        <item>1.Papá</item>
+        <item>2.Mamá</item>
+        <item>3.Esposo/a o Compañero/a</item>
+        <item>4.Hijo/a o Hijastro/a</item>
+        <item>5.Yerno/Nuera</item>
+        <item>6.Nieto/a</item>
+        <item>7.Suegros</item>
+        <item>8.Hermano/a</item>
+        <item>9.Otro/pariente</item>
+    </string-array>
 
     <!--Strings asociados al módulo 4: SALUD-->
     <string name="modulo_4_nombre">IV. SALUD(Todas las personas)</string>
@@ -993,7 +1030,6 @@
     <string name="modulo_7_p709_sp9">9.Otra necesidad</string>
     <string name="modulo_7_p709_especifique">Especifique</string>
     <string name="modulo_7_p709_sp10">10.SUS NECESIDADES YA ESTAN CUBIERTAS</string>
-
 
 
     <!--Strings asociados al módulo 8: GÉNERO Y VICTIMIZACIÓN-->

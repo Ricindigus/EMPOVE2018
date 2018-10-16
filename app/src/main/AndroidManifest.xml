@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ricindigus.empove2018">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/family"
@@ -28,6 +30,9 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.MarcoActivity" />
+        <activity android:name=".activities.agregacion.M2ResidentesActivity" />
+        <activity android:name=".activities.agregacion.P309Activity" />
+        <activity android:name=".activities.agregacion.P318Activity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.agregacion.M2ResidentesActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_medium"
+            android:orientation="vertical">
+            <include layout="@layout/modulo2_p202"/>
+            <include layout="@layout/modulo2_p203"/>
+            <include layout="@layout/modulo2_p204"/>
+            <include layout="@layout/modulo2_p205"/>
+            <include layout="@layout/modulo2_p206"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/RaisedButtonDark"
+                android:text="@string/modulo_2_p202_boton_agregar"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
