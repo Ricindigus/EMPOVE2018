@@ -54,7 +54,7 @@
                             android:layout_height="@dimen/altura_spinner"
                             android:background="@drawable/input_text_enabled">
                             <Spinner
-                                android:id="@+id/marco_sp_departamento"
+                                android:id="@+id/marco_sp_anio"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"/>
                         </LinearLayout>
@@ -74,7 +74,7 @@
                             android:layout_height="@dimen/altura_spinner"
                             android:background="@drawable/input_text_enabled">
                             <Spinner
-                                android:id="@+id/marco_sp_provincia"
+                                android:id="@+id/marco_sp_mes"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"/>
                         </LinearLayout>
@@ -102,7 +102,7 @@
                             android:layout_height="30dp"
                             android:background="@drawable/input_text_enabled">
                             <Spinner
-                                android:id="@+id/marco_sp_distrito"
+                                android:id="@+id/marco_sp_periodo"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"/>
                         </LinearLayout>
@@ -122,7 +122,7 @@
                             android:layout_height="30dp"
                             android:background="@drawable/input_text_enabled">
                             <Spinner
-                                android:id="@+id/marco_sp_periodo"
+                                android:id="@+id/marco_sp_conglomerado"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:textAlignment="center"/>
