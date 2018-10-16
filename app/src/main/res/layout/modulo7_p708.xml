@@ -18,22 +18,27 @@
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p708_ind"/>
     <CheckBox
+        android:id="@+id/mod7_708_checkbox_C7_P708_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p708_sp1"/>
     <CheckBox
+        android:id="@+id/mod7_708_checkbox_C7_P708_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p708_sp2"/>
     <CheckBox
+        android:id="@+id/mod7_708_checkbox_C7_P708_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p708_sp3"/>
     <CheckBox
+        android:id="@+id/mod7_708_checkbox_C7_P708_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p708_sp4"/>
     <CheckBox
+        android:id="@+id/mod7_708_checkbox_C7_P708_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p708_sp5"/>
