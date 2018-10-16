@@ -39,6 +39,7 @@
 
     <string name="caratula_direccion">9.DIRECCIÓN DE LA VIVIENDA</string>
     <string-array name="caratula_array_tipo_via">
+        <item>Seleccione</item>
         <item>1.Avenida</item>
         <item>2.Jirón</item>
         <item>3.Calle</item>
@@ -47,6 +48,7 @@
         <item>6.Prolongación</item>
         <item>7.Otro</item>
     </string-array>
+    <string name="caratula_tipo_via">Tipo de vía</string>
     <string name="caratula_nombre_via">Nombre de vía</string>
     <string name="caratula_n_puerta">N° Puerta</string>
     <string name="caratula_block">Block</string>
