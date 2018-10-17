@@ -54,7 +54,7 @@
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_7_p705_sp6"/>
         <EditText
-            android:id="@+id/mod7_705_checkbox_C7_P705_O"
+            android:id="@+id/mod7_705_edittext_C7_P705_O"
             style="@style/TemaInputEspecifique"
             android:text="@string/modulo_7_p705_especifique"/>
     </LinearLayout>
