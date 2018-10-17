@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="@dimen/margen_medium"
     tools:context=".fragments.generales.FragmentFuncionarios">
 
@@ -10,9 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/greyBluePrimary"
-        android:id="@+id/formulario_layout">
-
+        android:layout_margin="@dimen/margen_small"
+        android:background="@color/greyBluePrimary">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -224,4 +224,5 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>
+    <include layout="@layout/caratula_existen_venezolanos"/>
 </LinearLayout>

@@ -32,7 +32,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:text="@string/sub_modulo_1_1"/>
-            <include layout="@layout/caratula_existen_venezolanos"/>
             <include layout="@layout/modulo1_p101"/>
             <include layout="@layout/modulo1_p102"/>
             <include layout="@layout/modulo1_p103"/>
