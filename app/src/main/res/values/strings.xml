@@ -62,10 +62,48 @@
     <string name="caratula_total_hogares">10.TOTAL DE HOGARES QUE OCUPAN LA VIVIENDA</string>
     <string name="caratula_n_hogares">¿CUANTOS HOGARES OCUPAN ESTA VIVIENDA?</string>
 
+
+    <!--Strings asociados a las visitas-->
+    <string name="visita_titulo">13.ENTREVISTAS Y SUPERVISIÓN</string>
+    <string name="visita_visitas_hogar">VISITAS AL HOGAR</string>
+    <string name="visita_numero">N°</string>
+    <string name="visita_encuestador">ENCUESTADOR/A</string>
+    <string name="visita_supervisor">SUPERVISOR/A LOCAL</string>
+    <string name="visita_fecha">FECHA</string>
+    <string name="visita_hora">HORA</string>
+    <string name="visita_de">DE</string>
+    <string name="visita_a">A</string>
+    <string name="visita_proxima">PRÓXIMA VISITA</string>
+    <string name="visita_resultado_visita">RESULTADO DE LA VISITA</string>
+    <string name="visita_resultado_final">RESULTADO FINAL DE LA ENCUESTA</string>
+    <string name="visita_resultado">RESULTADO</string>
+    <string-array name="visita_array_resultados">
+        <item>Seleccione resultado</item>
+        <item>1.Completa</item>
+        <item>2.Incompleta</item>
+        <item>3.Rechazo</item>
+        <item>4.Ausente</item>
+        <item>5.Vivienda desocupada</item>
+        <item>6.No se inició la entrevista</item>
+        <item>7.Otro</item>
+    </string-array>
+    <string name="visita_especifique">Especifique</string>
+
+    <!--Strings asociados a funcionarios-->
+    <string name="funcionario_titulo">14.FUNCIONARIOS DE LA ENCUESTA</string>
+    <string name="funcionario_cargo">CARGO</string>
+    <string name="funcionario_dni">DNI</string>
+    <string name="funcionario_nombres">NOMNBRES Y APELLIDOS</string>
+    <string name="funcionario_encuestador">ENCUESTADOR/A</string>
+    <string name="funcionario_supervisor">SUPERVISOR/A</string>
+    <string name="funcionario_coordinador">COORDINADOR/A</string>
+
+
     <!--Strings asociados a la Cabecera-->
     <string name="cabecera_persona_n">Persona N°</string>
     <string name="cabecera_nombre">Nombre: </string>
     <string name="cabecera_informante_n">Informante N°</string>
+
 
     <!--Strings asociados al módulo : CARACTERÍSTICAS DE LA VIVIENDA Y DEL HOGAR-->
     <string name="modulo_1_nombre">I.CARACTERÍSTICAS DE LA VIVIENDA Y DEL HOGAR</string>
