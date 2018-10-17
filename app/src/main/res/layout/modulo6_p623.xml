@@ -12,52 +12,52 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p623"/>
     <RadioGroup
-        android:id="@+id/mod5_623_radiogroup_C6_P623"
+        android:id="@+id/mod6_623_radiogroup_C6_P623"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
-            android:id="@+id/mod5_623_rb1"
+            android:id="@+id/mod6_623_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp1"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb2"
+            android:id="@+id/mod6_623_rb2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp2"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb3"
+            android:id="@+id/mod6_623_rb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp3"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb4"
+            android:id="@+id/mod6_623_rb4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp4"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb5"
+            android:id="@+id/mod6_623_rb5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp5"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb6"
+            android:id="@+id/mod6_623_rb6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp6"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb7"
+            android:id="@+id/mod6_623_rb7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp7"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb8"
+            android:id="@+id/mod6_623_rb8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp8"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb9"
+            android:id="@+id/mod6_623_rb9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp9"/>
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <RadioButton
-                android:id="@+id/mod5_623_rb10"
+                android:id="@+id/mod6_623_rb10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
@@ -77,12 +77,12 @@
                 style="@style/TemaInputEspecifique"/>
         </LinearLayout>
         <RadioButton
-            android:id="@+id/mod5_623_rb11"
+            android:id="@+id/mod6_623_rb11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp11"/>
         <RadioButton
-            android:id="@+id/mod5_623_rb12"
+            android:id="@+id/mod6_623_rb12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp12"/>

@@ -12,32 +12,32 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p624"/>
     <RadioGroup
-        android:id="@+id/mod5_624_radiogroup_C6_P624"
+        android:id="@+id/mod6_624_radiogroup_C6_P624"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
-            android:id="@+id/mod5_624_rb1"
+            android:id="@+id/mod6_624_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p624_sp1"/>
         <RadioButton
-            android:id="@+id/mod5_624_rb2"
+            android:id="@+id/mod6_624_rb2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p624_sp2"/>
         <RadioButton
-            android:id="@+id/mod5_624_rb3"
+            android:id="@+id/mod6_624_rb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p624_sp3"/>
         <RadioButton
-            android:id="@+id/mod5_624_rb4"
+            android:id="@+id/mod6_624_rb4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p624_sp4"/>
         <RadioButton
-            android:id="@+id/mod5_624_rb5"
+            android:id="@+id/mod6_624_rb5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p624_sp5"/>
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <RadioButton
-                android:id="@+id/mod5_624_rb10"
+                android:id="@+id/mod6_624_rb10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
