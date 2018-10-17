@@ -30,7 +30,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:gravity="center"
-                android:padding="@dimen/margen_medium"
+                android:padding="@dimen/margen_small"
                 android:background="@drawable/marco_pregunta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -49,15 +49,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/marco_anio"/>
-                        <LinearLayout
+                        <android.support.v7.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/altura_spinner"
-                            android:background="@drawable/input_text_enabled">
+                            android:layout_margin="1dp"
+                            android:layout_height="@dimen/altura_spinner">
                             <Spinner
                                 android:id="@+id/marco_sp_anio"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"/>
-                        </LinearLayout>
+                                android:layout_height="@dimen/altura_spinner"/>
+                        </android.support.v7.widget.CardView>
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="vertical"
@@ -69,15 +69,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/marco_mes"/>
-                        <LinearLayout
+                        <android.support.v7.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/altura_spinner"
-                            android:background="@drawable/input_text_enabled">
+                            android:layout_margin="1dp"
+                            android:layout_height="@dimen/altura_spinner">
                             <Spinner
                                 android:id="@+id/marco_sp_mes"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"/>
-                        </LinearLayout>
+                                android:layout_height="@dimen/altura_spinner"/>
+                        </android.support.v7.widget.CardView>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -86,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margen_medium"
+                    android:layout_marginBottom="@dimen/margen_small"
                     >
                     <LinearLayout
                         android:orientation="vertical"
@@ -97,15 +98,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/marco_periodo"/>
-                        <LinearLayout
+                        <android.support.v7.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:background="@drawable/input_text_enabled">
+                            android:layout_margin="1dp"
+                            android:layout_height="@dimen/altura_spinner">
                             <Spinner
                                 android:id="@+id/marco_sp_periodo"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"/>
-                        </LinearLayout>
+                                android:layout_height="@dimen/altura_spinner"/>
+                        </android.support.v7.widget.CardView>
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="vertical"
@@ -117,45 +118,109 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/marco_conglomerado"/>
-                        <LinearLayout
+                        <android.support.v7.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:background="@drawable/input_text_enabled">
+                            android:layout_margin="1dp"
+                            android:layout_height="@dimen/altura_spinner">
                             <Spinner
                                 android:id="@+id/marco_sp_conglomerado"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:textAlignment="center"/>
-                        </LinearLayout>
+                                android:layout_height="@dimen/altura_spinner"/>
+                        </android.support.v7.widget.CardView>
                     </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/marco_btnFiltrar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="filtrar"
+                        android:theme="@style/RaisedButtonDark"
+                        />
+                    <Button
+                        android:id="@+id/marco_btnMotrarTodo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mostrar todo"
+                        android:theme="@style/RaisedButtonDark"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/marco_btnFiltrar"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margen_small"
+                android:padding="@dimen/margen_small"
+                android:background="@color/greyBluePrimaryDark">
+                <TextView
+                    android:text="ID"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorIcons"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="filtrar"
-                    android:theme="@style/RaisedButtonDark"
-                    />
-                <Button
-                    android:id="@+id/marco_btnMotrarTodo"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:text="AÑO"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorIcons"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="mostrar todo"
-                    android:theme="@style/RaisedButtonDark"/>
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+                <TextView
+                    android:text="MES"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+                <TextView
+                    android:text="PERIODO"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+                <TextView
+                    android:text="CONGLOMERADO"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+                <TextView
+                    android:text="NRO ORDEN"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
             </LinearLayout>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_encuestado"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/marco_pregunta"
-                android:padding="@dimen/margen_small"
+
                 android:scrollbars="vertical" />
         </LinearLayout>
     </LinearLayout>
