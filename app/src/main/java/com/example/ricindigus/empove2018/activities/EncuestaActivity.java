@@ -69,12 +69,26 @@ public class EncuestaActivity extends AppCompatActivity{
     }
 
     private void prepareListData(List<String> listDataHeader, Map<String, List<String>> listDataChild) {
+        listDataHeader.add(getString(R.string.modulo_1_menu));
+        listDataHeader.add(getString(R.string.modulo_2_menu));
         listDataHeader.add(getString(R.string.modulo_3_menu));
         listDataHeader.add(getString(R.string.modulo_4_menu));
         listDataHeader.add(getString(R.string.modulo_5_menu));
         listDataHeader.add(getString(R.string.modulo_6_menu));
         listDataHeader.add(getString(R.string.modulo_7_menu));
         listDataHeader.add(getString(R.string.modulo_8_menu));
+
+        List<String> modulo1 = new ArrayList<String>();
+        modulo1.add(getString(R.string.modulo_1_submenu_1));
+        modulo1.add(getString(R.string.modulo_1_submenu_2));
+        modulo1.add(getString(R.string.modulo_1_submenu_3));
+        modulo1.add(getString(R.string.modulo_1_submenu_4));
+        modulo1.add(getString(R.string.modulo_1_submenu_5));
+        modulo1.add(getString(R.string.modulo_1_submenu_6));
+
+        List<String> modulo2 = new ArrayList<String>();
+        modulo2.add(getString(R.string.modulo_2_submenu_1));
+        modulo2.add(getString(R.string.modulo_2_submenu_2));
 
         List<String> modulo3 = new ArrayList<String>();
         modulo3.add(getString(R.string.modulo_3_submenu_1));
@@ -121,12 +135,12 @@ public class EncuestaActivity extends AppCompatActivity{
         modulo8.add(getString(R.string.modulo_8_submenu_5));
         modulo8.add(getString(R.string.modulo_8_submenu_6));
 
-        listDataChild.put(listDataHeader.get(0), modulo3);
-        listDataChild.put(listDataHeader.get(1), modulo4);
-        listDataChild.put(listDataHeader.get(2), modulo5);
-        listDataChild.put(listDataHeader.get(3), modulo6);
-        listDataChild.put(listDataHeader.get(4), modulo7);
-        listDataChild.put(listDataHeader.get(5), modulo8);
+        listDataChild.put(listDataHeader.get(0), modulo1);
+        listDataChild.put(listDataHeader.get(1), modulo2);
+        listDataChild.put(listDataHeader.get(2), modulo3);
+        listDataChild.put(listDataHeader.get(3), modulo4);
+        listDataChild.put(listDataHeader.get(4), modulo5);
+        listDataChild.put(listDataHeader.get(5), modulo6);
 
     }
 

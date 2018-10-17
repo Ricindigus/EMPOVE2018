@@ -25,6 +25,14 @@
     <string name="marco_conglomerado">CONGLOMERADO</string>
 
     <!--Strings asociados a la caratula-->
+    <string name="caratula_nombre">DATOS GENERALES</string>
+    <string name="caratula_menu">DATOS GENERALES</string>
+    <string name="caratula_submenu_1">Preguntas 101 - 102</string>
+    <string name="caratula_submenu_2">Preguntas 103 - 104</string>
+    <string name="caratula_submenu_3">Preguntas 105 - 107</string>
+    <string name="caratula_submenu_4">Preguntas 108 - 109</string>
+    <string name="caratula_submenu_5">Preguntas 110 - 112</string>
+    <string name="caratula_submenu_6">Preguntas 113</string>
     <string name="caratula_ubicacion_geografica">UBICACIÓN GEOGRÁFICA</string>
     <string name="caratula_departamento">1.DEPARTAMENTO</string>
     <string name="caratula_provincia">2.PROVINCIA</string>
@@ -263,7 +271,7 @@
     <string name="modulo_1_p113_si">1.Sí</string>
     <string name="modulo_1_p113_no">2.No</string>
 
-    <!--Strings asociados al módulo : CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR-->
+    <!--Strings asociados al módulo 2 : CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR-->
     <string name="modulo_2_nombre">II.CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR</string>
     <string name="modulo_2_menu">Módulo II: CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR</string>
     <string name="modulo_2_submenu_1">Preguntas 202 - 203</string>
