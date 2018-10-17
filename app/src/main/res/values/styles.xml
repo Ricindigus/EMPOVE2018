@@ -63,6 +63,12 @@
         <item name="android:textSize">@dimen/texto_small</item>
         <item name="android:textColor">@color/colorIcons</item>
     </style>
+    <style name="TemaCabeceraVisitas" parent="AppTheme">
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/texto_small</item>
+        <item name="android:textColor">@color/colorIcons</item>
+    </style>
     <style name="TemaCabeceraP318" parent="AppTheme">
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>

@@ -65,7 +65,8 @@
 
     <!--Strings asociados a las visitas-->
     <string name="visita_titulo">13.ENTREVISTAS Y SUPERVISIÓN</string>
-    <string name="visita_visitas_hogar">VISITAS AL HOGAR</string>
+    <string name="visita_visitas_hogar_encuestador">VISITAS AL HOGAR (ENCUESTADOR/A)</string>
+    <string name="visita_visitas_hogar_supervisor">VISITAS AL HOGAR (SUPERVISOR/A)</string>
     <string name="visita_numero">N°</string>
     <string name="visita_encuestador">ENCUESTADOR/A</string>
     <string name="visita_supervisor">SUPERVISOR/A LOCAL</string>
@@ -74,7 +75,7 @@
     <string name="visita_de">DE</string>
     <string name="visita_a">A</string>
     <string name="visita_proxima">PRÓXIMA VISITA</string>
-    <string name="visita_resultado_visita">RESULTADO DE LA VISITA</string>
+    <string name="visita_resultado_visita">RESULTADO VISITA</string>
     <string name="visita_resultado_final">RESULTADO FINAL DE LA ENCUESTA</string>
     <string name="visita_resultado">RESULTADO</string>
     <string-array name="visita_array_resultados">
