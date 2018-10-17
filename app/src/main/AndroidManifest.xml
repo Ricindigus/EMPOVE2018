@@ -30,9 +30,11 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.MarcoActivity" />
-        <activity android:name=".activities.agregacion.M2ResidentesActivity" />
-        <activity android:name=".activities.agregacion.P309Activity" />
-        <activity android:name=".activities.agregacion.P318Activity"></activity>
+        <activity android:name=".activities.agregacion.AgregarResidenteActivity" />
+        <activity android:name=".activities.agregacion.AgregarRutaActivity" />
+        <activity android:name=".activities.agregacion.AgregarPersonaActivity" />
+        <activity android:name=".activities.agregacion.AgregarVisitaActivity" />
+        <activity android:name=".activities.agregacion.FinalizarVisitaActivity"></activity>
     </application>
 
 </manifest>

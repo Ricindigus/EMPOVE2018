@@ -29,28 +29,31 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
-                android:layout_weight="1.5"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/caratula_n_hogares"
+                android:text="@string/caratula_n_hogares_ind"
                 android:textStyle="bold"
-                android:padding="5dp"
-                android:textColor="@color/greyBluePrimary"/>
+                android:padding="5dp"/>
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="5dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/caratula_n_hogares"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:textColor="@color/greyBluePrimary"/>
                 <EditText
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_width="@dimen/longitud_input_n_horas"
+                    android:layout_height="@dimen/altura_input_especifique"
                     android:inputType="numberPassword"
                     android:background="@drawable/input_text_enabled"
                     />

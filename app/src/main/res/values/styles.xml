@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="cardViewStyle">@style/CardView</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -47,6 +48,13 @@
     <style name="RaisedButtonActivitiesAgregar" parent="Theme.AppCompat.Light">
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
         <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/texto_medium</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="RaisedButtonVisitaAgregar" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/greyBluePrimaryDark</item>
+        <item name="colorControlHighlight">@color/greyBluePrimaryDark</item>
         <item name="android:textSize">@dimen/texto_medium</item>
         <item name="android:textColor">@android:color/white</item>
     </style>

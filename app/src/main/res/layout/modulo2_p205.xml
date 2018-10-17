@@ -11,26 +11,39 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_2_p205"/>
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="@dimen/longitud_radio_3"
-        android:layout_height="wrap_content">
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/modulo_2_p205_anio"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="@dimen/longitud_radio_3"
-        android:layout_height="wrap_content">
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/modulo_2_p205_mes"/>
-    </android.support.design.widget.TextInputLayout>
-    <TextView
-        android:layout_width="@dimen/longitud_radio_3"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/modulo_2_p205_mes_ind"/>
+        android:orientation="horizontal">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="@dimen/longitud_radio_3"
+            android:layout_marginRight="@dimen/margen_medium"
+            android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/modulo_2_p205_anio"/>
+        </android.support.design.widget.TextInputLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="@dimen/longitud_radio_3"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/modulo_2_p205_mes"/>
+            </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:layout_width="@dimen/longitud_radio_3"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/modulo_2_p205_mes_ind"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
 
 </LinearLayout>

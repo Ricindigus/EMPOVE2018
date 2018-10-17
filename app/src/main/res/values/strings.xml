@@ -61,6 +61,7 @@
 
     <string name="caratula_total_hogares">10.TOTAL DE HOGARES QUE OCUPAN LA VIVIENDA</string>
     <string name="caratula_n_hogares">¿CUANTOS HOGARES OCUPAN ESTA VIVIENDA?</string>
+    <string name="caratula_n_hogares_ind">Sra.(Sr.): Si HOGAR es la persona o grupo de personas que se alimentan de una misma olla y atienden en común otras necesidades básicas.</string>
 
 
     <!--Strings asociados a las visitas-->
@@ -71,10 +72,16 @@
     <string name="visita_encuestador">ENCUESTADOR/A</string>
     <string name="visita_supervisor">SUPERVISOR/A LOCAL</string>
     <string name="visita_fecha">FECHA</string>
+    <string name="visita_fecha_ind">Indique la fecha de la visita</string>
     <string name="visita_hora">HORA</string>
+    <string name="visita_hora_inicio">HORA INICIO</string>
+    <string name="visita_hora_inicio_ind">Indique la hora de inicio de la visita</string>
+    <string name="visita_hora_final">HORA FINAL</string>
     <string name="visita_de">DE</string>
     <string name="visita_a">A</string>
     <string name="visita_proxima">PRÓXIMA VISITA</string>
+    <string name="visita_proxima_fecha">FECHA PRÓXIMA VISITA</string>
+    <string name="visita_proxima_hora">HORA PRÓXIMA VISITA</string>
     <string name="visita_resultado_visita">RESULTADO VISITA</string>
     <string name="visita_resultado_final">RESULTADO FINAL DE LA ENCUESTA</string>
     <string name="visita_resultado">RESULTADO</string>
@@ -89,6 +96,16 @@
         <item>7.Otro</item>
     </string-array>
     <string name="visita_especifique">Especifique</string>
+    <string name="visita_agregar">AGREGAR VISITA</string>
+    <string name="visita_guardar">guardar visita</string>
+
+
+    <!--Strings asociados a los hogares-->
+    <string name="hogares_titulo">HOGARES QUE CONSTITUYEN LA VIVIENDA</string>
+    <string name="hogares_numero">N°</string>
+    <string name="hogares_jefe">JEFE HOGAR</string>
+    <string name="hogares_estado">ESTADO</string>
+
 
     <!--Strings asociados a funcionarios-->
     <string name="funcionario_titulo">14.FUNCIONARIOS DE LA ENCUESTA</string>
