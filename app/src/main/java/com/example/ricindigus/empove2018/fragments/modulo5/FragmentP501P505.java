@@ -38,6 +38,7 @@ public class FragmentP501P505 extends Fragment {
         c5_p504_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_504_radiogroup_C5_P504);
         c5_p505_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_505_radiogroup_C5_P505);
 
+
         return rootView;
 
 
