@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="@string/modulo_1_p112_ind"/>
     <RadioGroup
+        android:id="@+id/mod1_112_radiogroup_C1_P112"
         style="@style/EstiloRadioGroup">
         <RadioButton
             android:layout_width="wrap_content"
@@ -43,6 +44,7 @@
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_1_p112_sp5"/>
             <EditText
+                android:id="@+id/mod1_112_edittext_C1_P112_O"
                 style="@style/TemaInputEspecifique"/>
         </LinearLayout>
     </RadioGroup>

@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_1_p106_ind"/>
         <EditText
+            android:id="@+id/mod1_106_edittext_C1_P106"
             android:layout_margin="@dimen/margen_small"
             android:layout_width="@dimen/longitud_input_n_horas"
             android:background="@drawable/input_text_enabled"

@@ -65,6 +65,7 @@
                     android:layout_height="@dimen/altura_input_especifique"
                     android:text="@string/modulo_1_p113_sp7"/>
                 <EditText
+                    android:id="@+id/mod1_113_edittext_C1_P113_7O"
                     style="@style/TemaInputEspecifique"
                     />
             </LinearLayout>
@@ -81,6 +82,7 @@
                     android:layout_height="@dimen/altura_input_especifique"
                     android:text="@string/modulo_1_p113_sp8"/>
                 <EditText
+                    android:id="@+id/mod1_113_edittext_C1_P113_8O"
                     style="@style/TemaInputEspecifique"
                     />
             </LinearLayout>
@@ -96,6 +98,7 @@
                     android:layout_height="@dimen/altura_input_especifique"
                     android:text="@string/modulo_1_p113_sp9"/>
                 <EditText
+                    android:id="@+id/mod1_113_edittext_C1_P113_9O"
                     style="@style/TemaInputEspecifique"
                     />
             </LinearLayout>
@@ -105,6 +108,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_1"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"
@@ -120,6 +124,7 @@
                     android:text="@string/modulo_1_p113_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_2"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"
@@ -135,6 +140,7 @@
                     android:text="@string/modulo_1_p113_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_3"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"
@@ -150,6 +156,7 @@
                     android:text="@string/modulo_1_p113_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_4"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"
@@ -165,6 +172,7 @@
                     android:text="@string/modulo_1_p113_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_5"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"
@@ -180,6 +188,7 @@
                     android:text="@string/modulo_1_p113_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_6"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"
@@ -195,6 +204,7 @@
                     android:text="@string/modulo_1_p113_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_7"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"
@@ -210,6 +220,7 @@
                     android:text="@string/modulo_1_p113_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_8"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"
@@ -225,6 +236,7 @@
                     android:text="@string/modulo_1_p113_no"/>
             </RadioGroup>
             <RadioGroup
+                android:id="@+id/mod1_113_radiogroup_C1_P113_9"
                 android:layout_width="@dimen/longitud_radio"
                 android:layout_height="@dimen/altura_input_solo"
                 android:gravity="center"

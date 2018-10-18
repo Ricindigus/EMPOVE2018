@@ -12,6 +12,7 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_2_p206"/>
     <Spinner
+        android:id="@+id/mod2_206_spinner_C2_P206"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawSelectorOnTop="true"
