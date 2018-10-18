@@ -45,6 +45,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
                 <TextView
+                    android:id="@+id/gralCaratula_ubicacionmue_textview_ZONA"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
@@ -78,6 +79,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
                 <TextView
+                    android:id="@+id/gralCaratula_ubicacionmue_textview_MANZANA_ID"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
@@ -109,6 +111,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
                 <TextView
+                    android:id="@+id/gralCaratula_ubicacionmue_textview_AER_INI"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
@@ -141,6 +144,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
                 <TextView
+                    android:id="@+id/gralCaratula_ubicacionmue_textview_VIVIENDA"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
