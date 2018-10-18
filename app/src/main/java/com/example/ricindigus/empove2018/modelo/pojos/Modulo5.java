@@ -368,10 +368,10 @@ public class Modulo5 {
 
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo3_id,_id);
-        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo3_idHogar,idHogar);
-        contentValues.put(SQLConstantes.modulo3_idVivienda,idVivienda);
+        contentValues.put(SQLConstantes.modulo5_id,_id);
+        contentValues.put(SQLConstantes.modulo5_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo5_idHogar,idHogar);
+        contentValues.put(SQLConstantes.modulo5_idVivienda,idVivienda);
         contentValues.put(SQLConstantes.modulo5_c5_p501,c5_p501);
         contentValues.put(SQLConstantes.modulo5_c5_p502_c,c5_p502_c);
         contentValues.put(SQLConstantes.modulo5_c5_p502,c5_p502);
@@ -388,7 +388,6 @@ public class Modulo5 {
         contentValues.put(SQLConstantes.modulo5_c5_p507_dep,c5_p507_dep);
         contentValues.put(SQLConstantes.modulo5_c5_p508_1,c5_p508_1);
         contentValues.put(SQLConstantes.modulo5_c5_p508_2,c5_p508_2);
-
         contentValues.put(SQLConstantes.modulo5_c5_p508_3,c5_p508_3);
         contentValues.put(SQLConstantes.modulo5_c5_p508_4,c5_p508_4);
         contentValues.put(SQLConstantes.modulo5_c5_p508_5,c5_p508_5);
