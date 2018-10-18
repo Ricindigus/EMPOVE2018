@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class Modulo1 {
-    private int _id;
+    private String _id;
     private String idVivienda;
     private String c1_p101;
     private String c1_p101_o;
@@ -42,14 +42,49 @@ public class Modulo1 {
     private String c1_p113_9_o;
 
     public Modulo1() {
+        _id="";
+        idVivienda="";
+        c1_p101="";
+        c1_p101_o="";
+        c1_p102="";
+        c1_p102_o="";
+        c1_p103="";
+        c1_p103_o="";
+        c1_p104="";
+        c1_p104_o="";
+        c1_p105="";
+        c1_p106="";
+        c1_p107="";
+        c1_p108="";
+        c1_p108_o="";
+        c1_p109="";
+        c1_p109_o="";
+        c1_p110="";
+        c1_p110_o="";
+        c1_p111="";
+        c1_p111_o="";
+        c1_p112="";
+        c1_p112_o="";
+        c1_p113_1="";
+        c1_p113_2="";
+        c1_p113_3="";
+        c1_p113_4="";
+        c1_p113_5="";
+        c1_p113_6="";
+        c1_p113_7="";
+        c1_p113_8="";
+        c1_p113_9="";
+        c1_p113_7_o="";
+        c1_p113_8_o="";
+        c1_p113_9_o="";
     }
 
 
-    public int get_id() {
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 

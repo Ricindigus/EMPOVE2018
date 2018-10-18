@@ -13,11 +13,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentCaratula extends Fragment {
+public class FragmentCaratula extends FragmentPagina {
 
     String idEncuestado;
     Context context;
@@ -66,4 +67,23 @@ public class FragmentCaratula extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public boolean llenarVariables() {
+        return false;
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public void validarDatos() {
+
+    }
 }

@@ -10,11 +10,12 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP101P107 extends Fragment {
+public class FragmentP101P107 extends FragmentPagina {
 
     RadioGroup c1_p101_RadioGroup, c1_p102_RadioGroup, c1_p103_RadioGroup, c1_p104_RadioGroup;
     EditText c1_p101_o_EditText, c1_p102_o_EditText, c1_p103_o_EditText, c1_p104_o_EditText;
@@ -41,10 +42,26 @@ public class FragmentP101P107 extends Fragment {
         c1_p105_EditText = (EditText) rootView.findViewById(R.id.mod1_105_edittext_C1_P105);
         c1_p106_EditText = (EditText) rootView.findViewById(R.id.mod1_106_edittext_C1_P106);
         c1_p107_EditText = (EditText) rootView.findViewById(R.id.mod1_107_edittext_C1_P107);
-
-
-
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public boolean llenarVariables() {
+        return false;
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public void validarDatos() {
+
+    }
 }

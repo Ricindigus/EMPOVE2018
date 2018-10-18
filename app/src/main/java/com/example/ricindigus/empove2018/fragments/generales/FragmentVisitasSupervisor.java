@@ -10,11 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentVisitasSupervisor extends Fragment {
+public class FragmentVisitasSupervisor extends FragmentPagina {
 
     String idEncuestado;
     Context context;
@@ -37,4 +38,23 @@ public class FragmentVisitasSupervisor extends Fragment {
         return inflater.inflate(R.layout.fragment_visitas_supervisor, container, false);
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public boolean llenarVariables() {
+        return false;
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public void validarDatos() {
+
+    }
 }

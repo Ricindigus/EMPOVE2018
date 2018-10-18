@@ -8,6 +8,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo1;
 import com.example.ricindigus.empove2018.modelo.pojos.Usuario;
 import com.example.ricindigus.empove2018.modelo.pojos.Vivienda;
 
@@ -229,23 +230,61 @@ public class Data {
         sqLiteDatabase.update(nombreTabla,contentValues,SQLConstantes.WHERE_CLAUSE_ID,whereArgs);
     }
 
-//    public Usuario getModulo(String idEncuestado, String){
-//        Usuario usuario = null;
-//        String[] whereArgs = new String[]{nombre};
-//        Cursor cursor = null;
-//        try{
-//            cursor = sqLiteDatabase.query(SQLConstantes.tablausuario,
-//                    null,SQLConstantes.WHERE_CLAUSE_USUARIO_NOMBRE,whereArgs,null,null,null);
-//            if(cursor.getCount() == 1){
-//                cursor.moveToFirst();
-//                usuario = new Usuario();
-//                usuario.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.usuario_id)));
-//                usuario.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_nombre)));
-//                usuario.setPassword(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_password)));
-//            }
-//        }finally{
-//            if(cursor != null) cursor.close();
-//        }
-//        return usuario;
-//    }
+    /**
+    * retornar pojo modulo1
+    * */
+
+    public Modulo1 getModulo1(String idEncuestado){
+        Modulo1 modulo1 = null;
+        String[] whereArgs = new String[]{idEncuestado};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo1,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                modulo1 = new Modulo1();
+                modulo1.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_id)));
+                modulo1.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_idVivienda)));
+                modulo1.setC1_p101(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p101)));
+                modulo1.setC1_p101_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p101_o)));
+                modulo1.setC1_p102(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p102)));
+                modulo1.setC1_p102_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p102_o)));
+                modulo1.setC1_p103(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p103)));
+                modulo1.setC1_p103_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p103_o)));
+                modulo1.setC1_p104(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p104)));
+                modulo1.setC1_p104_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p104_o)));
+                modulo1.setC1_p105(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p105)));
+                modulo1.setC1_p106(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p106)));
+                modulo1.setC1_p107(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p107)));
+                modulo1.setC1_p108(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p108)));
+                modulo1.setC1_p108_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p108_o)));
+                modulo1.setC1_p109(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p109)));
+                modulo1.setC1_p109_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p109_o)));
+                modulo1.setC1_p110(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p110)));
+                modulo1.setC1_p110_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p110_o)));
+                modulo1.setC1_p111(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p111)));
+                modulo1.setC1_p111_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p111_o)));
+                modulo1.setC1_p112(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p112)));
+                modulo1.setC1_p112_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p112_o)));
+                modulo1.setC1_p113_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_1)));
+                modulo1.setC1_p113_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_2)));
+                modulo1.setC1_p113_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_3)));
+                modulo1.setC1_p113_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_4)));
+                modulo1.setC1_p113_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_5)));
+                modulo1.setC1_p113_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_6)));
+                modulo1.setC1_p113_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_7)));
+                modulo1.setC1_p113_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_8)));
+                modulo1.setC1_p113_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_9)));
+                modulo1.setC1_p113_7_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_7_o)));
+                modulo1.setC1_p113_8_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_8_o)));
+                modulo1.setC1_p113_9_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_c1_p113_9_o)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo1;
+    }
+
+
 }

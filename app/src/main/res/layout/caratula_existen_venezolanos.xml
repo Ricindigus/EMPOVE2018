@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
-        android:text="EN ESTE HOGAR, ¿VIVE ALGUNA PERSONA QUE LLEGO DE VENEZUELA?"/>
+        android:text="EN ESTA VIVIENDA, ¿VIVE ALGUNA PERSONA QUE LLEGO DE VENEZUELA?"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
