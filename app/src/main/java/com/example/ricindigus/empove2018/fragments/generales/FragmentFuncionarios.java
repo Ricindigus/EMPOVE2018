@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.generales;
 
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +16,15 @@ import com.example.ricindigus.empove2018.R;
  */
 public class FragmentFuncionarios extends Fragment {
 
+
+    String idEncuestado;
+    Context context;
+
+    @SuppressLint("ValidFragment")
+    public FragmentFuncionarios(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
+        this.context = context;
+    }
 
     public FragmentFuncionarios() {
         // Required empty public constructor

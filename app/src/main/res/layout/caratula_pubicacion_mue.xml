@@ -44,15 +44,11 @@
                     android:layout_width="2dp"
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
-                <android.support.v7.widget.CardView
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:layout_marginLeft="10dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-                </android.support.v7.widget.CardView>
+                    android:layout_marginLeft="10dp"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -81,15 +77,11 @@
                     android:layout_width="2dp"
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
-                <android.support.v7.widget.CardView
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:layout_marginLeft="10dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-                </android.support.v7.widget.CardView>
+                    android:layout_marginLeft="10dp"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
@@ -111,21 +103,16 @@
                     android:textStyle="bold"
                     android:padding="5dp"
                     android:textColor="@color/greyBluePrimary"
-                    android:gravity="center_vertical"
-                    />
+                    android:gravity="center_vertical"/>
                 <View
                     android:layout_width="2dp"
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
-                <android.support.v7.widget.CardView
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:layout_marginLeft="10dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-                </android.support.v7.widget.CardView>
+                    android:layout_marginLeft="10dp"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
@@ -153,15 +140,11 @@
                     android:layout_width="2dp"
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
-                <android.support.v7.widget.CardView
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:layout_marginLeft="10dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-                </android.support.v7.widget.CardView>
+                    android:layout_marginLeft="10dp"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>

@@ -52,11 +52,10 @@
                         android:padding="@dimen/margen_small"
                         android:textColor="@color/greyBluePrimary"/>
                     <EditText
-                        android:visibility="visible"
-                        android:gravity="center_vertical"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/altura_input_especifique"
                         android:layout_weight="2"
+                        android:paddingLeft="@dimen/margen_small"
                         android:layout_marginLeft="@dimen/margen_small"
                         android:inputType="numberPassword"
                         android:background="@drawable/input_text_enabled"
@@ -76,11 +75,10 @@
                         android:padding="@dimen/margen_small"
                         android:textColor="@color/greyBluePrimary"/>
                     <EditText
-                        android:visibility="visible"
-                        android:gravity="center_vertical"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/altura_input_especifique"
                         android:layout_weight="2"
+                        android:paddingLeft="@dimen/margen_small"
                         android:layout_marginLeft="@dimen/margen_small"
                         android:inputType="numberPassword"
                         android:background="@drawable/input_text_enabled"
@@ -119,11 +117,10 @@
                         android:padding="@dimen/margen_small"
                         android:textColor="@color/greyBluePrimary"/>
                     <EditText
-                        android:visibility="visible"
-                        android:gravity="center_vertical"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/altura_input_especifique"
                         android:layout_weight="2"
+                        android:paddingLeft="@dimen/margen_small"
                         android:layout_marginLeft="@dimen/margen_small"
                         android:inputType="numberPassword"
                         android:background="@drawable/input_text_enabled"
@@ -143,11 +140,10 @@
                         android:padding="@dimen/margen_small"
                         android:textColor="@color/greyBluePrimary"/>
                     <EditText
-                        android:visibility="visible"
-                        android:gravity="center_vertical"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/altura_input_especifique"
                         android:layout_weight="2"
+                        android:paddingLeft="@dimen/margen_small"
                         android:layout_marginLeft="@dimen/margen_small"
                         android:inputType="numberPassword"
                         android:background="@drawable/input_text_enabled"
@@ -187,11 +183,10 @@
                         android:padding="@dimen/margen_small"
                         android:textColor="@color/greyBluePrimary"/>
                     <EditText
-                        android:visibility="visible"
-                        android:gravity="center_vertical"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/altura_input_especifique"
                         android:layout_weight="2"
+                        android:paddingLeft="@dimen/margen_small"
                         android:layout_marginLeft="@dimen/margen_small"
                         android:inputType="numberPassword"
                         android:background="@drawable/input_text_enabled"
@@ -211,12 +206,11 @@
                         android:padding="@dimen/margen_small"
                         android:textColor="@color/greyBluePrimary"/>
                     <EditText
-                        android:visibility="visible"
-                        android:gravity="center_vertical"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/altura_input_especifique"
                         android:layout_weight="2"
                         android:layout_marginLeft="@dimen/margen_small"
+                        android:paddingLeft="@dimen/margen_small"
                         android:inputType="numberPassword"
                         android:background="@drawable/input_text_enabled"
                         />

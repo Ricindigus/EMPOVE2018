@@ -28,8 +28,9 @@
     <string name="datos_generales_menu">Módulo Inicial: Datos Generales</string>
     <string name="datos_generales_submenu_1">Carátula</string>
     <string name="datos_generales_submenu_2">Hogares</string>
-    <string name="datos_generales_submenu_3">Control de Visitas</string>
-    <string name="datos_generales_submenu_4">Funcionarios</string>
+    <string name="datos_generales_submenu_3">Control de Visitas Encuestador</string>
+    <string name="datos_generales_submenu_4">Control de Visitas Supervisor</string>
+    <string name="datos_generales_submenu_5">Funcionarios</string>
 
     <!--Strings asociados a la caratula-->
     <string name="caratula_ubicacion_geografica">UBICACIÓN GEOGRÁFICA</string>

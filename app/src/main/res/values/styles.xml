@@ -7,6 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="cardViewStyle">@style/CardView</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
+
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -87,6 +90,7 @@
 
     <style name="TemaInputEspecifique" parent="AppTheme">
         <item name="android:inputType">text</item>
+        <item name="android:enabled">false</item>
         <item name="android:hint">@string/texto_especifique</item>
         <item name="android:paddingLeft">@dimen/margen_small</item>
         <item name="android:background">@drawable/input_text_disabled</item>

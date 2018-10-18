@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".fragments.modulo7.FragmentP701P705">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_small"
+            android:orientation="vertical">
+            <include layout="@layout/cabecera"/>
+            <include layout="@layout/modulo7_p701"/>
+            <include layout="@layout/modulo7_p702"/>
+            <include layout="@layout/modulo7_p703"/>
+            <include layout="@layout/modulo7_p704"/>
+            <include layout="@layout/modulo7_p705"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

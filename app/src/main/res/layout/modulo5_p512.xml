@@ -53,12 +53,7 @@
                 android:text="@string/modulo_5_p512_sp6"/>
             <EditText
                 android:id="@+id/mod5_512_edittext_C5_P512_O"
-                android:layout_width="@dimen/width_input_especifique"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/margen_small"
-                android:hint="@string/modulo_5_p512_especifique"
-                android:inputType="text"
-                android:background="@drawable/input_text_disabled"/>
+                style="@style/TemaInputEspecifique"/>
         </LinearLayout>
         <RadioButton
             android:id="@+id/mod5_512_rb7"

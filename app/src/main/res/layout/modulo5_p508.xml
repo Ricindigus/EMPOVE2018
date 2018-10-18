@@ -64,6 +64,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
         <CheckBox
             android:id="@+id/mod5_508_checkbox_C5_P508_11"

@@ -223,7 +223,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margen_small"
             android:textStyle="bold"
-            android:textSize="@dimen/texto_medium"
+            android:textSize="@dimen/texto_small"
             android:text="@string/modulo_6_p610_total"/>
         <EditText
             android:id="@+id/mod6_610_edittext_C6_P610_T"

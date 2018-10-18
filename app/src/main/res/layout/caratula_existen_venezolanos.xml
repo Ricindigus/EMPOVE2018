@@ -45,6 +45,8 @@
             <EditText
                 android:layout_width="@dimen/longitud_input_n_horas"
                 android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margen_small"
+                android:enabled="false"
                 android:background="@drawable/input_text_disabled"/>
         </LinearLayout>
     </LinearLayout>

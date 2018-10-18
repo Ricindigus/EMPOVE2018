@@ -20,6 +20,54 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_encuesta" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <include layout="@layout/content_encuesta" />
+        <LinearLayout
+            android:id="@+id/relative_aux"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentTop="true">
+            <Button
+                android:id="@+id/btn_anterior"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:text="Ant"
+                android:textColor="@android:color/white" />
+            <TextView
+                android:id="@+id/textoNombreSeccion"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/icons"
+                android:textStyle="bold"
+                android:orientation="vertical">
+            </TextView>
+            <Button
+                android:id="@+id/btn_siguiente"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:text="Sig"
+                android:gravity="center"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha=".5"
+            android:layout_below="@id/relative_aux"
+            android:background="@android:color/white" />
+    </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>
