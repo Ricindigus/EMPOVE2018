@@ -203,4 +203,49 @@ public class Data {
         }
         return usuario;
     }
+
+
+    public void insertarModulo(String nombreTabla, ContentValues contentValues){
+        sqLiteDatabase.insert(nombreTabla,null,contentValues);
+    }
+
+    public boolean existeModulo(String nombreTabla,String idEncuestado){
+        boolean existe = false;
+        String[] whereArgs = new String[]{idEncuestado};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(nombreTabla, null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                existe = true;
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return existe;
+    }
+
+    public void actualizarModulo(String nombreTabla, ContentValues contentValues, String idEncuestado){
+        String[] whereArgs = new String[]{idEncuestado};
+        sqLiteDatabase.update(nombreTabla,contentValues,SQLConstantes.WHERE_CLAUSE_ID,whereArgs);
+    }
+
+//    public Usuario getModulo(String idEncuestado, String){
+//        Usuario usuario = null;
+//        String[] whereArgs = new String[]{nombre};
+//        Cursor cursor = null;
+//        try{
+//            cursor = sqLiteDatabase.query(SQLConstantes.tablausuario,
+//                    null,SQLConstantes.WHERE_CLAUSE_USUARIO_NOMBRE,whereArgs,null,null,null);
+//            if(cursor.getCount() == 1){
+//                cursor.moveToFirst();
+//                usuario = new Usuario();
+//                usuario.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.usuario_id)));
+//                usuario.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_nombre)));
+//                usuario.setPassword(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_password)));
+//            }
+//        }finally{
+//            if(cursor != null) cursor.close();
+//        }
+//        return usuario;
+//    }
 }

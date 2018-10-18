@@ -955,6 +955,8 @@ public class SQLConstantes {
 
 
 
+
+
 //    public static final String[] COLUMNAS_NACIONAL = {
 //            nacional_codigo,nacional_apepat,nacional_aplicacion,
 //            nacional_aula, nacional_discapacidad, nacional_sede
