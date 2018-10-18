@@ -339,6 +339,300 @@ public class SQLConstantes {
             ;
 
     /**
+     * TABLA MODULO 4
+     * */
+    public static String modulo4_id = "_id";
+    public static String modulo4_idInformante = "idInformante";
+    public static String modulo4_idHogar = "idHogar";
+    public static String modulo4_idVivienda = "idVivienda";
+    public static String c4_p401_1 = "c4_p401_1";
+    public static String c4_p401_2 = "c4_p401_2";
+    public static String c4_p401_3 = "c4_p401_3";
+    public static String c4_p401_4 = "c4_p401_4";
+    public static String c4_p401_5 = "c4_p401_5";
+    public static String c4_p401_o = "c4_p401_o";
+    public static String c4_p402 = "c4_p402";
+    public static String c4_p403_1 = "c4_p403_1";
+    public static String c4_p403_2 = "c4_p403_2";
+    public static String c4_p403_3 = "c4_p403_3";
+    public static String c4_p403_4 = "c4_p403_4";
+    public static String c4_p403_5 = "c4_p403_5";
+    public static String c4_p403_6 = "c4_p403_6";
+    public static String c4_p403_7 = "c4_p403_7";
+    public static String c4_p403_8 = "c4_p403_8";
+    public static String c4_p403_9 = "c4_p403_9";
+    public static String c4_p403_10 = "c4_p403_10";
+    public static String c4_p403_11 = "c4_p403_11";
+    public static String c4_p403_12 = "c4_p403_12";
+    public static String c4_p403_13 = "c4_p403_13";
+    public static String c4_p403_14 = "c4_p403_14";
+    public static String c4_p403_o = "c4_p403_o";
+    public static String c4_p404 = "c4_p404";
+    public static String c4_p405_1 = "c4_p405_1";
+    public static String c4_p405_2 = "c4_p405_2";
+    public static String c4_p405_3 = "c4_p405_3";
+    public static String c4_p405_4 = "c4_p405_4";
+    public static String c4_p405_5 = "c4_p405_5";
+    public static String c4_p405_6 = "c4_p405_6";
+    public static String c4_p405_7 = "c4_p405_7";
+    public static String c4_p406_1 = "c4_p406_1";
+    public static String c4_p406_2 = "c4_p406_2";
+    public static String c4_p406_3 = "c4_p406_3";
+    public static String c4_p406_4 = "c4_p406_4";
+    public static String c4_p406_5 = "c4_p406_5";
+    public static String c4_p406_6 = "c4_p406_6";
+    public static String c4_p406_7 = "c4_p406_7";
+    public static String c4_p406_8 = "c4_p406_8";
+    public static String c4_p406_o = "c4_p406_o";
+    public static String c4_p407_1 = "c4_p407_1";
+    public static String c4_p407_2 = "c4_p407_2";
+    public static String c4_p407_3 = "c4_p407_3";
+    public static String c4_p407_4 = "c4_p407_4";
+    public static String c4_p407_5 = "c4_p407_5";
+    public static String c4_p407_6 = "c4_p407_6";
+    public static String c4_p407_7 = "c4_p407_7";
+    public static String c4_p407_8 = "c4_p407_8";
+    public static String c4_p407_9 = "c4_p407_9";
+    public static String c4_p407_10 = "c4_p407_10";
+    public static String c4_p407_11 = "c4_p407_11";
+    public static String c4_p407_12 = "c4_p407_12";
+    public static String c4_p407_13 = "c4_p407_13";
+    public static String c4_p407_o = "c4_p407_o";
+    public static String c4_p408_1 = "c4_p408_1";
+    public static String c4_p408_2 = "c4_p408_2";
+    public static String c4_p408_3 = "c4_p408_3";
+    public static String c4_p408_4 = "c4_p408_4";
+    public static String c4_p408_5 = "c4_p408_5";
+    public static String c4_p408_6 = "c4_p408_6";
+    public static String c4_p408_7 = "c4_p408_7";
+    public static String c4_p408_8 = "c4_p408_8";
+    public static String c4_p408_9 = "c4_p408_9";
+    public static String c4_p408_10 = "c4_p408_10";
+    public static String c4_p408_11 = "c4_p408_11";
+    public static String c4_p408_12 = "c4_p408_12";
+    public static String c4_p408_13 = "c4_p408_13";
+    public static String c4_p408_14 = "c4_p408_14";
+    public static String c4_p408_o = "c4_p408_o";
+    public static String c4_p409 = "c4_p409";
+    public static String c4_p410_1 = "c4_p410_1";
+    public static String c4_p410_2 = "c4_p410_2";
+    public static String c4_p410_3 = "c4_p410_3";
+    public static String c4_p410_4 = "c4_p410_4";
+    public static String c4_p411 = "c4_p411";
+    public static String c4_p412 = "c4_p412";
+    public static String c4_p413 = "c4_p413";
+    public static String c4_p414 = "c4_p414";
+    public static String c4_p415_1 = "c4_p415_1";
+    public static String c4_p415_2 = "c4_p415_2";
+    public static String c4_p415_3 = "c4_p415_3";
+    public static String c4_p415_4 = "c4_p415_4";
+    public static String c4_p415_5 = "c4_p415_5";
+    public static String c4_p415_6 = "c4_p415_6";
+    public static String c4_p415_7 = "c4_p415_7";
+    public static String c4_p415_8 = "c4_p415_8";
+    public static String c4_p415_o = "c4_p415_o";
+    public static String c4_p416_1 = "c4_p416_1";
+    public static String c4_p416_2 = "c4_p416_2";
+    public static String c4_p416_3 = "c4_p416_3";
+    public static String c4_p416_4 = "c4_p416_4";
+    public static String c4_p416_5 = "c4_p416_5";
+    public static String c4_p416_6 = "c4_p416_6";
+    public static String obs_cap4 = "obs_cap4";
+    public static String c4_estado = "c4_estado";
+
+
+    public static final String SQL_CREATE_TABLA_MODULO4 =
+            "CREATE TABLE " + tablamodulo4 + "(" +
+                    modulo4_id  + " INTEGER PRIMARY KEY," +
+                    modulo4_idInformante + " TEXT," +
+                    modulo4_idHogar + " TEXT," +
+                    modulo4_idVivienda  + " TEXT," +
+                    c4_p401_1  +  " TEXT," +
+                    c4_p401_2  +  " TEXT," +
+                    c4_p401_3  +  " TEXT," +
+                    c4_p401_4  +  " TEXT," +
+                    c4_p401_5  +  " TEXT," +
+                    c4_p401_o  +  " TEXT," +
+                    c4_p402  +  " TEXT," +
+                    c4_p403_1  +  " TEXT," +
+                    c4_p403_2  +  " TEXT," +
+                    c4_p403_3  +  " TEXT," +
+                    c4_p403_4  +  " TEXT," +
+                    c4_p403_5  +  " TEXT," +
+                    c4_p403_6  +  " TEXT," +
+                    c4_p403_7  +  " TEXT," +
+                    c4_p403_8  +  " TEXT," +
+                    c4_p403_9  +  " TEXT," +
+                    c4_p403_10  +  " TEXT," +
+                    c4_p403_11  +  " TEXT," +
+                    c4_p403_12  +  " TEXT," +
+                    c4_p403_13  +  " TEXT," +
+                    c4_p403_14  +  " TEXT," +
+                    c4_p403_o  +  " TEXT," +
+                    c4_p404  +  " TEXT," +
+                    c4_p405_1  +  " TEXT," +
+                    c4_p405_2  +  " TEXT," +
+                    c4_p405_3  +  " TEXT," +
+                    c4_p405_4  +  " TEXT," +
+                    c4_p405_5  +  " TEXT," +
+                    c4_p405_6  +  " TEXT," +
+                    c4_p405_7  +  " TEXT," +
+                    c4_p406_1  +  " TEXT," +
+                    c4_p406_2  +  " TEXT," +
+                    c4_p406_3  +  " TEXT," +
+                    c4_p406_4  +  " TEXT," +
+                    c4_p406_5  +  " TEXT," +
+                    c4_p406_6  +  " TEXT," +
+                    c4_p406_7  +  " TEXT," +
+                    c4_p406_8  +  " TEXT," +
+                    c4_p406_o  +  " TEXT," +
+                    c4_p407_1  +  " TEXT," +
+                    c4_p407_2  +  " TEXT," +
+                    c4_p407_3  +  " TEXT," +
+                    c4_p407_4  +  " TEXT," +
+                    c4_p407_5  +  " TEXT," +
+                    c4_p407_6  +  " TEXT," +
+                    c4_p407_7  +  " TEXT," +
+                    c4_p407_8  +  " TEXT," +
+                    c4_p407_9  +  " TEXT," +
+                    c4_p407_10  +  " TEXT," +
+                    c4_p407_11  +  " TEXT," +
+                    c4_p407_12  +  " TEXT," +
+                    c4_p407_13  +  " TEXT," +
+                    c4_p407_o  +  " TEXT," +
+                    c4_p408_1  +  " TEXT," +
+                    c4_p408_2  +  " TEXT," +
+                    c4_p408_3  +  " TEXT," +
+                    c4_p408_4  +  " TEXT," +
+                    c4_p408_5  +  " TEXT," +
+                    c4_p408_6  +  " TEXT," +
+                    c4_p408_7  +  " TEXT," +
+                    c4_p408_8  +  " TEXT," +
+                    c4_p408_9  +  " TEXT," +
+                    c4_p408_10  +  " TEXT," +
+                    c4_p408_11  +  " TEXT," +
+                    c4_p408_12  +  " TEXT," +
+                    c4_p408_13  +  " TEXT," +
+                    c4_p408_14  +  " TEXT," +
+                    c4_p408_o  +  " TEXT," +
+                    c4_p409  +  " TEXT," +
+                    c4_p410_1  +  " TEXT," +
+                    c4_p410_2  +  " TEXT," +
+                    c4_p410_3  +  " TEXT," +
+                    c4_p410_4  +  " TEXT," +
+                    c4_p411  +  " TEXT," +
+                    c4_p412  +  " TEXT," +
+                    c4_p413  +  " TEXT," +
+                    c4_p414  +  " TEXT," +
+                    c4_p415_1  +  " TEXT," +
+                    c4_p415_2  +  " TEXT," +
+                    c4_p415_3  +  " TEXT," +
+                    c4_p415_4  +  " TEXT," +
+                    c4_p415_5  +  " TEXT," +
+                    c4_p415_6  +  " TEXT," +
+                    c4_p415_7  +  " TEXT," +
+                    c4_p415_8  +  " TEXT," +
+                    c4_p415_o  +  " TEXT," +
+                    c4_p416_1  +  " TEXT," +
+                    c4_p416_2  +  " TEXT," +
+                    c4_p416_3  +  " TEXT," +
+                    c4_p416_4  +  " TEXT," +
+                    c4_p416_5  +  " TEXT," +
+                    c4_p416_6  +  " TEXT," +
+                    obs_cap4  +  " TEXT," +
+                    c4_estado  +  " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA MODULO 5
+     * */
+    public static String modulo5_id = "_id";
+    public static String modulo5_idInformante = "idInformante";
+    public static String modulo5_idHogar = "idHogar";
+    public static String modulo5_idVivienda = "idVivienda";
+    public static String c5_p501 = "c5_p501";
+    public static String c5_p502_c = "c5_p502_c";
+    public static String c5_p502 = "c5_p502";
+    public static String c5_p503 = "c5_p503";
+    public static String c5_p504 = "c5_p504";
+    public static String c5_p505 = "c5_p505";
+    public static String c5_p506_1 = "c5_p506_1";
+    public static String c5_p506_2 = "c5_p506_2";
+    public static String c5_p506_3 = "c5_p506_3";
+    public static String c5_p506_4 = "c5_p506_4";
+    public static String c5_p507 = "c5_p507";
+    public static String c5_p507_dist = "c5_p507_dist";
+    public static String c5_p507_prov = "c5_p507_prov";
+    public static String c5_p507_dep = "c5_p507_dep";
+    public static String c5_p508_1 = "c5_p508_1";
+    public static String c5_p508_2 = "c5_p508_2";
+    public static String c5_p508_3 = "c5_p508_3";
+    public static String c5_p508_4 = "c5_p508_4";
+    public static String c5_p508_5 = "c5_p508_5";
+    public static String c5_p508_6 = "c5_p508_6";
+    public static String c5_p508_7 = "c5_p508_7";
+    public static String c5_p508_8 = "c5_p508_8";
+    public static String c5_p508_9 = "c5_p508_9";
+    public static String c5_p508_10 = "c5_p508_10";
+    public static String c5_p508_11 = "c5_p508_11";
+    public static String c5_p508_o = "c5_p508_o";
+    public static String c5_p509 = "c5_p509";
+    public static String c5_p510 = "c5_p510";
+    public static String c5_p511 = "c5_p511";
+    public static String c5_p511_o = "c5_p511_o";
+    public static String c5_p512 = "c5_p512";
+    public static String c5_p512_o = "c5_p512_o";
+    public static String c5_p513 = "c5_p513";
+    public static String c5_p513_o = "c5_p513_o";
+    public static String obs_cap5 = "obs_cap5";
+    public static String c5_estado = "c5_estado";
+
+
+    public static final String SQL_CREATE_TABLA_MODULO5 =
+            "CREATE TABLE " + tablamodulo5 + "(" +
+                    modulo5_id  + " INTEGER PRIMARY KEY," +
+                    modulo5_idInformante + " TEXT," +
+                    modulo5_idHogar + " TEXT," +
+                    modulo5_idVivienda  + " TEXT," +
+                    c5_p501  +  " TEXT," +
+                    c5_p502_c  +  " TEXT," +
+                    c5_p502  +  " TEXT," +
+                    c5_p503  +  " TEXT," +
+                    c5_p504  +  " TEXT," +
+                    c5_p505  +  " TEXT," +
+                    c5_p506_1  +  " TEXT," +
+                    c5_p506_2  +  " TEXT," +
+                    c5_p506_3  +  " TEXT," +
+                    c5_p506_4  +  " TEXT," +
+                    c5_p507  +  " TEXT," +
+                    c5_p507_dist  +  " TEXT," +
+                    c5_p507_prov  +  " TEXT," +
+                    c5_p507_dep  +  " TEXT," +
+                    c5_p508_1  +  " TEXT," +
+                    c5_p508_2  +  " TEXT," +
+                    c5_p508_3  +  " TEXT," +
+                    c5_p508_4  +  " TEXT," +
+                    c5_p508_5  +  " TEXT," +
+                    c5_p508_6  +  " TEXT," +
+                    c5_p508_7  +  " TEXT," +
+                    c5_p508_8  +  " TEXT," +
+                    c5_p508_9  +  " TEXT," +
+                    c5_p508_10  +  " TEXT," +
+                    c5_p508_11  +  " TEXT," +
+                    c5_p508_o  +  " TEXT," +
+                    c5_p509  +  " TEXT," +
+                    c5_p510  +  " TEXT," +
+                    c5_p511  +  " TEXT," +
+                    c5_p511_o  +  " TEXT," +
+                    c5_p512  +  " TEXT," +
+                    c5_p512_o  +  " TEXT," +
+                    c5_p513  +  " TEXT," +
+                    c5_p513_o  +  " TEXT," +
+                    obs_cap5  +  " TEXT," +
+                    c5_estado  +  " TEXT" + ");"
+            ;
+
+    /**
      * TABLA MODULO 6
      * */
     public static String modulo6_id = "_id";
