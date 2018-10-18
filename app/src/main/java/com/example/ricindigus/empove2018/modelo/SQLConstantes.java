@@ -339,6 +339,606 @@ public class SQLConstantes {
             ;
 
     /**
+     * TABLA MODULO 6
+     * */
+    public static String modulo6_id = "_id";
+    public static String modulo6_idInformante = "idInformante";
+    public static String modulo6_idHogar = "idHogar";
+    public static String modulo6_idVivienda = "idVivienda";
+    public static String modulo6_c6_p601 = "c6_p601";
+    public static String modulo6_c6_p602 = "c6_p602";
+    public static String modulo6_c6_p603 = "c6_p603";
+    public static String modulo6_c6_p604_1 = "c6_p604_1";
+    public static String modulo6_c6_p604_2 = "c6_p604_2";
+    public static String modulo6_c6_p604_3 = "c6_p604_3";
+    public static String modulo6_c6_p604_4 = "c6_p604_4";
+    public static String modulo6_c6_p604_5 = "c6_p604_5";
+    public static String modulo6_c6_p604_6 = "c6_p604_6";
+    public static String modulo6_c6_p604_7 = "c6_p604_7";
+    public static String modulo6_c6_p604_8 = "c6_p604_8";
+    public static String modulo6_c6_p604_9 = "c6_p604_9";
+    public static String modulo6_c6_p604_10 = "c6_p604_10";
+    public static String modulo6_c6_p604_11 = "c6_p604_11";
+    public static String modulo6_c6_p604_o = "c6_p604_o";
+    public static String modulo6_c6_p605 = "c6_p605";
+    public static String modulo6_c6_p606 = "c6_p606";
+    public static String modulo6_c6_p607 = "c6_p607";
+    public static String modulo6_c6_p608 = "c6_p608";
+    public static String modulo6_c6_p608_o = "c6_p608_o";
+    public static String modulo6_c6_p609 = "c6_p609";
+    public static String modulo6_c6_p610_pd = "c6_p610_pd";
+    public static String modulo6_c6_p610_pl = "c6_p610_pl";
+    public static String modulo6_c6_p610_pm = "c6_p610_pm";
+    public static String modulo6_c6_p610_pmi = "c6_p610_pmi";
+    public static String modulo6_c6_p610_pj = "c6_p610_pj";
+    public static String modulo6_c6_p610_pv = "c6_p610_pv";
+    public static String modulo6_c6_p610_ps = "c6_p610_ps";
+    public static String modulo6_c6_p610_pt = "c6_p610_pt";
+    public static String modulo6_c6_p610_sd = "c6_p610_sd";
+    public static String modulo6_c6_p610_sl = "c6_p610_sl";
+    public static String modulo6_c6_p610_sm = "c6_p610_sm";
+    public static String modulo6_c6_p610_smi = "c6_p610_smi";
+    public static String modulo6_c6_p610_sj = "c6_p610_sj";
+    public static String modulo6_c6_p610_sv = "c6_p610_sv";
+    public static String modulo6_c6_p610_ss = "c6_p610_ss";
+    public static String modulo6_c6_p610_st = "c6_p610_st";
+    public static String modulo6_c6_p610_t = "c6_p610_t";
+    public static String modulo6_c6_p611 = "c6_p611";
+    public static String modulo6_c6_p612 = "c6_p612";
+    public static String modulo6_c6_p612_nro = "c6_p612_nro";
+    public static String modulo6_c6_p613 = "c6_p613";
+    public static String modulo6_c6_p614_mon = "c6_p614_mon";
+    public static String modulo6_c6_p614_esp = "c6_p614_esp";
+    public static String modulo6_c6_p615_mon = "c6_p615_mon";
+    public static String modulo6_c6_p615_esp = "c6_p615_esp";
+    public static String modulo6_c6_p616_mon = "c6_p616_mon";
+    public static String modulo6_c6_p616_esp = "c6_p616_esp";
+    public static String modulo6_c6_p616_nas = "c6_p616_nas";
+    public static String modulo6_c6_p617 = "c6_p617";
+    public static String modulo6_c6_p617_dist = "c6_p617_dist";
+    public static String modulo6_c6_p617_prov = "c6_p617_prov";
+    public static String modulo6_c6_p617_dep = "c6_p617_dep";
+    public static String modulo6_c6_p618_1 = "c6_p618_1";
+    public static String modulo6_c6_p618_2 = "c6_p618_2";
+    public static String modulo6_c6_p618_3 = "c6_p618_3";
+    public static String modulo6_c6_p618_4 = "c6_p618_4";
+    public static String modulo6_c6_p618_5 = "c6_p618_5";
+    public static String modulo6_c6_p618_6 = "c6_p618_6";
+    public static String modulo6_c6_p618_o = "c6_p618_o";
+    public static String modulo6_c6_p619 = "c6_p619";
+    public static String modulo6_c6_p620_1 = "c6_p620_1";
+    public static String modulo6_c6_p620_2 = "c6_p620_2";
+    public static String modulo6_c6_p620_3 = "c6_p620_3";
+    public static String modulo6_c6_p620_4 = "c6_p620_4";
+    public static String modulo6_c6_p620_5 = "c6_p620_5";
+    public static String modulo6_c6_p620_6 = "c6_p620_6";
+    public static String modulo6_c6_p620_7 = "c6_p620_7";
+    public static String modulo6_c6_p620_8 = "c6_p620_8";
+    public static String modulo6_c6_p620_9 = "c6_p620_9";
+    public static String modulo6_c6_p620_o = "c6_p620_o";
+    public static String modulo6_c6_p621 = "c6_p621";
+    public static String modulo6_c6_p622 = "c6_p622";
+    public static String modulo6_c6_p623 = "c6_p623";
+    public static String modulo6_c6_p623_o = "c6_p623_o";
+    public static String modulo6_c6_p624 = "c6_p624";
+    public static String modulo6_c6_p624_o = "c6_p624_o";
+    public static String modulo6_c6_p625 = "c6_p625";
+    public static String modulo6_c6_p626 = "c6_p626";
+    public static String modulo6_c6_p627 = "c6_p627";
+    public static String modulo6_c6_p628 = "c6_p628";
+    public static String modulo6_c6_p629_1 = "c6_p629_1";
+    public static String modulo6_c6_p629_2 = "c6_p629_2";
+    public static String modulo6_c6_p629_3 = "c6_p629_3";
+    public static String modulo6_c6_p629_4 = "c6_p629_4";
+    public static String modulo6_c6_p629_o = "c6_p629_o";
+    public static String modulo6_c6_p629_f = "c6_p629_f";
+    public static String modulo6_c6_p629_m = "c6_p629_m";
+    public static String modulo6_c6_p630_1 = "c6_p630_1";
+    public static String modulo6_c6_p630_1med = "c6_p630_1med";
+    public static String modulo6_c6_p630_1o = "c6_p630_1o";
+    public static String modulo6_c6_p630_1mont = "c6_p630_1mont";
+    public static String modulo6_c6_p630_2 = "c6_p630_2";
+    public static String modulo6_c6_p630_2med = "c6_p630_2med";
+    public static String modulo6_c6_p630_2o = "c6_p630_2o";
+    public static String modulo6_c6_p630_2mont = "c6_p630_2mont";
+    public static String modulo6_obs_cap6 = "obs_cap6";
+    public static String modulo6_c6_estado = "c6_estado";
+
+    public static final String SQL_CREATE_TABLA_MODULO6 =
+            "CREATE TABLE " + tablamodulo6 + "(" +
+                    modulo6_id  + " INTEGER PRIMARY KEY," +
+                    modulo6_idInformante + " TEXT," +
+                    modulo6_idHogar + " TEXT," +
+                    modulo6_idVivienda  + " TEXT," +
+                    modulo6_c6_p601  +  " TEXT," +
+                    modulo6_c6_p602  +  " TEXT," +
+                    modulo6_c6_p603  +  " TEXT," +
+                    modulo6_c6_p604_1  +  " TEXT," +
+                    modulo6_c6_p604_2  +  " TEXT," +
+                    modulo6_c6_p604_3  +  " TEXT," +
+                    modulo6_c6_p604_4  +  " TEXT," +
+                    modulo6_c6_p604_5  +  " TEXT," +
+                    modulo6_c6_p604_6  +  " TEXT," +
+                    modulo6_c6_p604_7  +  " TEXT," +
+                    modulo6_c6_p604_8  +  " TEXT," +
+                    modulo6_c6_p604_9  +  " TEXT," +
+                    modulo6_c6_p604_10  +  " TEXT," +
+                    modulo6_c6_p604_11  +  " TEXT," +
+                    modulo6_c6_p604_o  +  " TEXT," +
+                    modulo6_c6_p605  +  " TEXT," +
+                    modulo6_c6_p606  +  " TEXT," +
+                    modulo6_c6_p607  +  " TEXT," +
+                    modulo6_c6_p608  +  " TEXT," +
+                    modulo6_c6_p608_o  +  " TEXT," +
+                    modulo6_c6_p609  +  " TEXT," +
+                    modulo6_c6_p610_pd  +  " TEXT," +
+                    modulo6_c6_p610_pl  +  " TEXT," +
+                    modulo6_c6_p610_pm  +  " TEXT," +
+                    modulo6_c6_p610_pmi  +  " TEXT," +
+                    modulo6_c6_p610_pj  +  " TEXT," +
+                    modulo6_c6_p610_pv  +  " TEXT," +
+                    modulo6_c6_p610_ps  +  " TEXT," +
+                    modulo6_c6_p610_pt  +  " TEXT," +
+                    modulo6_c6_p610_sd  +  " TEXT," +
+                    modulo6_c6_p610_sl  +  " TEXT," +
+                    modulo6_c6_p610_sm  +  " TEXT," +
+                    modulo6_c6_p610_smi  +  " TEXT," +
+                    modulo6_c6_p610_sj  +  " TEXT," +
+                    modulo6_c6_p610_sv  +  " TEXT," +
+                    modulo6_c6_p610_ss  +  " TEXT," +
+                    modulo6_c6_p610_st  +  " TEXT," +
+                    modulo6_c6_p610_t  +  " TEXT," +
+                    modulo6_c6_p611  +  " TEXT," +
+                    modulo6_c6_p612  +  " TEXT," +
+                    modulo6_c6_p612_nro  +  " TEXT," +
+                    modulo6_c6_p613  +  " TEXT," +
+                    modulo6_c6_p614_mon  +  " TEXT," +
+                    modulo6_c6_p614_esp  +  " TEXT," +
+                    modulo6_c6_p615_mon  +  " TEXT," +
+                    modulo6_c6_p615_esp  +  " TEXT," +
+                    modulo6_c6_p616_mon  +  " TEXT," +
+                    modulo6_c6_p616_esp  +  " TEXT," +
+                    modulo6_c6_p616_nas  +  " TEXT," +
+                    modulo6_c6_p617  +  " TEXT," +
+                    modulo6_c6_p617_dist  +  " TEXT," +
+                    modulo6_c6_p617_prov  +  " TEXT," +
+                    modulo6_c6_p617_dep  +  " TEXT," +
+                    modulo6_c6_p618_1  +  " TEXT," +
+                    modulo6_c6_p618_2  +  " TEXT," +
+                    modulo6_c6_p618_3  +  " TEXT," +
+                    modulo6_c6_p618_4  +  " TEXT," +
+                    modulo6_c6_p618_5  +  " TEXT," +
+                    modulo6_c6_p618_6  +  " TEXT," +
+                    modulo6_c6_p618_o  +  " TEXT," +
+                    modulo6_c6_p619  +  " TEXT," +
+                    modulo6_c6_p620_1  +  " TEXT," +
+                    modulo6_c6_p620_2  +  " TEXT," +
+                    modulo6_c6_p620_3  +  " TEXT," +
+                    modulo6_c6_p620_4  +  " TEXT," +
+                    modulo6_c6_p620_5  +  " TEXT," +
+                    modulo6_c6_p620_6  +  " TEXT," +
+                    modulo6_c6_p620_7  +  " TEXT," +
+                    modulo6_c6_p620_8  +  " TEXT," +
+                    modulo6_c6_p620_9  +  " TEXT," +
+                    modulo6_c6_p620_o  +  " TEXT," +
+                    modulo6_c6_p621  +  " TEXT," +
+                    modulo6_c6_p622  +  " TEXT," +
+                    modulo6_c6_p623  +  " TEXT," +
+                    modulo6_c6_p623_o  +  " TEXT," +
+                    modulo6_c6_p624  +  " TEXT," +
+                    modulo6_c6_p624_o  +  " TEXT," +
+                    modulo6_c6_p625  +  " TEXT," +
+                    modulo6_c6_p626  +  " TEXT," +
+                    modulo6_c6_p627  +  " TEXT," +
+                    modulo6_c6_p628  +  " TEXT," +
+                    modulo6_c6_p629_1  +  " TEXT," +
+                    modulo6_c6_p629_2  +  " TEXT," +
+                    modulo6_c6_p629_3  +  " TEXT," +
+                    modulo6_c6_p629_4  +  " TEXT," +
+                    modulo6_c6_p629_o  +  " TEXT," +
+                    modulo6_c6_p629_f  +  " TEXT," +
+                    modulo6_c6_p629_m  +  " TEXT," +
+                    modulo6_c6_p630_1  +  " TEXT," +
+                    modulo6_c6_p630_1med  +  " TEXT," +
+                    modulo6_c6_p630_1o  +  " TEXT," +
+                    modulo6_c6_p630_1mont  +  " TEXT," +
+                    modulo6_c6_p630_2  +  " TEXT," +
+                    modulo6_c6_p630_2med  +  " TEXT," +
+                    modulo6_c6_p630_2o  +  " TEXT," +
+                    modulo6_c6_p630_2mont  +  " TEXT," +
+                    modulo6_obs_cap6  +  " TEXT," +
+                    modulo6_c6_estado  +  " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA MODULO 7
+     * */
+    public static String modulo7_id = "_id";
+    public static String modulo7_idInformante = "idInformante";
+    public static String modulo7_idHogar = "idHogar";
+    public static String modulo7_idVivienda = "idVivienda";
+    public static String modulo7_c7_p701 = "c7_p701";
+    public static String modulo7_c7_p702_1 = "c7_p702_1";
+    public static String modulo7_c7_p702_2 = "c7_p702_2";
+    public static String modulo7_c7_p702_3 = "c7_p702_3";
+    public static String modulo7_c7_p702_4 = "c7_p702_4";
+    public static String modulo7_c7_p702_5 = "c7_p702_5";
+    public static String modulo7_c7_p702_6 = "c7_p702_6";
+    public static String modulo7_c7_p702_7 = "c7_p702_7";
+    public static String modulo7_c7_p702_8 = "c7_p702_8";
+    public static String modulo7_c7_p702_9 = "c7_p702_9";
+    public static String modulo7_c7_p702_10 = "c7_p702_10";
+    public static String modulo7_c7_p702_o = "c7_p702_o";
+    public static String modulo7_c7_p703 = "c7_p703";
+    public static String modulo7_c7_p704_1 = "c7_p704_1";
+    public static String modulo7_c7_p704_2 = "c7_p704_2";
+    public static String modulo7_c7_p704_3 = "c7_p704_3";
+    public static String modulo7_c7_p704_4 = "c7_p704_4";
+    public static String modulo7_c7_p704_5 = "c7_p704_5";
+    public static String modulo7_c7_p704_6 = "c7_p704_6";
+    public static String modulo7_c7_p704_o = "c7_p704_o";
+    public static String modulo7_c7_p705_1 = "c7_p705_1";
+    public static String modulo7_c7_p705_2 = "c7_p705_2";
+    public static String modulo7_c7_p705_3 = "c7_p705_3";
+    public static String modulo7_c7_p705_4 = "c7_p705_4";
+    public static String modulo7_c7_p705_5 = "c7_p705_5";
+    public static String modulo7_c7_p705_6 = "c7_p705_6";
+    public static String modulo7_c7_p705_7 = "c7_p705_7";
+    public static String modulo7_c7_p705_o = "c7_p705_o";
+    public static String modulo7_c7_p706 = "c7_p706";
+    public static String modulo7_c7_p707 = "c7_p707";
+    public static String modulo7_c7_p707_o = "c7_p707_o";
+    public static String modulo7_c7_p708_1 = "c7_p708_1";
+    public static String modulo7_c7_p708_2 = "c7_p708_2";
+    public static String modulo7_c7_p708_3 = "c7_p708_3";
+    public static String modulo7_c7_p708_4 = "c7_p708_4";
+    public static String modulo7_c7_p708_5 = "c7_p708_5";
+    public static String modulo7_c7_p709_1 = "c7_p709_1";
+    public static String modulo7_c7_p709_2 = "c7_p709_2";
+    public static String modulo7_c7_p709_3 = "c7_p709_3";
+    public static String modulo7_c7_p709_4 = "c7_p709_4";
+    public static String modulo7_c7_p709_5 = "c7_p709_5";
+    public static String modulo7_c7_p709_6 = "c7_p709_6";
+    public static String modulo7_c7_p709_7 = "c7_p709_7";
+    public static String modulo7_c7_p709_8 = "c7_p709_8";
+    public static String modulo7_c7_p709_9 = "c7_p709_9";
+    public static String modulo7_c7_p709_10 = "c7_p709_10";
+    public static String modulo7_c7_p709_o = "c7_p709_o";
+    public static String modulo7_obs_cap7 = "obs_cap7";
+    public static String modulo7_c7_estado = "c7_estado";
+
+
+    public static final String SQL_CREATE_TABLA_MODULO7 =
+            "CREATE TABLE " + tablamodulo7 + "(" +
+                    modulo7_id  + " INTEGER PRIMARY KEY," +
+                    modulo7_idInformante + " TEXT," +
+                    modulo7_idHogar + " TEXT," +
+                    modulo7_idVivienda  + " TEXT," +
+                    modulo7_c7_p701  +  " TEXT," +
+                    modulo7_c7_p702_1  +  " TEXT," +
+                    modulo7_c7_p702_2  +  " TEXT," +
+                    modulo7_c7_p702_3  +  " TEXT," +
+                    modulo7_c7_p702_4  +  " TEXT," +
+                    modulo7_c7_p702_5  +  " TEXT," +
+                    modulo7_c7_p702_6  +  " TEXT," +
+                    modulo7_c7_p702_7  +  " TEXT," +
+                    modulo7_c7_p702_8  +  " TEXT," +
+                    modulo7_c7_p702_9  +  " TEXT," +
+                    modulo7_c7_p702_10  +  " TEXT," +
+                    modulo7_c7_p702_o  +  " TEXT," +
+                    modulo7_c7_p703  +  " TEXT," +
+                    modulo7_c7_p704_1  +  " TEXT," +
+                    modulo7_c7_p704_2  +  " TEXT," +
+                    modulo7_c7_p704_3  +  " TEXT," +
+                    modulo7_c7_p704_4  +  " TEXT," +
+                    modulo7_c7_p704_5  +  " TEXT," +
+                    modulo7_c7_p704_6  +  " TEXT," +
+                    modulo7_c7_p704_o  +  " TEXT," +
+                    modulo7_c7_p705_1  +  " TEXT," +
+                    modulo7_c7_p705_2  +  " TEXT," +
+                    modulo7_c7_p705_3  +  " TEXT," +
+                    modulo7_c7_p705_4  +  " TEXT," +
+                    modulo7_c7_p705_5  +  " TEXT," +
+                    modulo7_c7_p705_6  +  " TEXT," +
+                    modulo7_c7_p705_7  +  " TEXT," +
+                    modulo7_c7_p705_o  +  " TEXT," +
+                    modulo7_c7_p706  +  " TEXT," +
+                    modulo7_c7_p707  +  " TEXT," +
+                    modulo7_c7_p707_o  +  " TEXT," +
+                    modulo7_c7_p708_1  +  " TEXT," +
+                    modulo7_c7_p708_2  +  " TEXT," +
+                    modulo7_c7_p708_3  +  " TEXT," +
+                    modulo7_c7_p708_4  +  " TEXT," +
+                    modulo7_c7_p708_5  +  " TEXT," +
+                    modulo7_c7_p709_1  +  " TEXT," +
+                    modulo7_c7_p709_2  +  " TEXT," +
+                    modulo7_c7_p709_3  +  " TEXT," +
+                    modulo7_c7_p709_4  +  " TEXT," +
+                    modulo7_c7_p709_5  +  " TEXT," +
+                    modulo7_c7_p709_6  +  " TEXT," +
+                    modulo7_c7_p709_7  +  " TEXT," +
+                    modulo7_c7_p709_8  +  " TEXT," +
+                    modulo7_c7_p709_9  +  " TEXT," +
+                    modulo7_c7_p709_10  +  " TEXT," +
+                    modulo7_c7_p709_o  +  " TEXT," +
+                    modulo7_obs_cap7  +  " TEXT," +
+                    modulo7_c7_estado  +  " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA MODULO 8
+     * */
+    public static String modulo8_id = "_id";
+    public static String modulo8_idInformante = "idInformante";
+    public static String modulo8_idHogar = "idHogar";
+    public static String modulo8_idVivienda = "idVivienda";
+    public static String modulo8_c8_p801 = "c8_p801";
+    public static String modulo8_c8_p802 = "c8_p802";
+    public static String modulo8_c8_p803 = "c8_p803";
+    public static String modulo8_c8_p804 = "c8_p804";
+    public static String modulo8_c8_p805_a = "c8_p805_a";
+    public static String modulo8_c8_p805_b = "c8_p805_b";
+    public static String modulo8_c8_p805_c = "c8_p805_c";
+    public static String modulo8_c8_p805_d = "c8_p805_d";
+    public static String modulo8_c8_p805_e = "c8_p805_e";
+    public static String modulo8_c8_p806_a = "c8_p806_a";
+    public static String modulo8_c8_p806_b = "c8_p806_b";
+    public static String modulo8_c8_p806_c = "c8_p806_c";
+    public static String modulo8_c8_p806_d = "c8_p806_d";
+    public static String modulo8_c8_p806_e = "c8_p806_e";
+    public static String modulo8_c8_p806_f = "c8_p806_f";
+    public static String modulo8_c8_p807 = "c8_p807";
+    public static String modulo8_c8_p808_1 = "c8_p808_1";
+    public static String modulo8_c8_p808_2 = "c8_p808_2";
+    public static String modulo8_c8_p808_3 = "c8_p808_3";
+    public static String modulo8_c8_p808_4 = "c8_p808_4";
+    public static String modulo8_c8_p808_5 = "c8_p808_5";
+    public static String modulo8_c8_p808_6 = "c8_p808_6";
+    public static String modulo8_c8_p808_7 = "c8_p808_7";
+    public static String modulo8_c8_p808_8 = "c8_p808_8";
+    public static String modulo8_c8_p808_9 = "c8_p808_9";
+    public static String modulo8_c8_p808_10 = "c8_p808_10";
+    public static String modulo8_c8_p808_11 = "c8_p808_11";
+    public static String modulo8_c8_p808_12 = "c8_p808_12";
+    public static String modulo8_c8_p808_13 = "c8_p808_13";
+    public static String modulo8_c8_p808_o = "c8_p808_o";
+    public static String modulo8_c8_p809 = "c8_p809";
+    public static String modulo8_c8_p810_1 = "c8_p810_1";
+    public static String modulo8_c8_p810_2 = "c8_p810_2";
+    public static String modulo8_c8_p810_3 = "c8_p810_3";
+    public static String modulo8_c8_p810_4 = "c8_p810_4";
+    public static String modulo8_c8_p810_5 = "c8_p810_5";
+    public static String modulo8_c8_p810_6 = "c8_p810_6";
+    public static String modulo8_c8_p810_7 = "c8_p810_7";
+    public static String modulo8_c8_p810_8 = "c8_p810_8";
+    public static String modulo8_c8_p810_9 = "c8_p810_9";
+    public static String modulo8_c8_p810_10 = "c8_p810_10";
+    public static String modulo8_c8_p810_11 = "c8_p810_11";
+    public static String modulo8_c8_p810_12 = "c8_p810_12";
+    public static String modulo8_c8_p810_13 = "c8_p810_13";
+    public static String modulo8_c8_p810_o = "c8_p810_o";
+    public static String modulo8_c8_p811 = "c8_p811";
+    public static String modulo8_c8_p812 = "c8_p812";
+    public static String modulo8_c8_p813_1 = "c8_p813_1";
+    public static String modulo8_c8_p813_2 = "c8_p813_2";
+    public static String modulo8_c8_p813_3 = "c8_p813_3";
+    public static String modulo8_c8_p813_4 = "c8_p813_4";
+    public static String modulo8_c8_p813_5 = "c8_p813_5";
+    public static String modulo8_c8_p813_6 = "c8_p813_6";
+    public static String modulo8_c8_p813_7 = "c8_p813_7";
+    public static String modulo8_c8_p813_8 = "c8_p813_8";
+    public static String modulo8_c8_p813_9 = "c8_p813_9";
+    public static String modulo8_c8_p813_10 = "c8_p813_10";
+    public static String modulo8_c8_p813_11 = "c8_p813_11";
+    public static String modulo8_c8_p813_12 = "c8_p813_12";
+    public static String modulo8_c8_p813_13 = "c8_p813_13";
+    public static String modulo8_c8_p813_14 = "c8_p813_14";
+    public static String modulo8_c8_p813_o = "c8_p813_o";
+    public static String modulo8_c8_p814_1 = "c8_p814_1";
+    public static String modulo8_c8_p814_2 = "c8_p814_2";
+    public static String modulo8_c8_p814_3 = "c8_p814_3";
+    public static String modulo8_c8_p814_4 = "c8_p814_4";
+    public static String modulo8_c8_p814_5 = "c8_p814_5";
+    public static String modulo8_c8_p814_6 = "c8_p814_6";
+    public static String modulo8_c8_p814_7 = "c8_p814_7";
+    public static String modulo8_c8_p814_8 = "c8_p814_8";
+    public static String modulo8_c8_p815 = "c8_p815";
+    public static String modulo8_c8_p816_1 = "c8_p816_1";
+    public static String modulo8_c8_p816_2 = "c8_p816_2";
+    public static String modulo8_c8_p816_3 = "c8_p816_3";
+    public static String modulo8_c8_p816_4 = "c8_p816_4";
+    public static String modulo8_c8_p816_5 = "c8_p816_5";
+    public static String modulo8_c8_p816_6 = "c8_p816_6";
+    public static String modulo8_c8_p816_7 = "c8_p816_7";
+    public static String modulo8_c8_p816_8 = "c8_p816_8";
+    public static String modulo8_c8_p816_o = "c8_p816_o";
+    public static String modulo8_c8_p817_1 = "c8_p817_1";
+    public static String modulo8_c8_p817_2 = "c8_p817_2";
+    public static String modulo8_c8_p817_3 = "c8_p817_3";
+    public static String modulo8_c8_p818 = "c8_p818";
+    public static String modulo8_c8_p819_1 = "c8_p819_1";
+    public static String modulo8_c8_p819_2 = "c8_p819_2";
+    public static String modulo8_c8_p819_3 = "c8_p819_3";
+    public static String modulo8_c8_p819_4 = "c8_p819_4";
+    public static String modulo8_c8_p819_5 = "c8_p819_5";
+    public static String modulo8_c8_p819_6 = "c8_p819_6";
+    public static String modulo8_c8_p819_7 = "c8_p819_7";
+    public static String modulo8_c8_p819_8 = "c8_p819_8";
+    public static String modulo8_c8_p819_9 = "c8_p819_9";
+    public static String modulo8_c8_p819_10 = "c8_p819_10";
+    public static String modulo8_c8_p819_11 = "c8_p819_11";
+    public static String modulo8_c8_p819_12 = "c8_p819_12";
+    public static String modulo8_c8_p819_13 = "c8_p819_13";
+    public static String modulo8_c8_p819_14 = "c8_p819_14";
+    public static String modulo8_c8_p819_o = "c8_p819_o";
+    public static String modulo8_c8_p820_1 = "c8_p820_1";
+    public static String modulo8_c8_p820_2 = "c8_p820_2";
+    public static String modulo8_c8_p820_3 = "c8_p820_3";
+    public static String modulo8_c8_p820_4 = "c8_p820_4";
+    public static String modulo8_c8_p820_5 = "c8_p820_5";
+    public static String modulo8_c8_p820_6 = "c8_p820_6";
+    public static String modulo8_c8_p820_7 = "c8_p820_7";
+    public static String modulo8_c8_p820_8 = "c8_p820_8";
+    public static String modulo8_c8_p820_9 = "c8_p820_9";
+    public static String modulo8_c8_p820_10 = "c8_p820_10";
+    public static String modulo8_c8_p820_11 = "c8_p820_11";
+    public static String modulo8_c8_p820_o = "c8_p820_o";
+    public static String modulo8_c8_p821_1 = "c8_p821_1";
+    public static String modulo8_c8_p821_2 = "c8_p821_2";
+    public static String modulo8_c8_p821_3 = "c8_p821_3";
+    public static String modulo8_c8_p821_4 = "c8_p821_4";
+    public static String modulo8_c8_p821_5 = "c8_p821_5";
+    public static String modulo8_c8_p821_6 = "c8_p821_6";
+    public static String modulo8_c8_p821_7 = "c8_p821_7";
+    public static String modulo8_c8_p821_8 = "c8_p821_8";
+    public static String modulo8_c8_p822 = "c8_p822";
+    public static String modulo8_c8_p823_1 = "c8_p823_1";
+    public static String modulo8_c8_p823_2 = "c8_p823_2";
+    public static String modulo8_c8_p823_3 = "c8_p823_3";
+    public static String modulo8_c8_p823_4 = "c8_p823_4";
+    public static String modulo8_c8_p823_5 = "c8_p823_5";
+    public static String modulo8_c8_p823_o = "c8_p823_o";
+    public static String modulo8_obs_cap8 = "obs_cap8";
+    public static String modulo8_c8_estado = "c8_estado";
+
+
+    public static final String SQL_CREATE_TABLA_MODULO8 =
+            "CREATE TABLE " + tablamodulo8 + "(" +
+                    modulo8_id  + " INTEGER PRIMARY KEY," +
+                    modulo8_idInformante + " TEXT," +
+                    modulo8_idHogar + " TEXT," +
+                    modulo8_idVivienda  + " TEXT," +
+                    modulo8_c8_p801  +  " TEXT," +
+                    modulo8_c8_p802  +  " TEXT," +
+                    modulo8_c8_p803  +  " TEXT," +
+                    modulo8_c8_p804  +  " TEXT," +
+                    modulo8_c8_p805_a  +  " TEXT," +
+                    modulo8_c8_p805_b  +  " TEXT," +
+                    modulo8_c8_p805_c  +  " TEXT," +
+                    modulo8_c8_p805_d  +  " TEXT," +
+                    modulo8_c8_p805_e  +  " TEXT," +
+                    modulo8_c8_p806_a  +  " TEXT," +
+                    modulo8_c8_p806_b  +  " TEXT," +
+                    modulo8_c8_p806_c  +  " TEXT," +
+                    modulo8_c8_p806_d  +  " TEXT," +
+                    modulo8_c8_p806_e  +  " TEXT," +
+                    modulo8_c8_p806_f  +  " TEXT," +
+                    modulo8_c8_p807  +  " TEXT," +
+                    modulo8_c8_p808_1  +  " TEXT," +
+                    modulo8_c8_p808_2  +  " TEXT," +
+                    modulo8_c8_p808_3  +  " TEXT," +
+                    modulo8_c8_p808_4  +  " TEXT," +
+                    modulo8_c8_p808_5  +  " TEXT," +
+                    modulo8_c8_p808_6  +  " TEXT," +
+                    modulo8_c8_p808_7  +  " TEXT," +
+                    modulo8_c8_p808_8  +  " TEXT," +
+                    modulo8_c8_p808_9  +  " TEXT," +
+                    modulo8_c8_p808_10  +  " TEXT," +
+                    modulo8_c8_p808_11  +  " TEXT," +
+                    modulo8_c8_p808_12  +  " TEXT," +
+                    modulo8_c8_p808_13  +  " TEXT," +
+                    modulo8_c8_p808_o  +  " TEXT," +
+                    modulo8_c8_p809  +  " TEXT," +
+                    modulo8_c8_p810_1  +  " TEXT," +
+                    modulo8_c8_p810_2  +  " TEXT," +
+                    modulo8_c8_p810_3  +  " TEXT," +
+                    modulo8_c8_p810_4  +  " TEXT," +
+                    modulo8_c8_p810_5  +  " TEXT," +
+                    modulo8_c8_p810_6  +  " TEXT," +
+                    modulo8_c8_p810_7  +  " TEXT," +
+                    modulo8_c8_p810_8  +  " TEXT," +
+                    modulo8_c8_p810_9  +  " TEXT," +
+                    modulo8_c8_p810_10  +  " TEXT," +
+                    modulo8_c8_p810_11  +  " TEXT," +
+                    modulo8_c8_p810_12  +  " TEXT," +
+                    modulo8_c8_p810_13  +  " TEXT," +
+                    modulo8_c8_p810_o  +  " TEXT," +
+                    modulo8_c8_p811  +  " TEXT," +
+                    modulo8_c8_p812  +  " TEXT," +
+                    modulo8_c8_p813_1  +  " TEXT," +
+                    modulo8_c8_p813_2  +  " TEXT," +
+                    modulo8_c8_p813_3  +  " TEXT," +
+                    modulo8_c8_p813_4  +  " TEXT," +
+                    modulo8_c8_p813_5  +  " TEXT," +
+                    modulo8_c8_p813_6  +  " TEXT," +
+                    modulo8_c8_p813_7  +  " TEXT," +
+                    modulo8_c8_p813_8  +  " TEXT," +
+                    modulo8_c8_p813_9  +  " TEXT," +
+                    modulo8_c8_p813_10  +  " TEXT," +
+                    modulo8_c8_p813_11  +  " TEXT," +
+                    modulo8_c8_p813_12  +  " TEXT," +
+                    modulo8_c8_p813_13  +  " TEXT," +
+                    modulo8_c8_p813_14  +  " TEXT," +
+                    modulo8_c8_p813_o  +  " TEXT," +
+                    modulo8_c8_p814_1  +  " TEXT," +
+                    modulo8_c8_p814_2  +  " TEXT," +
+                    modulo8_c8_p814_3  +  " TEXT," +
+                    modulo8_c8_p814_4  +  " TEXT," +
+                    modulo8_c8_p814_5  +  " TEXT," +
+                    modulo8_c8_p814_6  +  " TEXT," +
+                    modulo8_c8_p814_7  +  " TEXT," +
+                    modulo8_c8_p814_8  +  " TEXT," +
+                    modulo8_c8_p815  +  " TEXT," +
+                    modulo8_c8_p816_1  +  " TEXT," +
+                    modulo8_c8_p816_2  +  " TEXT," +
+                    modulo8_c8_p816_3  +  " TEXT," +
+                    modulo8_c8_p816_4  +  " TEXT," +
+                    modulo8_c8_p816_5  +  " TEXT," +
+                    modulo8_c8_p816_6  +  " TEXT," +
+                    modulo8_c8_p816_7  +  " TEXT," +
+                    modulo8_c8_p816_8  +  " TEXT," +
+                    modulo8_c8_p816_o  +  " TEXT," +
+                    modulo8_c8_p817_1  +  " TEXT," +
+                    modulo8_c8_p817_2  +  " TEXT," +
+                    modulo8_c8_p817_3  +  " TEXT," +
+                    modulo8_c8_p818  +  " TEXT," +
+                    modulo8_c8_p819_1  +  " TEXT," +
+                    modulo8_c8_p819_2  +  " TEXT," +
+                    modulo8_c8_p819_3  +  " TEXT," +
+                    modulo8_c8_p819_4  +  " TEXT," +
+                    modulo8_c8_p819_5  +  " TEXT," +
+                    modulo8_c8_p819_6  +  " TEXT," +
+                    modulo8_c8_p819_7  +  " TEXT," +
+                    modulo8_c8_p819_8  +  " TEXT," +
+                    modulo8_c8_p819_9  +  " TEXT," +
+                    modulo8_c8_p819_10  +  " TEXT," +
+                    modulo8_c8_p819_11  +  " TEXT," +
+                    modulo8_c8_p819_12  +  " TEXT," +
+                    modulo8_c8_p819_13  +  " TEXT," +
+                    modulo8_c8_p819_14  +  " TEXT," +
+                    modulo8_c8_p819_o  +  " TEXT," +
+                    modulo8_c8_p820_1  +  " TEXT," +
+                    modulo8_c8_p820_2  +  " TEXT," +
+                    modulo8_c8_p820_3  +  " TEXT," +
+                    modulo8_c8_p820_4  +  " TEXT," +
+                    modulo8_c8_p820_5  +  " TEXT," +
+                    modulo8_c8_p820_6  +  " TEXT," +
+                    modulo8_c8_p820_7  +  " TEXT," +
+                    modulo8_c8_p820_8  +  " TEXT," +
+                    modulo8_c8_p820_9  +  " TEXT," +
+                    modulo8_c8_p820_10  +  " TEXT," +
+                    modulo8_c8_p820_11  +  " TEXT," +
+                    modulo8_c8_p820_o  +  " TEXT," +
+                    modulo8_c8_p821_1  +  " TEXT," +
+                    modulo8_c8_p821_2  +  " TEXT," +
+                    modulo8_c8_p821_3  +  " TEXT," +
+                    modulo8_c8_p821_4  +  " TEXT," +
+                    modulo8_c8_p821_5  +  " TEXT," +
+                    modulo8_c8_p821_6  +  " TEXT," +
+                    modulo8_c8_p821_7  +  " TEXT," +
+                    modulo8_c8_p821_8  +  " TEXT," +
+                    modulo8_c8_p822  +  " TEXT," +
+                    modulo8_c8_p823_1  +  " TEXT," +
+                    modulo8_c8_p823_2  +  " TEXT," +
+                    modulo8_c8_p823_3  +  " TEXT," +
+                    modulo8_c8_p823_4  +  " TEXT," +
+                    modulo8_c8_p823_5  +  " TEXT," +
+                    modulo8_c8_p823_o  +  " TEXT," +
+                    modulo8_obs_cap8  +  " TEXT," +
+                    modulo8_c8_estado  +  " TEXT" + ");"
+            ;
+
+    /**
      * CLAUSULAS WHERE
      * */
     public static final String WHERE_CLAUSE_ID = "_id=?";
