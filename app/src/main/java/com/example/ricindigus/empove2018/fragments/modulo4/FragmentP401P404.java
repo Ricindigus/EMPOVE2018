@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
@@ -19,15 +20,13 @@ public class FragmentP401P404 extends Fragment {
 
     CheckBox c4_p401_1CheckBox, c4_p401_2CheckBox, c4_p401_3CheckBox, c4_p401_4CheckBox, c4_p401_6CheckBox ;
     EditText c4_p401_5_oEditText;
-
     RadioGroup c4_p402RadioGroup;
-
     CheckBox c4_p403_1CheckBox, c4_p403_2CheckBox, c4_p403_3CheckBox, c4_p403_4CheckBox, c4_p403_5CheckBox,
             c4_p403_6CheckBox, c4_p403_7CheckBox, c4_p403_8CheckBox, c4_p403_9CheckBox, c4_p403_10CheckBox,
             c4_p403_11CheckBox, c4_p403_12CheckBox, c4_p403_13CheckBox, c4_p403_14CheckBox;
     EditText c4_p403_oEditText;
-
     RadioGroup c4_p404RadioGroup;
+    LinearLayout m4_p401_linearlayout, m4_p402_linearlayout, m4_p403_linearlayout, m4_p404_linearlayout;
 
     public FragmentP401P404() {
         // Required empty public constructor
@@ -66,6 +65,11 @@ public class FragmentP401P404 extends Fragment {
         c4_p403_oEditText = (EditText) rootView.findViewById(R.id.mod4_403_edittext_C4_P403_O);
 
         c4_p404RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_404_radiogroup_C4_P404);
+
+        m4_p401_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p401);
+        m4_p402_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p402);
+        m4_p403_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p403);
+        m4_p404_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p404);
 
         return rootView;
     }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
@@ -21,10 +22,8 @@ public class FragmentP408P410 extends Fragment {
             c4_p408_6CheckBox, c4_p408_7CheckBox, c4_p408_8CheckBox, c4_p408_9CheckBox, c4_p408_10CheckBox,
             c4_p408_11CheckBox, c4_p408_12CheckBox, c4_p408_13CheckBox, c4_p408_14CheckBox;
     EditText c4_p408_oEditText;
-
     RadioGroup c4_p409RadioGroup, c4_p410RadioGroup;
-
-
+    LinearLayout m4_p408_linearlayout, m4_p409_linearlayout, m4_p410_linearlayout;
 
     public FragmentP408P410() {
         // Required empty public constructor
@@ -55,6 +54,11 @@ public class FragmentP408P410 extends Fragment {
         c4_p409RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_409_radiogroup_C4_P409);
 
         c4_p410RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_410_radiogroup_C4_P410);
+
+        m4_p408_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p408);
+        m4_p409_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p409);
+        m4_p410_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p410);
+
 
         return rootView;
     }

@@ -14,8 +14,8 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
-            <include layout="@layout/modulo5_p512"/>
-            <include layout="@layout/modulo5_p513"/>
+            <include layout="@layout/modulo5_p512" android:id="@+id/layout_m5_p512"/>
+            <include layout="@layout/modulo5_p513" android:id="@+id/layout_m5_p513"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

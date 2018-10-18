@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.example.ricindigus.empove2018.R;
 
@@ -18,15 +19,14 @@ public class FragmentP405P407 extends Fragment {
 
     CheckBox c4_p405_1CheckBox, c4_p405_2CheckBox, c4_p405_3CheckBox, c4_p405_4CheckBox, c4_p405_5CheckBox,
             c4_p405_6CheckBox, c4_p405_7CheckBox;
-
     CheckBox c4_p406_1CheckBox, c4_p406_2CheckBox, c4_p406_3CheckBox, c4_p406_4CheckBox, c4_p406_5CheckBox,
             c4_p406_6CheckBox, c4_p406_7CheckBox, c4_p406_8CheckBox;
     EditText c4_p406_oEditText;
-
     CheckBox c4_p407_1CheckBox, c4_p407_2CheckBox, c4_p407_3CheckBox, c4_p407_4CheckBox, c4_p407_5CheckBox,
             c4_p407_6CheckBox, c4_p407_7CheckBox, c4_p407_8CheckBox, c4_p407_9CheckBox, c4_p407_10CheckBox,
             c4_p407_11CheckBox, c4_p407_12CheckBox, c4_p407_13CheckBox;
     EditText c4_p407_oEditText;
+    LinearLayout m4_p405_linearlayout, m4_p406_linearlayout, m4_p407_linearlayout;
 
     public FragmentP405P407() {
         // Required empty public constructor
@@ -70,6 +70,11 @@ public class FragmentP405P407 extends Fragment {
         c4_p407_12CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_407_C4_P407_12);
         c4_p407_13CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_407_C4_P407_13);
         c4_p407_oEditText = (EditText) rootView.findViewById(R.id.mod4_407_edittext_C4_P407_O);
+
+        m4_p405_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p405);
+        m4_p406_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p406);
+        m4_p407_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p407);
+
         return rootView;
 
     }
