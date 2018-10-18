@@ -156,6 +156,7 @@ public class SQLConstantes {
      * TABLA MODULO 2
      * */
     public static String modulo2_id = "_id";
+    public static String modulo2_idInformante = "idInformante";
     public static String modulo2_idHogar = "idHogar";
     public static String modulo2_idVivienda = "idVivienda";
     public static String modulo2_c2_p202 = "c2_p202";
@@ -166,7 +167,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO2 =
             "CREATE TABLE " + tablamodulo2 + "(" +
-                    modulo2_id  + " INTEGER PRIMARY KEY," +
+                    modulo2_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     modulo2_idHogar + " TEXT," +
                     modulo2_idVivienda  + " TEXT," +
                     modulo2_c2_p202  + " TEXT," +
@@ -180,6 +181,7 @@ public class SQLConstantes {
      * TABLA MODULO 3
      * */
     public static String modulo3_id = "_id";
+    public static String modulo3_idInformante = "idInformante";
     public static String modulo3_idHogar = "idHogar";
     public static String modulo3_idVivienda = "idVivienda";
     public static String modulo3_c3_p301_d = "c3_p301_d";
@@ -230,9 +232,11 @@ public class SQLConstantes {
     public static String modulo3_c3_p317 = "c3_p317";
     public static String modulo3_c3_p317_o = "c3_p317_o";
 
+
     public static final String SQL_CREATE_TABLA_MODULO3 =
             "CREATE TABLE " + tablamodulo3 + "(" +
                     modulo3_id  + " INTEGER PRIMARY KEY," +
+                    modulo3_idInformante + " TEXT," +
                     modulo3_idHogar + " TEXT," +
                     modulo3_idVivienda  + " TEXT," +
                     modulo3_c3_p301_d  + " TEXT," +
@@ -288,6 +292,7 @@ public class SQLConstantes {
      * TABLA MODULO 3 PREGUNTA 309 - RUTAS
      * */
     public static String modulo3_p309_id = "_id";
+    public static String modulo3_p309_idInformante = "idInformante";
     public static String modulo3_p309_idHogar = "idHogar";
     public static String modulo3_p309_idVivienda = "idVivienda";
     public static String modulo3_c3_p309_p = "c3_p309_p";
@@ -299,6 +304,7 @@ public class SQLConstantes {
     public static final String SQL_CREATE_TABLA_MODULO3_P309_RUTAS =
             "CREATE TABLE " + tablam3p309rutas + "(" +
                     modulo3_p309_id  + " INTEGER PRIMARY KEY," +
+                    modulo3_p309_idInformante + " TEXT," +
                     modulo3_p309_idHogar + " TEXT," +
                     modulo3_p309_idVivienda  + " TEXT," +
                     modulo3_c3_p309_p  + " TEXT," +
@@ -312,6 +318,7 @@ public class SQLConstantes {
      * TABLA MODULO 3 PREGUNTA 318 - PERSONAS
      * */
     public static String modulo3_p318_id = "_id";
+    public static String modulo3_p318_idInformante = "idInformante";
     public static String modulo3_p318_idHogar = "idHogar";
     public static String modulo3_p318_idVivienda = "idVivienda";
     public static String modulo3_c3_p318_f = "c3_p318_f";
@@ -322,6 +329,7 @@ public class SQLConstantes {
     public static final String SQL_CREATE_TABLA_MODULO3_P318_PERSONAS =
             "CREATE TABLE " + tablamodulo3 + "(" +
                     modulo3_p318_id  + " INTEGER PRIMARY KEY," +
+                    modulo3_p318_idInformante + " TEXT," +
                     modulo3_p318_idHogar + " TEXT," +
                     modulo3_p318_idVivienda  + " TEXT," +
                     modulo3_c3_p318_f  + " TEXT," +
