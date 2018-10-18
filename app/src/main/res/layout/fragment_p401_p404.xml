@@ -15,10 +15,10 @@
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
             <include layout="@layout/cabecera"/>
-            <include layout="@layout/modulo4_p401"/>
-            <include layout="@layout/modulo4_p402"/>
-            <include layout="@layout/modulo4_p403"/>
-            <include layout="@layout/modulo4_p404"/>
+            <include layout="@layout/modulo4_p401" android:id="@+id/layout_m4_p401"/>
+            <include layout="@layout/modulo4_p402" android:id="@+id/layout_m4_p402"/>
+            <include layout="@layout/modulo4_p403" android:id="@+id/layout_m4_p403"/>
+            <include layout="@layout/modulo4_p404" android:id="@+id/layout_m4_p404"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
