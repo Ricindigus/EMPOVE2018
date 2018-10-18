@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
@@ -23,6 +24,7 @@ public class FragmentP630 extends Fragment {
     RadioGroup c6_p630_2_RadioGroup, c6_p630_2_med_RadioGroup;
     EditText c6_p630_2_o_EditText;
     Spinner c6_p630_2_frec_Spinner, c6_p630_2_mont_Spinner;
+    LinearLayout m6_p630_linearlayout;
 
     public FragmentP630() {
         // Required empty public constructor
@@ -46,6 +48,8 @@ public class FragmentP630 extends Fragment {
         c6_p630_2_o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_2_O);
         c6_p630_2_frec_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_2_FREC);
         c6_p630_2_mont_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_2_MONT);
+
+        m6_p630_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p630);
 
         return rootView;
     }

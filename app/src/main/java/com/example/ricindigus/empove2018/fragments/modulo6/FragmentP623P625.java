@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
@@ -21,6 +22,7 @@ public class FragmentP623P625 extends Fragment {
     RadioGroup c6_p624_RadioGroup;
     EditText c6_p624_o_EditText;
     EditText c6_p625_EditText;
+    LinearLayout m6_p623_linearlayout, m6_p624_linearlayout, m6_p625_linearlayout;
 
     public FragmentP623P625() {
         // Required empty public constructor
@@ -38,6 +40,10 @@ public class FragmentP623P625 extends Fragment {
         c6_p624_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_624_radiogroup_C6_P624);
         c6_p624_o_EditText = (EditText) rootView.findViewById(R.id.mod6_624_edittext_C6_P624_O);
         c6_p625_EditText = (EditText) rootView.findViewById(R.id.mod6_625_edittext_C6_P625);
+
+        m6_p623_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p623);
+        m6_p624_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p624);
+        m6_p625_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p625);
 
         return rootView;
     }

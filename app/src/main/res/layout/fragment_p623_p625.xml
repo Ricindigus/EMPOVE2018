@@ -14,9 +14,9 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
-            <include layout="@layout/modulo6_p623"/>
-            <include layout="@layout/modulo6_p624"/>
-            <include layout="@layout/modulo6_p625"/>
+            <include layout="@layout/modulo6_p623" android:id="@+id/layout_m6_p623"/>
+            <include layout="@layout/modulo6_p624" android:id="@+id/layout_m6_p624"/>
+            <include layout="@layout/modulo6_p625" android:id="@+id/layout_m6_p625"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

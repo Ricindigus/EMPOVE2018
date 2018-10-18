@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
@@ -24,6 +25,7 @@ public class FragmentP706P709 extends Fragment {
             c7_p709_1_Checkbox, c7_p709_2_Checkbox, c7_p709_3_Checkbox , c7_p709_4_Checkbox, c7_p709_5_Checkbox,
             c7_p709_6_Checkbox, c7_p709_7_Checkbox, c7_p709_8_Checkbox, c7_p709_9_Checkbox, c7_p709_10_Checkbox;
     EditText c7_p709_o_EditText;
+    LinearLayout m7_p706_linearlayout, m7_p707_linearlayout, m7_p708_linearlayout, m7_p709_linearlayout;
 
     public FragmentP706P709() {
         // Required empty public constructor
@@ -58,6 +60,11 @@ public class FragmentP706P709 extends Fragment {
         c7_p709_9_Checkbox = (CheckBox) rootView.findViewById(R.id.mod7_709_checkbox_C7_P709_9);
         c7_p709_o_EditText = (EditText) rootView.findViewById(R.id.mod7_709_edittext_C7_P709_O);
         c7_p709_10_Checkbox = (CheckBox) rootView.findViewById(R.id.mod7_709_checkbox_C7_P709_10);
+
+        m7_p706_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m7_p706);
+        m7_p707_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m7_p707);
+        m7_p708_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m7_p708);
+        m7_p709_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m7_p709);
 
         return rootView;
     }

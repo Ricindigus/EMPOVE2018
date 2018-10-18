@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
@@ -23,6 +24,7 @@ public class FragmentP809P812 extends Fragment {
             c8_p810_11_Checkbox, c8_p810_12_Checkbox, c8_p810_13_Checkbox;
     EditText c8_p810_o_EditText;
     RadioGroup c8_p811_RadioGroup, c8_p812_RadioGroup;
+    LinearLayout m8_p809_linearlayout, m8_p810_linearlayout, m8_p811_linearlayout, m8_p812_linearlayout;
 
     public FragmentP809P812() {
         // Required empty public constructor
@@ -55,6 +57,11 @@ public class FragmentP809P812 extends Fragment {
         c8_p811_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod8_811_radiogroup_C8_P811);
 
         c8_p812_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod8_812_radiogroup_C8_P812);
+
+        m8_p809_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p809);
+        m8_p810_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p810);
+        m8_p811_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p811);
+        m8_p812_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p812);
 
         return rootView;
     }

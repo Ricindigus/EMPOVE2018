@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
@@ -16,6 +17,7 @@ import com.example.ricindigus.empove2018.R;
 public class FragmentP801P804 extends Fragment {
 
     RadioGroup c8_p801_RadioGroup, c8_p802_RadioGroup, c8_p803_RadioGroup, c8_p804_RadioGroup;
+    LinearLayout m8_p801_linearlayout, m8_p802_linearlayout, m8_p803_linearlayout, m8_p804_linearlayout;
 
     public FragmentP801P804() {
         // Required empty public constructor
@@ -32,6 +34,11 @@ public class FragmentP801P804 extends Fragment {
         c8_p802_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod8_802_radiogroup_C8_P802);
         c8_p803_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod8_803_radiogroup_C8_P803);
         c8_p804_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod8_804_radiogroup_C8_P804);
+
+        m8_p801_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p801);
+        m8_p802_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p802);
+        m8_p803_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p803);
+        m8_p804_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p804);
 
         return rootView;
     }

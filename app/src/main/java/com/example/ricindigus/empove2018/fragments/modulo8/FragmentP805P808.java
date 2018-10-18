@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
@@ -27,6 +28,7 @@ public class FragmentP805P808 extends Fragment {
             c8_p808_9_CheckBox, c8_p808_10_CheckBox, c8_p808_11_CheckBox, c8_p808_12_CheckBox,
             c8_p808_13_CheckBox;
     EditText c8_p808_o_EditText;
+    LinearLayout m8_p805_linearlayout, m8_p806_linearlayout, m8_p807_linearlayout, m8_p808_linearlayout;
 
     public FragmentP805P808() {
         // Required empty public constructor
@@ -68,6 +70,11 @@ public class FragmentP805P808 extends Fragment {
         c8_p808_13_CheckBox = (CheckBox) rootView.findViewById(R.id.mod8_808_checkbox_C8_P808_13);
 
         c8_p808_o_EditText = (EditText) rootView.findViewById(R.id.mod8_808_edittext_C8_P808_O);
+
+        m8_p805_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p805);
+        m8_p806_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p806);
+        m8_p807_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p807);
+        m8_p808_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p808);
 
         return rootView;
     }

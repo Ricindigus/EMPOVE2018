@@ -14,12 +14,12 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
-            <include layout="@layout/modulo6_p613"/>
-            <include layout="@layout/modulo6_p614"/>
-            <include layout="@layout/modulo6_p615"/>
-            <include layout="@layout/modulo6_p616"/>
-            <include layout="@layout/modulo6_p617"/>
-            <include layout="@layout/modulo6_p618"/>
+            <include layout="@layout/modulo6_p613" android:id="@+id/layout_m6_p613"/>
+            <include layout="@layout/modulo6_p614" android:id="@+id/layout_m6_p614"/>
+            <include layout="@layout/modulo6_p615" android:id="@+id/layout_m6_p615"/>
+            <include layout="@layout/modulo6_p616" android:id="@+id/layout_m6_p616"/>
+            <include layout="@layout/modulo6_p617" android:id="@+id/layout_m6_p617"/>
+            <include layout="@layout/modulo6_p618" android:id="@+id/layout_m6_p618"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
