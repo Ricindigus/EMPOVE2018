@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/margen_medium"
     tools:context=".fragments.generales.FragmentVisitasSupervisor">
 
@@ -116,7 +117,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentRight="true"
                         android:tint="@color/colorIcons"
-                        android:backgroundTint="@color/greyBluePrimaryDark"
+                        app:backgroundTint="@color/greyBluePrimaryDark"
                         android:layout_margin="@dimen/margen_small"
                         android:src="@drawable/ic_add"
                         />

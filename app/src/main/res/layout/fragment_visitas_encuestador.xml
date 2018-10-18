@@ -3,30 +3,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/margen_medium"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/margen_small"
     tools:context=".fragments.generales.FragmentVisitasEncuestador">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/greyBluePrimary"
         android:id="@+id/formulario_layout">
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="@string/visita_titulo"
-            android:textColor="@color/colorIcons"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:background="@color/greyBluePrimaryDark"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="@string/visita_visitas_hogar_encuestador"
-            android:textColor="@color/colorIcons"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_small"
+            android:layout_marginRight="@dimen/margen_small">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="@dimen/longitud_input_n"
+                android:background="@color/greyBluePrimaryDark"
+                android:theme="@style/TemaCabeceraVisitas"
+                android:text="@string/visita_numero"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/greyBluePrimaryDark"
+                android:theme="@style/TemaCabeceraVisitas"
+                android:text="@string/visita_fecha"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/greyBluePrimaryDark"
+                    android:theme="@style/TemaCabeceraVisitas"
+                    android:text="@string/visita_hora"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/greyBluePrimaryDark"
+                        android:theme="@style/TemaCabeceraVisitas"
+                        android:text="@string/visita_de"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/greyBluePrimaryDark"
+                        android:theme="@style/TemaCabeceraVisitas"
+                        android:text="@string/visita_a"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/greyBluePrimaryDark"
+                    android:theme="@style/TemaCabeceraVisitas"
+                    android:text="@string/visita_proxima"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/greyBluePrimaryDark"
+                        android:theme="@style/TemaCabeceraVisitas"
+                        android:text="@string/visita_fecha"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/greyBluePrimaryDark"
+                        android:theme="@style/TemaCabeceraVisitas"
+                        android:text="@string/visita_hora"/>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@color/greyBluePrimaryDark"
+                android:theme="@style/TemaCabeceraVisitas"
+                android:text="@string/visita_resultado_visita"/>
+        </LinearLayout>
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -34,141 +122,40 @@
             android:layout_marginRight="@dimen/margen_small"
             android:layout_marginLeft="@dimen/margen_small"
             android:layout_marginBottom="@dimen/margen_small">
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_margin="@dimen/margen_small"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:orientation="horizontal"
+                android:padding="@dimen/margen_small">
+                <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_height="match_parent"
-                        android:layout_width="@dimen/longitud_input_n"
-                        android:background="@color/greyBluePrimaryDark"
-                        android:theme="@style/TemaCabeceraVisitas"
-                        android:text="@string/visita_numero"/>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginRight="1dp"
-                        android:background="@color/greyBluePrimaryDark"
-                        android:theme="@style/TemaCabeceraVisitas"
-                        android:text="@string/visita_fecha"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:layout_marginRight="1dp"
-                            android:layout_marginBottom="1dp"
-                            android:background="@color/greyBluePrimaryDark"
-                            android:theme="@style/TemaCabeceraVisitas"
-                            android:text="@string/visita_hora"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_marginRight="1dp"
-                                android:background="@color/greyBluePrimaryDark"
-                                android:theme="@style/TemaCabeceraVisitas"
-                                android:text="@string/visita_de"/>
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_marginRight="1dp"
-                                android:background="@color/greyBluePrimaryDark"
-                                android:theme="@style/TemaCabeceraVisitas"
-                                android:text="@string/visita_a"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:layout_marginRight="1dp"
-                            android:layout_marginBottom="1dp"
-                            android:background="@color/greyBluePrimaryDark"
-                            android:theme="@style/TemaCabeceraVisitas"
-                            android:text="@string/visita_proxima"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_marginRight="1dp"
-                                android:background="@color/greyBluePrimaryDark"
-                                android:theme="@style/TemaCabeceraVisitas"
-                                android:text="@string/visita_fecha"/>
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_marginRight="1dp"
-                                android:background="@color/greyBluePrimaryDark"
-                                android:theme="@style/TemaCabeceraVisitas"
-                                android:text="@string/visita_hora"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:background="@color/greyBluePrimaryDark"
-                        android:theme="@style/TemaCabeceraVisitas"
-                        android:text="@string/visita_resultado_visita"/>
-                </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/margen_small">
-                    <android.support.v7.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                    <android.support.design.widget.FloatingActionButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
-                        android:tint="@color/colorIcons"
-                        android:backgroundTint="@color/greyBluePrimaryDark"
-                        android:layout_margin="@dimen/margen_small"
-                        android:src="@drawable/ic_add"
-                        />
-                </RelativeLayout>
-            </LinearLayout>
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:tint="@color/colorIcons"
+                    app:backgroundTint="@color/greyBluePrimaryDark"
+                    android:layout_margin="@dimen/margen_small"
+                    android:src="@drawable/ic_add"
+                    />
+            </RelativeLayout>
         </android.support.v7.widget.CardView>
-        <TextView
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="@string/visita_resultado_final"
-            android:textColor="@color/colorIcons"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_small"
+            android:layout_marginRight="@dimen/margen_small"
+            android:layout_marginBottom="1dp"
+            app:cardBackgroundColor="@color/greyBluePrimaryDark">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/visita_resultado_final"
+                android:textColor="@color/colorIcons"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -204,7 +191,9 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margen_small">
+            android:layout_marginLeft="@dimen/margen_small"
+            android:layout_margin="@dimen/margen_small"
+            android:layout_marginBottom="@dimen/margen_small">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

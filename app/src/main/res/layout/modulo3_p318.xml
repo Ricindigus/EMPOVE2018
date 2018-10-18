@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="@dimen/margen_layout_pregunta"
     android:padding="@dimen/padding_layout_pregunta"
@@ -79,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:backgroundTint="@color/colorPrimary"
+                app:backgroundTint="@color/colorPrimary"
                 android:layout_marginRight="@dimen/margen_small"
                 android:layout_marginBottom="@dimen/margen_small"
                 android:src="@drawable/ic_add_location" />

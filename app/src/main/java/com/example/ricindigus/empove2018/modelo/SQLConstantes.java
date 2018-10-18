@@ -101,6 +101,32 @@ public class SQLConstantes {
     public static String caratula_telefono = "telefono";
     public static String caratula_t_hogar = "t_hogar";
 
+    public static final String SQL_CREATE_TABLA_CARATULA =
+            "CREATE TABLE " + tablacaratula + "(" +
+                    caratula_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    caratula_nom_dep + " TEXT," +
+                    caratula_nom_prov  + " TEXT," +
+                    caratula_nom_dist  + " TEXT," +
+                    caratula_nom_ccpp  + " TEXT," +
+                    caratula_zona  + " TEXT," +
+                    caratula_manzana_id  + " TEXT," +
+                    caratula_manzana_a  + " TEXT," +
+                    caratula_aer_ini  + " TEXT," +
+                    caratula_aer_fin  + " TEXT," +
+                    caratula_vivienda  + " TEXT," +
+                    caratula_tipvia  + " TEXT," +
+                    caratula_nomvia  + " TEXT," +
+                    caratula_nropta  + " TEXT," +
+                    caratula_block  + " TEXT," +
+                    caratula_interno  + " TEXT," +
+                    caratula_piso  + " TEXT," +
+                    caratula_mza  + " TEXT," +
+                    caratula_lote  + " TEXT," +
+                    caratula_km  + " TEXT," +
+                    caratula_telefono  + " TEXT," +
+                    caratula_t_hogar + " TEXT" + ");"
+            ;
+
     /**
      * TABLA FUNCIONARIOS
      * */
@@ -112,13 +138,6 @@ public class SQLConstantes {
     public static String funcionarios_nombre_encu = "nombre_encu";
     public static String funcionarios_nombre_sup = "nombre_sup";
     public static String funcionarios_nombre_coord = "nombre_coord";
-
-
-
-
-
-
-
 
     /**
      * TABLA MODULO 1
