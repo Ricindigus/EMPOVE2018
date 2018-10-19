@@ -20,11 +20,14 @@
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
             <TextView
+                android:id="@+id/mod3_301_textview_C3_P301_D"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
-                android:background="@drawable/input_text_enabled"/>
+                android:background="@drawable/input_text_enabled"
+                android:gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,9 +37,11 @@
                 android:textColor="@color/colorPrimary"
                 android:text="/"/>
             <TextView
+                android:id="@+id/mod3_301_textview_C3_P301_M"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
-                android:background="@drawable/input_text_enabled"/>
+                android:background="@drawable/input_text_enabled"
+                android:gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,11 +51,14 @@
                 android:textColor="@color/colorPrimary"
                 android:text="/"/>
             <TextView
+                android:id="@+id/mod3_301_textview_C3_P301_A"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
-                android:background="@drawable/input_text_enabled"/>
+                android:background="@drawable/input_text_enabled"
+                android:gravity="center"/>
         </LinearLayout>
         <Button
+            android:id="@+id/mod3_301_button_C3_P301_F"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/RaisedButtonAgregarFecha"

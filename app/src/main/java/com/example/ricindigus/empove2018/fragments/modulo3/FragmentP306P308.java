@@ -28,7 +28,7 @@ public class FragmentP306P308 extends Fragment {
     final int anio = c.get(Calendar.YEAR);
 
     TextView tv_fecha_dia_307, tv_fecha_mes_307, tv_fecha_anio_307;
-    Button btn_obtenerFecha_307;
+    Button c3_p307_d_f_Button;
     public FragmentP306P308() {
         // Required empty public constructor
     }
@@ -39,12 +39,12 @@ public class FragmentP306P308 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_p306_p308, container, false);
-        tv_fecha_dia_307 = (TextView) rootView.findViewById(R.id.mostrar_fecha_dia_307_TextView);
-        tv_fecha_mes_307 = (TextView) rootView.findViewById(R.id.mostrar_fecha_mes_307_TextView);
-        tv_fecha_anio_307 = (TextView) rootView.findViewById(R.id.mostrar_fecha_anio_307_TextView);
-        btn_obtenerFecha_307 = (Button) rootView.findViewById(R.id.btn_obtener_fecha_307);
+        tv_fecha_dia_307 = (TextView) rootView.findViewById(R.id.mod3_307_textview_C3_P307_D);
+        tv_fecha_mes_307 = (TextView) rootView.findViewById(R.id.mod3_307_textview_C3_P307_M);
+        tv_fecha_anio_307 = (TextView) rootView.findViewById(R.id.mod3_307_textview_C3_P307_A);
+        c3_p307_d_f_Button = (Button) rootView.findViewById(R.id.mod3_307_button_C3_P307_F);
 
-        btn_obtenerFecha_307.setOnClickListener(new View.OnClickListener() {
+        c3_p307_d_f_Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp">
             <TextView
-                android:id="@+id/mostrar_fecha_dia_307_TextView"
+                android:id="@+id/mod3_307_textview_C3_P307_D"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
                 android:background="@drawable/input_text_enabled"
@@ -38,7 +38,7 @@
                 android:textColor="@color/colorPrimary"
                 android:text="/"/>
             <TextView
-                android:id="@+id/mostrar_fecha_mes_307_TextView"
+                android:id="@+id/mod3_307_textview_C3_P307_M"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
                 android:background="@drawable/input_text_enabled"
@@ -52,14 +52,14 @@
                 android:textColor="@color/colorPrimary"
                 android:text="/"/>
             <TextView
-                android:id="@+id/mostrar_fecha_anio_307_TextView"
+                android:id="@+id/mod3_307_textview_C3_P307_A"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
                 android:background="@drawable/input_text_enabled"
                 android:gravity="center"/>
         </LinearLayout>
         <Button
-            android:id="@+id/btn_obtener_fecha_307"
+            android:id="@+id/mod3_307_button_C3_P307_F"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/RaisedButtonAgregarFecha"
