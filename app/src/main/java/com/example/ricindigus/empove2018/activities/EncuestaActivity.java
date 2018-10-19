@@ -35,6 +35,7 @@ import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP306P308;
 import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP309;
 import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP310P313;
 import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP314P317;
+import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP318;
 import com.example.ricindigus.empove2018.fragments.modulo4.FragmentP401P404;
 import com.example.ricindigus.empove2018.fragments.modulo4.FragmentP405P407;
 import com.example.ricindigus.empove2018.fragments.modulo4.FragmentP408P410;
@@ -129,7 +130,7 @@ public class EncuestaActivity extends AppCompatActivity{
                 ocultarTeclado(btnSiguiente);
                 if (tFragment + 1 <= numeroPaginasTotal) tFragment++;
                 else tFragment = 1;
-                    setFragment(tFragment);
+                setFragment(tFragment);
             }
         });
         setFragment(TipoFragment.CARATULA);
@@ -157,192 +158,192 @@ public class EncuestaActivity extends AppCompatActivity{
             case TipoFragment.CARATULA:
                 txtNombreSeccion.setText("CARÁTULA");
                 FragmentCaratula fragmentCaratula = new FragmentCaratula(idEncuestado,EncuestaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula);
                 break;
             case TipoFragment.HOGARES:
                 txtNombreSeccion.setText("HOGARES");
                 FragmentHogares fragmentHogares = new FragmentHogares(idEncuestado,EncuestaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentHogares,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentHogares);
                 break;
             case TipoFragment.VISITAS_ENCUESTADOR:
                 txtNombreSeccion.setText("CONTROL DE VISITAS - ENCUESTADOR");
                 FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idEncuestado,EncuestaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
                 break;
             case TipoFragment.VISITAS_SUPERVISOR:
                 txtNombreSeccion.setText("CONTROL DE VISITAS - SUPERVISOR");
                 FragmentVisitasSupervisor fragmentVisitasSupervisor = new FragmentVisitasSupervisor(idEncuestado,EncuestaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasSupervisor,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasSupervisor);
                 break;
             case TipoFragment.FUNCIONARIOS:
                 txtNombreSeccion.setText("FUNCIONARIOS DE LA ENCUESTA");
                 FragmentFuncionarios fragmentFuncionarios = new FragmentFuncionarios(idEncuestado,EncuestaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentFuncionarios,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentFuncionarios);
                 break;
             case TipoFragment.P101P107:
                 txtNombreSeccion.setText(getString(R.string.modulo_1_nombre));
                 FragmentP101P107 fragmentP101P107 = new FragmentP101P107();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP101P107,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP101P107);
                 break;
             case TipoFragment.P108P113:
                 txtNombreSeccion.setText(getString(R.string.modulo_1_nombre));
                 FragmentP108P113 fragmentP108P113 = new FragmentP108P113();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP108P113,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP108P113);
                 break;
             case TipoFragment.P201P206:
                 txtNombreSeccion.setText(getString(R.string.modulo_2_nombre));
                 FragmentP201P206 fragmentP201P206 = new FragmentP201P206();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP201P206,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP201P206);
                 break;
             case TipoFragment.P301P305:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP301P305 fragmentP301P305 = new FragmentP301P305();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP301P305,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP301P305);
                 break;
             case TipoFragment.P306P308:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP306P308 fragmentP306P308 = new FragmentP306P308();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP306P308,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP306P308);
                 break;
             case TipoFragment.P309:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP309 fragmentP309 = new FragmentP309();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP309,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP309);
                 break;
             case TipoFragment.P310P313:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP310P313 fragmentP310P313 = new FragmentP310P313();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP310P313,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP310P313);
                 break;
             case TipoFragment.P314P317:
-                txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
+                txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP314P317 fragmentP314P317 = new FragmentP314P317();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP314P317,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP314P317);
                 break;
             case TipoFragment.P318:
-                txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
-                FragmentP314P317 fragmentP314P3171 = new FragmentP314P317();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP314P3171,"fragment_actual");
+                txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
+                FragmentP318 fragmentP318 = new FragmentP318();
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP318);
                 break;
             case TipoFragment.P401P404:
                 txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
                 FragmentP401P404 fragmentP401P404 = new FragmentP401P404();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP401P404,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP401P404);
                 break;
             case TipoFragment.P405P407:
                 txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
                 FragmentP405P407 fragmentP405P407 = new FragmentP405P407();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP405P407,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP405P407);
                 break;
             case TipoFragment.P408P410:
                 txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
                 FragmentP408P410 fragmentP408P410 = new FragmentP408P410();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP408P410,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP408P410);
                 break;
             case TipoFragment.P411P416:
                 txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
                 FragmentP411P416 fragmentP411P416 = new FragmentP411P416();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP411P416,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP411P416);
                 break;
             case TipoFragment.P501P505:
                 txtNombreSeccion.setText(getString(R.string.modulo_5_nombre));
                 FragmentP501P505 fragmentP501P505 = new FragmentP501P505();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP501P505,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP501P505);
                 break;
             case TipoFragment.P506P507:
                 txtNombreSeccion.setText(getString(R.string.modulo_5_nombre));
                 FragmentP506P507 fragmentP506P507 = new FragmentP506P507();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP506P507,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP506P507);
                 break;
             case TipoFragment.P508P511:
                 txtNombreSeccion.setText(getString(R.string.modulo_5_nombre));
                 FragmentP508P511 fragmentP508P511 = new FragmentP508P511();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP508P511,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP508P511);
                 break;
             case TipoFragment.P512P513:
                 txtNombreSeccion.setText(getString(R.string.modulo_5_nombre));
                 FragmentP512P513 fragmentP512P513 = new FragmentP512P513();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP512P513,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP512P513);
                 break;
             case TipoFragment.P601P604:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP601P604 fragmentP601P604 = new FragmentP601P604();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP601P604,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP601P604);
                 break;
             case TipoFragment.P605P608:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP605P608 fragmentP605P608 = new FragmentP605P608();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP605P608,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP605P608);
                 break;
             case TipoFragment.P609P612:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP609P612 fragmentP609P612 = new FragmentP609P612();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP609P612,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP609P612);
                 break;
             case TipoFragment.P613P618:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP613P618 fragmentP613P618 = new FragmentP613P618();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP613P618,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP613P618);
                 break;
             case TipoFragment.P619P622:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP619P622 fragmentP619P622 = new FragmentP619P622();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP619P622,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP619P622);
                 break;
             case TipoFragment.P623P625:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP623P625 fragmentP623P625 = new FragmentP623P625();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP623P625,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP623P625);
                 break;
             case TipoFragment.P626P629:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP626P629 fragmentP626P629 = new FragmentP626P629();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP626P629,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP626P629);
                 break;
             case TipoFragment.P630:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP630 fragmentP630 = new FragmentP630();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP630,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP630);
                 break;
             case TipoFragment.P701P705:
                 txtNombreSeccion.setText(getString(R.string.modulo_7_nombre));
                 FragmentP701P705 fragmentP701P705 = new FragmentP701P705();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP701P705,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP701P705);
                 break;
             case TipoFragment.P706P709:
                 txtNombreSeccion.setText(getString(R.string.modulo_7_nombre));
                 FragmentP706P709 fragmentP706P709 = new FragmentP706P709();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP706P709,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP706P709);
                 break;
             case TipoFragment.P801P804:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP801P804 fragmentP801P804 = new FragmentP801P804();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP801P804,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP801P804);
                 break;
             case TipoFragment.P805P808:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP805P808 fragmentP805P808 = new FragmentP805P808();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP805P808,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP805P808);
                 break;
             case TipoFragment.P809P812:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP809P812 fragmentP809P812 = new FragmentP809P812();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP809P812,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP809P812);
                 break;
             case TipoFragment.P813P816:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP813P816 fragmentP813P816 = new FragmentP813P816();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP813P816,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP813P816);
                 break;
             case TipoFragment.P817P820:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP817P820 fragmentP817P820 = new FragmentP817P820();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP817P820,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP817P820);
                 break;
             case TipoFragment.P821P823:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP821P823 fragmentP821P823 = new FragmentP821P823();
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP821P823,"fragment_actual");
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP821P823);
                 break;
         }
         fragmentTransaction.commit();
@@ -456,14 +457,11 @@ public class EncuestaActivity extends AppCompatActivity{
         List<String> modulo1 = new ArrayList<String>();
         modulo1.add(getString(R.string.modulo_1_submenu_1));
         modulo1.add(getString(R.string.modulo_1_submenu_2));
-        modulo1.add(getString(R.string.modulo_1_submenu_3));
-        modulo1.add(getString(R.string.modulo_1_submenu_4));
-        modulo1.add(getString(R.string.modulo_1_submenu_5));
-        modulo1.add(getString(R.string.modulo_1_submenu_6));
+
 
         List<String> modulo2 = new ArrayList<String>();
         modulo2.add(getString(R.string.modulo_2_submenu_1));
-        modulo2.add(getString(R.string.modulo_2_submenu_2));
+
 
         List<String> modulo3 = new ArrayList<String>();
         modulo3.add(getString(R.string.modulo_3_submenu_1));
@@ -479,7 +477,6 @@ public class EncuestaActivity extends AppCompatActivity{
         modulo4.add(getString(R.string.modulo_4_submenu_2));
         modulo4.add(getString(R.string.modulo_4_submenu_3));
         modulo4.add(getString(R.string.modulo_4_submenu_4));
-        modulo4.add(getString(R.string.modulo_4_submenu_5));
 
         List<String> modulo5 = new ArrayList<String>();
         modulo5.add(getString(R.string.modulo_5_submenu_1));
@@ -496,7 +493,6 @@ public class EncuestaActivity extends AppCompatActivity{
         modulo6.add(getString(R.string.modulo_6_submenu_6));
         modulo6.add(getString(R.string.modulo_6_submenu_7));
         modulo6.add(getString(R.string.modulo_6_submenu_8));
-        modulo6.add(getString(R.string.modulo_6_submenu_9));
 
         List<String> modulo7 = new ArrayList<String>();
         modulo7.add(getString(R.string.modulo_7_submenu_1));

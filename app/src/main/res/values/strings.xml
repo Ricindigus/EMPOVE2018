@@ -134,12 +134,8 @@
     <!--Strings asociados al módulo : CARACTERÍSTICAS DE LA VIVIENDA Y DEL HOGAR-->
     <string name="modulo_1_nombre">I.CARACTERÍSTICAS DE LA VIVIENDA Y DEL HOGAR</string>
     <string name="modulo_1_menu">Módulo I: Características de la Vivienda y del Hogar</string>
-    <string name="modulo_1_submenu_1">Preguntas 101 - 102</string>
-    <string name="modulo_1_submenu_2">Preguntas 103 - 104</string>
-    <string name="modulo_1_submenu_3">Preguntas 105 - 107</string>
-    <string name="modulo_1_submenu_4">Preguntas 108 - 109</string>
-    <string name="modulo_1_submenu_5">Preguntas 110 - 112</string>
-    <string name="modulo_1_submenu_6">Preguntas 113</string>
+    <string name="modulo_1_submenu_1">Preguntas 101 - 107</string>
+    <string name="modulo_1_submenu_2">Preguntas 108 - 113</string>
 
     <string name="sub_modulo_1_1">DATOS DE LA VIVIENDA</string>
     <string name="sub_modulo_1_1_101">POR OBSERVACIÓN</string>
@@ -274,8 +270,7 @@
     <!--Strings asociados al módulo 2 : CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR-->
     <string name="modulo_2_nombre">II.CARACTERÍSTICAS DE LOS RESIDENTES DEL HOGAR</string>
     <string name="modulo_2_menu">Módulo II: Características de los residentes del hogar</string>
-    <string name="modulo_2_submenu_1">Preguntas 202 - 203</string>
-    <string name="modulo_2_submenu_2">Preguntas 204 - 206</string>
+    <string name="modulo_2_submenu_1">Preguntas 201 - 206</string>
 
     <string name="modulo_2_p202_pregunta_miembros">¿CUÁLES SON LAS PERSONAS QUE VIVEN PERMANENTEMENTE EN ESTE HOGAR Y DE LAS QUE ESTÁN ALOJADAS AQUÍ?</string>
     <string name="modulo_2_p202_ind">(No olvide registrar a los miembros del hogar ausentes y recién nacidos)</string>
@@ -337,8 +332,8 @@
     <string name="modulo_3_submenu_1">Preguntas 301 - 305</string>
     <string name="modulo_3_submenu_2">Preguntas 306 - 308</string>
     <string name="modulo_3_submenu_3">Preguntas 309</string>
-    <string name="modulo_3_submenu_4">Preguntas 310 - 314</string>
-    <string name="modulo_3_submenu_5">Preguntas 315 - 317</string>
+    <string name="modulo_3_submenu_4">Preguntas 310 - 313</string>
+    <string name="modulo_3_submenu_5">Preguntas 314 - 317</string>
     <string name="modulo_3_submenu_6">Preguntas 318</string>
 
     <string name="modulo_3_p301">301.¿EN QUE DÍA, MES Y AÑO NACIÓ?</string>
@@ -498,8 +493,7 @@
     <string name="modulo_4_submenu_1">Preguntas 401 - 404</string>
     <string name="modulo_4_submenu_2">Preguntas 405 - 407</string>
     <string name="modulo_4_submenu_3">Preguntas 408 - 410</string>
-    <string name="modulo_4_submenu_4">Preguntas 411 - 414</string>
-    <string name="modulo_4_submenu_5">Preguntas 415 - 416</string>
+    <string name="modulo_4_submenu_4">Preguntas 411 - 416</string>
 
     <string name="modulo_4_p401">401.¿EL SISTEMA DE SEGURO DE SALUD AL CUAL UD. ESTÁ AFILIADO ACTUALMENTE, ES:</string>
     <string name="modulo_4_p401_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
@@ -658,8 +652,8 @@
     <!--Strings asociados al módulo 5: EDUCACIÓN-->
     <string name="modulo_5_nombre">V. EDUCACIÓN (Para personas de 3 años a más de edad)</string>
     <string name="modulo_5_menu">Módulo V: Educación</string>
-    <string name="modulo_5_submenu_1">Preguntas 501 - 503</string>
-    <string name="modulo_5_submenu_2">Preguntas 504 - 507</string>
+    <string name="modulo_5_submenu_1">Preguntas 501 - 505</string>
+    <string name="modulo_5_submenu_2">Preguntas 506 - 507</string>
     <string name="modulo_5_submenu_3">Preguntas 508 - 511</string>
     <string name="modulo_5_submenu_4">Preguntas 512 - 513</string>
 
@@ -788,9 +782,8 @@
     <string name="modulo_6_submenu_4">Preguntas 613 - 618</string>
     <string name="modulo_6_submenu_5">Preguntas 619 - 622</string>
     <string name="modulo_6_submenu_6">Preguntas 623 - 625</string>
-    <string name="modulo_6_submenu_7">Preguntas 626 - 628</string>
-    <string name="modulo_6_submenu_8">Preguntas 629</string>
-    <string name="modulo_6_submenu_9">Preguntas 630</string>
+    <string name="modulo_6_submenu_7">Preguntas 626 - 629</string>
+    <string name="modulo_6_submenu_8">Preguntas 630</string>
 
     <string name="modulo_6_p601">601.LA SEMANA PASADA, DEL… AL… ¿TUVO UD. ALGÚN TRABAJO? (sin contar con los quehaceres del hogar)?</string>
     <string name="modulo_6_p601_sp1">1.Si</string>
