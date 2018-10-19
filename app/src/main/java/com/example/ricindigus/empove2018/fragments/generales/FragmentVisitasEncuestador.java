@@ -39,14 +39,15 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
         return inflater.inflate(R.layout.fragment_visitas_encuestador, container, false);
     }
 
+
     @Override
     public void guardarDatos() {
 
     }
 
     @Override
-    public boolean llenarVariables() {
-        return false;
+    public void llenarVariables() {
+
     }
 
     @Override
@@ -55,7 +56,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
     }
 
     @Override
-    public void validarDatos() {
-
+    public boolean validarDatos() {
+        return false;
     }
 }

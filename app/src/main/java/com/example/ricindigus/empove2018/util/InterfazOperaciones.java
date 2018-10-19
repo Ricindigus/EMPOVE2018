@@ -6,7 +6,7 @@ package com.example.ricindigus.empove2018.util;
 
 public interface InterfazOperaciones {
     public void guardarDatos();
-    public boolean llenarVariables();
+    public void llenarVariables();
     public void cargarDatos();
-    public void validarDatos();
+    public boolean validarDatos();
 }

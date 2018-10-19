@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/greyBluePrimaryLight"
+    android:background="@color/greyBluePrimary"
     android:layout_margin="@dimen/margen_small"
     android:id="@+id/formulario_layout">
 
@@ -17,7 +17,7 @@
         android:textColor="@color/colorIcons"
         android:textStyle="bold"
         android:gravity="center"
-        android:background="@color/greyBluePrimary"/>
+        android:background="@color/greyBluePrimaryDark"/>
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

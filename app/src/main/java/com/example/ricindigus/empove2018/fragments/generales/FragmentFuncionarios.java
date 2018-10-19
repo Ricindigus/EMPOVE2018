@@ -39,14 +39,15 @@ public class FragmentFuncionarios extends FragmentPagina {
         return inflater.inflate(R.layout.fragment_funcionarios, container, false);
     }
 
+
     @Override
     public void guardarDatos() {
 
     }
 
     @Override
-    public boolean llenarVariables() {
-        return false;
+    public void llenarVariables() {
+
     }
 
     @Override
@@ -55,7 +56,7 @@ public class FragmentFuncionarios extends FragmentPagina {
     }
 
     @Override
-    public void validarDatos() {
-
+    public boolean validarDatos() {
+        return false;
     }
 }

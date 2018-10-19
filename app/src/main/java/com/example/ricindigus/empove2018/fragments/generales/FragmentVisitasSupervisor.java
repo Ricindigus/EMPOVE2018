@@ -44,8 +44,8 @@ public class FragmentVisitasSupervisor extends FragmentPagina {
     }
 
     @Override
-    public boolean llenarVariables() {
-        return false;
+    public void llenarVariables() {
+
     }
 
     @Override
@@ -54,7 +54,7 @@ public class FragmentVisitasSupervisor extends FragmentPagina {
     }
 
     @Override
-    public void validarDatos() {
-
+    public boolean validarDatos() {
+        return false;
     }
 }

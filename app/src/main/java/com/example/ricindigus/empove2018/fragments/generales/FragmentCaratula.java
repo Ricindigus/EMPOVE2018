@@ -67,14 +67,15 @@ public class FragmentCaratula extends FragmentPagina {
         return rootView;
     }
 
+
     @Override
     public void guardarDatos() {
 
     }
 
     @Override
-    public boolean llenarVariables() {
-        return false;
+    public void llenarVariables() {
+
     }
 
     @Override
@@ -83,7 +84,7 @@ public class FragmentCaratula extends FragmentPagina {
     }
 
     @Override
-    public void validarDatos() {
-
+    public boolean validarDatos() {
+        return false;
     }
 }

@@ -11,11 +11,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP405P407 extends Fragment {
+public class FragmentP405P407 extends FragmentPagina {
 
     CheckBox c4_p405_1CheckBox, c4_p405_2CheckBox, c4_p405_3CheckBox, c4_p405_4CheckBox, c4_p405_5CheckBox,
             c4_p405_6CheckBox, c4_p405_7CheckBox;
@@ -27,6 +28,9 @@ public class FragmentP405P407 extends Fragment {
             c4_p407_11CheckBox, c4_p407_12CheckBox, c4_p407_13CheckBox;
     EditText c4_p407_oEditText;
     LinearLayout m4_p405_linearlayout, m4_p406_linearlayout, m4_p407_linearlayout;
+
+    int c4_p405_1;
+
 
     public FragmentP405P407() {
         // Required empty public constructor
@@ -79,4 +83,26 @@ public class FragmentP405P407 extends Fragment {
 
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+        if(c4_p405_1CheckBox.isChecked()) c4_p405_1 = 1 ;
+        else c4_p405_1 = 0;
+
+
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return true;
+    }
 }

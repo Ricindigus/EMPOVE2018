@@ -71,6 +71,7 @@
     <string name="caratula_n_hogares">¿CUANTOS HOGARES OCUPAN ESTA VIVIENDA?</string>
     <string name="caratula_n_hogares_ind">Sra.(Sr.): Si HOGAR es la persona o grupo de personas que se alimentan de una misma olla y atienden en común otras necesidades básicas.</string>
 
+    <string name="caratula_viven_venezolanos">16.EN ESTE HOGAR, ¿VIVE ALGUNA PERSONA QUE LLEGÓ DE VENEZUELA?</string>
 
     <!--Strings asociados a las visitas-->
     <string name="visita_titulo">13.ENTREVISTAS Y SUPERVISIÓN</string>
@@ -91,7 +92,7 @@
     <string name="visita_proxima_fecha">FECHA PRÓXIMA VISITA</string>
     <string name="visita_proxima_hora">HORA PRÓXIMA VISITA</string>
     <string name="visita_resultado_visita">RESULTADO VISITA</string>
-    <string name="visita_resultado_final">RESULTADO FINAL DE LA ENCUESTA</string>
+    <string name="visita_resultado_final">14.RESULTADO FINAL DE LA ENCUESTA</string>
     <string name="visita_resultado">RESULTADO</string>
     <string-array name="visita_array_resultados">
         <item>Seleccione resultado</item>

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="@dimen/margen_small"
-    android:background="@color/greyBluePrimaryLight"
+    android:background="@color/greyBluePrimary"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:textColor="@color/colorIcons"
         android:textStyle="bold"
         android:gravity="center"
-        android:background="@color/greyBluePrimary"/>
+        android:background="@color/greyBluePrimaryDark"/>
     <LinearLayout
         android:layout_margin="5dp"
         android:orientation="vertical"
