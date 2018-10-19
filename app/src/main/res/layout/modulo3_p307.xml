@@ -21,11 +21,14 @@
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
             <TextView
+                android:id="@+id/mostrar_fecha_dia_307_TextView"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
-                android:background="@drawable/input_text_enabled"/>
+                android:background="@drawable/input_text_enabled"
+                android:gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,9 +38,11 @@
                 android:textColor="@color/colorPrimary"
                 android:text="/"/>
             <TextView
+                android:id="@+id/mostrar_fecha_mes_307_TextView"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
-                android:background="@drawable/input_text_enabled"/>
+                android:background="@drawable/input_text_enabled"
+                android:gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,11 +52,14 @@
                 android:textColor="@color/colorPrimary"
                 android:text="/"/>
             <TextView
+                android:id="@+id/mostrar_fecha_anio_307_TextView"
                 android:layout_width="@dimen/longitud_input_n"
                 android:layout_height="@dimen/altura_input_especifique"
-                android:background="@drawable/input_text_enabled"/>
+                android:background="@drawable/input_text_enabled"
+                android:gravity="center"/>
         </LinearLayout>
         <Button
+            android:id="@+id/btn_obtener_fecha_307"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/RaisedButtonAgregarFecha"
