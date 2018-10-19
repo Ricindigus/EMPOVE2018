@@ -3,11 +3,12 @@ package com.example.ricindigus.empove2018.modelo;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
+import com.example.ricindigus.empove2018.modelo.pojos.Marco;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo1;
 import com.example.ricindigus.empove2018.modelo.pojos.Usuario;
 import com.example.ricindigus.empove2018.modelo.pojos.Vivienda;
@@ -136,6 +137,56 @@ public class Data {
         return sqLiteDatabase != null ? true : false;
     }
 
+    public Marco getMarco(String idVivienda){
+        Marco marco = null;
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamarco,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                marco = new Marco();
+                marco.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
+                marco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
+                marco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
+                marco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
+                marco.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
+                marco.setTselv(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_tselv)));
+                marco.setNselv(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nselv)));
+                marco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                marco.setVivrem(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_vivrem)));
+                marco.setMostrar(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mostrar)));
+                marco.setOdei(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_odei)));
+                marco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
+                marco.setManzana_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_manzana_id)));
+                marco.setManzana_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_manzana_a)));
+                marco.setAerini(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_aerini)));
+                marco.setAerfin(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_aerfin)));
+                marco.setTipvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_tipvia)));
+                marco.setNomvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nomvia)));
+                marco.setNropta(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nropta)));
+                marco.setLote(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_lote)));
+                marco.setPiso(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_piso)));
+                marco.setBlock(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_block)));
+                marco.setInterior(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_interior)));
+                marco.setCcdd(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_ccdd)));
+                marco.setDepartamento(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_departamento)));
+                marco.setCcpp(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_ccpp)));
+                marco.setProvincia(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_provincia)));
+                marco.setCcdi(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_ccdi)));
+                marco.setDistrito(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_distrito)));
+                marco.setEquipo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_equipo)));
+                marco.setRuta(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_ruta)));
+                marco.setUsuario_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_id)));
+                marco.setCargo_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_cargo_id)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return marco;
+    }
+
     public ArrayList<Vivienda> getAllViviendas(int idUsuario){
         ArrayList<Vivienda>  viviendas = new ArrayList<>();
         String[] whereArgs = new String[]{String.valueOf(idUsuario)};
@@ -146,11 +197,11 @@ public class Data {
             while (cursor.moveToNext()){
                 Vivienda vivienda = new Vivienda();
                 vivienda.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
-                vivienda.setAnio(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_anio)));
-                vivienda.setMes(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_mes)));
-                vivienda.setPeriodo(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
-                vivienda.setConglomerado(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
-                vivienda.setNorden(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                vivienda.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
+                vivienda.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
+                vivienda.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
+                vivienda.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
+                vivienda.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
                 viviendas.add(vivienda);
             }
         }finally{
@@ -172,11 +223,11 @@ public class Data {
             while (cursor.moveToNext()){
                 Vivienda vivienda = new Vivienda();
                 vivienda.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
-                vivienda.setAnio(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_anio)));
-                vivienda.setMes(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_mes)));
-                vivienda.setPeriodo(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
-                vivienda.setConglomerado(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
-                vivienda.setNorden(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                vivienda.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
+                vivienda.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
+                vivienda.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
+                vivienda.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
+                vivienda.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
                 viviendas.add(vivienda);
             }
         }finally{
@@ -205,7 +256,6 @@ public class Data {
         return usuario;
     }
 
-
     public void insertarModulo(String nombreTabla, ContentValues contentValues){
         sqLiteDatabase.insert(nombreTabla,null,contentValues);
     }
@@ -229,6 +279,50 @@ public class Data {
         String[] whereArgs = new String[]{idEncuestado};
         sqLiteDatabase.update(nombreTabla,contentValues,SQLConstantes.WHERE_CLAUSE_ID,whereArgs);
     }
+
+    /**
+     * retornar pojo caratula
+     * */
+
+    public Caratula getCaratula(String idVivienda){
+        Caratula caratula = null;
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablacaratula,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                caratula = new Caratula();
+                caratula.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.caratula_id)));
+                caratula.setNom_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_dep)));
+                caratula.setNom_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_prov)));
+                caratula.setNom_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_dist)));
+                caratula.setNom_ccpp(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_ccpp)));
+                caratula.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_zona)));
+                caratula.setManzana_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_manzana_id)));
+                caratula.setManzana_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_manzana_a)));
+                caratula.setAer_ini(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_aer_ini)));
+                caratula.setAer_fin(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_aer_fin)));
+                caratula.setVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_vivienda)));
+                caratula.setTipvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_tipvia)));
+                caratula.setNomvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nomvia)));
+                caratula.setNropta(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nropta)));
+                caratula.setBlock(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_block)));
+                caratula.setInterior(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_interior)));
+                caratula.setPiso(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_piso)));
+                caratula.setMza(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_mza)));
+                caratula.setLote(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_lote)));
+                caratula.setKm(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_km)));
+                caratula.setTelefono(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_telefono)));
+                caratula.setT_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_t_hogar)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return caratula;
+    }
+
 
     /**
     * retornar pojo modulo1

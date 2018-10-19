@@ -45,7 +45,7 @@
                 android:layout_margin="1dp"
                 android:layout_height="wrap_content">
                 <Spinner
-                    android:id="@+id/formulario_sp_spinner"
+                    android:id="@+id/caratula_spinner_nomvia"
                     android:layout_height="@dimen/altura_spinner"
                     android:layout_width="match_parent"
                     android:drawSelectorOnTop="true"
@@ -81,7 +81,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_TIPVIA"
+                    android:id="@+id/caratula_textview_TIPVIA"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
@@ -121,7 +121,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_NROPTA"
+                    android:id="@+id/caratula_textview_NROPTA"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
@@ -161,7 +161,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_BLOCK"
+                    android:id="@+id/caratula_textview_BLOCK"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
@@ -201,7 +201,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_INTERIO"
+                    android:id="@+id/caratula_textview_INTERIO"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
@@ -241,7 +241,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_PISO"
+                    android:id="@+id/caratula_textview_PISO"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
@@ -281,7 +281,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_MZA"
+                    android:id="@+id/caratula_textview_MZA"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
@@ -321,7 +321,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_LOTE"
+                    android:id="@+id/caratula_textview_LOTE"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
@@ -361,7 +361,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_KM"
+                    android:id="@+id/caratula_textview_KM"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
@@ -402,7 +402,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/gralCaratula_ubicaciondir_textview_TELEFONO"
+                    android:id="@+id/caratula_textview_TELEFONO"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"

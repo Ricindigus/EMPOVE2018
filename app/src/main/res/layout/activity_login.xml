@@ -12,7 +12,7 @@
         android:background="@color/colorPrimaryTransparente">
 
         <LinearLayout
-            android:layout_width="534dp"
+            android:layout_width="480dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
@@ -36,7 +36,7 @@
                 android:padding="@dimen/margen_small"
                 android:text="@string/nombre_encuesta"
                 android:textColor="@color/icons"
-                android:textSize="@dimen/texto_large"
+                android:textSize="@dimen/texto_medium"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -49,7 +49,7 @@
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="80dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/logoinei" />
 

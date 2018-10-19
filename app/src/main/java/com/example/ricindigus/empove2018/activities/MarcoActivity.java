@@ -182,7 +182,7 @@ public class MarcoActivity extends AppCompatActivity {
         meses = new ArrayList<String>();
         meses.add("Seleccione");
         for(Vivienda vivienda : viviendas){
-            if(vivienda.getAnio()== anio){
+            if(Integer.parseInt(vivienda.getAnio())== anio){
                 if(!meses.contains(String.valueOf(vivienda.getMes()))){
                     meses.add(String.valueOf(vivienda.getMes()));
                 }
@@ -193,7 +193,7 @@ public class MarcoActivity extends AppCompatActivity {
         periodos = new ArrayList<String>();
         periodos.add("Seleccione");
         for(Vivienda vivienda : viviendas){
-            if(vivienda.getMes()== mes){
+            if(Integer.parseInt(vivienda.getMes())== mes){
                 if(!periodos.contains(String.valueOf(vivienda.getPeriodo()))){
                     periodos.add(String.valueOf(vivienda.getPeriodo()));
                 }
@@ -204,7 +204,7 @@ public class MarcoActivity extends AppCompatActivity {
         conglomerados = new ArrayList<String>();
         conglomerados.add("Seleccione");
         for(Vivienda vivienda : viviendas){
-            if(vivienda.getPeriodo()== periodo){
+            if(Integer.parseInt(vivienda.getPeriodo())== periodo){
                 if(!conglomerados.contains(String.valueOf(vivienda.getConglomerado()))){
                     conglomerados.add(String.valueOf(vivienda.getConglomerado()));
                 }

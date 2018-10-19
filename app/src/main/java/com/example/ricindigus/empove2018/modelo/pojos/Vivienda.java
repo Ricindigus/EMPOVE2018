@@ -2,23 +2,15 @@ package com.example.ricindigus.empove2018.modelo.pojos;
 
 public class Vivienda {
     private int _id;
-    private int anio;
-    private int mes;
-    private int periodo;
-    private int conglomerado;
-    private int norden;
+    private String anio;
+    private String mes;
+    private String periodo;
+    private String conglomerado;
+    private String norden;
 
     public Vivienda() {
     }
 
-    public Vivienda(int _id, int anio, int mes, int periodo, int conglomerado, int norden) {
-        this._id = _id;
-        this.anio = anio;
-        this.mes = mes;
-        this.periodo = periodo;
-        this.conglomerado = conglomerado;
-        this.norden = norden;
-    }
 
     public int get_id() {
         return _id;
@@ -28,43 +20,43 @@ public class Vivienda {
         this._id = _id;
     }
 
-    public int getAnio() {
+    public String getAnio() {
         return anio;
     }
 
-    public void setAnio(int anio) {
+    public void setAnio(String anio) {
         this.anio = anio;
     }
 
-    public int getMes() {
+    public String getMes() {
         return mes;
     }
 
-    public void setMes(int mes) {
+    public void setMes(String mes) {
         this.mes = mes;
     }
 
-    public int getPeriodo() {
+    public String getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(int periodo) {
+    public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
 
-    public int getConglomerado() {
+    public String getConglomerado() {
         return conglomerado;
     }
 
-    public void setConglomerado(int conglomerado) {
+    public void setConglomerado(String conglomerado) {
         this.conglomerado = conglomerado;
     }
 
-    public int getNorden() {
+    public String getNorden() {
         return norden;
     }
 
-    public void setNorden(int norden) {
+    public void setNorden(String norden) {
         this.norden = norden;
     }
 }

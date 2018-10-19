@@ -45,7 +45,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
                 <TextView
-                    android:id="@+id/gralCaratula_ubicaciongeo_textview_NOM_DEP"
+                    android:id="@+id/caratula_textview_NOM_DEP"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
@@ -79,7 +79,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
                 <TextView
-                    android:id="@+id/gralCaratula_ubicaciongeo_textview_NOM_PROV"
+                    android:id="@+id/caratula_textview_NOM_PROV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
@@ -112,7 +112,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
                 <TextView
-                    android:id="@+id/gralCaratula_ubicaciongeo_textview_NOM_DIST"
+                    android:id="@+id/caratula_textview_NOM_DIST"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
@@ -145,7 +145,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/greyBluePrimary"/>
                 <TextView
-                    android:id="@+id/gralCaratula_ubicaciongeo_textview_NOM_CCPP"
+                    android:id="@+id/caratula_textview_NOM_CCPP"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"

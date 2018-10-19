@@ -30,6 +30,8 @@ public class FragmentCaratula extends FragmentPagina {
             lote_EditText, km_EditText, telefono_EditText;
     EditText t_hogar_EditText;
 
+
+
     @SuppressLint("ValidFragment")
     public FragmentCaratula(String idEncuestado, Context context) {
         this.idEncuestado = idEncuestado;
@@ -44,26 +46,25 @@ public class FragmentCaratula extends FragmentPagina {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_caratula, container, false);
-        nom_dep_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicaciongeo_textview_NOM_DEP);
-        nom_prov_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicaciongeo_textview_NOM_PROV);
-        nom_dist_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicaciongeo_textview_NOM_DIST);
-        nom_ccpp_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicaciongeo_textview_NOM_CCPP);
-        zona_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicacionmue_textview_ZONA);
-        manzana_id_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicacionmue_textview_MANZANA_ID);
-        aer_ini_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicacionmue_textview_AER_INI);
-        vivienda_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicacionmue_textview_VIVIENDA);
-        nombrevia_Spinner = (Spinner) rootView.findViewById(R.id.formulario_sp_spinner);
-        tipvia_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_TIPVIA);
-        nropta_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_NROPTA);
-        block_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_BLOCK);
-        interio_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_INTERIO);
-        piso_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_PISO);
-        mza_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_MZA);
-        lote_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_LOTE);
-        km_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_KM);
-        telefono_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_TELEFONO);
-        t_hogar_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicacioncant_hogares_textview_T_HOGAR);
-
+//        nom_dep_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicaciongeo_textview_NOM_DEP);
+//        nom_prov_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicaciongeo_textview_NOM_PROV);
+//        nom_dist_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicaciongeo_textview_NOM_DIST);
+//        nom_ccpp_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicaciongeo_textview_NOM_CCPP);
+//        zona_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicacionmue_textview_ZONA);
+//        manzana_id_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicacionmue_textview_MANZANA_ID);
+//        aer_ini_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicacionmue_textview_AER_INI);
+//        vivienda_TextView = (TextView) rootView.findViewById(R.id.gralCaratula_ubicacionmue_textview_VIVIENDA);
+//        nombrevia_Spinner = (Spinner) rootView.findViewById(R.id.formulario_sp_spinner);
+//        tipvia_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_TIPVIA);
+//        nropta_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_NROPTA);
+//        block_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_BLOCK);
+//        interio_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_INTERIO);
+//        piso_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_PISO);
+//        mza_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_MZA);
+//        lote_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_LOTE);
+//        km_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_KM);
+//        telefono_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicaciondir_textview_TELEFONO);
+//        t_hogar_EditText = (EditText) rootView.findViewById(R.id.gralCaratula_ubicacioncant_hogares_textview_T_HOGAR);
         return rootView;
     }
 

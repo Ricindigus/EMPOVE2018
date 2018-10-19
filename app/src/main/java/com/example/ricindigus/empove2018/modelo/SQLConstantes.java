@@ -93,7 +93,7 @@ public class SQLConstantes {
     public static String caratula_nomvia = "nomvia";
     public static String caratula_nropta = "nropta";
     public static String caratula_block = "block";
-    public static String caratula_interno = "interno";
+    public static String caratula_interior = "interior";
     public static String caratula_piso = "piso";
     public static String caratula_mza = "mza";
     public static String caratula_lote = "lote";
@@ -103,7 +103,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_CARATULA =
             "CREATE TABLE " + tablacaratula + "(" +
-                    caratula_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    caratula_id  + " INTEGER PRIMARY KEY " +
                     caratula_nom_dep + " TEXT," +
                     caratula_nom_prov  + " TEXT," +
                     caratula_nom_dist  + " TEXT," +
@@ -118,13 +118,117 @@ public class SQLConstantes {
                     caratula_nomvia  + " TEXT," +
                     caratula_nropta  + " TEXT," +
                     caratula_block  + " TEXT," +
-                    caratula_interno  + " TEXT," +
+                    caratula_interior + " TEXT," +
                     caratula_piso  + " TEXT," +
                     caratula_mza  + " TEXT," +
                     caratula_lote  + " TEXT," +
                     caratula_km  + " TEXT," +
                     caratula_telefono  + " TEXT," +
                     caratula_t_hogar + " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA HOGARES
+     * */
+
+    public static String hogar_id = "_id";
+    public static String hogar_id_vivienda = "id_vivienda";
+    public static String hogar_nom_ape = "hogar_nom_ape";
+    public static String hogar_estado = "hogar_estado";
+
+    public static final String SQL_CREATE_TABLA_HOGARES =
+            "CREATE TABLE " + tablahogares + "(" +
+                    hogar_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    hogar_id_vivienda + " TEXT," +
+                    hogar_nom_ape + " TEXT," +
+                    hogar_estado + " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA VISITA ENCUESTADOR
+     * */
+
+    public static String visita_encuestador_id = "_id";
+    public static String visita_encuestador_id_vivienda = "id_vivienda";
+    public static String visita_encuestador_id_hogar = "id_hogar";
+    public static String visita_encuestador_vis_fecha_dd = "vis_fecha_dd";
+    public static String visita_encuestador_vis_fecha_mm = "vis_fecha_mm";
+    public static String visita_encuestador_vis_fecha_aa = "vis_fecha_aa";
+    public static String visita_encuestador_vis_hor_ini = "vis_hor_ini";
+    public static String visita_encuestador_vis_min_ini = "vis_min_ini";
+    public static String visita_encuestador_vis_hor_fin = "vis_hor_fin";
+    public static String visita_encuestador_vis_min_fin = "vis_min_fin";
+    public static String visita_encuestador_prox_vis_fecha_dd = "prox_vis_fecha_dd";
+    public static String visita_encuestador_prox_vis_fecha_mm = "prox_vis_fecha_mm";
+    public static String visita_encuestador_prox_vis_fecha_aa = "prox_vis_fecha_aa";
+    public static String visita_encuestador_prox_vis_hor_ini = "prox_vis_hor_ini";
+    public static String visita_encuestador_prox_vis_min_ini = "prox_vis_min_ini";
+    public static String visita_encuestador_prox_vis_hor_fin = "prox_vis_hor_fin";
+    public static String visita_encuestador_prox_vis_min_fin = "prox_vis_min_fin";
+    public static String visita_encuestador_vis_resu = "vis_resu";
+    public static String visita_encuestador_vis_resu_esp = "vis_resu_esp";
+    public static String visita_encuestador_vis_resultado_final = "vis_resultado_final";
+    public static String visita_encuestador_vis_fecha_final = "vis_fecha_final";
+
+
+
+
+    public static final String SQL_CREATE_TABLA_VISITA_ENCUESTADOR =
+            "CREATE TABLE " + tablavisitasencuestador + "(" +
+                    visita_encuestador_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    visita_encuestador_id_vivienda + " TEXT," +
+                    visita_encuestador_id_hogar + " TEXT," +
+                    visita_encuestador_vis_fecha_dd + " TEXT," +
+                    visita_encuestador_vis_fecha_mm + " TEXT," +
+                    visita_encuestador_vis_fecha_aa + " TEXT," +
+                    visita_encuestador_vis_hor_ini + " TEXT," +
+                    visita_encuestador_vis_min_ini + " TEXT," +
+                    visita_encuestador_vis_hor_fin + " TEXT," +
+                    visita_encuestador_vis_min_fin + " TEXT," +
+                    visita_encuestador_prox_vis_fecha_dd + " TEXT," +
+                    visita_encuestador_prox_vis_fecha_mm + " TEXT," +
+                    visita_encuestador_prox_vis_fecha_aa + " TEXT," +
+                    visita_encuestador_prox_vis_hor_ini + " TEXT," +
+                    visita_encuestador_prox_vis_min_ini + " TEXT," +
+                    visita_encuestador_prox_vis_hor_fin + " TEXT," +
+                    visita_encuestador_prox_vis_min_fin + " TEXT," +
+                    visita_encuestador_vis_resu + " TEXT," +
+                    visita_encuestador_vis_resu_esp + " TEXT," +
+                    visita_encuestador_vis_resultado_final + " TEXT," +
+                    visita_encuestador_vis_fecha_final + " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA VISITA SUPERVISOR
+     * */
+
+    public static String visita_supervisor_id = "_id";
+    public static String visita_supervisor_id_vivienda = "id_vivienda";
+    public static String visita_supervisor_id_hogar = "id_hogar";
+    public static String visita_supervisor_vis_fecha_dd = "vis_fecha_dd";
+    public static String visita_supervisor_vis_fecha_mm = "vis_fecha_mm";
+    public static String visita_supervisor_vis_fecha_aa = "vis_fecha_aa";
+    public static String visita_supervisor_vis_hor_ini = "vis_hor_ini";
+    public static String visita_supervisor_vis_min_ini = "vis_min_ini";
+    public static String visita_supervisor_vis_hor_fin = "vis_hor_fin";
+    public static String visita_supervisor_vis_min_fin = "vis_min_fin";
+    public static String visita_supervisor_vis_resu = "vis_resu";
+    public static String visita_supervisor_vis_resu_esp = "vis_resu_esp";
+
+    public static final String SQL_CREATE_TABLA_VISITA_SUPERVISOR =
+            "CREATE TABLE " + tablavisitassupervisor + "(" +
+                    visita_supervisor_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    visita_supervisor_id_vivienda + " TEXT," +
+                    visita_supervisor_id_hogar + " TEXT," +
+                    visita_supervisor_vis_fecha_dd + " TEXT," +
+                    visita_supervisor_vis_fecha_mm + " TEXT," +
+                    visita_supervisor_vis_fecha_aa + " TEXT," +
+                    visita_supervisor_vis_hor_ini + " TEXT," +
+                    visita_supervisor_vis_min_ini + " TEXT," +
+                    visita_supervisor_vis_hor_fin + " TEXT," +
+                    visita_supervisor_vis_min_fin + " TEXT," +
+                    visita_supervisor_vis_resu + " TEXT," +
+                    visita_supervisor_vis_resu_esp + " TEXT" + ");"
             ;
 
     /**
@@ -138,6 +242,18 @@ public class SQLConstantes {
     public static String funcionarios_nombre_encu = "nombre_encu";
     public static String funcionarios_nombre_sup = "nombre_sup";
     public static String funcionarios_nombre_coord = "nombre_coord";
+
+    public static final String SQL_CREATE_TABLA_FUNCIONARIOS =
+            "CREATE TABLE " + tablafuncionarios + "(" +
+                    funcionarios_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    funcionarios_dni_encu + " TEXT," +
+                    funcionarios_dni_sup  + " TEXT," +
+                    funcionarios_dni_coord  + " TEXT," +
+                    funcionarios_nombre_encu  + " TEXT," +
+                    funcionarios_nombre_sup  + " TEXT," +
+                    funcionarios_nombre_coord + " TEXT" + ");"
+            ;
+
 
     /**
      * TABLA MODULO 1
