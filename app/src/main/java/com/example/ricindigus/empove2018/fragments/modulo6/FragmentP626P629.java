@@ -12,11 +12,12 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP626P629 extends Fragment {
+public class FragmentP626P629 extends FragmentPagina {
 
     RadioGroup c6_p626_RadioGroup, c6_p627_RadioGroup;
     EditText c6_p628_EditText;
@@ -31,6 +32,18 @@ public class FragmentP626P629 extends Fragment {
     Spinner c6_p629_4_f_Spinner;
     EditText c6_p629_4_m_EditText;
     LinearLayout m6_p626_linearlayout, m6_p627_linearlayout, m6_p628_linearlayout, m6_p629_linearlayout;
+
+    private int c6_p626;
+    private int c6_p627;
+    private String c6_p628;
+    private int c6_p629_1;
+    private int c6_p629_2;
+    private int c6_p629_3;
+    private int c6_p629_4;
+    private String c6_p629_o;
+    private int c6_p629_f;
+    private int c6_p629_m;
+
 
     public FragmentP626P629() {
         // Required empty public constructor
@@ -70,4 +83,34 @@ public class FragmentP626P629 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+        c6_p626 = c6_p626_RadioGroup.indexOfChild(c6_p626_RadioGroup.findViewById(c6_p626_RadioGroup.getCheckedRadioButtonId()));
+        c6_p627 = c6_p627_RadioGroup.indexOfChild(c6_p627_RadioGroup.findViewById(c6_p627_RadioGroup.getCheckedRadioButtonId()));
+        c6_p628 = c6_p628_EditText.getText().toString();
+        c6_p629_1 = c6_p629_1_RadioGroup.indexOfChild(c6_p629_1_RadioGroup.findViewById(c6_p629_1_RadioGroup.getCheckedRadioButtonId()));
+        c6_p629_2 = c6_p629_2_RadioGroup.indexOfChild(c6_p629_2_RadioGroup.findViewById(c6_p629_2_RadioGroup.getCheckedRadioButtonId()));
+        c6_p629_3 = c6_p629_3_RadioGroup.indexOfChild(c6_p629_3_RadioGroup.findViewById(c6_p629_3_RadioGroup.getCheckedRadioButtonId()));
+        c6_p629_4 = c6_p629_4_RadioGroup.indexOfChild(c6_p629_4_RadioGroup.findViewById(c6_p629_4_RadioGroup.getCheckedRadioButtonId()));
+        c6_p629_o = c6_p629_o_EditText.getText().toString();
+        /* Se debe hacer switch
+        c6_p629_f = c6_p629_f_Spinner.getSelectedItemPosition();
+        c6_p629_m = c6_p629_m_RadioGroup.indexOfChild(c6_p629_m_RadioGroup.findViewById(c6_p629_m_RadioGroup.getCheckedRadioButtonId()));
+        */
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return false;
+    }
 }

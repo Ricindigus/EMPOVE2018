@@ -11,16 +11,23 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP605P608 extends Fragment {
+public class FragmentP605P608 extends FragmentPagina {
 
     EditText c6_p605_EditText, c6_p606_EditText, c6_p607_EditText;
     RadioGroup c6_p608_RadioGroup;
     EditText c6_p608_o_EditText;
     LinearLayout m6_p605_linearlayout, m6_p606_linearlayout, m6_p607_linearlayout, m6_p608_linearlayout;
+
+    private String c6_p605;
+    private String c6_p606;
+    private String c6_p607;
+    private int c6_p608;
+    private String c6_p608_o;
 
     public FragmentP605P608() {
         // Required empty public constructor
@@ -47,4 +54,27 @@ public class FragmentP605P608 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+        c6_p605 = c6_p605_EditText.getText().toString();
+        c6_p606 = c6_p606_EditText.getText().toString();
+        c6_p607 = c6_p607_EditText.getText().toString();
+        c6_p608 = c6_p608_RadioGroup.indexOfChild(c6_p608_RadioGroup.findViewById(c6_p608_RadioGroup.getCheckedRadioButtonId()));
+        c6_p608_o = c6_p608_o_EditText.getText().toString();
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return false;
+    }
 }

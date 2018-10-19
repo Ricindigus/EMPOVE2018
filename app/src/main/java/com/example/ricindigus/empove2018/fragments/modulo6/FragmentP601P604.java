@@ -11,11 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP601P604 extends Fragment {
+public class FragmentP601P604 extends FragmentPagina {
 
     RadioGroup c6_p601_RadioGroup, c6_p602_RadioGroup, c6_p603_RadioGroup,
             c6_p604_1_RadioGroup, c6_p604_2_RadioGroup, c6_p604_3_RadioGroup, c6_p604_4_RadioGroup,
@@ -23,6 +24,22 @@ public class FragmentP601P604 extends Fragment {
             c6_p604_9_RadioGroup, c6_p604_10_RadioGroup, c6_p604_11_RadioGroup;
     EditText c6_p604_o_EditText;
     LinearLayout m6_p601_linearlayout, m6_p602_linearlayout, m6_p603_linearlayout, m6_p604_linearlayout;
+
+    private int c6_p601;
+    private int c6_p602;
+    private int c6_p603;
+    private int c6_p604_1;
+    private int c6_p604_2;
+    private int c6_p604_3;
+    private int c6_p604_4;
+    private int c6_p604_5;
+    private int c6_p604_6;
+    private int c6_p604_7;
+    private int c6_p604_8;
+    private int c6_p604_9;
+    private int c6_p604_10;
+    private int c6_p604_11;
+    private String c6_p604_o;
 
     public FragmentP601P604() {
         // Required empty public constructor
@@ -59,4 +76,37 @@ public class FragmentP601P604 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+        c6_p601 = c6_p601_RadioGroup.indexOfChild(c6_p601_RadioGroup.findViewById(c6_p601_RadioGroup.getCheckedRadioButtonId()));
+        c6_p602 = c6_p602_RadioGroup.indexOfChild(c6_p602_RadioGroup.findViewById(c6_p602_RadioGroup.getCheckedRadioButtonId()));
+        c6_p603 = c6_p603_RadioGroup.indexOfChild(c6_p603_RadioGroup.findViewById(c6_p603_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_1 = c6_p604_1_RadioGroup.indexOfChild(c6_p604_1_RadioGroup.findViewById(c6_p604_1_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_2 = c6_p604_2_RadioGroup.indexOfChild(c6_p604_2_RadioGroup.findViewById(c6_p604_2_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_3 = c6_p604_3_RadioGroup.indexOfChild(c6_p604_3_RadioGroup.findViewById(c6_p604_3_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_4 = c6_p604_4_RadioGroup.indexOfChild(c6_p604_4_RadioGroup.findViewById(c6_p604_4_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_5 = c6_p604_5_RadioGroup.indexOfChild(c6_p604_5_RadioGroup.findViewById(c6_p604_5_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_6 = c6_p604_6_RadioGroup.indexOfChild(c6_p604_6_RadioGroup.findViewById(c6_p604_6_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_7 = c6_p604_7_RadioGroup.indexOfChild(c6_p604_7_RadioGroup.findViewById(c6_p604_7_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_8 = c6_p604_8_RadioGroup.indexOfChild(c6_p604_8_RadioGroup.findViewById(c6_p604_8_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_9 = c6_p604_9_RadioGroup.indexOfChild(c6_p604_9_RadioGroup.findViewById(c6_p604_9_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_10 = c6_p604_10_RadioGroup.indexOfChild(c6_p604_10_RadioGroup.findViewById(c6_p604_10_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_11 = c6_p604_11_RadioGroup.indexOfChild(c6_p604_11_RadioGroup.findViewById(c6_p604_11_RadioGroup.getCheckedRadioButtonId()));
+        c6_p604_o = c6_p604_o_EditText.getText().toString();
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return false;
+    }
 }
