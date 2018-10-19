@@ -595,10 +595,7 @@ public class SQLConstantes {
     public static String modulo4_c4_p408_14 = "c4_p408_14";
     public static String modulo4_c4_p408_o = "c4_p408_o";
     public static String modulo4_c4_p409 = "c4_p409";
-    public static String modulo4_c4_p410_1 = "c4_p410_1";
-    public static String modulo4_c4_p410_2 = "c4_p410_2";
-    public static String modulo4_c4_p410_3 = "c4_p410_3";
-    public static String modulo4_c4_p410_4 = "c4_p410_4";
+    public static String modulo4_c4_p410 = "c4_p410";
     public static String modulo4_c4_p411 = "c4_p411";
     public static String modulo4_c4_p412 = "c4_p412";
     public static String modulo4_c4_p413 = "c4_p413";
@@ -698,10 +695,7 @@ public class SQLConstantes {
                     modulo4_c4_p408_14  +  " TEXT," +
                     modulo4_c4_p408_o  +  " TEXT," +
                     modulo4_c4_p409  +  " TEXT," +
-                    modulo4_c4_p410_1  +  " TEXT," +
-                    modulo4_c4_p410_2  +  " TEXT," +
-                    modulo4_c4_p410_3  +  " TEXT," +
-                    modulo4_c4_p410_4  +  " TEXT," +
+                    modulo4_c4_p410  +  " TEXT," +
                     modulo4_c4_p411  +  " TEXT," +
                     modulo4_c4_p412  +  " TEXT," +
                     modulo4_c4_p413  +  " TEXT," +
@@ -914,11 +908,13 @@ public class SQLConstantes {
     public static String modulo6_c6_p630_1 = "c6_p630_1";
     public static String modulo6_c6_p630_1med = "c6_p630_1med";
     public static String modulo6_c6_p630_1o = "c6_p630_1o";
+    public static String modulo6_c6_p630_1frec = "c6_p630_1frec";
     public static String modulo6_c6_p630_1mont = "c6_p630_1mont";
     public static String modulo6_c6_p630_2 = "c6_p630_2";
     public static String modulo6_c6_p630_2med = "c6_p630_2med";
     public static String modulo6_c6_p630_2o = "c6_p630_2o";
     public static String modulo6_c6_p630_2mont = "c6_p630_2mont";
+    public static String modulo6_c6_p630_2frec = "c6_p630_2frec";
     public static String modulo6_obs_cap6 = "obs_cap6";
     public static String modulo6_c6_estado = "c6_estado";
 
@@ -1019,10 +1015,12 @@ public class SQLConstantes {
                     modulo6_c6_p630_1  +  " TEXT," +
                     modulo6_c6_p630_1med  +  " TEXT," +
                     modulo6_c6_p630_1o  +  " TEXT," +
+                    modulo6_c6_p630_1frec  +  " TEXT," +
                     modulo6_c6_p630_1mont  +  " TEXT," +
                     modulo6_c6_p630_2  +  " TEXT," +
                     modulo6_c6_p630_2med  +  " TEXT," +
                     modulo6_c6_p630_2o  +  " TEXT," +
+                    modulo6_c6_p630_2frec  +  " TEXT," +
                     modulo6_c6_p630_2mont  +  " TEXT," +
                     modulo6_obs_cap6  +  " TEXT," +
                     modulo6_c6_estado  +  " TEXT" + ");"

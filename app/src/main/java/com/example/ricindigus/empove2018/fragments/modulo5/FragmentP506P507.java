@@ -12,11 +12,12 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP506P507 extends Fragment {
+public class FragmentP506P507 extends FragmentPagina {
 
     RadioGroup c5_p506_1_RadioGroup, c5_p506_4_1_RadioGroup, c5_p506_4_2_RadioGroup, c5_p506_4_3_RadioGroup,
                 c5_p506_4_4_RadioGroup, c5_p506_4_5_RadioGroup, c5_p506_4_6_RadioGroup ;
@@ -24,6 +25,16 @@ public class FragmentP506P507 extends Fragment {
     RadioGroup c5_p507_RadioGroup;
     Spinner c5_p507_dist_Spinner,  c5_p507_prov_Spinner, c5_p507_dep_Spinner;
     LinearLayout m5_p506_linearlayout, m5_p507_linearlayout;
+
+    private int c5_p506_1;
+    private String c5_p506_2;
+    private String c5_p506_3;
+    private int c5_p506_4;
+    private int c5_p507;
+    private int c5_p507_dist;
+    private int c5_p507_prov;
+    private int c5_p507_dep;
+
 
     public FragmentP506P507() {
         // Required empty public constructor
@@ -57,7 +68,53 @@ public class FragmentP506P507 extends Fragment {
         m5_p507_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m5_p507);
 
         return rootView;
+    }
+
+    @Override
+    public void guardarDatos() {
 
     }
 
+    @Override
+    public void llenarVariables() {
+        c5_p506_1 = c5_p506_1_RadioGroup.indexOfChild(c5_p506_1_RadioGroup.findViewById(c5_p506_1_RadioGroup.getCheckedRadioButtonId()));
+        switch (c5_p506_1){
+            case 1: c5_p506_2 = c5_p506_2_1_EditText.getText().toString(); c5_p506_3 = "";
+                    c5_p506_4 = c5_p506_4_1_RadioGroup.indexOfChild(c5_p506_4_1_RadioGroup.findViewById(c5_p506_4_1_RadioGroup.getCheckedRadioButtonId()));
+                    break;
+            case 2: c5_p506_3 = c5_p506_3_EditText.getText().toString(); c5_p506_2 = "";
+                    c5_p506_4 = c5_p506_4_2_RadioGroup.indexOfChild(c5_p506_4_2_RadioGroup.findViewById(c5_p506_4_2_RadioGroup.getCheckedRadioButtonId()));
+                    break;
+            case 3: c5_p506_2 = c5_p506_2_3_EditText.getText().toString(); c5_p506_3 = "";
+                    c5_p506_4 = c5_p506_4_3_RadioGroup.indexOfChild(c5_p506_4_3_RadioGroup.findViewById(c5_p506_4_3_RadioGroup.getCheckedRadioButtonId()));
+                    break;
+            case 4: c5_p506_2 = c5_p506_2_4_EditText.getText().toString(); c5_p506_3 = "";
+                    c5_p506_4 = c5_p506_4_4_RadioGroup.indexOfChild(c5_p506_4_4_RadioGroup.findViewById(c5_p506_4_4_RadioGroup.getCheckedRadioButtonId()));
+                    break;
+            case 5: c5_p506_2 = c5_p506_2_5_EditText.getText().toString(); c5_p506_3 = "";
+                    c5_p506_4 = c5_p506_4_5_RadioGroup.indexOfChild(c5_p506_4_5_RadioGroup.findViewById(c5_p506_4_5_RadioGroup.getCheckedRadioButtonId()));
+                    break;
+            case 6: c5_p506_2 = c5_p506_2_6_EditText.getText().toString(); c5_p506_3 = "";
+                    c5_p506_4 = c5_p506_4_6_RadioGroup.indexOfChild(c5_p506_4_6_RadioGroup.findViewById(c5_p506_4_6_RadioGroup.getCheckedRadioButtonId()));
+                    break;
+            default: c5_p506_2 = ""; c5_p506_3 = ""; c5_p506_4 = -1; break;
+        }
+
+        c5_p506_3 = c5_p506_3_EditText.getText().toString();
+        c5_p507 = c5_p507_RadioGroup.indexOfChild(c5_p507_RadioGroup.findViewById(c5_p507_RadioGroup.getCheckedRadioButtonId()));
+        c5_p507_dist = c5_p507_dist_Spinner.getSelectedItemPosition();
+        c5_p507_prov = c5_p507_prov_Spinner.getSelectedItemPosition();
+        c5_p507_dep = c5_p507_dep_Spinner.getSelectedItemPosition();
+
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return false;
+    }
 }

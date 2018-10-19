@@ -100,11 +100,22 @@ public class Modulo6 {
     private String c6_p630_1;
     private String c6_p630_1med;
     private String c6_p630_1o;
+    private String c6_p630_1frec;
     private String c6_p630_1mont;
     private String c6_p630_2;
     private String c6_p630_2med;
     private String c6_p630_2o;
     private String c6_p630_2mont;
+
+    public String getC6_p630_2frec() {
+        return c6_p630_2frec;
+    }
+
+    public void setC6_p630_2frec(String c6_p630_2frec) {
+        this.c6_p630_2frec = c6_p630_2frec;
+    }
+
+    private String c6_p630_2frec;
     private String obs_cap6;
     private String c6_estado;
 
@@ -1026,10 +1037,12 @@ public class Modulo6 {
         contentValues.put(SQLConstantes.modulo6_c6_p630_1,c6_p630_1);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1med,c6_p630_1med);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1o,c6_p630_1o);
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1frec,c6_p630_1frec);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1mont,c6_p630_1mont);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2,c6_p630_2);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2med,c6_p630_2med);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2o,c6_p630_2o);
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2frec,c6_p630_2frec);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2mont,c6_p630_2mont);
         contentValues.put(SQLConstantes.modulo6_obs_cap6,obs_cap6);
         contentValues.put(SQLConstantes.modulo6_c6_estado,c6_estado);

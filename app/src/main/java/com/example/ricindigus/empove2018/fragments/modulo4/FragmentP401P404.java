@@ -12,21 +12,46 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP401P404 extends Fragment {
+public class FragmentP401P404 extends FragmentPagina {
 
-    CheckBox c4_p401_1CheckBox, c4_p401_2CheckBox, c4_p401_3CheckBox, c4_p401_4CheckBox, c4_p401_6CheckBox ;
-    EditText c4_p401_5_oEditText;
-    RadioGroup c4_p402RadioGroup;
-    CheckBox c4_p403_1CheckBox, c4_p403_2CheckBox, c4_p403_3CheckBox, c4_p403_4CheckBox, c4_p403_5CheckBox,
-            c4_p403_6CheckBox, c4_p403_7CheckBox, c4_p403_8CheckBox, c4_p403_9CheckBox, c4_p403_10CheckBox,
-            c4_p403_11CheckBox, c4_p403_12CheckBox, c4_p403_13CheckBox, c4_p403_14CheckBox;
-    EditText c4_p403_oEditText;
-    RadioGroup c4_p404RadioGroup;
+    CheckBox c4_p401_1_CheckBox, c4_p401_2_CheckBox, c4_p401_3_CheckBox, c4_p401_4_CheckBox, c4_p401_5_CheckBox ;
+    EditText c4_p401_o_EditText;
+    RadioGroup c4_p402_RadioGroup;
+    CheckBox c4_p403_1_CheckBox, c4_p403_2_CheckBox, c4_p403_3_CheckBox, c4_p403_4_CheckBox, c4_p403_5_CheckBox,
+            c4_p403_6_CheckBox, c4_p403_7_CheckBox, c4_p403_8_CheckBox, c4_p403_9_CheckBox, c4_p403_10_CheckBox,
+            c4_p403_11_CheckBox, c4_p403_12_CheckBox, c4_p403_13_CheckBox, c4_p403_14_CheckBox;
+    EditText c4_p403_o_EditText;
+    RadioGroup c4_p404_RadioGroup;
     LinearLayout m4_p401_linearlayout, m4_p402_linearlayout, m4_p403_linearlayout, m4_p404_linearlayout;
+
+    private int c4_p401_1;
+    private int c4_p401_2;
+    private int c4_p401_3;
+    private int c4_p401_4;
+    private int c4_p401_5;
+    private String c4_p401_o;
+    private int c4_p402;
+    private int c4_p403_1;
+    private int c4_p403_2;
+    private int c4_p403_3;
+    private int c4_p403_4;
+    private int c4_p403_5;
+    private int c4_p403_6;
+    private int c4_p403_7;
+    private int c4_p403_8;
+    private int c4_p403_9;
+    private int c4_p403_10;
+    private int c4_p403_11;
+    private int c4_p403_12;
+    private int c4_p403_13;
+    private int c4_p403_14;
+    private String c4_p403_o;
+    private int c4_p404;
 
     public FragmentP401P404() {
         // Required empty public constructor
@@ -39,32 +64,32 @@ public class FragmentP401P404 extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_p401_p404, container, false);
 
-        c4_p401_1CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_1);
-        c4_p401_2CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_2);
-        c4_p401_3CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_3);
-        c4_p401_4CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_4);
-        c4_p401_5_oEditText = (EditText) rootView.findViewById(R.id.mod4_401_edtittext_C4_P401_O);
-        c4_p401_6CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_5);
+        c4_p401_1_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_1);
+        c4_p401_2_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_2);
+        c4_p401_3_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_3);
+        c4_p401_4_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_4);
+        c4_p401_o_EditText = (EditText) rootView.findViewById(R.id.mod4_401_edtittext_C4_P401_O);
+        c4_p401_5_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_401_checkbox_C4_P401_5);
 
-        c4_p402RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_402_radiogroup_C4_P402);
+        c4_p402_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_402_radiogroup_C4_P402);
 
-        c4_p403_1CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_1);
-        c4_p403_2CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_2);
-        c4_p403_3CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_3);
-        c4_p403_4CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_4);
-        c4_p403_5CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_5);
-        c4_p403_6CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_6);
-        c4_p403_7CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_7);
-        c4_p403_8CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_8);
-        c4_p403_9CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_9);
-        c4_p403_10CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_10);
-        c4_p403_11CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_11);
-        c4_p403_12CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_12);
-        c4_p403_13CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_13);
-        c4_p403_14CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_14);
-        c4_p403_oEditText = (EditText) rootView.findViewById(R.id.mod4_403_edittext_C4_P403_O);
+        c4_p403_1_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_1);
+        c4_p403_2_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_2);
+        c4_p403_3_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_3);
+        c4_p403_4_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_4);
+        c4_p403_5_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_5);
+        c4_p403_6_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_6);
+        c4_p403_7_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_7);
+        c4_p403_8_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_8);
+        c4_p403_9_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_9);
+        c4_p403_10_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_10);
+        c4_p403_11_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_11);
+        c4_p403_12_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_12);
+        c4_p403_13_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_13);
+        c4_p403_14_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_403_checkbox_C4_P403_14);
+        c4_p403_o_EditText = (EditText) rootView.findViewById(R.id.mod4_403_edittext_C4_P403_O);
 
-        c4_p404RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_404_radiogroup_C4_P404);
+        c4_p404_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_404_radiogroup_C4_P404);
 
         m4_p401_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p401);
         m4_p402_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m4_p402);
@@ -74,4 +99,45 @@ public class FragmentP401P404 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+        if(c4_p401_1_CheckBox.isChecked()) c4_p401_1 = 1; else c4_p401_1 = 0;
+        if(c4_p401_2_CheckBox.isChecked()) c4_p401_2 = 1; else c4_p401_2 = 0;
+        if(c4_p401_3_CheckBox.isChecked()) c4_p401_3 = 1; else c4_p401_3 = 0;
+        if(c4_p401_4_CheckBox.isChecked()) c4_p401_4 = 1; else c4_p401_4 = 0;
+        if(c4_p401_5_CheckBox.isChecked()) c4_p401_5 = 1; else c4_p401_5 = 0;
+        c4_p401_o = c4_p401_o_EditText.getText().toString();
+        c4_p402 = c4_p402_RadioGroup.indexOfChild(c4_p402_RadioGroup.findViewById(c4_p402_RadioGroup.getCheckedRadioButtonId()));
+        if(c4_p403_1_CheckBox.isChecked()) c4_p403_1 = 1; else c4_p403_1 = 0;
+        if(c4_p403_2_CheckBox.isChecked()) c4_p403_2 = 1; else c4_p403_2 = 0;
+        if(c4_p403_3_CheckBox.isChecked()) c4_p403_3 = 1; else c4_p403_3 = 0;
+        if(c4_p403_4_CheckBox.isChecked()) c4_p403_4 = 1; else c4_p403_4 = 0;
+        if(c4_p403_5_CheckBox.isChecked()) c4_p403_5 = 1; else c4_p403_5 = 0;
+        if(c4_p403_6_CheckBox.isChecked()) c4_p403_6 = 1; else c4_p403_6 = 0;
+        if(c4_p403_7_CheckBox.isChecked()) c4_p403_7 = 1; else c4_p403_7 = 0;
+        if(c4_p403_8_CheckBox.isChecked()) c4_p403_8 = 1; else c4_p403_8 = 0;
+        if(c4_p403_9_CheckBox.isChecked()) c4_p403_9 = 1; else c4_p403_9 = 0;
+        if(c4_p403_10_CheckBox.isChecked()) c4_p403_10 = 1; else c4_p403_10 = 0;
+        if(c4_p403_11_CheckBox.isChecked()) c4_p403_11 = 1; else c4_p403_11 = 0;
+        if(c4_p403_12_CheckBox.isChecked()) c4_p403_12 = 1; else c4_p403_12 = 0;
+        if(c4_p403_13_CheckBox.isChecked()) c4_p403_13 = 1; else c4_p403_13 = 0;
+        if(c4_p403_14_CheckBox.isChecked()) c4_p403_14 = 1; else c4_p403_14 = 0;
+        c4_p403_o = c4_p403_o_EditText.getText().toString();
+        c4_p404 = c4_p404_RadioGroup.indexOfChild(c4_p404_RadioGroup.findViewById(c4_p404_RadioGroup.getCheckedRadioButtonId()));
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return false;
+    }
 }

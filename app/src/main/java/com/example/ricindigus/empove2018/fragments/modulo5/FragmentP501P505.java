@@ -12,17 +12,25 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP501P505 extends Fragment {
+public class FragmentP501P505 extends FragmentPagina {
 
     RadioGroup c5_p501_RadioGroup, c5_p503_RadioGroup, c5_p504_RadioGroup, c5_p505_RadioGroup;
     EditText c5_p502_c_EditText;
     CheckBox c5_p502_CheckBox;
     LinearLayout m5_p501_linearlayout, m5_p502_linearlayout, m5_p503_linearlayout, m5_p504_linearlayout,
             m5_p505_linearlayout;
+
+    private int c5_p501;
+    private String c5_p502_c;
+    private int c5_p502;
+    private int c5_p503;
+    private int c5_p504;
+    private int c5_p505;
 
     public FragmentP501P505() {
         // Required empty public constructor
@@ -53,4 +61,28 @@ public class FragmentP501P505 extends Fragment {
 
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+        c5_p501 = c5_p501_RadioGroup.indexOfChild(c5_p501_RadioGroup.findViewById(c5_p501_RadioGroup.getCheckedRadioButtonId()));
+        c5_p502_c = c5_p502_c_EditText.getText().toString();
+        if(c5_p502_CheckBox.isChecked()) c5_p502 = 1; else c5_p502 = 0;
+        c5_p503 = c5_p503_RadioGroup.indexOfChild(c5_p503_RadioGroup.findViewById(c5_p503_RadioGroup.getCheckedRadioButtonId()));
+        c5_p504 = c5_p504_RadioGroup.indexOfChild(c5_p504_RadioGroup.findViewById(c5_p504_RadioGroup.getCheckedRadioButtonId()));
+        c5_p505 = c5_p505_RadioGroup.indexOfChild(c5_p505_RadioGroup.findViewById(c5_p505_RadioGroup.getCheckedRadioButtonId()));
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return false;
+    }
 }

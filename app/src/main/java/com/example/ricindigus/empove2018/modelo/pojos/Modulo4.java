@@ -655,36 +655,12 @@ public class Modulo4 {
         this.c4_p409 = c4_p409;
     }
 
-    public String getC4_p410_1() {
-        return c4_p410_1;
+    public String getc4_p410() {
+        return c4_p410;
     }
 
-    public void setC4_p410_1(String c4_p410_1) {
-        this.c4_p410_1 = c4_p410_1;
-    }
-
-    public String getC4_p410_2() {
-        return c4_p410_2;
-    }
-
-    public void setC4_p410_2(String c4_p410_2) {
-        this.c4_p410_2 = c4_p410_2;
-    }
-
-    public String getC4_p410_3() {
-        return c4_p410_3;
-    }
-
-    public void setC4_p410_3(String c4_p410_3) {
-        this.c4_p410_3 = c4_p410_3;
-    }
-
-    public String getC4_p410_4() {
-        return c4_p410_4;
-    }
-
-    public void setC4_p410_4(String c4_p410_4) {
-        this.c4_p410_4 = c4_p410_4;
+    public void setc4_p410(String c4_p410) {
+        this.c4_p410 = c4_p410;
     }
 
     public String getC4_p411() {
@@ -863,10 +839,7 @@ public class Modulo4 {
     private String c4_p408_14;
     private String c4_p408_o;
     private String c4_p409;
-    private String c4_p410_1;
-    private String c4_p410_2;
-    private String c4_p410_3;
-    private String c4_p410_4;
+    private String c4_p410;
     private String c4_p411;
     private String c4_p412;
     private String c4_p413;
@@ -964,10 +937,7 @@ public class Modulo4 {
         contentValues.put(SQLConstantes.modulo4_c4_p408_14,c4_p408_14);
         contentValues.put(SQLConstantes.modulo4_c4_p408_o,c4_p408_o);
         contentValues.put(SQLConstantes.modulo4_c4_p409,c4_p409);
-        contentValues.put(SQLConstantes.modulo4_c4_p410_1,c4_p410_1);
-        contentValues.put(SQLConstantes.modulo4_c4_p410_2,c4_p410_2);
-        contentValues.put(SQLConstantes.modulo4_c4_p410_3,c4_p410_3);
-        contentValues.put(SQLConstantes.modulo4_c4_p410_4,c4_p410_4);
+        contentValues.put(SQLConstantes.modulo4_c4_p410,c4_p410);
         contentValues.put(SQLConstantes.modulo4_c4_p411,c4_p411);
         contentValues.put(SQLConstantes.modulo4_c4_p412,c4_p412);
         contentValues.put(SQLConstantes.modulo4_c4_p413,c4_p413);
