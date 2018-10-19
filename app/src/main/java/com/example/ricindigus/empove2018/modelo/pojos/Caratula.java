@@ -5,206 +5,188 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class Caratula {
-    public static int _id;
-    public static String nom_dep;
-    public static String nom_prov;
-    public static String nom_dist;
-    public static String nom_ccpp;
-    public static String zona;
-    public static String manzana_id;
-    public static String manzana_a;
-    public static String aer_ini;
-    public static String aer_fin;
-    public static String vivienda;
-    public static String tipvia;
-    public static String nomvia;
-    public static String nropta;
-    public static String block;
-    public static String interior;
-    public static String piso;
-    public static String mza;
-    public static String lote;
-    public static String km;
-    public static String telefono;
-    public static String t_hogar;
+    private int _id;
+    private String nom_dep;
+    private String nom_prov;
+    private String nom_dist;
+    private String nom_ccpp;
+    private String zona;
+    private String manzana_id;
+    private String aer;
+    private String vivienda;
+    private String tipvia;
+    private String nomvia;
+    private String nropta;
+    private String block;
+    private String interior;
+    private String piso;
+    private String mza;
+    private String lote;
+    private String km;
+    private String telefono;
+    private String t_hogar;
 
     public Caratula() {
     }
 
-    public static int get_id() {
+    public int get_id() {
         return _id;
     }
 
-    public static void set_id(int _id) {
-        Caratula._id = _id;
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
-    public static String getNom_dep() {
+    public String getNom_dep() {
         return nom_dep;
     }
 
-    public static void setNom_dep(String nom_dep) {
-        Caratula.nom_dep = nom_dep;
+    public void setNom_dep(String nom_dep) {
+        this.nom_dep = nom_dep;
     }
 
-    public static String getNom_prov() {
+    public String getNom_prov() {
         return nom_prov;
     }
 
-    public static void setNom_prov(String nom_prov) {
-        Caratula.nom_prov = nom_prov;
+    public void setNom_prov(String nom_prov) {
+        this.nom_prov = nom_prov;
     }
 
-    public static String getNom_dist() {
+    public String getNom_dist() {
         return nom_dist;
     }
 
-    public static void setNom_dist(String nom_dist) {
-        Caratula.nom_dist = nom_dist;
+    public void setNom_dist(String nom_dist) {
+        this.nom_dist = nom_dist;
     }
 
-    public static String getNom_ccpp() {
+    public String getNom_ccpp() {
         return nom_ccpp;
     }
 
-    public static void setNom_ccpp(String nom_ccpp) {
-        Caratula.nom_ccpp = nom_ccpp;
+    public void setNom_ccpp(String nom_ccpp) {
+        this.nom_ccpp = nom_ccpp;
     }
 
-    public static String getZona() {
+    public String getZona() {
         return zona;
     }
 
-    public static void setZona(String zona) {
-        Caratula.zona = zona;
+    public void setZona(String zona) {
+        this.zona = zona;
     }
 
-    public static String getManzana_id() {
+    public String getManzana_id() {
         return manzana_id;
     }
 
-    public static void setManzana_id(String manzana_id) {
-        Caratula.manzana_id = manzana_id;
+    public void setManzana_id(String manzana_id) {
+        this.manzana_id = manzana_id;
     }
 
-    public static String getManzana_a() {
-        return manzana_a;
+    public String getAer() {
+        return aer;
     }
 
-    public static void setManzana_a(String manzana_a) {
-        Caratula.manzana_a = manzana_a;
+    public void setAer(String aer) {
+        this.aer = aer;
     }
 
-    public static String getAer_ini() {
-        return aer_ini;
-    }
-
-    public static void setAer_ini(String aer_ini) {
-        Caratula.aer_ini = aer_ini;
-    }
-
-    public static String getAer_fin() {
-        return aer_fin;
-    }
-
-    public static void setAer_fin(String aer_fin) {
-        Caratula.aer_fin = aer_fin;
-    }
-
-    public static String getVivienda() {
+    public String getVivienda() {
         return vivienda;
     }
 
-    public static void setVivienda(String vivienda) {
-        Caratula.vivienda = vivienda;
+    public void setVivienda(String vivienda) {
+        this.vivienda = vivienda;
     }
 
-    public static String getTipvia() {
+    public String getTipvia() {
         return tipvia;
     }
 
-    public static void setTipvia(String tipvia) {
-        Caratula.tipvia = tipvia;
+    public void setTipvia(String tipvia) {
+        this.tipvia = tipvia;
     }
 
-    public static String getNomvia() {
+    public String getNomvia() {
         return nomvia;
     }
 
-    public static void setNomvia(String nomvia) {
-        Caratula.nomvia = nomvia;
+    public void setNomvia(String nomvia) {
+        this.nomvia = nomvia;
     }
 
-    public static String getNropta() {
+    public String getNropta() {
         return nropta;
     }
 
-    public static void setNropta(String nropta) {
-        Caratula.nropta = nropta;
+    public void setNropta(String nropta) {
+        this.nropta = nropta;
     }
 
-    public static String getBlock() {
+    public String getBlock() {
         return block;
     }
 
-    public static void setBlock(String block) {
-        Caratula.block = block;
+    public void setBlock(String block) {
+        this.block = block;
     }
 
-    public static String getInterior() {
+    public String getInterior() {
         return interior;
     }
 
-    public static void setInterior(String interior) {
-        Caratula.interior = interior;
+    public void setInterior(String interior) {
+        this.interior = interior;
     }
 
-    public static String getPiso() {
+    public String getPiso() {
         return piso;
     }
 
-    public static void setPiso(String piso) {
-        Caratula.piso = piso;
+    public void setPiso(String piso) {
+        this.piso = piso;
     }
 
-    public static String getMza() {
+    public String getMza() {
         return mza;
     }
 
-    public static void setMza(String mza) {
-        Caratula.mza = mza;
+    public void setMza(String mza) {
+        this.mza = mza;
     }
 
-    public static String getLote() {
+    public String getLote() {
         return lote;
     }
 
-    public static void setLote(String lote) {
-        Caratula.lote = lote;
+    public void setLote(String lote) {
+        this.lote = lote;
     }
 
-    public static String getKm() {
+    public String getKm() {
         return km;
     }
 
-    public static void setKm(String km) {
-        Caratula.km = km;
+    public void setKm(String km) {
+        this.km = km;
     }
 
-    public static String getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public static void setTelefono(String telefono) {
-        Caratula.telefono = telefono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public static String getT_hogar() {
+    public String getT_hogar() {
         return t_hogar;
     }
 
-    public static void setT_hogar(String t_hogar) {
-        Caratula.t_hogar = t_hogar;
+    public void setT_hogar(String t_hogar) {
+        this.t_hogar = t_hogar;
     }
 
     public ContentValues toValues(){
@@ -216,9 +198,7 @@ public class Caratula {
         contentValues.put(SQLConstantes.caratula_nom_ccpp,nom_ccpp);
         contentValues.put(SQLConstantes.caratula_zona,zona);
         contentValues.put(SQLConstantes.caratula_manzana_id,manzana_id);
-        contentValues.put(SQLConstantes.caratula_manzana_a,manzana_a);
-        contentValues.put(SQLConstantes.caratula_aer_ini,aer_ini);
-        contentValues.put(SQLConstantes.caratula_aer_fin,aer_fin);
+        contentValues.put(SQLConstantes.caratula_aer, aer);
         contentValues.put(SQLConstantes.caratula_vivienda,vivienda);
         contentValues.put(SQLConstantes.caratula_tipvia,tipvia);
         contentValues.put(SQLConstantes.caratula_nomvia,nomvia);

@@ -35,7 +35,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/caratula_nombre_via"
+                android:text="@string/caratula_tipo_via"
                 android:textStyle="bold"
                 android:padding="5dp"
                 android:textColor="@color/greyBluePrimary"/>
@@ -45,7 +45,7 @@
                 android:layout_margin="1dp"
                 android:layout_height="wrap_content">
                 <Spinner
-                    android:id="@+id/caratula_spinner_nomvia"
+                    android:id="@+id/caratula_spinner_TIPVIA"
                     android:layout_height="@dimen/altura_spinner"
                     android:layout_width="match_parent"
                     android:drawSelectorOnTop="true"
@@ -69,7 +69,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/caratula_tipo_via"
+                android:text="@string/caratula_nombre_via"
                 android:textStyle="bold"
                 android:padding="5dp"
                 android:textColor="@color/greyBluePrimary"/>
@@ -81,7 +81,7 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical">
                 <EditText
-                    android:id="@+id/caratula_textview_TIPVIA"
+                    android:id="@+id/caratula_textview_NOMVIA"
                     android:visibility="visible"
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"

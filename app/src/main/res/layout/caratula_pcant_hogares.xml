@@ -49,7 +49,7 @@
                     android:padding="5dp"
                     android:textColor="@color/greyBluePrimary"/>
                 <EditText
-                    android:id="@+id/gralCaratula_ubicacioncant_hogares_textview_T_HOGAR"
+                    android:id="@+id/caratula_textview_T_HOGAR"
                     android:paddingLeft="@dimen/margen_small"
                     android:layout_width="@dimen/longitud_input_n_horas"
                     android:layout_height="@dimen/altura_input_especifique"

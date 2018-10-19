@@ -9,4 +9,5 @@ public interface InterfazOperaciones {
     public void llenarVariables();
     public void cargarDatos();
     public boolean validarDatos();
+    public String getNombreTabla();
 }

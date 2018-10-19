@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
@@ -56,5 +57,10 @@ public class FragmentVisitasSupervisor extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         return false;
+    }
+
+    @Override
+    public String getNombreTabla() {
+        return SQLConstantes.tablavisitassupervisor;
     }
 }

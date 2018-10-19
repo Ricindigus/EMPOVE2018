@@ -56,16 +56,16 @@
         <item>6.Prolongación</item>
         <item>7.Otro</item>
     </string-array>
-    <string name="caratula_tipo_via">Tipo de vía</string>
-    <string name="caratula_nombre_via">Nombre de vía</string>
-    <string name="caratula_n_puerta">N° Puerta</string>
-    <string name="caratula_block">Block</string>
-    <string name="caratula_interior">Interior</string>
-    <string name="caratula_piso">Piso</string>
-    <string name="caratula_manzana">Manzana</string>
-    <string name="caratula_lote">Lote</string>
-    <string name="caratula_km">Km</string>
-    <string name="caratula_n_telefono">N° de Teléfono</string>
+    <string name="caratula_tipo_via">TIPO DE VÍA</string>
+    <string name="caratula_nombre_via">NOMBRE DE VÍA</string>
+    <string name="caratula_n_puerta">N° PUERTA</string>
+    <string name="caratula_block">BLOCK</string>
+    <string name="caratula_interior">INTERIOR</string>
+    <string name="caratula_piso">PISO</string>
+    <string name="caratula_manzana">MANZANA</string>
+    <string name="caratula_lote">LOTE</string>
+    <string name="caratula_km">KM</string>
+    <string name="caratula_n_telefono">N° de TELÉFONO</string>
 
     <string name="caratula_total_hogares">10.TOTAL DE HOGARES QUE OCUPAN LA VIVIENDA</string>
     <string name="caratula_n_hogares">¿CUANTOS HOGARES OCUPAN ESTA VIVIENDA?</string>

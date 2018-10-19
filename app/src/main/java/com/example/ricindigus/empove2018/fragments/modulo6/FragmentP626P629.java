@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
@@ -112,5 +113,10 @@ public class FragmentP626P629 extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         return false;
+    }
+
+    @Override
+    public String getNombreTabla() {
+        return SQLConstantes.tablamodulo6;
     }
 }

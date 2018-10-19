@@ -85,9 +85,7 @@ public class SQLConstantes {
     public static String caratula_nom_ccpp = "nom_ccpp";
     public static String caratula_zona = "zona";
     public static String caratula_manzana_id = "manzana_id";
-    public static String caratula_manzana_a = "manzana_a";
-    public static String caratula_aer_ini = "aer_ini";
-    public static String caratula_aer_fin = "aer_fin";
+    public static String caratula_aer = "aer";
     public static String caratula_vivienda = "vivienda";
     public static String caratula_tipvia = "tipvia";
     public static String caratula_nomvia = "nomvia";
@@ -110,9 +108,7 @@ public class SQLConstantes {
                     caratula_nom_ccpp  + " TEXT," +
                     caratula_zona  + " TEXT," +
                     caratula_manzana_id  + " TEXT," +
-                    caratula_manzana_a  + " TEXT," +
-                    caratula_aer_ini  + " TEXT," +
-                    caratula_aer_fin  + " TEXT," +
+                    caratula_aer + " TEXT," +
                     caratula_vivienda  + " TEXT," +
                     caratula_tipvia  + " TEXT," +
                     caratula_nomvia  + " TEXT," +

@@ -12,11 +12,13 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP630 extends Fragment {
+public class FragmentP630 extends FragmentPagina {
 
     RadioGroup c6_p630_1_RadioGroup, c6_p630_1_med_RadioGroup;
     EditText c6_p630_1_o_EditText;
@@ -54,4 +56,29 @@ public class FragmentP630 extends Fragment {
         return rootView;
     }
 
+
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return false;
+    }
+
+    @Override
+    public String getNombreTabla() {
+        return SQLConstantes.tablamodulo6;
+    }
 }
