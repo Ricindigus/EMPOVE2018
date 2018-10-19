@@ -25,6 +25,23 @@ public class FragmentP508P511 extends FragmentPagina {
     RadioGroup c5_p509_RadioGroup, c5_p510_RadioGroup, c5_p511_RadioGroup;
     LinearLayout m5_p508_linearlayout, m5_p509_linearlayout, m5_p510_linearlayout, m5_p511_linearlayout;
 
+    private int c5_p508_1;
+    private int c5_p508_2;
+    private int c5_p508_3;
+    private int c5_p508_4;
+    private int c5_p508_5;
+    private int c5_p508_6;
+    private int c5_p508_7;
+    private int c5_p508_8;
+    private int c5_p508_9;
+    private int c5_p508_10;
+    private int c5_p508_11;
+    private String c5_p508_o;
+    private int c5_p509;
+    private int c5_p510;
+    private int c5_p511;
+    private String c5_p511_o;
+
     public FragmentP508P511() {
         // Required empty public constructor
     }
@@ -67,7 +84,22 @@ public class FragmentP508P511 extends FragmentPagina {
 
     @Override
     public void llenarVariables() {
-
+        if(c5_p508_1_Checkbox.isChecked()) c5_p508_1 = 1; else c5_p508_1 = 0;
+        if(c5_p508_2_Checkbox.isChecked()) c5_p508_2 = 1; else c5_p508_2 = 0;
+        if(c5_p508_3_Checkbox.isChecked()) c5_p508_3 = 1; else c5_p508_3 = 0;
+        if(c5_p508_4_Checkbox.isChecked()) c5_p508_4 = 1; else c5_p508_4 = 0;
+        if(c5_p508_5_Checkbox.isChecked()) c5_p508_5 = 1; else c5_p508_5 = 0;
+        if(c5_p508_6_Checkbox.isChecked()) c5_p508_6 = 1; else c5_p508_6 = 0;
+        if(c5_p508_7_Checkbox.isChecked()) c5_p508_7 = 1; else c5_p508_7 = 0;
+        if(c5_p508_8_Checkbox.isChecked()) c5_p508_8 = 1; else c5_p508_8 = 0;
+        if(c5_p508_9_Checkbox.isChecked()) c5_p508_9 = 1; else c5_p508_9 = 0;
+        if(c5_p508_10_Checkbox.isChecked()) c5_p508_10 = 1; else c5_p508_10 = 0;
+        if(c5_p508_11_Checkbox.isChecked()) c5_p508_11 = 1; else c5_p508_11 = 0;
+        c5_p508_o = c5_p508_o_EditText.getText().toString();
+        c5_p509 = c5_p509_RadioGroup.indexOfChild(c5_p509_RadioGroup.findViewById(c5_p509_RadioGroup.getCheckedRadioButtonId()));
+        c5_p510 = c5_p510_RadioGroup.indexOfChild(c5_p510_RadioGroup.findViewById(c5_p510_RadioGroup.getCheckedRadioButtonId()));
+        c5_p511 = c5_p511_RadioGroup.indexOfChild(c5_p511_RadioGroup.findViewById(c5_p511_RadioGroup.getCheckedRadioButtonId()));
+        c5_p511_o = c5_p511_o_EditText.getText().toString();
     }
 
     @Override
