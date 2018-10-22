@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo8;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -110,7 +112,39 @@ public class FragmentP821P823 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
+        if(c8_p821_1==0 && c8_p821_2==0 && c8_p821_3==0 && c8_p821_4==0 && c8_p821_5==0 && c8_p821_6==0
+                && c8_p821_7==0 && c8_p821_8==0){
+            mostrarMensaje("PREGUNTA 821: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if(c8_p822<1){
+            mostrarMensaje("PREGUNTA 822: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p823_1==0 && c8_p823_2==0 && c8_p823_3==0 && c8_p823_4==0 && c8_p823_5==0){
+            mostrarMensaje("PREGUNTA 823: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if(c8_p823_5==1){
+            if(c8_p823_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 823 - OPCION 5: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
         return false;
+    }
+
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override

@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo8;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -157,7 +159,49 @@ public class FragmentP817P820 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
+        if(c8_p817<1){
+            mostrarMensaje("PREGUNTA 817: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p818<1){
+            mostrarMensaje("PREGUNTA 818: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p819_1==0 && c8_p819_2==0 && c8_p819_3==0 && c8_p819_4==0 && c8_p819_5==0 && c8_p819_6==0
+                && c8_p819_7==0 && c8_p819_8==0 && c8_p819_9==0 && c8_p819_10==0 && c8_p819_11==0 && c8_p819_12==0 && c8_p819_13==0 && c8_p819_14==0){
+            mostrarMensaje("PREGUNTA 819: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if (c8_p819_14==1){
+            if(c8_p819_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 819 - OPCION 14: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        if(c8_p820_1==0 && c8_p820_2==0 && c8_p820_3==0 && c8_p820_4==0 && c8_p820_5==0 && c8_p820_6==0
+                && c8_p820_7==0 && c8_p820_8==0 && c8_p820_9==0 && c8_p820_10==0 && c8_p820_11==0){
+            mostrarMensaje("PREGUNTA 820: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if (c8_p820_11==1){
+            if(c8_p820_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 820 - OPCION 11: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
         return false;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override

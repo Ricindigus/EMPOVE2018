@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo8;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -69,7 +71,37 @@ public class FragmentP801P804 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
+        if (c8_p801 <1){
+            mostrarMensaje("PREGUNTA 801: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if (c8_p802 <1){
+            mostrarMensaje("PREGUNTA 802: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if (c8_p803 <1){
+            mostrarMensaje("PREGUNTA 803: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if (c8_p804 <1){
+            mostrarMensaje("PREGUNTA 804: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+
+
         return false;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override

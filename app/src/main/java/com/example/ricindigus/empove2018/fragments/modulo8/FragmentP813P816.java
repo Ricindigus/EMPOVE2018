@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo8;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -64,6 +66,11 @@ public class FragmentP813P816 extends FragmentPagina {
     private int c8_p816_6;
     private int c8_p816_7;
     private int c8_p816_8;
+    private int c8_p816_9;
+    private int c8_p816_10;
+    private int c8_p816_11;
+    private int c8_p816_12;
+    private int c8_p816_13;
     private String c8_p816_o;
 
     public FragmentP813P816() {
@@ -166,6 +173,11 @@ public class FragmentP813P816 extends FragmentPagina {
         if(c8_p816_6_Checkbox.isChecked()) c8_p816_6 = 1; else c8_p816_6 = 0;
         if(c8_p816_7_Checkbox.isChecked()) c8_p816_7 = 1; else c8_p816_7 = 0;
         if(c8_p816_8_Checkbox.isChecked()) c8_p816_8 = 1; else c8_p816_8 = 0;
+        if(c8_p816_9_Checkbox.isChecked()) c8_p816_9 = 1; else c8_p816_9 = 0;
+        if(c8_p816_10_Checkbox.isChecked()) c8_p816_10 = 1; else c8_p816_10 = 0;
+        if(c8_p816_11_Checkbox.isChecked()) c8_p816_11 = 1; else c8_p816_11 = 0;
+        if(c8_p816_12_Checkbox.isChecked()) c8_p816_12 = 1; else c8_p816_12 = 0;
+        if(c8_p816_13_Checkbox.isChecked()) c8_p816_13 = 1; else c8_p816_13 = 0;
         c8_p816_o = c8_p816_o_EditText.getText().toString();
 
     }
@@ -177,7 +189,50 @@ public class FragmentP813P816 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
+        if(c8_p813_1==0 && c8_p813_2==0 && c8_p813_3==0 && c8_p813_4==0 && c8_p813_5==0 && c8_p813_6==0
+                && c8_p813_7==0 && c8_p813_8==0 && c8_p813_9==0 && c8_p813_10==0 && c8_p813_11==0 && c8_p813_12==0 && c8_p813_13==0 && c8_p813_14==0){
+            mostrarMensaje("PREGUNTA 813: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if (c8_p813_14==1){
+            if(c8_p813_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 813 - OPCION 14: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        if(c8_p814_1==0 && c8_p814_2==0 && c8_p814_3==0 && c8_p814_4==0 && c8_p814_5==0 && c8_p814_6==0
+                && c8_p814_7==0 && c8_p814_8==0 ){
+            mostrarMensaje("PREGUNTA 814: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if(c8_p815<1){
+            mostrarMensaje("PREGUNTA 815: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p816_1==0 && c8_p816_2==0 && c8_p816_3==0 && c8_p816_4==0 && c8_p816_5==0 && c8_p816_6==0
+                && c8_p816_7==0 && c8_p816_8==0 && c8_p816_9==0 && c8_p816_10==0 && c8_p816_11==0 && c8_p816_12==0 && c8_p816_13==0){
+            mostrarMensaje("PREGUNTA 813: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if (c8_p816_13==1){
+            if(c8_p816_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 816 - OPCION 13: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
         return false;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override
