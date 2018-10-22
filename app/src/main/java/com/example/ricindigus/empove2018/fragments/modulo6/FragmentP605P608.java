@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo6;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -76,11 +78,45 @@ public class FragmentP605P608 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(c6_p605.trim().length()==0){
+            mostrarMensaje("PREGUNTA 605: DEBE ESPECIFICAR");
+            return false;
+        }
+        if(c6_p606.trim().length()==0){
+            mostrarMensaje("PREGUNTA 606: DEBE ESPECIFICAR");
+            return false;
+        }
+        if(c6_p607.trim().length()==0){
+            mostrarMensaje("PREGUNTA 607: DEBE ESPECIFICAR");
+            return false;
+        }
+        if(c6_p608<1){
+            mostrarMensaje("PREGUNTA 608: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c6_p608==7){
+            if(c6_p608_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 608 - OPCION 7: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo6;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
