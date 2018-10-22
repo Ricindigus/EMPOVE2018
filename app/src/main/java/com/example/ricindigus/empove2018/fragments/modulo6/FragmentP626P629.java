@@ -42,9 +42,14 @@ public class FragmentP626P629 extends FragmentPagina {
     private int c6_p629_3;
     private int c6_p629_4;
     private String c6_p629_o;
-    private int c6_p629_f;
-    private int c6_p629_m;
-
+    private int c6_p629_1_f;
+    private String c6_p629_1_m;
+    private int c6_p629_2_f;
+    private String c6_p629_2_m;
+    private int c6_p629_3_f;
+    private String c6_p629_3_m;
+    private int c6_p629_4_f;
+    private String c6_p629_4_m;
 
     public FragmentP626P629() {
         // Required empty public constructor
@@ -99,10 +104,14 @@ public class FragmentP626P629 extends FragmentPagina {
         c6_p629_3 = c6_p629_3_RadioGroup.indexOfChild(c6_p629_3_RadioGroup.findViewById(c6_p629_3_RadioGroup.getCheckedRadioButtonId()));
         c6_p629_4 = c6_p629_4_RadioGroup.indexOfChild(c6_p629_4_RadioGroup.findViewById(c6_p629_4_RadioGroup.getCheckedRadioButtonId()));
         c6_p629_o = c6_p629_o_EditText.getText().toString();
-        /* Se debe hacer switch
-        c6_p629_f = c6_p629_f_Spinner.getSelectedItemPosition();
-        c6_p629_m = c6_p629_m_RadioGroup.indexOfChild(c6_p629_m_RadioGroup.findViewById(c6_p629_m_RadioGroup.getCheckedRadioButtonId()));
-        */
+        c6_p629_1_f = c6_p629_1_f_Spinner.getSelectedItemPosition();
+        c6_p629_1_m = c6_p629_1_m_EditText.getText().toString();
+        c6_p629_2_f = c6_p629_2_f_Spinner.getSelectedItemPosition();
+        c6_p629_2_m = c6_p629_2_m_EditText.getText().toString();
+        c6_p629_3_f = c6_p629_3_f_Spinner.getSelectedItemPosition();
+        c6_p629_3_m = c6_p629_3_m_EditText.getText().toString();
+        c6_p629_4_f = c6_p629_4_f_Spinner.getSelectedItemPosition();
+        c6_p629_4_m = c6_p629_4_m_EditText.getText().toString();
     }
 
     @Override
