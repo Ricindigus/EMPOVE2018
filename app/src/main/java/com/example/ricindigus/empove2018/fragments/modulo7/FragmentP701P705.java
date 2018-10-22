@@ -32,6 +32,15 @@ public class FragmentP701P705 extends Fragment {
     LinearLayout m7_p701_linearlayout, m7_p702_linearlayout, m7_p703_linearlayout, m7_p704_linearlayout,
             m7_p705_linearlayout;
 
+
+    private int c7_p701;
+    private int c7_p702_1, c7_p702_2, c7_p702_3, c7_p702_4, c7_p702_5, c7_p702_6, c7_p702_7,
+                c7_p702_8, c7_p702_9, c7_p702_10;
+    private String c7_p702_o, c7_p704_o, c7_p705_o;
+    private int c7_p703;
+    private int  c7_p704_1, c7_p704_2, c7_p704_3, c7_p704_4, c7_p704_5, c7_p704_6;
+    private int c7_p705_1, c7_p705_2, c7_p705_3, c7_p705_4, c7_p705_5, c7_p705_6, c7_p705_7;
+
     public FragmentP701P705() {
         // Required empty public constructor
     }
@@ -83,6 +92,40 @@ public class FragmentP701P705 extends Fragment {
         m7_p705_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m7_p705);
 
         return rootView;
+    }
+
+
+    public void llenarVariables(){
+
+        c7_p701 = c7_p701_RadioGroup.indexOfChild(c7_p701_RadioGroup.findViewById(c7_p701_RadioGroup.getCheckedRadioButtonId()));
+        if (c7_p702_1_Checkbox.isChecked()) c7_p702_1 = 1; else c7_p702_1 = 0;
+        if (c7_p702_2_Checkbox.isChecked()) c7_p702_2 = 1; else c7_p702_2 = 0;
+        if (c7_p702_3_Checkbox.isChecked()) c7_p702_3 = 1; else c7_p702_3 = 0;
+        if (c7_p702_4_Checkbox.isChecked()) c7_p702_4 = 1; else c7_p702_4 = 0;
+        if (c7_p702_5_Checkbox.isChecked()) c7_p702_5 = 1; else c7_p702_5 = 0;
+        if (c7_p702_6_Checkbox.isChecked()) c7_p702_6 = 1; else c7_p702_6 = 0;
+        if (c7_p702_7_Checkbox.isChecked()) c7_p702_7 = 1; else c7_p702_7 = 0;
+        if (c7_p702_8_Checkbox.isChecked()) c7_p702_8 = 1; else c7_p702_8 = 0;
+        if (c7_p702_9_Checkbox.isChecked()) c7_p702_9 = 1; else c7_p702_9 = 0;
+        if (c7_p702_10_Checkbox.isChecked()) c7_p702_10 = 1; else c7_p702_10 = 0;
+        c7_p702_o = c7_p702_o_EditText.getText().toString();
+        c7_p703 = c7_p703_RadioGroup.indexOfChild(c7_p703_RadioGroup.findViewById(c7_p703_RadioGroup.getCheckedRadioButtonId()));
+        if (c7_p704_1_Checkbox.isChecked()) c7_p704_1 = 1; else c7_p704_1 = 0;
+        if (c7_p704_2_Checkbox.isChecked()) c7_p704_2 = 1; else c7_p704_2 = 0;
+        if (c7_p704_3_Checkbox.isChecked()) c7_p704_3 = 1; else c7_p704_3 = 0;
+        if (c7_p704_4_Checkbox.isChecked()) c7_p704_4 = 1; else c7_p704_4 = 0;
+        if (c7_p704_5_Checkbox.isChecked()) c7_p704_5 = 1; else c7_p704_5 = 0;
+        if (c7_p704_6_Checkbox.isChecked()) c7_p704_6 = 1; else c7_p704_6 = 0;
+        c7_p704_o = c7_p704_o_EditText.getText().toString();
+        if (c7_p705_1_Checkbox.isChecked()) c7_p705_1 = 1; else c7_p705_1 = 0;
+        if (c7_p705_2_Checkbox.isChecked()) c7_p705_2 = 1; else c7_p705_2 = 0;
+        if (c7_p705_3_Checkbox.isChecked()) c7_p705_3 = 1; else c7_p705_3 = 0;
+        if (c7_p705_4_Checkbox.isChecked()) c7_p705_4 = 1; else c7_p705_4 = 0;
+        if (c7_p705_5_Checkbox.isChecked()) c7_p705_5 = 1; else c7_p705_5 = 0;
+        if (c7_p705_6_Checkbox.isChecked()) c7_p705_6 = 1; else c7_p705_6 = 0;
+        if (c7_p705_7_Checkbox.isChecked()) c7_p705_7 = 1; else c7_p705_7 = 0;
+        c7_p705_o = c7_p705_o_EditText.getText().toString();
+
     }
 
 }
