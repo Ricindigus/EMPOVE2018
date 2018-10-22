@@ -23,39 +23,48 @@
         </activity>
         <activity
             android:name=".activities.LoginActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:configChanges="screenSize|orientation|keyboardHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".activities.EncuestaActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
             android:label="@string/title_activity_encuesta"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activities.MarcoActivity"
             android:configChanges="screenSize|orientation|keyboardHidden"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.MarcoActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activities.agregacion.AgregarResidenteActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:configChanges="screenSize|orientation|keyboardHidden"/>
-        <activity android:name=".activities.agregacion.AgregarResidenteActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activities.agregacion.AgregarRutaActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:configChanges="screenSize|orientation|keyboardHidden"/>
-        <activity android:name=".activities.agregacion.AgregarRutaActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activities.agregacion.AgregarPersonaActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:configChanges="screenSize|orientation|keyboardHidden"/>
-        <activity android:name=".activities.agregacion.AgregarPersonaActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activities.agregacion.AgregarVisitaActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:configChanges="screenSize|orientation|keyboardHidden"/>
-        <activity android:name=".activities.agregacion.AgregarVisitaActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activities.agregacion.FinalizarVisitaActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:configChanges="screenSize|orientation|keyboardHidden"/>
-        <activity android:name=".activities.agregacion.FinalizarVisitaActivity"
-            android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:configChanges="screenSize|orientation|keyboardHidden"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".activities.ViviendaActivity" />
+        <activity android:name=".activities.AdminActivity"></activity>
+        <activity android:name=".activities.AdmMarcoActivity"></activity>
     </application>
 
 </manifest>

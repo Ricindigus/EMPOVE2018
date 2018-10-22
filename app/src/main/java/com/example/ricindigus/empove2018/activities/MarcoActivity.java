@@ -36,7 +36,7 @@ public class MarcoActivity extends AppCompatActivity {
     private ArrayList<String> meses;
     private ArrayList<String> periodos;
     private ArrayList<String> conglomerados;
-    private int idUsuario;
+    private String idUsuario;
     private String permisoUsuario;
     private Spinner spAnio;
     private Spinner spMeses;
@@ -52,7 +52,7 @@ public class MarcoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marco);
-        idUsuario = getIntent().getExtras().getInt("idUsuario");
+        idUsuario = getIntent().getExtras().getString("idUsuario");
 
         spAnio = (Spinner) findViewById(R.id.marco_sp_anio);
         spMeses = (Spinner) findViewById(R.id.marco_sp_mes);
@@ -73,8 +73,9 @@ public class MarcoActivity extends AppCompatActivity {
         viviendaAdapter= new ViviendaAdapter(viviendas, new ViviendaAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getApplicationContext(), EncuestaActivity.class);
-                intent.putExtra("idEmpresa",viviendas.get(position).get_id());
+                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
+                intent.putExtra("idVivienda",viviendas.get(position).get_id()+"");
+                intent.putExtra("idConglomerado",viviendas.get(position).getConglomerado()+"");
                 startActivity(intent);
             }
         });
@@ -152,9 +153,9 @@ public class MarcoActivity extends AppCompatActivity {
         viviendaAdapter= new ViviendaAdapter(viviendas, new ViviendaAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                Intent intent = new Intent(getApplicationContext(), EncuestaActivity.class);
-                int idVivienda = viviendas.get(position).get_id();
-                intent.putExtra("idVivienda", idVivienda);
+                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
+                intent.putExtra("idVivienda",viviendas.get(position).get_id()+"");
+                intent.putExtra("idConglomerado",viviendas.get(position).getConglomerado()+"");
                 startActivity(intent);
             }
         });
@@ -170,8 +171,9 @@ public class MarcoActivity extends AppCompatActivity {
         viviendaAdapter= new ViviendaAdapter(viviendas, new ViviendaAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getApplicationContext(), EncuestaActivity.class);
-                intent.putExtra("idEmpresa",viviendas.get(position).get_id());
+                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
+                intent.putExtra("idVivienda",viviendas.get(position).get_id()+"");
+                intent.putExtra("idConglomerado",viviendas.get(position).getConglomerado()+"");
                 startActivity(intent);
             }
         });

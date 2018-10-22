@@ -101,7 +101,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_CARATULA =
             "CREATE TABLE " + tablacaratula + "(" +
-                    caratula_id  + " INTEGER PRIMARY KEY " +
+                    caratula_id  + " INTEGER PRIMARY KEY, " +
                     caratula_nom_dep + " TEXT," +
                     caratula_nom_prov  + " TEXT," +
                     caratula_nom_dist  + " TEXT," +

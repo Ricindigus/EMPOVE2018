@@ -29,14 +29,21 @@ public class LoginActivity extends AppCompatActivity {
         ingresarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MarcoActivity.class);
+
                 nombreUsuario = usuarioEditText.getText().toString();
-                Data data =  new Data(LoginActivity.this);
-                data.open();
-                Usuario user = data.getUsuario(nombreUsuario);
-                data.close();
-                intent.putExtra("idUsuario",user.get_id());
-                startActivity(intent);
+                if(nombreUsuario.equals("ADMIN")){
+                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                    startActivity(intent);
+                }else{
+                    Data data =  new Data(LoginActivity.this);
+                    data.open();
+                    Usuario user = data.getUsuario(nombreUsuario);
+                    data.close();
+                    Intent intent = new Intent(LoginActivity.this, MarcoActivity.class);
+                    intent.putExtra("idUsuario",user.get_id()+"");
+                    startActivity(intent);
+                }
+
             }
         });
     }

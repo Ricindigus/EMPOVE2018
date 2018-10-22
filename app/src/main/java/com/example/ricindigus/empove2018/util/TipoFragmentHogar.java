@@ -1,6 +1,6 @@
 package com.example.ricindigus.empove2018.util;
 
-public class TipoFragment {
+public class TipoFragmentHogar {
     public static final int CARATULA = 1;
     public static final int HOGARES = 2;
     public static final int VISITAS_ENCUESTADOR = 3;
