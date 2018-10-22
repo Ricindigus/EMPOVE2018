@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo4;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -41,6 +43,7 @@ public class FragmentP411P416 extends FragmentPagina {
     private int c4_p415_6;
     private int c4_p415_7;
     private int c4_p415_8;
+    private int c4_p415_9;
     private String c4_p415_o;
     private int c4_p416_1;
     private int c4_p416_2;
@@ -110,6 +113,7 @@ public class FragmentP411P416 extends FragmentPagina {
         if(c4_p415_6_CheckBox.isChecked()) c4_p415_6 = 1; else c4_p415_6 = 0;
         if(c4_p415_7_CheckBox.isChecked()) c4_p415_7 = 1; else c4_p415_7 = 0;
         if(c4_p415_8_CheckBox.isChecked()) c4_p415_8 = 1; else c4_p415_8 = 0;
+        if(c4_p415_9_CheckBox.isChecked()) c4_p415_9 = 1; else c4_p415_8 = 0;
         c4_p415_o = c4_p415_o_EditText.getText().toString();
         c4_p416_1 = c4_p416_1_RadioGroup.indexOfChild(c4_p416_1_RadioGroup.findViewById(c4_p416_1_RadioGroup.getCheckedRadioButtonId()));
         c4_p416_2 = c4_p416_2_RadioGroup.indexOfChild(c4_p416_2_RadioGroup.findViewById(c4_p416_2_RadioGroup.getCheckedRadioButtonId()));
@@ -126,11 +130,51 @@ public class FragmentP411P416 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(c4_p411<1){
+            mostrarMensaje("PREGUNTA 411: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p412<1){
+            mostrarMensaje("PREGUNTA 412: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p413<1){
+            mostrarMensaje("PREGUNTA 413: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p414<1){
+            mostrarMensaje("PREGUNTA 414: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p415_1==0 && c4_p415_2==0 && c4_p415_3==0 && c4_p415_4==0 && c4_p415_5==0 &&
+                c4_p415_6==0 && c4_p415_7==0 && c4_p415_8==0 && c4_p415_9==0){
+            mostrarMensaje("PREGUNTA 415: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if(c4_p415_6==1){
+            if(c4_p415_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 415 - OPCION 6: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo4;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

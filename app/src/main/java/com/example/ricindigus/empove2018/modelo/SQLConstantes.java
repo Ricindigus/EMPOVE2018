@@ -8,7 +8,7 @@ public class SQLConstantes {
     public static String tablausuario = "usuarios";
 
     public static String tablacaratula = "caratula";
-    public static String tablahogares = "caratula";
+    public static String tablahogares = "hogares";
     public static String tablavisitasencuestador = "visitas_encuestador";
     public static String tablavisitassupervisor = "visitas_supervisor";
     public static String tablafuncionarios = "funcionarios";
@@ -604,6 +604,7 @@ public class SQLConstantes {
     public static String modulo4_c4_p415_6 = "c4_p415_6";
     public static String modulo4_c4_p415_7 = "c4_p415_7";
     public static String modulo4_c4_p415_8 = "c4_p415_8";
+    public static String modulo4_c4_p415_9 = "c4_p415_9";
     public static String modulo4_c4_p415_o = "c4_p415_o";
     public static String modulo4_c4_p416_1 = "c4_p416_1";
     public static String modulo4_c4_p416_2 = "c4_p416_2";
@@ -704,6 +705,7 @@ public class SQLConstantes {
                     modulo4_c4_p415_6  +  " TEXT," +
                     modulo4_c4_p415_7  +  " TEXT," +
                     modulo4_c4_p415_8  +  " TEXT," +
+                    modulo4_c4_p415_9  +  " TEXT," +
                     modulo4_c4_p415_o  +  " TEXT," +
                     modulo4_c4_p416_1  +  " TEXT," +
                     modulo4_c4_p416_2  +  " TEXT," +
@@ -803,7 +805,7 @@ public class SQLConstantes {
                     modulo5_c5_p513  +  " TEXT," +
                     modulo5_c5_p513_o  +  " TEXT," +
                     modulo5_obs_cap5  +  " TEXT," +
-                    modulo5_c5_estado  +  " TEXT," + ");"
+                    modulo5_c5_estado  +  " TEXT" + ");"
             ;
 
     /**

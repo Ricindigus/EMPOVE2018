@@ -759,6 +759,22 @@ public class Modulo4 {
         this.c4_p415_8 = c4_p415_8;
     }
 
+    public String getC4_p410() {
+        return c4_p410;
+    }
+
+    public void setC4_p410(String c4_p410) {
+        this.c4_p410 = c4_p410;
+    }
+
+    public String getC4_p415_9() {
+        return c4_p415_9;
+    }
+
+    public void setC4_p415_9(String c4_p415_9) {
+        this.c4_p415_9 = c4_p415_9;
+    }
+
     public String getC4_p415_o() {
         return c4_p415_o;
     }
@@ -852,6 +868,7 @@ public class Modulo4 {
     private String c4_p415_6;
     private String c4_p415_7;
     private String c4_p415_8;
+    private String c4_p415_9;
     private String c4_p415_o;
     private String c4_p416_1;
     private String c4_p416_2;
@@ -950,6 +967,7 @@ public class Modulo4 {
         contentValues.put(SQLConstantes.modulo4_c4_p415_6,c4_p415_6);
         contentValues.put(SQLConstantes.modulo4_c4_p415_7,c4_p415_7);
         contentValues.put(SQLConstantes.modulo4_c4_p415_8,c4_p415_8);
+        contentValues.put(SQLConstantes.modulo4_c4_p415_9,c4_p415_9);
         contentValues.put(SQLConstantes.modulo4_c4_p415_o,c4_p415_o);
         contentValues.put(SQLConstantes.modulo4_c4_p416_1,c4_p416_1);
         contentValues.put(SQLConstantes.modulo4_c4_p416_2,c4_p416_2);
