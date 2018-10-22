@@ -157,7 +157,30 @@ public class FragmentP411P416 extends FragmentPagina {
                 return false;
             }
         }
-
+        if(c4_p416_1<1){
+            mostrarMensaje("PREGUNTA 416-1: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p416_2<1){
+            mostrarMensaje("PREGUNTA 416-2: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p416_3<1){
+            mostrarMensaje("PREGUNTA 416-3: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p416_4<1){
+            mostrarMensaje("PREGUNTA 416-4: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p416_5<1){
+            mostrarMensaje("PREGUNTA 416-5: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p416_6<1){
+            mostrarMensaje("PREGUNTA 416-6: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
         return true;
     }
 

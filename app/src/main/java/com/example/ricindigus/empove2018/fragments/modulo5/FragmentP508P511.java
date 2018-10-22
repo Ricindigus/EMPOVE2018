@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo5;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -110,11 +112,47 @@ public class FragmentP508P511 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(c5_p508_1==0 && c5_p508_2==0 && c5_p508_3==0 && c5_p508_4==0 && c5_p508_5==0 &&
+                c5_p508_6==0 && c5_p508_7==0 && c5_p508_8==0 && c5_p508_9==0 && c5_p508_10==0 &&
+                c5_p508_11==0){
+            mostrarMensaje("PREGUNTA 508: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if(c5_p508_11==1){
+            if(c5_p508_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 508 - OPCION 11: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        if(c5_p509<1){
+            mostrarMensaje("PREGUNTA 509: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c5_p510<1){
+            mostrarMensaje("PREGUNTA 510: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c5_p511<1){
+            mostrarMensaje("PREGUNTA 511: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo5;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

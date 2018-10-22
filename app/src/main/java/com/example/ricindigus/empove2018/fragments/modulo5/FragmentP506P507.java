@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo5;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -116,11 +118,60 @@ public class FragmentP506P507 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(c5_p506_1<1){
+            mostrarMensaje("PREGUNTA 506: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c5_p506_1==2){
+            if(c5_p506_3.trim().length()==0){
+                mostrarMensaje("PREGUNTA 506: DEBE INGRESAR GRADO");
+                return false;
+            }
+        }else{
+            if(c5_p506_2.trim().length()==0){
+                mostrarMensaje("PREGUNTA 506: DEBE INGRESAR AÑO");
+                return false;
+            }
+        }
+        if(c5_p506_4<1){
+            mostrarMensaje("PREGUNTA 506-OPCION 1: DEBE SELECCIONAR CENTRO DE ESTUDIOS");
+            return false;
+        }
+        if(c5_p507<1){
+            mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c5_p507==2){
+            if(c5_p507_dist<1){
+                mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR DISTRITO");
+                return false;
+            }
+            if(c5_p507_prov<1){
+                mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR PROVINCIA");
+                return false;
+            }
+            if(c5_p507_dep<1){
+                mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR DEPARTAMENTO");
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo5;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
