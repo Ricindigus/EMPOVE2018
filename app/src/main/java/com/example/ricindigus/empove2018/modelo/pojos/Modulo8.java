@@ -13,17 +13,17 @@ public class Modulo8 {
     private String c8_p802;
     private String c8_p803;
     private String c8_p804;
-    private String c8_p805_a;
-    private String c8_p805_b;
-    private String c8_p805_c;
-    private String c8_p805_d;
-    private String c8_p805_e;
-    private String c8_p806_a;
-    private String c8_p806_b;
-    private String c8_p806_c;
-    private String c8_p806_d;
-    private String c8_p806_e;
-    private String c8_p806_f;
+    private String c8_p805_1;
+    private String c8_p805_2;
+    private String c8_p805_3;
+    private String c8_p805_4;
+    private String c8_p805_5;
+    private String c8_p806_1;
+    private String c8_p806_2;
+    private String c8_p806_3;
+    private String c8_p806_4;
+    private String c8_p806_5;
+    private String c8_p806_6;
     private String c8_p807;
     private String c8_p808_1;
     private String c8_p808_2;
@@ -103,92 +103,92 @@ public class Modulo8 {
         this.c8_p804 = c8_p804;
     }
 
-    public String getC8_p805_a() {
-        return c8_p805_a;
+    public String getC8_p805_1() {
+        return c8_p805_1;
     }
 
-    public void setC8_p805_a(String c8_p805_a) {
-        this.c8_p805_a = c8_p805_a;
+    public void setC8_p805_1(String c8_p805_1) {
+        this.c8_p805_1 = c8_p805_1;
     }
 
-    public String getC8_p805_b() {
-        return c8_p805_b;
+    public String getC8_p805_2() {
+        return c8_p805_2;
     }
 
-    public void setC8_p805_b(String c8_p805_b) {
-        this.c8_p805_b = c8_p805_b;
+    public void setC8_p805_2(String c8_p805_2) {
+        this.c8_p805_2 = c8_p805_2;
     }
 
-    public String getC8_p805_c() {
-        return c8_p805_c;
+    public String getC8_p805_3() {
+        return c8_p805_3;
     }
 
-    public void setC8_p805_c(String c8_p805_c) {
-        this.c8_p805_c = c8_p805_c;
+    public void setC8_p805_3(String c8_p805_3) {
+        this.c8_p805_3 = c8_p805_3;
     }
 
-    public String getC8_p805_d() {
-        return c8_p805_d;
+    public String getC8_p805_4() {
+        return c8_p805_4;
     }
 
-    public void setC8_p805_d(String c8_p805_d) {
-        this.c8_p805_d = c8_p805_d;
+    public void setC8_p805_4(String c8_p805_4) {
+        this.c8_p805_4 = c8_p805_4;
     }
 
-    public String getC8_p805_e() {
-        return c8_p805_e;
+    public String getC8_p805_5() {
+        return c8_p805_5;
     }
 
-    public void setC8_p805_e(String c8_p805_e) {
-        this.c8_p805_e = c8_p805_e;
+    public void setC8_p805_5(String c8_p805_5) {
+        this.c8_p805_5 = c8_p805_5;
     }
 
-    public String getC8_p806_a() {
-        return c8_p806_a;
+    public String getC8_p806_1() {
+        return c8_p806_1;
     }
 
-    public void setC8_p806_a(String c8_p806_a) {
-        this.c8_p806_a = c8_p806_a;
+    public void setC8_p806_1(String c8_p806_1) {
+        this.c8_p806_1 = c8_p806_1;
     }
 
-    public String getC8_p806_b() {
-        return c8_p806_b;
+    public String getC8_p806_2() {
+        return c8_p806_2;
     }
 
-    public void setC8_p806_b(String c8_p806_b) {
-        this.c8_p806_b = c8_p806_b;
+    public void setC8_p806_2(String c8_p806_2) {
+        this.c8_p806_2 = c8_p806_2;
     }
 
-    public String getC8_p806_c() {
-        return c8_p806_c;
+    public String getC8_p806_3() {
+        return c8_p806_3;
     }
 
-    public void setC8_p806_c(String c8_p806_c) {
-        this.c8_p806_c = c8_p806_c;
+    public void setC8_p806_3(String c8_p806_3) {
+        this.c8_p806_3 = c8_p806_3;
     }
 
-    public String getC8_p806_d() {
-        return c8_p806_d;
+    public String getC8_p806_4() {
+        return c8_p806_4;
     }
 
-    public void setC8_p806_d(String c8_p806_d) {
-        this.c8_p806_d = c8_p806_d;
+    public void setC8_p806_4(String c8_p806_4) {
+        this.c8_p806_4 = c8_p806_4;
     }
 
-    public String getC8_p806_e() {
-        return c8_p806_e;
+    public String getC8_p806_5() {
+        return c8_p806_5;
     }
 
-    public void setC8_p806_e(String c8_p806_e) {
-        this.c8_p806_e = c8_p806_e;
+    public void setC8_p806_5(String c8_p806_5) {
+        this.c8_p806_5 = c8_p806_5;
     }
 
-    public String getC8_p806_f() {
-        return c8_p806_f;
+    public String getC8_p806_6() {
+        return c8_p806_6;
     }
 
-    public void setC8_p806_f(String c8_p806_f) {
-        this.c8_p806_f = c8_p806_f;
+    public void setC8_p806_6(String c8_p806_6) {
+        this.c8_p806_6 = c8_p806_6;
     }
 
     public String getC8_p807() {
@@ -711,28 +711,12 @@ public class Modulo8 {
         this.c8_p816_o = c8_p816_o;
     }
 
-    public String getC8_p817_1() {
-        return c8_p817_1;
+    public String getC8_p817() {
+        return c8_p817;
     }
 
-    public void setC8_p817_1(String c8_p817_1) {
-        this.c8_p817_1 = c8_p817_1;
-    }
-
-    public String getC8_p817_2() {
-        return c8_p817_2;
-    }
-
-    public void setC8_p817_2(String c8_p817_2) {
-        this.c8_p817_2 = c8_p817_2;
-    }
-
-    public String getC8_p817_3() {
-        return c8_p817_3;
-    }
-
-    public void setC8_p817_3(String c8_p817_3) {
-        this.c8_p817_3 = c8_p817_3;
+    public void setC8_p817(String c8_p817) {
+        this.c8_p817 = c8_p817;
     }
 
     public String getC8_p818() {
@@ -1146,9 +1130,7 @@ public class Modulo8 {
     private String c8_p816_7;
     private String c8_p816_8;
     private String c8_p816_o;
-    private String c8_p817_1;
-    private String c8_p817_2;
-    private String c8_p817_3;
+    private String c8_p817;
     private String c8_p818;
     private String c8_p819_1;
     private String c8_p819_2;
@@ -1206,17 +1188,17 @@ public class Modulo8 {
         contentValues.put(SQLConstantes.modulo8_c8_p802,c8_p802);
         contentValues.put(SQLConstantes.modulo8_c8_p803,c8_p803);
         contentValues.put(SQLConstantes.modulo8_c8_p804,c8_p804);
-        contentValues.put(SQLConstantes.modulo8_c8_p805_a,c8_p805_a);
-        contentValues.put(SQLConstantes.modulo8_c8_p805_b,c8_p805_b);
-        contentValues.put(SQLConstantes.modulo8_c8_p805_c,c8_p805_c);
-        contentValues.put(SQLConstantes.modulo8_c8_p805_d,c8_p805_d);
-        contentValues.put(SQLConstantes.modulo8_c8_p805_e,c8_p805_e);
-        contentValues.put(SQLConstantes.modulo8_c8_p806_a,c8_p806_a);
-        contentValues.put(SQLConstantes.modulo8_c8_p806_b,c8_p806_b);
-        contentValues.put(SQLConstantes.modulo8_c8_p806_c,c8_p806_c);
-        contentValues.put(SQLConstantes.modulo8_c8_p806_d,c8_p806_d);
-        contentValues.put(SQLConstantes.modulo8_c8_p806_e,c8_p806_e);
-        contentValues.put(SQLConstantes.modulo8_c8_p806_f,c8_p806_f);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_1,c8_p805_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_2,c8_p805_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_3,c8_p805_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_4,c8_p805_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_5,c8_p805_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_1,c8_p806_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_2,c8_p806_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_3,c8_p806_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_4,c8_p806_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_5,c8_p806_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_6,c8_p806_6);
         contentValues.put(SQLConstantes.modulo8_c8_p807,c8_p807);
         contentValues.put(SQLConstantes.modulo8_c8_p808_1,c8_p808_1);
         contentValues.put(SQLConstantes.modulo8_c8_p808_2,c8_p808_2);
@@ -1282,9 +1264,7 @@ public class Modulo8 {
         contentValues.put(SQLConstantes.modulo8_c8_p816_7,c8_p816_7);
         contentValues.put(SQLConstantes.modulo8_c8_p816_8,c8_p816_8);
         contentValues.put(SQLConstantes.modulo8_c8_p816_o,c8_p816_o);
-        contentValues.put(SQLConstantes.modulo8_c8_p817_1,c8_p817_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p817_2,c8_p817_2);
-        contentValues.put(SQLConstantes.modulo8_c8_p817_3,c8_p817_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p817,c8_p817);
         contentValues.put(SQLConstantes.modulo8_c8_p818,c8_p818);
         contentValues.put(SQLConstantes.modulo8_c8_p819_1,c8_p819_1);
         contentValues.put(SQLConstantes.modulo8_c8_p819_2,c8_p819_2);

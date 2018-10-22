@@ -1160,17 +1160,17 @@ public class SQLConstantes {
     public static String modulo8_c8_p802 = "c8_p802";
     public static String modulo8_c8_p803 = "c8_p803";
     public static String modulo8_c8_p804 = "c8_p804";
-    public static String modulo8_c8_p805_a = "c8_p805_a";
-    public static String modulo8_c8_p805_b = "c8_p805_b";
-    public static String modulo8_c8_p805_c = "c8_p805_c";
-    public static String modulo8_c8_p805_d = "c8_p805_d";
-    public static String modulo8_c8_p805_e = "c8_p805_e";
-    public static String modulo8_c8_p806_a = "c8_p806_a";
-    public static String modulo8_c8_p806_b = "c8_p806_b";
-    public static String modulo8_c8_p806_c = "c8_p806_c";
-    public static String modulo8_c8_p806_d = "c8_p806_d";
-    public static String modulo8_c8_p806_e = "c8_p806_e";
-    public static String modulo8_c8_p806_f = "c8_p806_f";
+    public static String modulo8_c8_p805_1 = "c8_p805_1";
+    public static String modulo8_c8_p805_2 = "c8_p805_2";
+    public static String modulo8_c8_p805_3 = "c8_p805_3";
+    public static String modulo8_c8_p805_4 = "c8_p805_4";
+    public static String modulo8_c8_p805_5 = "c8_p805_5";
+    public static String modulo8_c8_p806_1 = "c8_p806_1";
+    public static String modulo8_c8_p806_2 = "c8_p806_2";
+    public static String modulo8_c8_p806_3 = "c8_p806_3";
+    public static String modulo8_c8_p806_4 = "c8_p806_4";
+    public static String modulo8_c8_p806_5 = "c8_p806_5";
+    public static String modulo8_c8_p806_6 = "c8_p806_6";
     public static String modulo8_c8_p807 = "c8_p807";
     public static String modulo8_c8_p808_1 = "c8_p808_1";
     public static String modulo8_c8_p808_2 = "c8_p808_2";
@@ -1236,9 +1236,7 @@ public class SQLConstantes {
     public static String modulo8_c8_p816_7 = "c8_p816_7";
     public static String modulo8_c8_p816_8 = "c8_p816_8";
     public static String modulo8_c8_p816_o = "c8_p816_o";
-    public static String modulo8_c8_p817_1 = "c8_p817_1";
-    public static String modulo8_c8_p817_2 = "c8_p817_2";
-    public static String modulo8_c8_p817_3 = "c8_p817_3";
+    public static String modulo8_c8_p817 = "c8_p817";
     public static String modulo8_c8_p818 = "c8_p818";
     public static String modulo8_c8_p819_1 = "c8_p819_1";
     public static String modulo8_c8_p819_2 = "c8_p819_2";
@@ -1296,17 +1294,17 @@ public class SQLConstantes {
                     modulo8_c8_p802  +  " TEXT," +
                     modulo8_c8_p803  +  " TEXT," +
                     modulo8_c8_p804  +  " TEXT," +
-                    modulo8_c8_p805_a  +  " TEXT," +
-                    modulo8_c8_p805_b  +  " TEXT," +
-                    modulo8_c8_p805_c  +  " TEXT," +
-                    modulo8_c8_p805_d  +  " TEXT," +
-                    modulo8_c8_p805_e  +  " TEXT," +
-                    modulo8_c8_p806_a  +  " TEXT," +
-                    modulo8_c8_p806_b  +  " TEXT," +
-                    modulo8_c8_p806_c  +  " TEXT," +
-                    modulo8_c8_p806_d  +  " TEXT," +
-                    modulo8_c8_p806_e  +  " TEXT," +
-                    modulo8_c8_p806_f  +  " TEXT," +
+                    modulo8_c8_p805_1  +  " TEXT," +
+                    modulo8_c8_p805_2  +  " TEXT," +
+                    modulo8_c8_p805_3  +  " TEXT," +
+                    modulo8_c8_p805_4  +  " TEXT," +
+                    modulo8_c8_p805_5  +  " TEXT," +
+                    modulo8_c8_p806_1  +  " TEXT," +
+                    modulo8_c8_p806_2  +  " TEXT," +
+                    modulo8_c8_p806_3  +  " TEXT," +
+                    modulo8_c8_p806_4  +  " TEXT," +
+                    modulo8_c8_p806_5  +  " TEXT," +
+                    modulo8_c8_p806_6  +  " TEXT," +
                     modulo8_c8_p807  +  " TEXT," +
                     modulo8_c8_p808_1  +  " TEXT," +
                     modulo8_c8_p808_2  +  " TEXT," +
@@ -1372,9 +1370,7 @@ public class SQLConstantes {
                     modulo8_c8_p816_7  +  " TEXT," +
                     modulo8_c8_p816_8  +  " TEXT," +
                     modulo8_c8_p816_o  +  " TEXT," +
-                    modulo8_c8_p817_1  +  " TEXT," +
-                    modulo8_c8_p817_2  +  " TEXT," +
-                    modulo8_c8_p817_3  +  " TEXT," +
+                    modulo8_c8_p817  +  " TEXT," +
                     modulo8_c8_p818  +  " TEXT," +
                     modulo8_c8_p819_1  +  " TEXT," +
                     modulo8_c8_p819_2  +  " TEXT," +

@@ -12,11 +12,12 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP809P812 extends Fragment {
+public class FragmentP809P812 extends FragmentPagina {
 
     RadioGroup c8_p809_RadioGroup;
     CheckBox c8_p810_1_Checkbox, c8_p810_2_Checkbox, c8_p810_3_Checkbox , c8_p810_4_Checkbox, c8_p810_5_Checkbox,
@@ -25,6 +26,24 @@ public class FragmentP809P812 extends Fragment {
     EditText c8_p810_o_EditText;
     RadioGroup c8_p811_RadioGroup, c8_p812_RadioGroup;
     LinearLayout m8_p809_linearlayout, m8_p810_linearlayout, m8_p811_linearlayout, m8_p812_linearlayout;
+
+    private int c8_p809;
+    private int c8_p810_1;
+    private int c8_p810_2;
+    private int c8_p810_3;
+    private int c8_p810_4;
+    private int c8_p810_5;
+    private int c8_p810_6;
+    private int c8_p810_7;
+    private int c8_p810_8;
+    private int c8_p810_9;
+    private int c8_p810_10;
+    private int c8_p810_11;
+    private int c8_p810_12;
+    private int c8_p810_13;
+    private String c8_p810_o;
+    private int c8_p811;
+    private int c8_p812;
 
     public FragmentP809P812() {
         // Required empty public constructor
@@ -66,4 +85,45 @@ public class FragmentP809P812 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+        c8_p809 = c8_p809_RadioGroup.indexOfChild(c8_p809_RadioGroup.findViewById(c8_p809_RadioGroup.getCheckedRadioButtonId()));
+        if(c8_p810_1_Checkbox.isChecked()) c8_p810_1 = 1; else c8_p810_1 = 0;
+        if(c8_p810_2_Checkbox.isChecked()) c8_p810_2 = 1; else c8_p810_2 = 0;
+        if(c8_p810_3_Checkbox.isChecked()) c8_p810_3 = 1; else c8_p810_3 = 0;
+        if(c8_p810_4_Checkbox.isChecked()) c8_p810_4 = 1; else c8_p810_4 = 0;
+        if(c8_p810_5_Checkbox.isChecked()) c8_p810_5 = 1; else c8_p810_5 = 0;
+        if(c8_p810_6_Checkbox.isChecked()) c8_p810_6 = 1; else c8_p810_6 = 0;
+        if(c8_p810_7_Checkbox.isChecked()) c8_p810_7 = 1; else c8_p810_7 = 0;
+        if(c8_p810_8_Checkbox.isChecked()) c8_p810_8 = 1; else c8_p810_8 = 0;
+        if(c8_p810_9_Checkbox.isChecked()) c8_p810_9 = 1; else c8_p810_9 = 0;
+        if(c8_p810_10_Checkbox.isChecked()) c8_p810_10 = 1; else c8_p810_10 = 0;
+        if(c8_p810_11_Checkbox.isChecked()) c8_p810_11 = 1; else c8_p810_11 = 0;
+        if(c8_p810_12_Checkbox.isChecked()) c8_p810_12 = 1; else c8_p810_12 = 0;
+        if(c8_p810_13_Checkbox.isChecked()) c8_p810_13 = 1; else c8_p810_13 = 0;
+        c8_p810_o = c8_p810_o_EditText.getText().toString();
+        c8_p811 = c8_p811_RadioGroup.indexOfChild(c8_p811_RadioGroup.findViewById(c8_p811_RadioGroup.getCheckedRadioButtonId()));
+        c8_p812 = c8_p812_RadioGroup.indexOfChild(c8_p812_RadioGroup.findViewById(c8_p812_RadioGroup.getCheckedRadioButtonId()));
+
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return false;
+    }
+
+    @Override
+    public String getNombreTabla() {
+        return null;
+    }
 }
