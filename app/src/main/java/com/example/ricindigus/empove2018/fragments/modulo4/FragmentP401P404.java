@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo4;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -139,11 +141,53 @@ public class FragmentP401P404 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(c4_p401_1==0 && c4_p401_2==0 && c4_p401_3==0 && c4_p401_4==0 && c4_p401_4==0){
+            mostrarMensaje("PREGUNTA 401: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if(c4_p401_4==1){
+            if(c4_p401_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 401 - OPCION 4: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        if(c4_p402<1){
+            mostrarMensaje("PREGUNTA 402: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c4_p403_1==0 && c4_p403_2==0 && c4_p403_3==0 && c4_p403_4==0 && c4_p403_5==0 &&
+                c4_p403_6==0 && c4_p403_7==0 && c4_p403_8==0 && c4_p403_9==0 && c4_p403_10==0 &&
+                c4_p403_11==0 && c4_p403_12==0 && c4_p403_13==0 && c4_p403_14==0){
+            mostrarMensaje("PREGUNTA 403: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if(c4_p403_14==1){
+            if(c4_p403_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 403 - OPCION 14: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        if(c4_p404<1){
+            mostrarMensaje("PREGUNTA 404: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo4;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
