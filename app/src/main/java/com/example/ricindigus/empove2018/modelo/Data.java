@@ -213,7 +213,7 @@ public class Data {
         return marco;
     }
 
-    public ArrayList<Vivienda> getAllViviendas(int idUsuario){
+    public ArrayList<Vivienda> getAllViviendas(String idUsuario){
         ArrayList<Vivienda>  viviendas = new ArrayList<>();
         String[] whereArgs = new String[]{String.valueOf(idUsuario)};
         Cursor cursor = null;

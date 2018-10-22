@@ -53,7 +53,7 @@
                     android:paddingLeft="@dimen/margen_small"
                     android:layout_width="@dimen/longitud_input_n_horas"
                     android:layout_height="@dimen/altura_input_especifique"
-                    android:inputType="numberPassword"
+                    android:inputType="text"
                     android:background="@drawable/input_text_enabled"
                     />
             </LinearLayout>

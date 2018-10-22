@@ -27,6 +27,25 @@ public class Caratula {
     private String t_hogar;
 
     public Caratula() {
+        nom_dep="";
+        nom_prov="";
+        nom_dist="";
+        nom_ccpp="";
+        zona="";
+        manzana_id="";
+        aer="";
+        vivienda="";
+        tipvia="";
+        nomvia="";
+        nropta="";
+        block="";
+        interior="";
+        piso="";
+        mza="";
+        lote="";
+        km="";
+        telefono="";
+        t_hogar="";
     }
 
     public int get_id() {
