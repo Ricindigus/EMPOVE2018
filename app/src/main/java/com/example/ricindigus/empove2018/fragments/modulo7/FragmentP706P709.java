@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo7;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -97,8 +99,51 @@ public class FragmentP706P709 extends Fragment {
         if (c7_p709_9_Checkbox.isChecked()) c7_p709_9 = 1; else c7_p709_9 = 0;
         if (c7_p709_10_Checkbox.isChecked()) c7_p709_10 = 1; else c7_p709_10 = 0;
         c7_p709_o = c7_p709_o_EditText.getText().toString();
-        //XD
+
     }
 
+    public boolean validarDatos(){
+        if(c7_p706<1){
+            mostrarMensaje("PREGUNTA 706: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c7_p707<1){
+            mostrarMensaje("PREGUNTA 706: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if (c7_p707==1){
+            if(c7_p707_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 707 - OPCION 8: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        if(c7_p708_1==0 && c7_p708_2==0 && c7_p708_3==0 && c7_p708_4==0 && c7_p708_5==0){
+            mostrarMensaje("PREGUNTA 708: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if(c7_p709_1==0 && c7_p709_2==0 && c7_p709_3==0 && c7_p709_4==0 && c7_p709_5==0 &&
+                c7_p709_6==0 && c7_p709_7==0 && c7_p709_8==0 && c7_p709_9==0 && c7_p709_10==0){
+            mostrarMensaje("PREGUNTA 709: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if (c7_p709_9==1){
+            if(c7_p709_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 709 - OPCION 9: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        return false;
+    }
 
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 }

@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo7;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -125,7 +127,64 @@ public class FragmentP701P705 extends Fragment {
         if (c7_p705_6_Checkbox.isChecked()) c7_p705_6 = 1; else c7_p705_6 = 0;
         if (c7_p705_7_Checkbox.isChecked()) c7_p705_7 = 1; else c7_p705_7 = 0;
         c7_p705_o = c7_p705_o_EditText.getText().toString();
-        //XD
+
+    }
+
+
+    public boolean validarDatos(){
+        if (c7_p701 <1){
+            mostrarMensaje("PREGUNTA 701: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if (c7_p702_1==0 && c7_p702_2==0 && c7_p702_3==0 && c7_p702_4==0 && c7_p702_5==0 && c7_p702_6==0
+                && c7_p702_7==0 && c7_p702_8==0 && c7_p702_9==0 && c7_p702_10==0){
+            mostrarMensaje("PREGUNTA 702: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if (c7_p702_10==1){
+            if (c7_p702_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 702 - OPCION 10: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        if (c7_p703 < 1){
+            mostrarMensaje("PREGUNTA 703: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if (c7_p704_1==0 && c7_p704_2==0 && c7_p704_3==0 && c7_p704_4==0 && c7_p704_5==0 && c7_p704_6==0){
+            mostrarMensaje("PREGUNTA 704: DEBE SELECCIONAR ALGUNA OPCION");
+        }
+        if (c7_p704_6==1){
+            if (c7_p704_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 704 - OPCION 6: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+        if (c7_p705_1==0 && c7_p705_2==0 && c7_p705_3==0 && c7_p705_4==0 && c7_p705_5==0 && c7_p705_6==0
+                && c7_p705_7==0){
+            mostrarMensaje("PREGUNTA 705: DEBE SELECCIONAR ALGUNA OPCION");
+            return false;
+        }
+        if (c7_p705_6==1){
+            if (c7_p705_o.trim().length()==0){
+                mostrarMensaje("PREGUNTA 705 - OPCION 6: DEBE ESPECIFICAR OTRO");
+                return false;
+            }
+        }
+
+        return false;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 }
