@@ -78,26 +78,28 @@ public class FragmentP605P608 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        if(c6_p605.trim().length()==0){
+        if(c6_p605.trim().length()==0 && m6_p605_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 605: DEBE ESPECIFICAR");
             return false;
         }
-        if(c6_p606.trim().length()==0){
+        if(c6_p606.trim().length()==0 && m6_p606_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 606: DEBE ESPECIFICAR");
             return false;
         }
-        if(c6_p607.trim().length()==0){
+        if(c6_p607.trim().length()==0 && m6_p607_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 607: DEBE ESPECIFICAR");
             return false;
         }
-        if(c6_p608<1){
-            mostrarMensaje("PREGUNTA 608: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c6_p608==7){
-            if(c6_p608_o.trim().length()==0){
-                mostrarMensaje("PREGUNTA 608 - OPCION 7: DEBE ESPECIFICAR OTRO");
+        if(m6_p608_linearlayout.getVisibility()==View.VISIBLE){
+            if(c6_p608<1){
+                mostrarMensaje("PREGUNTA 608: DEBE SELECCIONAR UNA OPCION");
                 return false;
+            }
+            if(c6_p608==7){
+                if(c6_p608_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 608 - OPCION 7: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
             }
         }
         return true;

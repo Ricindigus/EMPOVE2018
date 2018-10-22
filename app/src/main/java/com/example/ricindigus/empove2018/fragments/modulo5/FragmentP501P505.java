@@ -86,26 +86,26 @@ public class FragmentP501P505 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        if(c5_p501<1){
+        if(c5_p501<1 && m5_p501_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 501: DEBE SELECCIONAR UNA OPCION");
             //c5_p501_RadioGroup.requestFocus();
             return false;
         }
-        if(c5_p502==0){
+        if(c5_p502==0 && m5_p502_linearlayout.getVisibility()==View.VISIBLE){
             if(c5_p502_c.trim().length()==0){
                 mostrarMensaje("PREGUNTA 502: DEBE SELECCIONAR O ESPECIFICAR");
                 return false;
             }
         }
-        if(c5_p503<1){
+        if(c5_p503<1 && m5_p503_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 503: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c5_p504<1){
+        if(c5_p504<1 && m5_p504_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 504: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c5_p505<1){
+        if(c5_p505<1 && m5_p505_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 505: DEBE SELECCIONAR UNA OPCION");
             return false;
         }

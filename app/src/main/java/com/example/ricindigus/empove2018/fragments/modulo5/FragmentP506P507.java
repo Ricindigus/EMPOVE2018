@@ -118,41 +118,45 @@ public class FragmentP506P507 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        if(c5_p506_1<1){
-            mostrarMensaje("PREGUNTA 506: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c5_p506_1==2){
-            if(c5_p506_3.trim().length()==0){
-                mostrarMensaje("PREGUNTA 506: DEBE INGRESAR GRADO");
+        if(m5_p506_linearlayout.getVisibility()==View.VISIBLE) {
+            if(c5_p506_1<1){
+                mostrarMensaje("PREGUNTA 506: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-        }else{
-            if(c5_p506_2.trim().length()==0){
-                mostrarMensaje("PREGUNTA 506: DEBE INGRESAR AÑO");
+            if(c5_p506_1==2){
+                if(c5_p506_3.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 506: DEBE INGRESAR GRADO");
+                    return false;
+                }
+            }else{
+                if(c5_p506_2.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 506: DEBE INGRESAR AÑO");
+                    return false;
+                }
+            }
+            if(c5_p506_4<1){
+                mostrarMensaje("PREGUNTA 506-OPCION 1: DEBE SELECCIONAR CENTRO DE ESTUDIOS");
                 return false;
             }
         }
-        if(c5_p506_4<1){
-            mostrarMensaje("PREGUNTA 506-OPCION 1: DEBE SELECCIONAR CENTRO DE ESTUDIOS");
-            return false;
-        }
-        if(c5_p507<1){
-            mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c5_p507==2){
-            if(c5_p507_dist<1){
-                mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR DISTRITO");
+        if(m5_p507_linearlayout.getVisibility()==View.VISIBLE) {
+            if(c5_p507<1){
+                mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c5_p507_prov<1){
-                mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR PROVINCIA");
-                return false;
-            }
-            if(c5_p507_dep<1){
-                mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR DEPARTAMENTO");
-                return false;
+            if(c5_p507==2){
+                if(c5_p507_dist<1){
+                    mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR DISTRITO");
+                    return false;
+                }
+                if(c5_p507_prov<1){
+                    mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR PROVINCIA");
+                    return false;
+                }
+                if(c5_p507_dep<1){
+                    mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR DEPARTAMENTO");
+                    return false;
+                }
             }
         }
         return true;

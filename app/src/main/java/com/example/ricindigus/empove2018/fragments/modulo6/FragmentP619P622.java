@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo6;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -107,11 +109,79 @@ public class FragmentP619P622 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(c6_p619<1 && m6_p619_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 619: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(m6_p620_linearlayout.getVisibility()==View.VISIBLE) {
+            if(c6_p620_1<1){
+                mostrarMensaje("PREGUNTA 620-1: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_2<1){
+                mostrarMensaje("PREGUNTA 620-2: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_3<1){
+                mostrarMensaje("PREGUNTA 620-3: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_4<1){
+                mostrarMensaje("PREGUNTA 620-4: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_5<1){
+                mostrarMensaje("PREGUNTA 620-5: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_6<1){
+                mostrarMensaje("PREGUNTA 620-6: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_7<1){
+                mostrarMensaje("PREGUNTA 620-7: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_8<1){
+                mostrarMensaje("PREGUNTA 620-8: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_9<1){
+                mostrarMensaje("PREGUNTA 620-9: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p620_9==1){
+                if(c6_p620_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 620 - OPCION 9: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+            }
+        }
+        if(c6_p621<1 && m6_p621_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 621: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c6_p622<1 && m6_p622_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 622: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo6;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

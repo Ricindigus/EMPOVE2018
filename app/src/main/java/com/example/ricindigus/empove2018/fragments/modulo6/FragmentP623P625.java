@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo6;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -78,11 +80,51 @@ public class FragmentP623P625 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(m6_p623_linearlayout.getVisibility()==View.VISIBLE){
+            if(c6_p623<1){
+                mostrarMensaje("PREGUNTA 623: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p623==9){
+                if(c6_p623_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 623 - OPCION 9: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+            }
+        }
+        if(m6_p624_linearlayout.getVisibility()==View.VISIBLE){
+            if(c6_p624<1){
+                mostrarMensaje("PREGUNTA 624: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p624==6){
+                if(c6_p624_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 624 - OPCION 6: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+            }
+        }
+        if(c6_p625.trim().length()==0 && m6_p625_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 625: DEBE INGRESAR NRO DE SEMANAS");
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo6;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
