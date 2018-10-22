@@ -125,7 +125,7 @@ public class FragmentP701P705 extends Fragment {
         if (c7_p705_6_Checkbox.isChecked()) c7_p705_6 = 1; else c7_p705_6 = 0;
         if (c7_p705_7_Checkbox.isChecked()) c7_p705_7 = 1; else c7_p705_7 = 0;
         c7_p705_o = c7_p705_o_EditText.getText().toString();
-
+        //XD
     }
 
 }
