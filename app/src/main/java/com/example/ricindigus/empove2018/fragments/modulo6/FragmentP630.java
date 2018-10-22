@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo6;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -97,11 +99,73 @@ public class FragmentP630 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(m6_p630_linearlayout.getVisibility()==View.VISIBLE){
+            if(c6_p630_1<1){
+                mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p630_1==1){
+                if(c6_p630_1_med<1){
+                    mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR MEDIO DE ENVIO");
+                    return false;
+                }
+                if(c6_p630_1_med==3){
+                    if(c6_p630_1_o.trim().length()==0){
+                        mostrarMensaje("PREGUNTA 630-A: DEBE ESPECIFICAR OTRO");
+                        return false;
+                    }
+                }
+                if(c6_p630_1_frec<1){
+                    mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if(c6_p630_1_mont<1){
+                    mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR MONTO");
+                    return false;
+                }
+            }
+            if(c6_p630_2<1){
+                mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p630_2==1){
+                if(c6_p630_2_med<1){
+                    mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR MEDIO DE ENVIO");
+                    return false;
+                }
+                if(c6_p630_2_med==3){
+                    if(c6_p630_2_o.trim().length()==0){
+                        mostrarMensaje("PREGUNTA 630-B: DEBE ESPECIFICAR OTRO");
+                        return false;
+                    }
+                }
+                if(c6_p630_2_frec<1){
+                    mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if(c6_p630_2_mont<1){
+                    mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR MONTO");
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo6;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

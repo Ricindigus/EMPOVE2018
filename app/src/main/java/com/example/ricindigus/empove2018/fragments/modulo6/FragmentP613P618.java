@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo6;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -124,11 +126,92 @@ public class FragmentP613P618 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(c6_p613<1 && m6_p613_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 613: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(m6_p614_linearlayout.getVisibility()==View.VISIBLE){
+            if(c6_p614_mon.trim().length()==0){
+                mostrarMensaje("PREGUNTA 614 - DINERO: DEBE ESPECIFICAR");
+                return false;
+            }
+            if(c6_p614_esp.trim().length()==0){
+                mostrarMensaje("PREGUNTA 614 - ESPECIE: DEBE ESPECIFICAR");
+                return false;
+            }
+        }
+        if(m6_p615_linearlayout.getVisibility()==View.VISIBLE){
+            if(c6_p615_mon.trim().length()==0){
+                mostrarMensaje("PREGUNTA 615 - DINERO: DEBE ESPECIFICAR");
+                return false;
+            }
+            if(c6_p615_esp.trim().length()==0){
+                mostrarMensaje("PREGUNTA 615 - ESPECIE: DEBE ESPECIFICAR");
+                return false;
+            }
+        }
+        if(m6_p616_linearlayout.getVisibility()==View.VISIBLE){
+            if(c6_p616_nas==0){
+                if(c6_p616_mon.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 616 - DINERO: DEBE ESPECIFICAR");
+                    return false;
+                }
+                if(c6_p616_esp.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 616 - ESPECIE: DEBE ESPECIFICAR");
+                    return false;
+                }
+            }
+        }
+        if(m6_p617_linearlayout.getVisibility()==View.VISIBLE) {
+            if(c6_p617<1){
+                mostrarMensaje("PREGUNTA 617: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p617==2){
+                if(c6_p617_dist<1){
+                    mostrarMensaje("PREGUNTA 617: DEBE SELECCIONAR DISTRITO");
+                    return false;
+                }
+                if(c6_p617_prov<1){
+                    mostrarMensaje("PREGUNTA 617: DEBE SELECCIONAR PROVINCIA");
+                    return false;
+                }
+                if(c6_p617_dep<1){
+                    mostrarMensaje("PREGUNTA 617: DEBE SELECCIONAR DEPARTAMENTO");
+                    return false;
+                }
+            }
+        }
+        if(m6_p618_linearlayout.getVisibility()==View.VISIBLE) {
+            if(c6_p618_1==0 && c6_p618_2==0 && c6_p618_3==0 && c6_p618_4==0 && c6_p618_5==0 &&
+                    c6_p618_6==0){
+                mostrarMensaje("PREGUNTA 618: DEBE SELECCIONAR ALGUNA OPCION");
+                return false;
+            }
+            if(c6_p618_6==1){
+                if(c6_p618_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 618 - OPCION 6: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo6;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

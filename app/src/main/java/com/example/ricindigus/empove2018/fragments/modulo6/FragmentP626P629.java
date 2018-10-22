@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo6;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -121,11 +123,97 @@ public class FragmentP626P629 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        if(c6_p626<1 && m6_p626_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 626: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c6_p627<1 && m6_p627_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 627: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c6_p628.trim().length()==0 && m6_p628_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 628: DEBE INGRESAR NRO DE SEMANAS");
+            return false;
+        }
+        if(m6_p629_linearlayout.getVisibility()==View.VISIBLE){
+            if(c6_p629_1<1){
+                mostrarMensaje("PREGUNTA 629-A: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p629_1==1){
+                if(c6_p629_1_f<1){
+                    mostrarMensaje("PREGUNTA 629-A: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if(c6_p629_1_m.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 629-A: DEBE INGRESAR MONTO");
+                    return false;
+                }
+            }
+            if(c6_p629_2<1){
+                mostrarMensaje("PREGUNTA 629-B: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p629_2==1){
+                if(c6_p629_2_f<1){
+                    mostrarMensaje("PREGUNTA 629-B: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if(c6_p629_2_m.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 629-B: DEBE INGRESAR MONTO");
+                    return false;
+                }
+            }
+            if(c6_p629_3<1){
+                mostrarMensaje("PREGUNTA 629-C: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p629_3==1){
+                if(c6_p629_3_f<1){
+                    mostrarMensaje("PREGUNTA 629-C: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if(c6_p629_3_m.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 629-C: DEBE INGRESAR MONTO");
+                    return false;
+                }
+            }
+            if(c6_p629_4<1){
+                mostrarMensaje("PREGUNTA 629-D: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c6_p629_4==1){
+                if(c6_p629_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 629-D: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+                if(c6_p629_4_f<1){
+                    mostrarMensaje("PREGUNTA 629-D: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if(c6_p629_4_m.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 629-D: DEBE INGRESAR MONTO");
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo6;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

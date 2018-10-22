@@ -112,27 +112,29 @@ public class FragmentP508P511 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        if(c5_p508_1==0 && c5_p508_2==0 && c5_p508_3==0 && c5_p508_4==0 && c5_p508_5==0 &&
-                c5_p508_6==0 && c5_p508_7==0 && c5_p508_8==0 && c5_p508_9==0 && c5_p508_10==0 &&
-                c5_p508_11==0){
-            mostrarMensaje("PREGUNTA 508: DEBE SELECCIONAR ALGUNA OPCION");
-            return false;
-        }
-        if(c5_p508_11==1){
-            if(c5_p508_o.trim().length()==0){
-                mostrarMensaje("PREGUNTA 508 - OPCION 11: DEBE ESPECIFICAR OTRO");
+        if(m5_p508_linearlayout.getVisibility()==View.VISIBLE) {
+            if(c5_p508_1==0 && c5_p508_2==0 && c5_p508_3==0 && c5_p508_4==0 && c5_p508_5==0 &&
+                    c5_p508_6==0 && c5_p508_7==0 && c5_p508_8==0 && c5_p508_9==0 && c5_p508_10==0 &&
+                    c5_p508_11==0){
+                mostrarMensaje("PREGUNTA 508: DEBE SELECCIONAR ALGUNA OPCION");
                 return false;
             }
+            if(c5_p508_11==1){
+                if(c5_p508_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 508 - OPCION 11: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+            }
         }
-        if(c5_p509<1){
+        if(c5_p509<1 && m5_p509_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 509: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c5_p510<1){
+        if(c5_p510<1 && m5_p510_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 510: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c5_p511<1){
+        if(c5_p511<1 && m5_p511_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 511: DEBE SELECCIONAR UNA OPCION");
             return false;
         }

@@ -130,56 +130,60 @@ public class FragmentP411P416 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        if(c4_p411<1){
+        if(c4_p411<1 && m4_p411_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 411: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c4_p412<1){
+        if(c4_p412<1 && m4_p412_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 412: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c4_p413<1){
+        if(c4_p413<1 && m4_p413_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 413: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c4_p414<1){
+        if(c4_p414<1 && m4_p414_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 414: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c4_p415_1==0 && c4_p415_2==0 && c4_p415_3==0 && c4_p415_4==0 && c4_p415_5==0 &&
-                c4_p415_6==0 && c4_p415_7==0 && c4_p415_8==0 && c4_p415_9==0){
-            mostrarMensaje("PREGUNTA 415: DEBE SELECCIONAR ALGUNA OPCION");
-            return false;
-        }
-        if(c4_p415_6==1){
-            if(c4_p415_o.trim().length()==0){
-                mostrarMensaje("PREGUNTA 415 - OPCION 6: DEBE ESPECIFICAR OTRO");
+        if(m4_p415_linearlayout.getVisibility()==View.VISIBLE){
+            if(c4_p415_1==0 && c4_p415_2==0 && c4_p415_3==0 && c4_p415_4==0 && c4_p415_5==0 &&
+                    c4_p415_6==0 && c4_p415_7==0 && c4_p415_8==0 && c4_p415_9==0){
+                mostrarMensaje("PREGUNTA 415: DEBE SELECCIONAR ALGUNA OPCION");
                 return false;
             }
+            if(c4_p415_6==1){
+                if(c4_p415_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 415 - OPCION 6: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+            }
         }
-        if(c4_p416_1<1){
-            mostrarMensaje("PREGUNTA 416-1: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c4_p416_2<1){
-            mostrarMensaje("PREGUNTA 416-2: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c4_p416_3<1){
-            mostrarMensaje("PREGUNTA 416-3: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c4_p416_4<1){
-            mostrarMensaje("PREGUNTA 416-4: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c4_p416_5<1){
-            mostrarMensaje("PREGUNTA 416-5: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c4_p416_6<1){
-            mostrarMensaje("PREGUNTA 416-6: DEBE SELECCIONAR UNA OPCION");
-            return false;
+        if(m4_p416_linearlayout.getVisibility()==View.VISIBLE){
+            if(c4_p416_1<1){
+                mostrarMensaje("PREGUNTA 416-1: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p416_2<1){
+                mostrarMensaje("PREGUNTA 416-2: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p416_3<1){
+                mostrarMensaje("PREGUNTA 416-3: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p416_4<1){
+                mostrarMensaje("PREGUNTA 416-4: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p416_5<1){
+                mostrarMensaje("PREGUNTA 416-5: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p416_6<1){
+                mostrarMensaje("PREGUNTA 416-6: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
         }
         return true;
     }
