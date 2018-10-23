@@ -1,7 +1,10 @@
 package com.example.ricindigus.empove2018.fragments.modulo4;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
@@ -21,6 +25,8 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP401P404 extends FragmentPagina {
+    String idVivienda, idHogar, idPersona, idInformante;
+    Context context;
 
     CheckBox c4_p401_1_CheckBox, c4_p401_2_CheckBox, c4_p401_3_CheckBox, c4_p401_4_CheckBox, c4_p401_5_CheckBox ;
     EditText c4_p401_o_EditText;
@@ -55,6 +61,15 @@ public class FragmentP401P404 extends FragmentPagina {
     private int c4_p403_14;
     private String c4_p403_o;
     private int c4_p404;
+
+    @SuppressLint("ValidFragment")
+    public FragmentP401P404(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
+        this.idVivienda = idVivienda;
+        this.idHogar = idHogar;
+        this.idPersona = idPersona;
+        this.idInformante = idInformante;
+        this.context = context;
+    }
 
     public FragmentP401P404() {
         // Required empty public constructor
@@ -104,7 +119,43 @@ public class FragmentP401P404 extends FragmentPagina {
 
     @Override
     public void guardarDatos() {
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo4_c4_p401_1,c4_p401_1+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p401_2,c4_p401_2+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p401_3,c4_p401_3+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p401_4,c4_p401_4+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p401_5,c4_p401_5+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p401_o,c4_p401_o);
+        contentValues.put(SQLConstantes.modulo4_c4_p402,c4_p402+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_1,c4_p403_1+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_2,c4_p403_2+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_3,c4_p403_3+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_4,c4_p403_4+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_5,c4_p403_5+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_6,c4_p403_6+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_7,c4_p403_7+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_8,c4_p403_8+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_9,c4_p403_9+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_10,c4_p403_10+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_11,c4_p403_11+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_12,c4_p403_12+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_13,c4_p403_13+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_14,c4_p403_14+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p403_o,c4_p403_o);
+        contentValues.put(SQLConstantes.modulo4_c4_p404,c4_p404+"");
 
+        if(data.existeElemento(getNombreTabla(),idPersona)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        }else{
+            contentValues.put(SQLConstantes.modulo4_idVivienda,idVivienda+"");
+            contentValues.put(SQLConstantes.modulo4_idHogar,idHogar+"");
+            contentValues.put(SQLConstantes.modulo4_id,idPersona+"");
+            contentValues.put(SQLConstantes.modulo4_idInformante,idInformante+"");
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.close();
     }
 
     @Override
@@ -141,33 +192,37 @@ public class FragmentP401P404 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        if(c4_p401_1==0 && c4_p401_2==0 && c4_p401_3==0 && c4_p401_4==0 ){
-            mostrarMensaje("PREGUNTA 401: DEBE SELECCIONAR ALGUNA OPCION");
-            return false;
-        }
-        if(c4_p401_4==1){
-            if(c4_p401_o.trim().length()==0){
-                mostrarMensaje("PREGUNTA 401 - OPCION 4: DEBE ESPECIFICAR OTRO");
+        if(m4_p401_linearlayout.getVisibility()==View.VISIBLE) {
+            if (c4_p401_1 == 0 && c4_p401_2 == 0 && c4_p401_3 == 0 && c4_p401_4 == 0) {
+                mostrarMensaje("PREGUNTA 401: DEBE SELECCIONAR ALGUNA OPCION");
                 return false;
             }
+            if (c4_p401_4 == 1) {
+                if (c4_p401_o.trim().length() == 0) {
+                    mostrarMensaje("PREGUNTA 401 - OPCION 4: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+            }
         }
-        if(c4_p402<1){
+        if(c4_p402<1 && m4_p402_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 402: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c4_p403_1==0 && c4_p403_2==0 && c4_p403_3==0 && c4_p403_4==0 && c4_p403_5==0 &&
-                c4_p403_6==0 && c4_p403_7==0 && c4_p403_8==0 && c4_p403_9==0 && c4_p403_10==0 &&
-                c4_p403_11==0 && c4_p403_12==0 && c4_p403_13==0 && c4_p403_14==0){
-            mostrarMensaje("PREGUNTA 403: DEBE SELECCIONAR ALGUNA OPCION");
-            return false;
-        }
-        if(c4_p403_14==1){
-            if(c4_p403_o.trim().length()==0){
-                mostrarMensaje("PREGUNTA 403 - OPCION 14: DEBE ESPECIFICAR OTRO");
+        if(m4_p403_linearlayout.getVisibility()==View.VISIBLE) {
+            if (c4_p403_1 == 0 && c4_p403_2 == 0 && c4_p403_3 == 0 && c4_p403_4 == 0 && c4_p403_5 == 0 &&
+                    c4_p403_6 == 0 && c4_p403_7 == 0 && c4_p403_8 == 0 && c4_p403_9 == 0 && c4_p403_10 == 0 &&
+                    c4_p403_11 == 0 && c4_p403_12 == 0 && c4_p403_13 == 0 && c4_p403_14 == 0) {
+                mostrarMensaje("PREGUNTA 403: DEBE SELECCIONAR ALGUNA OPCION");
                 return false;
             }
+            if (c4_p403_14 == 1) {
+                if (c4_p403_o.trim().length() == 0) {
+                    mostrarMensaje("PREGUNTA 403 - OPCION 14: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+            }
         }
-        if(c4_p404<1){
+        if(c4_p404<1 && m4_p404_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 404: DEBE SELECCIONAR UNA OPCION");
             return false;
         }

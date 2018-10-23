@@ -1,7 +1,10 @@
 package com.example.ricindigus.empove2018.fragments.modulo4;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +16,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
@@ -20,6 +24,8 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP405P407 extends FragmentPagina {
+    String idVivienda, idHogar, idPersona, idInformante;
+    Context context;
 
     CheckBox c4_p405_1_CheckBox, c4_p405_2_CheckBox, c4_p405_3_CheckBox, c4_p405_4_CheckBox, c4_p405_5_CheckBox,
             c4_p405_6_CheckBox, c4_p405_7_CheckBox;
@@ -63,6 +69,14 @@ public class FragmentP405P407 extends FragmentPagina {
     private int c4_p407_13;
     private String c4_p407_o;
 
+    @SuppressLint("ValidFragment")
+    public FragmentP405P407(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
+        this.idVivienda = idVivienda;
+        this.idHogar = idHogar;
+        this.idPersona = idPersona;
+        this.idInformante = idInformante;
+        this.context = context;
+    }
 
     public FragmentP405P407() {
         // Required empty public constructor
@@ -117,7 +131,50 @@ public class FragmentP405P407 extends FragmentPagina {
 
     @Override
     public void guardarDatos() {
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo4_c4_p405_1,c4_p405_1+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p405_2,c4_p405_2+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p405_3,c4_p405_3+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p405_4,c4_p405_4+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p405_5,c4_p405_5+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p405_6,c4_p405_6+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p405_7,c4_p405_7+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_1,c4_p406_1+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_2,c4_p406_2+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_3,c4_p406_3+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_4,c4_p406_4+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_5,c4_p406_5+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_6,c4_p406_6+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_7,c4_p406_7+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_8,c4_p406_8+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p406_o,c4_p406_o);
+        contentValues.put(SQLConstantes.modulo4_c4_p407_1,c4_p407_1+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_2,c4_p407_2+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_3,c4_p407_3+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_4,c4_p407_4+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_5,c4_p407_5+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_6,c4_p407_6+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_7,c4_p407_7+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_8,c4_p407_8+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_9,c4_p407_9+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_10,c4_p407_10+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_11,c4_p407_11+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_12,c4_p407_12+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_13,c4_p407_13+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p407_o,c4_p407_o);
 
+        if(data.existeElemento(getNombreTabla(),idPersona)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        }else{
+            contentValues.put(SQLConstantes.modulo4_idVivienda,idVivienda+"");
+            contentValues.put(SQLConstantes.modulo4_idHogar,idHogar+"");
+            contentValues.put(SQLConstantes.modulo4_id,idPersona+"");
+            contentValues.put(SQLConstantes.modulo4_idInformante,idInformante+"");
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.close();
     }
 
     @Override
