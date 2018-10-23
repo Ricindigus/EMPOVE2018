@@ -88,12 +88,14 @@
         <item name="android:textSize">@dimen/texto_small</item>
         <item name="android:textColor">@color/colorIcons</item>
     </style>
+
     <style name="TemaCabeceraVisitas" parent="AppTheme">
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/texto_small</item>
         <item name="android:textColor">@color/colorIcons</item>
     </style>
+
     <style name="TemaCabeceraP318" parent="AppTheme">
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
@@ -111,6 +113,7 @@
         <item name="android:layout_height">@dimen/altura_input_especifique</item>
         <item name="android:layout_width">@dimen/width_input_especifique</item>
     </style>
+
     <style name="EstiloRadioGroup" parent="AppTheme">
         <item name="android:orientation">vertical</item>
         <item name="android:layout_width">wrap_content</item>

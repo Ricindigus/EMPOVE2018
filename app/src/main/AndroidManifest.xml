@@ -62,14 +62,8 @@
             android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity
-            android:name=".activities.ViviendaActivity"
-            android:configChanges="screenSize|orientation|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".activities.admin.AdminActivity" />
         <activity android:name=".activities.admin.AdmMarcoActivity" />
-        <activity android:name=".activities.HogarActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo1;
 
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,15 +20,24 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
  */
 public class FragmentP108P113 extends FragmentPagina {
 
+    String idHogar;
+    Context contexto;
+
     RadioGroup c1_p108_RadioGroup, c1_p109_RadioGroup, c1_p110_RadioGroup, c1_p111_RadioGroup, c1_p112_RadioGroup;
     RadioGroup c1_p113_1_RadioGroup, c1_p113_2_RadioGroup, c1_p113_3_RadioGroup, c1_p113_4_RadioGroup, c1_p113_5_RadioGroup,
             c1_p113_6_RadioGroup, c1_p113_7_RadioGroup, c1_p113_8_RadioGroup, c1_p113_9_RadioGroup;
     EditText c1_p108_o_EditText, c1_p109_o_EditText, c1_p110_o_EditText, c1_p111_o_EditText, c1_p112_o_EditText;
     EditText c1_p113_7o_EditText, c1_p113_8o_EditText, c1_p113_9o_EditText;
+
     public FragmentP108P113() {
         // Required empty public constructor
     }
 
+    @SuppressLint("ValidFragment")
+    public FragmentP108P113(String idHogar,Context contexto) {
+        this.contexto = contexto;
+        this.idHogar = idHogar;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,7 +89,7 @@ public class FragmentP108P113 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        return false;
+        return true;
     }
 
     @Override

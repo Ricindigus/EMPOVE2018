@@ -1,6 +1,8 @@
 package com.example.ricindigus.empove2018.fragments.modulo2;
 
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
@@ -11,18 +13,29 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP201P206 extends Fragment {
+public class FragmentP201P206 extends FragmentPagina {
+
+    String idHogar;
+    Context contexto;
+
     TextInputEditText c2_p202_TextInputET, c2_p205_a_TextInputET, c2_p205_m_TextInputET;
     Spinner c2_p203_Spinner,c2_p206_Spinner;
     RadioGroup c2_p204_RadioGroup;
+
     public FragmentP201P206() {
         // Required empty public constructor
     }
 
+    @SuppressLint("ValidFragment")
+    public FragmentP201P206(String idHogar, Context contexto) {
+        this.idHogar = idHogar;
+        this.contexto = contexto;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,4 +51,28 @@ public class FragmentP201P206 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return true;
+    }
+
+    @Override
+    public String getNombreTabla() {
+        return null;
+    }
 }

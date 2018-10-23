@@ -1371,6 +1371,8 @@
     <string name="modulo_3_p318_boton">Guardar Persona</string>
     <string name="modulo_3_p309_titulo_agregar">AGREGAR RUTA</string>
     <string name="modulo_3_p318_titulo_agregar">AGREGAR PERSONA</string>
+    <string name="title_activity_vivienda">ViviendaActivity</string>
+    <string name="title_activity_hogar">HogarActivity</string>
 
 
 </resources>

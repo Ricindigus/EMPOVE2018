@@ -12,7 +12,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
@@ -60,7 +59,8 @@ import com.example.ricindigus.empove2018.fragments.modulo8.FragmentP809P812;
 import com.example.ricindigus.empove2018.fragments.modulo8.FragmentP813P816;
 import com.example.ricindigus.empove2018.fragments.modulo8.FragmentP817P820;
 import com.example.ricindigus.empove2018.fragments.modulo8.FragmentP821P823;
-import com.example.ricindigus.empove2018.util.TipoFragmentEncuestado;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.TipoFragment;
 
 public class EncuestaActivity extends AppCompatActivity{
     private ArrayList<String> listDataHeader;
@@ -68,11 +68,13 @@ public class EncuestaActivity extends AppCompatActivity{
     private HashMap<String, List<String>> listDataChild;
     private ExpandListAdapter listAdapter;
     private String idEncuestado;
-    private Button btnAtras;
-    private Button btnSiguiente;
+    private String idVivienda;
+    private TextView btnAtras;
+    private TextView btnSiguiente;
     int tFragment = 1;
     int numeroPaginasTotal = 38;
     TextView txtNombreSeccion;
+    FragmentPagina fragmentActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +82,15 @@ public class EncuestaActivity extends AppCompatActivity{
         setContentView(R.layout.activity_encuesta);
 
         txtNombreSeccion = (TextView) findViewById(R.id.textoNombreSeccion);
-        btnAtras = (Button) findViewById(R.id.btn_anterior);
-        btnSiguiente = (Button) findViewById(R.id.btn_siguiente);
-
+        btnAtras = (TextView) findViewById(R.id.boton_anterior);
+        btnSiguiente = (TextView) findViewById(R.id.boton_siguiente);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        String conglomerado = getIntent().getExtras().getString("idConglomerado");
+        idVivienda = getIntent().getExtras().getString("idVivienda");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("VIVIENDA " + idVivienda);
+        getSupportActionBar().setSubtitle("CONGLOMERADO" + conglomerado);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -95,44 +101,39 @@ public class EncuestaActivity extends AppCompatActivity{
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         enableExpandableList();
 
-
-        btnAtras.setOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (tFragment - 1 >= 1) {
-//                    do{
-//                        tFragment--;
-//                    }while(!validoSetearPagina(tFragment));
-//                    setFragment(tFragment, -1);
-//                }
-                ocultarTeclado(btnAtras);
-                if (tFragment - 1 >= 1) {
-                    tFragment--;
-                    setFragment(tFragment);
-
-                }
-
+                onBackPressed();
             }
         });
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (validarPagina(tFragment)) {
-//                    guardarPagina(tFragment);
-//                    do{
-//                        if (tFragment + 1 <= numeroPaginasTotal) tFragment++;
-//                        else tFragment = 1;
-//                    }while(!validoSetearPagina(tFragment));
-//                    setPagina(tFragment, 1);
-//                    setNombreSeccion(tFragment, 1);
-//                }
                 ocultarTeclado(btnSiguiente);
-                if (tFragment + 1 <= numeroPaginasTotal) tFragment++;
-                else tFragment = 1;
-                setFragment(tFragment);
+                if(fragmentActual.validarDatos()){
+                    fragmentActual.guardarDatos();
+                    tFragment++;
+                    if(tFragment == 2 || tFragment == 8 || tFragment == 38)btnSiguiente.setVisibility(View.GONE);
+                    setFragment(tFragment,1);
+                    btnAtras.setVisibility(View.VISIBLE);
+                }
             }
         });
+
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ocultarTeclado(btnAtras);
+                tFragment--;
+                if(tFragment == 1) btnAtras.setVisibility(View.GONE);
+                setFragment(tFragment,-1);
+                btnSiguiente.setVisibility(View.VISIBLE);
+            }
+        });
+
+        setFragment(TipoFragment.CARATULA,1);
     }
 
     @Override
@@ -150,197 +151,203 @@ public class EncuestaActivity extends AppCompatActivity{
         mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public void setFragment(int tipoFragment){
+    public void setFragment(int tipoFragment, int direccion){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
+        if(direccion != 0){
+            if(direccion > 0){
+                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+            }else{
+                fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+            }
+        }
         switch (tipoFragment){
-            case TipoFragmentEncuestado.CARATULA:
+            case TipoFragment.CARATULA:
                 txtNombreSeccion.setText("CARÁTULA");
                 FragmentCaratula fragmentCaratula = new FragmentCaratula(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula);
                 break;
-            case TipoFragmentEncuestado.HOGARES:
+            case TipoFragment.HOGARES:
                 txtNombreSeccion.setText("HOGARES");
                 FragmentHogares fragmentHogares = new FragmentHogares(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentHogares);
                 break;
-            case TipoFragmentEncuestado.VISITAS_ENCUESTADOR:
+            case TipoFragment.VISITAS_ENCUESTADOR:
                 txtNombreSeccion.setText("CONTROL DE VISITAS - ENCUESTADOR");
                 FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
                 break;
-            case TipoFragmentEncuestado.VISITAS_SUPERVISOR:
+            case TipoFragment.VISITAS_SUPERVISOR:
                 txtNombreSeccion.setText("CONTROL DE VISITAS - SUPERVISOR");
                 FragmentVisitasSupervisor fragmentVisitasSupervisor = new FragmentVisitasSupervisor(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasSupervisor);
                 break;
-            case TipoFragmentEncuestado.FUNCIONARIOS:
+            case TipoFragment.FUNCIONARIOS:
                 txtNombreSeccion.setText("FUNCIONARIOS DE LA ENCUESTA");
                 FragmentFuncionarios fragmentFuncionarios = new FragmentFuncionarios(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentFuncionarios);
                 break;
-            case TipoFragmentEncuestado.P101P107:
+            case TipoFragment.P101P107:
                 txtNombreSeccion.setText(getString(R.string.modulo_1_nombre));
                 FragmentP101P107 fragmentP101P107 = new FragmentP101P107();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP101P107);
                 break;
-            case TipoFragmentEncuestado.P108P113:
+            case TipoFragment.P108P113:
                 txtNombreSeccion.setText(getString(R.string.modulo_1_nombre));
                 FragmentP108P113 fragmentP108P113 = new FragmentP108P113();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP108P113);
                 break;
-            case TipoFragmentEncuestado.P201P206:
+            case TipoFragment.P201P206:
                 txtNombreSeccion.setText(getString(R.string.modulo_2_nombre));
                 FragmentP201P206 fragmentP201P206 = new FragmentP201P206();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP201P206);
                 break;
-            case TipoFragmentEncuestado.P301P305:
+            case TipoFragment.P301P305:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP301P305 fragmentP301P305 = new FragmentP301P305();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP301P305);
                 break;
-            case TipoFragmentEncuestado.P306P308:
+            case TipoFragment.P306P308:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP306P308 fragmentP306P308 = new FragmentP306P308();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP306P308);
                 break;
-            case TipoFragmentEncuestado.P309:
+            case TipoFragment.P309:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP309 fragmentP309 = new FragmentP309();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP309);
                 break;
-            case TipoFragmentEncuestado.P310P313:
+            case TipoFragment.P310P313:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP310P313 fragmentP310P313 = new FragmentP310P313();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP310P313);
                 break;
-            case TipoFragmentEncuestado.P314P317:
+            case TipoFragment.P314P317:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP314P317 fragmentP314P317 = new FragmentP314P317();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP314P317);
                 break;
-            case TipoFragmentEncuestado.P318:
+            case TipoFragment.P318:
                 txtNombreSeccion.setText(getString(R.string.modulo_3_nombre));
                 FragmentP318 fragmentP318 = new FragmentP318();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP318);
                 break;
-            case TipoFragmentEncuestado.P401P404:
+            case TipoFragment.P401P404:
                 txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
                 FragmentP401P404 fragmentP401P404 = new FragmentP401P404();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP401P404);
                 break;
-            case TipoFragmentEncuestado.P405P407:
+            case TipoFragment.P405P407:
                 txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
                 FragmentP405P407 fragmentP405P407 = new FragmentP405P407();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP405P407);
                 break;
-            case TipoFragmentEncuestado.P408P410:
+            case TipoFragment.P408P410:
                 txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
                 FragmentP408P410 fragmentP408P410 = new FragmentP408P410();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP408P410);
                 break;
-            case TipoFragmentEncuestado.P411P416:
+            case TipoFragment.P411P416:
                 txtNombreSeccion.setText(getString(R.string.modulo_4_nombre));
                 FragmentP411P416 fragmentP411P416 = new FragmentP411P416();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP411P416);
                 break;
-            case TipoFragmentEncuestado.P501P505:
+            case TipoFragment.P501P505:
                 txtNombreSeccion.setText(getString(R.string.modulo_5_nombre));
                 FragmentP501P505 fragmentP501P505 = new FragmentP501P505();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP501P505);
                 break;
-            case TipoFragmentEncuestado.P506P507:
+            case TipoFragment.P506P507:
                 txtNombreSeccion.setText(getString(R.string.modulo_5_nombre));
                 FragmentP506P507 fragmentP506P507 = new FragmentP506P507();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP506P507);
                 break;
-            case TipoFragmentEncuestado.P508P511:
+            case TipoFragment.P508P511:
                 txtNombreSeccion.setText(getString(R.string.modulo_5_nombre));
                 FragmentP508P511 fragmentP508P511 = new FragmentP508P511();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP508P511);
                 break;
-            case TipoFragmentEncuestado.P512P513:
+            case TipoFragment.P512P513:
                 txtNombreSeccion.setText(getString(R.string.modulo_5_nombre));
                 FragmentP512P513 fragmentP512P513 = new FragmentP512P513();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP512P513);
                 break;
-            case TipoFragmentEncuestado.P601P604:
+            case TipoFragment.P601P604:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP601P604 fragmentP601P604 = new FragmentP601P604();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP601P604);
                 break;
-            case TipoFragmentEncuestado.P605P608:
+            case TipoFragment.P605P608:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP605P608 fragmentP605P608 = new FragmentP605P608();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP605P608);
                 break;
-            case TipoFragmentEncuestado.P609P612:
+            case TipoFragment.P609P612:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP609P612 fragmentP609P612 = new FragmentP609P612();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP609P612);
                 break;
-            case TipoFragmentEncuestado.P613P618:
+            case TipoFragment.P613P618:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP613P618 fragmentP613P618 = new FragmentP613P618();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP613P618);
                 break;
-            case TipoFragmentEncuestado.P619P622:
+            case TipoFragment.P619P622:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP619P622 fragmentP619P622 = new FragmentP619P622();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP619P622);
                 break;
-            case TipoFragmentEncuestado.P623P625:
+            case TipoFragment.P623P625:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP623P625 fragmentP623P625 = new FragmentP623P625();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP623P625);
                 break;
-            case TipoFragmentEncuestado.P626P629:
+            case TipoFragment.P626P629:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP626P629 fragmentP626P629 = new FragmentP626P629();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP626P629);
                 break;
-            case TipoFragmentEncuestado.P630:
+            case TipoFragment.P630:
                 txtNombreSeccion.setText(getString(R.string.modulo_6_nombre));
                 FragmentP630 fragmentP630 = new FragmentP630();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP630);
                 break;
-            case TipoFragmentEncuestado.P701P705:
+            case TipoFragment.P701P705:
                 txtNombreSeccion.setText(getString(R.string.modulo_7_nombre));
                 FragmentP701P705 fragmentP701P705 = new FragmentP701P705();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP701P705);
                 break;
-            case TipoFragmentEncuestado.P706P709:
+            case TipoFragment.P706P709:
                 txtNombreSeccion.setText(getString(R.string.modulo_7_nombre));
                 FragmentP706P709 fragmentP706P709 = new FragmentP706P709();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP706P709);
                 break;
-            case TipoFragmentEncuestado.P801P804:
+            case TipoFragment.P801P804:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP801P804 fragmentP801P804 = new FragmentP801P804();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP801P804);
                 break;
-            case TipoFragmentEncuestado.P805P808:
+            case TipoFragment.P805P808:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP805P808 fragmentP805P808 = new FragmentP805P808();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP805P808);
                 break;
-            case TipoFragmentEncuestado.P809P812:
+            case TipoFragment.P809P812:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP809P812 fragmentP809P812 = new FragmentP809P812();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP809P812);
                 break;
-            case TipoFragmentEncuestado.P813P816:
+            case TipoFragment.P813P816:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP813P816 fragmentP813P816 = new FragmentP813P816();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP813P816);
                 break;
-            case TipoFragmentEncuestado.P817P820:
+            case TipoFragment.P817P820:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP817P820 fragmentP817P820 = new FragmentP817P820();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP817P820);
                 break;
-            case TipoFragmentEncuestado.P821P823:
+            case TipoFragment.P821P823:
                 txtNombreSeccion.setText(getString(R.string.modulo_8_nombre));
                 FragmentP821P823 fragmentP821P823 = new FragmentP821P823();
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP821P823);
@@ -364,68 +371,68 @@ public class EncuestaActivity extends AppCompatActivity{
                 switch (groupPosition){
                     case 0:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.CARATULA);tFragment = TipoFragmentEncuestado.CARATULA;break;
-                            case 1: setFragment(TipoFragmentEncuestado.HOGARES);tFragment = TipoFragmentEncuestado.HOGARES;break;
-                            case 2: setFragment(TipoFragmentEncuestado.VISITAS_ENCUESTADOR);tFragment = TipoFragmentEncuestado.VISITAS_ENCUESTADOR;break;
-                            case 3: setFragment(TipoFragmentEncuestado.VISITAS_SUPERVISOR);tFragment = TipoFragmentEncuestado.VISITAS_SUPERVISOR;break;
-                            case 4: setFragment(TipoFragmentEncuestado.FUNCIONARIOS);tFragment = TipoFragmentEncuestado.FUNCIONARIOS;break;
+                            case 0: setFragment(TipoFragment.CARATULA,0);tFragment = TipoFragment.CARATULA;break;
+                            case 1: setFragment(TipoFragment.HOGARES,0);tFragment = TipoFragment.HOGARES;break;
+                            case 2: setFragment(TipoFragment.VISITAS_ENCUESTADOR,0);tFragment = TipoFragment.VISITAS_ENCUESTADOR;break;
+                            case 3: setFragment(TipoFragment.VISITAS_SUPERVISOR,0);tFragment = TipoFragment.VISITAS_SUPERVISOR;break;
+                            case 4: setFragment(TipoFragment.FUNCIONARIOS,0);tFragment = TipoFragment.FUNCIONARIOS;break;
                         }break;
                     case 1:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.P101P107);tFragment = TipoFragmentEncuestado.P101P107;break;
-                            case 1: setFragment(TipoFragmentEncuestado.P108P113);tFragment = TipoFragmentEncuestado.P108P113;break;
+                            case 0: setFragment(TipoFragment.P101P107,0);tFragment = TipoFragment.P101P107;break;
+                            case 1: setFragment(TipoFragment.P108P113,0);tFragment = TipoFragment.P108P113;break;
                         }break;
                     case 2:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.P201P206);tFragment = TipoFragmentEncuestado.P201P206;break;
+                            case 0: setFragment(TipoFragment.P201P206,0);tFragment = TipoFragment.P201P206;break;
                         }break;
                     case 3:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.P301P305);tFragment = TipoFragmentEncuestado.P301P305;break;
-                            case 1: setFragment(TipoFragmentEncuestado.P306P308);tFragment = TipoFragmentEncuestado.P306P308;break;
-                            case 2: setFragment(TipoFragmentEncuestado.P309);tFragment = TipoFragmentEncuestado.P309;break;
-                            case 3: setFragment(TipoFragmentEncuestado.P310P313);tFragment = TipoFragmentEncuestado.P310P313;break;
-                            case 4: setFragment(TipoFragmentEncuestado.P314P317);tFragment = TipoFragmentEncuestado.P314P317;break;
-                            case 5: setFragment(TipoFragmentEncuestado.P318);tFragment = TipoFragmentEncuestado.P318;break;
+                            case 0: setFragment(TipoFragment.P301P305,0);tFragment = TipoFragment.P301P305;break;
+                            case 1: setFragment(TipoFragment.P306P308,0);tFragment = TipoFragment.P306P308;break;
+                            case 2: setFragment(TipoFragment.P309,0);tFragment = TipoFragment.P309;break;
+                            case 3: setFragment(TipoFragment.P310P313,0);tFragment = TipoFragment.P310P313;break;
+                            case 4: setFragment(TipoFragment.P314P317,0);tFragment = TipoFragment.P314P317;break;
+                            case 5: setFragment(TipoFragment.P318,0);tFragment = TipoFragment.P318;break;
                         }break;
                     case 4:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.P401P404);tFragment = TipoFragmentEncuestado.P401P404;break;
-                            case 1: setFragment(TipoFragmentEncuestado.P405P407);tFragment = TipoFragmentEncuestado.P405P407;break;
-                            case 2: setFragment(TipoFragmentEncuestado.P408P410);tFragment = TipoFragmentEncuestado.P408P410;break;
-                            case 3: setFragment(TipoFragmentEncuestado.P411P416);tFragment = TipoFragmentEncuestado.P411P416;break;
+                            case 0: setFragment(TipoFragment.P401P404,0);tFragment = TipoFragment.P401P404;break;
+                            case 1: setFragment(TipoFragment.P405P407,0);tFragment = TipoFragment.P405P407;break;
+                            case 2: setFragment(TipoFragment.P408P410,0);tFragment = TipoFragment.P408P410;break;
+                            case 3: setFragment(TipoFragment.P411P416,0);tFragment = TipoFragment.P411P416;break;
                         }break;
                     case 5:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.P501P505);tFragment = TipoFragmentEncuestado.P501P505;break;
-                            case 1: setFragment(TipoFragmentEncuestado.P506P507);tFragment = TipoFragmentEncuestado.P506P507;break;
-                            case 2: setFragment(TipoFragmentEncuestado.P508P511);tFragment = TipoFragmentEncuestado.P508P511;break;
-                            case 3: setFragment(TipoFragmentEncuestado.P512P513);tFragment = TipoFragmentEncuestado.P512P513;break;
+                            case 0: setFragment(TipoFragment.P501P505,0);tFragment = TipoFragment.P501P505;break;
+                            case 1: setFragment(TipoFragment.P506P507,0);tFragment = TipoFragment.P506P507;break;
+                            case 2: setFragment(TipoFragment.P508P511,0);tFragment = TipoFragment.P508P511;break;
+                            case 3: setFragment(TipoFragment.P512P513,0);tFragment = TipoFragment.P512P513;break;
                         }break;
                     case 6:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.P601P604);tFragment = TipoFragmentEncuestado.P501P505;break;
-                            case 1: setFragment(TipoFragmentEncuestado.P605P608);tFragment = TipoFragmentEncuestado.P506P507;break;
-                            case 2: setFragment(TipoFragmentEncuestado.P609P612);tFragment = TipoFragmentEncuestado.P508P511;break;
-                            case 3: setFragment(TipoFragmentEncuestado.P613P618);tFragment = TipoFragmentEncuestado.P512P513;break;
-                            case 4: setFragment(TipoFragmentEncuestado.P619P622);tFragment = TipoFragmentEncuestado.P512P513;break;
-                            case 5: setFragment(TipoFragmentEncuestado.P623P625);tFragment = TipoFragmentEncuestado.P512P513;break;
-                            case 6: setFragment(TipoFragmentEncuestado.P626P629);tFragment = TipoFragmentEncuestado.P626P629;break;
-                            case 7: setFragment(TipoFragmentEncuestado.P630);tFragment = TipoFragmentEncuestado.P630;break;
+                            case 0: setFragment(TipoFragment.P601P604,0);tFragment = TipoFragment.P501P505;break;
+                            case 1: setFragment(TipoFragment.P605P608,0);tFragment = TipoFragment.P506P507;break;
+                            case 2: setFragment(TipoFragment.P609P612,0);tFragment = TipoFragment.P508P511;break;
+                            case 3: setFragment(TipoFragment.P613P618,0);tFragment = TipoFragment.P512P513;break;
+                            case 4: setFragment(TipoFragment.P619P622,0);tFragment = TipoFragment.P512P513;break;
+                            case 5: setFragment(TipoFragment.P623P625,0);tFragment = TipoFragment.P512P513;break;
+                            case 6: setFragment(TipoFragment.P626P629,0);tFragment = TipoFragment.P626P629;break;
+                            case 7: setFragment(TipoFragment.P630,0);tFragment = TipoFragment.P630;break;
                         }break;
                     case 7:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.P701P705);tFragment = TipoFragmentEncuestado.P701P705;break;
-                            case 1: setFragment(TipoFragmentEncuestado.P706P709);tFragment = TipoFragmentEncuestado.P706P709;break;
+                            case 0: setFragment(TipoFragment.P701P705,0);tFragment = TipoFragment.P701P705;break;
+                            case 1: setFragment(TipoFragment.P706P709,0);tFragment = TipoFragment.P706P709;break;
                         }break;
                     case 8:
                         switch (childPosition){
-                            case 0: setFragment(TipoFragmentEncuestado.P801P804);tFragment = TipoFragmentEncuestado.P801P804;break;
-                            case 1: setFragment(TipoFragmentEncuestado.P805P808);tFragment = TipoFragmentEncuestado.P805P808;break;
-                            case 2: setFragment(TipoFragmentEncuestado.P809P812);tFragment = TipoFragmentEncuestado.P809P812;break;
-                            case 3: setFragment(TipoFragmentEncuestado.P813P816);tFragment = TipoFragmentEncuestado.P813P816;break;
-                            case 4: setFragment(TipoFragmentEncuestado.P817P820);tFragment = TipoFragmentEncuestado.P817P820;break;
-                            case 5: setFragment(TipoFragmentEncuestado.P821P823);tFragment = TipoFragmentEncuestado.P821P823;break;
+                            case 0: setFragment(TipoFragment.P801P804,0);tFragment = TipoFragment.P801P804;break;
+                            case 1: setFragment(TipoFragment.P805P808,0);tFragment = TipoFragment.P805P808;break;
+                            case 2: setFragment(TipoFragment.P809P812,0);tFragment = TipoFragment.P809P812;break;
+                            case 3: setFragment(TipoFragment.P813P816,0);tFragment = TipoFragment.P813P816;break;
+                            case 4: setFragment(TipoFragment.P817P820,0);tFragment = TipoFragment.P817P820;break;
+                            case 5: setFragment(TipoFragment.P821P823,0);tFragment = TipoFragment.P821P823;break;
                         }break;
                 }
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
