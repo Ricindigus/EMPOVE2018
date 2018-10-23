@@ -64,6 +64,17 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".activities.admin.AdminActivity" />
         <activity android:name=".activities.admin.AdmMarcoActivity" />
+        <activity
+            android:name=".activities.ViviendaActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/title_activity_vivienda"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activities.HogarActivity"
+            android:label="@string/title_activity_hogar"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

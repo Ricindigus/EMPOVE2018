@@ -293,6 +293,7 @@ public class Data {
             cursor = sqLiteDatabase.query(SQLConstantes.tablahogares,
                     null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
             if (cursor.getCount() == 1){
+                cursor.moveToFirst();
                 hogar = new Hogar();
                 hogar.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_id)));
                 hogar.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_id_vivienda)));

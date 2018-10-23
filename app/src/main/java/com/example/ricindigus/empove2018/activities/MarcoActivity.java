@@ -69,7 +69,7 @@ public class MarcoActivity extends AppCompatActivity {
         marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getApplicationContext(), EncuestaActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
                 intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
                 intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
                 startActivity(intent);
@@ -149,7 +149,7 @@ public class MarcoActivity extends AppCompatActivity {
         marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                Intent intent = new Intent(getApplicationContext(), EncuestaActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
                 intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
                 intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
                 startActivity(intent);
@@ -167,7 +167,7 @@ public class MarcoActivity extends AppCompatActivity {
         marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getApplicationContext(), EncuestaActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
                 intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
                 intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
                 startActivity(intent);
