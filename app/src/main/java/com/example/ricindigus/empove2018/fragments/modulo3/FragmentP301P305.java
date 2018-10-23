@@ -21,7 +21,9 @@ import com.example.ricindigus.empove2018.R;
 import java.util.Calendar;
 
 public class FragmentP301P305 extends Fragment {
+    String idEncuestado;
     Context context;
+
     private static final String CERO = "0";
     public final Calendar c = Calendar.getInstance();
     final int mes = c.get(Calendar.MONTH);
@@ -35,6 +37,10 @@ public class FragmentP301P305 extends Fragment {
         // Required empty public constructor
     }
 
+    public FragmentP301P305(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
+        this.context = context;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

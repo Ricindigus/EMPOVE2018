@@ -22,11 +22,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.activities.EncuestaActivity;
 import com.example.ricindigus.empove2018.adapters.HogarAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.TipoFragment;
 
 import java.util.ArrayList;
 
@@ -132,9 +134,11 @@ public class FragmentHogares extends FragmentPagina {
         hogarAdapter = new HogarAdapter(hogares, new HogarAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(context, Hogar1Activity.class);
-                intent.putExtra("idHogar",hogares.get(position).get_id());
-                startActivity(intent);
+                EncuestaActivity encuestaActivity = (EncuestaActivity) getActivity();
+                encuestaActivity.setFragmentFromOtherFragment(TipoFragment.VISITAS_ENCUESTADOR,hogares.get(position).get_id(),"");
+//                Intent intent = new Intent(context, Hogar1Activity.class);
+//                intent.putExtra("idHogar",hogares.get(position).get_id());
+//                startActivity(intent);
             }
         });
         hogaresRecyclerView.setAdapter(hogarAdapter);

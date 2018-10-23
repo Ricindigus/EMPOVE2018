@@ -1,6 +1,7 @@
 package com.example.ricindigus.empove2018.fragments.modulo3;
 
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import java.util.Calendar;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP306P308 extends Fragment {
+    String idEncuestado;
     Context context;
     private static final String CERO = "0";
     public final Calendar c = Calendar.getInstance();
@@ -29,10 +31,16 @@ public class FragmentP306P308 extends Fragment {
 
     TextView tv_fecha_dia_307, tv_fecha_mes_307, tv_fecha_anio_307;
     Button c3_p307_d_f_Button;
+
     public FragmentP306P308() {
         // Required empty public constructor
     }
 
+    @SuppressLint("ValidFragment")
+    public FragmentP306P308(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
+        this.context = context;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
