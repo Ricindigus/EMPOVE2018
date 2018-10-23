@@ -83,7 +83,7 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         setContentView(R.layout.activity_encuesta);
         btnAtras = (TextView) findViewById(R.id.boton_anterior);
         btnSiguiente = (TextView) findViewById(R.id.boton_siguiente);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         String conglomerado = getIntent().getExtras().getString("idConglomerado");
         idVivienda = getIntent().getExtras().getString("idVivienda");
@@ -99,12 +99,6 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         enableExpandableList();
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,9 +107,8 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
                     tFragment++;
-                    if(tFragment == 2 || tFragment == 8 || tFragment == 38)btnSiguiente.setVisibility(View.GONE);
-                    setFragment(tFragment,1);
                     btnAtras.setVisibility(View.VISIBLE);
+                    setFragment(tFragment,1);
                 }
             }
         });
@@ -125,9 +118,9 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
             public void onClick(View v) {
                 ocultarTeclado(btnAtras);
                 tFragment--;
-                if(tFragment == 1) btnAtras.setVisibility(View.GONE);
-                setFragment(tFragment,-1);
                 btnSiguiente.setVisibility(View.VISIBLE);
+                setFragment(tFragment,-1);
+
             }
         });
 
@@ -161,11 +154,13 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         }
         switch (tipoFragment){
             case TipoFragment.CARATULA:
+                btnAtras.setVisibility(View.GONE);
                 FragmentCaratula fragmentCaratula = new FragmentCaratula(idVivienda,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula);
                 fragmentActual = fragmentCaratula;
                 break;
             case TipoFragment.HOGARES:
+                btnSiguiente.setVisibility(View.GONE);
                 FragmentHogares fragmentHogares = new FragmentHogares(idVivienda,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentHogares);
                 fragmentActual = fragmentHogares;
@@ -196,6 +191,7 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 fragmentActual = fragmentP108P113;
                 break;
             case TipoFragment.P201P206:
+                btnSiguiente.setVisibility(View.GONE);
                 FragmentP201P206 fragmentP201P206 = new FragmentP201P206(idHogar,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP201P206);
                 fragmentActual = fragmentP201P206;
