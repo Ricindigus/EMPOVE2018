@@ -1,7 +1,10 @@
 package com.example.ricindigus.empove2018.fragments.modulo4;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
@@ -21,6 +25,8 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP411P416 extends FragmentPagina {
+    String idVivienda, idHogar, idPersona, idInformante;
+    Context context;
 
     RadioGroup c4_p411_RadioGroup, c4_p412_RadioGroup, c4_p413_RadioGroup, c4_p414_RadioGroup;
     CheckBox c4_p415_1_CheckBox, c4_p415_2_CheckBox, c4_p415_3_CheckBox, c4_p415_4_CheckBox, c4_p415_5_CheckBox,
@@ -52,6 +58,14 @@ public class FragmentP411P416 extends FragmentPagina {
     private int c4_p416_5;
     private int c4_p416_6;
 
+    @SuppressLint("ValidFragment")
+    public FragmentP411P416(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
+        this.idVivienda = idVivienda;
+        this.idHogar = idHogar;
+        this.idPersona = idPersona;
+        this.idInformante = idInformante;
+        this.context = context;
+    }
 
     public FragmentP411P416() {
         // Required empty public constructor
@@ -96,7 +110,39 @@ public class FragmentP411P416 extends FragmentPagina {
 
     @Override
     public void guardarDatos() {
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo4_c4_p411,c4_p411+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p412,c4_p412+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p413,c4_p413+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p414,c4_p414+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_1,c4_p415_1+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_2,c4_p415_2+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_3,c4_p415_3+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_4,c4_p415_4+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_5,c4_p415_5+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_6,c4_p415_6+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_7,c4_p415_7+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_8,c4_p415_8+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p415_o,c4_p415_o);
+        contentValues.put(SQLConstantes.modulo4_c4_p416_1,c4_p416_1+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_2,c4_p416_2+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_3,c4_p416_3+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_4,c4_p416_4+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_5,c4_p416_5+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_6,c4_p416_6+"");
 
+        if(data.existeElemento(getNombreTabla(),idPersona)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        }else{
+            contentValues.put(SQLConstantes.modulo4_idVivienda,idVivienda+"");
+            contentValues.put(SQLConstantes.modulo4_idHogar,idHogar+"");
+            contentValues.put(SQLConstantes.modulo4_id,idPersona+"");
+            contentValues.put(SQLConstantes.modulo4_idInformante,idInformante+"");
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.close();
     }
 
     @Override
