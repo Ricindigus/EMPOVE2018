@@ -6,7 +6,15 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.hogar.FragmentVisitasEncuestador">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/texto_medium"
+        android:textColor="@color/colorIcons"
+        android:background="@color/colorPrimary"
+        android:text="CONTROL DE VISITAS - ENCUESTADOR"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

@@ -4,84 +4,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="@dimen/margen_medium"
     android:orientation="vertical"
     tools:context=".fragments.modulo2.FragmentP201P206">
-
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:gravity="center"
-        android:textSize="@dimen/texto_small"
-        android:theme="@style/TemaTextoPregunta"
-        android:text="@string/modulo_2_p202_pregunta_miembros"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="@dimen/texto_small"
-        android:layout_marginBottom="@dimen/margen_small"
-        android:text="@string/modulo_2_p202_ind"/>
+        android:textStyle="bold"
+        android:textSize="@dimen/texto_medium"
+        android:textColor="@color/colorIcons"
+        android:background="@color/colorPrimary"
+        android:text="@string/modulo_2_nombre"/>
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margen_small"
         android:padding="@dimen/margen_small"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/marco_pregunta"
+        android:orientation="vertical">
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="@dimen/longitud_input_n"
-            android:theme="@style/TemaCabeceraP309"
-            android:text="@string/modulo_2_cab_nro"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:theme="@style/TemaCabeceraP309"
-            android:text="@string/modulo_2_cab_nombre"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:theme="@style/TemaCabeceraP309"
-            android:text="@string/modulo_2_cab_parentesco"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:theme="@style/TemaCabeceraP309"
-            android:text="@string/modulo_2_cab_sexo"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:theme="@style/TemaCabeceraP309"
-            android:text="@string/modulo_2_cab_edad"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:theme="@style/TemaCabeceraP309"
-            android:text="@string/modulo_2_cab_estado_civil"/>
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/margen_small">
-        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            app:backgroundTint="@color/colorPrimary"
-            android:layout_marginRight="@dimen/margen_small"
+            android:gravity="center"
+            android:textSize="@dimen/texto_small"
+            android:theme="@style/TemaTextoPregunta"
+            android:text="@string/modulo_2_p202_pregunta_miembros"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/texto_small"
             android:layout_marginBottom="@dimen/margen_small"
-            android:src="@drawable/ic_person_add"
-             />
-    </RelativeLayout>
+            android:text="@string/modulo_2_p202_ind"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="@dimen/longitud_input_n"
+                android:theme="@style/TemaCabeceraP309"
+                android:text="@string/modulo_2_cab_nro"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:theme="@style/TemaCabeceraP309"
+                android:text="@string/modulo_2_cab_nombre"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:theme="@style/TemaCabeceraP309"
+                android:text="@string/modulo_2_cab_parentesco"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:theme="@style/TemaCabeceraP309"
+                android:text="@string/modulo_2_cab_sexo"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:theme="@style/TemaCabeceraP309"
+                android:text="@string/modulo_2_cab_edad"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:theme="@style/TemaCabeceraP309"
+                android:text="@string/modulo_2_cab_estado_civil"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_small">
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                app:backgroundTint="@color/colorPrimary"
+                android:layout_marginRight="@dimen/margen_small"
+                android:layout_marginBottom="@dimen/margen_small"
+                android:src="@drawable/ic_person_add"
+                />
+        </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>
 

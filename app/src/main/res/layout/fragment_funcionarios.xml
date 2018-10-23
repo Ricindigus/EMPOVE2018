@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragments.hogar.FragmentFuncionarios">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/texto_medium"
+        android:textColor="@color/colorIcons"
+        android:background="@color/colorPrimary"
+        android:text="FUNCIONARIOS DE LA ENCUESTA"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
