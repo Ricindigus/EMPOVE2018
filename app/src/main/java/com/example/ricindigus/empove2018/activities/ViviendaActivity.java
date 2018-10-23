@@ -11,8 +11,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
-import com.example.ricindigus.empove2018.fragments.generales.FragmentCaratula;
-import com.example.ricindigus.empove2018.fragments.generales.FragmentHogares;
+import com.example.ricindigus.empove2018.fragments.vivienda.FragmentCaratula;
+import com.example.ricindigus.empove2018.fragments.vivienda.FragmentHogares;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.TipoFragmentEncuestado;
 import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
