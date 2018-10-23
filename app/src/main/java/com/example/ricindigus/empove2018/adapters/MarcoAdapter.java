@@ -10,22 +10,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.example.ricindigus.empove2018.modelo.pojos.Vivienda;
+
+import com.example.ricindigus.empove2018.modelo.pojos.ItemMarco;
+
 import java.util.ArrayList;
 import com.example.ricindigus.empove2018.R;
 
 
 
-public class ViviendaAdapter extends RecyclerView.Adapter<ViviendaAdapter.ViewHolder>{
-    ArrayList<Vivienda> viviendas;
+public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
+    ArrayList<ItemMarco> itemMarcos;
     OnItemClickListener onItemClickListener;
 
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
     }
 
-    public ViviendaAdapter(ArrayList<Vivienda> viviendas, OnItemClickListener onItemClickListener) {
-        this.viviendas = viviendas;
+    public MarcoAdapter(ArrayList<ItemMarco> itemMarcos, OnItemClickListener onItemClickListener) {
+        this.itemMarcos = itemMarcos;
         this.onItemClickListener = onItemClickListener;
     }
 
@@ -38,12 +40,12 @@ public class ViviendaAdapter extends RecyclerView.Adapter<ViviendaAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.txtId.setText(String.valueOf(viviendas.get(position).get_id()));
-        holder.txtAnio.setText(String.valueOf(viviendas.get(position).getAnio()));
-        holder.txtMes.setText(String.valueOf(viviendas.get(position).getMes()));
-        holder.txtPeriodo.setText(String.valueOf(viviendas.get(position).getPeriodo()));
-        holder.txtConglomerado.setText(String.valueOf(viviendas.get(position).getConglomerado()));
-        holder.txtNroOrden.setText(String.valueOf(viviendas.get(position).getNorden()));
+        holder.txtId.setText(String.valueOf(itemMarcos.get(position).get_id()));
+        holder.txtAnio.setText(String.valueOf(itemMarcos.get(position).getAnio()));
+        holder.txtMes.setText(String.valueOf(itemMarcos.get(position).getMes()));
+        holder.txtPeriodo.setText(String.valueOf(itemMarcos.get(position).getPeriodo()));
+        holder.txtConglomerado.setText(String.valueOf(itemMarcos.get(position).getConglomerado()));
+        holder.txtNroOrden.setText(String.valueOf(itemMarcos.get(position).getNorden()));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +56,7 @@ public class ViviendaAdapter extends RecyclerView.Adapter<ViviendaAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return viviendas.size();
+        return itemMarcos.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

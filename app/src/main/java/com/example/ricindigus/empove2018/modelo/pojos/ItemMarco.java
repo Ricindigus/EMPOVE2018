@@ -1,6 +1,6 @@
 package com.example.ricindigus.empove2018.modelo.pojos;
 
-public class Vivienda {
+public class ItemMarco {
     private int _id;
     private String anio;
     private String mes;
@@ -8,7 +8,7 @@ public class Vivienda {
     private String conglomerado;
     private String norden;
 
-    public Vivienda() {
+    public ItemMarco() {
     }
 
 

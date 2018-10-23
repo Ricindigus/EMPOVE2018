@@ -119,8 +119,8 @@ public class FragmentCaratula extends FragmentPagina {
         contentValues.put(SQLConstantes.caratula_km,km);
         contentValues.put(SQLConstantes.caratula_telefono,telefono);
         contentValues.put(SQLConstantes.caratula_t_hogar,t_hogar);
-        if(data.existeModulo(getNombreTabla(),idVivienda)){
-            data.actualizarModulo(getNombreTabla(),contentValues,idVivienda);
+        if(data.existeElemento(getNombreTabla(),idVivienda)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idVivienda);
         }else{
             contentValues.put(SQLConstantes.caratula_id,idVivienda);
             contentValues.put(SQLConstantes.caratula_nom_dep,nom_dep);
@@ -131,14 +131,14 @@ public class FragmentCaratula extends FragmentPagina {
             contentValues.put(SQLConstantes.caratula_manzana_id,manzana_id);
             contentValues.put(SQLConstantes.caratula_aer,aer);
             contentValues.put(SQLConstantes.caratula_vivienda,vivienda);
-            data.insertarModulo(getNombreTabla(),contentValues);
+            data.insertarElemento(getNombreTabla(),contentValues);
         }
         data.close();
     }
 
     @Override
     public void llenarVariables() {
-        nom_dep = nomvia_EditText.getText().toString();
+        nom_dep = nom_dep_TextView.getText().toString();
         nom_prov = nom_prov_TextView.getText().toString();
         nom_dist = nom_dist_TextView.getText().toString();
         nom_ccpp = nom_ccpp_TextView.getText().toString();
@@ -164,7 +164,7 @@ public class FragmentCaratula extends FragmentPagina {
         Caratula caratula = null;
         Data data =  new Data(context);
         data.open();
-        if(data.existeModulo(getNombreTabla(),idVivienda)){
+        if(data.existeElemento(getNombreTabla(),idVivienda)){
             caratula = data.getCaratula(idVivienda);
             nom_dep_TextView.setText(caratula.getNom_dep());
             nom_prov_TextView.setText(caratula.getNom_prov());

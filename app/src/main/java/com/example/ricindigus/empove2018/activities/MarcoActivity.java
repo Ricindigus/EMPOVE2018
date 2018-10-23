@@ -1,14 +1,11 @@
 package com.example.ricindigus.empove2018.activities;
 
-import android.animation.ArgbEvaluator;
-import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
@@ -17,21 +14,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ricindigus.empove2018.R;
-import com.example.ricindigus.empove2018.adapters.ViviendaAdapter;
+import com.example.ricindigus.empove2018.adapters.MarcoAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
-import com.example.ricindigus.empove2018.modelo.pojos.Vivienda;
+import com.example.ricindigus.empove2018.modelo.pojos.ItemMarco;
 
 import java.util.ArrayList;
 
 public class MarcoActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private ViviendaAdapter viviendaAdapter;
-    private ArrayList<Vivienda> viviendas;
+    private MarcoAdapter marcoAdapter;
+    private ArrayList<ItemMarco> itemMarcos;
     private ArrayList<String> anios;
     private ArrayList<String> meses;
     private ArrayList<String> periodos;
@@ -70,16 +66,16 @@ public class MarcoActivity extends AppCompatActivity {
         cargarSpinerMeses(meses);
         cargarSpinerPeriodos(periodos);
         cargarSpinerConglomerados(conglomerados);
-        viviendaAdapter= new ViviendaAdapter(viviendas, new ViviendaAdapter.OnItemClickListener() {
+        marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
-                intent.putExtra("idVivienda",viviendas.get(position).get_id()+"");
-                intent.putExtra("idConglomerado",viviendas.get(position).getConglomerado()+"");
+                intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
+                intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
                 startActivity(intent);
             }
         });
-        recyclerView.setAdapter(viviendaAdapter);
+        recyclerView.setAdapter(marcoAdapter);
 
 
 
@@ -145,21 +141,21 @@ public class MarcoActivity extends AppCompatActivity {
     }
 
     public void obtenerMarcoFiltrado(String anio,String mes, String periodo, String conglomerado){
-        viviendas = new ArrayList<>();
+        itemMarcos = new ArrayList<>();
         Data data = new Data(MarcoActivity.this);
         data.open();
-        viviendas = data.getAllViviendasFiltrado(Integer.parseInt(anio), Integer.parseInt(mes),Integer.parseInt(periodo),Integer.parseInt(conglomerado));
+        itemMarcos = data.getListMarcoFiltrado(Integer.parseInt(anio), Integer.parseInt(mes),Integer.parseInt(periodo),Integer.parseInt(conglomerado));
         data.close();
-        viviendaAdapter= new ViviendaAdapter(viviendas, new ViviendaAdapter.OnItemClickListener() {
+        marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
-                intent.putExtra("idVivienda",viviendas.get(position).get_id()+"");
-                intent.putExtra("idConglomerado",viviendas.get(position).getConglomerado()+"");
+                intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
+                intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
                 startActivity(intent);
             }
         });
-        recyclerView.setAdapter(viviendaAdapter);
+        recyclerView.setAdapter(marcoAdapter);
     }
 
     public void obtenerMarcoTotal(){
@@ -168,25 +164,25 @@ public class MarcoActivity extends AppCompatActivity {
         cargarSpinerMeses(meses);
         cargarSpinerPeriodos(periodos);
         cargarSpinerConglomerados(conglomerados);
-        viviendaAdapter= new ViviendaAdapter(viviendas, new ViviendaAdapter.OnItemClickListener() {
+        marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
-                intent.putExtra("idVivienda",viviendas.get(position).get_id()+"");
-                intent.putExtra("idConglomerado",viviendas.get(position).getConglomerado()+"");
+                intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
+                intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
                 startActivity(intent);
             }
         });
-        recyclerView.setAdapter(viviendaAdapter);
+        recyclerView.setAdapter(marcoAdapter);
     }
 
     public void obtenerMeses(int anio){
         meses = new ArrayList<String>();
         meses.add("Seleccione");
-        for(Vivienda vivienda : viviendas){
-            if(Integer.parseInt(vivienda.getAnio())== anio){
-                if(!meses.contains(String.valueOf(vivienda.getMes()))){
-                    meses.add(String.valueOf(vivienda.getMes()));
+        for(ItemMarco itemMarco : itemMarcos){
+            if(Integer.parseInt(itemMarco.getAnio())== anio){
+                if(!meses.contains(String.valueOf(itemMarco.getMes()))){
+                    meses.add(String.valueOf(itemMarco.getMes()));
                 }
             }
         }
@@ -194,10 +190,10 @@ public class MarcoActivity extends AppCompatActivity {
     public void obtenerPeriodos(int mes){
         periodos = new ArrayList<String>();
         periodos.add("Seleccione");
-        for(Vivienda vivienda : viviendas){
-            if(Integer.parseInt(vivienda.getMes())== mes){
-                if(!periodos.contains(String.valueOf(vivienda.getPeriodo()))){
-                    periodos.add(String.valueOf(vivienda.getPeriodo()));
+        for(ItemMarco itemMarco : itemMarcos){
+            if(Integer.parseInt(itemMarco.getMes())== mes){
+                if(!periodos.contains(String.valueOf(itemMarco.getPeriodo()))){
+                    periodos.add(String.valueOf(itemMarco.getPeriodo()));
                 }
             }
         }
@@ -205,10 +201,10 @@ public class MarcoActivity extends AppCompatActivity {
     public void obtenerConglomerados(int periodo){
         conglomerados = new ArrayList<String>();
         conglomerados.add("Seleccione");
-        for(Vivienda vivienda : viviendas){
-            if(Integer.parseInt(vivienda.getPeriodo())== periodo){
-                if(!conglomerados.contains(String.valueOf(vivienda.getConglomerado()))){
-                    conglomerados.add(String.valueOf(vivienda.getConglomerado()));
+        for(ItemMarco itemMarco : itemMarcos){
+            if(Integer.parseInt(itemMarco.getPeriodo())== periodo){
+                if(!conglomerados.contains(String.valueOf(itemMarco.getConglomerado()))){
+                    conglomerados.add(String.valueOf(itemMarco.getConglomerado()));
                 }
             }
         }
@@ -286,16 +282,16 @@ public class MarcoActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
     private void inicializarDatos() {
-        viviendas = new ArrayList<Vivienda>();
+        itemMarcos = new ArrayList<ItemMarco>();
         anios = new ArrayList<String>();
         meses = new ArrayList<String>();
         periodos = new ArrayList<String>();
         conglomerados = new ArrayList<String>();
         data = new Data(this);
         data.open();
-        viviendas = data.getAllViviendas(idUsuario);
+        itemMarcos = data.getListMarco(idUsuario);
         data.close();
         anios.add("Seleccione");
-        if (viviendas.size()>0) anios.add(String.valueOf(viviendas.get(0).getAnio()));
+        if (itemMarcos.size()>0) anios.add(String.valueOf(itemMarcos.get(0).getAnio()));
     }
 }

@@ -8,10 +8,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
+import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.ItemMarco;
 import com.example.ricindigus.empove2018.modelo.pojos.Marco;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo1;
 import com.example.ricindigus.empove2018.modelo.pojos.Usuario;
-import com.example.ricindigus.empove2018.modelo.pojos.Vivienda;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -213,31 +214,31 @@ public class Data {
         return marco;
     }
 
-    public ArrayList<Vivienda> getAllViviendas(String idUsuario){
-        ArrayList<Vivienda>  viviendas = new ArrayList<>();
+    public ArrayList<ItemMarco> getListMarco(String idUsuario){
+        ArrayList<ItemMarco> itemMarcos = new ArrayList<>();
         String[] whereArgs = new String[]{String.valueOf(idUsuario)};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamarco,
                     null,SQLConstantes.WHERE_CLAUSE_USUARIO_ID,whereArgs,null,null,null);
             while (cursor.moveToNext()){
-                Vivienda vivienda = new Vivienda();
-                vivienda.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
-                vivienda.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
-                vivienda.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
-                vivienda.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
-                vivienda.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
-                vivienda.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
-                viviendas.add(vivienda);
+                ItemMarco itemMarco = new ItemMarco();
+                itemMarco.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
+                itemMarco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
+                itemMarco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
+                itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
+                itemMarco.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
+                itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                itemMarcos.add(itemMarco);
             }
         }finally{
             if(cursor != null) cursor.close();
         }
-        return viviendas;
+        return itemMarcos;
     }
 
-    public ArrayList<Vivienda> getAllViviendasFiltrado(int anio, int mes, int periodo, int conglomerado){
-        ArrayList<Vivienda>  viviendas = new ArrayList<>();
+    public ArrayList<ItemMarco> getListMarcoFiltrado(int anio, int mes, int periodo, int conglomerado){
+        ArrayList<ItemMarco> itemMarcos = new ArrayList<>();
         String[] whereArgs = new String[]{String.valueOf(anio), String.valueOf(mes),String.valueOf(periodo),String.valueOf(conglomerado)};
         Cursor cursor = null;
         try{
@@ -247,19 +248,62 @@ public class Data {
                             SQLConstantes.WHERE_CLAUSE_PERIODO + " AND " +
                             SQLConstantes.WHERE_CLAUSE_CONGLOMERADO,whereArgs,null,null,null);
             while (cursor.moveToNext()){
-                Vivienda vivienda = new Vivienda();
-                vivienda.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
-                vivienda.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
-                vivienda.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
-                vivienda.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
-                vivienda.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
-                vivienda.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
-                viviendas.add(vivienda);
+                ItemMarco itemMarco = new ItemMarco();
+                itemMarco.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
+                itemMarco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
+                itemMarco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
+                itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
+                itemMarco.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
+                itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                itemMarcos.add(itemMarco);
             }
         }finally{
             if(cursor != null) cursor.close();
         }
-        return viviendas;
+        return itemMarcos;
+    }
+
+    public ArrayList<Hogar> getAllHogaresVivienda(String idVivienda){
+        ArrayList<Hogar> hogars = new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(idVivienda)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablahogares,
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                Hogar hogar = new Hogar();
+                hogar.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_id)));
+                hogar.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_id_vivienda)));
+                hogar.setNom_ape(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nom_ape)));
+                hogar.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_estado)));
+                hogar.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_numero)));
+                hogars.add(hogar);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return hogars;
+    }
+
+    public Hogar getHogar(String id){
+        Hogar hogar = null;
+        String[] whereArgs = new String[]{String.valueOf(id)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablahogares,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if (cursor.getCount() == 1){
+                hogar = new Hogar();
+                hogar.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_id)));
+                hogar.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_id_vivienda)));
+                hogar.setNom_ape(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nom_ape)));
+                hogar.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_estado)));
+                hogar.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_numero)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return hogar;
     }
 
     public Usuario getUsuario(String nombre){
@@ -282,11 +326,11 @@ public class Data {
         return usuario;
     }
 
-    public void insertarModulo(String nombreTabla, ContentValues contentValues){
+    public void insertarElemento(String nombreTabla, ContentValues contentValues){
         sqLiteDatabase.insert(nombreTabla,null,contentValues);
     }
 
-    public boolean existeModulo(String nombreTabla,String idEncuestado){
+    public boolean existeElemento(String nombreTabla, String idEncuestado){
         boolean existe = false;
         String[] whereArgs = new String[]{idEncuestado};
         Cursor cursor = null;
@@ -301,9 +345,44 @@ public class Data {
         return existe;
     }
 
-    public void actualizarModulo(String nombreTabla, ContentValues contentValues, String idEncuestado){
+    public void actualizarElemento(String nombreTabla, ContentValues contentValues, String idEncuestado){
         String[] whereArgs = new String[]{idEncuestado};
         sqLiteDatabase.update(nombreTabla,contentValues,SQLConstantes.WHERE_CLAUSE_ID,whereArgs);
+    }
+
+    public String[] getValores(String nombreTabla, String[] variables, String id){
+        String[] valores = new String[variables.length];
+        String[] whereArgs = new String[]{id};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(nombreTabla, variables,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                for (int i = 0; i < variables.length; i++) {
+                    valores[i] = cursor.getString(cursor.getColumnIndex(variables[i]));
+                }
+            }
+        }finally {
+            if(cursor != null)cursor.close();
+        }
+        return valores;
+    }
+
+    public String getValor(String nombreTabla, String variable, String idEmpresa){
+        String valor = "";
+        String[] whereArgs = new String[]{idEmpresa};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(nombreTabla, new String[]{variable},SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                valor = cursor.getString(cursor.getColumnIndex(variable));
+            }
+        }finally {
+            if(cursor != null)cursor.close();
+        }
+        if(valor == null) valor = "";
+        return valor;
     }
 
     /**

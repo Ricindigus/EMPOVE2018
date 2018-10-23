@@ -30,6 +30,7 @@
                 android:textColor="@color/colorIcons"
                 android:textSize="@dimen/texto_small"
                 android:padding="@dimen/margen_small"
+                android:layout_marginLeft="@dimen/margen_small"
                 android:layout_height="match_parent"
                 android:visibility="gone"
                 android:text="Anterior"/>
@@ -45,6 +46,7 @@
                 android:textSize="@dimen/texto_small"
                 android:layout_height="match_parent"
                 android:text="Siguiente"
+                android:layout_marginRight="@dimen/margen_small"
                 android:padding="@dimen/margen_small"/>
         </LinearLayout>
     </FrameLayout>

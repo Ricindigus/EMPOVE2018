@@ -129,13 +129,15 @@ public class SQLConstantes {
 
     public static String hogar_id = "_id";
     public static String hogar_id_vivienda = "id_vivienda";
-    public static String hogar_nom_ape = "hogar_nom_ape";
-    public static String hogar_estado = "hogar_estado";
+    public static String hogar_numero = "numero";
+    public static String hogar_nom_ape = "nom_ape";
+    public static String hogar_estado = "estado";
 
     public static final String SQL_CREATE_TABLA_HOGARES =
             "CREATE TABLE " + tablahogares + "(" +
-                    hogar_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    hogar_id  + " TEXT PRIMARY KEY," +
                     hogar_id_vivienda + " TEXT," +
+                    hogar_numero + " TEXT," +
                     hogar_nom_ape + " TEXT," +
                     hogar_estado + " TEXT" + ");"
             ;
@@ -1429,6 +1431,9 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_PERIODO = "periodo=?";
     public static final String WHERE_CLAUSE_CONGLOMERADO = "conglomerado=?";
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
+    public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";
+
+
     public static final String WHERE_CLAUSE_USUARIO_NOMBRE = "nombre=?";
 
 

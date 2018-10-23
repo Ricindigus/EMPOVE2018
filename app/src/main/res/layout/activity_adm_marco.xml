@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@android:color/transparent"
-    tools:context=".activities.AdmMarcoActivity">
+    tools:context=".activities.admin.AdmMarcoActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_margin="16dp"
