@@ -1,7 +1,10 @@
 package com.example.ricindigus.empove2018.fragments.modulo8;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,12 +17,17 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP821P823 extends FragmentPagina {
+
+    Context context;
+    String idVivienda, idHogar, idInformante, idPersona;
 
     CheckBox c8_p821_1_Checkbox, c8_p821_2_Checkbox, c8_p821_3_Checkbox , c8_p821_4_Checkbox, c8_p821_5_Checkbox,
             c8_p821_6_Checkbox, c8_p821_7_Checkbox, c8_p821_8_Checkbox;
@@ -43,6 +51,15 @@ public class FragmentP821P823 extends FragmentPagina {
     private int c8_p823_4;
     private int c8_p823_5;
     private String c8_p823_o;
+
+    @SuppressLint("ValidFragment")
+    public FragmentP821P823(Context context, String idVivienda, String idHogar, String idInformante, String idPersona) {
+        this.context = context;
+        this.idVivienda = idVivienda;
+        this.idHogar = idHogar;
+        this.idInformante = idInformante;
+        this.idPersona = idPersona;
+    }
 
     public FragmentP821P823() {
         // Required empty public constructor
@@ -82,6 +99,30 @@ public class FragmentP821P823 extends FragmentPagina {
 
     @Override
     public void guardarDatos() {
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo8_c8_p821_1,""+c8_p821_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p821_2,""+c8_p821_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p821_3,""+c8_p821_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p821_4,""+c8_p821_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p821_5,""+c8_p821_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p821_6,""+c8_p821_6);
+        contentValues.put(SQLConstantes.modulo8_c8_p821_7,""+c8_p821_7);
+        contentValues.put(SQLConstantes.modulo8_c8_p821_8,""+c8_p821_8);
+
+        contentValues.put(SQLConstantes.modulo8_c8_p822,""+c8_p822);
+
+        if(data.existeElemento(getNombreTabla(),idPersona)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        }else{
+            contentValues.put(SQLConstantes.modulo8_idVivienda,""+idVivienda);
+            contentValues.put(SQLConstantes.modulo8_idHogar,""+idHogar);
+            contentValues.put(SQLConstantes.modulo8_idInformante,""+idInformante);
+            contentValues.put(SQLConstantes.modulo8_id,""+idPersona);
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.close();
 
     }
 
@@ -146,9 +187,9 @@ public class FragmentP821P823 extends FragmentPagina {
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-//XD
+
     @Override
     public String getNombreTabla() {
-        return null;
+        return SQLConstantes.tablamodulo8;
     }
 }

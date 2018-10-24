@@ -1,7 +1,10 @@
 package com.example.ricindigus.empove2018.fragments.modulo8;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,12 +17,17 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP813P816 extends FragmentPagina {
+
+    Context context;
+    String idVivienda, idHogar, idInformante, idPersona;
 
     CheckBox c8_p813_1_Checkbox, c8_p813_2_Checkbox, c8_p813_3_Checkbox , c8_p813_4_Checkbox, c8_p813_5_Checkbox,
             c8_p813_6_Checkbox, c8_p813_7_Checkbox, c8_p813_8_Checkbox, c8_p813_9_Checkbox, c8_p813_10_Checkbox,
@@ -72,6 +80,15 @@ public class FragmentP813P816 extends FragmentPagina {
     private int c8_p816_12;
     private int c8_p816_13;
     private String c8_p816_o;
+
+    @SuppressLint("ValidFragment")
+    public FragmentP813P816(Context context, String idVivienda, String idHogar, String idInformante, String idPersona) {
+        this.context = context;
+        this.idVivienda = idVivienda;
+        this.idHogar = idHogar;
+        this.idInformante = idInformante;
+        this.idPersona = idPersona;
+    }
 
     public FragmentP813P816() {
         // Required empty public constructor
@@ -137,6 +154,60 @@ public class FragmentP813P816 extends FragmentPagina {
     @Override
     public void guardarDatos() {
 
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo8_c8_p813_1,""+c8_p813_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_2,""+c8_p813_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_3,""+c8_p813_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_4,""+c8_p813_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_5,""+c8_p813_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_6,""+c8_p813_6);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_7,""+c8_p813_7);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_8,""+c8_p813_8);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_9,""+c8_p813_9);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_10,""+c8_p813_10);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_11,""+c8_p813_11);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_12,""+c8_p813_12);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_13,""+c8_p813_13);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_14,""+c8_p813_14);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_o,""+c8_p813_o);
+
+        contentValues.put(SQLConstantes.modulo8_c8_p814_1,""+c8_p814_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_2,""+c8_p814_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_3,""+c8_p814_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_4,""+c8_p814_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_5,""+c8_p814_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_6,""+c8_p814_6);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_7,""+c8_p814_7);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_8,""+c8_p814_8);
+
+        contentValues.put(SQLConstantes.modulo8_c8_p815,""+c8_p815);
+
+        contentValues.put(SQLConstantes.modulo8_c8_p816_1,""+c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_2,""+c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_3,""+c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_4,""+c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_5,""+c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_6,""+c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_7,""+c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_8,""+c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_9,""+c8_p816_9);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_10,""+c8_p816_10);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_11,""+c8_p816_11);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_12,""+c8_p816_12);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_13,""+c8_p816_13);
+
+        if(data.existeElemento(getNombreTabla(),idPersona)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        }else{
+            contentValues.put(SQLConstantes.modulo8_idVivienda,""+idVivienda);
+            contentValues.put(SQLConstantes.modulo8_idHogar,""+idHogar);
+            contentValues.put(SQLConstantes.modulo8_idInformante,""+idInformante);
+            contentValues.put(SQLConstantes.modulo8_id,""+idPersona);
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.close();
     }
 
     @Override
@@ -237,6 +308,6 @@ public class FragmentP813P816 extends FragmentPagina {
 //XD
     @Override
     public String getNombreTabla() {
-        return null;
+        return SQLConstantes.tablamodulo8;
     }
 }

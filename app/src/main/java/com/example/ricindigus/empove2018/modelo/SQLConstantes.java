@@ -1244,6 +1244,12 @@ public class SQLConstantes {
     public static String modulo8_c8_p816_6 = "c8_p816_6";
     public static String modulo8_c8_p816_7 = "c8_p816_7";
     public static String modulo8_c8_p816_8 = "c8_p816_8";
+    public static String modulo8_c8_p816_9 = "c8_p816_9";
+    public static String modulo8_c8_p816_10 = "c8_p816_10";
+    public static String modulo8_c8_p816_11 = "c8_p816_11";
+    public static String modulo8_c8_p816_12 = "c8_p816_12";
+    public static String modulo8_c8_p816_13 = "c8_p816_13";
+
     public static String modulo8_c8_p816_o = "c8_p816_o";
     public static String modulo8_c8_p817 = "c8_p817";
     public static String modulo8_c8_p818 = "c8_p818";

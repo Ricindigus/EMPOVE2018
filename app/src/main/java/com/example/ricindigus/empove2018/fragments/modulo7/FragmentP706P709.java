@@ -1,7 +1,10 @@
 package com.example.ricindigus.empove2018.fragments.modulo7;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,11 +17,16 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP706P709 extends Fragment {
+
+    Context context;
+    String idVivienda, idHogar, idInformante, idPersona;
 
     RadioGroup c7_p706_RadioGroup, c7_p707_RadioGroup;
     EditText c7_p707_o_EditText;
@@ -35,10 +43,18 @@ public class FragmentP706P709 extends Fragment {
     private int c7_p709_1, c7_p709_2, c7_p709_3, c7_p709_4, c7_p709_5, c7_p709_6, c7_p709_7, c7_p709_8,
             c7_p709_9, c7_p709_10;
 
+    @SuppressLint("ValidFragment")
+    public FragmentP706P709(Context context, String idVivienda, String idHogar, String idInformante, String idPersona) {
+        this.context = context;
+        this.idVivienda = idVivienda;
+        this.idHogar = idHogar;
+        this.idInformante = idInformante;
+        this.idPersona = idPersona;// Required empty public constructor
+    }
+
     public FragmentP706P709() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,6 +91,45 @@ public class FragmentP706P709 extends Fragment {
         m7_p709_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m7_p709);
 
         return rootView;
+    }
+
+    public void guardarDatos(){
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo7_c7_p706, ""+c7_p706);
+        contentValues.put(SQLConstantes.modulo7_c7_p707, ""+c7_p707);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_o, ""+c7_p707_o);
+
+        contentValues.put(SQLConstantes.modulo7_c7_p708_1, ""+c7_p708_1);
+        contentValues.put(SQLConstantes.modulo7_c7_p708_2, ""+c7_p708_2);
+        contentValues.put(SQLConstantes.modulo7_c7_p708_3, ""+c7_p708_3);
+        contentValues.put(SQLConstantes.modulo7_c7_p708_4, ""+c7_p708_4);
+        contentValues.put(SQLConstantes.modulo7_c7_p708_5, ""+c7_p708_5);
+
+        contentValues.put(SQLConstantes.modulo7_c7_p709_1, ""+c7_p709_1);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_2, ""+c7_p709_2);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_3, ""+c7_p709_3);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_4, ""+c7_p709_4);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_5, ""+c7_p709_5);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_6, ""+c7_p709_6);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_7, ""+c7_p709_7);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_8, ""+c7_p709_8);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_9, ""+c7_p709_9);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_10, ""+c7_p709_10);
+        contentValues.put(SQLConstantes.modulo7_c7_p709_o, ""+c7_p709_o);
+
+        if(data.existeElemento(getNombreTabla(),idPersona)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        }else{
+            contentValues.put(SQLConstantes.modulo7_idVivienda,""+idVivienda);
+            contentValues.put(SQLConstantes.modulo7_idHogar,""+idHogar);
+            contentValues.put(SQLConstantes.modulo7_idInformante,""+idInformante);
+            contentValues.put(SQLConstantes.modulo7_id,""+idPersona);
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+
+        data.close();
     }
 
     public void llenarVariables(){
@@ -134,6 +189,11 @@ public class FragmentP706P709 extends Fragment {
         }
         return false;
     }
+
+    public String getNombreTabla() {
+        return SQLConstantes.tablamodulo7;
+    }
+
 
     public void mostrarMensaje(String m){
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

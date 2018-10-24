@@ -1,7 +1,10 @@
 package com.example.ricindigus.empove2018.fragments.modulo8;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,12 +18,17 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP805P808 extends FragmentPagina {
+
+    Context context;
+    String idVivienda, idHogar, idInformante, idPersona;
 
     RadioGroup c8_p805_1_RadioGroup, c8_p805_2_RadioGroup, c8_p805_3_RadioGroup, c8_p805_4_RadioGroup,
             c8_p805_5_RadioGroup;
@@ -61,9 +69,21 @@ public class FragmentP805P808 extends FragmentPagina {
     private int c8_p808_13;
     private String c8_p808_o;
 
+
+    @SuppressLint("ValidFragment")
+    public FragmentP805P808(Context context, String idVivienda, String idHogar, String idInformante, String idPersona) {
+        this.context = context;
+        this.idVivienda = idVivienda;
+        this.idHogar = idHogar;
+        this.idInformante = idInformante;
+        this.idPersona = idPersona;
+    }
+
     public FragmentP805P808() {
         // Required empty public constructor
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -112,7 +132,49 @@ public class FragmentP805P808 extends FragmentPagina {
 
     @Override
     public void guardarDatos() {
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo8_c8_p805_1,""+c8_p805_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_2,""+c8_p805_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_3,""+c8_p805_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_4,""+c8_p805_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p805_5,""+c8_p805_5);
 
+        contentValues.put(SQLConstantes.modulo8_c8_p806_1,""+c8_p806_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_2,""+c8_p806_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_3,""+c8_p806_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_4,""+c8_p806_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_5,""+c8_p806_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p806_6,""+c8_p806_6);
+
+        contentValues.put(SQLConstantes.modulo8_c8_p807,""+c8_p807);
+
+        contentValues.put(SQLConstantes.modulo8_c8_p808_1,""+c8_p808_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_2,""+c8_p808_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_3,""+c8_p808_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_4,""+c8_p808_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_5,""+c8_p808_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_6,""+c8_p808_6);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_7,""+c8_p808_7);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_8,""+c8_p808_8);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_9,""+c8_p808_9);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_10,""+c8_p808_10);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_11,""+c8_p808_11);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_12,""+c8_p808_12);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_13,""+c8_p808_13);
+        contentValues.put(SQLConstantes.modulo8_c8_p808_o,""+c8_p808_o);
+
+        if(data.existeElemento(getNombreTabla(),idPersona)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        }else{
+            contentValues.put(SQLConstantes.modulo8_idVivienda,""+idVivienda);
+            contentValues.put(SQLConstantes.modulo8_idHogar,""+idHogar);
+            contentValues.put(SQLConstantes.modulo8_idInformante,""+idInformante);
+            contentValues.put(SQLConstantes.modulo8_id,""+idPersona);
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.close();
     }
 
     @Override
@@ -172,7 +234,31 @@ public class FragmentP805P808 extends FragmentPagina {
             mostrarMensaje("PREGUNTA 805 - e: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        // falta 806
+        if(c8_p806_1<1){
+            mostrarMensaje("PREGUNTA 806-A: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p806_2<1){
+            mostrarMensaje("PREGUNTA 806-B: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p806_3<1){
+            mostrarMensaje("PREGUNTA 806-C: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p806_4<1){
+            mostrarMensaje("PREGUNTA 806-D: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p806_5<1){
+            mostrarMensaje("PREGUNTA 806-E: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+        if(c8_p806_6<1){
+            mostrarMensaje("PREGUNTA 806-F: DEBE SELECCIONAR UNA OPCION");
+            return false;
+        }
+
         if(c8_p807<1){
             mostrarMensaje("PREGUNTA 807: DEBE SELECCIONAR UNA OPCION");
             return false;
@@ -205,9 +291,9 @@ public class FragmentP805P808 extends FragmentPagina {
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-//XD
+
     @Override
     public String getNombreTabla() {
-        return null;
+        return SQLConstantes.tablamodulo8;
     }
 }
