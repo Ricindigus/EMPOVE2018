@@ -1,7 +1,10 @@
 package com.example.ricindigus.empove2018.fragments.modulo5;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
@@ -21,6 +25,8 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP501P505 extends FragmentPagina {
+    String idVivienda, idHogar, idPersona, idInformante;
+    Context context;
 
     RadioGroup c5_p501_RadioGroup, c5_p503_RadioGroup, c5_p504_RadioGroup, c5_p505_RadioGroup;
     EditText c5_p502_c_EditText;
@@ -34,6 +40,15 @@ public class FragmentP501P505 extends FragmentPagina {
     private int c5_p503;
     private int c5_p504;
     private int c5_p505;
+
+    @SuppressLint("ValidFragment")
+    public FragmentP501P505(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
+        this.idVivienda = idVivienda;
+        this.idHogar = idHogar;
+        this.idPersona = idPersona;
+        this.idInformante = idInformante;
+        this.context = context;
+    }
 
     public FragmentP501P505() {
         // Required empty public constructor
@@ -66,7 +81,26 @@ public class FragmentP501P505 extends FragmentPagina {
 
     @Override
     public void guardarDatos() {
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo5_c5_p501,c5_p501+"");
+        contentValues.put(SQLConstantes.modulo5_c5_p502_c,c5_p502_c);
+        contentValues.put(SQLConstantes.modulo5_c5_p502,c5_p502+"");
+        contentValues.put(SQLConstantes.modulo5_c5_p503,c5_p503+"");
+        contentValues.put(SQLConstantes.modulo5_c5_p504,c5_p504+"");
+        contentValues.put(SQLConstantes.modulo5_c5_p505,c5_p505+"");
 
+        if(data.existeElemento(getNombreTabla(),idPersona)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        }else{
+            contentValues.put(SQLConstantes.modulo5_idVivienda,idVivienda+"");
+            contentValues.put(SQLConstantes.modulo5_idHogar,idHogar+"");
+            contentValues.put(SQLConstantes.modulo5_id,idPersona+"");
+            contentValues.put(SQLConstantes.modulo5_idInformante,idInformante+"");
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.close();
     }
 
     @Override
