@@ -7,10 +7,14 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.InputFilter;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -19,11 +23,12 @@ import android.widget.RadioGroup;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP706P709 extends Fragment {
+public class FragmentP706P709 extends FragmentPagina {
 
     Context context;
     String idVivienda, idHogar, idInformante, idPersona;
@@ -93,6 +98,36 @@ public class FragmentP706P709 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        c7_p707_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c7_p707_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c7_p707_o_EditText);
+                    m7_p707_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c7_p709_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c7_p709_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c7_p709_o_EditText);
+                    m7_p709_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        cargarDatos();
+    }
+
     public void guardarDatos(){
         Data data = new Data(context);
         data.open();
@@ -157,6 +192,11 @@ public class FragmentP706P709 extends Fragment {
 
     }
 
+    @Override
+    public void cargarDatos() {
+
+    }
+
     public boolean validarDatos(){
         if(c7_p706<1){
             mostrarMensaje("PREGUNTA 706: DEBE SELECCIONAR UNA OPCION");
@@ -205,5 +245,15 @@ public class FragmentP706P709 extends Fragment {
         });
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void mostrarTeclado(){
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 }
