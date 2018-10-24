@@ -7,10 +7,14 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.InputFilter;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -20,6 +24,7 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -72,7 +77,6 @@ public class FragmentP613P618 extends FragmentPagina {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -105,6 +109,116 @@ public class FragmentP613P618 extends FragmentPagina {
         m6_p618_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p618);
 
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        c6_p614_mon_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p614_mon_EditText);
+                    m6_p614_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p615_mon_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p615_mon_EditText);
+                    m6_p615_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p616_mon_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p616_mon_EditText);
+                    m6_p616_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p614_esp_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p614_esp_EditText);
+                    m6_p614_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p615_esp_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p615_esp_EditText);
+                    m6_p615_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p616_esp_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p616_esp_EditText);
+                    m6_p616_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p618_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c6_p618_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p618_o_EditText);
+                    m6_p618_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p618_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c6_p618_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p618_o_EditText);
+                    m6_p618_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        c6_p614_mon_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p615_mon_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p616_mon_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p614_esp_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p615_esp_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p616_esp_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
+        cargarDatos();
     }
 
     @Override
@@ -259,5 +373,15 @@ public class FragmentP613P618 extends FragmentPagina {
         });
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void mostrarTeclado(){
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 }

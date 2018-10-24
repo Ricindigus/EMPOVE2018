@@ -7,10 +7,14 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.InputFilter;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -63,6 +67,36 @@ public class FragmentP512P513 extends FragmentPagina {
         m5_p513_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m5_p513);
 
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        c5_p512_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c5_p512_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c5_p512_o_EditText);
+                    m5_p512_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c5_p513_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c5_p513_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c5_p513_o_EditText);
+                    m5_p513_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        cargarDatos();
     }
 
     @Override
@@ -144,5 +178,15 @@ public class FragmentP512P513 extends FragmentPagina {
         });
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void mostrarTeclado(){
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 }

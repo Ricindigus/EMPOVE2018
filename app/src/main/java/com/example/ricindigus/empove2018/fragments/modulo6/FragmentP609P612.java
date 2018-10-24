@@ -7,10 +7,13 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -19,6 +22,7 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -111,6 +115,242 @@ public class FragmentP609P612 extends FragmentPagina {
         m6_p612_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p612);
 
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        c6_p610_pd_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_pd_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_pl_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_pl_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_pm_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_pm_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_pmi_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_pmi_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_pj_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_pj_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_pv_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_pv_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_ps_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_ps_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        c6_p610_sd_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_sd_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_sl_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_sl_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_sm_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_sm_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_smi_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_smi_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_sj_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_sj_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_sv_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_sv_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        c6_p610_ss_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_ss_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        c6_p610_t_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p610_t_EditText);
+                    m6_p610_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        c6_p611_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p611_EditText);
+                    m6_p611_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        c6_p612_nro_EditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(c6_p612_nro_EditText);
+                    m6_p611_linearlayout.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        c6_p610_pd_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_pl_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_pm_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_pmi_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_pj_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_pv_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_ps_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
+        c6_p610_sd_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_sl_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_sm_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_smi_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_sj_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_sv_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_ss_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
+        c6_p610_t_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
+        c6_p611_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
+        c6_p612_nro_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        cargarDatos();
     }
 
     @Override
@@ -278,5 +518,15 @@ public class FragmentP609P612 extends FragmentPagina {
         });
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void mostrarTeclado(){
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 }
