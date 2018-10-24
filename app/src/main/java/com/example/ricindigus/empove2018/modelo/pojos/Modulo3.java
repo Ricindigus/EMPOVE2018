@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class Modulo3 {
-    private int _id;
+    private String _id;
     private String idInformante;
     private String idHogar;
     private String idVivienda;
@@ -15,7 +15,7 @@ public class Modulo3 {
     private String c3_p302;
     private String c3_p303_m;
     private String c3_p303_a;
-    private String c3_p303;
+    private String c3_p303_no_nacio;
     private String c3_p304;
     private String c3_p305;
     private String c3_p305_o;
@@ -58,13 +58,64 @@ public class Modulo3 {
     private String c3_p317_o;
 
     public Modulo3() {
+        _id = "";
+        idInformante= "";
+        idHogar= "";
+        idVivienda= "";
+        c3_p301_d= "";
+        c3_p301_m= "";
+        c3_p301_a= "";
+        c3_p302= "";
+        c3_p303_m= "";
+        c3_p303_a= "";
+        c3_p303_no_nacio= "";
+        c3_p304= "";
+        c3_p305= "";
+        c3_p305_o= "";
+        c3_p306= "";
+        c3_p306_o= "";
+        c3_p307_d= "";
+        c3_p307_m= "";
+        c3_p307_a= "";
+        c3_p308_e= "";
+        c3_p308_m= "";
+        c3_p310_1= "";
+        c3_p310_2= "";
+        c3_p310_3= "";
+        c3_p310_4= "";
+        c3_p310_4_o= "";
+        c3_p310_5= "";
+        c3_p311= "";
+        c3_p312_dist= "";
+        c3_p312_prov= "";
+        c3_p312_dep= "";
+        c3_p313= "";
+        c3_p314= "";
+        c3_p314_o= "";
+        c3_p315_1= "";
+        c3_p315_2= "";
+        c3_p315_3= "";
+        c3_p315_4= "";
+        c3_p315_5= "";
+        c3_p315_6= "";
+        c3_p315_7= "";
+        c3_p315_8= "";
+        c3_p315_9= "";
+        c3_p315_10= "";
+        c3_p315_11= "";
+        c3_p315_11_o= "";
+        c3_p315_12= "";
+        c3_p316= "";
+        c3_p316_o= "";
+        c3_p317= "";
+        c3_p317_o= "";
     }
 
-    public int get_id() {
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 
@@ -140,12 +191,12 @@ public class Modulo3 {
         this.c3_p303_a = c3_p303_a;
     }
 
-    public String getC3_p303() {
-        return c3_p303;
+    public String getC3_p303_no_nacio() {
+        return c3_p303_no_nacio;
     }
 
-    public void setC3_p303(String c3_p303) {
-        this.c3_p303 = c3_p303;
+    public void setC3_p303_no_nacio(String c3_p303_no_nacio) {
+        this.c3_p303_no_nacio = c3_p303_no_nacio;
     }
 
     public String getC3_p304() {
@@ -480,7 +531,7 @@ public class Modulo3 {
         contentValues.put(SQLConstantes.modulo3_c3_p302,c3_p302);
         contentValues.put(SQLConstantes.modulo3_c3_p303_m,c3_p303_m);
         contentValues.put(SQLConstantes.modulo3_c3_p303_a,c3_p303_a);
-        contentValues.put(SQLConstantes.modulo3_c3_p303,c3_p303);
+        contentValues.put(SQLConstantes.modulo3_c3_p303_no_nacio, c3_p303_no_nacio);
         contentValues.put(SQLConstantes.modulo3_c3_p304,c3_p304);
         contentValues.put(SQLConstantes.modulo3_c3_p305,c3_p305);
         contentValues.put(SQLConstantes.modulo3_c3_p305_o,c3_p305_o);

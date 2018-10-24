@@ -87,7 +87,7 @@
             android:gravity="center"
             android:orientation="vertical">
             <NumberPicker
-                android:id="@+id/mod3_p303_numpicker_C3_P303_M"
+                android:id="@+id/mod3_303_numpicker_C3_P303_M"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margen_medium" />
@@ -106,7 +106,7 @@
             android:orientation="vertical">
 
             <NumberPicker
-                android:id="@+id/mod3_p303_numpicker_C3_P303_A"
+                android:id="@+id/mod3_303_numpicker_C3_P303_A"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margen_medium" />

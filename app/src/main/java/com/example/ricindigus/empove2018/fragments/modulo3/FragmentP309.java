@@ -10,11 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP309 extends Fragment {
+public class FragmentP309 extends FragmentPagina {
     String idEncuestado;
     Context contexto;
 
@@ -35,4 +36,28 @@ public class FragmentP309 extends Fragment {
         return inflater.inflate(R.layout.fragment_p309, container, false);
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return true;
+    }
+
+    @Override
+    public String getNombreTabla() {
+        return null;
+    }
 }

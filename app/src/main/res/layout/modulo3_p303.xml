@@ -16,45 +16,42 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
-            <NumberPicker
-                android:id="@+id/mod3_p303_numpicker_C3_P303_M"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen_medium"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="@string/modulo_3_p303_mes"/>
-        </LinearLayout>
-        <LinearLayout
+            android:textStyle="bold"
+            android:text="@string/modulo_3_p303_mes"/>
+        <TextView
+            android:id="@+id/mod3_303_textview_C3_P303_M"
+            android:layout_width="40dp"
+            android:background="@drawable/input_text_enabled"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margen_medium"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
-            <NumberPicker
-                android:id="@+id/mod3_p303_numpicker_C3_P303_A"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen_medium"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="@string/modulo_3_p303_anio"/>
-        </LinearLayout>
-        <CheckBox
-            android:id="@+id/mod3_p303_checkbox_C3_P303"
-            android:layout_marginLeft="@dimen/margen_large"
-            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/modulo_3_p303_anio"/>
+        <TextView
+            android:id="@+id/mod3_303_textview_C3_P303_A"
+            android:layout_width="40dp"
+            android:background="@drawable/input_text_enabled"
             android:layout_height="wrap_content"
-            android:text="@string/modulo_3_p303_no_nacido"/>
+            android:layout_margin="@dimen/margen_medium"/>
     </LinearLayout>
+    <Button
+        android:id="@+id/buttonAgregarFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="AGREGAR FECHA"
+        android:theme="@style/RaisedButtonAgregarFecha"/>
+    <CheckBox
+        android:id="@+id/mod3_303_checkbox_C3_P303_NO_NACIO"
+        android:layout_marginLeft="@dimen/margen_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_3_p303_no_nacido"/>
 </LinearLayout>

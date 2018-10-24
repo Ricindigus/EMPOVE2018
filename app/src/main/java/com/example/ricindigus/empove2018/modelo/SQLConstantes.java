@@ -374,7 +374,7 @@ public class SQLConstantes {
     public static String modulo3_c3_p302 = "c3_p302";
     public static String modulo3_c3_p303_m = "c3_p303_m";
     public static String modulo3_c3_p303_a = "c3_p303_a";
-    public static String modulo3_c3_p303 = "c3_p303";
+    public static String modulo3_c3_p303_no_nacio = "c3_p303_no_nacio";
     public static String modulo3_c3_p304 = "c3_p304";
     public static String modulo3_c3_p305 = "c3_p305";
     public static String modulo3_c3_p305_o = "c3_p305_o";
@@ -419,7 +419,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO3 =
             "CREATE TABLE " + tablamodulo3 + "(" +
-                    modulo3_id  + " INTEGER PRIMARY KEY," +
+                    modulo3_id  + " TEXT PRIMARY KEY," +
                     modulo3_idInformante + " TEXT," +
                     modulo3_idHogar + " TEXT," +
                     modulo3_idVivienda  + " TEXT," +
@@ -427,7 +427,7 @@ public class SQLConstantes {
                     modulo3_c3_p301_m  + " TEXT," +
                     modulo3_c3_p301_a  + " TEXT," +
                     modulo3_c3_p302  + " TEXT," +
-                    modulo3_c3_p303  + " TEXT," +
+                    modulo3_c3_p303_no_nacio + " TEXT," +
                     modulo3_c3_p303_a  + " TEXT," +
                     modulo3_c3_p303_m  + " TEXT," +
                     modulo3_c3_p304  + " TEXT," +
@@ -487,7 +487,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO3_P309_RUTAS =
             "CREATE TABLE " + tablam3p309rutas + "(" +
-                    modulo3_p309_id  + " INTEGER PRIMARY KEY," +
+                    modulo3_p309_id  + " TEXT PRIMARY KEY," +
                     modulo3_p309_idInformante + " TEXT," +
                     modulo3_p309_idHogar + " TEXT," +
                     modulo3_p309_idVivienda  + " TEXT," +
@@ -512,7 +512,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO3_P318_PERSONAS =
             "CREATE TABLE " + tablamodulo3 + "(" +
-                    modulo3_p318_id  + " INTEGER PRIMARY KEY," +
+                    modulo3_p318_id  + " TEXT PRIMARY KEY," +
                     modulo3_p318_idInformante + " TEXT," +
                     modulo3_p318_idHogar + " TEXT," +
                     modulo3_p318_idVivienda  + " TEXT," +
@@ -626,7 +626,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO4 =
             "CREATE TABLE " + tablamodulo4 + "(" +
-                    modulo4_id  + " INTEGER PRIMARY KEY," +
+                    modulo4_id  + " TEXT PRIMARY KEY," +
                     modulo4_idInformante + " TEXT," +
                     modulo4_idHogar + " TEXT," +
                     modulo4_idVivienda  + " TEXT," +
@@ -773,7 +773,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO5 =
             "CREATE TABLE " + tablamodulo5 + "(" +
-                    modulo5_id  + " INTEGER PRIMARY KEY," +
+                    modulo5_id  + " TEXT PRIMARY KEY," +
                     modulo5_idInformante + " TEXT," +
                     modulo5_idHogar + " TEXT," +
                     modulo5_idVivienda  + " TEXT," +
@@ -931,7 +931,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO6 =
             "CREATE TABLE " + tablamodulo6 + "(" +
-                    modulo6_id  + " INTEGER PRIMARY KEY," +
+                    modulo6_id  + " TEXT PRIMARY KEY," +
                     modulo6_idInformante + " TEXT," +
                     modulo6_idHogar + " TEXT," +
                     modulo6_idVivienda  + " TEXT," +
@@ -1103,7 +1103,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO7 =
             "CREATE TABLE " + tablamodulo7 + "(" +
-                    modulo7_id  + " INTEGER PRIMARY KEY," +
+                    modulo7_id  + " TEXT PRIMARY KEY," +
                     modulo7_idInformante + " TEXT," +
                     modulo7_idHogar + " TEXT," +
                     modulo7_idVivienda  + " TEXT," +
@@ -1301,7 +1301,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO8 =
             "CREATE TABLE " + tablamodulo8 + "(" +
-                    modulo8_id  + " INTEGER PRIMARY KEY," +
+                    modulo8_id  + " TEXT PRIMARY KEY," +
                     modulo8_idInformante + " TEXT," +
                     modulo8_idHogar + " TEXT," +
                     modulo8_idVivienda  + " TEXT," +

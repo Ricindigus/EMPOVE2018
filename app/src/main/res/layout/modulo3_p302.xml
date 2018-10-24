@@ -12,7 +12,7 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_3_p302"/>
     <AutoCompleteTextView
-        android:id="@+id/mod3_p302_textview_C3_P302"
+        android:id="@+id/mod3_302_autotextview_C3_P302"
         android:layout_width="match_parent"
         android:inputType="text"
         android:layout_height="wrap_content"/>

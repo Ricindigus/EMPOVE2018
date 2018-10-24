@@ -14,13 +14,14 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP306P308 extends Fragment {
+public class FragmentP306P308 extends FragmentPagina {
     String idEncuestado;
     Context context;
     private static final String CERO = "0";
@@ -74,4 +75,28 @@ public class FragmentP306P308 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void guardarDatos() {
+
+    }
+
+    @Override
+    public void llenarVariables() {
+
+    }
+
+    @Override
+    public void cargarDatos() {
+
+    }
+
+    @Override
+    public boolean validarDatos() {
+        return true;
+    }
+
+    @Override
+    public String getNombreTabla() {
+        return null;
+    }
 }
