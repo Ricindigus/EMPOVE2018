@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class Modulo5 {
-    private int _id;
+    private String _id;
     private String idInformante;
     private String idHogar;
     private String idVivienda;
@@ -46,11 +46,54 @@ public class Modulo5 {
     private String obs_cap5;
     private String c5_estado;
 
-    public int get_id() {
+    public Modulo5() {
+        _id = "";
+        idInformante= "";
+        idHogar= "";
+        idVivienda= "";
+        c5_p501= "";
+        c5_p502_c= "";
+        c5_p502= "";
+        c5_p503= "";
+        c5_p504= "";
+        c5_p505= "";
+        c5_p506_1= "";
+        c5_p506_2= "";
+        c5_p506_3= "";
+        c5_p506_4= "";
+        c5_p507= "";
+        c5_p507_dist= "";
+        c5_p507_prov= "";
+        c5_p507_dep= "";
+        c5_p508_1= "";
+        c5_p508_2= "";
+        c5_p508_3= "";
+        c5_p508_4= "";
+        c5_p508_5= "";
+        c5_p508_6= "";
+        c5_p508_7= "";
+        c5_p508_8= "";
+        c5_p508_9= "";
+        c5_p508_10= "";
+        c5_p508_11= "";
+        c5_p508_o= "";
+        c5_p509= "";
+        c5_p510= "";
+        c5_p511= "";
+        c5_p511_o= "";
+        c5_p512= "";
+        c5_p512_o= "";
+        c5_p513= "";
+        c5_p513_o= "";
+        obs_cap5= "";
+        c5_estado= "";
+    }
+
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 
@@ -408,7 +451,6 @@ public class Modulo5 {
         contentValues.put(SQLConstantes.modulo5_c5_p513_o,c5_p513_o);
         contentValues.put(SQLConstantes.modulo5_obs_cap5,obs_cap5);
         contentValues.put(SQLConstantes.modulo5_c5_estado,c5_estado);
-
         return contentValues;
     }
 }

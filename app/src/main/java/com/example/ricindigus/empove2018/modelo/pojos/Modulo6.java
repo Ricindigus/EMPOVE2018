@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class Modulo6 {
-    private int _id;
+    private String _id;
     private String idInformante;
     private String idHogar;
     private String idVivienda;
@@ -112,6 +112,130 @@ public class Modulo6 {
     private String c6_p630_2med;
     private String c6_p630_2o;
     private String c6_p630_2mont;
+    private String c6_p630_2frec;
+    private String obs_cap6;
+    private String c6_estado;
+
+    public Modulo6() {
+        _id = "";
+        idInformante= "";
+        idHogar= "";
+        idVivienda= "";
+        c6_p601= "";
+        c6_p602= "";
+        c6_p603= "";
+        c6_p604_1= "";
+        c6_p604_2= "";
+        c6_p604_3= "";
+        c6_p604_4= "";
+        c6_p604_5= "";
+        c6_p604_6= "";
+        c6_p604_7= "";
+        c6_p604_8= "";
+        c6_p604_9= "";
+        c6_p604_10= "";
+        c6_p604_11= "";
+        c6_p604_o= "";
+        c6_p605= "";
+        c6_p606= "";
+        c6_p607= "";
+        c6_p608= "";
+        c6_p608_o= "";
+        c6_p609= "";
+        c6_p610_pd= "";
+        c6_p610_pl= "";
+        c6_p610_pm= "";
+        c6_p610_pmi= "";
+        c6_p610_pj= "";
+        c6_p610_pv= "";
+        c6_p610_ps= "";
+        c6_p610_pt= "";
+        c6_p610_sd= "";
+        c6_p610_sl= "";
+        c6_p610_sm= "";
+        c6_p610_smi= "";
+        c6_p610_sj= "";
+        c6_p610_sv= "";
+        c6_p610_ss= "";
+        c6_p610_st= "";
+        c6_p610_t= "";
+        c6_p611= "";
+        c6_p612= "";
+        c6_p612_nro= "";
+        c6_p613= "";
+        c6_p614_mon= "";
+        c6_p614_esp= "";
+        c6_p615_mon= "";
+        c6_p615_esp= "";
+        c6_p616_mon= "";
+        c6_p616_esp= "";
+        c6_p616_nas= "";
+        c6_p617= "";
+        c6_p617_dist= "";
+        c6_p617_prov= "";
+        c6_p617_dep= "";
+        c6_p618_1= "";
+        c6_p618_2= "";
+        c6_p618_3= "";
+        c6_p618_4= "";
+        c6_p618_5= "";
+        c6_p618_6= "";
+        c6_p618_o= "";
+        c6_p619= "";
+        c6_p620_1= "";
+        c6_p620_2= "";
+        c6_p620_3= "";
+        c6_p620_4= "";
+        c6_p620_5= "";
+        c6_p620_6= "";
+        c6_p620_7= "";
+        c6_p620_8= "";
+        c6_p620_9= "";
+        c6_p620_o= "";
+        c6_p621= "";
+        c6_p622= "";
+        c6_p623= "";
+        c6_p623_o= "";
+        c6_p624= "";
+        c6_p624_o= "";
+        c6_p625= "";
+        c6_p626= "";
+        c6_p627= "";
+        c6_p628= "";
+        c6_p629_1= "";
+        c6_p629_2= "";
+        c6_p629_3= "";
+        c6_p629_4= "";
+        c6_p629_o= "";
+        c6_p629_1_f= "";
+        c6_p629_1_m= "";
+        c6_p629_2_f= "";
+        c6_p629_2_m= "";
+        c6_p629_3_f= "";
+        c6_p629_3_m= "";
+        c6_p629_4_f= "";
+        c6_p629_4_m= "";
+        c6_p630_1= "";
+        c6_p630_1med= "";
+        c6_p630_1o= "";
+        c6_p630_1frec= "";
+        c6_p630_1mont= "";
+        c6_p630_2= "";
+        c6_p630_2med= "";
+        c6_p630_2o= "";
+        c6_p630_2mont= "";
+        c6_p630_2frec= "";
+        obs_cap6= "";
+        c6_estado= "";
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
 
     public String getC6_p630_2frec() {
         return c6_p630_2frec;
@@ -119,21 +243,6 @@ public class Modulo6 {
 
     public void setC6_p630_2frec(String c6_p630_2frec) {
         this.c6_p630_2frec = c6_p630_2frec;
-    }
-
-    private String c6_p630_2frec;
-    private String obs_cap6;
-    private String c6_estado;
-
-    public Modulo6() {
-    }
-
-    public int get_id() {
-        return _id;
-    }
-
-    public void set_id(int _id) {
-        this._id = _id;
     }
 
     public String getIdInformante() {
@@ -1002,8 +1111,6 @@ public class Modulo6 {
 
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.residentes_id,_id);
-
         contentValues.put(SQLConstantes.modulo6_id,_id);
         contentValues.put(SQLConstantes.modulo6_idInformante,idInformante);
         contentValues.put(SQLConstantes.modulo6_idHogar,idHogar);

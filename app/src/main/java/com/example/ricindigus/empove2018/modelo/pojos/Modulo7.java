@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class Modulo7 {
-    private int _id;
+    private String _id;
     private String idInformante;
     private String idHogar;
     private String idVivienda;
@@ -59,12 +59,67 @@ public class Modulo7 {
     private String obs_cap7;
     private String c7_estado;
 
+    public Modulo7() {
+        _id = "";
+        idInformante= "";
+        idHogar= "";
+        idVivienda= "";
+        c7_p701= "";
+        c7_p702_1= "";
+        c7_p702_2= "";
+        c7_p702_3= "";
+        c7_p702_4= "";
+        c7_p702_5= "";
+        c7_p702_6= "";
+        c7_p702_7= "";
+        c7_p702_8= "";
+        c7_p702_9= "";
+        c7_p702_10= "";
+        c7_p702_o= "";
+        c7_p703= "";
+        c7_p704_1= "";
+        c7_p704_2= "";
+        c7_p704_3= "";
+        c7_p704_4= "";
+        c7_p704_5= "";
+        c7_p704_6= "";
+        c7_p704_o= "";
+        c7_p705_1= "";
+        c7_p705_2= "";
+        c7_p705_3= "";
+        c7_p705_4= "";
+        c7_p705_5= "";
+        c7_p705_6= "";
+        c7_p705_7= "";
+        c7_p705_o= "";
+        c7_p706= "";
+        c7_p707= "";
+        c7_p707_o= "";
+        c7_p708_1= "";
+        c7_p708_2= "";
+        c7_p708_3= "";
+        c7_p708_4= "";
+        c7_p708_5= "";
+        c7_p709_1= "";
+        c7_p709_2= "";
+        c7_p709_3= "";
+        c7_p709_4= "";
+        c7_p709_5= "";
+        c7_p709_6= "";
+        c7_p709_7= "";
+        c7_p709_8= "";
+        c7_p709_9= "";
+        c7_p709_10= "";
+        c7_p709_o= "";
+        obs_cap7= "";
+        c7_estado= "";
+    }
 
-    public int get_id() {
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 
@@ -491,7 +546,6 @@ public class Modulo7 {
         contentValues.put(SQLConstantes.modulo7_idHogar,idHogar);
         contentValues.put(SQLConstantes.modulo7_idVivienda,idVivienda);
         contentValues.put(SQLConstantes.modulo7_c7_p701,c7_p701);
-
         contentValues.put(SQLConstantes.modulo7_c7_p702_1,c7_p702_1);
         contentValues.put(SQLConstantes.modulo7_c7_p702_2,c7_p702_2);
         contentValues.put(SQLConstantes.modulo7_c7_p702_3,c7_p702_3);
