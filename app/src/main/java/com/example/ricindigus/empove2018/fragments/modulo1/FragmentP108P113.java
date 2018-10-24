@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
@@ -30,10 +31,14 @@ public class FragmentP108P113 extends FragmentPagina {
     EditText c1_p108_o_EditText, c1_p109_o_EditText, c1_p110_o_EditText, c1_p111_o_EditText, c1_p112_o_EditText;
     EditText c1_p113_7o_EditText, c1_p113_8o_EditText, c1_p113_9o_EditText;
 
+    LinearLayout m1_p108_linearlayout, m1_p109_linearlayout, m1_p110_linearlayout,
+            m1_p111_linearlayout, m1_p112_linearlayout, m1_p113_linearlayout;
+
     public FragmentP108P113() {
         // Required empty public constructor
     }
 
+    @SuppressLint("ValidFragment")
     public FragmentP108P113(String idHogar, String idVivienda, Context context) {
         this.idHogar = idHogar;
         this.idVivienda = idVivienda;

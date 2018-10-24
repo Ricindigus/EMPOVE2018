@@ -33,13 +33,13 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:text="@string/sub_modulo_1_1"/>
-            <include layout="@layout/modulo1_p101"/>
-            <include layout="@layout/modulo1_p102"/>
-            <include layout="@layout/modulo1_p103"/>
-            <include layout="@layout/modulo1_p104"/>
-            <include layout="@layout/modulo1_p105"/>
-            <include layout="@layout/modulo1_p106"/>
-            <include layout="@layout/modulo1_p107"/>
+            <include layout="@layout/modulo1_p101" android:id="@+id/layout_m1_p101"/>
+            <include layout="@layout/modulo1_p102" android:id="@+id/layout_m1_p102"/>
+            <include layout="@layout/modulo1_p103" android:id="@+id/layout_m1_p103"/>
+            <include layout="@layout/modulo1_p104" android:id="@+id/layout_m1_p104"/>
+            <include layout="@layout/modulo1_p105" android:id="@+id/layout_m1_p105"/>
+            <include layout="@layout/modulo1_p106" android:id="@+id/layout_m1_p106"/>
+            <include layout="@layout/modulo1_p107" android:id="@+id/layout_m1_p107"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
