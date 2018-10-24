@@ -56,7 +56,8 @@
             android:name=".activities.agregacion.AgregarVisitaActivity"
             android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden" />
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/TemaTransparente"/>
         <activity
             android:name=".activities.agregacion.FinalizarVisitaActivity"
             android:configChanges="screenSize|orientation|keyboardHidden"

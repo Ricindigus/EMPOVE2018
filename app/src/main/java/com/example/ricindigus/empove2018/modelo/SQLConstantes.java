@@ -149,6 +149,7 @@ public class SQLConstantes {
     public static String visita_encuestador_id = "_id";
     public static String visita_encuestador_id_vivienda = "id_vivienda";
     public static String visita_encuestador_id_hogar = "id_hogar";
+    public static String visita_encuestador_numero = "numero";
     public static String visita_encuestador_vis_fecha_dd = "vis_fecha_dd";
     public static String visita_encuestador_vis_fecha_mm = "vis_fecha_mm";
     public static String visita_encuestador_vis_fecha_aa = "vis_fecha_aa";
@@ -159,10 +160,8 @@ public class SQLConstantes {
     public static String visita_encuestador_prox_vis_fecha_dd = "prox_vis_fecha_dd";
     public static String visita_encuestador_prox_vis_fecha_mm = "prox_vis_fecha_mm";
     public static String visita_encuestador_prox_vis_fecha_aa = "prox_vis_fecha_aa";
-    public static String visita_encuestador_prox_vis_hor_ini = "prox_vis_hor_ini";
-    public static String visita_encuestador_prox_vis_min_ini = "prox_vis_min_ini";
-    public static String visita_encuestador_prox_vis_hor_fin = "prox_vis_hor_fin";
-    public static String visita_encuestador_prox_vis_min_fin = "prox_vis_min_fin";
+    public static String visita_encuestador_prox_vis_hor = "prox_vis_hor";
+    public static String visita_encuestador_prox_vis_min = "prox_vis_min";
     public static String visita_encuestador_vis_resu = "vis_resu";
     public static String visita_encuestador_vis_resu_esp = "vis_resu_esp";
     public static String visita_encuestador_vis_resultado_final = "vis_resultado_final";
@@ -173,9 +172,10 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_VISITA_ENCUESTADOR =
             "CREATE TABLE " + tablavisitasencuestador + "(" +
-                    visita_encuestador_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    visita_encuestador_id  + " TEXT PRIMARY KEY," +
                     visita_encuestador_id_vivienda + " TEXT," +
                     visita_encuestador_id_hogar + " TEXT," +
+                    visita_encuestador_numero + " TEXT," +
                     visita_encuestador_vis_fecha_dd + " TEXT," +
                     visita_encuestador_vis_fecha_mm + " TEXT," +
                     visita_encuestador_vis_fecha_aa + " TEXT," +
@@ -186,10 +186,8 @@ public class SQLConstantes {
                     visita_encuestador_prox_vis_fecha_dd + " TEXT," +
                     visita_encuestador_prox_vis_fecha_mm + " TEXT," +
                     visita_encuestador_prox_vis_fecha_aa + " TEXT," +
-                    visita_encuestador_prox_vis_hor_ini + " TEXT," +
-                    visita_encuestador_prox_vis_min_ini + " TEXT," +
-                    visita_encuestador_prox_vis_hor_fin + " TEXT," +
-                    visita_encuestador_prox_vis_min_fin + " TEXT," +
+                    visita_encuestador_prox_vis_hor + " TEXT," +
+                    visita_encuestador_prox_vis_min + " TEXT," +
                     visita_encuestador_vis_resu + " TEXT," +
                     visita_encuestador_vis_resu_esp + " TEXT," +
                     visita_encuestador_vis_resultado_final + " TEXT," +
@@ -203,6 +201,7 @@ public class SQLConstantes {
     public static String visita_supervisor_id = "_id";
     public static String visita_supervisor_id_vivienda = "id_vivienda";
     public static String visita_supervisor_id_hogar = "id_hogar";
+    public static String visita_supervisor_numero = "numero";
     public static String visita_supervisor_vis_fecha_dd = "vis_fecha_dd";
     public static String visita_supervisor_vis_fecha_mm = "vis_fecha_mm";
     public static String visita_supervisor_vis_fecha_aa = "vis_fecha_aa";
@@ -215,9 +214,10 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_VISITA_SUPERVISOR =
             "CREATE TABLE " + tablavisitassupervisor + "(" +
-                    visita_supervisor_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    visita_supervisor_id  + " TEXT PRIMARY KEY," +
                     visita_supervisor_id_vivienda + " TEXT," +
                     visita_supervisor_id_hogar + " TEXT," +
+                    visita_supervisor_numero + " TEXT," +
                     visita_supervisor_vis_fecha_dd + " TEXT," +
                     visita_supervisor_vis_fecha_mm + " TEXT," +
                     visita_supervisor_vis_fecha_aa + " TEXT," +
@@ -243,7 +243,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_FUNCIONARIOS =
             "CREATE TABLE " + tablafuncionarios + "(" +
-                    funcionarios_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    funcionarios_id  + " TEXT PRIMARY KEY ," +
                     funcionarios_dni_encu + " TEXT," +
                     funcionarios_dni_sup  + " TEXT," +
                     funcionarios_dni_coord  + " TEXT," +
@@ -294,7 +294,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_MODULO1 =
             "CREATE TABLE " + tablamodulo1 + "(" +
-                    modulo1_id  + " INTEGER PRIMARY KEY," +
+                    modulo1_id  + " TEXT PRIMARY KEY," +
                     modulo1_idVivienda  + " TEXT," +
                     modulo1_c1_p101  + " TEXT," +
                     modulo1_c1_p101_o  + " TEXT," +
@@ -1432,6 +1432,8 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_CONGLOMERADO = "conglomerado=?";
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
     public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";
+    public static final String WHERE_CLAUSE_HOGAR_ID = "id_hogar=?";
+
 
 
     public static final String WHERE_CLAUSE_USUARIO_NOMBRE = "nombre=?";
