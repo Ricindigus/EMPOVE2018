@@ -35,6 +35,7 @@ import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
 
 public class HogarActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private String idHogar;
+    private String idVivienda;
     private Hogar hogar;
     private TextView btnAtras;
     private TextView btnSiguiente;
@@ -50,10 +51,13 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         idHogar = getIntent().getExtras().getString("idHogar");
+
         Data data = new Data(this);
         data.open();
         hogar = data.getHogar(idHogar);
         data.close();
+
+        idVivienda = hogar.getId_vivienda();
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("VIVIENDA " + hogar.getId_vivienda() + "-" + "HOGAR " + hogar.getNumero());
@@ -124,30 +128,30 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
             case TipoFragmentHogar.VISITAS_ENCUESTADOR:
                 btnAtras.setVisibility(View.GONE);
                 btnSiguiente.setVisibility(View.VISIBLE);
-                FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idHogar,HogarActivity.this);
+                FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idHogar,idVivienda,HogarActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
-                fragmentActual = fragmentVisitasEncuestador;break;
+                fragmentActual = fragmentVisitasEncuestador; tFragment = TipoFragmentHogar.VISITAS_ENCUESTADOR;break;
             case TipoFragmentHogar.VISITAS_SUPERVISOR:
-                FragmentVisitasSupervisor fragmentVisitasSupervisor = new FragmentVisitasSupervisor(idHogar,HogarActivity.this);
+                FragmentVisitasSupervisor fragmentVisitasSupervisor = new FragmentVisitasSupervisor(idHogar,idVivienda,HogarActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasSupervisor);
-                fragmentActual = fragmentVisitasSupervisor;break;
+                fragmentActual = fragmentVisitasSupervisor;tFragment = TipoFragmentHogar.VISITAS_SUPERVISOR;break;
             case TipoFragmentHogar.FUNCIONARIOS:
-                FragmentFuncionarios fragmentFuncionarios = new FragmentFuncionarios(idHogar,HogarActivity.this);
+                FragmentFuncionarios fragmentFuncionarios = new FragmentFuncionarios(idHogar,idVivienda,HogarActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentFuncionarios);
-                fragmentActual = fragmentFuncionarios;break;
+                fragmentActual = fragmentFuncionarios;tFragment = TipoFragmentHogar.FUNCIONARIOS;break;
             case TipoFragmentHogar.P101P107:
-                FragmentP101P107 fragmentP101P107 = new FragmentP101P107(idHogar,HogarActivity.this);
+                FragmentP101P107 fragmentP101P107 = new FragmentP101P107(idHogar,idVivienda,HogarActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP101P107);
-                fragmentActual = fragmentP101P107;break;
+                fragmentActual = fragmentP101P107;tFragment = TipoFragmentHogar.P101P107;break;
             case TipoFragmentHogar.P108P113:
-                FragmentP108P113 fragmentP108P113 = new FragmentP108P113(idHogar,HogarActivity.this);
+                FragmentP108P113 fragmentP108P113 = new FragmentP108P113(idHogar,idVivienda,HogarActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP108P113);
-                fragmentActual = fragmentP108P113;break;
+                fragmentActual = fragmentP108P113;tFragment = TipoFragmentHogar.P108P113;break;
             case TipoFragmentHogar.P201P206:
                 btnSiguiente.setVisibility(View.GONE);
-                FragmentP201P206 fragmentP201P206 = new FragmentP201P206(idHogar,HogarActivity.this);
+                FragmentP201P206 fragmentP201P206 = new FragmentP201P206(idHogar,idVivienda,HogarActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP201P206);
-                fragmentActual = fragmentP201P206;break;
+                fragmentActual = fragmentP201P206;tFragment = TipoFragmentHogar.P201P206;break;
         }
         fragmentTransaction.commit();
     }

@@ -18,12 +18,14 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
  */
 public class FragmentVisitasSupervisor extends FragmentPagina {
 
-    String idEncuestado;
+    String idHogar;
+    String idVivienda;
     Context context;
 
     @SuppressLint("ValidFragment")
-    public FragmentVisitasSupervisor(String idEncuestado, Context context) {
-        this.idEncuestado = idEncuestado;
+    public FragmentVisitasSupervisor(String idHogar, String idVivienda, Context context) {
+        this.idHogar = idHogar;
+        this.idVivienda = idVivienda;
         this.context = context;
     }
 

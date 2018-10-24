@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.agregacion.AgregarResidenteActivity">
+    <include layout="@layout/layout_toolbar"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -19,12 +20,6 @@
             <include layout="@layout/modulo2_p204"/>
             <include layout="@layout/modulo2_p205"/>
             <include layout="@layout/modulo2_p206"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/RaisedButtonDark"
-                android:layout_margin="@dimen/margen_small"
-                android:text="@string/modulo_2_p202_boton_guardar"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

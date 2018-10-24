@@ -1002,7 +1002,7 @@ public class Modulo6 {
 
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo2_id,_id);
+        contentValues.put(SQLConstantes.residentes_id,_id);
 
         contentValues.put(SQLConstantes.modulo6_id,_id);
         contentValues.put(SQLConstantes.modulo6_idInformante,idInformante);

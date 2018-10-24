@@ -16,7 +16,7 @@ public class SQLConstantes {
 
 
     public static String tablamodulo1 = "modulo1";
-    public static String tablamodulo2 = "modulo2";
+    public static String tablaresidentes = "tablaresidentes";
     public static String tablamodulo3 = "modulo3";
     public static String tablam3p309rutas = "m3_p309_rutas";
     public static String tablam3p318personas = "m3_p318_personas";
@@ -332,28 +332,33 @@ public class SQLConstantes {
             ;
 
     /**
-     * TABLA MODULO 2
+     * TABLA RESIDENTES
      * */
-    public static String modulo2_id = "_id";
-    public static String modulo2_idInformante = "idInformante";
-    public static String modulo2_idHogar = "idHogar";
-    public static String modulo2_idVivienda = "idVivienda";
-    public static String modulo2_c2_p202 = "c2_p202";
-    public static String modulo2_c2_p203 = "c2_p203";
-    public static String modulo2_c2_p204 = "c2_p204";
-    public static String modulo2_c2_p205 = "c2_p205";
-    public static String modulo2_c2_p206 = "c2_p206";
+    public static String residentes_id = "_id";
+    public static String residentes_idInformante = "id_informante";
+    public static String residentes_idHogar = "id_hogar";
+    public static String residentes_idVivienda = "id_vivienda";
+    public static String residentes_numero = "numero";
+    public static String residentes_c2_p202 = "c2_p202";
+    public static String residentes_c2_p203 = "c2_p203";
+    public static String residentes_c2_p204 = "c2_p204";
+    public static String residentes_c2_p205_a = "c2_p205_a";
+    public static String residentes_c2_p205_m = "c2_p205_m";
+    public static String residentes_c2_p206 = "c2_p206";
 
     public static final String SQL_CREATE_TABLA_MODULO2 =
-            "CREATE TABLE " + tablamodulo2 + "(" +
-                    modulo2_id  + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    modulo2_idHogar + " TEXT," +
-                    modulo2_idVivienda  + " TEXT," +
-                    modulo2_c2_p202  + " TEXT," +
-                    modulo2_c2_p203  + " TEXT," +
-                    modulo2_c2_p204  + " TEXT," +
-                    modulo2_c2_p205  + " TEXT," +
-                    modulo2_c2_p206 + " TEXT" + ");"
+            "CREATE TABLE " + tablaresidentes + "(" +
+                    residentes_id + " TEXT PRIMARY KEY," +
+                    residentes_idInformante + " TEXT," +
+                    residentes_idHogar + " TEXT," +
+                    residentes_idVivienda + " TEXT," +
+                    residentes_numero + " TEXT," +
+                    residentes_c2_p202 + " TEXT," +
+                    residentes_c2_p203 + " TEXT," +
+                    residentes_c2_p204 + " TEXT," +
+                    residentes_c2_p205_a + " TEXT," +
+                    residentes_c2_p205_m + " TEXT," +
+                    residentes_c2_p206 + " TEXT" + ");"
             ;
 
     /**

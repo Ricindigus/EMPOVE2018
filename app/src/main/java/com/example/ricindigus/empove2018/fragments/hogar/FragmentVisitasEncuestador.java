@@ -35,6 +35,7 @@ import java.util.ArrayList;
 public class FragmentVisitasEncuestador extends FragmentPagina {
 
     String idHogar;
+    String idVivienda;
     Context context;
 
     TextView resultadoTextView, fechaTextView;
@@ -47,11 +48,11 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
 
 
     @SuppressLint("ValidFragment")
-    public FragmentVisitasEncuestador(String idHogar, Context context) {
+    public FragmentVisitasEncuestador(String idHogar, String idVivienda, Context context) {
         this.idHogar = idHogar;
+        this.idVivienda = idVivienda;
         this.context = context;
     }
-
 
     public FragmentVisitasEncuestador() {
         // Required empty public constructor

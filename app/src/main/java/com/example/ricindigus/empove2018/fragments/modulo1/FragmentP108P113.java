@@ -21,7 +21,8 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
 public class FragmentP108P113 extends FragmentPagina {
 
     String idHogar;
-    Context contexto;
+    String idVivienda;
+    Context context;
 
     RadioGroup c1_p108_RadioGroup, c1_p109_RadioGroup, c1_p110_RadioGroup, c1_p111_RadioGroup, c1_p112_RadioGroup;
     RadioGroup c1_p113_1_RadioGroup, c1_p113_2_RadioGroup, c1_p113_3_RadioGroup, c1_p113_4_RadioGroup, c1_p113_5_RadioGroup,
@@ -33,10 +34,10 @@ public class FragmentP108P113 extends FragmentPagina {
         // Required empty public constructor
     }
 
-    @SuppressLint("ValidFragment")
-    public FragmentP108P113(String idHogar,Context contexto) {
-        this.contexto = contexto;
+    public FragmentP108P113(String idHogar, String idVivienda, Context context) {
         this.idHogar = idHogar;
+        this.idVivienda = idVivienda;
+        this.context = context;
     }
 
     @Override
