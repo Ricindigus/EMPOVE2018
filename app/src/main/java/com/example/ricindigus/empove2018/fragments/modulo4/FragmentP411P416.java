@@ -67,6 +67,8 @@ public class FragmentP411P416 extends FragmentPagina {
     private int c4_p416_5;
     private int c4_p416_6;
 
+    private int edad, sexo;
+
     @SuppressLint("ValidFragment")
     public FragmentP411P416(String idEncuestado, Context context) {
         this.idEncuestado = idEncuestado;
@@ -77,6 +79,8 @@ public class FragmentP411P416 extends FragmentPagina {
         idHogar = residente.getId_hogar();
         idVivienda = residente.getId_vivienda();
         idInformante = "";
+        if(residente.getC2_p204()=="") sexo = -1; else sexo = Integer.parseInt(residente.getC2_p204());
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         data.close();
     }
 
@@ -123,7 +127,8 @@ public class FragmentP411P416 extends FragmentPagina {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);c4_p415_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        super.onViewCreated(view, savedInstanceState);
+        c4_p415_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(100)});
         c4_p415_o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -284,6 +289,7 @@ public class FragmentP411P416 extends FragmentPagina {
             if(!(modulo4.getC4_p416_5().equals("-1") || modulo4.getC4_p416_5().equals("")))((RadioButton)c4_p416_5_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p416_5()))).setChecked(true);
             if(!(modulo4.getC4_p416_6().equals("-1") || modulo4.getC4_p416_6().equals("")))((RadioButton)c4_p416_6_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p416_6()))).setChecked(true);
         }
+        ocultar();
         data.close();
     }
 
@@ -373,5 +379,67 @@ public class FragmentP411P416 extends FragmentPagina {
     public void mostrarTeclado(){
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    public void limpiar_p411(){
+        c4_p411_RadioGroup.clearCheck();
+    }
+
+    public void limpiar_p412(){
+        c4_p412_RadioGroup.clearCheck();
+    }
+
+    public void limpiar_p413(){
+        c4_p413_RadioGroup.clearCheck();
+    }
+
+    public void limpiar_p414(){
+        c4_p414_RadioGroup.clearCheck();
+    }
+    public void limpiar_p415(){
+        c4_p415_1_CheckBox.setChecked(false);
+        c4_p415_2_CheckBox.setChecked(false);
+        c4_p415_3_CheckBox.setChecked(false);
+        c4_p415_4_CheckBox.setChecked(false);
+        c4_p415_5_CheckBox.setChecked(false);
+        c4_p415_6_CheckBox.setChecked(false);
+        c4_p415_7_CheckBox.setChecked(false);
+        c4_p415_8_CheckBox.setChecked(false);
+        c4_p415_9_CheckBox.setChecked(false);
+        c4_p415_o_EditText.setText("");
+    }
+
+    public void limpiar_p416(){
+        c4_p416_1_RadioGroup.clearCheck();
+        c4_p416_2_RadioGroup.clearCheck();
+        c4_p416_3_RadioGroup.clearCheck();
+        c4_p416_4_RadioGroup.clearCheck();
+        c4_p416_5_RadioGroup.clearCheck();
+        c4_p416_6_RadioGroup.clearCheck();
+    }
+
+    public void ocultar(){
+        if((edad>=12 && edad<=49) && sexo==1){
+            m4_p411_linearlayout.setVisibility(View.VISIBLE);
+            int pos = c4_p411_RadioGroup.indexOfChild(c4_p411_RadioGroup.findViewById(c4_p411_RadioGroup.getCheckedRadioButtonId()));
+            if(pos<1) m4_p412_linearlayout.setVisibility(View.VISIBLE);
+            m4_p413_linearlayout.setVisibility(View.VISIBLE);
+            m4_p414_linearlayout.setVisibility(View.VISIBLE);
+        }else{
+            limpiar_p411(); limpiar_p412(); limpiar_p413(); limpiar_p414();
+            m4_p411_linearlayout.setVisibility(View.GONE);
+            m4_p412_linearlayout.setVisibility(View.GONE);
+            m4_p413_linearlayout.setVisibility(View.GONE);
+            m4_p414_linearlayout.setVisibility(View.GONE);
+        }
+        if(edad>=15){
+            limpiar_p411(); limpiar_p412(); limpiar_p413(); limpiar_p414();
+            m4_p411_linearlayout.setVisibility(View.GONE);
+            m4_p412_linearlayout.setVisibility(View.GONE);
+            m4_p413_linearlayout.setVisibility(View.GONE);
+            m4_p414_linearlayout.setVisibility(View.GONE);
+        }else{
+
+        }
     }
 }

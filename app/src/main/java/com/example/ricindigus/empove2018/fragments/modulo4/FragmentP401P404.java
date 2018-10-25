@@ -7,6 +7,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
@@ -147,7 +148,7 @@ public class FragmentP401P404 extends FragmentPagina {
                 }
             }
         });
-        c4_p401_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c4_p401_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(100)});
         c4_p401_o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -157,6 +158,35 @@ public class FragmentP401P404 extends FragmentPagina {
                     return true;
                 }
                 return false;
+            }
+        });
+        c4_p402_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                Log.e("onViewCreated", "onCheckedChanged: "+ radioGroup.indexOfChild(c4_p402_RadioGroup.findViewById(c4_p402_RadioGroup.getCheckedRadioButtonId())));
+                Log.e("onViewCreated", "i: "+ i);
+                int pos = radioGroup.indexOfChild(c4_p402_RadioGroup.findViewById(c4_p402_RadioGroup.getCheckedRadioButtonId()));
+                switch (pos){
+                    case 0: m4_p403_linearlayout.setVisibility(View.VISIBLE);m4_p404_linearlayout.setVisibility(View.VISIBLE);break;
+                    case 1: m4_p403_linearlayout.setVisibility(View.GONE);m4_p404_linearlayout.setVisibility(View.GONE);
+                            c4_p403_1_CheckBox.setChecked(false);
+                            c4_p403_2_CheckBox.setChecked(false);
+                            c4_p403_3_CheckBox.setChecked(false);
+                            c4_p403_4_CheckBox.setChecked(false);
+                            c4_p403_5_CheckBox.setChecked(false);
+                            c4_p403_6_CheckBox.setChecked(false);
+                            c4_p403_7_CheckBox.setChecked(false);
+                            c4_p403_8_CheckBox.setChecked(false);
+                            c4_p403_9_CheckBox.setChecked(false);
+                            c4_p403_10_CheckBox.setChecked(false);
+                            c4_p403_11_CheckBox.setChecked(false);
+                            c4_p403_12_CheckBox.setChecked(false);
+                            c4_p403_13_CheckBox.setChecked(false);
+                            c4_p403_14_CheckBox.setChecked(false);
+                            c4_p403_o_EditText.setText("");
+                            c4_p404_RadioGroup.clearCheck();
+                            break;
+                }
             }
         });
         c4_p403_14_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -172,7 +202,7 @@ public class FragmentP401P404 extends FragmentPagina {
                 }
             }
         });
-        c4_p403_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c4_p403_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(100)});
         c4_p403_o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {

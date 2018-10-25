@@ -144,6 +144,84 @@ public class FragmentP405P407 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        c4_p405_7_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    m4_p406_linearlayout.setVisibility(View.GONE); limpiar_p406();
+                    m4_p407_linearlayout.setVisibility(View.GONE); limpiar_p407();
+                    c4_p405_1_CheckBox.setChecked(false);
+                    c4_p405_1_CheckBox.setEnabled(false);
+                    c4_p405_2_CheckBox.setChecked(false);
+                    c4_p405_2_CheckBox.setEnabled(false);
+                    c4_p405_3_CheckBox.setChecked(false);
+                    c4_p405_3_CheckBox.setEnabled(false);
+                    c4_p405_4_CheckBox.setChecked(false);
+                    c4_p405_4_CheckBox.setEnabled(false);
+                    c4_p405_5_CheckBox.setChecked(false);
+                    c4_p405_5_CheckBox.setEnabled(false);
+                    c4_p405_6_CheckBox.setChecked(false);
+                    c4_p405_6_CheckBox.setEnabled(false);
+                }else{
+                    m4_p406_linearlayout.setVisibility(View.VISIBLE);
+                    m4_p407_linearlayout.setVisibility(View.VISIBLE);
+                    c4_p405_1_CheckBox.setEnabled(true);
+                    c4_p405_2_CheckBox.setEnabled(true);
+                    c4_p405_3_CheckBox.setEnabled(true);
+                    c4_p405_4_CheckBox.setEnabled(true);
+                    c4_p405_5_CheckBox.setEnabled(true);
+                    c4_p405_6_CheckBox.setEnabled(true);
+                }
+            }
+        });
+        c4_p406_1_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    m4_p407_linearlayout.setVisibility(View.GONE); limpiar_p407();
+                }else{
+                    if(!(c4_p406_2_CheckBox.isChecked() || c4_p406_3_CheckBox.isChecked() || c4_p406_4_CheckBox.isChecked())){
+                        m4_p407_linearlayout.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        });
+        c4_p406_2_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    m4_p407_linearlayout.setVisibility(View.GONE); limpiar_p407();
+                }else{
+                    if(!(c4_p406_1_CheckBox.isChecked() || c4_p406_3_CheckBox.isChecked() || c4_p406_4_CheckBox.isChecked())){
+                        m4_p407_linearlayout.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        });
+        c4_p406_3_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    m4_p407_linearlayout.setVisibility(View.GONE); limpiar_p407();
+                }else{
+                    if(!(c4_p406_1_CheckBox.isChecked() || c4_p406_2_CheckBox.isChecked() || c4_p406_4_CheckBox.isChecked())){
+                        m4_p407_linearlayout.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        });
+        c4_p406_4_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    m4_p407_linearlayout.setVisibility(View.GONE); limpiar_p407();
+                }else{
+                    if(!(c4_p406_1_CheckBox.isChecked() || c4_p406_2_CheckBox.isChecked() || c4_p406_3_CheckBox.isChecked())){
+                        m4_p407_linearlayout.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        });
         c4_p406_7_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -157,7 +235,7 @@ public class FragmentP405P407 extends FragmentPagina {
                 }
             }
         });
-        c4_p406_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c4_p406_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(100)});
         c4_p406_o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -199,7 +277,7 @@ public class FragmentP405P407 extends FragmentPagina {
                     c4_p406_7_CheckBox.setEnabled(true);                }
             }
         });
-        c4_p407_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c4_p407_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(100)});
         c4_p407_o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -441,5 +519,34 @@ public class FragmentP405P407 extends FragmentPagina {
     public void mostrarTeclado(){
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    public void limpiar_p406(){
+        c4_p406_1_CheckBox.setChecked(false);
+        c4_p406_2_CheckBox.setChecked(false);
+        c4_p406_3_CheckBox.setChecked(false);
+        c4_p406_4_CheckBox.setChecked(false);
+        c4_p406_5_CheckBox.setChecked(false);
+        c4_p406_6_CheckBox.setChecked(false);
+        c4_p406_7_CheckBox.setChecked(false);
+        c4_p406_8_CheckBox.setChecked(false);
+        c4_p406_o_EditText.setText("");
+    }
+
+    public void limpiar_p407(){
+        c4_p407_1_CheckBox.setChecked(false);
+        c4_p407_2_CheckBox.setChecked(false);
+        c4_p407_3_CheckBox.setChecked(false);
+        c4_p407_4_CheckBox.setChecked(false);
+        c4_p407_5_CheckBox.setChecked(false);
+        c4_p407_6_CheckBox.setChecked(false);
+        c4_p407_7_CheckBox.setChecked(false);
+        c4_p407_8_CheckBox.setChecked(false);
+        c4_p407_9_CheckBox.setChecked(false);
+        c4_p407_10_CheckBox.setChecked(false);
+        c4_p407_11_CheckBox.setChecked(false);
+        c4_p407_12_CheckBox.setChecked(false);
+        c4_p407_13_CheckBox.setChecked(false);
+        c4_p407_o_EditText.setText("");
     }
 }
