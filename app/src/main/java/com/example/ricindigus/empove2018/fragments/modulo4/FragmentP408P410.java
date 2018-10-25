@@ -16,20 +16,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo4;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP408P410 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
     CheckBox c4_p408_1_CheckBox, c4_p408_2_CheckBox, c4_p408_3_CheckBox, c4_p408_4_CheckBox, c4_p408_5_CheckBox,
@@ -58,12 +63,16 @@ public class FragmentP408P410 extends FragmentPagina {
     private int c4_p410;
 
     @SuppressLint("ValidFragment")
-    public FragmentP408P410(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP408P410(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        data.close();
     }
 
     public FragmentP408P410() {
@@ -118,6 +127,19 @@ public class FragmentP408P410 extends FragmentPagina {
                 return false;
             }
         });
+        c4_p408_13_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    c4_p408_o_EditText.setEnabled(true);
+                    c4_p408_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                }else{
+                    c4_p408_o_EditText.setText("");
+                    c4_p408_o_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
+                    c4_p408_o_EditText.setEnabled(false);
+                }
+            }
+        });
         cargarDatos();
     }
 
@@ -144,14 +166,15 @@ public class FragmentP408P410 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo4_c4_p409,c4_p409+"");
         contentValues.put(SQLConstantes.modulo4_c4_p410,c4_p410+"");
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
-            contentValues.put(SQLConstantes.modulo4_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo4_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo4_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo4_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+            Modulo4 modulo4 = new Modulo4();
+            modulo4.setIdInformante(idInformante);
+            modulo4.set_id(idEncuestado);
+            modulo4.setIdVivienda(idVivienda);
+            modulo4.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo4.toValues());
         }
         data.close();
     }
@@ -179,11 +202,48 @@ public class FragmentP408P410 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo4 modulo4 = data.getModulo4(idEncuestado);
+            if(modulo4.getC4_p408_1().equals("0")) c4_p408_1_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_2().equals("0")) c4_p408_2_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_3().equals("0")) c4_p408_3_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_4().equals("0")) c4_p408_4_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_5().equals("0")) c4_p408_5_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_6().equals("0")) c4_p408_6_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_7().equals("0")) c4_p408_7_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_8().equals("0")) c4_p408_8_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_9().equals("0")) c4_p408_9_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_10().equals("0")) c4_p408_10_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_11().equals("0")) c4_p408_11_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_12().equals("0")) c4_p408_12_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_13().equals("0")) c4_p408_13_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_14().equals("0")) c4_p408_14_CheckBox.setChecked(false);
+            if(modulo4.getC4_p408_1().equals("1")) c4_p408_1_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_2().equals("1")) c4_p408_2_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_3().equals("1")) c4_p408_3_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_4().equals("1")) c4_p408_4_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_5().equals("1")) c4_p408_5_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_6().equals("1")) c4_p408_6_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_7().equals("1")) c4_p408_7_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_8().equals("1")) c4_p408_8_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_9().equals("1")) c4_p408_9_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_10().equals("1")) c4_p408_10_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_11().equals("1")) c4_p408_11_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_12().equals("1")) c4_p408_12_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_13().equals("1")) c4_p408_13_CheckBox.setChecked(true);
+            if(modulo4.getC4_p408_14().equals("1")) c4_p408_14_CheckBox.setChecked(true);
+            c4_p408_o_EditText.setText(modulo4.getC4_p408_o());
+            if(!(modulo4.getC4_p409().equals("-1") || modulo4.getC4_p409().equals("")))((RadioButton)c4_p409_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p409()))).setChecked(true);
+            if(!(modulo4.getC4_p410().equals("-1") || modulo4.getC4_p410().equals("")))((RadioButton)c4_p410_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p410()))).setChecked(true);
+        }
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
+        llenarVariables();
         if(m4_p408_linearlayout.getVisibility()==View.VISIBLE){
             if(c4_p408_1==0 && c4_p408_2==0 && c4_p408_3==0 && c4_p408_4==0 && c4_p408_5==0 &&
                     c4_p408_6==0 && c4_p408_7==0 && c4_p408_8==0 && c4_p408_9==0 && c4_p408_10==0 &&
@@ -198,11 +258,11 @@ public class FragmentP408P410 extends FragmentPagina {
                 }
             }
         }
-        if(c4_p409<1 && m4_p409_linearlayout.getVisibility()==View.VISIBLE){
+        if(c4_p409<0 && m4_p409_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 409: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c4_p410<1 && m4_p410_linearlayout.getVisibility()==View.VISIBLE){
+        if(c4_p410<0 && m4_p410_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 410: DEBE SELECCIONAR UNA OPCION");
             return false;
         }

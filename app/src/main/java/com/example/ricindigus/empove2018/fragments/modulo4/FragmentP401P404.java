@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -218,11 +219,12 @@ public class FragmentP401P404 extends FragmentPagina {
         if(data.existeElemento(getNombreTabla(),idEncuestado)){
             data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
-            contentValues.put(SQLConstantes.modulo4_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo4_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo4_id,idEncuestado+"");
-            contentValues.put(SQLConstantes.modulo4_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+            Modulo4 modulo4 = new Modulo4();
+            modulo4.setIdInformante(idInformante);
+            modulo4.set_id(idEncuestado);
+            modulo4.setIdVivienda(idVivienda);
+            modulo4.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo4.toValues());
         }
         data.close();
     }
@@ -271,7 +273,8 @@ public class FragmentP401P404 extends FragmentPagina {
             c4_p401_o_EditText.setText(modulo4.getC4_p401_o());
             if(modulo4.getC4_p401_5().equals("1")) c4_p401_5_CheckBox.setChecked(true);
             if(modulo4.getC4_p401_5().equals("0")) c4_p401_5_CheckBox.setChecked(false);
-            if(!modulo4.getC4_p402().equals("-1"))((RadioButton)c4_p402_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p402()))).setChecked(true);
+            Log.e("cargardatos", "modulo4.getC4_p402(): "+modulo4.getC4_p402() );
+            if(!(modulo4.getC4_p402().equals("-1") || modulo4.getC4_p402().equals("")))((RadioButton)c4_p402_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p402()))).setChecked(true);
             if(modulo4.getC4_p403_1().equals("1")) c4_p403_1_CheckBox.setChecked(true);
             if(modulo4.getC4_p403_1().equals("0")) c4_p403_1_CheckBox.setChecked(false);
             if(modulo4.getC4_p403_2().equals("1")) c4_p403_2_CheckBox.setChecked(true);
@@ -301,7 +304,8 @@ public class FragmentP401P404 extends FragmentPagina {
             if(modulo4.getC4_p403_14().equals("1")) c4_p403_14_CheckBox.setChecked(true);
             if(modulo4.getC4_p403_14().equals("0")) c4_p403_14_CheckBox.setChecked(false);
             c4_p403_o_EditText.setText(modulo4.getC4_p403_o());
-            if(!modulo4.getC4_p404().equals("-1"))((RadioButton)c4_p404_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p404()))).setChecked(true);
+            Log.e("cargardatos", "modulo4.getC4_p404(): "+modulo4.getC4_p404() );
+            if(!(modulo4.getC4_p404().equals("-1") || modulo4.getC4_p404().equals("")))((RadioButton)c4_p404_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p404()))).setChecked(true);
         }
         data.close();
     }
