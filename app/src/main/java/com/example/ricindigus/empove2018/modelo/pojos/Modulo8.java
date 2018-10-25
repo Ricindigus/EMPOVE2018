@@ -88,6 +88,11 @@ public class Modulo8 {
     private String c8_p816_6;
     private String c8_p816_7;
     private String c8_p816_8;
+    private String c8_p816_9;
+    private String c8_p816_10;
+    private String c8_p816_11;
+    private String c8_p816_12;
+    private String c8_p816_13;
     private String c8_p816_o;
     private String c8_p817;
     private String c8_p818;
@@ -220,6 +225,11 @@ public class Modulo8 {
         c8_p816_6= "";
         c8_p816_7= "";
         c8_p816_8= "";
+        c8_p816_9= "";
+        c8_p816_10= "";
+        c8_p816_11= "";
+        c8_p816_12= "";
+        c8_p816_13= "";
         c8_p816_o= "";
         c8_p817= "";
         c8_p818= "";
@@ -931,6 +941,46 @@ public class Modulo8 {
 
     public void setC8_p816_8(String c8_p816_8) {
         this.c8_p816_8 = c8_p816_8;
+    }
+
+    public String getC8_p816_9() {
+        return c8_p816_9;
+    }
+
+    public void setC8_p816_9(String c8_p816_9) {
+        this.c8_p816_9 = c8_p816_9;
+    }
+
+    public String getC8_p816_10() {
+        return c8_p816_10;
+    }
+
+    public void setC8_p816_10(String c8_p816_10) {
+        this.c8_p816_10 = c8_p816_10;
+    }
+
+    public String getC8_p816_11() {
+        return c8_p816_11;
+    }
+
+    public void setC8_p816_11(String c8_p816_11) {
+        this.c8_p816_11 = c8_p816_11;
+    }
+
+    public String getC8_p816_12() {
+        return c8_p816_12;
+    }
+
+    public void setC8_p816_12(String c8_p816_12) {
+        this.c8_p816_12 = c8_p816_12;
+    }
+
+    public String getC8_p816_13() {
+        return c8_p816_13;
+    }
+
+    public void setC8_p816_13(String c8_p816_13) {
+        this.c8_p816_13 = c8_p816_13;
     }
 
     public String getC8_p816_o() {

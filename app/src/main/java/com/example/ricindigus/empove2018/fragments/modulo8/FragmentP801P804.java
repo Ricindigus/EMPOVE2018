@@ -17,6 +17,8 @@ import android.widget.RadioGroup;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
@@ -25,7 +27,7 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
 public class FragmentP801P804 extends FragmentPagina {
 
     Context context;
-    String idVivienda, idHogar, idInformante, idPersona;
+    String idVivienda, idHogar, idInformante, idEncuestado;
 
     RadioGroup c8_p801_RadioGroup, c8_p802_RadioGroup, c8_p803_RadioGroup, c8_p804_RadioGroup;
     LinearLayout m8_p801_linearlayout, m8_p802_linearlayout, m8_p803_linearlayout, m8_p804_linearlayout;
@@ -36,12 +38,16 @@ public class FragmentP801P804 extends FragmentPagina {
     private int c8_p804;
 
     @SuppressLint("ValidFragment")
-    public FragmentP801P804(Context context, String idVivienda, String idHogar, String idInformante, String idPersona) {
+    public FragmentP801P804(Context context, String idEncuestado) {
         this.context = context;
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idInformante = idInformante;
-        this.idPersona = idPersona;
+        this.idEncuestado = idEncuestado;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idVivienda = residente.getId_vivienda();
+        idHogar = residente.getId_hogar();
+        idInformante = "";
+        data.close();
     }
 
     public FragmentP801P804() {
@@ -68,6 +74,13 @@ public class FragmentP801P804 extends FragmentPagina {
         return rootView;
     }
 
+
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+
+
+    }
+
     @Override
     public void guardarDatos() {
         Data data = new Data(context);
@@ -78,13 +91,13 @@ public class FragmentP801P804 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo8_c8_p803,""+c8_p803);
         contentValues.put(SQLConstantes.modulo8_c8_p804,""+c8_p804);
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
             contentValues.put(SQLConstantes.modulo8_idVivienda,""+idVivienda);
             contentValues.put(SQLConstantes.modulo8_idHogar,""+idHogar);
             contentValues.put(SQLConstantes.modulo8_idInformante,""+idInformante);
-            contentValues.put(SQLConstantes.modulo8_id,""+idPersona);
+            contentValues.put(SQLConstantes.modulo8_id,""+idEncuestado);
             data.insertarElemento(getNombreTabla(),contentValues);
         }
         data.close();
@@ -100,6 +113,14 @@ public class FragmentP801P804 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
+        Data data =  new Data(context);
+        data.open();
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo8 modulo8 = data.getModulo8(idEncuestado);
+
+
+        }
+
 
     }
 

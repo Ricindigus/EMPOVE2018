@@ -18,11 +18,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
@@ -32,7 +36,7 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
 public class FragmentP701P705 extends FragmentPagina {
 
     Context context;
-    String idVivienda, idHogar, idInformante, idPersona;
+    String idVivienda, idHogar, idInformante, idEncuestado;
 
     RadioGroup c7_p701_RadioGroup;
     CheckBox c7_p702_1_Checkbox, c7_p702_2_Checkbox, c7_p702_3_Checkbox , c7_p702_4_Checkbox, c7_p702_5_Checkbox,
@@ -58,12 +62,16 @@ public class FragmentP701P705 extends FragmentPagina {
     private int c7_p705_1, c7_p705_2, c7_p705_3, c7_p705_4, c7_p705_5, c7_p705_6, c7_p705_7;
 
     @SuppressLint("ValidFragment")
-    public FragmentP701P705(Context context, String idVivienda, String idHogar, String idInformante, String idPersona) {
+    public FragmentP701P705(Context context, String idEncuestado) {
         this.context = context;
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idInformante = idInformante;
-        this.idPersona = idPersona;
+        this.idEncuestado = idEncuestado;
+        Data data = new Data(context);
+        Residente residente = data.getResidente(idEncuestado);
+        idVivienda = residente.getId_vivienda();
+        idHogar = residente.getId_hogar();
+        idInformante = "";
+        data.close();
+
         // Required empty public constructor
     }
 
@@ -196,13 +204,13 @@ public class FragmentP701P705 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo7_c7_p705_7, ""+c7_p705_7);
         contentValues.put(SQLConstantes.modulo7_c7_p705_o, ""+c7_p705_o);
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
             contentValues.put(SQLConstantes.modulo7_idVivienda,""+idVivienda);
             contentValues.put(SQLConstantes.modulo7_idHogar,""+idHogar);
             contentValues.put(SQLConstantes.modulo7_idInformante,""+idInformante);
-            contentValues.put(SQLConstantes.modulo7_id,""+idPersona);
+            contentValues.put(SQLConstantes.modulo7_id,""+idEncuestado);
             data.insertarElemento(getNombreTabla(),contentValues);
         }
         data.close();
@@ -244,11 +252,71 @@ public class FragmentP701P705 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
+        Data data = new Data(context);
+        data.open();
+        if(data.existeElemento(getNombreTabla(), idEncuestado)){
+            Modulo7 modulo7 = data.getModulo7(idEncuestado);
+            if(!modulo7.getC7_p701().equals("-1"))((RadioButton)c7_p701_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p701()))).setChecked(true);
+            if(modulo7.getC7_p702_1().equals("1")) c7_p702_1_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_1().equals("0")) c7_p702_1_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_2().equals("1")) c7_p702_2_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_2().equals("0")) c7_p702_2_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_3().equals("1")) c7_p702_3_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_3().equals("0")) c7_p702_3_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_4().equals("1")) c7_p702_4_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_4().equals("0")) c7_p702_4_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_5().equals("1")) c7_p702_5_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_5().equals("0")) c7_p702_5_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_6().equals("1")) c7_p702_6_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_6().equals("0")) c7_p702_6_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_7().equals("1")) c7_p702_7_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_7().equals("0")) c7_p702_7_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_8().equals("1")) c7_p702_8_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_8().equals("0")) c7_p702_8_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_9().equals("1")) c7_p702_9_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_9().equals("0")) c7_p702_9_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_10().equals("1")) c7_p702_10_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_10().equals("0")) c7_p702_10_Checkbox.setChecked(false);
+            c7_p702_o_EditText.setText(modulo7.getC7_p702_o());
+            if(!modulo7.getC7_p703().equals("-1"))((RadioButton)c7_p703_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p703()))).setChecked(true);
+            if(modulo7.getC7_p704_1().equals("1")) c7_p704_1_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_1().equals("0")) c7_p704_1_Checkbox.setChecked(false);
+            if(modulo7.getC7_p704_2().equals("1")) c7_p704_2_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_2().equals("0")) c7_p704_2_Checkbox.setChecked(false);
+            if(modulo7.getC7_p704_3().equals("1")) c7_p704_3_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_3().equals("0")) c7_p704_3_Checkbox.setChecked(false);
+            if(modulo7.getC7_p704_4().equals("1")) c7_p704_4_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_4().equals("0")) c7_p704_4_Checkbox.setChecked(false);
+            if(modulo7.getC7_p704_5().equals("1")) c7_p704_5_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_5().equals("0")) c7_p704_5_Checkbox.setChecked(false);
+            if(modulo7.getC7_p704_6().equals("1")) c7_p704_6_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_6().equals("0")) c7_p704_6_Checkbox.setChecked(false);
+            c7_p704_o_EditText.setText(modulo7.getC7_p704_o());
+            if(modulo7.getC7_p705_1().equals("1")) c7_p705_1_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_1().equals("0")) c7_p705_1_Checkbox.setChecked(false);
+            if(modulo7.getC7_p705_2().equals("1")) c7_p705_2_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_2().equals("0")) c7_p705_2_Checkbox.setChecked(false);
+            if(modulo7.getC7_p705_3().equals("1")) c7_p705_3_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_3().equals("0")) c7_p705_3_Checkbox.setChecked(false);
+            if(modulo7.getC7_p705_4().equals("1")) c7_p705_4_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_4().equals("0")) c7_p705_4_Checkbox.setChecked(false);
+            if(modulo7.getC7_p705_5().equals("1")) c7_p705_5_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_5().equals("0")) c7_p705_5_Checkbox.setChecked(false);
+            if(modulo7.getC7_p705_6().equals("1")) c7_p705_6_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_6().equals("0")) c7_p705_6_Checkbox.setChecked(false);
+            if(modulo7.getC7_p705_7().equals("1")) c7_p705_7_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_7().equals("0")) c7_p705_7_Checkbox.setChecked(false);
+            c7_p705_o_EditText.setText(modulo7.getC7_p705_o());
+
+        }
+        data.close();
+
 
     }
 
 
     public boolean validarDatos(){
+        llenarVariables();
         if (c7_p701 <1){
             mostrarMensaje("PREGUNTA 701: DEBE SELECCIONAR UNA OPCION");
             return false;

@@ -18,11 +18,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
@@ -31,7 +34,7 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
 public class FragmentP706P709 extends FragmentPagina {
 
     Context context;
-    String idVivienda, idHogar, idInformante, idPersona;
+    String idVivienda, idHogar, idInformante, idEncuestado;
 
     RadioGroup c7_p706_RadioGroup, c7_p707_RadioGroup;
     EditText c7_p707_o_EditText;
@@ -49,12 +52,17 @@ public class FragmentP706P709 extends FragmentPagina {
             c7_p709_9, c7_p709_10;
 
     @SuppressLint("ValidFragment")
-    public FragmentP706P709(Context context, String idVivienda, String idHogar, String idInformante, String idPersona) {
+    public FragmentP706P709(Context context, String idEncuestado) {
         this.context = context;
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idInformante = idInformante;
-        this.idPersona = idPersona;// Required empty public constructor
+        this.idEncuestado = idEncuestado;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idVivienda = residente.getId_vivienda();
+        idHogar = residente.getId_hogar();
+        idInformante = "";
+        data.close();
+        // Required empty public constructor
     }
 
     public FragmentP706P709() {
@@ -154,17 +162,18 @@ public class FragmentP706P709 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo7_c7_p709_10, ""+c7_p709_10);
         contentValues.put(SQLConstantes.modulo7_c7_p709_o, ""+c7_p709_o);
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
             contentValues.put(SQLConstantes.modulo7_idVivienda,""+idVivienda);
             contentValues.put(SQLConstantes.modulo7_idHogar,""+idHogar);
             contentValues.put(SQLConstantes.modulo7_idInformante,""+idInformante);
-            contentValues.put(SQLConstantes.modulo7_id,""+idPersona);
+            contentValues.put(SQLConstantes.modulo7_id,""+idEncuestado);
             data.insertarElemento(getNombreTabla(),contentValues);
         }
 
         data.close();
+        //falta
     }
 
     public void llenarVariables(){
@@ -194,10 +203,54 @@ public class FragmentP706P709 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
+        Data data = new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo7 modulo7 =  data.getModulo7(idEncuestado);
+            if(!modulo7.getC7_p706().equals("-1"))((RadioButton)c7_p706_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p706()))).setChecked(true);
+            if(!modulo7.getC7_p707().equals("-1"))((RadioButton)c7_p707_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p707()))).setChecked(true);
+            c7_p707_o_EditText.setText(modulo7.getC7_p707_o());
+            if(modulo7.getC7_p708_1().equals("1")) c7_p708_1_Checkbox.setChecked(true);
+            if(modulo7.getC7_p708_1().equals("0")) c7_p708_1_Checkbox.setChecked(false);
+            if(modulo7.getC7_p708_2().equals("1")) c7_p708_2_Checkbox.setChecked(true);
+            if(modulo7.getC7_p708_2().equals("0")) c7_p708_2_Checkbox.setChecked(false);
+            if(modulo7.getC7_p708_3().equals("1")) c7_p708_3_Checkbox.setChecked(true);
+            if(modulo7.getC7_p708_3().equals("0")) c7_p708_3_Checkbox.setChecked(false);
+            if(modulo7.getC7_p708_4().equals("1")) c7_p708_4_Checkbox.setChecked(true);
+            if(modulo7.getC7_p708_4().equals("0")) c7_p708_4_Checkbox.setChecked(false);
+            if(modulo7.getC7_p708_5().equals("1")) c7_p708_5_Checkbox.setChecked(true);
+            if(modulo7.getC7_p708_5().equals("0")) c7_p708_5_Checkbox.setChecked(false);
 
+            if(modulo7.getC7_p709_1().equals("1")) c7_p709_1_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_1().equals("0")) c7_p709_1_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_2().equals("1")) c7_p709_2_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_2().equals("0")) c7_p709_2_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_3().equals("1")) c7_p709_3_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_3().equals("0")) c7_p709_3_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_4().equals("1")) c7_p709_4_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_4().equals("0")) c7_p709_4_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_5().equals("1")) c7_p709_5_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_5().equals("0")) c7_p709_5_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_6().equals("1")) c7_p709_6_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_6().equals("0")) c7_p709_6_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_7().equals("1")) c7_p709_7_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_7().equals("0")) c7_p709_7_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_8().equals("1")) c7_p709_8_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_8().equals("0")) c7_p709_8_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_9().equals("1")) c7_p709_9_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_9().equals("0")) c7_p709_9_Checkbox.setChecked(false);
+            if(modulo7.getC7_p709_10().equals("1")) c7_p709_10_Checkbox.setChecked(true);
+            if(modulo7.getC7_p709_10().equals("0")) c7_p709_10_Checkbox.setChecked(false);
+            c7_p709_o_EditText.setText(modulo7.getC7_p709_o());
+
+        }
+        data.close();
+        //falta parte guardar
     }
 
     public boolean validarDatos(){
+        llenarVariables();
         if(c7_p706<1){
             mostrarMensaje("PREGUNTA 706: DEBE SELECCIONAR UNA OPCION");
             return false;
