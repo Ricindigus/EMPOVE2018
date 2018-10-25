@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
 import com.example.ricindigus.empove2018.modelo.pojos.Marco;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,6 +85,7 @@ public class FragmentCaratula extends FragmentPagina {
         manzana_id_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_MANZANA_ID);
         aer_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_AER);
         vivienda_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_VIVIENDA);
+
         tipvia_Spinner = (Spinner) rootView.findViewById(R.id.caratula_spinner_TIPVIA);
         nomvia_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_NOMVIA);
         nropta_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_NROPTA);
@@ -100,6 +103,20 @@ public class FragmentCaratula extends FragmentPagina {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        nomvia_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
+        nropta_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
+        block_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
+        interior_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
+        piso_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
+        mza_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
+        lote_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
+        km_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
+        telefono_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(10)});
+        t_hogar_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+
+        km_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        telefono_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        t_hogar_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         cargarDatos();
     }
 

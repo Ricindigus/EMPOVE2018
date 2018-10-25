@@ -60,7 +60,7 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         idVivienda = hogar.getId_vivienda();
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("VIVIENDA " + hogar.getId_vivienda() + "-" + "HOGAR " + hogar.getNumero());
+        getSupportActionBar().setTitle("HOGAR " + hogar.getNumero());
         getSupportActionBar().setSubtitle("JEFE: " + hogar.getNom_ape());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

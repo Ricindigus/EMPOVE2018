@@ -32,8 +32,8 @@ public class MarcoActivity extends AppCompatActivity {
     private ArrayList<String> meses;
     private ArrayList<String> periodos;
     private ArrayList<String> conglomerados;
+    private String nombreUsuario;
     private String idUsuario;
-    private String permisoUsuario;
     private Spinner spAnio;
     private Spinner spMeses;
     private Spinner spPeriodos;
@@ -48,6 +48,7 @@ public class MarcoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marco);
+        nombreUsuario = getIntent().getExtras().getString("nombreUsuario");
         idUsuario = getIntent().getExtras().getString("idUsuario");
 
         spAnio = (Spinner) findViewById(R.id.marco_sp_anio);
@@ -66,18 +67,7 @@ public class MarcoActivity extends AppCompatActivity {
         cargarSpinerMeses(meses);
         cargarSpinerPeriodos(periodos);
         cargarSpinerConglomerados(conglomerados);
-        marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
-                intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
-                intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
-                startActivity(intent);
-            }
-        });
-        recyclerView.setAdapter(marcoAdapter);
-
-
+        setearAdapter();
 
         spAnio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -146,16 +136,7 @@ public class MarcoActivity extends AppCompatActivity {
         data.open();
         itemMarcos = data.getListMarcoFiltrado(Integer.parseInt(anio), Integer.parseInt(mes),Integer.parseInt(periodo),Integer.parseInt(conglomerado));
         data.close();
-        marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
-                intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
-                intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
-                startActivity(intent);
-            }
-        });
-        recyclerView.setAdapter(marcoAdapter);
+        setearAdapter();
     }
 
     public void obtenerMarcoTotal(){
@@ -164,16 +145,7 @@ public class MarcoActivity extends AppCompatActivity {
         cargarSpinerMeses(meses);
         cargarSpinerPeriodos(periodos);
         cargarSpinerConglomerados(conglomerados);
-        marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
-                intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
-                intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
-                startActivity(intent);
-            }
-        });
-        recyclerView.setAdapter(marcoAdapter);
+        setearAdapter();
     }
 
     public void obtenerMeses(int anio){
@@ -293,5 +265,19 @@ public class MarcoActivity extends AppCompatActivity {
         data.close();
         anios.add("Seleccione");
         if (itemMarcos.size()>0) anios.add(String.valueOf(itemMarcos.get(0).getAnio()));
+    }
+
+    public void setearAdapter(){
+        marcoAdapter = new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
+                intent.putExtra("nombreUsuario", nombreUsuario);
+                intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
+                intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
+                startActivity(intent);
+            }
+        });
+        recyclerView.setAdapter(marcoAdapter);
     }
 }

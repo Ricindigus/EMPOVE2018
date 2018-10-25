@@ -1,9 +1,13 @@
 package com.example.ricindigus.empove2018.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,6 +30,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
     private String idEncuestado;
     private String idVivienda;
     private String idHogar;
+    private String nombreUsuario;
     private TextView btnAtras;
     private TextView btnSiguiente;
     int tFragment = 1;
@@ -41,9 +46,10 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         setSupportActionBar(toolbar);
         String conglomerado = getIntent().getExtras().getString("idConglomerado");
         idVivienda = getIntent().getExtras().getString("idVivienda");
+        nombreUsuario = getIntent().getExtras().getString("nombreUsuario");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("VIVIENDA " + idVivienda);
-        getSupportActionBar().setSubtitle("CONGLOMERADO" + conglomerado);
+        getSupportActionBar().setTitle("VIVIENDA N° " + idVivienda);
+        getSupportActionBar().setSubtitle("CONGLOMERADO N° " + conglomerado);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -52,6 +58,11 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView txtHeaderVivienda = (TextView) headerView.findViewById(R.id.txtTituloVivienda);
+        TextView txtHeaderUsuario = (TextView) headerView.findViewById(R.id.txtTituloUsuario);
+        txtHeaderVivienda.setText("VIVIENDA N° " + idVivienda);
+        txtHeaderUsuario.setText(nombreUsuario);
         navigationView.setNavigationItemSelectedListener(this);
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +96,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            salirActivityVivienda();
         }
     }
 
@@ -138,7 +149,8 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_volver_marco) {
+            salirActivityVivienda();
             return true;
         }
 
@@ -163,5 +175,27 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    public void salirActivityVivienda(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("¿Está seguro que desea volver al marco y salir de la encuesta?")
+                .setTitle("Aviso")
+                .setCancelable(false)
+                .setNegativeButton("No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+                .setPositiveButton("Sí",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                finish();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }

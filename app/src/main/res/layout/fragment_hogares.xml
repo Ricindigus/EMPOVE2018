@@ -42,6 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/altura_input_especifique"
                     android:paddingLeft="@dimen/margen_small"
+                    android:gravity="center"
                     android:background="@drawable/input_text_enabled"
                     />
             </LinearLayout>

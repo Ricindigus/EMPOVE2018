@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,8 +85,8 @@ public class FragmentHogares extends FragmentPagina {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
                 final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_jefe_hogar, null);
                 final EditText jefeEditText = (EditText) dialogView.findViewById(R.id.dialog_jefe_edittext_nombre);
-
-                alert.setTitle("JEFE DEL HOGAR");
+                jefeEditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(50)});
+                alert.setTitle("AGREGAR HOGAR");
                 alert.setView(dialogView);
                 alert.setPositiveButton("Agregar",null);
                 alert.setNegativeButton("Cancelar",null);
@@ -121,6 +122,7 @@ public class FragmentHogares extends FragmentPagina {
                 alertDialog.show();
             }
         });
+        cargarDatos();
     }
 
     private void inicializarDatos() {
@@ -155,7 +157,12 @@ public class FragmentHogares extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(SQLConstantes.tablacaratula,idVivienda)){
+            numeroHogaresTextView.setText(data.getCaratula(idVivienda).getT_hogar());
+        }
+        data.close();
     }
 
     @Override
