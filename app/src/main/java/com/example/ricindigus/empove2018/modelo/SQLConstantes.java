@@ -511,7 +511,7 @@ public class SQLConstantes {
     public static String modulo3_c3_p318_p = "c3_p318_p";
 
     public static final String SQL_CREATE_TABLA_MODULO3_P318_PERSONAS =
-            "CREATE TABLE " + tablamodulo3 + "(" +
+            "CREATE TABLE " + tablam3p318personas + "(" +
                     modulo3_p318_id  + " TEXT PRIMARY KEY," +
                     modulo3_p318_idInformante + " TEXT," +
                     modulo3_p318_idHogar + " TEXT," +

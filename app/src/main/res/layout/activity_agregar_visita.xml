@@ -16,11 +16,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="AGREGAR VISITA Nª1"
-            android:textColor="@color/icons"
+            android:textColor="@color/colorPrimary"
             android:gravity="center"
             android:textStyle="bold"
-            android:padding="@dimen/margen_medium"
-            android:background="@color/colorPrimary"/>
+            android:padding="@dimen/margen_medium"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -71,7 +70,7 @@
                 </LinearLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -171,7 +170,7 @@
 
 
             </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

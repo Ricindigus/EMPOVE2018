@@ -172,7 +172,7 @@ public class FragmentP301P305 extends FragmentPagina {
             modulo3.set_id(idEncuestado);
             modulo3.setIdVivienda(idVivienda);
             modulo3.setIdHogar(idHogar);
-            data.insertarElemento(getNombreTabla(),contentValues);
+            data.insertarElemento(getNombreTabla(),modulo3.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();

@@ -20,7 +20,6 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/margen_small"
         android:background="@color/colorPrimary">
         <TextView
             android:layout_width="0dp"
@@ -53,9 +52,11 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/margen_small">
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rutas_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/rutas_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

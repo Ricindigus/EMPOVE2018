@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class M3Pregunta309 {
-    private int _id;
+    private String _id;
     private String idInformante;
     private String idHogar;
     private String idVivienda;
@@ -18,11 +18,11 @@ public class M3Pregunta309 {
     public M3Pregunta309() {
     }
 
-    public int get_id() {
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 
