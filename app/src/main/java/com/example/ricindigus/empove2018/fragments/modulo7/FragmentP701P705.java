@@ -15,11 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
@@ -29,6 +31,8 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -36,7 +40,8 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
 public class FragmentP701P705 extends FragmentPagina {
 
     Context context;
-    String idVivienda, idHogar, idInformante, idEncuestado;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
 
     RadioGroup c7_p701_RadioGroup;
     CheckBox c7_p702_1_Checkbox, c7_p702_2_Checkbox, c7_p702_3_Checkbox , c7_p702_4_Checkbox, c7_p702_5_Checkbox,
@@ -51,28 +56,28 @@ public class FragmentP701P705 extends FragmentPagina {
     EditText c7_p705_o_EditText;
     LinearLayout m7_p701_linearlayout, m7_p702_linearlayout, m7_p703_linearlayout, m7_p704_linearlayout,
             m7_p705_linearlayout;
+    Spinner informanteSpinner;
 
-
-    private int c7_p701;
+    int c7_p701;
     private int c7_p702_1, c7_p702_2, c7_p702_3, c7_p702_4, c7_p702_5, c7_p702_6, c7_p702_7,
                 c7_p702_8, c7_p702_9, c7_p702_10;
     private String c7_p702_o, c7_p704_o, c7_p705_o;
-    private int c7_p703;
+    int c7_p703;
     private int  c7_p704_1, c7_p704_2, c7_p704_3, c7_p704_4, c7_p704_5, c7_p704_6;
     private int c7_p705_1, c7_p705_2, c7_p705_3, c7_p705_4, c7_p705_5, c7_p705_6, c7_p705_7;
 
     @SuppressLint("ValidFragment")
-    public FragmentP701P705(Context context, String idEncuestado) {
+    public FragmentP701P705( String idEncuestado, Context context) {
         this.context = context;
         this.idEncuestado = idEncuestado;
         Data data = new Data(context);
+        data.open();
         Residente residente = data.getResidente(idEncuestado);
         idVivienda = residente.getId_vivienda();
         idHogar = residente.getId_hogar();
         idInformante = "";
         data.close();
 
-        // Required empty public constructor
     }
 
     public FragmentP701P705(){
@@ -85,8 +90,8 @@ public class FragmentP701P705 extends FragmentPagina {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_p701_p705, container, false);
 
+        informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
         c7_p701_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod7_701_radiogroup_C7_P701);
-
         c7_p702_1_Checkbox = (CheckBox) rootView.findViewById(R.id.mod7_702_checkbox_C7_P702_1);
         c7_p702_2_Checkbox = (CheckBox) rootView.findViewById(R.id.mod7_702_checkbox_C7_P702_2);
         c7_p702_3_Checkbox = (CheckBox) rootView.findViewById(R.id.mod7_702_checkbox_C7_P702_3);
@@ -166,6 +171,14 @@ public class FragmentP701P705 extends FragmentPagina {
                 return false;
             }
         });
+        Data data = new Data(context);
+        data.open();
+        ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
+        data.close();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, residentes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        informanteSpinner.setAdapter(adapter);
+
         cargarDatos();
     }
 
@@ -204,21 +217,20 @@ public class FragmentP701P705 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo7_c7_p705_7, ""+c7_p705_7);
         contentValues.put(SQLConstantes.modulo7_c7_p705_o, ""+c7_p705_o);
 
-        if(data.existeElemento(getNombreTabla(),idEncuestado)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
-        }else{
-            contentValues.put(SQLConstantes.modulo7_idVivienda,""+idVivienda);
-            contentValues.put(SQLConstantes.modulo7_idHogar,""+idHogar);
-            contentValues.put(SQLConstantes.modulo7_idInformante,""+idInformante);
-            contentValues.put(SQLConstantes.modulo7_id,""+idEncuestado);
-            data.insertarElemento(getNombreTabla(),contentValues);
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo7 modulo7 = new Modulo7();
+            modulo7.set_id(idEncuestado);
+            modulo7.setIdVivienda(idVivienda);
+            modulo7.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(), modulo7.toValues());
         }
+        data.actualizarElemento(getNombreTabla(), contentValues, idEncuestado);
         data.close();
     }
 
 
     public void llenarVariables(){
-
+        idInformante = informanteSpinner.getSelectedItemPosition()+"";
         c7_p701 = c7_p701_RadioGroup.indexOfChild(c7_p701_RadioGroup.findViewById(c7_p701_RadioGroup.getCheckedRadioButtonId()));
         if (c7_p702_1_Checkbox.isChecked()) c7_p702_1 = 1; else c7_p702_1 = 0;
         if (c7_p702_2_Checkbox.isChecked()) c7_p702_2 = 1; else c7_p702_2 = 0;
@@ -256,6 +268,7 @@ public class FragmentP701P705 extends FragmentPagina {
         data.open();
         if(data.existeElemento(getNombreTabla(), idEncuestado)){
             Modulo7 modulo7 = data.getModulo7(idEncuestado);
+            informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
             if(!modulo7.getC7_p701().equals("-1"))((RadioButton)c7_p701_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p701()))).setChecked(true);
             if(modulo7.getC7_p702_1().equals("1")) c7_p702_1_Checkbox.setChecked(true);
             if(modulo7.getC7_p702_1().equals("0")) c7_p702_1_Checkbox.setChecked(false);
@@ -317,10 +330,9 @@ public class FragmentP701P705 extends FragmentPagina {
 
     public boolean validarDatos(){
         llenarVariables();
-        if (c7_p701 <1){
-            mostrarMensaje("PREGUNTA 701: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
+        if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+        if (c7_p701 == -1){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}
+
         if (c7_p702_1==0 && c7_p702_2==0 && c7_p702_3==0 && c7_p702_4==0 && c7_p702_5==0 && c7_p702_6==0
                 && c7_p702_7==0 && c7_p702_8==0 && c7_p702_9==0 && c7_p702_10==0){
             mostrarMensaje("PREGUNTA 702: DEBE SELECCIONAR ALGUNA OPCION");
@@ -332,10 +344,8 @@ public class FragmentP701P705 extends FragmentPagina {
                 return false;
             }
         }
-        if (c7_p703 < 1){
-            mostrarMensaje("PREGUNTA 703: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
+        if (c7_p703 == -1){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}
+
         if (c7_p704_1==0 && c7_p704_2==0 && c7_p704_3==0 && c7_p704_4==0 && c7_p704_5==0 && c7_p704_6==0){
             mostrarMensaje("PREGUNTA 704: DEBE SELECCIONAR ALGUNA OPCION");
         }

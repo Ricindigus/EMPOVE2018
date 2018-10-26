@@ -34,7 +34,8 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
 public class FragmentP706P709 extends FragmentPagina {
 
     Context context;
-    String idVivienda, idHogar, idInformante, idEncuestado;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
 
     RadioGroup c7_p706_RadioGroup, c7_p707_RadioGroup;
     EditText c7_p707_o_EditText;
@@ -52,7 +53,7 @@ public class FragmentP706P709 extends FragmentPagina {
             c7_p709_9, c7_p709_10;
 
     @SuppressLint("ValidFragment")
-    public FragmentP706P709(Context context, String idEncuestado) {
+    public FragmentP706P709(String idEncuestado, Context context) {
         this.context = context;
         this.idEncuestado = idEncuestado;
         Data data = new Data(context);
