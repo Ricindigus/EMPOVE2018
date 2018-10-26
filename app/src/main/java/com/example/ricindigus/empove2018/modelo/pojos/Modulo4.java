@@ -97,7 +97,6 @@ public class Modulo4 {
     private String c4_p416_6;
     private String c4_p416_7;
     private String c4_p416_8;
-    private String c4_p416_9;
     private String c4_p416_o;
     private String obs_cap4;
     private String c4_estado;
@@ -195,7 +194,6 @@ public class Modulo4 {
         c4_p416_6 = "";
         c4_p416_7 = "";
         c4_p416_8 = "";
-        c4_p416_9 = "";
         c4_p416_o = "";
         obs_cap4 = "";
         c4_estado = "";
@@ -937,14 +935,6 @@ public class Modulo4 {
         this.c4_p416_8 = c4_p416_8;
     }
 
-    public String getC4_p416_9() {
-        return c4_p416_9;
-    }
-
-    public void setC4_p416_9(String c4_p416_9) {
-        this.c4_p416_9 = c4_p416_9;
-    }
-
     public String getC4_p416_o() {
         return c4_p416_o;
     }
@@ -1063,7 +1053,6 @@ public class Modulo4 {
         contentValues.put(SQLConstantes.modulo4_c4_p416_6,c4_p416_6);
         contentValues.put(SQLConstantes.modulo4_c4_p416_7,c4_p416_7);
         contentValues.put(SQLConstantes.modulo4_c4_p416_8,c4_p416_8);
-        contentValues.put(SQLConstantes.modulo4_c4_p416_9,c4_p416_9);
         contentValues.put(SQLConstantes.modulo4_c4_p416_o,c4_p416_o);
         contentValues.put(SQLConstantes.modulo4_obs_cap4,obs_cap4);
         contentValues.put(SQLConstantes.modulo4_c4_estado,c4_estado);

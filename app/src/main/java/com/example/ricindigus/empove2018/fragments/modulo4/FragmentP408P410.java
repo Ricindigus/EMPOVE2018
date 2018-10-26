@@ -39,10 +39,12 @@ public class FragmentP408P410 extends FragmentPagina {
     String idVivienda, idHogar, idInformante;
     Context context;
 
-    CheckBox c4_p408_1_CheckBox, c4_p408_2_CheckBox, c4_p408_3_CheckBox, c4_p408_4_CheckBox, c4_p408_5_CheckBox,
-            c4_p408_6_CheckBox, c4_p408_7_CheckBox, c4_p408_8_CheckBox, c4_p408_9_CheckBox, c4_p408_10_CheckBox,
-            c4_p408_11_CheckBox, c4_p408_12_CheckBox, c4_p408_13_CheckBox, c4_p408_14_CheckBox;
-    EditText c4_p408_o_EditText;
+//    CheckBox c4_p408_1_CheckBox, c4_p408_2_CheckBox, c4_p408_3_CheckBox, c4_p408_4_CheckBox, c4_p408_5_CheckBox,
+//            c4_p408_6_CheckBox, c4_p408_7_CheckBox, c4_p408_8_CheckBox, c4_p408_9_CheckBox, c4_p408_10_CheckBox,
+//            c4_p408_11_CheckBox, c4_p408_12_CheckBox, c4_p408_13_CheckBox, c4_p408_14_CheckBox;
+//    EditText c4_p408_o_EditText;
+    RadioGroup c4_p408_1_RadioGroup, c4_p408_2_RadioGroup, c4_p408_3_RadioGroup, c4_p408_4_RadioGroup,
+        c4_p408_5_RadioGroup, c4_p408_6_RadioGroup;
     RadioGroup c4_p409_RadioGroup, c4_p410_RadioGroup;
     LinearLayout m4_p408_linearlayout, m4_p409_linearlayout, m4_p410_linearlayout;
 
@@ -52,15 +54,6 @@ public class FragmentP408P410 extends FragmentPagina {
     private int c4_p408_4;
     private int c4_p408_5;
     private int c4_p408_6;
-    private int c4_p408_7;
-    private int c4_p408_8;
-    private int c4_p408_9;
-    private int c4_p408_10;
-    private int c4_p408_11;
-    private int c4_p408_12;
-    private int c4_p408_13;
-    private int c4_p408_14;
-    private String c4_p408_o;
     private int c4_p409;
     private int c4_p410;
 
@@ -91,22 +84,13 @@ public class FragmentP408P410 extends FragmentPagina {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_p408_p410, container, false);
-//        c4_p408_1_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_1);
-//        c4_p408_2_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_2);
-//        c4_p408_3_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_3);
-//        c4_p408_4_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_4);
-//        c4_p408_5_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_5);
-//        c4_p408_6_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_6);
-//        c4_p408_7_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_7);
-//        c4_p408_8_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_8);
-//        c4_p408_9_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_9);
-//        c4_p408_10_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_10);
-//        c4_p408_11_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_11);
-//        c4_p408_12_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_12);
-//        c4_p408_13_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_13);
-//        c4_p408_14_CheckBox = (CheckBox) rootView.findViewById(R.id.mod4_408_checkbox_C4_P408_14);
-//        c4_p408_o_EditText = (EditText) rootView.findViewById(R.id.mod4_408_edittext_C4_P408_O);
 
+        c4_p408_1_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_408_radiogroup_C4_P408_1);
+        c4_p408_2_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_408_radiogroup_C4_P408_2);
+        c4_p408_3_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_408_radiogroup_C4_P408_3);
+        c4_p408_4_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_408_radiogroup_C4_P408_4);
+        c4_p408_5_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_408_radiogroup_C4_P408_5);
+        c4_p408_6_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_408_radiogroup_C4_P408_6);
         c4_p409_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_409_radiogroup_C4_P409);
 
         c4_p410_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_410_radiogroup_C4_P410);
@@ -122,31 +106,6 @@ public class FragmentP408P410 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        c4_p408_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(100)});
-        c4_p408_o_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c4_p408_o_EditText);
-                    m4_p408_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c4_p408_13_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    c4_p408_o_EditText.setEnabled(true);
-                    c4_p408_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
-                }else{
-                    c4_p408_o_EditText.setText("");
-                    c4_p408_o_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
-                    c4_p408_o_EditText.setEnabled(false);
-                }
-            }
-        });
         c4_p409_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -175,15 +134,6 @@ public class FragmentP408P410 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo4_c4_p408_4,c4_p408_4+"");
         contentValues.put(SQLConstantes.modulo4_c4_p408_5,c4_p408_5+"");
         contentValues.put(SQLConstantes.modulo4_c4_p408_6,c4_p408_6+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_7,c4_p408_7+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_8,c4_p408_8+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_9,c4_p408_9+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_10,c4_p408_10+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_11,c4_p408_11+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_12,c4_p408_12+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_13,c4_p408_13+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_14,c4_p408_14+"");
-//        contentValues.put(SQLConstantes.modulo4_c4_p408_o,c4_p408_o);
         contentValues.put(SQLConstantes.modulo4_c4_p409,c4_p409+"");
         contentValues.put(SQLConstantes.modulo4_c4_p410,c4_p410+"");
 
@@ -202,21 +152,12 @@ public class FragmentP408P410 extends FragmentPagina {
 
     @Override
     public void llenarVariables() {
-        if(c4_p408_1_CheckBox.isChecked()) c4_p408_1 = 1; else c4_p408_1 = 0;
-        if(c4_p408_2_CheckBox.isChecked()) c4_p408_2 = 1; else c4_p408_2 = 0;
-        if(c4_p408_3_CheckBox.isChecked()) c4_p408_3 = 1; else c4_p408_3 = 0;
-        if(c4_p408_4_CheckBox.isChecked()) c4_p408_4 = 1; else c4_p408_4 = 0;
-        if(c4_p408_5_CheckBox.isChecked()) c4_p408_5 = 1; else c4_p408_5 = 0;
-        if(c4_p408_6_CheckBox.isChecked()) c4_p408_6 = 1; else c4_p408_6 = 0;
-        if(c4_p408_7_CheckBox.isChecked()) c4_p408_7 = 1; else c4_p408_7 = 0;
-        if(c4_p408_8_CheckBox.isChecked()) c4_p408_8 = 1; else c4_p408_8 = 0;
-        if(c4_p408_9_CheckBox.isChecked()) c4_p408_9 = 1; else c4_p408_9 = 0;
-        if(c4_p408_10_CheckBox.isChecked()) c4_p408_10 = 1; else c4_p408_10 = 0;
-        if(c4_p408_11_CheckBox.isChecked()) c4_p408_11 = 1; else c4_p408_11 = 0;
-        if(c4_p408_12_CheckBox.isChecked()) c4_p408_12 = 1; else c4_p408_12 = 0;
-        if(c4_p408_13_CheckBox.isChecked()) c4_p408_13 = 1; else c4_p408_13 = 0;
-        if(c4_p408_14_CheckBox.isChecked()) c4_p408_14 = 1; else c4_p408_14 = 0;
-        c4_p408_o = c4_p408_o_EditText.getText().toString();
+        c4_p408_1 = c4_p408_1_RadioGroup.indexOfChild(c4_p408_1_RadioGroup.findViewById(c4_p408_1_RadioGroup.getCheckedRadioButtonId()));
+        c4_p408_2 = c4_p408_2_RadioGroup.indexOfChild(c4_p408_2_RadioGroup.findViewById(c4_p408_2_RadioGroup.getCheckedRadioButtonId()));
+        c4_p408_3 = c4_p408_3_RadioGroup.indexOfChild(c4_p408_3_RadioGroup.findViewById(c4_p408_3_RadioGroup.getCheckedRadioButtonId()));
+        c4_p408_4 = c4_p408_4_RadioGroup.indexOfChild(c4_p408_4_RadioGroup.findViewById(c4_p408_4_RadioGroup.getCheckedRadioButtonId()));
+        c4_p408_5 = c4_p408_5_RadioGroup.indexOfChild(c4_p408_5_RadioGroup.findViewById(c4_p408_5_RadioGroup.getCheckedRadioButtonId()));
+        c4_p408_6 = c4_p408_6_RadioGroup.indexOfChild(c4_p408_6_RadioGroup.findViewById(c4_p408_6_RadioGroup.getCheckedRadioButtonId()));
         c4_p409 = c4_p409_RadioGroup.indexOfChild(c4_p409_RadioGroup.findViewById(c4_p409_RadioGroup.getCheckedRadioButtonId()));
         c4_p410 = c4_p410_RadioGroup.indexOfChild(c4_p410_RadioGroup.findViewById(c4_p410_RadioGroup.getCheckedRadioButtonId()));
     }
@@ -227,35 +168,12 @@ public class FragmentP408P410 extends FragmentPagina {
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo4 modulo4 = data.getModulo4(idEncuestado);
-            if(modulo4.getC4_p408_1().equals("0")) c4_p408_1_CheckBox.setChecked(false);
-            if(modulo4.getC4_p408_2().equals("0")) c4_p408_2_CheckBox.setChecked(false);
-            if(modulo4.getC4_p408_3().equals("0")) c4_p408_3_CheckBox.setChecked(false);
-            if(modulo4.getC4_p408_4().equals("0")) c4_p408_4_CheckBox.setChecked(false);
-            if(modulo4.getC4_p408_5().equals("0")) c4_p408_5_CheckBox.setChecked(false);
-            if(modulo4.getC4_p408_6().equals("0")) c4_p408_6_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_7().equals("0")) c4_p408_7_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_8().equals("0")) c4_p408_8_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_9().equals("0")) c4_p408_9_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_10().equals("0")) c4_p408_10_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_11().equals("0")) c4_p408_11_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_12().equals("0")) c4_p408_12_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_13().equals("0")) c4_p408_13_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_14().equals("0")) c4_p408_14_CheckBox.setChecked(false);
-//            if(modulo4.getC4_p408_1().equals("1")) c4_p408_1_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_2().equals("1")) c4_p408_2_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_3().equals("1")) c4_p408_3_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_4().equals("1")) c4_p408_4_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_5().equals("1")) c4_p408_5_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_6().equals("1")) c4_p408_6_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_7().equals("1")) c4_p408_7_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_8().equals("1")) c4_p408_8_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_9().equals("1")) c4_p408_9_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_10().equals("1")) c4_p408_10_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_11().equals("1")) c4_p408_11_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_12().equals("1")) c4_p408_12_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_13().equals("1")) c4_p408_13_CheckBox.setChecked(true);
-//            if(modulo4.getC4_p408_14().equals("1")) c4_p408_14_CheckBox.setChecked(true);
-//            c4_p408_o_EditText.setText(modulo4.getC4_p408_o());
+            if(!(modulo4.getC4_p408_1().equals("-1") || modulo4.getC4_p408_1().equals("")))((RadioButton)c4_p408_1_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_1()))).setChecked(true);
+            if(!(modulo4.getC4_p408_2().equals("-1") || modulo4.getC4_p408_2().equals("")))((RadioButton)c4_p408_2_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_2()))).setChecked(true);
+            if(!(modulo4.getC4_p408_3().equals("-1") || modulo4.getC4_p408_3().equals("")))((RadioButton)c4_p408_3_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_3()))).setChecked(true);
+            if(!(modulo4.getC4_p408_4().equals("-1") || modulo4.getC4_p408_4().equals("")))((RadioButton)c4_p408_4_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_4()))).setChecked(true);
+            if(!(modulo4.getC4_p408_5().equals("-1") || modulo4.getC4_p408_5().equals("")))((RadioButton)c4_p408_5_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_5()))).setChecked(true);
+            if(!(modulo4.getC4_p408_6().equals("-1") || modulo4.getC4_p408_6().equals("")))((RadioButton)c4_p408_6_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_6()))).setChecked(true);
             if(!(modulo4.getC4_p409().equals("-1") || modulo4.getC4_p409().equals("")))((RadioButton)c4_p409_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p409()))).setChecked(true);
             if(!(modulo4.getC4_p410().equals("-1") || modulo4.getC4_p410().equals("")))((RadioButton)c4_p410_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p410()))).setChecked(true);
         }
@@ -269,17 +187,29 @@ public class FragmentP408P410 extends FragmentPagina {
     public boolean validarDatos() {
         llenarVariables();
         if(m4_p408_linearlayout.getVisibility()==View.VISIBLE){
-            if(c4_p408_1==0 && c4_p408_2==0 && c4_p408_3==0 && c4_p408_4==0 && c4_p408_5==0 &&
-                    c4_p408_6==0 && c4_p408_7==0 && c4_p408_8==0 && c4_p408_9==0 && c4_p408_10==0 &&
-                    c4_p408_11==0 && c4_p408_12==0 && c4_p408_13==0 && c4_p408_14==0){
-                mostrarMensaje("PREGUNTA 408: DEBE SELECCIONAR ALGUNA OPCION");
+            if(c4_p408_1<0){
+                mostrarMensaje("PREGUNTA 408-1: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c4_p408_13==1){
-                if(c4_p408_o.trim().length()==0){
-                    mostrarMensaje("PREGUNTA 408 - OPCION 13: DEBE ESPECIFICAR OTRO");
-                    return false;
-                }
+            if(c4_p408_2<0){
+                mostrarMensaje("PREGUNTA 408-2: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p408_3<0){
+                mostrarMensaje("PREGUNTA 408-3: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p408_4<0){
+                mostrarMensaje("PREGUNTA 408-4: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p408_5<0){
+                mostrarMensaje("PREGUNTA 408-5: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if(c4_p408_6<0){
+                mostrarMensaje("PREGUNTA 408-6: DEBE SELECCIONAR UNA OPCION");
+                return false;
             }
         }
         if(c4_p409<0 && m4_p409_linearlayout.getVisibility()==View.VISIBLE){
@@ -320,24 +250,6 @@ public class FragmentP408P410 extends FragmentPagina {
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 
-    public void limpiar_p408(){
-        c4_p408_1_CheckBox.setChecked(false);
-        c4_p408_2_CheckBox.setChecked(false);
-        c4_p408_3_CheckBox.setChecked(false);
-        c4_p408_4_CheckBox.setChecked(false);
-        c4_p408_5_CheckBox.setChecked(false);
-        c4_p408_6_CheckBox.setChecked(false);
-        c4_p408_7_CheckBox.setChecked(false);
-        c4_p408_8_CheckBox.setChecked(false);
-        c4_p408_9_CheckBox.setChecked(false);
-        c4_p408_10_CheckBox.setChecked(false);
-        c4_p408_11_CheckBox.setChecked(false);
-        c4_p408_12_CheckBox.setChecked(false);
-        c4_p408_13_CheckBox.setChecked(false);
-        c4_p408_14_CheckBox.setChecked(false);
-        c4_p408_o_EditText.setText("");
-    }
-
     public void limpiar_p409(){
         c4_p409_RadioGroup.clearCheck();
     }
@@ -348,13 +260,11 @@ public class FragmentP408P410 extends FragmentPagina {
 
     public void ocultar(){
         if(edad>=0 && edad<=17){
-            m4_p408_linearlayout.setVisibility(View.VISIBLE);
             m4_p409_linearlayout.setVisibility(View.VISIBLE);
             int pos = c4_p409_RadioGroup.indexOfChild(c4_p409_RadioGroup.findViewById(c4_p409_RadioGroup.getCheckedRadioButtonId()));
             if(pos!=1) m4_p410_linearlayout.setVisibility(View.VISIBLE);
         }else{
-            limpiar_p408(); limpiar_p409(); limpiar_p410();
-            m4_p408_linearlayout.setVisibility(View.GONE);
+            limpiar_p409(); limpiar_p410();
             m4_p409_linearlayout.setVisibility(View.GONE);
             m4_p410_linearlayout.setVisibility(View.GONE);
 

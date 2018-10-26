@@ -60,10 +60,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_4_p416_sp8"/>
-    <CheckBox
-        android:id="@+id/mod4_416_checkbox_C4_P416_9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p416_sp9"/>
 
 </LinearLayout>

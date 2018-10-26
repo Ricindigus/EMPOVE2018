@@ -615,7 +615,6 @@ public class SQLConstantes {
     public static String modulo4_c4_p416_6 = "c4_p416_6";
     public static String modulo4_c4_p416_7 = "c4_p416_7";
     public static String modulo4_c4_p416_8 = "c4_p416_8";
-    public static String modulo4_c4_p416_9 = "c4_p416_9";
     public static String modulo4_c4_p416_o = "c4_p416_o";
     public static String modulo4_obs_cap4 = "obs_cap4";
     public static String modulo4_c4_estado = "c4_estado";
@@ -716,7 +715,6 @@ public class SQLConstantes {
                     modulo4_c4_p416_6  +  " TEXT," +
                     modulo4_c4_p416_7  +  " TEXT," +
                     modulo4_c4_p416_8  +  " TEXT," +
-                    modulo4_c4_p416_9  +  " TEXT," +
                     modulo4_c4_p416_o  +  " TEXT," +
                     modulo4_obs_cap4  +  " TEXT," +
                     modulo4_c4_estado  +  " TEXT" + ");"
