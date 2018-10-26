@@ -367,7 +367,7 @@ public class FragmentP701P705 extends FragmentPagina {
             }
         }
 
-        return false;
+        return true;
     }
 
     public String getNombreTabla() {

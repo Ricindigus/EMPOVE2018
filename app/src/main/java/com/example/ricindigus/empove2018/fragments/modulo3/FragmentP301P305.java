@@ -33,6 +33,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterMinMax;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 /**
@@ -54,13 +55,15 @@ public class FragmentP301P305 extends FragmentPagina {
 
     TextView c3_p301_d_TextView, c3_p301_m_TextView, c3_p301_a_TextView;
     AutoCompleteTextView c3_p302_AutoCompleteTextView;
-    TextView c3_p303_m_TextView,c3_p303_a_TextView;
     CheckBox c3_p303_CheckBox;
     RadioGroup c3_p304_RadioGroup,c3_p305_RadioGroup;
     EditText c3_p305_o_EditText;
+    EditText p303edtMes,p303edtAnio;
+
+
     Spinner informanteSpinner;
 
-    Button c3_p301_d_f_Button, btnAgregarFecha;
+    Button c3_p301_d_f_Button;
 
     String idInformante;
     String idHogar;
@@ -103,8 +106,8 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p301_a_TextView = (TextView) rootView.findViewById(R.id.mod3_301_textview_C3_P301_A);
         c3_p301_d_f_Button = (Button) rootView.findViewById(R.id.mod3_301_button_C3_P301_F);
         c3_p302_AutoCompleteTextView = (AutoCompleteTextView) rootView.findViewById(R.id.mod3_302_autotextview_C3_P302);
-        c3_p303_m_TextView = (TextView)rootView.findViewById(R.id.mod3_303_textview_C3_P303_M);
-        c3_p303_a_TextView = (TextView)rootView.findViewById(R.id.mod3_303_textview_C3_P303_A);
+        p303edtMes = (EditText) rootView.findViewById(R.id.mod3_303_edittext_C3_P303_M);
+        p303edtAnio = (EditText)rootView.findViewById(R.id.mod3_303_edittext_C3_P303_A);
         c3_p303_CheckBox = (CheckBox) rootView.findViewById(R.id.mod3_303_checkbox_C3_P303_NO_NACIO);
         informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
 
@@ -112,7 +115,7 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p304_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod3_304_radiogroup_C3_P304);
         c3_p305_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod3_305_radiogroup_C3_P305);
         c3_p305_o_EditText = (EditText) rootView.findViewById(R.id.mod3_305_edittext_C3_P305_O);
-        btnAgregarFecha = (Button) rootView.findViewById(R.id.buttonAgregarFecha);
+
 
         return rootView;
     }
@@ -139,23 +142,6 @@ public class FragmentP301P305 extends FragmentPagina {
             }
         });
 
-        btnAgregarFecha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog recogerFecha = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        final int mesActual = month + 1;
-                        String diaFormateado = (dayOfMonth < 10)? CERO + String.valueOf(dayOfMonth):String.valueOf(dayOfMonth);
-                        String mesFormateado = (mesActual < 10)? CERO + String.valueOf(mesActual):String.valueOf(mesActual);
-                        c3_p303_m_TextView.setText(""+mesFormateado);
-                        c3_p303_a_TextView.setText(""+year);
-                    }
-                },anio, mes, dia);
-                recogerFecha.show();
-            }
-        });
-
         Data data =  new Data(context);
         data.open();
         ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
@@ -163,13 +149,15 @@ public class FragmentP301P305 extends FragmentPagina {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         informanteSpinner.setAdapter(adapter);
-
-
         c3_p302_AutoCompleteTextView.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(20)});
         c3_p305_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
-
+        p303edtMes.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12"),new InputFilter.LengthFilter(2)});
+        p303edtAnio.setFilters(new InputFilter[]{new InputFilterMinMax("1970", "2018"),new InputFilter.LengthFilter(4)});
+        p303edtMes.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        p303edtAnio.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         cargarDatos();
     }
+
 
 
     @Override
@@ -206,8 +194,8 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p301_m = c3_p301_m_TextView.getText().toString();
         c3_p301_a = c3_p301_a_TextView.getText().toString();
         c3_p302 = c3_p302_AutoCompleteTextView.getText().toString();
-        c3_p303_m = c3_p303_m_TextView.getText().toString();
-        c3_p303_a = c3_p303_a_TextView.getText().toString();
+        c3_p303_m = p303edtMes.getText().toString();
+        c3_p303_a = p303edtAnio.getText().toString();
         if(c3_p303_CheckBox.isChecked())c3_p303_no_nacio = 1;
         else c3_p303_no_nacio = 0;
         c3_p304 = c3_p304_RadioGroup.indexOfChild(c3_p304_RadioGroup.findViewById(c3_p304_RadioGroup.getCheckedRadioButtonId()));
@@ -228,8 +216,8 @@ public class FragmentP301P305 extends FragmentPagina {
             c3_p302_AutoCompleteTextView.setText(modulo3.getC3_p302());
             if(Integer.parseInt(modulo3.getC3_p303_no_nacio()) == 1) c3_p303_CheckBox.setChecked(true);
             else{
-                c3_p303_m_TextView.setText(modulo3.getC3_p303_m());
-                c3_p303_a_TextView.setText(modulo3.getC3_p303_a());
+                p303edtMes.setText(modulo3.getC3_p303_m());
+                p303edtAnio.setText(modulo3.getC3_p303_a());
             }
             if(!modulo3.getC3_p304().equals("-1"))((RadioButton)c3_p304_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p304()))).setChecked(true);
             if(!modulo3.getC3_p305().equals("-1"))((RadioButton)c3_p305_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p305()))).setChecked(true);

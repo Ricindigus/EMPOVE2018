@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/agregar_ruta_edtPais"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/modulo_3_p309_cab1" />
@@ -42,6 +43,7 @@
                 android:layout_marginTop="@dimen/margen_small">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/agregar_ruta_edtCiudad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/modulo_3_p309_cab2" />
@@ -64,6 +66,7 @@
                 android:layout_margin="@dimen/margen_small"
                 android:background="@drawable/input_text_enabled">
                 <Spinner
+                    android:id="@+id/agregar_ruta_spModo"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/altura_spinner"
                     android:drawSelectorOnTop="true"
@@ -98,6 +101,7 @@
                     android:text="@string/modulo_3_p303_mes"
                     android:textStyle="bold" />
                 <EditText
+                    android:id="@+id/agregar_ruta_edtMes"
                     android:layout_width="80dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="@dimen/margen_large"
@@ -110,6 +114,7 @@
                     android:text="@string/modulo_3_p303_anio"
                     android:textStyle="bold" />
                 <EditText
+                    android:id="@+id/agregar_ruta_edtAnio"
                     android:layout_width="80dp"
                     android:layout_height="30dp"
                     android:background="@drawable/input_text_enabled"/>
@@ -123,16 +128,20 @@
                 android:layout_height="1dp"
                 android:layout_weight="1"/>
             <TextView
+                android:id="@+id/agregar_ruta_btnCancelar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margen_small"
+                android:clickable="true"
                 android:layout_margin="@dimen/margen_small"
                 android:textColor="@color/colorPrimary"
                 android:text="CANCELAR"/>
             <TextView
+                android:id="@+id/agregar_ruta_btnGuardar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margen_small"
+                android:clickable="true"
                 android:textColor="@color/colorPrimary"
                 android:layout_margin="@dimen/margen_small"
                 android:text="GUARDAR"/>
