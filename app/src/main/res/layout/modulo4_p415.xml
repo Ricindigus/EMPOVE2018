@@ -11,59 +11,20 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_4_p415"/>
-    <CheckBox
-        android:id="@+id/mod4_415_checkbox_C4_P415_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p415_sp1"/>
-    <CheckBox
-        android:id="@+id/mod4_415_checkbox_C4_P415_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p415_sp2"/>
-    <CheckBox
-        android:id="@+id/mod4_415_checkbox_C4_P415_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p415_sp3"/>
-    <CheckBox
-        android:id="@+id/mod4_415_checkbox_C4_P415_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p415_sp4"/>
-    <CheckBox
-        android:id="@+id/mod4_415_checkbox_C4_P415_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p415_sp5"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <CheckBox
-            android:id="@+id/mod4_415_checkbox_C4_P415_6"
+    <RadioGroup
+        android:id="@+id/mod4_415_radiogroup_C4_P415"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/mod4_415_rbSi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/margen_small"
-            android:text="@string/modulo_4_p415_sp6"/>
-        <EditText
-            android:id="@+id/mod4_415_edittext_C4_P415_O"
-            style="@style/TemaInputEspecifique"/>
-    </LinearLayout>
-    <CheckBox
-        android:id="@+id/mod4_415_checkbox_C4_P415_7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p415_sp7"/>
-    <CheckBox
-        android:id="@+id/mod4_415_checkbox_C4_P415_8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p415_sp8"/>
-    <CheckBox
-        android:id="@+id/mod4_415_checkbox_C4_P415_9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_4_p415_sp9"/>
-
+            android:text="@string/modulo_4_p415_sp1"/>
+        <RadioButton
+            android:id="@+id/mod4_415_rbNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_4_p415_sp2"/>
+    </RadioGroup>
 </LinearLayout>

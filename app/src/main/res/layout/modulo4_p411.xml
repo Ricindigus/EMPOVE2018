@@ -11,25 +11,84 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_4_p411"/>
-    <RadioGroup
-        android:id="@+id/mod4_411_radiogroup_C4_P411"
-        android:orientation="vertical"
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp1"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp2"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp3"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp4"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp5"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp6"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp7"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp8"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp9"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp10"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp11"/>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp12"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/mod4_411_rbSi"
+        <CheckBox
+            android:id="@+id/mod4_411_checkbox_C4_P411_13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/modulo_4_p411_sp1"/>
-        <RadioButton
-            android:id="@+id/mod4_411_rbNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_4_p411_sp2"/>
-        <RadioButton
-            android:id="@+id/mod4_411_rbNoNoSabe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_4_p411_sp3"/>
-    </RadioGroup>
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_4_p411_sp13"/>
+        <EditText
+            android:id="@+id/mod4_411_edittext_C4_P411_O"
+            style="@style/TemaInputEspecifique"/>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/mod4_411_checkbox_C4_P411_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p411_sp14"/>
 </LinearLayout>

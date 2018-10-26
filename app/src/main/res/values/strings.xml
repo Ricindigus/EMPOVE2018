@@ -575,24 +575,16 @@
     <string name="modulo_4_p407_especifique">Especifique</string>
 
     <string name="sub_modulo_4_1">Para personas de 0 a 17 años de edad</string>
-
-    <string name="modulo_4_p408">408.EN EL ÚLTIMO MES, ¿HA MOSTRADO CAMBIOS FUERTES EN SU HUMOR O ACTITUDES, TALES COMO:</string>
-    <string name="modulo_4_p408_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
-    <string name="modulo_4_p408_sp1">1.Alejamiento de la familia y amigos?</string>
-    <string name="modulo_4_p408_sp2">2.Estallidos agresivos o de enojo?</string>
-    <string name="modulo_4_p408_sp3">3.Cambios de apetito o de hábitos alimenticios?</string>
-    <string name="modulo_4_p408_sp4">4.Dolores de cabeza?</string>
-    <string name="modulo_4_p408_sp5">5.Mojar la cama de nuevo o recurrentemente?</string>
-    <string name="modulo_4_p408_sp6">6.Pesadillas o alteraciones del sueño?</string>
-    <string name="modulo_4_p408_sp7">7.Malestar estomacal o dolor de estómago?</string>
-    <string name="modulo_4_p408_sp8">8.Miedos nuevos o recurrentes (a la oscuridad, a estar solo, a personas extrañas)?</string>
-    <string name="modulo_4_p408_sp9">9.Aferrado, no quiere perderle de vista a usted u otros miembros de la familia?</string>
-    <string name="modulo_4_p408_sp10">10.Llanto excesivo?</string>
-    <string name="modulo_4_p408_sp11">11.Regreso a conductas presentes en una edad más temprana?</string>
-    <string name="modulo_4_p408_sp12">12.Se asusta fácilmente?</string>
-    <string name="modulo_4_p408_sp13">13.Otro</string>
-    <string name="modulo_4_p408_sp14">14.NO HA MOSTRADO CAMBIOS DE ACTITUD</string>
-    <string name="modulo_4_p408_especifique">Especifique</string>
+    <string name="modulo_4_p408">408.¿TIENE UD. LIMITACIONES DE FORMA PERMANENTE, PARA:</string>
+    <string name="modulo_4_p408_ind">(Lea cada alternativa y seleccione un código para cada una de ellas)</string>
+    <string name="modulo_4_p408_si">Sí</string>
+    <string name="modulo_4_p408_no">No</string>
+    <string name="modulo_4_p408_sp1">1.Moverse o caminar, para usar brazos o piernas?</string>
+    <string name="modulo_4_p408_sp2">2.Ver, aun usando anteojos?</string>
+    <string name="modulo_4_p408_sp3">3.Hablar o comunicarse, aun usando lenguaje de señas u otro?</string>
+    <string name="modulo_4_p408_sp4">4.Oír, aun usando audífonos?</string>
+    <string name="modulo_4_p408_sp5">5.Entender o aprender (concentrarse y recordar)?</string>
+    <string name="modulo_4_p408_sp6">6.Relacionarse con los demás, por sus pensamientos, sentimientos, emociones o conductas?</string>
 
     <string name="modulo_4_p409">409.EN EL ÚLTIMO MES, ¿ALGUNO DE SUS HIJOS FUE CASTIGADO POR SU MAL COMPORTAMIENTO?</string>
     <string name="modulo_4_p409_sp1">1.Sí</string>
@@ -605,51 +597,60 @@
     <string name="modulo_4_p410_sp3">3.Igual de frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_4_p410_sp4">4.NO APLICA /NACIÓ EN PERÚ</string>
 
-    <string name="modulo_4_p411">411.¿ESTÁ USTED, ACTUALMENTE EMBARAZADA?</string>
-    <string name="modulo_4_p411_sp1">1.Sí</string>
-    <string name="modulo_4_p411_sp2">2.No</string>
-    <string name="modulo_4_p411_sp3">3.NO SABE / NO ESTA SEGURA</string>
+    <string name="modulo_4_p411">411.EN EL ÚLTIMO MES, ¿HA MOSTRADO CAMBIOS FUERTES EN SU HUMOR O ACTITUDES, TALES COMO:</string>
+    <string name="modulo_4_p411_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
+    <string name="modulo_4_p411_sp1">1.Alejamiento de la familia y amigos?</string>
+    <string name="modulo_4_p411_sp2">2.Estallidos agresivos o de enojo?</string>
+    <string name="modulo_4_p411_sp3">3.Cambios de apetito o de hábitos alimenticios?</string>
+    <string name="modulo_4_p411_sp4">4.Dolores de cabeza?</string>
+    <string name="modulo_4_p411_sp5">5.Mojar la cama de nuevo o recurrentemente?</string>
+    <string name="modulo_4_p411_sp6">6.Pesadillas o alteraciones del sueño?</string>
+    <string name="modulo_4_p411_sp7">7.Malestar estomacal o dolor de estómago?</string>
+    <string name="modulo_4_p411_sp8">8.Miedos nuevos o recurrentes (a la oscuridad, a estar solo, a personas extrañas)?</string>
+    <string name="modulo_4_p411_sp9">9.Aferrado, no quiere perderle de vista a usted u otros miembros de la familia?</string>
+    <string name="modulo_4_p411_sp10">10.Llanto excesivo?</string>
+    <string name="modulo_4_p411_sp11">11.Regreso a conductas presentes en una edad más temprana?</string>
+    <string name="modulo_4_p411_sp12">12.Se asusta fácilmente?</string>
+    <string name="modulo_4_p411_sp13">13.Otro</string>
+    <string name="modulo_4_p411_sp14">14.NO HA MOSTRADO CAMBIOS DE ACTITUD</string>
+    <string name="modulo_4_p411_especifique">Especifique</string>
 
-    <string name="modulo_4_p412">412.¿SE HA HECHO CONTROL DEL EMBARAZO?</string>
+    <string name="modulo_4_p412">412.¿ESTÁ USTED, ACTUALMENTE EMBARAZADA?</string>
     <string name="modulo_4_p412_sp1">1.Sí</string>
     <string name="modulo_4_p412_sp2">2.No</string>
+    <string name="modulo_4_p412_sp3">3.NO SABE / NO ESTA SEGURA</string>
 
-    <string name="modulo_4_p413">413.USTED, ¿TIENE NIÑOS MEÑORES DE 2 AÑOS QUE SE ENCUENTREN LACTANDO?</string>
+    <string name="modulo_4_p413">413.¿SE HA HECHO CONTROL DEL EMBARAZO?</string>
     <string name="modulo_4_p413_sp1">1.Sí</string>
     <string name="modulo_4_p413_sp2">2.No</string>
 
-    <string name="modulo_4_p414">414.DESDE SU LLEGADA AL PERÚ, ¿HA VIVIDO SITUACIONES DE ACOSO DE ALGÚN TIPO: SEXUAL, LABORAL, EN LA CALLE?</string>
+    <string name="modulo_4_p414">414.USTED, ¿TIENE NIÑOS MEÑORES DE 2 AÑOS QUE SE ENCUENTREN LACTANDO?</string>
     <string name="modulo_4_p414_sp1">1.Sí</string>
     <string name="modulo_4_p414_sp2">2.No</string>
 
+    <string name="modulo_4_p415">415.DESDE SU LLEGADA AL PERÚ, ¿HA VIVIDO SITUACIONES DE ACOSO DE ALGÚN TIPO: SEXUAL, LABORAL, EN LA CALLE?</string>
+    <string name="modulo_4_p415_sp1">1.Sí</string>
+    <string name="modulo_4_p415_sp2">2.No</string>
+
     <string name="sub_modulo_4_2">Para personas de 15 y más años de edad</string>
 
-    <string name="modulo_4_p415">415.AHORA ME GUSTARÍA CONVERSAR CON USTED SOBRE SALUD SEXUAL Y REPRODUCTIVA, ES DECIR ACERCA DE LAS DIFERENTES FORMAS O MÉTODOS QUE UNA PAREJA PUEDE USAR PARA EVITAR UN EMBARAZO ¿HA TENIDO USTED ACCESO A LOS SERVICIOS DE:</string>
-    <string name="modulo_4_p415_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
-    <string name="modulo_4_p415_sp1">1.Método tradicional (ritmo, coito interrumpido, temperatura corporal, moco cervical, lactancia materna)?</string>
-    <string name="modulo_4_p415_sp2">2.Método moderno (Hormonal, barrera, dispositivos, definitivo)?</string>
-    <string name="modulo_4_p415_sp3">3.Método de emergencia (Píldoras del día siguiente, entre otros)?</string>
-    <string name="modulo_4_p415_sp4">4.Prueba de VIH y otras infecciones de transmisión sexual?</string>
-    <string name="modulo_4_p415_sp5">5.Educación y consejería?</string>
-    <string name="modulo_4_p415_sp6">6.Otro servicio?</string>
-    <string name="modulo_4_p415_sp7">7.NO TIENE ACCESO A ESTOS SERVICIOS</string>
-    <string name="modulo_4_p415_sp8">8.NO TIENE CONOCIMIENTO</string>
-    <string name="modulo_4_p415_sp9">9.NO APLICA</string>
-    <string name="modulo_4_p415_especifique">Especifique</string>
+    <string name="modulo_4_p416">416.AHORA ME GUSTARÍA CONVERSAR CON USTED SOBRE SALUD SEXUAL Y REPRODUCTIVA, ES DECIR ACERCA DE LAS DIFERENTES FORMAS O MÉTODOS QUE UNA PAREJA PUEDE USAR PARA EVITAR UN EMBARAZO ¿HA TENIDO USTED ACCESO A LOS SERVICIOS DE:</string>
+    <string name="modulo_4_p416_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_4_p416_sp1">1.Método tradicional (ritmo, coito interrumpido, temperatura corporal, moco cervical, lactancia materna)?</string>
+    <string name="modulo_4_p416_sp2">2.Método moderno (Hormonal, barrera, dispositivos, definitivo)?</string>
+    <string name="modulo_4_p416_sp3">3.Método de emergencia (Píldoras del día siguiente, entre otros)?</string>
+    <string name="modulo_4_p416_sp4">4.Prueba de VIH y otras infecciones de transmisión sexual?</string>
+    <string name="modulo_4_p416_sp5">5.Educación y consejería?</string>
+    <string name="modulo_4_p416_sp6">6.Otro servicio?</string>
+    <string name="modulo_4_p416_sp7">7.NO TIENE ACCESO A ESTOS SERVICIOS</string>
+    <string name="modulo_4_p416_sp8">8.NO TIENE CONOCIMIENTO</string>
+    <string name="modulo_4_p416_sp9">9.NO APLICA</string>
+    <string name="modulo_4_p416_especifique">Especifique</string>
 
     <string name="sub_modulo_4_3">DISCAPACIDAD</string>
     <string name="sub_modulo_4_3_ind">A continuación, le haré algunas preguntas para saber si Ud. presenta alguna limitación o dificultad PERMANENTE, que le impida o dificulte desarrollarse normalmente en sus actividades diarias.</string>
 
-    <string name="modulo_4_p416">416.¿TIENE UD. LIMITACIONES DE FORMA PERMANENTE, PARA:</string>
-    <string name="modulo_4_p416_ind">(Lea cada alternativa y seleccione un código para cada una de ellas)</string>
-    <string name="modulo_4_p416_si">Sí</string>
-    <string name="modulo_4_p416_no">No</string>
-    <string name="modulo_4_p416_sp1">1.Moverse o caminar, para usar brazos o piernas?</string>
-    <string name="modulo_4_p416_sp2">2.Ver, aun usando anteojos?</string>
-    <string name="modulo_4_p416_sp3">3.Hablar o comunicarse, aun usando lenguaje de señas u otro?</string>
-    <string name="modulo_4_p416_sp4">4.Oír, aun usando audífonos?</string>
-    <string name="modulo_4_p416_sp5">5.Entender o aprender (concentrarse y recordar)?</string>
-    <string name="modulo_4_p416_sp6">6.Relacionarse con los demás, por sus pensamientos, sentimientos, emociones o conductas?</string>
+
 
     <!--Strings asociados al módulo 5: EDUCACIÓN-->
     <string name="modulo_5_nombre">V. EDUCACIÓN (Para personas de 3 años a más de edad)</string>
