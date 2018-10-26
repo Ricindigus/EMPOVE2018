@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.InterfazOperaciones;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 public class AgregarResidenteActivity extends AppCompatActivity implements InterfazOperaciones{
 
@@ -61,13 +63,21 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("AGREGAR RESIDENTE");
         getSupportActionBar().setSubtitle("RESIDENTE Nº " + numero);
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+
+        c2_p202_TextInputET.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
+
+
+        c2_p205_a_TextInputET.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+        c2_p205_m_TextInputET.setFilters(new InputFilter[]{new InputFilter.LengthFilter(1)});
+        c2_p205_a_TextInputET.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c2_p205_m_TextInputET.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
         cargarDatos();
 
     }

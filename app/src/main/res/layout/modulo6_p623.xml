@@ -61,21 +61,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_6_p623_sp9"/>
-
-        <LinearLayout
+        <RadioButton
+            android:id="@+id/mod6_623_rb10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/mod6_623_rb10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_6_p623_sp10"/>
-            <EditText
-                android:id="@+id/mod6_623_edittext_C6_P623_O"
-                style="@style/TemaInputEspecifique"/>
-        </LinearLayout>
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_6_p623_sp10"/>
+        <EditText
+            android:id="@+id/mod6_623_edittext_C6_P623_O"
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
         <RadioButton
             android:id="@+id/mod6_623_rb11"
             android:layout_width="wrap_content"

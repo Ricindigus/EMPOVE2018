@@ -17,6 +17,7 @@
         <TextView
             android:id="@+id/item_residente_numero"
             android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margen_small"
             android:layout_width="@dimen/longitud_input_n"
             android:text="@string/modulo_2_cab_nro"/>
         <TextView

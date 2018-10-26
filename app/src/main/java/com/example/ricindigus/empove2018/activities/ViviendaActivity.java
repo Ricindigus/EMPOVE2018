@@ -35,6 +35,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
     private TextView btnSiguiente;
     int tFragment = 1;
     FragmentPagina fragmentActual;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
         TextView txtHeaderVivienda = (TextView) headerView.findViewById(R.id.txtTituloVivienda);
         TextView txtHeaderUsuario = (TextView) headerView.findViewById(R.id.txtTituloUsuario);
@@ -86,8 +87,11 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
 
             }
         });
-
         setFragment(TipoFragmentVivienda.CARATULA,1);
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
     @Override
@@ -123,12 +127,16 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
                 FragmentCaratula fragmentCaratula = new FragmentCaratula(idVivienda,ViviendaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula);
                 fragmentActual = fragmentCaratula;
+                tFragment = TipoFragmentVivienda.CARATULA;
+                navigationView.setCheckedItem(R.id.nav_caratula);
                 break;
             case TipoFragmentVivienda.HOGARES:
                 btnSiguiente.setVisibility(View.GONE);
                 FragmentHogares fragmentHogares = new FragmentHogares(idVivienda,ViviendaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentHogares);
                 fragmentActual = fragmentHogares;
+                tFragment = TipoFragmentVivienda.HOGARES;
+                navigationView.setCheckedItem(R.id.nav_hogares);
                 break;
         }
         fragmentTransaction.commit();

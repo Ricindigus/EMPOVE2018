@@ -35,7 +35,7 @@ public class FragmentCaratula extends FragmentPagina {
     Context context;
 
     TextView nom_dep_TextView, nom_prov_TextView, nom_dist_TextView, nom_ccpp_TextView;
-    TextView zona_TextView, manzana_id_TextView, aer_TextView, vivienda_TextView;
+    TextView zona_TextView, manzana_id_TextView, vivienda_TextView;
     Spinner tipvia_Spinner;
     EditText nomvia_EditText, nropta_EditText, block_EditText, interior_EditText, piso_EditText, mza_EditText,
             lote_EditText, km_EditText, telefono_EditText;
@@ -83,7 +83,6 @@ public class FragmentCaratula extends FragmentPagina {
         nom_ccpp_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_NOM_CCPP);
         zona_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_ZONA);
         manzana_id_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_MANZANA_ID);
-        aer_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_AER);
         vivienda_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_VIVIENDA);
 
         tipvia_Spinner = (Spinner) rootView.findViewById(R.id.caratula_spinner_TIPVIA);
@@ -146,7 +145,6 @@ public class FragmentCaratula extends FragmentPagina {
             contentValues.put(SQLConstantes.caratula_nom_ccpp,nom_ccpp);
             contentValues.put(SQLConstantes.caratula_zona,zona);
             contentValues.put(SQLConstantes.caratula_manzana_id,manzana_id);
-            contentValues.put(SQLConstantes.caratula_aer,aer);
             contentValues.put(SQLConstantes.caratula_vivienda,vivienda);
             data.insertarElemento(getNombreTabla(),contentValues);
         }
@@ -161,7 +159,6 @@ public class FragmentCaratula extends FragmentPagina {
         nom_ccpp = nom_ccpp_TextView.getText().toString();
         zona = zona_TextView.getText().toString();
         manzana_id = manzana_id_TextView.getText().toString();
-        aer = aer_TextView.getText().toString();
         vivienda = vivienda_TextView.getText().toString();
         tipvia = tipvia_Spinner.getSelectedItemPosition();
         nomvia = nomvia_EditText.getText().toString();
@@ -187,10 +184,8 @@ public class FragmentCaratula extends FragmentPagina {
             nom_prov_TextView.setText(caratula.getNom_prov());
             nom_dist_TextView.setText(caratula.getNom_dist());
             nom_ccpp_TextView.setText(caratula.getNom_ccpp());
-
             zona_TextView.setText(caratula.getZona());
             manzana_id_TextView.setText(caratula.getManzana_id());
-            aer_TextView.setText(caratula.getAer());
             vivienda_TextView.setText(caratula.getVivienda());
 
             if(!caratula.getTipvia().equals("") || !caratula.getTipvia().equals("0"))tipvia_Spinner.setSelection(Integer.parseInt(caratula.getTipvia()));
@@ -213,7 +208,6 @@ public class FragmentCaratula extends FragmentPagina {
 
             zona_TextView.setText(marco.getZona());
             manzana_id_TextView.setText(marco.getManzana_id());
-            aer_TextView.setText(marco.getAerini()+" "+marco.getAerfin());
             vivienda_TextView.setText(marco.get_id()+"");
         }
         data.close();
@@ -243,21 +237,6 @@ public class FragmentCaratula extends FragmentPagina {
         return SQLConstantes.tablacaratula;
     }
 
-
-//    public Caratula copiarDatosMarcoACaratula(Marco marco){
-//        Caratula caratula = new Caratula();
-//        caratula.set_id(marco.get_id());
-//        caratula.setNom_dep(marco.getDepartamento());
-//        caratula.setNom_prov(marco.getProvincia());
-//        caratula.setNom_dist(marco.getDistrito());
-//        caratula.setNom_ccpp(marco.getCcpp());
-//
-//        caratula.setZona(marco.getZona());
-//        caratula.setManzana_id(marco.getManzana_id() + " " + marco.getManzana_a());
-//        caratula.setAer(marco.getAerini() + " " + marco.getAerfin());
-//        caratula.setVivienda(marco.get_id()+"");
-//        return caratula;
-//    }
 
     public void mostrarMensaje(String m){
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

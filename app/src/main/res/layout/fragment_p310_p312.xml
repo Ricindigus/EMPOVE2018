@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.modulo3.FragmentP310P313">
+    tools:context=".fragments.modulo3.FragmentP310P312">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -22,10 +22,10 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
+            <include layout="@layout/cabecera"/>
             <include layout="@layout/modulo3_p310"/>
             <include layout="@layout/modulo3_p311"/>
             <include layout="@layout/modulo3_p312"/>
-            <include layout="@layout/modulo3_p313"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -12,7 +12,6 @@ public class Caratula {
     private String nom_ccpp;
     private String zona;
     private String manzana_id;
-    private String aer;
     private String vivienda;
     private String tipvia;
     private String nomvia;
@@ -33,7 +32,6 @@ public class Caratula {
         nom_ccpp="";
         zona="";
         manzana_id="";
-        aer="";
         vivienda="";
         tipvia="";
         nomvia="";
@@ -102,14 +100,6 @@ public class Caratula {
 
     public void setManzana_id(String manzana_id) {
         this.manzana_id = manzana_id;
-    }
-
-    public String getAer() {
-        return aer;
-    }
-
-    public void setAer(String aer) {
-        this.aer = aer;
     }
 
     public String getVivienda() {
@@ -217,7 +207,6 @@ public class Caratula {
         contentValues.put(SQLConstantes.caratula_nom_ccpp,nom_ccpp);
         contentValues.put(SQLConstantes.caratula_zona,zona);
         contentValues.put(SQLConstantes.caratula_manzana_id,manzana_id);
-        contentValues.put(SQLConstantes.caratula_aer, aer);
         contentValues.put(SQLConstantes.caratula_vivienda,vivienda);
         contentValues.put(SQLConstantes.caratula_tipvia,tipvia);
         contentValues.put(SQLConstantes.caratula_nomvia,nomvia);

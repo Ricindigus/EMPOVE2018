@@ -13,9 +13,10 @@
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_3_p307"/>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_gravity="center">
         <LinearLayout
             android:orientation="horizontal"

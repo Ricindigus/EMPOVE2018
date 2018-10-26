@@ -383,6 +383,26 @@ public class Data {
         return residentes;
     }
 
+    public ArrayList<String> getListaSpinnerResidentesHogar(String idHogar){
+        ArrayList<String> residentes = new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(idHogar)};
+        residentes.add("Seleccione informante");
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaresidentes,
+                    null,SQLConstantes.WHERE_CLAUSE_HOGAR_ID,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                String numero = cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_numero));
+                String nombre = cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p202));
+                String residente = numero + "-" + nombre;
+                residentes.add(residente);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return residentes;
+    }
+
     public Residente getResidente(String id){
         Residente residente = null;
         String[] whereArgs = new String[]{String.valueOf(id)};
@@ -511,7 +531,6 @@ public class Data {
                 caratula.setNom_ccpp(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_ccpp)));
                 caratula.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_zona)));
                 caratula.setManzana_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_manzana_id)));
-                caratula.setAer(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_aer)));
                 caratula.setVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_vivienda)));
                 caratula.setTipvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_tipvia)));
                 caratula.setNomvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nomvia)));

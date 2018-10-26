@@ -18,6 +18,7 @@
         android:layout_height="32dp"
         android:layout_margin="@dimen/margen_small">
         <Spinner
+            android:id="@+id/cabecera_spinner_informante"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:drawSelectorOnTop="true"/>

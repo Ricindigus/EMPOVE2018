@@ -10,7 +10,7 @@
         android:layout_width="480dp"
         android:layout_height="wrap_content"
         android:padding="@dimen/margen_medium"
-        android:background="@drawable/marco_pregunta"
+        android:background="@drawable/marco_dialog"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
@@ -18,13 +18,13 @@
             android:text="AGREGAR RUTA"
             android:textColor="@color/colorPrimary"
             android:gravity="center"
+            android:textSize="@dimen/texto_medium"
             android:textStyle="bold"
-            android:padding="@dimen/margen_medium"/>
+            android:padding="@dimen/margen_small"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="@dimen/margen_small"
             android:background="@drawable/marco_pregunta"
             android:padding="@dimen/margen_medium">
             <android.support.design.widget.TextInputLayout
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/marco_pregunta"
-            android:layout_margin="@dimen/margen_small"
+            android:layout_marginTop="@dimen/margen_small"
             android:padding="@dimen/margen_small">
             <TextView
                 android:layout_width="wrap_content"
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_margin="@dimen/margen_small"
+            android:layout_marginTop="@dimen/margen_small"
             android:orientation="vertical"
             android:background="@drawable/marco_pregunta"
             android:padding="@dimen/margen_small">

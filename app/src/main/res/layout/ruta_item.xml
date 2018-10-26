@@ -8,7 +8,7 @@
     android:focusable="true"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    android:layout_height="48dp">
+    android:layout_height="32dp">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
         <TextView
             android:id="@+id/txtpais"
             android:layout_width="0dp"
+            android:paddingLeft="@dimen/margen_small"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/modulo_3_p309_cab1"/>

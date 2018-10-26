@@ -31,19 +31,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_5_p511_sp3"/>
-        <LinearLayout
+        <RadioButton
+            android:id="@+id/mod5_511_rb4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/mod5_511_rb4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_5_p511_sp4"/>
-            <EditText
-                android:id="@+id/mod5_511_edittext_C5_P511_O"
-                style="@style/TemaInputEspecifique"/>
-        </LinearLayout>
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_5_p511_sp4"/>
+        <EditText
+            android:id="@+id/mod5_511_edittext_C5_P511_O"
+            style="@style/TemaInputEspecifiqueRadio"/>
     </RadioGroup>
 </LinearLayout>

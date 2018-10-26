@@ -61,18 +61,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/modulo_6_p630_med2"/>
-            <LinearLayout
+            <RadioButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margen_small"
-                    android:text="@string/modulo_6_p630_med3"/>
-                <EditText
-                    android:id="@+id/mod6_630_edittext_C6_P630_1_O"
-                    style="@style/TemaInputEspecifique"/>
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margen_small"
+                android:text="@string/modulo_6_p630_med3"/>
+            <EditText
+                android:id="@+id/mod6_630_edittext_C6_P630_1_O"
+                style="@style/TemaInputEspecifiqueRadio"/>
         </RadioGroup>
         <TextView
             android:layout_width="wrap_content"
@@ -151,18 +147,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/modulo_6_p630_med2"/>
-            <LinearLayout
+            <RadioButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margen_small"
-                    android:text="@string/modulo_6_p630_med3"/>
-                <EditText
-                    android:id="@+id/mod6_630_edittext_C6_P630_2_O"
-                    style="@style/TemaInputEspecifique"/>
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margen_small"
+                android:text="@string/modulo_6_p630_med3"/>
+            <EditText
+                android:id="@+id/mod6_630_edittext_C6_P630_2_O"
+                style="@style/TemaInputEspecifiqueRadio"/>
         </RadioGroup>
         <TextView
             android:layout_width="wrap_content"

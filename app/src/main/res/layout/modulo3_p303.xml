@@ -24,10 +24,11 @@
             android:text="@string/modulo_3_p303_mes"/>
         <TextView
             android:id="@+id/mod3_303_textview_C3_P303_M"
-            android:layout_width="40dp"
+            android:layout_width="48dp"
             android:background="@drawable/input_text_enabled"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margen_medium"/>
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:layout_margin="@dimen/margen_small"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,10 +37,11 @@
             android:text="@string/modulo_3_p303_anio"/>
         <TextView
             android:id="@+id/mod3_303_textview_C3_P303_A"
-            android:layout_width="40dp"
+            android:layout_width="48dp"
             android:background="@drawable/input_text_enabled"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margen_medium"/>
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:layout_margin="@dimen/margen_small"/>
     </LinearLayout>
     <Button
         android:id="@+id/buttonAgregarFecha"

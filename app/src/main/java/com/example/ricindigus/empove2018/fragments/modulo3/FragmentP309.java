@@ -2,6 +2,7 @@ package com.example.ricindigus.empove2018.fragments.modulo3;
 
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +17,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.activities.agregacion.AgregarRutaActivity;
@@ -23,6 +27,7 @@ import com.example.ricindigus.empove2018.adapters.M3Pregunta309Adapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta309;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 import java.util.ArrayList;
@@ -32,13 +37,15 @@ import java.util.ArrayList;
  */
 public class FragmentP309 extends FragmentPagina {
     String idEncuestado;
+    String idInformante;
+    String idHogar;
     Context contexto;
     FloatingActionButton fab;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     M3Pregunta309Adapter m3Pregunta309Adapter;
     ArrayList<M3Pregunta309> m3Pregunta309s;
-
+    Spinner informanteSpinner;
     public FragmentP309() {
         // Required empty public constructor
     }
@@ -54,6 +61,7 @@ public class FragmentP309 extends FragmentPagina {
         View rootView = inflater.inflate(R.layout.fragment_p309, container, false);
         fab = (FloatingActionButton) rootView.findViewById(R.id.rutas_fab);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rutas_recyclerview);
+        informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
         return rootView;
     }
 
@@ -72,25 +80,45 @@ public class FragmentP309 extends FragmentPagina {
                 startActivity(intent);
             }
         });
+        cargarDatos();
     }
 
     @Override
     public void guardarDatos() {
-
+        Data data = new Data(contexto);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
+        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+        data.close();
     }
 
     @Override
     public void llenarVariables() {
-
+        idInformante = informanteSpinner.getSelectedItemPosition()+"";
     }
 
     @Override
     public void cargarDatos() {
+        Data data = new Data(contexto);
+        data.open();
+        if (data.existeElemento(SQLConstantes.tablamodulo3,idEncuestado)){
+            Modulo3 modulo3 = data.getModulo3(idEncuestado);
+            idHogar = modulo3.getIdHogar();
+            idInformante = modulo3.getIdInformante();
+            ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(contexto, android.R.layout.simple_spinner_item,residentes);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            informanteSpinner.setAdapter(adapter);
+            informanteSpinner.setSelection(Integer.parseInt(idInformante));
+        }
+        data.close();
 
     }
 
     @Override
     public boolean validarDatos() {
+        if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if(m3Pregunta309s.size() == 0){ mostrarMensaje("DEBE AGREGAR RUTAS");return false;}
         return true;
     }

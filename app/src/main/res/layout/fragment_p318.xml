@@ -14,5 +14,6 @@
         android:textColor="@color/colorIcons"
         android:background="@color/colorPrimary"
         android:text="@string/modulo_3_nombre"/>
+    <include layout="@layout/cabecera"/>
     <include layout="@layout/modulo3_p318"/>
 </LinearLayout>

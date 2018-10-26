@@ -21,19 +21,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.example.ricindigus.empove2018.R;
-import com.example.ricindigus.empove2018.fragments.vivienda.FragmentCaratula;
-import com.example.ricindigus.empove2018.fragments.hogar.FragmentFuncionarios;
-import com.example.ricindigus.empove2018.fragments.vivienda.FragmentHogares;
-import com.example.ricindigus.empove2018.fragments.hogar.FragmentVisitasEncuestador;
-import com.example.ricindigus.empove2018.fragments.hogar.FragmentVisitasSupervisor;
-import com.example.ricindigus.empove2018.fragments.modulo1.FragmentP101P107;
-import com.example.ricindigus.empove2018.fragments.modulo1.FragmentP108P113;
-import com.example.ricindigus.empove2018.fragments.modulo2.FragmentP201P206;
 import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP301P305;
 import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP306P308;
 import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP309;
-import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP310P313;
-import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP314P317;
+import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP310P312;
+import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP313P317;
 import com.example.ricindigus.empove2018.fragments.modulo3.FragmentP318;
 import com.example.ricindigus.empove2018.fragments.modulo4.FragmentP401P404;
 import com.example.ricindigus.empove2018.fragments.modulo4.FragmentP405P407;
@@ -189,16 +181,16 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 fragmentActual = fragmentP309;
                 break;
             case TipoFragmentEncuestado.P310P313:
-                FragmentP310P313 fragmentP310P313 = new FragmentP310P313(idEncuestado,EncuestaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP310P313);
+                FragmentP310P312 fragmentP310P312 = new FragmentP310P312(idEncuestado,EncuestaActivity.this);
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP310P312);
                 tFragment = TipoFragmentEncuestado.P310P313;
-                fragmentActual = fragmentP310P313;
+                fragmentActual = fragmentP310P312;
                 break;
             case TipoFragmentEncuestado.P314P317:
-                FragmentP314P317 fragmentP314P317 = new FragmentP314P317(idEncuestado,EncuestaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP314P317);
+                FragmentP313P317 fragmentP313P317 = new FragmentP313P317(idEncuestado,EncuestaActivity.this);
+                fragmentTransaction.replace(R.id.fragment_layout, fragmentP313P317);
                 tFragment = TipoFragmentEncuestado.P314P317;
-                fragmentActual = fragmentP314P317;
+                fragmentActual = fragmentP313P317;
                 break;
             case TipoFragmentEncuestado.P318:
                 FragmentP318 fragmentP318 = new FragmentP318(idEncuestado,EncuestaActivity.this);
@@ -331,7 +323,7 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 switch (groupPosition){
-                    case 3:
+                    case 0:
                         switch (childPosition){
                             case 0: setFragment(TipoFragmentEncuestado.P301P305,0);tFragment = TipoFragmentEncuestado.P301P305;break;
                             case 1: setFragment(TipoFragmentEncuestado.P306P308,0);tFragment = TipoFragmentEncuestado.P306P308;break;
@@ -340,21 +332,21 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                             case 4: setFragment(TipoFragmentEncuestado.P314P317,0);tFragment = TipoFragmentEncuestado.P314P317;break;
                             case 5: setFragment(TipoFragmentEncuestado.P318,0);tFragment = TipoFragmentEncuestado.P318;break;
                         }break;
-                    case 4:
+                    case 1:
                         switch (childPosition){
                             case 0: setFragment(TipoFragmentEncuestado.P401P404,0);tFragment = TipoFragmentEncuestado.P401P404;break;
                             case 1: setFragment(TipoFragmentEncuestado.P405P407,0);tFragment = TipoFragmentEncuestado.P405P407;break;
                             case 2: setFragment(TipoFragmentEncuestado.P408P410,0);tFragment = TipoFragmentEncuestado.P408P410;break;
                             case 3: setFragment(TipoFragmentEncuestado.P411P416,0);tFragment = TipoFragmentEncuestado.P411P416;break;
                         }break;
-                    case 5:
+                    case 2:
                         switch (childPosition){
                             case 0: setFragment(TipoFragmentEncuestado.P501P505,0);tFragment = TipoFragmentEncuestado.P501P505;break;
                             case 1: setFragment(TipoFragmentEncuestado.P506P507,0);tFragment = TipoFragmentEncuestado.P506P507;break;
                             case 2: setFragment(TipoFragmentEncuestado.P508P511,0);tFragment = TipoFragmentEncuestado.P508P511;break;
                             case 3: setFragment(TipoFragmentEncuestado.P512P513,0);tFragment = TipoFragmentEncuestado.P512P513;break;
                         }break;
-                    case 6:
+                    case 3:
                         switch (childPosition){
                             case 0: setFragment(TipoFragmentEncuestado.P601P604,0);tFragment = TipoFragmentEncuestado.P501P505;break;
                             case 1: setFragment(TipoFragmentEncuestado.P605P608,0);tFragment = TipoFragmentEncuestado.P506P507;break;
@@ -365,12 +357,12 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                             case 6: setFragment(TipoFragmentEncuestado.P626P629,0);tFragment = TipoFragmentEncuestado.P626P629;break;
                             case 7: setFragment(TipoFragmentEncuestado.P630,0);tFragment = TipoFragmentEncuestado.P630;break;
                         }break;
-                    case 7:
+                    case 4:
                         switch (childPosition){
                             case 0: setFragment(TipoFragmentEncuestado.P701P705,0);tFragment = TipoFragmentEncuestado.P701P705;break;
                             case 1: setFragment(TipoFragmentEncuestado.P706P709,0);tFragment = TipoFragmentEncuestado.P706P709;break;
                         }break;
-                    case 8:
+                    case 5:
                         switch (childPosition){
                             case 0: setFragment(TipoFragmentEncuestado.P801P804,0);tFragment = TipoFragmentEncuestado.P801P804;break;
                             case 1: setFragment(TipoFragmentEncuestado.P805P808,0);tFragment = TipoFragmentEncuestado.P805P808;break;
@@ -388,32 +380,12 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
     }
 
     private void prepareListData(List<String> listDataHeader, Map<String, List<String>> listDataChild) {
-        listDataHeader.add(getString(R.string.datos_generales_menu));
-        listDataHeader.add(getString(R.string.modulo_1_menu));
-        listDataHeader.add(getString(R.string.modulo_2_menu));
         listDataHeader.add(getString(R.string.modulo_3_menu));
         listDataHeader.add(getString(R.string.modulo_4_menu));
         listDataHeader.add(getString(R.string.modulo_5_menu));
         listDataHeader.add(getString(R.string.modulo_6_menu));
         listDataHeader.add(getString(R.string.modulo_7_menu));
         listDataHeader.add(getString(R.string.modulo_8_menu));
-
-        List<String> moduloDatosGenerales = new ArrayList<String>();
-        moduloDatosGenerales.add(getString(R.string.datos_generales_submenu_1));
-        moduloDatosGenerales.add(getString(R.string.datos_generales_submenu_2));
-        moduloDatosGenerales.add(getString(R.string.datos_generales_submenu_3));
-        moduloDatosGenerales.add(getString(R.string.datos_generales_submenu_4));
-        moduloDatosGenerales.add(getString(R.string.datos_generales_submenu_5));
-
-
-        List<String> modulo1 = new ArrayList<String>();
-        modulo1.add(getString(R.string.modulo_1_submenu_1));
-        modulo1.add(getString(R.string.modulo_1_submenu_2));
-
-
-        List<String> modulo2 = new ArrayList<String>();
-        modulo2.add(getString(R.string.modulo_2_submenu_1));
-
 
         List<String> modulo3 = new ArrayList<String>();
         modulo3.add(getString(R.string.modulo_3_submenu_1));
@@ -422,7 +394,6 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         modulo3.add(getString(R.string.modulo_3_submenu_4));
         modulo3.add(getString(R.string.modulo_3_submenu_5));
         modulo3.add(getString(R.string.modulo_3_submenu_6));
-
 
         List<String> modulo4 = new ArrayList<String>();
         modulo4.add(getString(R.string.modulo_4_submenu_1));
@@ -458,15 +429,12 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         modulo8.add(getString(R.string.modulo_8_submenu_5));
         modulo8.add(getString(R.string.modulo_8_submenu_6));
 
-        listDataChild.put(listDataHeader.get(0), moduloDatosGenerales);
-        listDataChild.put(listDataHeader.get(1), modulo1);
-        listDataChild.put(listDataHeader.get(2), modulo2);
-        listDataChild.put(listDataHeader.get(3), modulo3);
-        listDataChild.put(listDataHeader.get(4), modulo4);
-        listDataChild.put(listDataHeader.get(5), modulo5);
-        listDataChild.put(listDataHeader.get(6), modulo6);
-        listDataChild.put(listDataHeader.get(7), modulo7);
-        listDataChild.put(listDataHeader.get(8), modulo8);
+        listDataChild.put(listDataHeader.get(0), modulo3);
+        listDataChild.put(listDataHeader.get(1), modulo4);
+        listDataChild.put(listDataHeader.get(2), modulo5);
+        listDataChild.put(listDataHeader.get(3), modulo6);
+        listDataChild.put(listDataHeader.get(4), modulo7);
+        listDataChild.put(listDataHeader.get(5), modulo8);
 
 
     }

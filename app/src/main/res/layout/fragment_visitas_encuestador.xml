@@ -21,6 +21,13 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:padding="@dimen/margen_small">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/greyBluePrimaryDark"
+            android:theme="@style/TemaCabeceraVisitas"
+            android:layout_marginBottom="1dp"
+            android:text="12.ENTREVISTA Y SUPERVISIÓN"/>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -126,8 +133,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/margen_small">
+            android:layout_height="match_parent">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/visitas_encuestador_recyclerview"
                 android:layout_width="match_parent"

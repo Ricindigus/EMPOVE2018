@@ -43,9 +43,9 @@
     <string name="caratula_zona">5.ZONA N°</string>
     <string name="caratula_n_manzana">6.MANZANA N°</string>
     <string name="caratula_aer">7.AER N°</string>
-    <string name="caratula_n_vivienda">8.VIVIENDA N°</string>
+    <string name="caratula_n_vivienda">7.VIVIENDA N°</string>
 
-    <string name="caratula_direccion">9.DIRECCIÓN DE LA VIVIENDA</string>
+    <string name="caratula_direccion">8.DIRECCIÓN DE LA VIVIENDA</string>
     <string-array name="caratula_array_tipo_via">
         <item>Seleccione</item>
         <item>1.Avenida</item>
@@ -67,14 +67,14 @@
     <string name="caratula_km">KM</string>
     <string name="caratula_n_telefono">N° de TELÉFONO</string>
 
-    <string name="caratula_total_hogares">10.TOTAL DE HOGARES QUE OCUPAN LA VIVIENDA</string>
+    <string name="caratula_total_hogares">9.TOTAL DE HOGARES QUE OCUPAN LA VIVIENDA</string>
     <string name="caratula_n_hogares">¿CUANTOS HOGARES OCUPAN ESTA VIVIENDA?</string>
     <string name="caratula_n_hogares_ind">Sra.(Sr.): Si HOGAR es la persona o grupo de personas que se alimentan de una misma olla y atienden en común otras necesidades básicas.</string>
 
-    <string name="caratula_viven_venezolanos">16.EN ESTE HOGAR, ¿VIVE ALGUNA PERSONA QUE LLEGÓ DE VENEZUELA?</string>
+    <string name="caratula_viven_venezolanos">15.EN ESTE HOGAR, ¿VIVE ALGUNA PERSONA QUE LLEGÓ DE VENEZUELA?</string>
 
     <!--Strings asociados a las visitas-->
-    <string name="visita_titulo">13.ENTREVISTAS Y SUPERVISIÓN</string>
+    <string name="visita_titulo">12.ENTREVISTAS Y SUPERVISIÓN</string>
     <string name="visita_visitas_hogar_encuestador">VISITAS AL HOGAR (ENCUESTADOR/A)</string>
     <string name="visita_visitas_hogar_supervisor">VISITAS AL HOGAR (SUPERVISOR/A)</string>
     <string name="visita_numero">N°</string>
@@ -92,7 +92,7 @@
     <string name="visita_proxima_fecha">FECHA PRÓXIMA VISITA</string>
     <string name="visita_proxima_hora">HORA PRÓXIMA VISITA</string>
     <string name="visita_resultado_visita">RESULTADO VISITA</string>
-    <string name="visita_resultado_final">14.RESULTADO FINAL DE LA ENCUESTA</string>
+    <string name="visita_resultado_final">13.RESULTADO FINAL DE LA ENCUESTA</string>
     <string name="visita_resultado">RESULTADO</string>
     <string-array name="visita_array_resultados">
         <item>Seleccione resultado</item>
@@ -103,6 +103,7 @@
         <item>5.Vivienda desocupada</item>
         <item>6.No se inició la entrevista</item>
         <item>7.Otro</item>
+        <item>8.vivienda sin población objetivo</item>
     </string-array>
     <string name="visita_especifique">Especifique</string>
     <string name="visita_agregar">AGREGAR VISITA</string>
@@ -117,7 +118,7 @@
 
 
     <!--Strings asociados a funcionarios-->
-    <string name="funcionario_titulo">15.FUNCIONARIOS DE LA ENCUESTA</string>
+    <string name="funcionario_titulo">14.FUNCIONARIOS DE LA ENCUESTA</string>
     <string name="funcionario_cargo">CARGO</string>
     <string name="funcionario_dni">DNI</string>
     <string name="funcionario_nombres">NOMNBRES Y APELLIDOS</string>
@@ -287,7 +288,7 @@
     <string name="modulo_2_p202_boton_guardar">guardar persona</string>
 
 
-    <string name="modulo_2_p202">202.¿CUÁL ES EL PRIMER NOMBRE DE LAS PERSONA?</string>
+    <string name="modulo_2_p202">202.¿CUÁL ES EL PRIMER NOMBRE DE LA PERSONA?</string>
     <string name="modulo_2_p203">203.¿CUÁL ES LA RELACIÓN DE PARENTESCO CON EL (LA) JEFE/A DEL HOGAR?</string>
 
     <string-array name="modulo_2_p203_parentescos">

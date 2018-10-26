@@ -28,7 +28,7 @@
             android:layout_height="48dp"
             android:contentDescription="@string/nav_header_desc"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            app:srcCompat="@drawable/mansion"/>
+            app:srcCompat="@drawable/vivienda"/>
 
         <TextView
             android:id="@+id/txtTituloVivienda"

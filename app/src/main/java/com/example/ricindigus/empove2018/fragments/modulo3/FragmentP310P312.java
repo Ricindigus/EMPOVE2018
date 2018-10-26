@@ -15,16 +15,16 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentP310P313 extends FragmentPagina {
+public class FragmentP310P312 extends FragmentPagina {
     String idEcnuestado;
     Context contexto;
 
-    public FragmentP310P313() {
+    public FragmentP310P312() {
         // Required empty public constructor
     }
 
     @SuppressLint("ValidFragment")
-    public FragmentP310P313(String idEcnuestado, Context contexto) {
+    public FragmentP310P312(String idEcnuestado, Context contexto) {
         this.idEcnuestado = idEcnuestado;
         this.contexto = contexto;
     }
@@ -33,7 +33,7 @@ public class FragmentP310P313 extends FragmentPagina {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_p310_p313, container, false);
+        return inflater.inflate(R.layout.fragment_p310_p312, container, false);
     }
 
     @Override

@@ -31,22 +31,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_3_p305_sp3"/>
-        <LinearLayout
-            android:id="@+id/mod3_305_rb4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
             <RadioButton
-                android:id="@+id/mod3_305_rb5"
+                android:id="@+id/mod3_305_rb4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_small"
                 android:text="@string/modulo_3_p305_sp4"/>
             <EditText
                 android:id="@+id/mod3_305_edittext_C3_P305_O"
-                style="@style/TemaInputEspecifique"/>
-        </LinearLayout>
+                style="@style/TemaInputEspecifiqueRadio"/>
     </RadioGroup>
 
 

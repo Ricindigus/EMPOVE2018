@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.activities.EncuestaActivity;
 import com.example.ricindigus.empove2018.activities.HogarActivity;
+import com.example.ricindigus.empove2018.activities.ViviendaActivity;
 import com.example.ricindigus.empove2018.adapters.HogarAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
@@ -139,6 +140,8 @@ public class FragmentHogares extends FragmentPagina {
             public void onItemClick(View view, int position) {
                 Intent intent = new Intent(context, HogarActivity.class);
                 intent.putExtra("idHogar",hogares.get(position).get_id());
+                ViviendaActivity viviendaActivity = (ViviendaActivity)getActivity();
+                intent.putExtra("nombreUsuario", viviendaActivity.getNombreUsuario());
                 startActivity(intent);
             }
         });

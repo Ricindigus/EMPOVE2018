@@ -11,9 +11,11 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,6 +24,7 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
@@ -30,11 +33,13 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class FragmentP301P305 extends FragmentPagina {
@@ -53,6 +58,7 @@ public class FragmentP301P305 extends FragmentPagina {
     CheckBox c3_p303_CheckBox;
     RadioGroup c3_p304_RadioGroup,c3_p305_RadioGroup;
     EditText c3_p305_o_EditText;
+    Spinner informanteSpinner;
 
     Button c3_p301_d_f_Button, btnAgregarFecha;
 
@@ -100,6 +106,8 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p303_m_TextView = (TextView)rootView.findViewById(R.id.mod3_303_textview_C3_P303_M);
         c3_p303_a_TextView = (TextView)rootView.findViewById(R.id.mod3_303_textview_C3_P303_A);
         c3_p303_CheckBox = (CheckBox) rootView.findViewById(R.id.mod3_303_checkbox_C3_P303_NO_NACIO);
+        informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
+
 
         c3_p304_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod3_304_radiogroup_C3_P304);
         c3_p305_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod3_305_radiogroup_C3_P305);
@@ -147,6 +155,19 @@ public class FragmentP301P305 extends FragmentPagina {
                 recogerFecha.show();
             }
         });
+
+        Data data =  new Data(context);
+        data.open();
+        ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
+        data.close();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        informanteSpinner.setAdapter(adapter);
+
+
+        c3_p302_AutoCompleteTextView.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(20)});
+        c3_p305_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
+
         cargarDatos();
     }
 
@@ -156,6 +177,7 @@ public class FragmentP301P305 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
         contentValues.put(SQLConstantes.modulo3_c3_p301_d,c3_p301_d);
         contentValues.put(SQLConstantes.modulo3_c3_p301_m,c3_p301_m);
         contentValues.put(SQLConstantes.modulo3_c3_p301_a,c3_p301_a);
@@ -168,7 +190,6 @@ public class FragmentP301P305 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p305_o,c3_p305_o);
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo3 modulo3 = new Modulo3();
-            modulo3.setIdInformante(idInformante);
             modulo3.set_id(idEncuestado);
             modulo3.setIdVivienda(idVivienda);
             modulo3.setIdHogar(idHogar);
@@ -180,6 +201,7 @@ public class FragmentP301P305 extends FragmentPagina {
 
     @Override
     public void llenarVariables() {
+        idInformante = informanteSpinner.getSelectedItemPosition()+"";
         c3_p301_d = c3_p301_d_TextView.getText().toString();
         c3_p301_m = c3_p301_m_TextView.getText().toString();
         c3_p301_a = c3_p301_a_TextView.getText().toString();
@@ -199,6 +221,7 @@ public class FragmentP301P305 extends FragmentPagina {
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo3 modulo3 = data.getModulo3(idEncuestado);
+            informanteSpinner.setSelection(Integer.parseInt(modulo3.getIdInformante()));
             c3_p301_d_TextView.setText(modulo3.getC3_p301_d());
             c3_p301_m_TextView.setText(modulo3.getC3_p301_m());
             c3_p301_a_TextView.setText(modulo3.getC3_p301_a());
@@ -218,6 +241,7 @@ public class FragmentP301P305 extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         llenarVariables();
+        if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p301_d.trim().equals("")){mostrarMensaje("PREGUNTA 301: DEBE AGREGAR FECHA");return false;}
         if (c3_p302.trim().equals("")) {mostrarMensaje("PREGUNTA 302: DEBE INDICAR PAIS DE NACIMIENTO");return false;}
         if (!c3_p303_CheckBox.isChecked()){

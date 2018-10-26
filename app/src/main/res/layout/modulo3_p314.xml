@@ -25,20 +25,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_3_p314_sp2"/>
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/mod3_314_rb4"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/mod3_314_rb4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_3_p314_sp3"/>
-            <EditText
-                android:id="@+id/mod3_314_edittext_C3_P314_O"
-                style="@style/TemaInputEspecifique" />
-        </LinearLayout>
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_3_p314_sp3"/>
+        <EditText
+            android:id="@+id/mod3_314_edittext_C3_P314_O"
+            style="@style/TemaInputEspecifiqueRadio" />
     </RadioGroup>
 </LinearLayout>

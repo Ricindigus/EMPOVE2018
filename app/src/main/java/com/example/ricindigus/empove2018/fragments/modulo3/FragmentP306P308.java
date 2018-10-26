@@ -11,22 +11,27 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -34,12 +39,14 @@ import java.util.Calendar;
  */
 public class FragmentP306P308 extends FragmentPagina {
     String idEncuestado;
+    String idInformante;
     Context context;
     private static final String CERO = "0";
     public final Calendar c = Calendar.getInstance();
     final int mes = c.get(Calendar.MONTH);
     final int dia = c.get(Calendar.DAY_OF_MONTH);
     final int anio = c.get(Calendar.YEAR);
+    Spinner informanteSpinner;
 
     TextView c3_p307_TextViewDia, c3_p307_TextViewMes, c3_p307_TextViewAnio;
     Button c3_p307_d_f_Button;
@@ -77,6 +84,7 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p306_EditText = (EditText) rootView.findViewById(R.id.mod3_306_edittext_C3_P306_O);
         c3_p308_estado_EditText = (EditText) rootView.findViewById(R.id.mod3_308_edittext_C3_P308_E);
         c3_p308_municipio_EditText = (EditText) rootView.findViewById(R.id.mod3_308_edittext_C3_P308_M);
+        informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
         return rootView;
     }
 
@@ -101,6 +109,10 @@ public class FragmentP306P308 extends FragmentPagina {
                 recogeFecha.show();
             }
         });
+
+        c3_p306_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
+        c3_p308_estado_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
+        c3_p308_municipio_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
         cargarDatos();
     }
 
@@ -109,6 +121,7 @@ public class FragmentP306P308 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
         contentValues.put(SQLConstantes.modulo3_c3_p306,c3_p306);
         contentValues.put(SQLConstantes.modulo3_c3_p306_o,c3_p306_o);
         contentValues.put(SQLConstantes.modulo3_c3_p307_d,c3_p307_d);
@@ -122,6 +135,7 @@ public class FragmentP306P308 extends FragmentPagina {
 
     @Override
     public void llenarVariables() {
+        idInformante = informanteSpinner.getSelectedItemPosition()+"";
         c3_p306 = c3_p306_RadioGroup.indexOfChild(c3_p306_RadioGroup.findViewById(c3_p306_RadioGroup.getCheckedRadioButtonId()));
         c3_p306_o  = c3_p306_EditText.getText().toString();
         c3_p307_d  = c3_p307_TextViewDia.getText().toString();
@@ -137,6 +151,11 @@ public class FragmentP306P308 extends FragmentPagina {
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo3 modulo3 = data.getModulo3(idEncuestado);
+            ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(modulo3.getIdHogar());
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            informanteSpinner.setAdapter(adapter);
+            informanteSpinner.setSelection(Integer.parseInt(modulo3.getIdInformante()));
             if(!modulo3.getC3_p306().equals("-1") && !modulo3.getC3_p306().equals(""))((RadioButton)c3_p306_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p306()))).setChecked(true);
             c3_p306_EditText.setText(modulo3.getC3_p306_o());
             c3_p307_TextViewDia.setText(modulo3.getC3_p307_d());
@@ -151,6 +170,7 @@ public class FragmentP306P308 extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         llenarVariables();
+        if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p306 == -1){mostrarMensaje("PREGUNTA 306: DEBE MARCAR UNA OPCIÓN"); return false;}
         if (c3_p306 == 5){
             if (c3_p306_o.trim().equals("")){mostrarMensaje("PREGUNTA 306: DEBE ESPECIFICAR");return false;}

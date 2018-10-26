@@ -17,24 +17,20 @@
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/margen_small"
         android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/mod6_612_rb1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/mod6_612_rb1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_6_p612_sp1"/>
-            <EditText
-                android:id="@+id/mod6_612_edittext_C6_P612_NRO"
-                android:layout_width="@dimen/longitud_input_n_horas"
-                android:layout_height="@dimen/altura_input_especifique"
-                android:background="@drawable/input_text_enabled"
-                android:hint="@string/modulo_6_p612_npersonas"
-                android:paddingLeft="@dimen/margen_small"/>
-        </LinearLayout>
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_6_p612_sp1"/>
+        <EditText
+            android:id="@+id/mod6_612_edittext_C6_P612_NRO"
+            android:layout_width="@dimen/longitud_input_n_horas"
+            android:layout_height="@dimen/altura_input_especifique"
+            android:background="@drawable/input_text_disabled"
+            android:hint="@string/modulo_6_p612_npersonas"
+            android:layout_marginLeft="@dimen/margen_xlarge"
+            android:paddingLeft="@dimen/margen_small"/>
         
         <RadioButton
             android:id="@+id/mod6_612_rb2"
