@@ -270,6 +270,7 @@ public class FragmentP701P705 extends FragmentPagina {
             Modulo7 modulo7 = data.getModulo7(idEncuestado);
 
             //informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
+            informanteSpinner.setSelection(1);
             if(!modulo7.getC7_p701().equals("-1"))((RadioButton)c7_p701_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p701()))).setChecked(true);
             if(modulo7.getC7_p702_1().equals("1")) c7_p702_1_Checkbox.setChecked(true);
             if(modulo7.getC7_p702_1().equals("0")) c7_p702_1_Checkbox.setChecked(false);
