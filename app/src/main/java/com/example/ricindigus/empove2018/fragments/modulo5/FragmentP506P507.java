@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ import android.widget.Toast;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -32,7 +35,8 @@ import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMetho
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP506P507 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
     RadioGroup c5_p506_1_RadioGroup, c5_p506_4_1_RadioGroup, c5_p506_4_2_RadioGroup, c5_p506_4_3_RadioGroup,
@@ -51,13 +55,21 @@ public class FragmentP506P507 extends FragmentPagina {
     private int c5_p507_prov;
     private int c5_p507_dep;
 
+    private int edad, sexo;
+
     @SuppressLint("ValidFragment")
-    public FragmentP506P507(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP506P507(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p204()=="") sexo = -1; else sexo = Integer.parseInt(residente.getC2_p204());
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP506P507() {
@@ -193,14 +205,15 @@ public class FragmentP506P507 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo5_c5_p507_prov,c5_p507_prov+"");
         contentValues.put(SQLConstantes.modulo5_c5_p507_dep,c5_p507_dep+"");
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
-            contentValues.put(SQLConstantes.modulo5_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo5_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo5_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo5_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+            Modulo5 modulo5 = new Modulo5();
+            modulo5.setIdInformante(idInformante);
+            modulo5.set_id(idEncuestado);
+            modulo5.setIdVivienda(idVivienda);
+            modulo5.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo5.toValues());
         }
         data.close();
     }
@@ -209,22 +222,22 @@ public class FragmentP506P507 extends FragmentPagina {
     public void llenarVariables() {
         c5_p506_1 = c5_p506_1_RadioGroup.indexOfChild(c5_p506_1_RadioGroup.findViewById(c5_p506_1_RadioGroup.getCheckedRadioButtonId()));
         switch (c5_p506_1){
-            case 1: c5_p506_2 = c5_p506_2_1_EditText.getText().toString(); c5_p506_3 = "";
+            case 0: c5_p506_2 = c5_p506_2_1_EditText.getText().toString(); c5_p506_3 = "";
                     c5_p506_4 = c5_p506_4_1_RadioGroup.indexOfChild(c5_p506_4_1_RadioGroup.findViewById(c5_p506_4_1_RadioGroup.getCheckedRadioButtonId()));
                     break;
-            case 2: c5_p506_3 = c5_p506_3_EditText.getText().toString(); c5_p506_2 = "";
+            case 1: c5_p506_3 = c5_p506_3_EditText.getText().toString(); c5_p506_2 = "";
                     c5_p506_4 = c5_p506_4_2_RadioGroup.indexOfChild(c5_p506_4_2_RadioGroup.findViewById(c5_p506_4_2_RadioGroup.getCheckedRadioButtonId()));
                     break;
-            case 3: c5_p506_2 = c5_p506_2_3_EditText.getText().toString(); c5_p506_3 = "";
+            case 2: c5_p506_2 = c5_p506_2_3_EditText.getText().toString(); c5_p506_3 = "";
                     c5_p506_4 = c5_p506_4_3_RadioGroup.indexOfChild(c5_p506_4_3_RadioGroup.findViewById(c5_p506_4_3_RadioGroup.getCheckedRadioButtonId()));
                     break;
-            case 4: c5_p506_2 = c5_p506_2_4_EditText.getText().toString(); c5_p506_3 = "";
+            case 3: c5_p506_2 = c5_p506_2_4_EditText.getText().toString(); c5_p506_3 = "";
                     c5_p506_4 = c5_p506_4_4_RadioGroup.indexOfChild(c5_p506_4_4_RadioGroup.findViewById(c5_p506_4_4_RadioGroup.getCheckedRadioButtonId()));
                     break;
-            case 5: c5_p506_2 = c5_p506_2_5_EditText.getText().toString(); c5_p506_3 = "";
+            case 4: c5_p506_2 = c5_p506_2_5_EditText.getText().toString(); c5_p506_3 = "";
                     c5_p506_4 = c5_p506_4_5_RadioGroup.indexOfChild(c5_p506_4_5_RadioGroup.findViewById(c5_p506_4_5_RadioGroup.getCheckedRadioButtonId()));
                     break;
-            case 6: c5_p506_2 = c5_p506_2_6_EditText.getText().toString(); c5_p506_3 = "";
+            case 5: c5_p506_2 = c5_p506_2_6_EditText.getText().toString(); c5_p506_3 = "";
                     c5_p506_4 = c5_p506_4_6_RadioGroup.indexOfChild(c5_p506_4_6_RadioGroup.findViewById(c5_p506_4_6_RadioGroup.getCheckedRadioButtonId()));
                     break;
             default: c5_p506_2 = ""; c5_p506_3 = ""; c5_p506_4 = -1; break;
@@ -240,13 +253,64 @@ public class FragmentP506P507 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo5 modulo5 = data.getModulo5(idEncuestado);
+            if(!(modulo5.getC5_p506_1().equals("-1") || modulo5.getC5_p506_1().equals(""))) {
+                ((RadioButton) c5_p506_1_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p506_1()))).setChecked(true);
+                switch (modulo5.getC5_p506_1()) {
+                    case "0":
+                        c5_p506_2_1_EditText.setText(modulo5.getC5_p506_2());
+                        if (!(modulo5.getC5_p506_4().equals("-1") || modulo5.getC5_p506_4().equals(""))){
+                            ((RadioButton) c5_p506_4_1_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p506_4()))).setChecked(true);
+                        }
+                        break;
+                    case "1":
+                        c5_p506_3_EditText.setText(modulo5.getC5_p506_3());
+                        if (!(modulo5.getC5_p506_4().equals("-1") || modulo5.getC5_p506_4().equals(""))){
+                            ((RadioButton) c5_p506_4_2_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p506_4()))).setChecked(true);
+                        }
+                        break;
+                    case "2":
+                        c5_p506_2_3_EditText.setText(modulo5.getC5_p506_2());
+                        if (!(modulo5.getC5_p506_4().equals("-1") || modulo5.getC5_p506_4().equals(""))){
+                            ((RadioButton) c5_p506_4_3_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p506_4()))).setChecked(true);
+                        }
+                        break;
+                    case "3":
+                        c5_p506_2_4_EditText.setText(modulo5.getC5_p506_2());
+                        if (!(modulo5.getC5_p506_4().equals("-1") || modulo5.getC5_p506_4().equals(""))){
+                            ((RadioButton) c5_p506_4_4_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p506_4()))).setChecked(true);
+                        }
+                        break;
+                    case "4":
+                        c5_p506_2_5_EditText.setText(modulo5.getC5_p506_2());
+                        if (!(modulo5.getC5_p506_4().equals("-1") || modulo5.getC5_p506_4().equals(""))){
+                            ((RadioButton) c5_p506_4_5_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p506_4()))).setChecked(true);
+                        }
+                        break;
+                    case "5":
+                        c5_p506_2_6_EditText.setText(modulo5.getC5_p506_2());
+                        if (!(modulo5.getC5_p506_4().equals("-1") || modulo5.getC5_p506_4().equals(""))){
+                            ((RadioButton) c5_p506_4_6_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p506_4()))).setChecked(true);
+                        }
+                        break;
+                }
+            }
+            if(!(modulo5.getC5_p507().equals("-1") || modulo5.getC5_p507().equals("")))((RadioButton)c5_p507_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p507()))).setChecked(true);
+            if(!modulo5.getC5_p507_dist().equals("")) c5_p507_dist_Spinner.setSelection(Integer.parseInt(modulo5.getC5_p507_dist()));
+            if(!modulo5.getC5_p507_prov().equals("") )c5_p507_prov_Spinner.setSelection(Integer.parseInt(modulo5.getC5_p507_prov()));
+            if(!modulo5.getC5_p507_dep().equals("")) c5_p507_dep_Spinner.setSelection(Integer.parseInt(modulo5.getC5_p507_dep()));
+        }
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
+        llenarVariables();
         if(m5_p506_linearlayout.getVisibility()==View.VISIBLE) {
-            if(c5_p506_1<1){
+            if(c5_p506_1<0){
                 mostrarMensaje("PREGUNTA 506: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
@@ -261,26 +325,26 @@ public class FragmentP506P507 extends FragmentPagina {
                     return false;
                 }
             }
-            if(c5_p506_4<1){
+            if(c5_p506_4<0){
                 mostrarMensaje("PREGUNTA 506-OPCION 1: DEBE SELECCIONAR CENTRO DE ESTUDIOS");
                 return false;
             }
         }
         if(m5_p507_linearlayout.getVisibility()==View.VISIBLE) {
-            if(c5_p507<1){
+            if(c5_p507<0){
                 mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
             if(c5_p507==2){
-                if(c5_p507_dist<1){
+                if(c5_p507_dist<0){
                     mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR DISTRITO");
                     return false;
                 }
-                if(c5_p507_prov<1){
+                if(c5_p507_prov<0){
                     mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR PROVINCIA");
                     return false;
                 }
-                if(c5_p507_dep<1){
+                if(c5_p507_dep<0){
                     mostrarMensaje("PREGUNTA 507: DEBE SELECCIONAR DEPARTAMENTO");
                     return false;
                 }
