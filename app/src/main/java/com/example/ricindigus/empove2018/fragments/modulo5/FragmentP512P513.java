@@ -17,18 +17,22 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP512P513 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
     RadioGroup c5_p512_RadioGroup, c5_p513_RadioGroup;
@@ -39,13 +43,21 @@ public class FragmentP512P513 extends FragmentPagina {
     private int c5_p513;
     private String c5_p513_o;
 
+    private int edad, sexo;
+
     @SuppressLint("ValidFragment")
-    public FragmentP512P513(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP512P513(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p204()=="") sexo = -1; else sexo = Integer.parseInt(residente.getC2_p204());
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP512P513() {
@@ -109,14 +121,15 @@ public class FragmentP512P513 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo5_c5_p513,c5_p513+"");
         contentValues.put(SQLConstantes.modulo5_c5_p513_o,c5_p513_o);
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
-            contentValues.put(SQLConstantes.modulo5_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo5_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo5_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo5_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+            Modulo5 modulo5 = new Modulo5();
+            modulo5.setIdInformante(idInformante);
+            modulo5.set_id(idEncuestado);
+            modulo5.setIdVivienda(idVivienda);
+            modulo5.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo5.toValues());
         }
         data.close();
     }
@@ -131,13 +144,22 @@ public class FragmentP512P513 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo5 modulo5 = data.getModulo5(idEncuestado);
+            if(!(modulo5.getC5_p512().equals("-1") || modulo5.getC5_p512().equals("")))((RadioButton)c5_p512_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p512()))).setChecked(true);
+            c5_p512_o_EditText.setText(modulo5.getC5_p512_o());
+            if(!(modulo5.getC5_p513().equals("-1") || modulo5.getC5_p513().equals("")))((RadioButton)c5_p513_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p513()))).setChecked(true);
+            c5_p513_o_EditText.setText(modulo5.getC5_p513_o());
+        }
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
         if(m5_p512_linearlayout.getVisibility()==View.VISIBLE) {
-            if(c5_p512<1){
+            if(c5_p512<0){
                 mostrarMensaje("PREGUNTA 512: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
@@ -149,7 +171,7 @@ public class FragmentP512P513 extends FragmentPagina {
             }
         }
         if(m5_p513_linearlayout.getVisibility()==View.VISIBLE) {
-            if(c5_p513<1){
+            if(c5_p513<0){
                 mostrarMensaje("PREGUNTA 513: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }

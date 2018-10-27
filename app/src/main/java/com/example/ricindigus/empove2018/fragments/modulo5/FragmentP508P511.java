@@ -18,18 +18,22 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP508P511 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
     CheckBox c5_p508_1_Checkbox, c5_p508_2_Checkbox, c5_p508_3_Checkbox , c5_p508_4_Checkbox, c5_p508_5_Checkbox,
@@ -55,13 +59,21 @@ public class FragmentP508P511 extends FragmentPagina {
     private int c5_p511;
     private String c5_p511_o;
 
+    private int edad, sexo;
+
     @SuppressLint("ValidFragment")
-    public FragmentP508P511(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP508P511(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p204()=="") sexo = -1; else sexo = Integer.parseInt(residente.getC2_p204());
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP508P511() {
@@ -151,14 +163,15 @@ public class FragmentP508P511 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo5_c5_p511,c5_p511+"");
         contentValues.put(SQLConstantes.modulo5_c5_p511_o,c5_p511_o);
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
-            contentValues.put(SQLConstantes.modulo5_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo5_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo5_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo5_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+            Modulo5 modulo5 = new Modulo5();
+            modulo5.setIdInformante(idInformante);
+            modulo5.set_id(idEncuestado);
+            modulo5.setIdVivienda(idVivienda);
+            modulo5.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo5.toValues());
         }
         data.close();
     }
@@ -185,7 +198,29 @@ public class FragmentP508P511 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo5 modulo5 = data.getModulo5(idEncuestado);
+            if(modulo5.getC5_p508_1().equals("0")) c5_p508_1_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_2().equals("0")) c5_p508_2_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_3().equals("0")) c5_p508_3_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_4().equals("0")) c5_p508_4_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_5().equals("0")) c5_p508_5_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_6().equals("0")) c5_p508_6_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_7().equals("0")) c5_p508_7_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_8().equals("0")) c5_p508_8_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_9().equals("0")) c5_p508_9_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_10().equals("0")) c5_p508_10_Checkbox.setChecked(false);
+            if(modulo5.getC5_p508_11().equals("0")) c5_p508_11_Checkbox.setChecked(false);
+            c5_p508_o_EditText.setText(modulo5.getC5_p508_o());
+            if(!(modulo5.getC5_p509().equals("-1") || modulo5.getC5_p509().equals("")))((RadioButton)c5_p509_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p509()))).setChecked(true);
+            if(!(modulo5.getC5_p510().equals("-1") || modulo5.getC5_p510().equals("")))((RadioButton)c5_p510_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p510()))).setChecked(true);
+            if(!(modulo5.getC5_p511().equals("-1") || modulo5.getC5_p511().equals("")))((RadioButton)c5_p511_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p511()))).setChecked(true);
+            c5_p511_o_EditText.setText(modulo5.getC5_p511_o());
 
+        }
+        data.close();
     }
 
     @Override
@@ -204,15 +239,15 @@ public class FragmentP508P511 extends FragmentPagina {
                 }
             }
         }
-        if(c5_p509<1 && m5_p509_linearlayout.getVisibility()==View.VISIBLE){
+        if(c5_p509<0 && m5_p509_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 509: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c5_p510<1 && m5_p510_linearlayout.getVisibility()==View.VISIBLE){
+        if(c5_p510<0 && m5_p510_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 510: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c5_p511<1 && m5_p511_linearlayout.getVisibility()==View.VISIBLE){
+        if(c5_p511<0 && m5_p511_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 511: DEBE SELECCIONAR UNA OPCION");
             return false;
         }

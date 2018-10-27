@@ -223,21 +223,28 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 fragmentActual = fragmentP411P416;
                 break;
             case TipoFragmentEncuestado.P501P505:
-                FragmentP501P505 fragmentP501P505 = new FragmentP501P505();
+                FragmentP501P505 fragmentP501P505 = new FragmentP501P505(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP501P505);
+                tFragment = TipoFragmentEncuestado.P501P505;
+                fragmentActual = fragmentP501P505;
                 break;
             case TipoFragmentEncuestado.P506P507:
-                FragmentP506P507 fragmentP506P507 = new FragmentP506P507();
+                FragmentP506P507 fragmentP506P507 = new FragmentP506P507(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP506P507);
+                tFragment = TipoFragmentEncuestado.P506P507;
+                fragmentActual = fragmentP506P507;
                 break;
             case TipoFragmentEncuestado.P508P511:
-                FragmentP508P511 fragmentP508P511 = new FragmentP508P511();
+                FragmentP508P511 fragmentP508P511 = new FragmentP508P511(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP508P511);
+                tFragment = TipoFragmentEncuestado.P508P511;
+                fragmentActual = fragmentP508P511;
                 break;
             case TipoFragmentEncuestado.P512P513:
-
-                FragmentP512P513 fragmentP512P513 = new FragmentP512P513();
+                FragmentP512P513 fragmentP512P513 = new FragmentP512P513(idEncuestado,EncuestaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentP512P513);
+                tFragment = TipoFragmentEncuestado.P512P513;
+                fragmentActual = fragmentP512P513;
                 break;
             case TipoFragmentEncuestado.P601P604:
                 FragmentP601P604 fragmentP601P604 = new FragmentP601P604();
