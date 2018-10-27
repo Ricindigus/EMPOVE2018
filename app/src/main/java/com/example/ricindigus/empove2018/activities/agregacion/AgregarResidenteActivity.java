@@ -161,9 +161,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             contentValues.put(SQLConstantes.residentes_c2_p205_m,c2_p205_m);
             contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
 
-            if(data.existeElemento(getNombreTabla(),_id)){
-                data.actualizarElemento(getNombreTabla(),contentValues,_id);
-            }else{
+            if(!data.existeElemento(getNombreTabla(),_id)){
                 contentValues.put(SQLConstantes.residentes_id,_id);
                 contentValues.put(SQLConstantes.residentes_idHogar, id_hogar);
                 contentValues.put(SQLConstantes.residentes_idInformante, id_informante);
@@ -171,6 +169,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 contentValues.put(SQLConstantes.residentes_numero,numero);
                 data.insertarElemento(getNombreTabla(),contentValues);
             }
+            data.actualizarElemento(getNombreTabla(),contentValues,_id);
             data.close();
 
     }

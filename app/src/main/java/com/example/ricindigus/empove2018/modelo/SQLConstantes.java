@@ -474,9 +474,7 @@ public class SQLConstantes {
      * TABLA MODULO 3 PREGUNTA 309 - RUTAS
      * */
     public static String modulo3_p309_id = "_id";
-    public static String modulo3_p309_idInformante = "idInformante";
-    public static String modulo3_p309_idHogar = "idHogar";
-    public static String modulo3_p309_idVivienda = "idVivienda";
+    public static String modulo3_p309_idEncuestado = "id_encuestado";
     public static String modulo3_c3_p309_p = "c3_p309_p";
     public static String modulo3_c3_p309_c = "c3_p309_c";
     public static String modulo3_c3_p309_mod = "c3_p309_mod";
@@ -486,9 +484,7 @@ public class SQLConstantes {
     public static final String SQL_CREATE_TABLA_MODULO3_P309_RUTAS =
             "CREATE TABLE " + tablam3p309rutas + "(" +
                     modulo3_p309_id  + " TEXT PRIMARY KEY," +
-                    modulo3_p309_idInformante + " TEXT," +
-                    modulo3_p309_idHogar + " TEXT," +
-                    modulo3_p309_idVivienda  + " TEXT," +
+                    modulo3_p309_idEncuestado + " TEXT," +
                     modulo3_c3_p309_p  + " TEXT," +
                     modulo3_c3_p309_c  + " TEXT," +
                     modulo3_c3_p309_mod  + " TEXT," +
@@ -1433,6 +1429,7 @@ public class SQLConstantes {
      * CLAUSULAS WHERE
      * */
     public static final String WHERE_CLAUSE_ID = "_id=?";
+    public static final String WHERE_CLAUSE_ID_ENCUESTADO = "id_encuestado=?";
     public static final String WHERE_CLAUSE_ANIO = "anio=?";
     public static final String WHERE_CLAUSE_MES = "mes=?";
     public static final String WHERE_CLAUSE_PERIODO = "periodo=?";
@@ -1440,9 +1437,6 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
     public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";
     public static final String WHERE_CLAUSE_HOGAR_ID = "id_hogar=?";
-
-
-
     public static final String WHERE_CLAUSE_USUARIO_NOMBRE = "nombre=?";
 
 

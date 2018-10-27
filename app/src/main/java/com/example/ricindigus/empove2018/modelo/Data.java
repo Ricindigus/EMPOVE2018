@@ -676,19 +676,17 @@ public class Data {
         return modulo3;
     }
 
-    public ArrayList<M3Pregunta309> getM3Pregunta309(String idEncuestado){
+    public ArrayList<M3Pregunta309> getAllM3Pregunta309(String idEncuestado){
         ArrayList<M3Pregunta309> m3Pregunta309s = new ArrayList<>();
         String[] whereArgs = new String[]{idEncuestado};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablam3p309rutas,
-                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_ID_ENCUESTADO,whereArgs,null,null,null);
             while(cursor.moveToNext()){
                 M3Pregunta309 m3Pregunta309 = new M3Pregunta309();
-                m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id)));
-                m3Pregunta309.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idInformante)));
-                m3Pregunta309.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idHogar)));
-                m3Pregunta309.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idVivienda)));
+                m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
+                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_idEncuestado)));
                 m3Pregunta309.setC3_p309_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p)));
                 m3Pregunta309.setC3_p309_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_c)));
                 m3Pregunta309.setC3_p309_mod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_mod)));

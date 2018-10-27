@@ -103,7 +103,7 @@ public class FragmentHogares extends FragmentPagina {
                                 // TODO Do something
                                 if(!jefeEditText.getText().toString().trim().equals("")){
                                     Hogar hogar = new Hogar();
-                                    hogar.set_id(idVivienda+"_"+hogares.size()+1);
+                                    hogar.set_id(idVivienda+"_"+(hogares.size()+1));
                                     hogar.setId_vivienda(idVivienda);
                                     hogar.setNumero((hogares.size()+1)+"");
                                     hogar.setNom_ape(jefeEditText.getText().toString());

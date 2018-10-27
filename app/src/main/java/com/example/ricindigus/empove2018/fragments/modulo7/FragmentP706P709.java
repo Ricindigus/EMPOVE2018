@@ -214,11 +214,10 @@ public class FragmentP706P709 extends FragmentPagina {
     public void cargarDatos() {
         Data data = new Data(context);
         data.open();
-        ContentValues contentValues = new ContentValues();
         if(data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo7 modulo7 =  data.getModulo7(idEncuestado);
-            //if(!modulo7.getC7_p706().equals("-1"))((RadioButton)c7_p706_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p706()))).setChecked(true);
-            if(!modulo7.getC7_p707().equals("-1"))((RadioButton)c7_p707_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p707()))).setChecked(true);
+            if(!modulo7.getC7_p706().equals("-1"))((RadioButton)c7_p706_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p706()))).setChecked(true);
+            if(!modulo7.getC7_p707().equals("-1")||!modulo7.getC7_p707().equals(""))((RadioButton)c7_p707_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p707()))).setChecked(true);
             c7_p707_o_EditText.setText(modulo7.getC7_p707_o());
             if(modulo7.getC7_p708_1().equals("1")) c7_p708_1_Checkbox.setChecked(true);
             if(modulo7.getC7_p708_1().equals("0")) c7_p708_1_Checkbox.setChecked(false);

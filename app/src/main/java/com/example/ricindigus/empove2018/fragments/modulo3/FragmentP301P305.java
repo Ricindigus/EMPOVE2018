@@ -152,7 +152,7 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p302_AutoCompleteTextView.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(20)});
         c3_p305_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
         p303edtMes.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12"),new InputFilter.LengthFilter(2)});
-        p303edtAnio.setFilters(new InputFilter[]{new InputFilterMinMax("1970", "2018"),new InputFilter.LengthFilter(4)});
+        p303edtAnio.setFilters(new InputFilter[]{new InputFilterMinMax("1", "2018"),new InputFilter.LengthFilter(4)});
         p303edtMes.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         p303edtAnio.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         cargarDatos();

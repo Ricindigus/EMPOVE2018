@@ -6,9 +6,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class M3Pregunta309 {
     private String _id;
-    private String idInformante;
-    private String idHogar;
-    private String idVivienda;
+    private String id_encuestado;
     private String c3_p309_p;
     private String c3_p309_c;
     private String c3_p309_mod;
@@ -16,6 +14,13 @@ public class M3Pregunta309 {
     private String c3_p309_a;
 
     public M3Pregunta309() {
+       _id = "";
+       id_encuestado = "";
+       c3_p309_p = "";
+       c3_p309_c = "";
+       c3_p309_mod = "";
+       c3_p309_m = "";
+       c3_p309_a = "";
     }
 
     public String get_id() {
@@ -26,28 +31,12 @@ public class M3Pregunta309 {
         this._id = _id;
     }
 
-    public String getIdInformante() {
-        return idInformante;
+    public String getId_encuestado() {
+        return id_encuestado;
     }
 
-    public void setIdInformante(String idInformante) {
-        this.idInformante = idInformante;
-    }
-
-    public String getIdHogar() {
-        return idHogar;
-    }
-
-    public void setIdHogar(String idHogar) {
-        this.idHogar = idHogar;
-    }
-
-    public String getIdVivienda() {
-        return idVivienda;
-    }
-
-    public void setIdVivienda(String idVivienda) {
-        this.idVivienda = idVivienda;
+    public void setId_encuestado(String id_encuestado) {
+        this.id_encuestado = id_encuestado;
     }
 
     public String getC3_p309_p() {
@@ -93,9 +82,7 @@ public class M3Pregunta309 {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_p309_id,_id);
-        contentValues.put(SQLConstantes.modulo3_p309_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo3_p309_idHogar,idHogar);
-        contentValues.put(SQLConstantes.modulo3_p309_idVivienda,idVivienda);
+        contentValues.put(SQLConstantes.modulo3_p309_idEncuestado,id_encuestado);
         contentValues.put(SQLConstantes.modulo3_c3_p309_p,c3_p309_p);
         contentValues.put(SQLConstantes.modulo3_c3_p309_c,c3_p309_c);
         contentValues.put(SQLConstantes.modulo3_c3_p309_mod,c3_p309_mod);

@@ -70,13 +70,13 @@ public class FragmentP309 extends FragmentPagina {
         super.onViewCreated(view, savedInstanceState);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(contexto);
-        inicializarDatos();
-        setearAdapter();
+        recyclerView.setLayoutManager(layoutManager);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
                 intent.putExtra("idEncuestado",idEncuestado);
+                intent.putExtra("idRuta",idEncuestado + "_" +(m3Pregunta309s.size()+1));
                 startActivity(intent);
             }
         });
@@ -132,12 +132,11 @@ public class FragmentP309 extends FragmentPagina {
         m3Pregunta309s = new ArrayList<>();
         Data data =  new Data(contexto);
         data.open();
-        m3Pregunta309s = data.getM3Pregunta309(idEncuestado);
+        m3Pregunta309s = data.getAllM3Pregunta309(idEncuestado);
         data.close();
     }
 
     public void setearAdapter(){
-        inicializarDatos();
         m3Pregunta309Adapter =  new M3Pregunta309Adapter(m3Pregunta309s);
         recyclerView.setAdapter(m3Pregunta309Adapter);
     }
@@ -152,5 +151,12 @@ public class FragmentP309 extends FragmentPagina {
         });
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        inicializarDatos();
+        setearAdapter();
     }
 }
