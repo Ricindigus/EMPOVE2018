@@ -66,6 +66,8 @@ public class Data {
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_HOGARES);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_VISITA_ENCUESTADOR);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_VISITA_SUPERVISOR);
+                sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_RESULTADO_ENCUESTADOR);
+                sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_RESULTADO_SUPERVISOR);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO1);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO2);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO3);
@@ -101,6 +103,8 @@ public class Data {
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_HOGARES);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_VISITA_ENCUESTADOR);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_VISITA_SUPERVISOR);
+            sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_RESULTADO_ENCUESTADOR);
+            sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_RESULTADO_SUPERVISOR);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO1);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO2);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO3);
@@ -354,6 +358,13 @@ public class Data {
         return visitaEncuestadors;
     }
 
+    public Cursor getCursorVisitas(String tablaVisitas, String idHogar){
+        String[] whereArgs = new String[]{idHogar};
+        Cursor cursor = null;
+        cursor = sqLiteDatabase.query(tablaVisitas,null, SQLConstantes.WHERE_CLAUSE_HOGAR_ID,whereArgs,null,null,null);
+        if(cursor != null) cursor.moveToFirst();
+        return cursor;
+    }
 
     public ArrayList<Residente> getAllResidentesHogar(String idHogar){
         ArrayList<Residente> residentes = new ArrayList<>();
@@ -475,6 +486,13 @@ public class Data {
         sqLiteDatabase.update(nombreTabla,contentValues,SQLConstantes.WHERE_CLAUSE_ID,whereArgs);
     }
 
+    public void actualizarValor(String nombreTabla, String variable, String valor, String idEncuestado){
+        String[] whereArgs = new String[]{idEncuestado};
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(variable,valor);
+        sqLiteDatabase.update(nombreTabla,contentValues,SQLConstantes.WHERE_CLAUSE_ID,whereArgs);
+    }
+
     public String[] getValores(String nombreTabla, String[] variables, String id){
         String[] valores = new String[variables.length];
         String[] whereArgs = new String[]{id};
@@ -508,6 +526,11 @@ public class Data {
         }
         if(valor == null) valor = "";
         return valor;
+    }
+
+    public void eliminarDato(String tabla, String id){
+        String[] whereArgs = new String[]{id};
+        sqLiteDatabase.delete(tabla,SQLConstantes.WHERE_CLAUSE_ID,whereArgs);
     }
 
     /**

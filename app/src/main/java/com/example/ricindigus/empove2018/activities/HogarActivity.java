@@ -3,8 +3,6 @@ package com.example.ricindigus.empove2018.activities;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
@@ -27,8 +25,6 @@ import com.example.ricindigus.empove2018.fragments.hogar.FragmentVisitasSupervis
 import com.example.ricindigus.empove2018.fragments.modulo1.FragmentP101P107;
 import com.example.ricindigus.empove2018.fragments.modulo1.FragmentP108P113;
 import com.example.ricindigus.empove2018.fragments.modulo2.FragmentP201P206;
-import com.example.ricindigus.empove2018.fragments.vivienda.FragmentCaratula;
-import com.example.ricindigus.empove2018.fragments.vivienda.FragmentHogares;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
@@ -137,6 +133,13 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         btnAtras.setVisibility(View.VISIBLE);
         btnSiguiente.setVisibility(View.VISIBLE);
         switch (tipoFragment){
+//            case TipoFragmentHogar.VISITAS_ENCUESTADOR:
+//                btnAtras.setVisibility(View.GONE);
+//                btnSiguiente.setVisibility(View.VISIBLE);
+//                FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idHogar,idVivienda,HogarActivity.this);
+//                fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
+//                fragmentActual = fragmentVisitasEncuestador; tFragment = TipoFragmentHogar.VISITAS_ENCUESTADOR;
+//                navigationView.setCheckedItem(R.id.nav_visita_encuestador);break;
             case TipoFragmentHogar.VISITAS_ENCUESTADOR:
                 btnAtras.setVisibility(View.GONE);
                 btnSiguiente.setVisibility(View.VISIBLE);

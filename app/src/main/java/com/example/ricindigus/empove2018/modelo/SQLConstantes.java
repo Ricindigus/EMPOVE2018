@@ -10,9 +10,10 @@ public class SQLConstantes {
     public static String tablacaratula = "caratula";
     public static String tablahogares = "hogares";
     public static String tablavisitasencuestador = "visitas_encuestador";
+    public static String tablaresultadoencuestador = "resultado_encuestador";
+    public static String tablaresultadosupervisor= "resultado_supervisor";
     public static String tablavisitassupervisor = "visitas_supervisor";
     public static String tablafuncionarios = "funcionarios";
-
 
 
     public static String tablamodulo1 = "modulo1";
@@ -162,8 +163,6 @@ public class SQLConstantes {
     public static String visita_encuestador_prox_vis_min = "prox_vis_min";
     public static String visita_encuestador_vis_resu = "vis_resu";
     public static String visita_encuestador_vis_resu_esp = "vis_resu_esp";
-    public static String visita_encuestador_vis_resultado_final = "vis_resultado_final";
-    public static String visita_encuestador_vis_fecha_final = "vis_fecha_final";
 
 
 
@@ -187,9 +186,32 @@ public class SQLConstantes {
                     visita_encuestador_prox_vis_hor + " TEXT," +
                     visita_encuestador_prox_vis_min + " TEXT," +
                     visita_encuestador_vis_resu + " TEXT," +
-                    visita_encuestador_vis_resu_esp + " TEXT," +
-                    visita_encuestador_vis_resultado_final + " TEXT," +
-                    visita_encuestador_vis_fecha_final + " TEXT" + ");"
+                    visita_encuestador_vis_resu_esp + " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA RESULTADO ENCUESTADOR
+     * */
+
+    public static String resultado_encuestador_id = "_id";
+    public static String resultado_encuestador_id_vivienda = "id_vivienda";
+    public static String resultado_encuestador_vis_resultado_final = "vis_resultado_final";
+    public static String resultado_encuestador_vis_fecha_final_dd = "vis_fecha_final_dd";
+    public static String resultado_encuestador_vis_fecha_final_mm = "vis_fecha_final_mm";
+    public static String resultado_encuestador_vis_fecha_final_aa = "vis_fecha_final_aa";
+
+
+
+
+
+    public static final String SQL_CREATE_TABLA_RESULTADO_ENCUESTADOR =
+            "CREATE TABLE " + tablaresultadoencuestador + "(" +
+                    resultado_encuestador_id  + " TEXT PRIMARY KEY," +
+                    resultado_encuestador_id_vivienda + " TEXT," +
+                    resultado_encuestador_vis_resultado_final + " TEXT," +
+                    resultado_encuestador_vis_fecha_final_dd + " TEXT," +
+                    resultado_encuestador_vis_fecha_final_mm + " TEXT," +
+                    resultado_encuestador_vis_fecha_final_aa + " TEXT" + ");"
             ;
 
     /**
@@ -226,6 +248,27 @@ public class SQLConstantes {
                     visita_supervisor_vis_resu + " TEXT," +
                     visita_supervisor_vis_resu_esp + " TEXT" + ");"
             ;
+
+    public static String resultado_supervisor_id = "_id";
+    public static String resultado_supervisor_id_hogar = "id_hogar";
+    public static String resultado_supervisor_id_vivienda = "id_vivienda";
+    public static String resultado_supervisor_vis_resultado_final = "vis_resultado_final";
+    public static String resultado_supervisor_vis_fecha_final_dd = "vis_fecha_final_dd";
+    public static String resultado_supervisor_vis_fecha_final_mm = "vis_fecha_final_mm";
+    public static String resultado_supervisor_vis_fecha_final_aa = "vis_fecha_final_aa";
+
+
+    public static final String SQL_CREATE_TABLA_RESULTADO_SUPERVISOR =
+            "CREATE TABLE " + tablaresultadosupervisor + "(" +
+                    resultado_supervisor_id  + " TEXT PRIMARY KEY," +
+                    resultado_supervisor_id_hogar + " TEXT," +
+                    resultado_supervisor_id_vivienda + " TEXT," +
+                    resultado_supervisor_vis_resultado_final + " TEXT," +
+                    resultado_supervisor_vis_fecha_final_dd + " TEXT," +
+                    resultado_supervisor_vis_fecha_final_mm + " TEXT," +
+                    resultado_supervisor_vis_fecha_final_aa + " TEXT" + ");"
+            ;
+
 
     /**
      * TABLA FUNCIONARIOS

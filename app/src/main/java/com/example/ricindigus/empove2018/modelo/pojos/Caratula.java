@@ -43,7 +43,7 @@ public class Caratula {
         lote="";
         km="";
         telefono="";
-        t_hogar="";
+        t_hogar="0";
     }
 
     public int get_id() {

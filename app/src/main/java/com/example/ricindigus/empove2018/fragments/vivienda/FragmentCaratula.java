@@ -39,7 +39,7 @@ public class FragmentCaratula extends FragmentPagina {
     Spinner tipvia_Spinner;
     EditText nomvia_EditText, nropta_EditText, block_EditText, interior_EditText, piso_EditText, mza_EditText,
             lote_EditText, km_EditText, telefono_EditText;
-    EditText t_hogar_EditText;
+//    EditText t_hogar_EditText;
 
     //variables
     private int tipvia = -1;
@@ -49,7 +49,6 @@ public class FragmentCaratula extends FragmentPagina {
     private String nom_ccpp;
     private String zona;
     private String manzana_id;
-    private String aer;
     private String vivienda;
     private String nomvia = "";
     private String nropta = "";
@@ -60,7 +59,7 @@ public class FragmentCaratula extends FragmentPagina {
     private String lote = "";
     private String km = "";
     private String telefono = "";
-    private String t_hogar = "";
+//    private String t_hogar = "";
 
 
     @SuppressLint("ValidFragment")
@@ -95,7 +94,7 @@ public class FragmentCaratula extends FragmentPagina {
         lote_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_LOTE);
         km_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_KM);
         telefono_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_TELEFONO);
-        t_hogar_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_T_HOGAR);
+//        t_hogar_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_T_HOGAR);
         return rootView;
     }
 
@@ -111,11 +110,11 @@ public class FragmentCaratula extends FragmentPagina {
         lote_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
         km_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
         telefono_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(10)});
-        t_hogar_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+//        t_hogar_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
 
         km_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         telefono_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        t_hogar_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+//        t_hogar_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         cargarDatos();
     }
 
@@ -134,7 +133,6 @@ public class FragmentCaratula extends FragmentPagina {
         contentValues.put(SQLConstantes.caratula_lote,lote);
         contentValues.put(SQLConstantes.caratula_km,km);
         contentValues.put(SQLConstantes.caratula_telefono,telefono);
-        contentValues.put(SQLConstantes.caratula_t_hogar,t_hogar);
         if(data.existeElemento(getNombreTabla(),idVivienda)){
             data.actualizarElemento(getNombreTabla(),contentValues,idVivienda);
         }else{
@@ -146,6 +144,7 @@ public class FragmentCaratula extends FragmentPagina {
             contentValues.put(SQLConstantes.caratula_zona,zona);
             contentValues.put(SQLConstantes.caratula_manzana_id,manzana_id);
             contentValues.put(SQLConstantes.caratula_vivienda,vivienda);
+            contentValues.put(SQLConstantes.caratula_t_hogar,"0");
             data.insertarElemento(getNombreTabla(),contentValues);
         }
         data.close();
@@ -170,7 +169,7 @@ public class FragmentCaratula extends FragmentPagina {
         lote = lote_EditText.getText().toString();
         km = km_EditText.getText().toString();
         telefono = telefono_EditText.getText().toString();
-        t_hogar = t_hogar_EditText.getText().toString();
+//        t_hogar = t_hogar_EditText.getText().toString();
     }
 
     @Override
@@ -198,7 +197,7 @@ public class FragmentCaratula extends FragmentPagina {
             lote_EditText.setText(caratula.getLote());
             km_EditText.setText(caratula.getKm());
             telefono_EditText.setText(caratula.getTelefono());
-            t_hogar_EditText.setText(caratula.getT_hogar());
+//            t_hogar_EditText.setText(caratula.getT_hogar());
         }else{
             Marco marco = data.getMarco(idVivienda);
             nom_dep_TextView.setText(marco.getDepartamento());
@@ -228,7 +227,7 @@ public class FragmentCaratula extends FragmentPagina {
         if(lote.equals("")){ mostrarMensaje("Debe completar el LOTE"); return false; }
         if(km.equals("")){ mostrarMensaje("Debe completar el KM"); return false; }
         if(telefono.equals("")){ mostrarMensaje("Debe completar el TELÉFONO"); return false; }
-        if(t_hogar.equals("")){ mostrarMensaje("Debe indicar la CANTIDAD DE HOGARES"); return false; }
+//        if(t_hogar.equals("")){ mostrarMensaje("Debe indicar la CANTIDAD DE HOGARES"); return false; }
         return true;
     }
 

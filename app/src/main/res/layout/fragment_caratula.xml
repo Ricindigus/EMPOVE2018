@@ -25,7 +25,7 @@
             <include layout="@layout/caratula_pubicacion_geo"/>
             <include layout="@layout/caratula_pubicacion_mue"/>
             <include layout="@layout/caratula_pdireccion_viv"/>
-            <include layout="@layout/caratula_pcant_hogares"/>
+            <!--<include layout="@layout/caratula_pcant_hogares"/>-->
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

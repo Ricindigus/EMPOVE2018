@@ -4,6 +4,7 @@ package com.example.ricindigus.empove2018.adapters;
  * Created by otin016 on 27/06/2017.
  */
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,14 +20,16 @@ import java.util.ArrayList;
 
 public class HogarAdapter extends RecyclerView.Adapter<HogarAdapter.ViewHolder>{
     ArrayList<Hogar> hogars;
+    Context context;
     OnItemClickListener onItemClickListener;
 
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
     }
 
-    public HogarAdapter(ArrayList<Hogar> hogars, OnItemClickListener onItemClickListener) {
+    public HogarAdapter(ArrayList<Hogar> hogars, Context context, OnItemClickListener onItemClickListener) {
         this.hogars = hogars;
+        this.context = context;
         this.onItemClickListener = onItemClickListener;
     }
 
@@ -39,9 +42,14 @@ public class HogarAdapter extends RecyclerView.Adapter<HogarAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.txtNumero.setText(String.valueOf(hogars.get(position).getNumero()));
-        holder.txtJefe.setText(String.valueOf(hogars.get(position).getNom_ape()));
-        holder.txtEstado.setText(String.valueOf(hogars.get(position).getEstado()));
+        holder.txtNumero.setText(hogars.get(position).getNumero());
+        holder.txtJefe.setText(hogars.get(position).getNom_ape());
+        holder.txtEstado.setText(hogars.get(position).getEstado());
+        if(!hogars.get(position).getEstado().equals("0")){
+            holder.txtEstado.setText(context.getResources().getStringArray(R.array.visita_array_resultados)[Integer.parseInt(hogars.get(position).getEstado())]);
+        }else{
+            holder.txtEstado.setText("Sin estado");
+        }
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

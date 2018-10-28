@@ -2,6 +2,7 @@ package com.example.ricindigus.empove2018.fragments.vivienda;
 
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,9 +13,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputFilter;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -26,6 +29,7 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.activities.EncuestaActivity;
 import com.example.ricindigus.empove2018.activities.HogarActivity;
 import com.example.ricindigus.empove2018.activities.ViviendaActivity;
+import com.example.ricindigus.empove2018.activities.agregacion.AgregarVisitaActivity;
 import com.example.ricindigus.empove2018.adapters.HogarAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
@@ -48,6 +52,7 @@ public class FragmentHogares extends FragmentPagina {
     RecyclerView.LayoutManager layoutManager;
     HogarAdapter hogarAdapter;
     ArrayList<Hogar> hogares;
+
 
     @SuppressLint("ValidFragment")
     public FragmentHogares(String idVivienda, Context context) {
@@ -77,53 +82,15 @@ public class FragmentHogares extends FragmentPagina {
         hogaresRecyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(context);
         hogaresRecyclerView.setLayoutManager(layoutManager);
-        inicializarDatos();
-        setearAdapter();
-
+        cargarDatos();
+//        setearAdapter();
         agregarHogarFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-                final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_jefe_hogar, null);
-                final EditText jefeEditText = (EditText) dialogView.findViewById(R.id.dialog_jefe_edittext_nombre);
-                jefeEditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(50)});
-                alert.setTitle("AGREGAR HOGAR");
-                alert.setView(dialogView);
-                alert.setPositiveButton("Agregar",null);
-                alert.setNegativeButton("Cancelar",null);
-                final AlertDialog alertDialog = alert.create();
-
-                alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-                    @Override
-                    public void onShow(DialogInterface dialogInterface) {
-                        Button btnAdd = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
-                        btnAdd.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                // TODO Do something
-                                if(!jefeEditText.getText().toString().trim().equals("")){
-                                    Hogar hogar = new Hogar();
-                                    hogar.set_id(idVivienda+"_"+(hogares.size()+1));
-                                    hogar.setId_vivienda(idVivienda);
-                                    hogar.setNumero((hogares.size()+1)+"");
-                                    hogar.setNom_ape(jefeEditText.getText().toString());
-                                    hogar.setEstado("0");
-                                    Data data = new Data(context);
-                                    data.open();
-                                    data.insertarElemento(getNombreTabla(),hogar.toValues());
-                                    data.close();
-                                    inicializarDatos();
-                                    setearAdapter();
-                                    alertDialog.dismiss();
-                                }else Toast.makeText(context, "DEBE INDICAR NOMBRES Y APELLIDOS DEL JEDE DE HOGAR", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-                });
-                alertDialog.show();
+                agregarHogar();
             }
         });
-        cargarDatos();
+
     }
 
     private void inicializarDatos() {
@@ -135,14 +102,52 @@ public class FragmentHogares extends FragmentPagina {
     }
 
     public void setearAdapter(){
-        hogarAdapter = new HogarAdapter(hogares, new HogarAdapter.OnItemClickListener() {
+        inicializarDatos();
+        hogarAdapter = new HogarAdapter(hogares, context,new HogarAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
-                Intent intent = new Intent(context, HogarActivity.class);
-                intent.putExtra("idHogar",hogares.get(position).get_id());
-                ViviendaActivity viviendaActivity = (ViviendaActivity)getActivity();
-                intent.putExtra("nombreUsuario", viviendaActivity.getNombreUsuario());
-                startActivity(intent);
+            public void onItemClick(View view, final int position) {
+                if(hogares.size() == position + 1){
+                    PopupMenu popupMenu = new PopupMenu(context,view);
+                    popupMenu.getMenuInflater().inflate(R.menu.menu_hogar_2,popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch(item.getItemId()){
+                                case R.id.opcion_hogar_iniciar:
+                                    iniciarHogar(position);
+                                    break;
+                                case R.id.opcion_hogar_editar:
+                                    editarHogar(hogares.get(position));
+                                    break;
+                                case R.id.opcion_hogar_eliminar:
+                                    eliminarhogar(position);
+                                    break;
+                            }
+                            return true;
+                        }
+                    });
+                    popupMenu.show();
+                }else{
+                    PopupMenu popupMenu = new PopupMenu(context,view);
+                    popupMenu.getMenuInflater().inflate(R.menu.menu_hogar_1,popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch(item.getItemId()){
+                                case R.id.opcion_hogar_iniciar:
+                                    iniciarHogar(position);
+                                    break;
+                                case R.id.opcion_hogar_editar:
+                                    editarHogar(hogares.get(position));
+                                    break;
+                            }
+                            return true;
+                        }
+                    });
+                    popupMenu.show();
+                }
+
+
             }
         });
         hogaresRecyclerView.setAdapter(hogarAdapter);
@@ -178,5 +183,115 @@ public class FragmentHogares extends FragmentPagina {
         return SQLConstantes.tablahogares;
     }
 
+    public void agregarHogar(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+        final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_jefe_hogar, null);
+        final EditText jefeEditText = (EditText) dialogView.findViewById(R.id.dialog_jefe_edittext_nombre);
+        jefeEditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
+        alert.setTitle("AGREGAR HOGAR");
+        alert.setView(dialogView);
+        alert.setPositiveButton("Agregar",null);
+        alert.setNegativeButton("Cancelar",null);
+        final AlertDialog alertDialog = alert.create();
 
+        alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialogInterface) {
+                Button btnAdd = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                btnAdd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // TODO Do something
+                        if(!jefeEditText.getText().toString().trim().equals("")){
+                            Hogar hogar = new Hogar();
+                            hogar.set_id(idVivienda+"_"+(hogares.size()+1));
+                            hogar.setId_vivienda(idVivienda);
+                            hogar.setNumero((hogares.size()+1)+"");
+                            hogar.setNom_ape(jefeEditText.getText().toString());
+                            hogar.setEstado("0");
+                            Data data = new Data(context);
+                            data.open();
+                            data.insertarElemento(getNombreTabla(),hogar.toValues());
+                            data.close();
+                            inicializarDatos();
+                            setearAdapter();
+                            actualizarNumeroHogares();
+                            alertDialog.dismiss();
+                        }else Toast.makeText(context, "DEBE INDICAR NOMBRES Y APELLIDOS DEL JEDE DE HOGAR", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+        alertDialog.show();
+    }
+
+    public void editarHogar(final Hogar hogar){
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+        final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_jefe_hogar, null);
+        final EditText jefeEditText = (EditText) dialogView.findViewById(R.id.dialog_jefe_edittext_nombre);
+        jefeEditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
+        alert.setTitle("EDITAR HOGAR");
+        alert.setView(dialogView);
+        alert.setPositiveButton("Guardar",null);
+        alert.setNegativeButton("Cancelar",null);
+        final AlertDialog alertDialog = alert.create();
+
+        alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialogInterface) {
+                jefeEditText.setText(hogar.getNom_ape());
+                Button btnAdd = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                btnAdd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // TODO Do something
+                        if(!jefeEditText.getText().toString().trim().equals("")){
+                            hogar.setNom_ape(jefeEditText.getText().toString());
+                            Data data = new Data(context);
+                            data.open();
+                            data.actualizarElemento(getNombreTabla(),hogar.toValues(),hogar.get_id());
+                            data.close();
+//                            inicializarDatos();
+//                            setearAdapter();
+                            alertDialog.dismiss();
+                        }else Toast.makeText(context, "DEBE INDICAR NOMBRES Y APELLIDOS DEL JEDE DE HOGAR", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+        alertDialog.show();
+    }
+
+    public void iniciarHogar(int position){
+        Intent intent = new Intent(context, HogarActivity.class);
+        intent.putExtra("idHogar",hogares.get(position).get_id());
+        ViviendaActivity viviendaActivity = (ViviendaActivity)getActivity();
+        intent.putExtra("nombreUsuario", viviendaActivity.getNombreUsuario());
+        startActivity(intent);
+    }
+
+    public void eliminarhogar(int position){
+        Data data = new Data(context);
+        data.open();
+        data.eliminarDato(getNombreTabla(),hogares.get(position).get_id());
+        setearAdapter();
+        data.close();
+        actualizarNumeroHogares();
+    }
+
+    public void actualizarNumeroHogares(){
+        Data data =  new Data(context);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.caratula_t_hogar,hogares.size()+"");
+        data.actualizarElemento(SQLConstantes.tablacaratula,contentValues,idVivienda);
+        data.close();
+        numeroHogaresTextView.setText(hogares.size()+"");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setearAdapter();
+    }
 }
