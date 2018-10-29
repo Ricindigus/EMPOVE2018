@@ -121,7 +121,7 @@
     <string name="funcionario_titulo">14.FUNCIONARIOS DE LA ENCUESTA</string>
     <string name="funcionario_cargo">CARGO</string>
     <string name="funcionario_dni">DNI</string>
-    <string name="funcionario_nombres">NOMNBRES Y APELLIDOS</string>
+    <string name="funcionario_nombres">NOMBRES Y APELLIDOS</string>
     <string name="funcionario_encuestador">ENCUESTADOR/A</string>
     <string name="funcionario_supervisor">SUPERVISOR/A</string>
     <string name="funcionario_coordinador">COORDINADOR/A</string>

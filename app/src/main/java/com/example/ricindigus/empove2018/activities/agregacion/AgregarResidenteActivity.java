@@ -1,6 +1,7 @@
 package com.example.ricindigus.empove2018.activities.agregacion;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
@@ -8,10 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.InputFilter;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -184,5 +189,25 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         });
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(editText);
+                    view.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        if (tipo == 2) editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

@@ -26,7 +26,7 @@
     <dimen name="altura_input_especifique">24dp</dimen>
     <dimen name="altura_input_multilinea">100dp</dimen>
     <dimen name="longitud_input_n_horas">150dp</dimen>
-    <dimen name="altura_input_solo">40dp</dimen>
+    <dimen name="altura_input_solo">32dp</dimen>
     <dimen name="altura_layout_dividido">40dp</dimen>
     <dimen name="longitud_radio_3">300dp</dimen>
     <dimen name="width_spinner_ubigeo">500dp</dimen>

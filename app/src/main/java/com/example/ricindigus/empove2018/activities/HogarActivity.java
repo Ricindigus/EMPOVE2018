@@ -133,13 +133,6 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         btnAtras.setVisibility(View.VISIBLE);
         btnSiguiente.setVisibility(View.VISIBLE);
         switch (tipoFragment){
-//            case TipoFragmentHogar.VISITAS_ENCUESTADOR:
-//                btnAtras.setVisibility(View.GONE);
-//                btnSiguiente.setVisibility(View.VISIBLE);
-//                FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idHogar,idVivienda,HogarActivity.this);
-//                fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
-//                fragmentActual = fragmentVisitasEncuestador; tFragment = TipoFragmentHogar.VISITAS_ENCUESTADOR;
-//                navigationView.setCheckedItem(R.id.nav_visita_encuestador);break;
             case TipoFragmentHogar.VISITAS_ENCUESTADOR:
                 btnAtras.setVisibility(View.GONE);
                 btnSiguiente.setVisibility(View.VISIBLE);
@@ -147,7 +140,6 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
                 fragmentActual = fragmentVisitasEncuestador; tFragment = TipoFragmentHogar.VISITAS_ENCUESTADOR;
                 navigationView.setCheckedItem(R.id.nav_visita_encuestador);break;
-
             case TipoFragmentHogar.VISITAS_SUPERVISOR:
                 FragmentVisitasSupervisor fragmentVisitasSupervisor = new FragmentVisitasSupervisor(idHogar,idVivienda,HogarActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasSupervisor);

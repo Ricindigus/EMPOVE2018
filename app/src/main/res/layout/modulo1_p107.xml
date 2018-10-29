@@ -5,12 +5,14 @@
     android:orientation="vertical"
     android:layout_margin="@dimen/margen_layout_pregunta"
     android:padding="@dimen/padding_layout_pregunta"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     android:background="@drawable/marco_pregunta">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
-        android:text="@string/modulo_1_p106"/>
+        android:text="@string/modulo_1_p107"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -23,9 +25,11 @@
         <EditText
             android:id="@+id/mod1_107_edittext_C1_P107"
             android:layout_margin="@dimen/margen_small"
-            android:layout_width="@dimen/longitud_input_n_horas"
+            android:layout_width="80dp"
+            android:inputType="numberPassword"
+            android:paddingLeft="@dimen/margen_small"
             android:background="@drawable/input_text_enabled"
-            android:layout_height="@dimen/altura_input_solo"
+            android:layout_height="@dimen/altura_input_especifique"
             />
     </LinearLayout>
 

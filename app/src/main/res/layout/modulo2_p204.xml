@@ -17,6 +17,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+        <RadioButton
             android:id="@+id/mo2_204_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

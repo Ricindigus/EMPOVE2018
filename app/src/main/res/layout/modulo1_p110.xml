@@ -5,6 +5,8 @@
     android:orientation="vertical"
     android:layout_margin="@dimen/margen_layout_pregunta"
     android:padding="@dimen/padding_layout_pregunta"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     android:background="@drawable/marco_pregunta">
     <TextView
         android:layout_width="match_parent"
@@ -18,6 +20,10 @@
     <RadioGroup
         android:id="@+id/mod1_110_radiogroup_C1_P110"
         style="@style/EstiloRadioGroup">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,10 +52,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_1_p110_sp7"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,8 +61,8 @@
                 android:text="@string/modulo_1_p110_sp8"/>
             <EditText
                 android:id="@+id/mod1_110_edittext_C1_P110_O"
-                style="@style/TemaInputEspecifique"/>
-        </LinearLayout>
+                style="@style/TemaInputEspecifiqueRadio"/>
+
     </RadioGroup>
 
 </LinearLayout>
