@@ -12,15 +12,19 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputFilter;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -54,12 +58,13 @@ public class FragmentP301P305 extends FragmentPagina {
     final int anio = c.get(Calendar.YEAR);
 
     TextView c3_p301_d_TextView, c3_p301_m_TextView, c3_p301_a_TextView;
-    AutoCompleteTextView c3_p302_AutoCompleteTextView;
+    Spinner c3_p302_Spinner;
     CheckBox c3_p303_CheckBox;
     RadioGroup c3_p304_RadioGroup,c3_p305_RadioGroup;
     EditText c3_p305_o_EditText;
-    EditText p303edtMes,p303edtAnio;
+    Spinner p303spMes,p303spAnio;
 
+    LinearLayout layout301,layout302,layout303,layout304,layout305;
 
     Spinner informanteSpinner;
 
@@ -71,9 +76,9 @@ public class FragmentP301P305 extends FragmentPagina {
     String c3_p301_d;
     String c3_p301_m;
     String c3_p301_a;
-    String c3_p302;
-    String c3_p303_m;
-    String c3_p303_a;
+    int c3_p302;
+    int c3_p303_m;
+    int c3_p303_a;
     int c3_p303_no_nacio;
     int c3_p304;
     int c3_p305;
@@ -105,11 +110,17 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p301_m_TextView = (TextView) rootView.findViewById(R.id.mod3_301_textview_C3_P301_M);
         c3_p301_a_TextView = (TextView) rootView.findViewById(R.id.mod3_301_textview_C3_P301_A);
         c3_p301_d_f_Button = (Button) rootView.findViewById(R.id.mod3_301_button_C3_P301_F);
-        c3_p302_AutoCompleteTextView = (AutoCompleteTextView) rootView.findViewById(R.id.mod3_302_autotextview_C3_P302);
-        p303edtMes = (EditText) rootView.findViewById(R.id.mod3_303_edittext_C3_P303_M);
-        p303edtAnio = (EditText)rootView.findViewById(R.id.mod3_303_edittext_C3_P303_A);
+        c3_p302_Spinner = (Spinner) rootView.findViewById(R.id.mod3_302_spinner_C3_P302);
+        p303spMes = (Spinner) rootView.findViewById(R.id.mod3_303_spinner_C3_P303_M);
+        p303spAnio = (Spinner) rootView.findViewById(R.id.mod3_303_spinner_C3_P303_A);
         c3_p303_CheckBox = (CheckBox) rootView.findViewById(R.id.mod3_303_checkbox_C3_P303_NO_NACIO);
         informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
+
+        layout301 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p301);
+        layout302 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p302);
+        layout301 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p303);
+        layout301 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p304);
+        layout301 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p305);
 
 
         c3_p304_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod3_304_radiogroup_C3_P304);
@@ -149,12 +160,25 @@ public class FragmentP301P305 extends FragmentPagina {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         informanteSpinner.setAdapter(adapter);
-        c3_p302_AutoCompleteTextView.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(20)});
-        c3_p305_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
-        p303edtMes.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12"),new InputFilter.LengthFilter(2)});
-        p303edtAnio.setFilters(new InputFilter[]{new InputFilterMinMax("1", "2018"),new InputFilter.LengthFilter(4)});
-        p303edtMes.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        p303edtAnio.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
+        configurarEditText(c3_p305_o_EditText,layout301,1,30);
+//        p303edtMes.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12"),new InputFilter.LengthFilter(2)});
+//        p303edtAnio.setFilters(new InputFilter[]{new InputFilterMinMax("1", "2018"),new InputFilter.LengthFilter(4)});
+
+        c3_p303_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    p303spMes.setSelection(0);
+                    p303spAnio.setSelection(0);
+                    p303spMes.setEnabled(false);
+                    p303spAnio.setEnabled(false);
+                }else{
+                    p303spMes.setEnabled(true);
+                    p303spAnio.setEnabled(true);
+                }
+            }
+        });
         cargarDatos();
     }
 
@@ -169,9 +193,9 @@ public class FragmentP301P305 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p301_d,c3_p301_d);
         contentValues.put(SQLConstantes.modulo3_c3_p301_m,c3_p301_m);
         contentValues.put(SQLConstantes.modulo3_c3_p301_a,c3_p301_a);
-        contentValues.put(SQLConstantes.modulo3_c3_p302,c3_p302);
-        contentValues.put(SQLConstantes.modulo3_c3_p303_m,c3_p303_m);
-        contentValues.put(SQLConstantes.modulo3_c3_p303_a,c3_p303_a);
+        contentValues.put(SQLConstantes.modulo3_c3_p302,data.getCodigoPais(c3_p302));
+        contentValues.put(SQLConstantes.modulo3_c3_p303_m,c3_p303_m+"");
+        contentValues.put(SQLConstantes.modulo3_c3_p303_a,(c3_p303_a+1969)+"");
         contentValues.put(SQLConstantes.modulo3_c3_p303_no_nacio, c3_p303_no_nacio+"");
         contentValues.put(SQLConstantes.modulo3_c3_p304,c3_p304+"");
         contentValues.put(SQLConstantes.modulo3_c3_p305,c3_p305+"");
@@ -193,9 +217,9 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p301_d = c3_p301_d_TextView.getText().toString();
         c3_p301_m = c3_p301_m_TextView.getText().toString();
         c3_p301_a = c3_p301_a_TextView.getText().toString();
-        c3_p302 = c3_p302_AutoCompleteTextView.getText().toString();
-        c3_p303_m = p303edtMes.getText().toString();
-        c3_p303_a = p303edtAnio.getText().toString();
+        c3_p302 = c3_p302_Spinner.getSelectedItemPosition();
+        c3_p303_m = p303spMes.getSelectedItemPosition();
+        c3_p303_a = p303spAnio.getSelectedItemPosition();
         if(c3_p303_CheckBox.isChecked())c3_p303_no_nacio = 1;
         else c3_p303_no_nacio = 0;
         c3_p304 = c3_p304_RadioGroup.indexOfChild(c3_p304_RadioGroup.findViewById(c3_p304_RadioGroup.getCheckedRadioButtonId()));
@@ -213,11 +237,11 @@ public class FragmentP301P305 extends FragmentPagina {
             c3_p301_d_TextView.setText(modulo3.getC3_p301_d());
             c3_p301_m_TextView.setText(modulo3.getC3_p301_m());
             c3_p301_a_TextView.setText(modulo3.getC3_p301_a());
-            c3_p302_AutoCompleteTextView.setText(modulo3.getC3_p302());
+            c3_p302_Spinner.setSelection(data.getNumeroPais(modulo3.getC3_p302()));
             if(Integer.parseInt(modulo3.getC3_p303_no_nacio()) == 1) c3_p303_CheckBox.setChecked(true);
             else{
-                p303edtMes.setText(modulo3.getC3_p303_m());
-                p303edtAnio.setText(modulo3.getC3_p303_a());
+                p303spMes.setSelection(Integer.parseInt(modulo3.getC3_p303_m()));
+                p303spAnio.setSelection(Integer.parseInt(modulo3.getC3_p303_a())-1969);
             }
             if(!modulo3.getC3_p304().equals("-1"))((RadioButton)c3_p304_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p304()))).setChecked(true);
             if(!modulo3.getC3_p305().equals("-1"))((RadioButton)c3_p305_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p305()))).setChecked(true);
@@ -231,9 +255,10 @@ public class FragmentP301P305 extends FragmentPagina {
         llenarVariables();
         if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p301_d.trim().equals("")){mostrarMensaje("PREGUNTA 301: DEBE AGREGAR FECHA");return false;}
-        if (c3_p302.trim().equals("")) {mostrarMensaje("PREGUNTA 302: DEBE INDICAR PAIS DE NACIMIENTO");return false;}
+        if (c3_p302 == 0) {mostrarMensaje("PREGUNTA 302: DEBE INDICAR PAIS DE NACIMIENTO");return false;}
         if (!c3_p303_CheckBox.isChecked()){
-            if(c3_p303_m.trim().equals("")) {mostrarMensaje("PREGUNTA 302: DEBE AGREGAR MES Y AÑO");return false;}
+            if(c3_p303_m == 0) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR MES");return false;}
+            if(c3_p303_a == 0) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR ANIO");return false;}
         }
         if (c3_p304 == -1){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}
         if (c3_p305 == -1){mostrarMensaje("PREGUNTA 305: DEBE MARCAR UNA OPCIÓN");return false;}
@@ -256,5 +281,30 @@ public class FragmentP301P305 extends FragmentPagina {
         });
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(editText);
+                    view.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

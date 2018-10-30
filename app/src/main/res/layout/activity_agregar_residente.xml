@@ -15,11 +15,11 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margen_medium"
             android:orientation="vertical">
-            <include layout="@layout/modulo2_p202"/>
-            <include layout="@layout/modulo2_p203"/>
-            <include layout="@layout/modulo2_p204"/>
-            <include layout="@layout/modulo2_p205"/>
-            <include layout="@layout/modulo2_p206"/>
+            <include layout="@layout/modulo2_p202" android:id="@+id/layout_m2_p202"/>
+            <include layout="@layout/modulo2_p203" android:id="@+id/layout_m2_p203"/>
+            <include layout="@layout/modulo2_p204" android:id="@+id/layout_m2_p204"/>
+            <include layout="@layout/modulo2_p205" android:id="@+id/layout_m2_p205"/>
+            <include layout="@layout/modulo2_p206" android:id="@+id/layout_m2_p206"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -171,14 +171,14 @@ public class FragmentP108P113 extends FragmentPagina {
             }
         });
 
-        configurarEditText(c1_p108_o_EditText,m1_p108_linearlayout,1);
-        configurarEditText(c1_p109_o_EditText,m1_p109_linearlayout,1);
-        configurarEditText(c1_p110_o_EditText,m1_p110_linearlayout,1);
-        configurarEditText(c1_p111_o_EditText,m1_p111_linearlayout,1);
-        configurarEditText(c1_p112_o_EditText,m1_p112_linearlayout,1);
-        configurarEditText(c1_p113_7o_EditText,m1_p113_linearlayout,1);
-        configurarEditText(c1_p113_8o_EditText,m1_p113_linearlayout,1);
-        configurarEditText(c1_p113_9o_EditText,m1_p113_linearlayout,1);
+        configurarEditText(c1_p108_o_EditText,m1_p108_linearlayout,1,30);
+        configurarEditText(c1_p109_o_EditText,m1_p109_linearlayout,1,30);
+        configurarEditText(c1_p110_o_EditText,m1_p110_linearlayout,1,30);
+        configurarEditText(c1_p111_o_EditText,m1_p111_linearlayout,1,30);
+        configurarEditText(c1_p112_o_EditText,m1_p112_linearlayout,1,30);
+        configurarEditText(c1_p113_7o_EditText,m1_p113_linearlayout,1,30);
+        configurarEditText(c1_p113_8o_EditText,m1_p113_linearlayout,1,30);
+        configurarEditText(c1_p113_9o_EditText,m1_p113_linearlayout,1,30);
 
         cargarDatos();
     }
@@ -381,20 +381,24 @@ public class FragmentP108P113 extends FragmentPagina {
         }
     }
 
-    private void configurarEditText(final EditText editText, final LinearLayout linearLayout, int tipo){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     ocultarTeclado(editText);
-                    linearLayout.requestFocus();
+                    view.requestFocus();
                     return true;
                 }
                 return false;
             }
         });
-        if (tipo == 2) editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
     }
 
     public void ocultarTeclado(View view){

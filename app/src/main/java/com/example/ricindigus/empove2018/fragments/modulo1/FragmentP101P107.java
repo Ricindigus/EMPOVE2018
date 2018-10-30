@@ -128,14 +128,14 @@ public class FragmentP101P107 extends FragmentPagina {
             }
         });
 
-        configurarEditText(c1_p101_o_EditText,m1_p101_linearlayout,1);
-        configurarEditText(c1_p102_o_EditText,m1_p102_linearlayout,1);
-        configurarEditText(c1_p103_o_EditText,m1_p103_linearlayout,1);
-        configurarEditText(c1_p104_o_EditText,m1_p104_linearlayout,1);
+        configurarEditText(c1_p101_o_EditText,m1_p101_linearlayout,1,30);
+        configurarEditText(c1_p102_o_EditText,m1_p102_linearlayout,1,30);
+        configurarEditText(c1_p103_o_EditText,m1_p103_linearlayout,1,30);
+        configurarEditText(c1_p104_o_EditText,m1_p104_linearlayout,1,30);
 
-        configurarEditText(c1_p105_EditText,m1_p105_linearlayout,2);
-        configurarEditText(c1_p106_EditText,m1_p106_linearlayout,2);
-        configurarEditText(c1_p107_EditText,m1_p107_linearlayout,2);
+        configurarEditText(c1_p105_EditText,m1_p105_linearlayout,2,2);
+        configurarEditText(c1_p106_EditText,m1_p106_linearlayout,2,2);
+        configurarEditText(c1_p107_EditText,m1_p107_linearlayout,2,2);
 
         cargarDatos();
     }
@@ -152,20 +152,24 @@ public class FragmentP101P107 extends FragmentPagina {
         }
     }
 
-    private void configurarEditText(final EditText editText, final LinearLayout linearLayout, int tipo){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     ocultarTeclado(editText);
-                    linearLayout.requestFocus();
+                    view.requestFocus();
                     return true;
                 }
                 return false;
             }
         });
-        if (tipo == 2) editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
     }
 
     @Override

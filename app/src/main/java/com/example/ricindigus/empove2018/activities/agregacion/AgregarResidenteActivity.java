@@ -8,7 +8,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -47,6 +49,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     private String c2_p205_m;
     private int c2_p206;
 
+    private LinearLayout linearLayout202,linearLayout203,linearLayout204,linearLayout205,linearLayout206;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +60,12 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         id_hogar = getIntent().getExtras().getString("idHogar");
         id_vivienda = getIntent().getExtras().getString("idVivienda");
         numero = getIntent().getExtras().getString("numero");
+
+        linearLayout202 = (LinearLayout) findViewById(R.id.layout_m2_p202);
+        linearLayout203 = (LinearLayout) findViewById(R.id.layout_m2_p203);
+        linearLayout204 = (LinearLayout) findViewById(R.id.layout_m2_p204);
+        linearLayout205 = (LinearLayout) findViewById(R.id.layout_m2_p205);
+        linearLayout206 = (LinearLayout) findViewById(R.id.layout_m2_p206);
 
 
         c2_p202_TextInputET = (TextInputEditText) findViewById(R.id.mod2_202_textinputedittext_C2_P202);
@@ -75,13 +85,35 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             }
         });
 
-        c2_p202_TextInputET.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
+        configurarEditText(c2_p202_TextInputET,linearLayout202,1,40);
+        configurarEditText(c2_p205_a_TextInputET,linearLayout205,2,2);
+        configurarEditText(c2_p205_m_TextInputET,linearLayout205,2,2);
 
+        c2_p205_a_TextInputET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().equals("")){
+                    c2_p205_m_TextInputET.setEnabled(true);
+                }else c2_p205_m_TextInputET.setEnabled(false);
+            }
+        });
 
-        c2_p205_a_TextInputET.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
-        c2_p205_m_TextInputET.setFilters(new InputFilter[]{new InputFilter.LengthFilter(1)});
-        c2_p205_a_TextInputET.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c2_p205_m_TextInputET.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c2_p205_m_TextInputET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().equals("")){
+                    c2_p205_a_TextInputET.setEnabled(true);
+                }else c2_p205_a_TextInputET.setEnabled(false);
+            }
+        });
 
         cargarDatos();
 
@@ -191,7 +223,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         alertDialog.show();
     }
     private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -203,7 +236,10 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 return false;
             }
         });
-        if (tipo == 2) editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
     }
 
     public void ocultarTeclado(View view){

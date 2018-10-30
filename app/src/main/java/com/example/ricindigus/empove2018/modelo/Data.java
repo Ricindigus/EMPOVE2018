@@ -180,6 +180,59 @@ public class Data {
         return sqLiteDatabase != null ? true : false;
     }
 
+
+    public int getNumeroPais(String id){
+        int numero = 0;
+        String[] whereArgs = new String[]{id};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablapaises,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                numero = cursor.getInt(cursor.getColumnIndex(SQLConstantes.paises_numero));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return numero;
+    }
+
+    public String getCodigoPais(int numero){
+        String id = "";
+        String[] whereArgs = new String[]{String.valueOf(numero)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablapaises,
+                    null,SQLConstantes.WHERE_CLAUSE_NUMERO,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                id = cursor.getString(cursor.getColumnIndex(SQLConstantes.paises_id));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return id;
+    }
+
+    public int getNumeroRutaPais(String id){
+        int numero = 0;
+        String[] whereArgs = new String[]{id};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablarutas,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                numero = cursor.getInt(cursor.getColumnIndex(SQLConstantes.rutas_numero));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return numero;
+    }
+
+
     public Marco getMarco(String idVivienda){
         Marco marco = null;
         String[] whereArgs = new String[]{idVivienda};

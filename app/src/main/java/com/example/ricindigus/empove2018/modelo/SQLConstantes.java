@@ -6,6 +6,9 @@ public class SQLConstantes {
 
     public static String tablamarco = "marco";
     public static String tablausuario = "usuarios";
+    public static String tablapaises = "paises";
+    public static String tablarutas = "rutas";
+
 
     public static String tablacaratula = "caratula";
     public static String tablahogares = "hogares";
@@ -73,6 +76,22 @@ public class SQLConstantes {
     public static String usuario_id = "_id";
     public static String usuario_nombre = "nombre";
     public static String usuario_password= "password";
+
+    /**
+     * TABLA PAISES
+     * */
+
+    public static String paises_id = "_id";
+    public static String paises_numero = "numero";
+    public static String paises_nombre = "nombre";
+
+    /**
+     * TABLA RUTAS PAISES
+     * */
+
+    public static String rutas_id = "_id";
+    public static String rutas_numero = "numero";
+    public static String rutas_nombre = "nombre";
 
 
     /**
@@ -1472,6 +1491,7 @@ public class SQLConstantes {
      * CLAUSULAS WHERE
      * */
     public static final String WHERE_CLAUSE_ID = "_id=?";
+    public static final String WHERE_CLAUSE_NUMERO = "numero=?";
     public static final String WHERE_CLAUSE_ID_ENCUESTADO = "id_encuestado=?";
     public static final String WHERE_CLAUSE_ANIO = "anio=?";
     public static final String WHERE_CLAUSE_MES = "mes=?";
