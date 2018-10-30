@@ -294,9 +294,7 @@ public class FragmentP411P416 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo4_c4_p416_8,c4_p416_8+"");
         contentValues.put(SQLConstantes.modulo4_c4_p416_o,c4_p416_o);
 
-        if(data.existeElemento(getNombreTabla(),idEncuestado)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
-        }else{
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo4 modulo4 = new Modulo4();
             modulo4.setIdInformante(idInformante);
             modulo4.set_id(idEncuestado);
@@ -304,6 +302,7 @@ public class FragmentP411P416 extends FragmentPagina {
             modulo4.setIdHogar(idHogar);
             data.insertarElemento(getNombreTabla(),modulo4.toValues());
         }
+        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
 

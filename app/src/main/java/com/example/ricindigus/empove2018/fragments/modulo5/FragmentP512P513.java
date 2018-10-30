@@ -150,9 +150,7 @@ public class FragmentP512P513 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo5_c5_p513,c5_p513+"");
         contentValues.put(SQLConstantes.modulo5_c5_p513_o,c5_p513_o);
 
-        if(data.existeElemento(getNombreTabla(),idEncuestado)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
-        }else{
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo5 modulo5 = new Modulo5();
             modulo5.setIdInformante(idInformante);
             modulo5.set_id(idEncuestado);
@@ -160,6 +158,7 @@ public class FragmentP512P513 extends FragmentPagina {
             modulo5.setIdHogar(idHogar);
             data.insertarElemento(getNombreTabla(),modulo5.toValues());
         }
+        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
 
@@ -252,9 +251,9 @@ public class FragmentP512P513 extends FragmentPagina {
 
     public void inicio(){
         if(edad>=14){
-            limpiar_512_513();
             m5_p512_linearlayout.setVisibility(View.VISIBLE); m5_p513_linearlayout.setVisibility(View.VISIBLE);
         }else{
+            limpiar_512_513();
             m5_p512_linearlayout.setVisibility(View.GONE); m5_p513_linearlayout.setVisibility(View.GONE);
         }
     }
