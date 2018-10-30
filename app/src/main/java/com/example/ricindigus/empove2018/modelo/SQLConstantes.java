@@ -537,7 +537,9 @@ public class SQLConstantes {
      * */
     public static String modulo3_p309_id = "_id";
     public static String modulo3_p309_idEncuestado = "id_encuestado";
+    public static String modulo3_p309_numero = "numero";
     public static String modulo3_c3_p309_p = "c3_p309_p";
+    public static String modulo3_c3_p309_p_nom = "c3_p309_p_nom";
     public static String modulo3_c3_p309_c = "c3_p309_c";
     public static String modulo3_c3_p309_mod = "c3_p309_mod";
     public static String modulo3_c3_p309_m = "c3_p309_m";
@@ -547,7 +549,9 @@ public class SQLConstantes {
             "CREATE TABLE " + tablam3p309rutas + "(" +
                     modulo3_p309_id  + " TEXT PRIMARY KEY," +
                     modulo3_p309_idEncuestado + " TEXT," +
+                    modulo3_p309_numero  + " TEXT," +
                     modulo3_c3_p309_p  + " TEXT," +
+                    modulo3_c3_p309_p_nom  + " TEXT," +
                     modulo3_c3_p309_c  + " TEXT," +
                     modulo3_c3_p309_mod  + " TEXT," +
                     modulo3_c3_p309_m  + " TEXT," +

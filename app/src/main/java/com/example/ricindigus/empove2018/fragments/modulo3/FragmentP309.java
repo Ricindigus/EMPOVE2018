@@ -76,6 +76,7 @@ public class FragmentP309 extends FragmentPagina {
             public void onClick(View v) {
                 Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
                 intent.putExtra("idEncuestado",idEncuestado);
+                intent.putExtra("numero",(m3Pregunta309s.size()+1)+"");
                 intent.putExtra("idRuta",idEncuestado + "_" +(m3Pregunta309s.size()+1));
                 startActivity(intent);
             }
@@ -89,7 +90,7 @@ public class FragmentP309 extends FragmentPagina {
         data.open();
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
-        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+        data.actualizarElemento(SQLConstantes.tablamodulo3,contentValues,idEncuestado);
         data.close();
     }
 
@@ -137,7 +138,7 @@ public class FragmentP309 extends FragmentPagina {
     }
 
     public void setearAdapter(){
-        m3Pregunta309Adapter =  new M3Pregunta309Adapter(m3Pregunta309s);
+        m3Pregunta309Adapter =  new M3Pregunta309Adapter(m3Pregunta309s,contexto);
         recyclerView.setAdapter(m3Pregunta309Adapter);
     }
 

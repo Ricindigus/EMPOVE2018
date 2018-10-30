@@ -4,6 +4,7 @@ package com.example.ricindigus.empove2018.adapters;
  * Created by otin016 on 27/06/2017.
  */
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta309;
 
@@ -20,9 +22,11 @@ import java.util.ArrayList;
 
 public class M3Pregunta309Adapter extends RecyclerView.Adapter<M3Pregunta309Adapter.ViewHolder>{
     ArrayList<M3Pregunta309> m3Pregunta309s;
+    Context context;
 
-    public M3Pregunta309Adapter(ArrayList<M3Pregunta309> m3Pregunta309s) {
+    public M3Pregunta309Adapter(ArrayList<M3Pregunta309> m3Pregunta309s, Context context) {
         this.m3Pregunta309s = m3Pregunta309s;
+        this.context = context;
     }
 
     @Override
@@ -34,11 +38,10 @@ public class M3Pregunta309Adapter extends RecyclerView.Adapter<M3Pregunta309Adap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.txtPais.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_p()));
+        holder.txtPais.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_p_nom()));
         holder.txtCiudad.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_c()));
-        holder.txtModoTransito.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_mod()));
-        holder.txtFecha.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_m() + "/"
-                +String.valueOf(m3Pregunta309s.get(position).getC3_p309_a())));
+        holder.txtModoTransito.setText(context.getResources().getStringArray(R.array.modulo_3_p309_array_modo_transito)[Integer.parseInt(m3Pregunta309s.get(position).getC3_p309_mod())]);
+        holder.txtFecha.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_m() + "/" +String.valueOf(m3Pregunta309s.get(position).getC3_p309_a())));
     }
 
     @Override

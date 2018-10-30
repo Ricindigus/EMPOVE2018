@@ -179,6 +179,13 @@ public class FragmentP301P305 extends FragmentPagina {
                 }
             }
         });
+
+        c3_p305_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                controlarEspecifiqueRadio(group, checkedId,4,c3_p305_o_EditText);
+            }
+        });
         cargarDatos();
     }
 
@@ -195,7 +202,7 @@ public class FragmentP301P305 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p301_a,c3_p301_a);
         contentValues.put(SQLConstantes.modulo3_c3_p302,data.getCodigoPais(c3_p302));
         contentValues.put(SQLConstantes.modulo3_c3_p303_m,c3_p303_m+"");
-        contentValues.put(SQLConstantes.modulo3_c3_p303_a,(c3_p303_a+1969)+"");
+        contentValues.put(SQLConstantes.modulo3_c3_p303_a,getResources().getStringArray(R.array.numeros_anios)[c3_p303_a]);
         contentValues.put(SQLConstantes.modulo3_c3_p303_no_nacio, c3_p303_no_nacio+"");
         contentValues.put(SQLConstantes.modulo3_c3_p304,c3_p304+"");
         contentValues.put(SQLConstantes.modulo3_c3_p305,c3_p305+"");
@@ -241,7 +248,7 @@ public class FragmentP301P305 extends FragmentPagina {
             if(Integer.parseInt(modulo3.getC3_p303_no_nacio()) == 1) c3_p303_CheckBox.setChecked(true);
             else{
                 p303spMes.setSelection(Integer.parseInt(modulo3.getC3_p303_m()));
-                p303spAnio.setSelection(Integer.parseInt(modulo3.getC3_p303_a())-1969);
+                p303spAnio.setSelection(2019 - Integer.parseInt(modulo3.getC3_p303_a()));
             }
             if(!modulo3.getC3_p304().equals("-1"))((RadioButton)c3_p304_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p304()))).setChecked(true);
             if(!modulo3.getC3_p305().equals("-1"))((RadioButton)c3_p305_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p305()))).setChecked(true);
@@ -261,8 +268,12 @@ public class FragmentP301P305 extends FragmentPagina {
             if(c3_p303_a == 0) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR ANIO");return false;}
         }
         if (c3_p304 == -1){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}
+
         if (c3_p305 == -1){mostrarMensaje("PREGUNTA 305: DEBE MARCAR UNA OPCIÓN");return false;}
-        if (c3_p305 == 3){mostrarMensaje("PREGUNTA 305: DEBE ESPECIFICAR EL PUESTO DE CONTROL");return false;}
+        else if (c3_p305 == 4){
+            if(c3_p305_o.trim().equals("")){ mostrarMensaje("PREGUNTA 305: DEBE ESPECIFICAR EL PUESTO DE CONTROL");return false;}
+        }
+
         return true;
     }
 
@@ -306,5 +317,18 @@ public class FragmentP301P305 extends FragmentPagina {
     public void ocultarTeclado(View view){
         InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
+    private void controlarEspecifiqueRadio(RadioGroup group, int checkedId, int opcionEsp, EditText editTextEspecifique) {
+        int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+        if(seleccionado == opcionEsp){
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_enabled);
+            editTextEspecifique.setEnabled(true);
+        }else{
+            editTextEspecifique.setText("");
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_disabled);
+            editTextEspecifique.setEnabled(false);
+        }
     }
 }

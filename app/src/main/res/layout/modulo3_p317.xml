@@ -35,11 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_3_p317_sp4"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+
             <RadioButton
                 android:id="@+id/mod3_317_rb5"
                 android:layout_width="wrap_content"
@@ -48,7 +44,7 @@
                 android:text="@string/modulo_3_p317_sp5"/>
             <EditText
                 android:id="@+id/mod3_317_edittext_C3_P317_O"
-                style="@style/TemaInputEspecifique"/>
-        </LinearLayout>
+                style="@style/TemaInputEspecifiqueRadio"/>
+
     </RadioGroup>
 </LinearLayout>

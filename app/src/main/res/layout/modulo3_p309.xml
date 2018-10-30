@@ -64,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margen_small"
             app:backgroundTint="@color/colorPrimary"
             android:src="@drawable/ic_add_location" />
     </RelativeLayout>

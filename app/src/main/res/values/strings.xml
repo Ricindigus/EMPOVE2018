@@ -293,22 +293,28 @@
 
     <string-array name="modulo_2_p203_parentescos">
         <item>Seleccione Parentesco</item>
-        <item>1.Jefe/a del hogar</item>
-        <item>2.Esposo/a o compañero/a</item>
-        <item>3.Hijo/a o hijastro/a</item>
-        <item>4.Yerno/Nuera</item>
-        <item>5.Nieto/a</item>
-        <item>6.Padres/Suegros</item>
-        <item>7.Hermano/a</item>
-        <item>8.Otro pariente</item>
-        <item>9.Trabajador/a del hogar</item>
-        <item>10.Pensionista</item>
-        <item>11.Otro No Pariente</item>
+        <item>Jefe/a del hogar</item>
+        <item>Esposo/a o compañero/a</item>
+        <item>Hijo/a o hijastro/a</item>
+        <item>Yerno/Nuera</item>
+        <item>Nieto/a</item>
+        <item>Padres/Suegros</item>
+        <item>Hermano/a</item>
+        <item>Otro pariente</item>
+        <item>Trabajador/a del hogar</item>
+        <item>Pensionista</item>
+        <item>Otro No Pariente</item>
     </string-array>
 
     <string name="modulo_2_p204">204.SEXO</string>
     <string name="modulo_2_p204_sp1">1.Masculino</string>
     <string name="modulo_2_p204_sp2">2.Femenino</string>
+
+    <string-array name="modulo_2_p204_sexo">
+        <item>Seleccione Sexo</item>
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </string-array>
 
     <string name="modulo_2_p205">205¿QUÉ EDAD TIENE EN AÑOS CUMPLIDOS?</string>
     <string name="modulo_2_p205_anio">Años</string>
@@ -320,12 +326,12 @@
     <string name="modulo_2_p206">206.ACTUALMENTE, ¿CUÁL ES SU ESTADO CIVIL O CONYUGAL?</string>
     <string-array name="modulo_2_p206_estado_civil">
         <item>Seleccione Estado Civil</item>
-        <item>1.Conviviente</item>
-        <item>2.Casado/a</item>
-        <item>3.Viudo/a</item>
-        <item>4.Divorciado/a</item>
-        <item>5.Separado/a o Ex conviviente</item>
-        <item>6.Soltero/a</item>
+        <item>Conviviente</item>
+        <item>Casado/a</item>
+        <item>Viudo/a</item>
+        <item>Divorciado/a</item>
+        <item>Separado/a o Ex conviviente</item>
+        <item>Soltero/a</item>
     </string-array>
 
     <!--Strings asociados al módulo 3: SITUACIÓN MIGRATORIA DE LA PERSONA-->
@@ -396,10 +402,10 @@
 
     <string-array name="modulo_3_p309_array_modo_transito">
         <item>Seleccione</item>
-        <item>1.Aire</item>
-        <item>2.Bus</item>
-        <item>3.A pie</item>
-        <item>4.Mar</item>
+        <item>Aire</item>
+        <item>Bus</item>
+        <item>A pie</item>
+        <item>Mar</item>
     </string-array>
     <string name="modulo_3_p310">310.¿CON QUIÉN O QUIENES VIAJÓ?</string>
     <string name="modulo_3_p310_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
@@ -478,15 +484,15 @@
     <string name="modulo_3_p318_12meses_no">2.No</string>
     <string-array name="modulo_3_p318_array_parentesco">
         <item>Seleccione relación parentesco</item>
-        <item>1.Papá</item>
-        <item>2.Mamá</item>
-        <item>3.Esposo/a o Compañero/a</item>
-        <item>4.Hijo/a o Hijastro/a</item>
-        <item>5.Yerno/Nuera</item>
-        <item>6.Nieto/a</item>
-        <item>7.Suegros</item>
-        <item>8.Hermano/a</item>
-        <item>9.Otro/pariente</item>
+        <item>Papá</item>
+        <item>Mamá</item>
+        <item>Esposo/a o Compañero/a</item>
+        <item>Hijo/a o Hijastro/a</item>
+        <item>Yerno/Nuera</item>
+        <item>Nieto/a</item>
+        <item>Suegros</item>
+        <item>Hermano/a</item>
+        <item>Otro/pariente</item>
     </string-array>
 
     <!--Strings asociados al módulo 4: SALUD-->
@@ -1379,62 +1385,63 @@
 
     <string-array name="paises">
         <item>Seleccione País</item>
-        <item>1-Antigua y Barbuda</item>
-        <item>2-Argentina</item>
-        <item>3-Bahamas</item>
-        <item>4-Barbados</item>
-        <item>5-Belice</item>
-        <item>6-Bolivia</item>
-        <item>7-Brasil</item>
-        <item>8-Canadá</item>
-        <item>9-Chile</item>
-        <item>10-Colombia</item>
-        <item>11-Costa Rica</item>
-        <item>12-Cuba</item>
-        <item>13-Dominica</item>
-        <item>14-Ecuador</item>
-        <item>15-El Salvador</item>
-        <item>16-Estados Unidos</item>
-        <item>17-Granada</item>
-        <item>18-Guatemala</item>
-        <item>19-Guyana</item>
-        <item>20-Haití</item>
-        <item>21-Honduras</item>
-        <item>22-Jamaica</item>
-        <item>23-México</item>
-        <item>24-Nicaragua</item>
-        <item>25-Panamá</item>
-        <item>26-Paraguay</item>
-        <item>27-Perú</item>
-        <item>28-República Dominicana</item>
-        <item>29-San Cristóbal y Nieves</item>
-        <item>30-San Vicente y las Granadinas</item>
-        <item>31-Santa Lucía</item>
-        <item>32-Surinam</item>
-        <item>33-Trinidad y Tobago</item>
-        <item>34-Uruguay</item>
-        <item>35-Venezuela</item>
-        <item>99-Otro país</item>
+        <item>Antigua y Barbuda</item>
+        <item>Argentina</item>
+        <item>Bahamas</item>
+        <item>Barbados</item>
+        <item>Belice</item>
+        <item>Bolivia</item>
+        <item>Brasil</item>
+        <item>Canadá</item>
+        <item>Chile</item>
+        <item>Colombia</item>
+        <item>Costa Rica</item>
+        <item>Cuba</item>
+        <item>Dominica</item>
+        <item>Ecuador</item>
+        <item>El Salvador</item>
+        <item>Estados Unidos</item>
+        <item>Granada</item>
+        <item>Guatemala</item>
+        <item>Guyana</item>
+        <item>Haití</item>
+        <item>Honduras</item>
+        <item>Jamaica</item>
+        <item>México</item>
+        <item>Nicaragua</item>
+        <item>Panamá</item>
+        <item>Paraguay</item>
+        <item>Perú</item>
+        <item>República Dominicana</item>
+        <item>San Cristóbal y Nieves</item>
+        <item>San Vicente y las Granadinas</item>
+        <item>Santa Lucía</item>
+        <item>Surinam</item>
+        <item>Trinidad y Tobago</item>
+        <item>Uruguay</item>
+        <item>Venezuela</item>
+        <item>Otro país</item>
     </string-array>
 
     <string-array name="rutas_paises">
-        <item>1-COLOMBIA</item>
-        <item>2-ECUADOR </item>
-        <item>3-BRASIL</item>
-        <item>9999-Otro país</item>
+        <item>Seleccione país</item>
+        <item>COLOMBIA</item>
+        <item>ECUADOR </item>
+        <item>BRASIL</item>
+        <item>Otro país</item>
     </string-array>
 
     <string-array name="numeros_meses">
         <item>mes</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
         <item>10</item>
         <item>11</item>
         <item>12</item>

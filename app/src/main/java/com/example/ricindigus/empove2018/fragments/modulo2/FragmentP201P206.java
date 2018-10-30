@@ -123,7 +123,7 @@ public class FragmentP201P206 extends FragmentPagina {
     }
 
     public void setearAdapter(){
-        residenteAdapter = new ResidenteAdapter(residentes, new ResidenteAdapter.OnItemClickListener() {
+        residenteAdapter = new ResidenteAdapter(residentes,context, new ResidenteAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, final int position) {
                 final PopupMenu popupMenu = new PopupMenu(context,view);
@@ -131,7 +131,6 @@ public class FragmentP201P206 extends FragmentPagina {
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        int opcion = 0;
                         switch(item.getItemId()){
                             case R.id.opcion_iniciar_encuesta:
                                 Intent intent1 = new Intent(context, EncuestaActivity.class);
@@ -150,7 +149,6 @@ public class FragmentP201P206 extends FragmentPagina {
                                 startActivity(intent2);
                                 break;
                             case R.id.opcion_eliminar:
-
                                 break;
                         }
 

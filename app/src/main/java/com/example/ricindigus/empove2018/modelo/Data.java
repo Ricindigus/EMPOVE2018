@@ -232,6 +232,23 @@ public class Data {
         return numero;
     }
 
+    public String getCodigoRutaPais(int numero){
+        String id = "";
+        String[] whereArgs = new String[]{String.valueOf(numero)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablarutas,
+                    null,SQLConstantes.WHERE_CLAUSE_NUMERO,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                id = cursor.getString(cursor.getColumnIndex(SQLConstantes.rutas_id));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return id;
+    }
+
 
     public Marco getMarco(String idVivienda){
         Marco marco = null;
@@ -764,6 +781,8 @@ public class Data {
                 m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
                 m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_idEncuestado)));
                 m3Pregunta309.setC3_p309_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p)));
+                m3Pregunta309.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_numero)));
+                m3Pregunta309.setC3_p309_p_nom(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p_nom)));
                 m3Pregunta309.setC3_p309_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_c)));
                 m3Pregunta309.setC3_p309_mod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_mod)));
                 m3Pregunta309.setC3_p309_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_m)));

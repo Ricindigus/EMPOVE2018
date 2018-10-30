@@ -12,13 +12,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputFilter;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -30,6 +33,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -52,6 +56,7 @@ public class FragmentP306P308 extends FragmentPagina {
     Button c3_p307_d_f_Button;
     RadioGroup c3_p306_RadioGroup;
     EditText c3_p306_EditText, c3_p308_estado_EditText, c3_p308_municipio_EditText;
+    LinearLayout layoutp306, layoutp307, layoutp308;
 
     int c3_p306;
     String c3_p306_o;
@@ -85,6 +90,10 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p308_estado_EditText = (EditText) rootView.findViewById(R.id.mod3_308_edittext_C3_P308_E);
         c3_p308_municipio_EditText = (EditText) rootView.findViewById(R.id.mod3_308_edittext_C3_P308_M);
         informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
+        layoutp306 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p306);
+        layoutp307 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p307);
+        layoutp308 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p308);
+
         return rootView;
     }
 
@@ -110,9 +119,16 @@ public class FragmentP306P308 extends FragmentPagina {
             }
         });
 
-        c3_p306_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
-        c3_p308_estado_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
-        c3_p308_municipio_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(30)});
+        configurarEditText(c3_p306_EditText,layoutp306,1,30);
+        configurarEditText(c3_p308_estado_EditText,layoutp308,1,30);
+        configurarEditText(c3_p308_municipio_EditText,layoutp308,1,30);
+
+        c3_p306_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                controlarEspecifiqueRadio(group, checkedId,6,c3_p306_EditText);
+            }
+        });
         cargarDatos();
     }
 
@@ -172,7 +188,7 @@ public class FragmentP306P308 extends FragmentPagina {
         llenarVariables();
         if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p306 == -1){mostrarMensaje("PREGUNTA 306: DEBE MARCAR UNA OPCIÓN"); return false;}
-        if (c3_p306 == 5){
+        if (c3_p306 == 6){
             if (c3_p306_o.trim().equals("")){mostrarMensaje("PREGUNTA 306: DEBE ESPECIFICAR");return false;}
         }
         if (c3_p307_d.trim().equals("")){mostrarMensaje("PREGUNTA 307: DEBE AGREGAR FECHA");return false;}
@@ -197,4 +213,43 @@ public class FragmentP306P308 extends FragmentPagina {
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(editText);
+                    view.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
+    private void controlarEspecifiqueRadio(RadioGroup group, int checkedId, int opcionEsp, EditText editTextEspecifique) {
+        int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+        if(seleccionado == opcionEsp){
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_enabled);
+            editTextEspecifique.setEnabled(true);
+        }else{
+            editTextEspecifique.setText("");
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_disabled);
+            editTextEspecifique.setEnabled(false);
+        }
+    }
+
 }
