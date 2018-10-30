@@ -173,13 +173,13 @@ public class FragmentP706P709 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo7_c7_p709_10,c7_p709_10);
         contentValues.put(SQLConstantes.modulo7_c7_p709_o,c7_p709_o);
 
-        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo7 modulo7 = new Modulo7();
-            modulo7.set_id(idEncuestado);
-            modulo7.setIdVivienda(idVivienda);
-            modulo7.setIdHogar(idHogar);
-            data.insertarElemento(getNombreTabla(), modulo7.toValues());
-        }
+//        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
+//            Modulo7 modulo7 = new Modulo7();
+//            modulo7.set_id(idEncuestado);
+//            modulo7.setIdVivienda(idVivienda);
+//            modulo7.setIdHogar(idHogar);
+//            data.insertarElemento(getNombreTabla(), modulo7.toValues());
+//        }
         data.actualizarElemento(getNombreTabla(), contentValues, idEncuestado);
         data.close();
 
@@ -216,8 +216,14 @@ public class FragmentP706P709 extends FragmentPagina {
         data.open();
         if(data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo7 modulo7 =  data.getModulo7(idEncuestado);
-            if(!modulo7.getC7_p706().equals("-1")||!modulo7.getC7_p706().equals(""))((RadioButton)c7_p706_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p706()))).setChecked(true);
-            if(!modulo7.getC7_p707().equals("-1")||!modulo7.getC7_p707().equals(""))((RadioButton)c7_p707_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p707()))).setChecked(true);
+            try {
+                if(!modulo7.getC7_p706().equals("-1")||!modulo7.getC7_p706().equals("")) ((RadioButton)c7_p706_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p706()))).setChecked(true);
+                if(!modulo7.getC7_p707().equals("-1")||!modulo7.getC7_p707().equals("")) ((RadioButton)c7_p707_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p707()))).setChecked(true);
+            }catch  (NumberFormatException e){
+                System.out.print(e);
+            }
+
+
             c7_p707_o_EditText.setText(modulo7.getC7_p707_o());
             if(modulo7.getC7_p708_1().equals("1")) c7_p708_1_Checkbox.setChecked(true);
             if(modulo7.getC7_p708_1().equals("0")) c7_p708_1_Checkbox.setChecked(false);

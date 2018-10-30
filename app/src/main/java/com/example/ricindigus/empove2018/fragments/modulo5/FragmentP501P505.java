@@ -7,15 +7,18 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -60,7 +63,7 @@ public class FragmentP501P505 extends FragmentPagina {
         Residente residente = data.getResidente(idEncuestado);
         idHogar = residente.getId_hogar();
         idVivienda = residente.getId_vivienda();
-        idInformante = "";
+        idInformante = residente.get_id();//esto va a ha cambiar
         if(residente.getC2_p204()=="") sexo = -1; else sexo = Integer.parseInt(residente.getC2_p204());
         if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         data.close();
@@ -96,6 +99,19 @@ public class FragmentP501P505 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);c5_p502_c_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+
+        c5_p501_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                int pos = radioGroup.indexOfChild(c5_p501_RadioGroup.findViewById(c5_p501_RadioGroup.getCheckedRadioButtonId()));
+                if(pos>=0 && pos<=5){
+                    m5_p502_linearlayout.setVisibility(View.GONE); limpiar_p502();
+                }else{
+                    m5_p502_linearlayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         c5_p502_c_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -105,6 +121,20 @@ public class FragmentP501P505 extends FragmentPagina {
                     return true;
                 }
                 return false;
+            }
+        });
+
+        c5_p502_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    c5_p502_c_EditText.setText("");
+                    c5_p502_c_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
+                    c5_p502_c_EditText.setEnabled(false);
+                }else{
+                    c5_p502_c_EditText.setEnabled(true);
+                    c5_p502_c_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                }
             }
         });
         cargarDatos();
@@ -216,5 +246,10 @@ public class FragmentP501P505 extends FragmentPagina {
     public void mostrarTeclado(){
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    public void limpiar_p502(){
+        c5_p502_c_EditText.setText("");
+        c5_p502_CheckBox.setChecked(false);
     }
 }

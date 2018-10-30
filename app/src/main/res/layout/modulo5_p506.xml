@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/modulo_5_p506_sp1"/>
         <LinearLayout
+            android:id="@+id/layout_m5_506_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -68,6 +69,7 @@
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp2"/>
         <LinearLayout
+            android:id="@+id/layout_m5_506_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -114,6 +116,7 @@
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp3"/>
         <LinearLayout
+            android:id="@+id/layout_m5_506_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -160,6 +163,7 @@
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp4"/>
         <LinearLayout
+            android:id="@+id/layout_m5_506_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -206,6 +210,7 @@
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp5"/>
         <LinearLayout
+            android:id="@+id/layout_m5_506_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -252,6 +257,7 @@
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp6"/>
         <LinearLayout
+            android:id="@+id/layout_m5_506_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
