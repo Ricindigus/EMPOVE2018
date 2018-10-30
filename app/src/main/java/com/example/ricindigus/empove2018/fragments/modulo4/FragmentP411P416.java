@@ -395,7 +395,7 @@ public class FragmentP411P416 extends FragmentPagina {
             if(modulo4.getC4_p416_8().equals("1")) c4_p416_8_CheckBox.setChecked(true);
             c4_p416_o_EditText.setText(modulo4.getC4_p416_o());
         }
-        ocultar();
+        inicio();
         data.close();
     }
 
@@ -546,7 +546,7 @@ public class FragmentP411P416 extends FragmentPagina {
         c4_p416_o_EditText.setText("");
     }    
 
-    public void ocultar(){
+    public void inicio(){
         if(edad>=0 && edad<=17){
             m4_p411_linearlayout.setVisibility(View.VISIBLE);
         }else{

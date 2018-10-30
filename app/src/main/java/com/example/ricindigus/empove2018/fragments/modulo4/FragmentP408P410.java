@@ -176,9 +176,7 @@ public class FragmentP408P410 extends FragmentPagina {
             if(!(modulo4.getC4_p409().equals("-1") || modulo4.getC4_p409().equals("")))((RadioButton)c4_p409_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p409()))).setChecked(true);
             if(!(modulo4.getC4_p410().equals("-1") || modulo4.getC4_p410().equals("")))((RadioButton)c4_p410_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p410()))).setChecked(true);
         }
-        Log.e("cargardatos", "edad: "+edad);
-        Log.e("cargardatos", "sexo: "+sexo);
-        ocultar();
+        inicio();
         data.close();
     }
 
@@ -257,7 +255,7 @@ public class FragmentP408P410 extends FragmentPagina {
         c4_p410_RadioGroup.clearCheck();
     }
 
-    public void ocultar(){
+    public void inicio(){
         if(edad>=0 && edad<=17){
             m4_p409_linearlayout.setVisibility(View.VISIBLE);
             int pos = c4_p409_RadioGroup.indexOfChild(c4_p409_RadioGroup.findViewById(c4_p409_RadioGroup.getCheckedRadioButtonId()));
