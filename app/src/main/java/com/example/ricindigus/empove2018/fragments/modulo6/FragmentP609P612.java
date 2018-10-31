@@ -7,8 +7,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.InputFilter;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +47,7 @@ public class FragmentP609P612 extends FragmentPagina {
     EditText c6_p612_nro_EditText;
     LinearLayout m6_p609_linearlayout, m6_p610_linearlayout, m6_p611_linearlayout, m6_p612_linearlayout;
 
+    private boolean c6_604=true;
     private int c6_p609;
     private String c6_p610_pd;
     private String c6_p610_pl;
@@ -340,27 +343,81 @@ public class FragmentP609P612 extends FragmentPagina {
             }
         });
 
-        c6_p610_pd_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_pl_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_pm_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_pmi_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_pj_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_pv_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_ps_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_pd_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_pl_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_pm_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_pmi_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_pj_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_pv_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_ps_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
 
-        c6_p610_sd_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_sl_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_sm_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_smi_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_sj_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_sv_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        c6_p610_ss_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_pd_EditText.setInputType(18);
+        c6_p610_pl_EditText.setInputType(18);
+        c6_p610_pm_EditText.setInputType(18);
+        c6_p610_pmi_EditText.setInputType(18);
+        c6_p610_pj_EditText.setInputType(18);
+        c6_p610_pv_EditText.setInputType(18);
+        c6_p610_ps_EditText.setInputType(18);
 
-        c6_p610_t_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_pd_EditText.setTransformationMethod(null);
+        c6_p610_pl_EditText.setTransformationMethod(null);
+        c6_p610_pm_EditText.setTransformationMethod(null);
+        c6_p610_pmi_EditText.setTransformationMethod(null);
+        c6_p610_pj_EditText.setTransformationMethod(null);
+        c6_p610_pv_EditText.setTransformationMethod(null);
+        c6_p610_ps_EditText.setTransformationMethod(null);
 
-        c6_p611_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_sd_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_sl_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_sm_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_smi_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_sj_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_sv_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
+        c6_p610_ss_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
 
-        c6_p612_nro_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        c6_p610_sd_EditText.setInputType(18);
+        c6_p610_sl_EditText.setInputType(18);
+        c6_p610_sm_EditText.setInputType(18);
+        c6_p610_smi_EditText.setInputType(18);
+        c6_p610_sj_EditText.setInputType(18);
+        c6_p610_sv_EditText.setInputType(18);
+        c6_p610_ss_EditText.setInputType(18);
+
+        c6_p610_sd_EditText.setTransformationMethod(null);
+        c6_p610_sl_EditText.setTransformationMethod(null);
+        c6_p610_sm_EditText.setTransformationMethod(null);
+        c6_p610_smi_EditText.setTransformationMethod(null);
+        c6_p610_sj_EditText.setTransformationMethod(null);
+        c6_p610_sv_EditText.setTransformationMethod(null);
+        c6_p610_ss_EditText.setTransformationMethod(null);
+
+        c6_p610_t_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(3)});
+        c6_p610_t_EditText.setInputType(18);
+        c6_p610_t_EditText.setTransformationMethod(null);
+        c6_p610_t_EditText.setEnabled(false);
+
+        c6_p611_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(3)});
+        c6_p611_EditText.setInputType(18);
+        c6_p611_EditText.setTransformationMethod(null);
+
+        c6_p612_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                int pos = radioGroup.indexOfChild(c6_p612_RadioGroup.findViewById(c6_p612_RadioGroup.getCheckedRadioButtonId()));
+                if(pos==0){
+                    c6_p612_nro_EditText.setEnabled(true);
+                    c6_p612_nro_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                }else{
+                    c6_p612_nro_EditText.setText("");
+                    c6_p612_nro_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
+                    c6_p612_nro_EditText.setEnabled(false);
+                }
+            }
+        });
+
+        c6_p612_nro_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(4)});
+        c6_p612_nro_EditText.setInputType(18);
+        c6_p612_nro_EditText.setTransformationMethod(null);
         cargarDatos();
     }
 
@@ -432,6 +489,7 @@ public class FragmentP609P612 extends FragmentPagina {
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo6 modulo6 = data.getModulo6(idEncuestado);
+            c6_604 = modulo6.getC6_p604_trabajo();
             if(!(modulo6.getC6_p609().equals("-1") || modulo6.getC6_p609().equals("")))((RadioButton)c6_p609_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p609()))).setChecked(true);
             c6_p610_pd_EditText.setText(modulo6.getC6_p610_pd());
             c6_p610_pl_EditText.setText(modulo6.getC6_p610_pl());
@@ -452,7 +510,7 @@ public class FragmentP609P612 extends FragmentPagina {
             if(!(modulo6.getC6_p612().equals("-1") || modulo6.getC6_p612().equals("")))((RadioButton)c6_p612_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p612()))).setChecked(true);
             c6_p612_nro_EditText.setText(modulo6.getC6_p612_nro());
         }
-//        inicio();
+        inicio();
         data.close();
     }
 
@@ -565,5 +623,34 @@ public class FragmentP609P612 extends FragmentPagina {
     public void mostrarTeclado(){
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    public void inicio(){
+        if(c6_604){
+            m6_p609_linearlayout.setVisibility(View.VISIBLE); m6_p610_linearlayout.setVisibility(View.VISIBLE);
+            m6_p611_linearlayout.setVisibility(View.VISIBLE); m6_p612_linearlayout.setVisibility(View.VISIBLE);
+        }else{
+            c6_p609_RadioGroup.clearCheck();
+            c6_p610_pd_EditText.setText("");
+            c6_p610_pl_EditText.setText("");
+            c6_p610_pm_EditText.setText("");
+            c6_p610_pmi_EditText.setText("");
+            c6_p610_pj_EditText.setText("");
+            c6_p610_pv_EditText.setText("");
+            c6_p610_ps_EditText.setText("");
+            c6_p610_sd_EditText.setText("");
+            c6_p610_sl_EditText.setText("");
+            c6_p610_sm_EditText.setText("");
+            c6_p610_smi_EditText.setText("");
+            c6_p610_sj_EditText.setText("");
+            c6_p610_sv_EditText.setText("");
+            c6_p610_ss_EditText.setText("");
+            c6_p610_t_EditText.setText("");
+            c6_p611_EditText.setText("");
+            c6_p612_RadioGroup.clearCheck();
+            c6_p612_nro_EditText.setText("");
+            m6_p609_linearlayout.setVisibility(View.GONE); m6_p610_linearlayout.setVisibility(View.GONE);
+            m6_p611_linearlayout.setVisibility(View.GONE); m6_p612_linearlayout.setVisibility(View.GONE);
+        }
     }
 }

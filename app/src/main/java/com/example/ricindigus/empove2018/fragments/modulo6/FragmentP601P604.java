@@ -205,6 +205,48 @@ public class FragmentP601P604 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo6_c6_p604_11,c6_p604_11+"");
         contentValues.put(SQLConstantes.modulo6_c6_p604_o,c6_p604_o);
 
+        if(c6_p604_1==1 && c6_p604_2==1 && c6_p604_3==1 && c6_p604_4==1 && c6_p604_5==1 && c6_p604_6==1 &&
+                c6_p604_7==1 && c6_p604_8==1 && c6_p604_9==1 && c6_p604_10==1 && c6_p604_11==1){
+            contentValues.put(SQLConstantes.modulo6_c6_p605,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p606,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p607,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p608,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p608_o,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p609,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_pd,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_pl,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_pm,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_pmi,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_pj,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_pv,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_ps,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_pt,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_sd,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_sl,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_sm,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_smi,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_sj,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_sv,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_ss,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_st,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p610_t,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p611,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p612,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p612_nro,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p613,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p614_mon,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p614_esp,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p615_mon,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p615_esp,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p616_mon,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p616_esp,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p616_nas,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p617,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p617_dist,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p617_prov,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p617_dep,"");
+        }
+
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo6 modulo6 = new Modulo6();
             modulo6.setIdInformante(idInformante);

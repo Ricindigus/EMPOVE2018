@@ -1109,6 +1109,24 @@ public class Modulo6 {
         this.c6_estado = c6_estado;
     }
 
+    public boolean getC6_p604_trabajo(){
+        if(this.c6_p604_1==null || this.c6_p604_2==null || this.c6_p604_3==null ||
+            this.c6_p604_4==null || this.c6_p604_5==null || this.c6_p604_6==null ||
+            this.c6_p604_7==null || this.c6_p604_8==null || this.c6_p604_9==null ||
+            this.c6_p604_10==null || this.c6_p604_11==null){
+            return true;
+        }else{
+            if(this.c6_p604_1.equals("0") || this.c6_p604_2.equals("0") || this.c6_p604_3.equals("0") ||
+                this.c6_p604_4.equals("0") || this.c6_p604_5.equals("0") || this.c6_p604_6.equals("0") ||
+                this.c6_p604_7.equals("0") || this.c6_p604_8.equals("0") || this.c6_p604_9.equals("0") ||
+                this.c6_p604_10.equals("0") || this.c6_p604_11.equals("0")){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo6_id,_id);
