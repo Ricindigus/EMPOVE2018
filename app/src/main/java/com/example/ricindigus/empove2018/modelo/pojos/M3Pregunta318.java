@@ -5,48 +5,46 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class M3Pregunta318 {
-    private  int _id;
-    private  String idInformante;
-    private  String idHogar;
-    private  String idVivienda;
-    private  String c3_p318_f;
-    private  String c3_p318_s;
-    private  String c3_p318_e;
-    private  String c3_p318_p;
+    private String _id;
+    private String idEncuestado;
+    private String numero;
+    private String c3_p318_f;
+    private String c3_p318_s;
+    private String c3_p318_e;
+    private String c3_p318_p;
 
     public M3Pregunta318() {
+        _id = "";
+        idEncuestado = "";
+        numero = "";
+        c3_p318_f = "";
+        c3_p318_s = "";
+        c3_p318_e = "";
+        c3_p318_p = "";
     }
 
-    public int get_id() {
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 
-    public String getIdInformante() {
-        return idInformante;
+    public String getIdEncuestado() {
+        return idEncuestado;
     }
 
-    public void setIdInformante(String idInformante) {
-        this.idInformante = idInformante;
+    public void setIdEncuestado(String idEncuestado) {
+        this.idEncuestado = idEncuestado;
     }
 
-    public String getIdHogar() {
-        return idHogar;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setIdHogar(String idHogar) {
-        this.idHogar = idHogar;
-    }
-
-    public String getIdVivienda() {
-        return idVivienda;
-    }
-
-    public void setIdVivienda(String idVivienda) {
-        this.idVivienda = idVivienda;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
     public String getC3_p318_f() {
@@ -84,9 +82,8 @@ public class M3Pregunta318 {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_p318_id,_id);
-        contentValues.put(SQLConstantes.modulo3_p318_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo3_p318_idHogar,idHogar);
-        contentValues.put(SQLConstantes.modulo3_p318_idVivienda,idVivienda);
+        contentValues.put(SQLConstantes.modulo3_p318_idEncuestado,idEncuestado);
+        contentValues.put(SQLConstantes.modulo3_p318_numero,numero);
         contentValues.put(SQLConstantes.modulo3_c3_p318_f,c3_p318_f);
         contentValues.put(SQLConstantes.modulo3_c3_p318_s,c3_p318_s);
         contentValues.put(SQLConstantes.modulo3_c3_p318_e,c3_p318_e);

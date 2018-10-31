@@ -24,7 +24,8 @@ import android.widget.RadioGroup;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
-import com.example.ricindigus.empove2018.modelo.pojos.Modulo1;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo1H;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo1V;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -131,7 +132,7 @@ public class FragmentP108P113 extends FragmentPagina {
         c1_p109_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                controlarEspecifiqueRadio(group, checkedId,5,c1_p109_o_EditText);
+                controlarEspecifiqueRadio(group, checkedId,6,c1_p109_o_EditText);
             }
         });
         c1_p110_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -149,7 +150,7 @@ public class FragmentP108P113 extends FragmentPagina {
         c1_p112_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                controlarEspecifiqueRadio(group, checkedId,8,c1_p112_o_EditText);
+                controlarEspecifiqueRadio(group, checkedId,5,c1_p112_o_EditText);
             }
         });
         c1_p113_7_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -188,33 +189,33 @@ public class FragmentP108P113 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo1_c1_p108,c1_p108);
-        contentValues.put(SQLConstantes.modulo1_c1_p108_o,c1_p108_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p109,c1_p109);
-        contentValues.put(SQLConstantes.modulo1_c1_p109_o,c1_p109_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p110,c1_p110);
-        contentValues.put(SQLConstantes.modulo1_c1_p110_o,c1_p110_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p111,c1_p111);
-        contentValues.put(SQLConstantes.modulo1_c1_p111_o,c1_p111_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p112,c1_p112);
-        contentValues.put(SQLConstantes.modulo1_c1_p112_o,c1_p112_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_1,c1_p113_1);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_2,c1_p113_2);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_3,c1_p113_3);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_4,c1_p113_4);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_5,c1_p113_5);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_6,c1_p113_6);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_7,c1_p113_7);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_8,c1_p113_8);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_9,c1_p113_9);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_7_o,c1_p113_7_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_8_o,c1_p113_8_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p113_9_o,c1_p113_9_o);
+        contentValues.put(SQLConstantes.modulo1_h_c1_p108,c1_p108+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p108_o,c1_p108_o);
+        contentValues.put(SQLConstantes.modulo1_h_c1_p109,c1_p109+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p109_o,c1_p109_o);
+        contentValues.put(SQLConstantes.modulo1_h_c1_p110,c1_p110+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p110_o,c1_p110_o);
+        contentValues.put(SQLConstantes.modulo1_h_c1_p111,c1_p111+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p111_o,c1_p111_o);
+        contentValues.put(SQLConstantes.modulo1_h_c1_p112,c1_p112+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p112_o,c1_p112_o);
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_1,c1_p113_1+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_2,c1_p113_2+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_3,c1_p113_3+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_4,c1_p113_4+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_5,c1_p113_5+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_6,c1_p113_6+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_7,c1_p113_7+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_8,c1_p113_8+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_9,c1_p113_9+"");
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_7_o,c1_p113_7_o);
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_8_o,c1_p113_8_o);
+        contentValues.put(SQLConstantes.modulo1_h_c1_p113_9_o,c1_p113_9_o);
         if(!data.existeElemento(getNombreTabla(),idHogar)){
-            Modulo1 modulo1 = new Modulo1();
-            modulo1.set_id(idHogar);
-            modulo1.setIdVivienda(idVivienda);
-            data.insertarElemento(getNombreTabla(),modulo1.toValues());
+            Modulo1H modulo1H = new Modulo1H();
+            modulo1H.set_id(idHogar);
+            modulo1H.setIdVivienda(idVivienda);
+            data.insertarElemento(getNombreTabla(), modulo1H.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idHogar);
         data.close();
@@ -252,35 +253,35 @@ public class FragmentP108P113 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         if (data.existeElemento(getNombreTabla(),idHogar)){
-            Modulo1 modulo1 = data.getModulo1(idHogar);
-            if(!modulo1.getC1_p108().equals("-1") && !modulo1.getC1_p108().equals(""))((RadioButton)c1_p108_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p108()))).setChecked(true);
-            c1_p108_o_EditText.setText(modulo1.getC1_p108_o());
+            Modulo1H modulo1H = data.getModulo1H(idHogar);
+            if(!modulo1H.getC1_p108().equals("-1") && !modulo1H.getC1_p108().equals(""))((RadioButton)c1_p108_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p108()))).setChecked(true);
+            c1_p108_o_EditText.setText(modulo1H.getC1_p108_o());
 
-            if(!modulo1.getC1_p109().equals("-1") && !modulo1.getC1_p109().equals(""))((RadioButton)c1_p109_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p109()))).setChecked(true);
-            c1_p109_o_EditText.setText(modulo1.getC1_p102_o());
+            if(!modulo1H.getC1_p109().equals("-1") && !modulo1H.getC1_p109().equals(""))((RadioButton)c1_p109_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p109()))).setChecked(true);
+            c1_p109_o_EditText.setText(modulo1H.getC1_p109_o());
 
-            if(!modulo1.getC1_p110().equals("-1") && !modulo1.getC1_p110().equals(""))((RadioButton)c1_p110_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p110()))).setChecked(true);
-            c1_p110_o_EditText.setText(modulo1.getC1_p110_o());
+            if(!modulo1H.getC1_p110().equals("-1") && !modulo1H.getC1_p110().equals(""))((RadioButton)c1_p110_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p110()))).setChecked(true);
+            c1_p110_o_EditText.setText(modulo1H.getC1_p110_o());
 
-            if(!modulo1.getC1_p111().equals("-1") && !modulo1.getC1_p111().equals(""))((RadioButton)c1_p111_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p111()))).setChecked(true);
-            c1_p111_o_EditText.setText(modulo1.getC1_p111_o());
+            if(!modulo1H.getC1_p111().equals("-1") && !modulo1H.getC1_p111().equals(""))((RadioButton)c1_p111_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p111()))).setChecked(true);
+            c1_p111_o_EditText.setText(modulo1H.getC1_p111_o());
 
-            if(!modulo1.getC1_p112().equals("-1") && !modulo1.getC1_p112().equals(""))((RadioButton)c1_p112_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p112()))).setChecked(true);
-            c1_p112_o_EditText.setText(modulo1.getC1_p112_o());
+            if(!modulo1H.getC1_p112().equals("-1") && !modulo1H.getC1_p112().equals(""))((RadioButton)c1_p112_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p112()))).setChecked(true);
+            c1_p112_o_EditText.setText(modulo1H.getC1_p112_o());
 
-            if(!modulo1.getC1_p113_1().equals("-1") && !modulo1.getC1_p113_1().equals(""))((RadioButton)c1_p113_1_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_1()))).setChecked(true);
-            if(!modulo1.getC1_p113_2().equals("-1") && !modulo1.getC1_p113_2().equals(""))((RadioButton)c1_p113_2_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_2()))).setChecked(true);
-            if(!modulo1.getC1_p113_3().equals("-1") && !modulo1.getC1_p113_3().equals(""))((RadioButton)c1_p113_3_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_3()))).setChecked(true);
-            if(!modulo1.getC1_p113_4().equals("-1") && !modulo1.getC1_p113_4().equals(""))((RadioButton)c1_p113_4_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_4()))).setChecked(true);
-            if(!modulo1.getC1_p113_5().equals("-1") && !modulo1.getC1_p113_5().equals(""))((RadioButton)c1_p113_5_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_5()))).setChecked(true);
-            if(!modulo1.getC1_p113_6().equals("-1") && !modulo1.getC1_p113_6().equals(""))((RadioButton)c1_p113_6_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_6()))).setChecked(true);
-            if(!modulo1.getC1_p113_7().equals("-1") && !modulo1.getC1_p113_7().equals(""))((RadioButton)c1_p113_7_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_7()))).setChecked(true);
-            if(!modulo1.getC1_p113_8().equals("-1") && !modulo1.getC1_p113_8().equals(""))((RadioButton)c1_p113_8_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_8()))).setChecked(true);
-            if(!modulo1.getC1_p113_9().equals("-1") && !modulo1.getC1_p113_9().equals(""))((RadioButton)c1_p113_9_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p113_9()))).setChecked(true);
+            if(!modulo1H.getC1_p113_1().equals("-1") && !modulo1H.getC1_p113_1().equals(""))((RadioButton)c1_p113_1_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_1()))).setChecked(true);
+            if(!modulo1H.getC1_p113_2().equals("-1") && !modulo1H.getC1_p113_2().equals(""))((RadioButton)c1_p113_2_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_2()))).setChecked(true);
+            if(!modulo1H.getC1_p113_3().equals("-1") && !modulo1H.getC1_p113_3().equals(""))((RadioButton)c1_p113_3_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_3()))).setChecked(true);
+            if(!modulo1H.getC1_p113_4().equals("-1") && !modulo1H.getC1_p113_4().equals(""))((RadioButton)c1_p113_4_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_4()))).setChecked(true);
+            if(!modulo1H.getC1_p113_5().equals("-1") && !modulo1H.getC1_p113_5().equals(""))((RadioButton)c1_p113_5_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_5()))).setChecked(true);
+            if(!modulo1H.getC1_p113_6().equals("-1") && !modulo1H.getC1_p113_6().equals(""))((RadioButton)c1_p113_6_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_6()))).setChecked(true);
+            if(!modulo1H.getC1_p113_7().equals("-1") && !modulo1H.getC1_p113_7().equals(""))((RadioButton)c1_p113_7_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_7()))).setChecked(true);
+            if(!modulo1H.getC1_p113_8().equals("-1") && !modulo1H.getC1_p113_8().equals(""))((RadioButton)c1_p113_8_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_8()))).setChecked(true);
+            if(!modulo1H.getC1_p113_9().equals("-1") && !modulo1H.getC1_p113_9().equals(""))((RadioButton)c1_p113_9_RadioGroup.getChildAt(Integer.parseInt(modulo1H.getC1_p113_9()))).setChecked(true);
 
-            c1_p113_7o_EditText.setText(modulo1.getC1_p113_7_o());
-            c1_p113_8o_EditText.setText(modulo1.getC1_p113_8_o());
-            c1_p113_9o_EditText.setText(modulo1.getC1_p113_9_o());
+            c1_p113_7o_EditText.setText(modulo1H.getC1_p113_7_o());
+            c1_p113_8o_EditText.setText(modulo1H.getC1_p113_8_o());
+            c1_p113_9o_EditText.setText(modulo1H.getC1_p113_9_o());
         }
         data.close();
     }
@@ -354,7 +355,7 @@ public class FragmentP108P113 extends FragmentPagina {
 
     @Override
     public String getNombreTabla() {
-        return SQLConstantes.tablamodulo1;
+        return SQLConstantes.tablamodulo1h;
     }
 
     public void mostrarMensaje(String m){

@@ -122,7 +122,7 @@ public class AgregarRutaActivity extends AppCompatActivity {
         if(ciudad.trim().equals("")){mostrarMensaje("DEBE INDICAR EL CIUDAD");return false;}
         if(modo == 0){mostrarMensaje("DEBE SELECCIONAR EL MODO DE TRANSPORTE");return false;}
         if(mes == 0){mostrarMensaje("DEBE INDICAR EL MES");return false;}
-        if(anio == 0){mostrarMensaje("DEBE INDICAR LA CIUDAD");return false;}
+        if(anio == 0){mostrarMensaje("DEBE INDICAR EL AÑO");return false;}
         return true;
     }
 

@@ -18,22 +18,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <RadioButton
-            android:id="@+id/mod3_318_rbSi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_3_p304_sp1"/>
         <RadioButton
-            android:id="@+id/mod3_318_rbNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_3_p304_sp2"/>
     </RadioGroup>
 
     <LinearLayout
+        android:id="@+id/layout_recycler_p318"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/margen_small"
+        android:visibility="gone"
         android:layout_marginTop="@dimen/margen_small"
         android:background="@drawable/marco_pregunta">
         <LinearLayout
@@ -73,9 +77,11 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margen_small">
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_p318"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_p318"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"

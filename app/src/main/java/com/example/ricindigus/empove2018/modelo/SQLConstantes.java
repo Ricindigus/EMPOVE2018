@@ -19,7 +19,8 @@ public class SQLConstantes {
     public static String tablafuncionarios = "funcionarios";
 
 
-    public static String tablamodulo1 = "modulo1";
+    public static String tablamodulo1v = "modulo1v";
+    public static String tablamodulo1h = "modulo1h";
     public static String tablaresidentes = "tablaresidentes";
     public static String tablamodulo3 = "modulo3";
     public static String tablam3p309rutas = "m3_p309_rutas";
@@ -150,6 +151,10 @@ public class SQLConstantes {
     public static String hogar_numero = "numero";
     public static String hogar_nom_ape = "nom_ape";
     public static String hogar_estado = "estado";
+    public static String hogar_nropersonas = "nropersonas";
+    public static String hogar_vive = "vive";
+
+
 
     public static final String SQL_CREATE_TABLA_HOGARES =
             "CREATE TABLE " + tablahogares + "(" +
@@ -157,6 +162,8 @@ public class SQLConstantes {
                     hogar_id_vivienda + " TEXT," +
                     hogar_numero + " TEXT," +
                     hogar_nom_ape + " TEXT," +
+                    hogar_vive + " TEXT," +
+                    hogar_nropersonas + " TEXT," +
                     hogar_estado + " TEXT" + ");"
             ;
 
@@ -314,82 +321,94 @@ public class SQLConstantes {
 
 
     /**
-     * TABLA MODULO 1
+     * TABLA MODULO 1 VIVIENDA
      * */
-    public static String modulo1_id = "_id";
-    public static String modulo1_idVivienda = "idVivienda";
-    public static String modulo1_c1_p101 = "c1_p101";
-    public static String modulo1_c1_p101_o = "c1_p101_o";
-    public static String modulo1_c1_p102 = "c1_p102";
-    public static String modulo1_c1_p102_o = "c1_p102_o";
-    public static String modulo1_c1_p103 = "c1_p103";
-    public static String modulo1_c1_p103_o = "c1_p103_o";
-    public static String modulo1_c1_p104 = "c1_p104";
-    public static String modulo1_c1_p104_o = "c1_p104_o";
-    public static String modulo1_c1_p105 = "c1_p105";
-    public static String modulo1_c1_p106 = "c1_p106";
-    public static String modulo1_c1_p107 = "c1_p107";
-    public static String modulo1_c1_p108 = "c1_p108";
-    public static String modulo1_c1_p108_o = "c1_p108_o";
-    public static String modulo1_c1_p109 = "c1_p109";
-    public static String modulo1_c1_p109_o = "c1_p109_o";
-    public static String modulo1_c1_p110 = "c1_p110";
-    public static String modulo1_c1_p110_o = "c1_p110_o";
-    public static String modulo1_c1_p111 = "c1_p111";
-    public static String modulo1_c1_p111_o = "c1_p111_o";
-    public static String modulo1_c1_p112 = "c1_p112";
-    public static String modulo1_c1_p112_o = "c1_p112_o";
-    public static String modulo1_c1_p113_1 = "c1_p113_1";
-    public static String modulo1_c1_p113_2 = "c1_p113_2";
-    public static String modulo1_c1_p113_3 = "c1_p113_3";
-    public static String modulo1_c1_p113_4 = "c1_p113_4";
-    public static String modulo1_c1_p113_5 = "c1_p113_5";
-    public static String modulo1_c1_p113_6 = "c1_p113_6";
-    public static String modulo1_c1_p113_7 = "c1_p113_7";
-    public static String modulo1_c1_p113_8 = "c1_p113_8";
-    public static String modulo1_c1_p113_9 = "c1_p113_9";
-    public static String modulo1_c1_p113_7_o = "c1_p113_7_o";
-    public static String modulo1_c1_p113_8_o = "c1_p113_8_o";
-    public static String modulo1_c1_p113_9_o = "c1_p113_9_o";
+    public static String modulo1_v_id = "_id";
+    public static String modulo1_v_c1_p101 = "c1_p101";
+    public static String modulo1_v_c1_p101_o = "c1_p101_o";
+    public static String modulo1_v_c1_p102 = "c1_p102";
+    public static String modulo1_v_c1_p102_o = "c1_p102_o";
+    public static String modulo1_v_c1_p103 = "c1_p103";
+    public static String modulo1_v_c1_p103_o = "c1_p103_o";
+    public static String modulo1_v_c1_p104 = "c1_p104";
+    public static String modulo1_v_c1_p104_o = "c1_p104_o";
+    public static String modulo1_v_c1_p105 = "c1_p105";
+    public static String modulo1_v_c1_p106 = "c1_p106";
+    public static String modulo1_v_c1_p107 = "c1_p107";
 
-    public static final String SQL_CREATE_TABLA_MODULO1 =
-            "CREATE TABLE " + tablamodulo1 + "(" +
-                    modulo1_id  + " TEXT PRIMARY KEY," +
-                    modulo1_idVivienda  + " TEXT," +
-                    modulo1_c1_p101  + " TEXT," +
-                    modulo1_c1_p101_o  + " TEXT," +
-                    modulo1_c1_p102  + " TEXT," +
-                    modulo1_c1_p102_o  + " TEXT," +
-                    modulo1_c1_p103  + " TEXT," +
-                    modulo1_c1_p103_o + " TEXT," +
-                    modulo1_c1_p104  + " TEXT," +
-                    modulo1_c1_p104_o  + " TEXT," +
-                    modulo1_c1_p105 + " TEXT," +
-                    modulo1_c1_p106  + " TEXT," +
-                    modulo1_c1_p107  + " TEXT," +
-                    modulo1_c1_p108  + " TEXT," +
-                    modulo1_c1_p108_o + " TEXT," +
-                    modulo1_c1_p109  + " TEXT," +
-                    modulo1_c1_p109_o  + " TEXT," +
-                    modulo1_c1_p110  + " TEXT," +
-                    modulo1_c1_p110_o  + " TEXT," +
-                    modulo1_c1_p111  + " TEXT," +
-                    modulo1_c1_p111_o  + " TEXT," +
-                    modulo1_c1_p112  + " TEXT," +
-                    modulo1_c1_p112_o  + " TEXT," +
-                    modulo1_c1_p113_1  + " TEXT," +
-                    modulo1_c1_p113_2  + " TEXT," +
-                    modulo1_c1_p113_3  + " TEXT," +
-                    modulo1_c1_p113_4  + " TEXT," +
-                    modulo1_c1_p113_5  + " TEXT," +
-                    modulo1_c1_p113_6  + " TEXT," +
-                    modulo1_c1_p113_7  + " TEXT," +
-                    modulo1_c1_p113_7_o  + " TEXT," +
-                    modulo1_c1_p113_8  + " TEXT," +
-                    modulo1_c1_p113_8_o  + " TEXT," +
-                    modulo1_c1_p113_9  + " TEXT," +
-                    modulo1_c1_p113_9_o + " TEXT" + ");"
+
+    /**
+     * TABLA MODULO 1 HOGAR
+     * */
+    public static String modulo1_h_id = "_id";
+    public static String modulo1_h_idVivienda = "idVivienda";
+    public static String modulo1_h_c1_p108 = "c1_p108";
+    public static String modulo1_h_c1_p108_o = "c1_p108_o";
+    public static String modulo1_h_c1_p109 = "c1_p109";
+    public static String modulo1_h_c1_p109_o = "c1_p109_o";
+    public static String modulo1_h_c1_p110 = "c1_p110";
+    public static String modulo1_h_c1_p110_o = "c1_p110_o";
+    public static String modulo1_h_c1_p111 = "c1_p111";
+    public static String modulo1_h_c1_p111_o = "c1_p111_o";
+    public static String modulo1_h_c1_p112 = "c1_p112";
+    public static String modulo1_h_c1_p112_o = "c1_p112_o";
+    public static String modulo1_h_c1_p113_1 = "c1_p113_1";
+    public static String modulo1_h_c1_p113_2 = "c1_p113_2";
+    public static String modulo1_h_c1_p113_3 = "c1_p113_3";
+    public static String modulo1_h_c1_p113_4 = "c1_p113_4";
+    public static String modulo1_h_c1_p113_5 = "c1_p113_5";
+    public static String modulo1_h_c1_p113_6 = "c1_p113_6";
+    public static String modulo1_h_c1_p113_7 = "c1_p113_7";
+    public static String modulo1_h_c1_p113_8 = "c1_p113_8";
+    public static String modulo1_h_c1_p113_9 = "c1_p113_9";
+    public static String modulo1_h_c1_p113_7_o = "c1_p113_7_o";
+    public static String modulo1_h_c1_p113_8_o = "c1_p113_8_o";
+    public static String modulo1_h_c1_p113_9_o = "c1_p113_9_o";
+
+    public static final String SQL_CREATE_TABLA_MODULO1V =
+            "CREATE TABLE " + tablamodulo1v + "(" +
+                    modulo1_v_id  + " TEXT PRIMARY KEY," +
+                    modulo1_v_c1_p101 + " TEXT," +
+                    modulo1_v_c1_p101_o + " TEXT," +
+                    modulo1_v_c1_p102 + " TEXT," +
+                    modulo1_v_c1_p102_o + " TEXT," +
+                    modulo1_v_c1_p103 + " TEXT," +
+                    modulo1_v_c1_p103_o + " TEXT," +
+                    modulo1_v_c1_p104 + " TEXT," +
+                    modulo1_v_c1_p104_o + " TEXT," +
+                    modulo1_v_c1_p105 + " TEXT," +
+                    modulo1_v_c1_p106 + " TEXT," +
+                    modulo1_v_c1_p107 + " TEXT" + ");"
             ;
+
+    public static final String SQL_CREATE_TABLA_MODULO1H =
+            "CREATE TABLE " + tablamodulo1h + "(" +
+                    modulo1_h_id  + " TEXT PRIMARY KEY," +
+                    modulo1_h_idVivienda + " TEXT," +
+                    modulo1_h_c1_p108 + " TEXT," +
+                    modulo1_h_c1_p108_o + " TEXT," +
+                    modulo1_h_c1_p109 + " TEXT," +
+                    modulo1_h_c1_p109_o + " TEXT," +
+                    modulo1_h_c1_p110 + " TEXT," +
+                    modulo1_h_c1_p110_o + " TEXT," +
+                    modulo1_h_c1_p111 + " TEXT," +
+                    modulo1_h_c1_p111_o + " TEXT," +
+                    modulo1_h_c1_p112 + " TEXT," +
+                    modulo1_h_c1_p112_o + " TEXT," +
+                    modulo1_h_c1_p113_1 + " TEXT," +
+                    modulo1_h_c1_p113_2 + " TEXT," +
+                    modulo1_h_c1_p113_3 + " TEXT," +
+                    modulo1_h_c1_p113_4 + " TEXT," +
+                    modulo1_h_c1_p113_5 + " TEXT," +
+                    modulo1_h_c1_p113_6 + " TEXT," +
+                    modulo1_h_c1_p113_7 + " TEXT," +
+                    modulo1_h_c1_p113_7_o + " TEXT," +
+                    modulo1_h_c1_p113_8 + " TEXT," +
+                    modulo1_h_c1_p113_8_o + " TEXT," +
+                    modulo1_h_c1_p113_9 + " TEXT," +
+                    modulo1_h_c1_p113_9_o + " TEXT" + ");"
+            ;
+
 
     /**
      * TABLA RESIDENTES
@@ -475,6 +494,8 @@ public class SQLConstantes {
     public static String modulo3_c3_p316_o = "c3_p316_o";
     public static String modulo3_c3_p317 = "c3_p317";
     public static String modulo3_c3_p317_o = "c3_p317_o";
+    public static String modulo3_c3_p318 = "c3_p318";
+
 
 
     public static final String SQL_CREATE_TABLA_MODULO3 =
@@ -529,7 +550,8 @@ public class SQLConstantes {
                     modulo3_c3_p316  + " TEXT," +
                     modulo3_c3_p316_o  + " TEXT," +
                     modulo3_c3_p317  + " TEXT," +
-                    modulo3_c3_p317_o + " TEXT" + ");"
+                    modulo3_c3_p317_o  + " TEXT," +
+                    modulo3_c3_p318 + " TEXT" + ");"
             ;
 
     /**
@@ -562,9 +584,8 @@ public class SQLConstantes {
      * TABLA MODULO 3 PREGUNTA 318 - PERSONAS
      * */
     public static String modulo3_p318_id = "_id";
-    public static String modulo3_p318_idInformante = "idInformante";
-    public static String modulo3_p318_idHogar = "idHogar";
-    public static String modulo3_p318_idVivienda = "idVivienda";
+    public static String modulo3_p318_idEncuestado = "id_encuestado";
+    public static String modulo3_p318_numero = "numero";
     public static String modulo3_c3_p318_f = "c3_p318_f";
     public static String modulo3_c3_p318_s = "c3_p318_s";
     public static String modulo3_c3_p318_e = "c3_p318_e";
@@ -573,9 +594,8 @@ public class SQLConstantes {
     public static final String SQL_CREATE_TABLA_MODULO3_P318_PERSONAS =
             "CREATE TABLE " + tablam3p318personas + "(" +
                     modulo3_p318_id  + " TEXT PRIMARY KEY," +
-                    modulo3_p318_idInformante + " TEXT," +
-                    modulo3_p318_idHogar + " TEXT," +
-                    modulo3_p318_idVivienda  + " TEXT," +
+                    modulo3_p318_idEncuestado + " TEXT," +
+                    modulo3_p318_numero + " TEXT," +
                     modulo3_c3_p318_f  + " TEXT," +
                     modulo3_c3_p318_s  + " TEXT," +
                     modulo3_c3_p318_e  + " TEXT," +

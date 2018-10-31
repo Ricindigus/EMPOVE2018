@@ -4,6 +4,8 @@ package com.example.ricindigus.empove2018.adapters;
  * Created by otin016 on 27/06/2017.
  */
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,60 +15,56 @@ import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta309;
+import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta318;
 
 import java.util.ArrayList;
 
 
 public class M3Pregunta318Adapter extends RecyclerView.Adapter<M3Pregunta318Adapter.ViewHolder>{
-    ArrayList<Hogar> hogars;
-    OnItemClickListener onItemClickListener;
+    ArrayList<M3Pregunta318> m3Pregunta318s;
+    Context context;
 
-    public interface OnItemClickListener {
-        public void onItemClick(View view, int position);
-    }
-
-    public M3Pregunta318Adapter(ArrayList<Hogar> hogars, OnItemClickListener onItemClickListener) {
-        this.hogars = hogars;
-        this.onItemClickListener = onItemClickListener;
+    public M3Pregunta318Adapter(ArrayList<M3Pregunta318> m3Pregunta318s, Context context) {
+        this.m3Pregunta318s = m3Pregunta318s;
+        this.context = context;
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hogar_item,parent,false);
-        ViewHolder viewHolder = new ViewHolder(view);
+    public M3Pregunta318Adapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.persona_item,parent,false);
+        M3Pregunta318Adapter.ViewHolder viewHolder = new M3Pregunta318Adapter.ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.txtNumero.setText(String.valueOf(hogars.get(position).getNumero()));
-        holder.txtJefe.setText(String.valueOf(hogars.get(position).getNom_ape()));
-        holder.txtEstado.setText(String.valueOf(hogars.get(position).getEstado()));
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onItemClickListener.onItemClick(view,position);
-            }
-        });
+    public void onBindViewHolder(M3Pregunta318Adapter.ViewHolder holder, final int position) {
+        holder.txtEdad.setText(String.valueOf(m3Pregunta318s.get(position).getC3_p318_e()));
+        holder.txtSexo.setText(String.valueOf(m3Pregunta318s.get(position).getC3_p318_s()));
+        holder.txtParentesco.setText(context.getResources().getStringArray(R.array.modulo_3_p318_array_parentesco)[Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_f())]);
+        if(Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_p()) == 1) holder.txtSino.setText("SÍ");
+        else if(Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_p()) == 2) holder.txtSino.setText("NO");
     }
 
     @Override
     public int getItemCount() {
-        return hogars.size();
+        return m3Pregunta318s.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView txtNumero;
-        TextView txtJefe;
-        TextView txtEstado;
+        TextView txtParentesco;
+        TextView txtSexo;
+        TextView txtEdad;
+        TextView txtSino;
         CardView cardView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            cardView = itemView.findViewById(R.id.item_hogar_cardview);
-            txtNumero = itemView.findViewById(R.id.item_hogar_textview_numero);
-            txtJefe = itemView.findViewById(R.id.item_hogar_textview_jefe);
-            txtEstado = itemView.findViewById(R.id.item_hogar_textview_estado);
+            cardView = itemView.findViewById(R.id.item_persona_cardview);
+            txtParentesco = itemView.findViewById(R.id.persona_item_txtParentesco);
+            txtSexo = itemView.findViewById(R.id.persona_item_txtSexo);
+            txtEdad = itemView.findViewById(R.id.persona_item_txtEdad);
+            txtSino = itemView.findViewById(R.id.persona_item_txtSiNo);
         }
     }
 }

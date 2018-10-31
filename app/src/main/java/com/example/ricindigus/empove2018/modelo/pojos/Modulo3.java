@@ -56,6 +56,7 @@ public class Modulo3 {
     private String c3_p316_o;
     private String c3_p317;
     private String c3_p317_o;
+    private String c3_p318;
 
     public Modulo3() {
         _id = "";
@@ -109,6 +110,7 @@ public class Modulo3 {
         c3_p316_o= "";
         c3_p317= "";
         c3_p317_o= "";
+        c3_p318= "";
     }
 
     public String get_id() {
@@ -197,6 +199,14 @@ public class Modulo3 {
 
     public void setC3_p303_no_nacio(String c3_p303_no_nacio) {
         this.c3_p303_no_nacio = c3_p303_no_nacio;
+    }
+
+    public String getC3_p318() {
+        return c3_p318;
+    }
+
+    public void setC3_p318(String c3_p318) {
+        this.c3_p318 = c3_p318;
     }
 
     public String getC3_p304() {
@@ -572,6 +582,7 @@ public class Modulo3 {
         contentValues.put(SQLConstantes.modulo3_c3_p316_o,c3_p316_o);
         contentValues.put(SQLConstantes.modulo3_c3_p317,c3_p317);
         contentValues.put(SQLConstantes.modulo3_c3_p317_o,c3_p317_o);
+        contentValues.put(SQLConstantes.modulo3_c3_p318,c3_p318);
         return contentValues;
     }
 }

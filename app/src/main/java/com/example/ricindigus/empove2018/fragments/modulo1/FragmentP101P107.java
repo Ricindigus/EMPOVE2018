@@ -23,8 +23,7 @@ import android.widget.RadioGroup;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
-import com.example.ricindigus.empove2018.modelo.pojos.Modulo1;
-import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo1V;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -177,24 +176,23 @@ public class FragmentP101P107 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo1_c1_p101,c1_p101);
-        contentValues.put(SQLConstantes.modulo1_c1_p101_o,c1_p101_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p102,c1_p102);
-        contentValues.put(SQLConstantes.modulo1_c1_p102_o,c1_p102_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p103,c1_p103);
-        contentValues.put(SQLConstantes.modulo1_c1_p103_o,c1_p103_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p104,c1_p104);
-        contentValues.put(SQLConstantes.modulo1_c1_p104_o,c1_p104_o);
-        contentValues.put(SQLConstantes.modulo1_c1_p105,c1_p105);
-        contentValues.put(SQLConstantes.modulo1_c1_p106,c1_p106);
-        contentValues.put(SQLConstantes.modulo1_c1_p107,c1_p107);
-        if(!data.existeElemento(getNombreTabla(),idHogar)){
-            Modulo1 modulo1 = new Modulo1();
-            modulo1.set_id(idHogar);
-            modulo1.setIdVivienda(idVivienda);
-            data.insertarElemento(getNombreTabla(),modulo1.toValues());
+        contentValues.put(SQLConstantes.modulo1_v_c1_p101,c1_p101);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p101_o,c1_p101_o);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p102,c1_p102);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p102_o,c1_p102_o);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p103,c1_p103);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p103_o,c1_p103_o);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p104,c1_p104);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p104_o,c1_p104_o);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p105,c1_p105);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p106,c1_p106);
+        contentValues.put(SQLConstantes.modulo1_v_c1_p107,c1_p107);
+        if(!data.existeElemento(getNombreTabla(),idVivienda)){
+            Modulo1V modulo1V = new Modulo1V();
+            modulo1V.set_id(idVivienda);
+            data.insertarElemento(getNombreTabla(), modulo1V.toValues());
         }
-        data.actualizarElemento(getNombreTabla(),contentValues,idHogar);
+        data.actualizarElemento(getNombreTabla(),contentValues,idVivienda);
         data.close();
     }
 
@@ -217,23 +215,23 @@ public class FragmentP101P107 extends FragmentPagina {
     public void cargarDatos() {
         Data data = new Data(context);
         data.open();
-        if (data.existeElemento(getNombreTabla(),idHogar)){
-            Modulo1 modulo1 = data.getModulo1(idHogar);
-            if(!modulo1.getC1_p101().equals("-1"))((RadioButton)c1_p101_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p101()))).setChecked(true);
-            c1_p101_o_EditText.setText(modulo1.getC1_p101_o());
+        if (data.existeElemento(getNombreTabla(),idVivienda)){
+            Modulo1V modulo1V = data.getModulo1V(idVivienda);
+            if(!modulo1V.getC1_p101().equals("-1"))((RadioButton)c1_p101_RadioGroup.getChildAt(Integer.parseInt(modulo1V.getC1_p101()))).setChecked(true);
+            c1_p101_o_EditText.setText(modulo1V.getC1_p101_o());
 
-            if(!modulo1.getC1_p102().equals("-1"))((RadioButton)c1_p102_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p102()))).setChecked(true);
-            c1_p102_o_EditText.setText(modulo1.getC1_p102_o());
+            if(!modulo1V.getC1_p102().equals("-1"))((RadioButton)c1_p102_RadioGroup.getChildAt(Integer.parseInt(modulo1V.getC1_p102()))).setChecked(true);
+            c1_p102_o_EditText.setText(modulo1V.getC1_p102_o());
 
-            if(!modulo1.getC1_p103().equals("-1"))((RadioButton)c1_p103_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p103()))).setChecked(true);
-            c1_p103_o_EditText.setText(modulo1.getC1_p103_o());
+            if(!modulo1V.getC1_p103().equals("-1"))((RadioButton)c1_p103_RadioGroup.getChildAt(Integer.parseInt(modulo1V.getC1_p103()))).setChecked(true);
+            c1_p103_o_EditText.setText(modulo1V.getC1_p103_o());
 
-            if(!modulo1.getC1_p104().equals("-1"))((RadioButton)c1_p104_RadioGroup.getChildAt(Integer.parseInt(modulo1.getC1_p104()))).setChecked(true);
-            c1_p104_o_EditText.setText(modulo1.getC1_p104_o());
+            if(!modulo1V.getC1_p104().equals("-1"))((RadioButton)c1_p104_RadioGroup.getChildAt(Integer.parseInt(modulo1V.getC1_p104()))).setChecked(true);
+            c1_p104_o_EditText.setText(modulo1V.getC1_p104_o());
 
-            c1_p105_EditText.setText(modulo1.getC1_p105());
-            c1_p106_EditText.setText(modulo1.getC1_p106());
-            c1_p107_EditText.setText(modulo1.getC1_p107());
+            c1_p105_EditText.setText(modulo1V.getC1_p105());
+            c1_p106_EditText.setText(modulo1V.getC1_p106());
+            c1_p107_EditText.setText(modulo1V.getC1_p107());
         }
         data.close();
     }
@@ -277,7 +275,7 @@ public class FragmentP101P107 extends FragmentPagina {
 
     @Override
     public String getNombreTabla() {
-        return SQLConstantes.tablamodulo1;
+        return SQLConstantes.tablamodulo1v;
     }
 
     public void ocultarTeclado(View view){

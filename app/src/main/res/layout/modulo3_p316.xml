@@ -5,6 +5,8 @@
     android:orientation="vertical"
     android:layout_margin="@dimen/margen_layout_pregunta"
     android:padding="@dimen/padding_layout_pregunta"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     android:background="@drawable/marco_pregunta">
     <TextView
         android:layout_width="match_parent"
@@ -16,6 +18,10 @@
         android:id="@+id/mod3_316_radiogroup_C3_P316"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <RadioButton
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <RadioButton
             android:id="@+id/mod3_316_rb1"
             android:layout_width="wrap_content"

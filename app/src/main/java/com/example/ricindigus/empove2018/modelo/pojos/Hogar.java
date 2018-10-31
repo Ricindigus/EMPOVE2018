@@ -10,6 +10,9 @@ public class Hogar {
     private String numero;
     private String nom_ape;
     private String estado;
+    private String nropersonas;
+    private String vive;
+
 
 
     public Hogar() {
@@ -18,16 +21,10 @@ public class Hogar {
         numero = "";
         nom_ape = "";
         estado = "";
+        nropersonas = "";
+        vive = "";
     }
 
-
-    public Hogar(String _id, String id_vivienda, String numero, String nom_ape, String estado) {
-        this._id = _id;
-        this.id_vivienda = id_vivienda;
-        this.numero = numero;
-        this.nom_ape = nom_ape;
-        this.estado = estado;
-    }
 
     public String get_id() {
         return _id;
@@ -69,6 +66,22 @@ public class Hogar {
         this.estado = estado;
     }
 
+    public String getNropersonas() {
+        return nropersonas;
+    }
+
+    public void setNropersonas(String nropersonas) {
+        this.nropersonas = nropersonas;
+    }
+
+    public String getVive() {
+        return vive;
+    }
+
+    public void setVive(String vive) {
+        this.vive = vive;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.hogar_id,_id);
@@ -76,6 +89,8 @@ public class Hogar {
         contentValues.put(SQLConstantes.hogar_numero,numero);
         contentValues.put(SQLConstantes.hogar_nom_ape,nom_ape);
         contentValues.put(SQLConstantes.hogar_estado,estado);
+        contentValues.put(SQLConstantes.hogar_nropersonas,nropersonas);
+        contentValues.put(SQLConstantes.hogar_vive,vive);
         return  contentValues;
     }
 }

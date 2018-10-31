@@ -23,9 +23,9 @@
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
             <include layout="@layout/cabecera"/>
-            <include layout="@layout/modulo3_p310"/>
-            <include layout="@layout/modulo3_p311"/>
-            <include layout="@layout/modulo3_p312"/>
+            <include layout="@layout/modulo3_p310" android:id="@+id/layout_m3_p310"/>
+            <include layout="@layout/modulo3_p311" android:id="@+id/layout_m3_p311"/>
+            <include layout="@layout/modulo3_p312" android:id="@+id/layout_m3_p312"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
