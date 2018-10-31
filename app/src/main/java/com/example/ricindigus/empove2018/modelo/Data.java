@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
+import com.example.ricindigus.empove2018.modelo.pojos.Estado;
 import com.example.ricindigus.empove2018.modelo.pojos.Funcionario;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.modelo.pojos.ItemMarco;
@@ -545,6 +546,8 @@ public class Data {
         return residente;
     }
 
+
+
     public Usuario getUsuario(String nombre){
         Usuario usuario = null;
         String[] whereArgs = new String[]{nombre};
@@ -563,6 +566,59 @@ public class Data {
             if(cursor != null) cursor.close();
         }
         return usuario;
+    }
+
+    public String getCodEstado(String numero){
+        String codigo = null;
+        String[] whereArgs = new String[]{numero};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaestados,
+                    null,SQLConstantes.WHERE_CLAUSE_NUMERO,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                codigo = cursor.getString(cursor.getColumnIndex(SQLConstantes.estado_id));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return codigo;
+    }
+
+
+    public String getCodMunicipio(String numero,String codEstado){
+        String codigo = null;
+        String[] whereArgs = new String[]{numero,codEstado};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamunicipios,
+                    null,SQLConstantes.WHERE_CLAUSE_NUMERO + " AND " + SQLConstantes.WHERE_CLAUSE_ESTADO_COD,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                codigo = cursor.getString(cursor.getColumnIndex(SQLConstantes.municipios_cod_municipio));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return codigo;
+    }
+
+    public ArrayList<String> getMunicipios(String idEstado){
+        ArrayList<String> municipios = new ArrayList<>();
+        municipios.add("Seleccione municipio");
+        String[] whereArgs = new String[]{String.valueOf(idEstado)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamunicipios,
+                    null,SQLConstantes.WHERE_CLAUSE_ESTADO_COD,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                String municipio = cursor.getString(cursor.getColumnIndex(SQLConstantes.municipios_nom_municipio));
+                municipios.add(municipio);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return municipios;
     }
 
     public void insertarElemento(String nombreTabla, ContentValues contentValues){

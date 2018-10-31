@@ -32,6 +32,14 @@ public class SQLConstantes {
     public static String tablamodulo8 = "modulo8";
     public static String tablamodulo9 = "modulo9";
 
+    public static String tablamunicipios = "municipios";
+    public static String tablaestados = "estados";
+    public static String tablaubigeo = "ubigeo";
+
+
+
+
+
 
     /**
      * TABLA MARCO
@@ -70,6 +78,41 @@ public class SQLConstantes {
     public static String marco_usuario_id = "usuario_id";
     public static String marco_cargo_id = "cargo_id";
 
+
+    /**
+     * TABLA UBIGEO
+     * */
+
+    public static String ubigeo_id = "_id";
+    public static String ubigeo_cod_departamento = "cod_departamento";
+    public static String ubigeo_nom_departamento = "nom_departamento";
+    public static String ubigeo_cod_provincia = "cod_provincia";
+    public static String ubigeo_nom_provincia = "nom_provincia";
+    public static String ubigeo_cod_distrito = "cod_distrito";
+    public static String ubigeo_nom_distrito = "nom_distrito";
+    public static String ubigeo_descripcion = "descripcion";
+
+
+    /**
+     * TABLA MUNICIPIOS
+     * */
+
+    public static String municipios_id = "_id";
+    public static String municipios_cod_municipio = "cod_municipio";
+    public static String municipios_nom_municipio = "nom_municipio";
+    public static String municipios_num_municipio = "num_municipio";
+    public static String municipios_cod_estado = "cod_estado";
+    public static String municipios_nom_estado = "nom_estado";
+
+    /**
+     * TABLA ESTADOS
+     * */
+
+    public static String estado_id = "_id";
+    public static String estado_nombre = "nombre";
+    public static String estado_numero = "numero";
+
+
     /**
      * TABLA USUARIOS
      * */
@@ -93,7 +136,6 @@ public class SQLConstantes {
     public static String rutas_id = "_id";
     public static String rutas_numero = "numero";
     public static String rutas_nombre = "nombre";
-
 
     /**
      * TABLA CARATULA
@@ -1523,8 +1565,11 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_CONGLOMERADO = "conglomerado=?";
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
     public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";
+    public static final String WHERE_CLAUSE_ESTADO_COD = municipios_cod_estado+"=?";
     public static final String WHERE_CLAUSE_HOGAR_ID = "id_hogar=?";
     public static final String WHERE_CLAUSE_USUARIO_NOMBRE = "nombre=?";
+
+
 
 
 

@@ -1500,5 +1500,33 @@
         <item>1970</item>
     </string-array>
 
+    <string-array name="array_estados">
+        <item>Seleccione estado</item>
+        <item>01.Distrito Capital</item>
+        <item>02.Estado Amazonas</item>
+        <item>03.Estado Anzoátegui</item>
+        <item>04.Estado Apure</item>
+        <item>05.Estado Aragua</item>
+        <item>06.Estado Barinas</item>
+        <item>07.Estado Bolívar</item>
+        <item>08.Estado Carabobo</item>
+        <item>09.Estado Cojedes</item>
+        <item>10.Estado Delta Amacuro</item>
+        <item>11.Estado Falcón</item>
+        <item>12.Estado Guarico</item>
+        <item>13.Estado Lara</item>
+        <item>14.Estado Miranda</item>
+        <item>15.Estado Monagas</item>
+        <item>16.Estado Nueva Esparta</item>
+        <item>17.Estado Portuguesa</item>
+        <item>18.Estado Sucre</item>
+        <item>19.Estado Táchira</item>
+        <item>20.Estado Trujillo</item>
+        <item>21.Estado Vargas</item>
+        <item>22.Estado Yaracuy</item>
+        <item>23.Estado Zulia</item>
+        <item>9999.Otro estado</item>
+    </string-array>
+
 </resources>
 

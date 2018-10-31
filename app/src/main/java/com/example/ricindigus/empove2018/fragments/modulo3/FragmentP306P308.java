@@ -14,9 +14,11 @@ import android.support.v7.app.AlertDialog;
 import android.text.InputFilter;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -45,6 +47,7 @@ public class FragmentP306P308 extends FragmentPagina {
     String idEncuestado;
     String idInformante;
     Context context;
+
     private static final String CERO = "0";
     public final Calendar c = Calendar.getInstance();
     final int mes = c.get(Calendar.MONTH);
@@ -55,7 +58,8 @@ public class FragmentP306P308 extends FragmentPagina {
     TextView c3_p307_TextViewDia, c3_p307_TextViewMes, c3_p307_TextViewAnio;
     Button c3_p307_d_f_Button;
     RadioGroup c3_p306_RadioGroup;
-    EditText c3_p306_EditText, c3_p308_estado_EditText, c3_p308_municipio_EditText;
+    EditText c3_p306_EditText;
+    Spinner c3_p308_estado_Spinner, c3_p308_municipio_Spinner;
     LinearLayout layoutp306, layoutp307, layoutp308;
 
     int c3_p306;
@@ -87,8 +91,8 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p307_d_f_Button = (Button) rootView.findViewById(R.id.mod3_307_button_C3_P307_F);
         c3_p306_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod3_306_radiogroup_C3_P306);
         c3_p306_EditText = (EditText) rootView.findViewById(R.id.mod3_306_edittext_C3_P306_O);
-        c3_p308_estado_EditText = (EditText) rootView.findViewById(R.id.mod3_308_edittext_C3_P308_E);
-        c3_p308_municipio_EditText = (EditText) rootView.findViewById(R.id.mod3_308_edittext_C3_P308_M);
+        c3_p308_estado_Spinner = (Spinner) rootView.findViewById(R.id.mod3_308_spinner_C3_P308_E);
+        c3_p308_municipio_Spinner = (Spinner) rootView.findViewById(R.id.mod3_308_spinner_C3_P308_M);
         informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
         layoutp306 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p306);
         layoutp307 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p307);
@@ -120,8 +124,6 @@ public class FragmentP306P308 extends FragmentPagina {
         });
 
         configurarEditText(c3_p306_EditText,layoutp306,1,30);
-        configurarEditText(c3_p308_estado_EditText,layoutp308,1,30);
-        configurarEditText(c3_p308_municipio_EditText,layoutp308,1,30);
 
         c3_p306_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -129,7 +131,40 @@ public class FragmentP306P308 extends FragmentPagina {
                 controlarEspecifiqueRadio(group, checkedId,6,c3_p306_EditText);
             }
         });
+
+        c3_p308_estado_Spinner.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    c3_p308_estado_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, final int pos, long l) {
+                            Data data = new Data(context);
+                            data.open();
+                            ArrayList<String> municipios = new ArrayList<>();
+                            if(pos != 0) municipios = data.getMunicipios(data.getCodEstado(pos+""));
+                            data.close();
+                            cargarSpinerMunicipios(municipios);
+                        }
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {}
+                    });
+                }
+                return false;
+            }
+        });
+
         cargarDatos();
+    }
+
+    public void cargarSpinerMunicipios(ArrayList<String> datos){
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,datos);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        c3_p308_municipio_Spinner.setAdapter(adapter);
+    }
+
+    public String checkDigito (int number) {
+        return number <= 9 ? "0" + number : String.valueOf(number);
     }
 
     @Override
@@ -143,8 +178,8 @@ public class FragmentP306P308 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p307_d,c3_p307_d);
         contentValues.put(SQLConstantes.modulo3_c3_p307_m,c3_p307_m);
         contentValues.put(SQLConstantes.modulo3_c3_p307_a,c3_p307_a);
-        contentValues.put(SQLConstantes.modulo3_c3_p308_e,c3_p308_e);
-        contentValues.put(SQLConstantes.modulo3_c3_p308_m,c3_p308_m);
+        contentValues.put(SQLConstantes.modulo3_c3_p308_e,data.getCodEstado(c3_p308_e+""));
+        contentValues.put(SQLConstantes.modulo3_c3_p308_m,data.getCodMunicipio(c3_p308_m+"",data.getCodEstado(c3_p308_e+"")));
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
@@ -157,8 +192,12 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p307_d  = c3_p307_TextViewDia.getText().toString();
         c3_p307_m  = c3_p307_TextViewMes.getText().toString();
         c3_p307_a  = c3_p307_TextViewAnio.getText().toString();
-        c3_p308_e  = c3_p308_estado_EditText.getText().toString();
-        c3_p308_m  = c3_p308_municipio_EditText.getText().toString();
+        c3_p308_e  = getCodigoEstMun(c3_p308_estado_Spinner.getSelectedItem().toString());
+        c3_p308_m  = getCodigoEstMun(c3_p308_municipio_Spinner.getSelectedItem().toString());
+    }
+
+    public String getCodigoEstMun(String item){
+        return item.substring(0,item.indexOf('.'));
     }
 
     @Override
@@ -177,8 +216,8 @@ public class FragmentP306P308 extends FragmentPagina {
             c3_p307_TextViewDia.setText(modulo3.getC3_p307_d());
             c3_p307_TextViewMes.setText(modulo3.getC3_p307_m());
             c3_p307_TextViewAnio.setText(modulo3.getC3_p307_a());
-            c3_p308_estado_EditText.setText(modulo3.getC3_p308_e());
-            c3_p308_municipio_EditText.setText(modulo3.getC3_p308_m());
+            if (!modulo3.getC3_p308_e().equals(""))c3_p308_estado_Spinner.setSelection(Integer.parseInt(modulo3.getC3_p308_e()));
+            if (!modulo3.getC3_p308_m().equals(""))c3_p308_municipio_Spinner.setSelection(Integer.parseInt(modulo3.getC3_p308_m()));
         }
         data.close();
     }
@@ -192,8 +231,8 @@ public class FragmentP306P308 extends FragmentPagina {
             if (c3_p306_o.trim().equals("")){mostrarMensaje("PREGUNTA 306: DEBE ESPECIFICAR");return false;}
         }
         if (c3_p307_d.trim().equals("")){mostrarMensaje("PREGUNTA 307: DEBE AGREGAR FECHA");return false;}
-        if (c3_p308_e.trim().equals("")){mostrarMensaje("PREGUNTA 308: DEBE INDICAR ESTADO");return false;}
-        if (c3_p308_m.trim().equals("")){mostrarMensaje("PREGUNTA 308: DEBE INDICAR MUNICIPIO");return false;}
+        if (c3_p308_estado_Spinner.getSelectedItemPosition() == 0){mostrarMensaje("PREGUNTA 308: DEBE INDICAR ESTADO");return false;}
+        if (c3_p308_municipio_Spinner.getSelectedItemPosition() == 0){mostrarMensaje("PREGUNTA 308: DEBE INDICAR MUNICIPIO");return false;}
         return true;
     }
 
