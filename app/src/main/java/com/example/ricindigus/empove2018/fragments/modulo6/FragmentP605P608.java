@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,18 +18,22 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP605P608 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
     EditText c6_p605_EditText, c6_p606_EditText, c6_p607_EditText;
@@ -42,13 +47,20 @@ public class FragmentP605P608 extends FragmentPagina {
     private int c6_p608;
     private String c6_p608_o;
 
+    private int edad;
+
     @SuppressLint("ValidFragment")
-    public FragmentP605P608(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP605P608(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP605P608() {
@@ -65,7 +77,7 @@ public class FragmentP605P608 extends FragmentPagina {
         c6_p605_EditText = (EditText) rootView.findViewById(R.id.mod6_605_edittext_C6_P605);
         c6_p606_EditText = (EditText) rootView.findViewById(R.id.mod6_606_edittext_C6_P606);
         c6_p607_EditText = (EditText) rootView.findViewById(R.id.mod6_606_edittext_C6_P606);
-        c6_p608_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_604_radiogroup_C6_P604_8);
+        c6_p608_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_608_radiogroup_C6_P608);
         c6_p608_o_EditText = (EditText) rootView.findViewById(R.id.mod6_608_edittext_C6_P608_O);
 
         m6_p605_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p605);
@@ -141,15 +153,15 @@ public class FragmentP605P608 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo6_c6_p608,c6_p608+"");
         contentValues.put(SQLConstantes.modulo6_c6_p608_o,c6_p608_o);
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
-        }else{
-            contentValues.put(SQLConstantes.modulo6_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo6_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo6_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo6_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = new Modulo6();
+            modulo6.setIdInformante(idInformante);
+            modulo6.set_id(idEncuestado);
+            modulo6.setIdVivienda(idVivienda);
+            modulo6.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
+        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
 
@@ -164,11 +176,23 @@ public class FragmentP605P608 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = data.getModulo6(idEncuestado);
+            c6_p605_EditText.setText(modulo6.getC6_p605());
+            c6_p606_EditText.setText(modulo6.getC6_p606());
+            c6_p607_EditText.setText(modulo6.getC6_p607());
+            if(!(modulo6.getC6_p608().equals("-1") || modulo6.getC6_p608().equals("")))((RadioButton)c6_p608_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p608()))).setChecked(true);
+            c6_p608_o_EditText.setText(modulo6.getC6_p608_o());
+        }
+//        inicio();
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
+        llenarVariables();
         if(c6_p605.trim().length()==0 && m6_p605_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 605: DEBE ESPECIFICAR");
             return false;
@@ -182,11 +206,11 @@ public class FragmentP605P608 extends FragmentPagina {
             return false;
         }
         if(m6_p608_linearlayout.getVisibility()==View.VISIBLE){
-            if(c6_p608<1){
+            if(c6_p608<0){
                 mostrarMensaje("PREGUNTA 608: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p608==7){
+            if(c6_p608==6){
                 if(c6_p608_o.trim().length()==0){
                     mostrarMensaje("PREGUNTA 608 - OPCION 7: DEBE ESPECIFICAR OTRO");
                     return false;

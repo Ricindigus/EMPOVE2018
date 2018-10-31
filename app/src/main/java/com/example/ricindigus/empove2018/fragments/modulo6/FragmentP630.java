@@ -17,47 +17,58 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP630 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
-    RadioGroup c6_p630_1_RadioGroup, c6_p630_1_med_RadioGroup;
-    EditText c6_p630_1_o_EditText;
-    Spinner c6_p630_1_frec_Spinner, c6_p630_1_mont_Spinner;
-    RadioGroup c6_p630_2_RadioGroup, c6_p630_2_med_RadioGroup;
-    EditText c6_p630_2_o_EditText;
-    Spinner c6_p630_2_frec_Spinner, c6_p630_2_mont_Spinner;
+    RadioGroup c6_p630_1_RadioGroup, c6_p630_1med_RadioGroup;
+    EditText c6_p630_1o_EditText;
+    Spinner c6_p630_1frec_Spinner, c6_p630_1mont_Spinner;
+    RadioGroup c6_p630_2_RadioGroup, c6_p630_2med_RadioGroup;
+    EditText c6_p630_2o_EditText;
+    Spinner c6_p630_2frec_Spinner, c6_p630_2mont_Spinner;
     LinearLayout m6_p630_linearlayout;
 
     private int c6_p630_1;
-    private int c6_p630_1_med;
-    private String c6_p630_1_o;
-    private int c6_p630_1_frec;
-    private int c6_p630_1_mont;
+    private int c6_p630_1med;
+    private String c6_p630_1o;
+    private int c6_p630_1frec;
+    private int c6_p630_1mont;
     private int c6_p630_2;
-    private int c6_p630_2_med;
-    private String c6_p630_2_o;
-    private int c6_p630_2_frec;
-    private int c6_p630_2_mont;
+    private int c6_p630_2med;
+    private String c6_p630_2o;
+    private int c6_p630_2frec;
+    private int c6_p630_2mont;
+
+    private int edad;
 
     @SuppressLint("ValidFragment")
-    public FragmentP630(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP630(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP630() {
@@ -67,24 +78,24 @@ public class FragmentP630 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        c6_p630_1_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c6_p630_1_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+        c6_p630_1o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c6_p630_1o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p630_1_o_EditText);
+                    ocultarTeclado(c6_p630_1o_EditText);
                     m6_p630_linearlayout.requestFocus();
                     return true;
                 }
                 return false;
             }
         });
-        c6_p630_2_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c6_p630_2_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+        c6_p630_2o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c6_p630_2o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p630_2_o_EditText);
+                    ocultarTeclado(c6_p630_2o_EditText);
                     m6_p630_linearlayout.requestFocus();
                     return true;
                 }
@@ -101,23 +112,21 @@ public class FragmentP630 extends FragmentPagina {
         View rootView = inflater.inflate(R.layout.fragment_p630, container, false);
 
         c6_p630_1_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_1);
-        c6_p630_1_med_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_1_MED);
-        c6_p630_1_o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_1_O);
-        c6_p630_1_frec_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_1_FREC);
-        c6_p630_1_mont_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_1_MONT);
+        c6_p630_1med_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_1_MED);
+        c6_p630_1o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_1_O);
+        c6_p630_1frec_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_1_FREC);
+        c6_p630_1mont_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_1_MONT);
 
         c6_p630_2_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_2);
-        c6_p630_2_med_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_2_MED);
-        c6_p630_2_o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_2_O);
-        c6_p630_2_frec_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_2_FREC);
-        c6_p630_2_mont_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_2_MONT);
+        c6_p630_2med_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_2_MED);
+        c6_p630_2o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_2_O);
+        c6_p630_2frec_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_2_FREC);
+        c6_p630_2mont_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_2_MONT);
 
         m6_p630_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p630);
 
         return rootView;
     }
-
-
 
     @Override
     public void guardarDatos() {
@@ -125,94 +134,111 @@ public class FragmentP630 extends FragmentPagina {
         data.open();
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo6_c6_p630_1,c6_p630_1+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p630_1_med,c6_p630_1_med+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p630_1_o,c6_p630_1_o);
-        contentValues.put(SQLConstantes.modulo6_c6_p630_1_frec,c6_p630_1_frec+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p630_1_mont,c6_p630_1_mont+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1med,c6_p630_1med+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1o,c6_p630_1o);
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1frec,c6_p630_1frec+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1mont,c6_p630_1mont+"");
         contentValues.put(SQLConstantes.modulo6_c6_p630_2,c6_p630_2+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p630_2_med,c6_p630_2_med+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p630_2_o,c6_p630_2_o);
-        contentValues.put(SQLConstantes.modulo6_c6_p630_2_frec,c6_p630_2_frec+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p630_2_mont,c6_p630_2_mont+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2med,c6_p630_2med+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2o,c6_p630_2o);
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2frec,c6_p630_2frec+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2mont,c6_p630_2mont+"");
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
-        }else{
-            contentValues.put(SQLConstantes.modulo6_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo6_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo6_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo6_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = new Modulo6();
+            modulo6.setIdInformante(idInformante);
+            modulo6.set_id(idEncuestado);
+            modulo6.setIdVivienda(idVivienda);
+            modulo6.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
+        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
 
     @Override
     public void llenarVariables() {
         c6_p630_1 = c6_p630_1_RadioGroup.indexOfChild(c6_p630_1_RadioGroup.findViewById(c6_p630_1_RadioGroup.getCheckedRadioButtonId()));
-        c6_p630_1_med = c6_p630_1_med_RadioGroup.indexOfChild(c6_p630_1_med_RadioGroup.findViewById(c6_p630_1_med_RadioGroup.getCheckedRadioButtonId()));
-        c6_p630_1_o = c6_p630_1_o_EditText.getText().toString();
-        c6_p630_1_frec = c6_p630_1_frec_Spinner.getSelectedItemPosition();
-        c6_p630_1_mont = c6_p630_1_mont_Spinner.getSelectedItemPosition();
+        c6_p630_1med = c6_p630_1med_RadioGroup.indexOfChild(c6_p630_1med_RadioGroup.findViewById(c6_p630_1med_RadioGroup.getCheckedRadioButtonId()));
+        c6_p630_1o = c6_p630_1o_EditText.getText().toString();
+        c6_p630_1frec = c6_p630_1frec_Spinner.getSelectedItemPosition();
+        c6_p630_1mont = c6_p630_1mont_Spinner.getSelectedItemPosition();
         c6_p630_2 = c6_p630_2_RadioGroup.indexOfChild(c6_p630_2_RadioGroup.findViewById(c6_p630_2_RadioGroup.getCheckedRadioButtonId()));
-        c6_p630_2_med = c6_p630_2_med_RadioGroup.indexOfChild(c6_p630_2_med_RadioGroup.findViewById(c6_p630_2_med_RadioGroup.getCheckedRadioButtonId()));
-        c6_p630_2_o = c6_p630_2_o_EditText.getText().toString();
-        c6_p630_2_frec = c6_p630_2_frec_Spinner.getSelectedItemPosition();
-        c6_p630_2_mont = c6_p630_2_mont_Spinner.getSelectedItemPosition();
+        c6_p630_2med = c6_p630_2med_RadioGroup.indexOfChild(c6_p630_2med_RadioGroup.findViewById(c6_p630_2med_RadioGroup.getCheckedRadioButtonId()));
+        c6_p630_2o = c6_p630_2o_EditText.getText().toString();
+        c6_p630_2frec = c6_p630_2frec_Spinner.getSelectedItemPosition();
+        c6_p630_2mont = c6_p630_2mont_Spinner.getSelectedItemPosition();
     }
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = data.getModulo6(idEncuestado);
+            if(!(modulo6.getC6_p630_1().equals("-1") || modulo6.getC6_p630_1().equals("")))((RadioButton)c6_p630_1_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_1()))).setChecked(true);
+            if(!(modulo6.getC6_p630_1med().equals("-1") || modulo6.getC6_p630_1med().equals("")))((RadioButton)c6_p630_1med_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_1med()))).setChecked(true);
+            c6_p630_1o_EditText.setText(modulo6.getC6_p630_1o());
+            if(!modulo6.getC6_p630_1frec().equals("")) c6_p630_1frec_Spinner.setSelection(Integer.parseInt(modulo6.getC6_p630_1frec()));
+            if(!modulo6.getC6_p630_1mont().equals("")) c6_p630_1mont_Spinner.setSelection(Integer.parseInt(modulo6.getC6_p630_1mont()));
+            if(!(modulo6.getC6_p630_2().equals("-1") || modulo6.getC6_p630_2().equals("")))((RadioButton)c6_p630_2_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_2()))).setChecked(true);
+            if(!(modulo6.getC6_p630_2med().equals("-1") || modulo6.getC6_p630_2med().equals("")))((RadioButton)c6_p630_2med_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_2med()))).setChecked(true);
+            c6_p630_2o_EditText.setText(modulo6.getC6_p630_2o());
+            if(!modulo6.getC6_p630_2frec().equals("")) c6_p630_2frec_Spinner.setSelection(Integer.parseInt(modulo6.getC6_p630_2frec()));
+            if(!modulo6.getC6_p630_2mont().equals("")) c6_p630_2mont_Spinner.setSelection(Integer.parseInt(modulo6.getC6_p630_2mont()));
+        }
+//        inicio();
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
+        llenarVariables();
         if(m6_p630_linearlayout.getVisibility()==View.VISIBLE){
-            if(c6_p630_1<1){
+            if(c6_p630_1<0){
                 mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
             if(c6_p630_1==1){
-                if(c6_p630_1_med<1){
+                if(c6_p630_1med<0){
                     mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR MEDIO DE ENVIO");
                     return false;
                 }
-                if(c6_p630_1_med==3){
-                    if(c6_p630_1_o.trim().length()==0){
+                if(c6_p630_1med==2){
+                    if(c6_p630_1o.trim().length()==0){
                         mostrarMensaje("PREGUNTA 630-A: DEBE ESPECIFICAR OTRO");
                         return false;
                     }
                 }
-                if(c6_p630_1_frec<1){
+                if(c6_p630_1frec<0){
                     mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR FRECUENCIA");
                     return false;
                 }
-                if(c6_p630_1_mont<1){
+                if(c6_p630_1mont<0){
                     mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR MONTO");
                     return false;
                 }
             }
-            if(c6_p630_2<1){
+            if(c6_p630_2<0){
                 mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
             if(c6_p630_2==1){
-                if(c6_p630_2_med<1){
+                if(c6_p630_2med<0){
                     mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR MEDIO DE ENVIO");
                     return false;
                 }
-                if(c6_p630_2_med==3){
-                    if(c6_p630_2_o.trim().length()==0){
+                if(c6_p630_2med==2){
+                    if(c6_p630_2o.trim().length()==0){
                         mostrarMensaje("PREGUNTA 630-B: DEBE ESPECIFICAR OTRO");
                         return false;
                     }
                 }
-                if(c6_p630_2_frec<1){
+                if(c6_p630_2frec<0){
                     mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR FRECUENCIA");
                     return false;
                 }
-                if(c6_p630_2_mont<1){
+                if(c6_p630_2mont<0){
                     mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR MONTO");
                     return false;
                 }

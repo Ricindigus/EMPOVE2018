@@ -16,11 +16,14 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -28,7 +31,8 @@ import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMetho
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP609P612 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
     RadioGroup c6_p609_RadioGroup;
@@ -63,13 +67,20 @@ public class FragmentP609P612 extends FragmentPagina {
     private int c6_p612;
     private String c6_p612_nro;
 
+    private int edad;
+
     @SuppressLint("ValidFragment")
-    public FragmentP609P612(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP609P612(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP609P612() {
@@ -380,15 +391,15 @@ public class FragmentP609P612 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo6_c6_p612,c6_p612+"");
         contentValues.put(SQLConstantes.modulo6_c6_p612_nro,c6_p612_nro);
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
-        }else{
-            contentValues.put(SQLConstantes.modulo6_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo6_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo6_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo6_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = new Modulo6();
+            modulo6.setIdInformante(idInformante);
+            modulo6.set_id(idEncuestado);
+            modulo6.setIdVivienda(idVivienda);
+            modulo6.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
+        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
 
@@ -417,12 +428,38 @@ public class FragmentP609P612 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = data.getModulo6(idEncuestado);
+            if(!(modulo6.getC6_p609().equals("-1") || modulo6.getC6_p609().equals("")))((RadioButton)c6_p609_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p609()))).setChecked(true);
+            c6_p610_pd_EditText.setText(modulo6.getC6_p610_pd());
+            c6_p610_pl_EditText.setText(modulo6.getC6_p610_pl());
+            c6_p610_pm_EditText.setText(modulo6.getC6_p610_pm());
+            c6_p610_pmi_EditText.setText(modulo6.getC6_p610_pmi());
+            c6_p610_pj_EditText.setText(modulo6.getC6_p610_pj());
+            c6_p610_pv_EditText.setText(modulo6.getC6_p610_pv());
+            c6_p610_ps_EditText.setText(modulo6.getC6_p610_ps());
+            c6_p610_sd_EditText.setText(modulo6.getC6_p610_sd());
+            c6_p610_sl_EditText.setText(modulo6.getC6_p610_sl());
+            c6_p610_sm_EditText.setText(modulo6.getC6_p610_sm());
+            c6_p610_smi_EditText.setText(modulo6.getC6_p610_smi());
+            c6_p610_sj_EditText.setText(modulo6.getC6_p610_sj());
+            c6_p610_sv_EditText.setText(modulo6.getC6_p610_sv());
+            c6_p610_ss_EditText.setText(modulo6.getC6_p610_ss());
+            c6_p610_t_EditText.setText(modulo6.getC6_p610_t());
+            c6_p611_EditText.setText(modulo6.getC6_p611());
+            if(!(modulo6.getC6_p612().equals("-1") || modulo6.getC6_p612().equals("")))((RadioButton)c6_p612_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p612()))).setChecked(true);
+            c6_p612_nro_EditText.setText(modulo6.getC6_p612_nro());
+        }
+//        inicio();
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
-        if(c6_p609<1 && m6_p609_linearlayout.getVisibility()==View.VISIBLE){
+        llenarVariables();
+        if(c6_p609<0 && m6_p609_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 609: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
@@ -489,7 +526,7 @@ public class FragmentP609P612 extends FragmentPagina {
             return false;
         }
         if(m6_p612_linearlayout.getVisibility()==View.VISIBLE){
-            if(c6_p612<1){
+            if(c6_p612<0){
                 mostrarMensaje("PREGUNTA 612: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }

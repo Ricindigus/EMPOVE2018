@@ -788,9 +788,9 @@
     <string name="modulo_6_submenu_1">Preguntas 601 - 604</string>
     <string name="modulo_6_submenu_2">Preguntas 605 - 608</string>
     <string name="modulo_6_submenu_3">Preguntas 609 - 612</string>
-    <string name="modulo_6_submenu_4">Preguntas 613 - 618</string>
-    <string name="modulo_6_submenu_5">Preguntas 619 - 622</string>
-    <string name="modulo_6_submenu_6">Preguntas 623 - 625</string>
+    <string name="modulo_6_submenu_4">Preguntas 613 - 617</string>
+    <string name="modulo_6_submenu_5">Preguntas 618 - 621</string>
+    <string name="modulo_6_submenu_6">Preguntas 622 - 625</string>
     <string name="modulo_6_submenu_7">Preguntas 626 - 629</string>
     <string name="modulo_6_submenu_8">Preguntas 630</string>
 
@@ -820,8 +820,8 @@
     <string name="modulo_6_p604_sp10">10.¿Ayudando a un familiar sin remuneración?</string>
     <string name="modulo_6_p604_sp11">11.¿Otra?</string>
     <string name="modulo_6_p604_especifique">Especifique</string>
-    <string name="modulo_6_p604_no">Sí</string>
-    <string name="modulo_6_p604_si">No</string>
+    <string name="modulo_6_p604_no">No</string>
+    <string name="modulo_6_p604_si">Sí</string>
 
     <string name="modulo_6_p605">605.¿CUÁL ES LA OCUPACIÓN PRINCIPAL QUE DESEMPEÑÓ?</string>
     <string name="modulo_6_p605_especifique">Especifique</string>
@@ -904,7 +904,7 @@
 
     <string name="sub_modulo_6_3">Verifique el MÓDULO II, si se registró a personas menores de 18 años de edad.</string>
 
-    <string name="modulo_6_p618">618.¿CON QUIÉN DEJA A LOS/AS MENORES DE EDAD DEL HOGAR, CUANDO ESTÁ TRABAJANDO?</string>
+    <string name="modulo_6_p618">625.¿CON QUIÉN DEJA A LOS/AS MENORES DE EDAD DEL HOGAR, CUANDO ESTÁ TRABAJANDO?</string>
     <string name="modulo_6_p618_ind">(Lea cada alternativa y seleccione solo un código)</string>
     <string name="modulo_6_p618_sp1">1.Con familiares y parientes</string>
     <string name="modulo_6_p618_sp2">2.En la cuna/colegio</string>
@@ -916,11 +916,11 @@
 
     <string name="sub_modulo_6_4">DESOCUPADOS</string>
 
-    <string name="modulo_6_p619">619.LA SEMANA PASADA, ¿HIZO ALGO PARA CONSEGUIR TRABAJO?</string>
+    <string name="modulo_6_p619">618.LA SEMANA PASADA, ¿HIZO ALGO PARA CONSEGUIR TRABAJO?</string>
     <string name="modulo_6_p619_sp1">1.Sí</string>
     <string name="modulo_6_p619_sp2">2.No</string>
 
-    <string name="modulo_6_p620">620.¿QUÉ ESTUVO HACIENDO LA SEMANA PASADA:</string>
+    <string name="modulo_6_p620">619.¿QUÉ ESTUVO HACIENDO LA SEMANA PASADA:</string>
     <string name="modulo_6_p620_ind">(Lea la pregunta y seleccione un código de respuesta)</string>
     <string name="modulo_6_p620_sp1">1.Hizo trámites, busco local, gestionó préstamos para establecer su propio negocio?</string>
     <string name="modulo_6_p620_sp2">2.Reparando sus activos (local, máquina, equipo)?</string>
@@ -931,19 +931,19 @@
     <string name="modulo_6_p620_sp7">7.Vivía de su pensión o jubilación u otras rentas?</string>
     <string name="modulo_6_p620_sp8">8.Enfermo o incapacitado?</string>
     <string name="modulo_6_p620_sp9">9.Otro?</string>
-    <string name="modulo_6_p620_si">(1)Sí</string>
-    <string name="modulo_6_p620_no">(2)No</string>
+    <string name="modulo_6_p620_si">Sí</string>
+    <string name="modulo_6_p620_no">No</string>
     <string name="modulo_6_p620_especifique">Especifique</string>
 
-    <string name="modulo_6_p621">621.LA SEMANA PASADA, ¿QUERÍA USTED TRABAJAR? </string>
+    <string name="modulo_6_p621">620.LA SEMANA PASADA, ¿QUERÍA USTED TRABAJAR? </string>
     <string name="modulo_6_p621_si">1.Sí</string>
     <string name="modulo_6_p621_no">2.No</string>
 
-    <string name="modulo_6_p622">622.¿HUBIERA PODIDO TRABAJAR EN CUALQUIER MOMENTO? </string>
+    <string name="modulo_6_p622">621.¿HUBIERA PODIDO TRABAJAR EN CUALQUIER MOMENTO? </string>
     <string name="modulo_6_p622_si">1.Sí</string>
     <string name="modulo_6_p622_no">2.No</string>
 
-    <string name="modulo_6_p623">623.¿POR QUÉ NO BUSCÓ TRABAJO?</string>
+    <string name="modulo_6_p623">622.¿POR QUÉ NO BUSCÓ TRABAJO?</string>
     <string name="modulo_6_p623_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_6_p623_sp1">1.No hay trabajo</string>
     <string name="modulo_6_p623_sp2">2.Se cansó de esperar</string>
@@ -959,7 +959,7 @@
     <string name="modulo_6_p623_sp11">11.YA ENCONTRÓ TRABAJO</string>
     <string name="modulo_6_p623_sp12">12.SI BUSCÓ TRABAJO</string>
 
-    <string name="modulo_6_p624">624.¿QUÉ HIZO LA SEMANA PASADA PARA CONSEGUIR TRABAJO?</string>
+    <string name="modulo_6_p624">623.¿QUÉ HIZO LA SEMANA PASADA PARA CONSEGUIR TRABAJO?</string>
     <string name="modulo_6_p624_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_6_p624_sp1">1.Empleador/patrono</string>
     <string name="modulo_6_p624_sp2">2.Agencia de empleo/Bolsa de trabajo</string>
@@ -971,7 +971,7 @@
     <string name="modulo_6_p624_sp7">7.NO HIZO NADA PARA CONSEGUIR TRABAJO</string>
 
 
-    <string name="modulo_6_p625">625¿CUÁNTAS SEMANAS HA ESTADO BUSCANDO TRABAJO, SIN INTERRUPCIONES?</string>
+    <string name="modulo_6_p625">624¿CUÁNTAS SEMANAS HA ESTADO BUSCANDO TRABAJO, SIN INTERRUPCIONES?</string>
     <string name="modulo_6_p625_semana">¿N° de semanas?</string>
 
     <string name="sub_modulo_6_5">TRABAJO EN PERÚ</string>
