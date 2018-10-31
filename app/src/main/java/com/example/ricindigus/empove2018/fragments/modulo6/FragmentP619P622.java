@@ -17,49 +17,60 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP619P622 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
-    RadioGroup c6_p619_RadioGroup,
-            c6_p620_1_RadioGroup, c6_p620_2_RadioGroup, c6_p620_3_RadioGroup, c6_p620_4_RadioGroup,
-            c6_p620_5_RadioGroup, c6_p620_6_RadioGroup, c6_p620_7_RadioGroup, c6_p620_8_RadioGroup,
-            c6_p620_9_RadioGroup;
-    EditText c6_p620_o_EditText;
-    RadioGroup c6_p621_RadioGroup, c6_p622_RadioGroup;
-    LinearLayout m6_p619_linearlayout, m6_p620_linearlayout, m6_p621_linearlayout, m6_p622_linearlayout;
+    RadioGroup c6_p618_RadioGroup,
+            c6_p619_1_RadioGroup, c6_p619_2_RadioGroup, c6_p619_3_RadioGroup, c6_p619_4_RadioGroup,
+            c6_p619_5_RadioGroup, c6_p619_6_RadioGroup, c6_p619_7_RadioGroup, c6_p619_8_RadioGroup,
+            c6_p619_9_RadioGroup;
+    EditText c6_p619_o_EditText;
+    RadioGroup c6_p620_RadioGroup, c6_p621_RadioGroup;
+    LinearLayout m6_p618_linearlayout, m6_p619_linearlayout, m6_p620_linearlayout, m6_p621_linearlayout;
 
-    private int c6_p619;
-    private int c6_p620_1;
-    private int c6_p620_2;
-    private int c6_p620_3;
-    private int c6_p620_4;
-    private int c6_p620_5;
-    private int c6_p620_6;
-    private int c6_p620_7;
-    private int c6_p620_8;
-    private int c6_p620_9;
-    private String c6_p620_o;
+    private int c6_p618;
+    private int c6_p619_1;
+    private int c6_p619_2;
+    private int c6_p619_3;
+    private int c6_p619_4;
+    private int c6_p619_5;
+    private int c6_p619_6;
+    private int c6_p619_7;
+    private int c6_p619_8;
+    private int c6_p619_9;
+    private String c6_p619_o;
+    private int c6_p620;
     private int c6_p621;
-    private int c6_p622;
+
+    private int edad;
 
     @SuppressLint("ValidFragment")
-    public FragmentP619P622(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP619P622(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP619P622() {
@@ -74,26 +85,26 @@ public class FragmentP619P622 extends FragmentPagina {
 
         View rootView = inflater.inflate(R.layout.fragment_p619_p622, container, false);
 
-        c6_p619_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_619_radiogroup_C6_P619);
+        c6_p618_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_619_radiogroup_C6_P619);
 
-        c6_p620_1_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_1);
-        c6_p620_2_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_2);
-        c6_p620_3_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_3);
-        c6_p620_4_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_4);
-        c6_p620_5_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_5);
-        c6_p620_6_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_6);
-        c6_p620_7_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_7);
-        c6_p620_8_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_8);
-        c6_p620_9_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_9);
-        c6_p620_o_EditText = (EditText) rootView.findViewById(R.id.mod6_620_edittext_C6_P620_O);
+        c6_p619_1_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_1);
+        c6_p619_2_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_2);
+        c6_p619_3_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_3);
+        c6_p619_4_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_4);
+        c6_p619_5_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_5);
+        c6_p619_6_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_6);
+        c6_p619_7_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_7);
+        c6_p619_8_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_8);
+        c6_p619_9_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_620_radiogroup_C6_P620_9);
+        c6_p619_o_EditText = (EditText) rootView.findViewById(R.id.mod6_620_edittext_C6_P620_O);
 
-        c6_p621_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_621_radiogroup_C6_P621);
-        c6_p622_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_622_radiogroup_C6_P622);
+        c6_p620_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_621_radiogroup_C6_P621);
+        c6_p621_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_622_radiogroup_C6_P622);
 
-        m6_p619_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p619);
-        m6_p620_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p620);
-        m6_p621_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p621);
-        m6_p622_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p622);
+        m6_p618_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p619);
+        m6_p619_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p620);
+        m6_p620_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p621);
+        m6_p621_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p622);
 
         return rootView;
     }
@@ -101,13 +112,13 @@ public class FragmentP619P622 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        c6_p620_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c6_p620_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+        c6_p619_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        c6_p619_o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p620_o_EditText);
-                    m6_p620_linearlayout.requestFocus();
+                    ocultarTeclado(c6_p619_o_EditText);
+                    m6_p619_linearlayout.requestFocus();
                     return true;
                 }
                 return false;
@@ -121,110 +132,130 @@ public class FragmentP619P622 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo6_c6_p619,c6_p619+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_1,c6_p620_1+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_2,c6_p620_2+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_3,c6_p620_3+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_4,c6_p620_4+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_5,c6_p620_5+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_6,c6_p620_6+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_7,c6_p620_7+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_8,c6_p620_8+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_9,c6_p620_9+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p620_o,c6_p620_o);
+        contentValues.put(SQLConstantes.modulo6_c6_p618,c6_p618+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_1,c6_p619_1+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_2,c6_p619_2+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_3,c6_p619_3+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_4,c6_p619_4+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_5,c6_p619_5+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_6,c6_p619_6+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_7,c6_p619_7+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_8,c6_p619_8+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_9,c6_p619_9+"");
+        contentValues.put(SQLConstantes.modulo6_c6_p619_o,c6_p619_o);
+        contentValues.put(SQLConstantes.modulo6_c6_p620,c6_p620+"");
         contentValues.put(SQLConstantes.modulo6_c6_p621,c6_p621+"");
-        contentValues.put(SQLConstantes.modulo6_c6_p622,c6_p622+"");
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
-        }else{
-            contentValues.put(SQLConstantes.modulo6_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo6_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo6_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo6_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = new Modulo6();
+            modulo6.setIdInformante(idInformante);
+            modulo6.set_id(idEncuestado);
+            modulo6.setIdVivienda(idVivienda);
+            modulo6.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
+        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
 
     @Override
     public void llenarVariables() {
-        c6_p619 = c6_p619_RadioGroup.indexOfChild(c6_p619_RadioGroup.findViewById(c6_p619_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_1 = c6_p620_1_RadioGroup.indexOfChild(c6_p620_1_RadioGroup.findViewById(c6_p620_1_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_2 = c6_p620_2_RadioGroup.indexOfChild(c6_p620_2_RadioGroup.findViewById(c6_p620_2_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_3 = c6_p620_3_RadioGroup.indexOfChild(c6_p620_3_RadioGroup.findViewById(c6_p620_3_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_4 = c6_p620_4_RadioGroup.indexOfChild(c6_p620_4_RadioGroup.findViewById(c6_p620_4_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_5 = c6_p620_5_RadioGroup.indexOfChild(c6_p620_5_RadioGroup.findViewById(c6_p620_5_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_6 = c6_p620_6_RadioGroup.indexOfChild(c6_p620_6_RadioGroup.findViewById(c6_p620_6_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_7 = c6_p620_7_RadioGroup.indexOfChild(c6_p620_7_RadioGroup.findViewById(c6_p620_7_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_8 = c6_p620_8_RadioGroup.indexOfChild(c6_p620_8_RadioGroup.findViewById(c6_p620_8_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_9 = c6_p620_9_RadioGroup.indexOfChild(c6_p620_9_RadioGroup.findViewById(c6_p620_9_RadioGroup.getCheckedRadioButtonId()));
-        c6_p620_o = c6_p620_o_EditText.getText().toString();
+        c6_p618 = c6_p618_RadioGroup.indexOfChild(c6_p618_RadioGroup.findViewById(c6_p618_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_1 = c6_p619_1_RadioGroup.indexOfChild(c6_p619_1_RadioGroup.findViewById(c6_p619_1_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_2 = c6_p619_2_RadioGroup.indexOfChild(c6_p619_2_RadioGroup.findViewById(c6_p619_2_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_3 = c6_p619_3_RadioGroup.indexOfChild(c6_p619_3_RadioGroup.findViewById(c6_p619_3_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_4 = c6_p619_4_RadioGroup.indexOfChild(c6_p619_4_RadioGroup.findViewById(c6_p619_4_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_5 = c6_p619_5_RadioGroup.indexOfChild(c6_p619_5_RadioGroup.findViewById(c6_p619_5_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_6 = c6_p619_6_RadioGroup.indexOfChild(c6_p619_6_RadioGroup.findViewById(c6_p619_6_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_7 = c6_p619_7_RadioGroup.indexOfChild(c6_p619_7_RadioGroup.findViewById(c6_p619_7_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_8 = c6_p619_8_RadioGroup.indexOfChild(c6_p619_8_RadioGroup.findViewById(c6_p619_8_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_9 = c6_p619_9_RadioGroup.indexOfChild(c6_p619_9_RadioGroup.findViewById(c6_p619_9_RadioGroup.getCheckedRadioButtonId()));
+        c6_p619_o = c6_p619_o_EditText.getText().toString();
+        c6_p620 = c6_p620_RadioGroup.indexOfChild(c6_p620_RadioGroup.findViewById(c6_p620_RadioGroup.getCheckedRadioButtonId()));
         c6_p621 = c6_p621_RadioGroup.indexOfChild(c6_p621_RadioGroup.findViewById(c6_p621_RadioGroup.getCheckedRadioButtonId()));
-        c6_p622 = c6_p622_RadioGroup.indexOfChild(c6_p622_RadioGroup.findViewById(c6_p622_RadioGroup.getCheckedRadioButtonId()));
     }
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = data.getModulo6(idEncuestado);
+            if(!(modulo6.getC6_p618().equals("-1") || modulo6.getC6_p618().equals("")))((RadioButton)c6_p618_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p618()))).setChecked(true);
+            if(!(modulo6.getC6_p619_1().equals("-1") || modulo6.getC6_p619_1().equals("")))((RadioButton)c6_p619_1_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_1()))).setChecked(true);
+            if(!(modulo6.getC6_p619_2().equals("-1") || modulo6.getC6_p619_2().equals("")))((RadioButton)c6_p619_2_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_2()))).setChecked(true);
+            if(!(modulo6.getC6_p619_3().equals("-1") || modulo6.getC6_p619_3().equals("")))((RadioButton)c6_p619_3_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_3()))).setChecked(true);
+            if(!(modulo6.getC6_p619_4().equals("-1") || modulo6.getC6_p619_4().equals("")))((RadioButton)c6_p619_4_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_4()))).setChecked(true);
+            if(!(modulo6.getC6_p619_5().equals("-1") || modulo6.getC6_p619_5().equals("")))((RadioButton)c6_p619_5_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_5()))).setChecked(true);
+            if(!(modulo6.getC6_p619_6().equals("-1") || modulo6.getC6_p619_6().equals("")))((RadioButton)c6_p619_6_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_6()))).setChecked(true);
+            if(!(modulo6.getC6_p619_7().equals("-1") || modulo6.getC6_p619_7().equals("")))((RadioButton)c6_p619_7_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_7()))).setChecked(true);
+            if(!(modulo6.getC6_p619_8().equals("-1") || modulo6.getC6_p619_8().equals("")))((RadioButton)c6_p619_8_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_8()))).setChecked(true);
+            if(!(modulo6.getC6_p619_9().equals("-1") || modulo6.getC6_p619_9().equals("")))((RadioButton)c6_p619_9_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p619_9()))).setChecked(true);
+            c6_p619_o_EditText.setText(modulo6.getC6_p619_o());
+            if(!(modulo6.getC6_p620().equals("-1") || modulo6.getC6_p620().equals("")))((RadioButton)c6_p620_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p620()))).setChecked(true);
+            if(!(modulo6.getC6_p621().equals("-1") || modulo6.getC6_p621().equals("")))((RadioButton)c6_p621_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p621()))).setChecked(true);
+        }
+//        inicio();
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
-        if(c6_p619<1 && m6_p619_linearlayout.getVisibility()==View.VISIBLE){
-            mostrarMensaje("PREGUNTA 619: DEBE SELECCIONAR UNA OPCION");
+        llenarVariables();
+        if(c6_p618<0 && m6_p618_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 618: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(m6_p620_linearlayout.getVisibility()==View.VISIBLE) {
-            if(c6_p620_1<1){
-                mostrarMensaje("PREGUNTA 620-1: DEBE SELECCIONAR UNA OPCION");
+        if(m6_p619_linearlayout.getVisibility()==View.VISIBLE) {
+            if(c6_p619_1<0){
+                mostrarMensaje("PREGUNTA 619-1: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_2<1){
-                mostrarMensaje("PREGUNTA 620-2: DEBE SELECCIONAR UNA OPCION");
+            if(c6_p619_2<0){
+                mostrarMensaje("PREGUNTA 619-2: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_3<1){
-                mostrarMensaje("PREGUNTA 620-3: DEBE SELECCIONAR UNA OPCION");
+            if(c6_p619_3<0){
+                mostrarMensaje("PREGUNTA 619-3: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_4<1){
-                mostrarMensaje("PREGUNTA 620-4: DEBE SELECCIONAR UNA OPCION");
+            if(c6_p619_4<0){
+                mostrarMensaje("PREGUNTA 619-4: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_5<1){
-                mostrarMensaje("PREGUNTA 620-5: DEBE SELECCIONAR UNA OPCION");
+            if(c6_p619_5<0){
+                mostrarMensaje("PREGUNTA 619-5: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_6<1){
-                mostrarMensaje("PREGUNTA 620-6: DEBE SELECCIONAR UNA OPCION");
+            if(c6_p619_6<0){
+                mostrarMensaje("PREGUNTA 619-6: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_7<1){
-                mostrarMensaje("PREGUNTA 620-7: DEBE SELECCIONAR UNA OPCION");
+            if(c6_p619_7<0){
+                mostrarMensaje("PREGUNTA 619-7: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_8<1){
-                mostrarMensaje("PREGUNTA 620-8: DEBE SELECCIONAR UNA OPCION");
+            if(c6_p619_8<0){
+                mostrarMensaje("PREGUNTA 619-8: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_9<1){
-                mostrarMensaje("PREGUNTA 620-9: DEBE SELECCIONAR UNA OPCION");
+            if(c6_p619_9<0){
+                mostrarMensaje("PREGUNTA 619-9: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p620_9==1){
-                if(c6_p620_o.trim().length()==0){
-                    mostrarMensaje("PREGUNTA 620 - OPCION 9: DEBE ESPECIFICAR OTRO");
+            if(c6_p619_9==0){
+                if(c6_p619_o.trim().length()==0){
+                    mostrarMensaje("PREGUNTA 619 - OPCION 9: DEBE ESPECIFICAR OTRO");
                     return false;
                 }
             }
         }
-        if(c6_p621<1 && m6_p621_linearlayout.getVisibility()==View.VISIBLE){
-            mostrarMensaje("PREGUNTA 621: DEBE SELECCIONAR UNA OPCION");
+        if(c6_p620<0 && m6_p620_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 620: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c6_p622<1 && m6_p622_linearlayout.getVisibility()==View.VISIBLE){
-            mostrarMensaje("PREGUNTA 622: DEBE SELECCIONAR UNA OPCION");
+        if(c6_p621<0 && m6_p621_linearlayout.getVisibility()==View.VISIBLE){
+            mostrarMensaje("PREGUNTA 621: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
         return true;

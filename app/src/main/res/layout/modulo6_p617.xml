@@ -35,24 +35,25 @@
         android:layout_height="wrap_content"
         android:background="@drawable/marco_subpregunta">
         <Spinner
+            android:id="@+id/mod6_617_edittext_C6_P617_DIST"
             android:layout_width="@dimen/width_spinner_ubigeo"
             android:layout_height="@dimen/altura_spinner"
             android:inputType="text"
             android:layout_margin="@dimen/margen_small"
             android:hint="@string/modulo_5_p507_distrito"/>
         <Spinner
-
+            android:id="@+id/mod6_617_edittext_C6_P617_PROV"
             android:layout_width="@dimen/width_spinner_ubigeo"
             android:layout_height="@dimen/altura_spinner"
             android:layout_margin="@dimen/margen_small"
             android:inputType="text"
             android:hint="@string/modulo_5_p507_provincia"/>
         <Spinner
+            android:id="@+id/mod6_617_edittext_C6_P617_DEP"
             android:layout_width="@dimen/width_spinner_ubigeo"
             android:layout_height="@dimen/altura_spinner"
             android:layout_margin="@dimen/margen_small"
             android:inputType="text"
             android:hint="@string/modulo_5_p507_departamento"/>
-
     </LinearLayout>
 </LinearLayout>

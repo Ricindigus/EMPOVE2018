@@ -933,31 +933,31 @@ public class SQLConstantes {
     public static String modulo6_c6_p617_dist = "c6_p617_dist";
     public static String modulo6_c6_p617_prov = "c6_p617_prov";
     public static String modulo6_c6_p617_dep = "c6_p617_dep";
-    public static String modulo6_c6_p618_1 = "c6_p618_1";
-    public static String modulo6_c6_p618_2 = "c6_p618_2";
-    public static String modulo6_c6_p618_3 = "c6_p618_3";
-    public static String modulo6_c6_p618_4 = "c6_p618_4";
-    public static String modulo6_c6_p618_5 = "c6_p618_5";
-    public static String modulo6_c6_p618_6 = "c6_p618_6";
-    public static String modulo6_c6_p618_o = "c6_p618_o";
-    public static String modulo6_c6_p619 = "c6_p619";
-    public static String modulo6_c6_p620_1 = "c6_p620_1";
-    public static String modulo6_c6_p620_2 = "c6_p620_2";
-    public static String modulo6_c6_p620_3 = "c6_p620_3";
-    public static String modulo6_c6_p620_4 = "c6_p620_4";
-    public static String modulo6_c6_p620_5 = "c6_p620_5";
-    public static String modulo6_c6_p620_6 = "c6_p620_6";
-    public static String modulo6_c6_p620_7 = "c6_p620_7";
-    public static String modulo6_c6_p620_8 = "c6_p620_8";
-    public static String modulo6_c6_p620_9 = "c6_p620_9";
-    public static String modulo6_c6_p620_o = "c6_p620_o";
+    public static String modulo6_c6_p625_1 = "c6_p625_1";
+    public static String modulo6_c6_p625_2 = "c6_p625_2";
+    public static String modulo6_c6_p625_3 = "c6_p625_3";
+    public static String modulo6_c6_p625_4 = "c6_p625_4";
+    public static String modulo6_c6_p625_5 = "c6_p625_5";
+    public static String modulo6_c6_p625_6 = "c6_p625_6";
+    public static String modulo6_c6_p625_o = "c6_p625_o";
+    public static String modulo6_c6_p618 = "c6_p618";
+    public static String modulo6_c6_p619_1 = "c6_p619_1";
+    public static String modulo6_c6_p619_2 = "c6_p619_2";
+    public static String modulo6_c6_p619_3 = "c6_p619_3";
+    public static String modulo6_c6_p619_4 = "c6_p619_4";
+    public static String modulo6_c6_p619_5 = "c6_p619_5";
+    public static String modulo6_c6_p619_6 = "c6_p619_6";
+    public static String modulo6_c6_p619_7 = "c6_p619_7";
+    public static String modulo6_c6_p619_8 = "c6_p619_8";
+    public static String modulo6_c6_p619_9 = "c6_p619_9";
+    public static String modulo6_c6_p619_o = "c6_p619_o";
+    public static String modulo6_c6_p620 = "c6_p620";
     public static String modulo6_c6_p621 = "c6_p621";
     public static String modulo6_c6_p622 = "c6_p622";
+    public static String modulo6_c6_p622_o = "c6_p622_o";
     public static String modulo6_c6_p623 = "c6_p623";
     public static String modulo6_c6_p623_o = "c6_p623_o";
     public static String modulo6_c6_p624 = "c6_p624";
-    public static String modulo6_c6_p624_o = "c6_p624_o";
-    public static String modulo6_c6_p625 = "c6_p625";
     public static String modulo6_c6_p626 = "c6_p626";
     public static String modulo6_c6_p627 = "c6_p627";
     public static String modulo6_c6_p628 = "c6_p628";
@@ -975,15 +975,15 @@ public class SQLConstantes {
     public static String modulo6_c6_p629_4_f = "c6_p629_4_f";
     public static String modulo6_c6_p629_4_m = "c6_p629_4_m";
     public static String modulo6_c6_p630_1 = "c6_p630_1";
-    public static String modulo6_c6_p630_1_med = "c6_p630_1_med";
-    public static String modulo6_c6_p630_1_o = "c6_p630_1_o";
-    public static String modulo6_c6_p630_1_frec = "c6_p630_1_frec";
-    public static String modulo6_c6_p630_1_mont = "c6_p630_1_mont";
+    public static String modulo6_c6_p630_1med = "c6_p630_1med";
+    public static String modulo6_c6_p630_1o = "c6_p630_1o";
+    public static String modulo6_c6_p630_1frec = "c6_p630_1frec";
+    public static String modulo6_c6_p630_1mont = "c6_p630_1mont";
     public static String modulo6_c6_p630_2 = "c6_p630_2";
-    public static String modulo6_c6_p630_2_med = "c6_p630_2_med";
-    public static String modulo6_c6_p630_2_o = "c6_p630_2_o";
-    public static String modulo6_c6_p630_2_frec = "c6_p630_2_frec";
-    public static String modulo6_c6_p630_2_mont = "c6_p630_2_mont";
+    public static String modulo6_c6_p630_2med = "c6_p630_2med";
+    public static String modulo6_c6_p630_2o = "c6_p630_2o";
+    public static String modulo6_c6_p630_2frec = "c6_p630_2frec";
+    public static String modulo6_c6_p630_2mont = "c6_p630_2mont";
     public static String modulo6_obs_cap6 = "obs_cap6";
     public static String modulo6_c6_estado = "c6_estado";
 
@@ -1046,31 +1046,31 @@ public class SQLConstantes {
                     modulo6_c6_p617_dist  +  " TEXT," +
                     modulo6_c6_p617_prov  +  " TEXT," +
                     modulo6_c6_p617_dep  +  " TEXT," +
-                    modulo6_c6_p618_1  +  " TEXT," +
-                    modulo6_c6_p618_2  +  " TEXT," +
-                    modulo6_c6_p618_3  +  " TEXT," +
-                    modulo6_c6_p618_4  +  " TEXT," +
-                    modulo6_c6_p618_5  +  " TEXT," +
-                    modulo6_c6_p618_6  +  " TEXT," +
-                    modulo6_c6_p618_o  +  " TEXT," +
-                    modulo6_c6_p619  +  " TEXT," +
-                    modulo6_c6_p620_1  +  " TEXT," +
-                    modulo6_c6_p620_2  +  " TEXT," +
-                    modulo6_c6_p620_3  +  " TEXT," +
-                    modulo6_c6_p620_4  +  " TEXT," +
-                    modulo6_c6_p620_5  +  " TEXT," +
-                    modulo6_c6_p620_6  +  " TEXT," +
-                    modulo6_c6_p620_7  +  " TEXT," +
-                    modulo6_c6_p620_8  +  " TEXT," +
-                    modulo6_c6_p620_9  +  " TEXT," +
-                    modulo6_c6_p620_o  +  " TEXT," +
+                    modulo6_c6_p625_1  +  " TEXT," +
+                    modulo6_c6_p625_2  +  " TEXT," +
+                    modulo6_c6_p625_3  +  " TEXT," +
+                    modulo6_c6_p625_4  +  " TEXT," +
+                    modulo6_c6_p625_5  +  " TEXT," +
+                    modulo6_c6_p625_6  +  " TEXT," +
+                    modulo6_c6_p625_o  +  " TEXT," +
+                    modulo6_c6_p618  +  " TEXT," +
+                    modulo6_c6_p619_1  +  " TEXT," +
+                    modulo6_c6_p619_2  +  " TEXT," +
+                    modulo6_c6_p619_3  +  " TEXT," +
+                    modulo6_c6_p619_4  +  " TEXT," +
+                    modulo6_c6_p619_5  +  " TEXT," +
+                    modulo6_c6_p619_6  +  " TEXT," +
+                    modulo6_c6_p619_7  +  " TEXT," +
+                    modulo6_c6_p619_8  +  " TEXT," +
+                    modulo6_c6_p619_9  +  " TEXT," +
+                    modulo6_c6_p619_o  +  " TEXT," +
+                    modulo6_c6_p620  +  " TEXT," +
                     modulo6_c6_p621  +  " TEXT," +
                     modulo6_c6_p622  +  " TEXT," +
+                    modulo6_c6_p622_o  +  " TEXT," +
                     modulo6_c6_p623  +  " TEXT," +
                     modulo6_c6_p623_o  +  " TEXT," +
                     modulo6_c6_p624  +  " TEXT," +
-                    modulo6_c6_p624_o  +  " TEXT," +
-                    modulo6_c6_p625  +  " TEXT," +
                     modulo6_c6_p626  +  " TEXT," +
                     modulo6_c6_p627  +  " TEXT," +
                     modulo6_c6_p628  +  " TEXT," +
@@ -1088,15 +1088,15 @@ public class SQLConstantes {
                     modulo6_c6_p629_4_f  +  " TEXT," +
                     modulo6_c6_p629_4_m  +  " TEXT," +
                     modulo6_c6_p630_1  +  " TEXT," +
-                    modulo6_c6_p630_1_med  +  " TEXT," +
-                    modulo6_c6_p630_1_o  +  " TEXT," +
-                    modulo6_c6_p630_1_frec  +  " TEXT," +
-                    modulo6_c6_p630_1_mont  +  " TEXT," +
+                    modulo6_c6_p630_1med  +  " TEXT," +
+                    modulo6_c6_p630_1o  +  " TEXT," +
+                    modulo6_c6_p630_1frec  +  " TEXT," +
+                    modulo6_c6_p630_1mont  +  " TEXT," +
                     modulo6_c6_p630_2  +  " TEXT," +
-                    modulo6_c6_p630_2_med  +  " TEXT," +
-                    modulo6_c6_p630_2_o  +  " TEXT," +
-                    modulo6_c6_p630_2_frec  +  " TEXT," +
-                    modulo6_c6_p630_2_mont  +  " TEXT," +
+                    modulo6_c6_p630_2med  +  " TEXT," +
+                    modulo6_c6_p630_2o  +  " TEXT," +
+                    modulo6_c6_p630_2frec  +  " TEXT," +
+                    modulo6_c6_p630_2mont  +  " TEXT," +
                     modulo6_obs_cap6  +  " TEXT," +
                     modulo6_c6_estado  +  " TEXT" + ");"
             ;

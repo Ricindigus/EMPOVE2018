@@ -16,6 +16,7 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo1;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo4;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
@@ -645,8 +646,8 @@ public class Data {
 
 
     /**
-    * retornar pojo modulo1
-    * */
+     * retornar pojo modulo1
+     * */
 
     public Modulo1 getModulo1(String idEncuestado){
         Modulo1 modulo1 = null;
@@ -964,6 +965,132 @@ public class Data {
         return modulo4;
     }
 
+    public Modulo6 getModulo6(String idEncuestado){
+        Modulo6 modulo6 = null;
+        String[] whereArgs = new String[]{idEncuestado};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo6,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                modulo6 = new Modulo6();
+                modulo6.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id)));
+                modulo6.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idInformante)));
+                modulo6.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idHogar)));
+                modulo6.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idVivienda)));
+                modulo6.setC6_p601(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p601)));
+                modulo6.setC6_p602(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p602)));
+                modulo6.setC6_p603(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p603)));
+                modulo6.setC6_p604_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_1)));
+                modulo6.setC6_p604_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_2)));
+                modulo6.setC6_p604_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_3)));
+                modulo6.setC6_p604_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_4)));
+                modulo6.setC6_p604_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_5)));
+                modulo6.setC6_p604_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_6)));
+                modulo6.setC6_p604_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_7)));
+                modulo6.setC6_p604_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_8)));
+                modulo6.setC6_p604_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_9)));
+                modulo6.setC6_p604_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_10)));
+                modulo6.setC6_p604_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_11)));
+                modulo6.setC6_p604_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_o)));
+                modulo6.setC6_p605(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p605)));
+                modulo6.setC6_p606(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p606)));
+                modulo6.setC6_p607(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p607)));
+                modulo6.setC6_p608(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p608)));
+                modulo6.setC6_p608_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p608_o)));
+                modulo6.setC6_p609(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p609)));
+                modulo6.setC6_p610_pd(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pd)));
+                modulo6.setC6_p610_pl(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pl)));
+                modulo6.setC6_p610_pm(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pm)));
+                modulo6.setC6_p610_pmi(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pmi)));
+                modulo6.setC6_p610_pj(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pj)));
+                modulo6.setC6_p610_pv(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pv)));
+                modulo6.setC6_p610_ps(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_ps)));
+                modulo6.setC6_p610_pt(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pt)));
+                modulo6.setC6_p610_sd(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sd)));
+                modulo6.setC6_p610_sl(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sl)));
+                modulo6.setC6_p610_sm(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sm)));
+                modulo6.setC6_p610_smi(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_smi)));
+                modulo6.setC6_p610_sj(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sj)));
+                modulo6.setC6_p610_sv(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sv)));
+                modulo6.setC6_p610_ss(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_ss)));
+                modulo6.setC6_p610_st(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_st)));
+                modulo6.setC6_p610_t(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_t)));
+                modulo6.setC6_p611(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p611)));
+                modulo6.setC6_p612(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p612)));
+                modulo6.setC6_p612_nro(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p612_nro)));
+                modulo6.setC6_p613(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p613)));
+                modulo6.setC6_p614_mon(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p614_mon)));
+                modulo6.setC6_p614_esp(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p614_esp)));
+                modulo6.setC6_p615_mon(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p615_mon)));
+                modulo6.setC6_p615_esp(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p615_esp)));
+                modulo6.setC6_p616_mon(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p616_mon)));
+                modulo6.setC6_p616_esp(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p616_esp)));
+                modulo6.setC6_p616_nas(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p616_nas)));
+                modulo6.setC6_p617(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p617)));
+                modulo6.setC6_p617_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p617_dist)));
+                modulo6.setC6_p617_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p617_prov)));
+                modulo6.setC6_p617_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p617_dep)));
+                modulo6.setC6_p625_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_1)));
+                modulo6.setC6_p625_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_2)));
+                modulo6.setC6_p625_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_3)));
+                modulo6.setC6_p625_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_4)));
+                modulo6.setC6_p625_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_5)));
+                modulo6.setC6_p625_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_6)));
+                modulo6.setC6_p625_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_o)));
+                modulo6.setC6_p618(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p618)));
+                modulo6.setC6_p619_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_1)));
+                modulo6.setC6_p619_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_2)));
+                modulo6.setC6_p619_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_3)));
+                modulo6.setC6_p619_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_4)));
+                modulo6.setC6_p619_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_5)));
+                modulo6.setC6_p619_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_6)));
+                modulo6.setC6_p619_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_7)));
+                modulo6.setC6_p619_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_8)));
+                modulo6.setC6_p619_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_9)));
+                modulo6.setC6_p619_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_o)));
+                modulo6.setC6_p620(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p620)));
+                modulo6.setC6_p621(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p621)));
+                modulo6.setC6_p622(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p622)));
+                modulo6.setC6_p622_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p622_o)));
+                modulo6.setC6_p623(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p623)));
+                modulo6.setC6_p623_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p623_o)));
+                modulo6.setC6_p624(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p624)));
+                modulo6.setC6_p626(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p626)));
+                modulo6.setC6_p627(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p627)));
+                modulo6.setC6_p628(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p628)));
+                modulo6.setC6_p629_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_1)));
+                modulo6.setC6_p629_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_2)));
+                modulo6.setC6_p629_1_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_1_f)));
+                modulo6.setC6_p629_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_4)));
+                modulo6.setC6_p629_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_o)));
+                modulo6.setC6_p629_1_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_1_m)));
+                modulo6.setC6_p629_2_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_2_f)));
+                modulo6.setC6_p629_2_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_2_m)));
+                modulo6.setC6_p629_2_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_2_m)));
+                modulo6.setC6_p629_3_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_3_m)));
+                modulo6.setC6_p629_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_3)));
+                modulo6.setC6_p629_4_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_4_f)));
+                modulo6.setC6_p629_4_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_4_m)));
+                modulo6.setC6_p630_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1)));
+                modulo6.setC6_p630_1med(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1med)));
+                modulo6.setC6_p630_1o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1o)));
+                modulo6.setC6_p630_1frec(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1frec)));
+                modulo6.setC6_p630_1mont(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1mont)));
+                modulo6.setC6_p630_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2)));
+                modulo6.setC6_p630_2med(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2med)));
+                modulo6.setC6_p630_2o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2o)));
+                modulo6.setC6_p630_2frec(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2frec)));
+                modulo6.setC6_p630_2mont(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2mont)));
+                modulo6.setObs_cap6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_obs_cap6)));
+                modulo6.setC6_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_estado)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo6;
+    }
 
     public Modulo7 getModulo7(String idPersona) {
         Modulo7 modulo7 = null;

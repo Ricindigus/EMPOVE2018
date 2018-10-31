@@ -7,6 +7,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
@@ -17,18 +18,22 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP601P604 extends FragmentPagina {
-    String idVivienda, idHogar, idPersona, idInformante;
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Context context;
 
     RadioGroup c6_p601_RadioGroup, c6_p602_RadioGroup, c6_p603_RadioGroup,
@@ -54,13 +59,20 @@ public class FragmentP601P604 extends FragmentPagina {
     private int c6_p604_11;
     private String c6_p604_o;
 
+    private int edad;
+
     @SuppressLint("ValidFragment")
-    public FragmentP601P604(String idVivienda, String idHogar, String idPersona, String idInformante, Context context) {
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idPersona = idPersona;
-        this.idInformante = idInformante;
+    public FragmentP601P604(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP601P604() {
@@ -101,6 +113,62 @@ public class FragmentP601P604 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        c6_p601_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                int pos = radioGroup.indexOfChild(c6_p601_RadioGroup.findViewById(c6_p601_RadioGroup.getCheckedRadioButtonId()));
+                if(pos==0){
+                    m6_p602_linearlayout.setVisibility(View.GONE); limpiar_p602();
+                    m6_p603_linearlayout.setVisibility(View.GONE); limpiar_p603();
+                    m6_p604_linearlayout.setVisibility(View.GONE); limpiar_p604();
+                }else{
+                    m6_p602_linearlayout.setVisibility(View.VISIBLE);
+                    m6_p603_linearlayout.setVisibility(View.VISIBLE);
+                    m6_p604_linearlayout.setVisibility(View.VISIBLE);
+                    c6_p602_RadioGroup.requestFocus();
+                }
+            }
+        });
+        c6_p602_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                int pos = radioGroup.indexOfChild(c6_p602_RadioGroup.findViewById(c6_p602_RadioGroup.getCheckedRadioButtonId()));
+                if(pos==0){
+                    m6_p603_linearlayout.setVisibility(View.GONE); limpiar_p603();
+                    m6_p604_linearlayout.setVisibility(View.GONE); limpiar_p604();
+                }else{
+                    m6_p603_linearlayout.setVisibility(View.VISIBLE);
+                    m6_p604_linearlayout.setVisibility(View.VISIBLE);
+                    c6_p603_RadioGroup.requestFocus();
+                }
+            }
+        });
+        c6_p603_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                int pos = radioGroup.indexOfChild(c6_p603_RadioGroup.findViewById(c6_p603_RadioGroup.getCheckedRadioButtonId()));
+                if(pos==0){
+                    m6_p604_linearlayout.setVisibility(View.GONE); limpiar_p604();
+                }else{
+                    m6_p604_linearlayout.setVisibility(View.VISIBLE);
+                    c6_p604_1_RadioGroup.requestFocus();
+                }
+            }
+        });
+        c6_p604_11_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                int pos = radioGroup.indexOfChild(c6_p604_11_RadioGroup.findViewById(c6_p604_11_RadioGroup.getCheckedRadioButtonId()));
+                if(pos==0){
+                    c6_p604_o_EditText.setEnabled(true);
+                    c6_p604_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                }else{
+                    c6_p604_o_EditText.setText("");
+                    c6_p604_o_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
+                    c6_p604_o_EditText.setEnabled(false);
+                }
+            }
+        });
         c6_p604_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
         c6_p604_o_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -137,15 +205,15 @@ public class FragmentP601P604 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo6_c6_p604_11,c6_p604_11+"");
         contentValues.put(SQLConstantes.modulo6_c6_p604_o,c6_p604_o);
 
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
-        }else{
-            contentValues.put(SQLConstantes.modulo6_idVivienda,idVivienda+"");
-            contentValues.put(SQLConstantes.modulo6_idHogar,idHogar+"");
-            contentValues.put(SQLConstantes.modulo6_id,idPersona+"");
-            contentValues.put(SQLConstantes.modulo6_idInformante,idInformante+"");
-            data.insertarElemento(getNombreTabla(),contentValues);
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = new Modulo6();
+            modulo6.setIdInformante(idInformante);
+            modulo6.set_id(idEncuestado);
+            modulo6.setIdVivienda(idVivienda);
+            modulo6.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
+        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
 
@@ -170,69 +238,92 @@ public class FragmentP601P604 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo6 modulo6 = data.getModulo6(idEncuestado);
+            if(!(modulo6.getC6_p601().equals("-1") || modulo6.getC6_p601().equals("")))((RadioButton)c6_p601_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p601()))).setChecked(true);
+            if(!(modulo6.getC6_p602().equals("-1") || modulo6.getC6_p602().equals("")))((RadioButton)c6_p602_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p602()))).setChecked(true);
+            if(!(modulo6.getC6_p603().equals("-1") || modulo6.getC6_p603().equals("")))((RadioButton)c6_p603_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p603()))).setChecked(true);
+            if(!(modulo6.getC6_p604_1().equals("-1") || modulo6.getC6_p604_1().equals("")))((RadioButton)c6_p604_1_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_1()))).setChecked(true);
+            if(!(modulo6.getC6_p604_2().equals("-1") || modulo6.getC6_p604_2().equals("")))((RadioButton)c6_p604_2_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_2()))).setChecked(true);
+            if(!(modulo6.getC6_p604_3().equals("-1") || modulo6.getC6_p604_3().equals("")))((RadioButton)c6_p604_3_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_3()))).setChecked(true);
+            if(!(modulo6.getC6_p604_4().equals("-1") || modulo6.getC6_p604_4().equals("")))((RadioButton)c6_p604_4_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_4()))).setChecked(true);
+            if(!(modulo6.getC6_p604_5().equals("-1") || modulo6.getC6_p604_5().equals("")))((RadioButton)c6_p604_5_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_5()))).setChecked(true);
+            if(!(modulo6.getC6_p604_6().equals("-1") || modulo6.getC6_p604_6().equals("")))((RadioButton)c6_p604_6_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_6()))).setChecked(true);
+            if(!(modulo6.getC6_p604_7().equals("-1") || modulo6.getC6_p604_7().equals("")))((RadioButton)c6_p604_7_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_7()))).setChecked(true);
+            if(!(modulo6.getC6_p604_8().equals("-1") || modulo6.getC6_p604_8().equals("")))((RadioButton)c6_p604_8_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_8()))).setChecked(true);
+            if(!(modulo6.getC6_p604_9().equals("-1") || modulo6.getC6_p604_9().equals("")))((RadioButton)c6_p604_9_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_9()))).setChecked(true);
+            if(!(modulo6.getC6_p604_10().equals("-1") || modulo6.getC6_p604_10().equals("")))((RadioButton)c6_p604_10_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_10()))).setChecked(true);
+            if(!(modulo6.getC6_p604_11().equals("-1") || modulo6.getC6_p604_11().equals("")))((RadioButton)c6_p604_11_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p604_11()))).setChecked(true);
+            c6_p604_o_EditText.setText(modulo6.getC6_p604_o());
 
+        }
+        inicio();
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
-        if(c6_p601<1 && m6_p601_linearlayout.getVisibility()==View.VISIBLE){
+        llenarVariables();
+        if(c6_p601<0 && m6_p601_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 601: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c6_p602<1 && m6_p601_linearlayout.getVisibility()==View.VISIBLE){
+        if(c6_p602<0 && m6_p602_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 602: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
-        if(c6_p603<1 && m6_p601_linearlayout.getVisibility()==View.VISIBLE){
+        if(c6_p603<0 && m6_p603_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 603: DEBE SELECCIONAR UNA OPCION");
             return false;
         }
         if(m6_p604_linearlayout.getVisibility()==View.VISIBLE) {
-            if(c6_p604_1<1){
+            if(c6_p604_1<0){
                 mostrarMensaje("PREGUNTA 604-1: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_2<1){
+            if(c6_p604_2<0){
                 mostrarMensaje("PREGUNTA 604-2: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_3<1){
+            if(c6_p604_3<0){
                 mostrarMensaje("PREGUNTA 604-3: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_4<1){
+            if(c6_p604_4<0){
                 mostrarMensaje("PREGUNTA 604-4: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_5<1){
+            if(c6_p604_5<0){
                 mostrarMensaje("PREGUNTA 604-5: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_6<1){
+            if(c6_p604_6<0){
                 mostrarMensaje("PREGUNTA 604-6: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_7<1){
+            if(c6_p604_7<0){
                 mostrarMensaje("PREGUNTA 604-7: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_8<1){
+            if(c6_p604_8<0){
                 mostrarMensaje("PREGUNTA 604-8: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_9<1){
+            if(c6_p604_9<0){
                 mostrarMensaje("PREGUNTA 604-9: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_10<1){
+            if(c6_p604_10<0){
                 mostrarMensaje("PREGUNTA 604-10: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_11<1){
+            if(c6_p604_11<0){
                 mostrarMensaje("PREGUNTA 604-11: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p604_11==1){
+            if(c6_p604_11==0){
                 if(c6_p604_o.trim().length()==0){
                     mostrarMensaje("PREGUNTA 604 - OPCION 11: DEBE ESPECIFICAR OTRO");
                     return false;
@@ -267,5 +358,42 @@ public class FragmentP601P604 extends FragmentPagina {
     public void mostrarTeclado(){
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    public void limpiar_p602(){
+        c6_p602_RadioGroup.clearCheck();
+    }
+
+    public void limpiar_p603(){
+        c6_p603_RadioGroup.clearCheck();
+    }
+
+    public void limpiar_p604(){
+        c6_p604_1_RadioGroup.clearCheck(); c6_p604_2_RadioGroup.clearCheck(); c6_p604_3_RadioGroup.clearCheck();
+        c6_p604_4_RadioGroup.clearCheck(); c6_p604_5_RadioGroup.clearCheck(); c6_p604_6_RadioGroup.clearCheck();
+        c6_p604_7_RadioGroup.clearCheck(); c6_p604_8_RadioGroup.clearCheck(); c6_p604_9_RadioGroup.clearCheck();
+        c6_p604_10_RadioGroup.clearCheck(); c6_p604_11_RadioGroup.clearCheck();
+        c6_p604_o_EditText.setText("");
+    }
+
+    public void inicio(){
+        int pos_601 = c6_p601_RadioGroup.indexOfChild(c6_p601_RadioGroup.findViewById(c6_p601_RadioGroup.getCheckedRadioButtonId()));
+        int pos_602 = c6_p602_RadioGroup.indexOfChild(c6_p602_RadioGroup.findViewById(c6_p602_RadioGroup.getCheckedRadioButtonId()));
+        int pos_603 = c6_p603_RadioGroup.indexOfChild(c6_p603_RadioGroup.findViewById(c6_p603_RadioGroup.getCheckedRadioButtonId()));
+
+        if(pos_601==0){
+            limpiar_p602(); limpiar_p603(); limpiar_p604();
+            m6_p602_linearlayout.setVisibility(View.GONE); m6_p603_linearlayout.setVisibility(View.GONE);
+            m6_p604_linearlayout.setVisibility(View.GONE);
+        }else{
+            if(pos_602==0){
+                limpiar_p603(); limpiar_p604();
+                m6_p603_linearlayout.setVisibility(View.GONE); m6_p604_linearlayout.setVisibility(View.GONE);
+            }else{
+                if(pos_603==0){
+                    limpiar_p604(); m6_p604_linearlayout.setVisibility(View.GONE);
+                }
+            }
+        }
     }
 }
