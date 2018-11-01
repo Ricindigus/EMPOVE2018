@@ -38,6 +38,7 @@
         </RadioGroup>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/layout_m6_630_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -124,6 +125,7 @@
         </RadioGroup>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/layout_m6_630_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

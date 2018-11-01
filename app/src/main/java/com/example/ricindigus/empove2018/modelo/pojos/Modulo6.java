@@ -1116,13 +1116,39 @@ public class Modulo6 {
             this.c6_p604_10==null || this.c6_p604_11==null){
             return true;
         }else{
-            if(this.c6_p604_1.equals("0") || this.c6_p604_2.equals("0") || this.c6_p604_3.equals("0") ||
-                this.c6_p604_4.equals("0") || this.c6_p604_5.equals("0") || this.c6_p604_6.equals("0") ||
-                this.c6_p604_7.equals("0") || this.c6_p604_8.equals("0") || this.c6_p604_9.equals("0") ||
-                this.c6_p604_10.equals("0") || this.c6_p604_11.equals("0")){
-                return true;
-            }else{
+            if(this.c6_p604_1.equals("1") || this.c6_p604_2.equals("1") || this.c6_p604_3.equals("1") ||
+                this.c6_p604_4.equals("1") || this.c6_p604_5.equals("1") || this.c6_p604_6.equals("1") ||
+                this.c6_p604_7.equals("1") || this.c6_p604_8.equals("1") || this.c6_p604_9.equals("1") ||
+                this.c6_p604_10.equals("1") || this.c6_p604_11.equals("1")){
                 return false;
+            }else{
+                return true;
+            }
+        }
+    }
+
+    public boolean pasar_a_p623(){
+        if(this.c6_p618==null){
+            return false;
+        }else if(this.c6_p618.equals("0")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean pasar_a_p625(){
+        if(this.c6_p620==null){
+            return false;
+        }else{
+            if(this.c6_p620.equals("1")){
+                return  true;
+            }else{
+                if(this.c6_p621==null){
+                    return false;
+                }else if(this.c6_p621.equals("1")){
+                    return  true;
+                }else return false;
             }
         }
     }

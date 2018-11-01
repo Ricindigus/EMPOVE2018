@@ -269,9 +269,16 @@ public class FragmentP605P608 extends FragmentPagina {
     }
 
     public void inicio(){
-        if(c6_604){
-            m6_p605_linearlayout.setVisibility(View.VISIBLE); m6_p606_linearlayout.setVisibility(View.VISIBLE);
-            m6_p607_linearlayout.setVisibility(View.VISIBLE); m6_p608_linearlayout.setVisibility(View.VISIBLE);
+        if(edad>=5){
+            if(c6_604){
+                m6_p605_linearlayout.setVisibility(View.VISIBLE); m6_p606_linearlayout.setVisibility(View.VISIBLE);
+                m6_p607_linearlayout.setVisibility(View.VISIBLE); m6_p608_linearlayout.setVisibility(View.VISIBLE);
+            }else{
+                c6_p605_EditText.setText(""); c6_p606_EditText.setText(""); c6_p607_EditText.setText("");
+                c6_p608_RadioGroup.clearCheck(); c6_p608_o_EditText.setText("");
+                m6_p605_linearlayout.setVisibility(View.GONE); m6_p606_linearlayout.setVisibility(View.GONE);
+                m6_p607_linearlayout.setVisibility(View.GONE); m6_p608_linearlayout.setVisibility(View.GONE);
+            }
         }else{
             c6_p605_EditText.setText(""); c6_p606_EditText.setText(""); c6_p607_EditText.setText("");
             c6_p608_RadioGroup.clearCheck(); c6_p608_o_EditText.setText("");

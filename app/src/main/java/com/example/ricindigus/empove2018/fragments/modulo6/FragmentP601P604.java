@@ -256,6 +256,15 @@ public class FragmentP601P604 extends FragmentPagina {
             data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+        if(edad<5){
+            data.eliminarDato(getNombreTabla(),idEncuestado);
+            Modulo6 modulo6 = new Modulo6();
+            modulo6.setIdInformante(idInformante);
+            modulo6.set_id(idEncuestado);
+            modulo6.setIdVivienda(idVivienda);
+            modulo6.setIdHogar(idHogar);
+            data.insertarElemento(getNombreTabla(),modulo6.toValues());
+        }
         data.close();
     }
 
@@ -402,6 +411,10 @@ public class FragmentP601P604 extends FragmentPagina {
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 
+    public void limpiar_p601(){
+        c6_p601_RadioGroup.clearCheck();
+    }
+
     public void limpiar_p602(){
         c6_p602_RadioGroup.clearCheck();
     }
@@ -423,19 +436,27 @@ public class FragmentP601P604 extends FragmentPagina {
         int pos_602 = c6_p602_RadioGroup.indexOfChild(c6_p602_RadioGroup.findViewById(c6_p602_RadioGroup.getCheckedRadioButtonId()));
         int pos_603 = c6_p603_RadioGroup.indexOfChild(c6_p603_RadioGroup.findViewById(c6_p603_RadioGroup.getCheckedRadioButtonId()));
 
-        if(pos_601==0){
-            limpiar_p602(); limpiar_p603(); limpiar_p604();
-            m6_p602_linearlayout.setVisibility(View.GONE); m6_p603_linearlayout.setVisibility(View.GONE);
-            m6_p604_linearlayout.setVisibility(View.GONE);
-        }else{
-            if(pos_602==0){
-                limpiar_p603(); limpiar_p604();
-                m6_p603_linearlayout.setVisibility(View.GONE); m6_p604_linearlayout.setVisibility(View.GONE);
+        if(edad>=5){
+            m6_p601_linearlayout.setVisibility(View.VISIBLE); m6_p602_linearlayout.setVisibility(View.VISIBLE);
+            m6_p603_linearlayout.setVisibility(View.VISIBLE); m6_p604_linearlayout.setVisibility(View.VISIBLE);
+            if(pos_601==0){
+                limpiar_p602(); limpiar_p603(); limpiar_p604();
+                m6_p602_linearlayout.setVisibility(View.GONE); m6_p603_linearlayout.setVisibility(View.GONE);
+                m6_p604_linearlayout.setVisibility(View.GONE);
             }else{
-                if(pos_603==0){
-                    limpiar_p604(); m6_p604_linearlayout.setVisibility(View.GONE);
+                if(pos_602==0){
+                    limpiar_p603(); limpiar_p604();
+                    m6_p603_linearlayout.setVisibility(View.GONE); m6_p604_linearlayout.setVisibility(View.GONE);
+                }else{
+                    if(pos_603==0){
+                        limpiar_p604(); m6_p604_linearlayout.setVisibility(View.GONE);
+                    }
                 }
             }
+        }else{
+            limpiar_p601(); limpiar_p602(); limpiar_p603(); limpiar_p604();
+            m6_p601_linearlayout.setVisibility(View.GONE); m6_p602_linearlayout.setVisibility(View.GONE);
+            m6_p603_linearlayout.setVisibility(View.GONE); m6_p604_linearlayout.setVisibility(View.GONE);
         }
     }
 }

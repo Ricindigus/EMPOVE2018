@@ -1569,6 +1569,7 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_HOGAR_ID = "id_hogar=?";
     public static final String WHERE_CLAUSE_USUARIO_NOMBRE = "nombre=?";
 
+    public static final String WHERE_CLAUSE_EXISTE_MENOR = "id_hogar=? and c2_p205_a<18";
 
 
 

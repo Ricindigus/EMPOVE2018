@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +22,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.text.TextWatcher;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
@@ -48,6 +51,7 @@ public class FragmentP609P612 extends FragmentPagina {
     LinearLayout m6_p609_linearlayout, m6_p610_linearlayout, m6_p611_linearlayout, m6_p612_linearlayout;
 
     private boolean c6_604=true;
+    private String c6_p608;
     private int c6_p609;
     private String c6_p610_pd;
     private String c6_p610_pl;
@@ -69,6 +73,24 @@ public class FragmentP609P612 extends FragmentPagina {
     private String c6_p611;
     private int c6_p612;
     private String c6_p612_nro;
+
+    private int p610_pd=0;
+    private int p610_pl=0;
+    private int p610_pm=0;
+    private int p610_pmi=0;
+    private int p610_pj=0;
+    private int p610_pv=0;
+    private int p610_ps=0;
+    private int p610_pt=0;
+    private int p610_sd=0;
+    private int p610_sl=0;
+    private int p610_sm=0;
+    private int p610_smi=0;
+    private int p610_sj=0;
+    private int p610_sv=0;
+    private int p610_ss=0;
+    private int p610_st=0;
+    private int p610_t=0;
 
     private int edad;
 
@@ -317,6 +339,230 @@ public class FragmentP609P612 extends FragmentPagina {
             }
         });
 
+        c6_p610_pd_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_pd = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_pl_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_pl = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_pm_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_pm = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_pmi_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_pmi = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_pj_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_pj = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_pv_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_pv = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_ps_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_ps = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_sd_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_sd = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_sl_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_sl = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_sm_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_sm = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_smi_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_smi = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_sj_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_sj = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_sv_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_sv = despues;
+                p610_total();
+            }
+        });
+
+        c6_p610_ss_EditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int despues = 0;
+                if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                p610_ss = despues;
+                p610_total();
+            }
+        });
+
         c6_p611_EditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -490,6 +736,8 @@ public class FragmentP609P612 extends FragmentPagina {
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo6 modulo6 = data.getModulo6(idEncuestado);
             c6_604 = modulo6.getC6_p604_trabajo();
+            c6_p608 = modulo6.getC6_p608();
+            if(c6_p608==null) c6_p608 = "";
             if(!(modulo6.getC6_p609().equals("-1") || modulo6.getC6_p609().equals("")))((RadioButton)c6_p609_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p609()))).setChecked(true);
             c6_p610_pd_EditText.setText(modulo6.getC6_p610_pd());
             c6_p610_pl_EditText.setText(modulo6.getC6_p610_pl());
@@ -588,7 +836,7 @@ public class FragmentP609P612 extends FragmentPagina {
                 mostrarMensaje("PREGUNTA 612: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c6_p612==1){
+            if(c6_p612==0){
                 if(c6_p612_nro.trim().length()==0){
                     mostrarMensaje("PREGUNTA 612 - OPCION 1: NRO DE PERSONAS");
                     return false;
@@ -625,10 +873,44 @@ public class FragmentP609P612 extends FragmentPagina {
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 
+    public void p610_total(){
+        p610_pt = p610_pd + p610_pl + p610_pm + p610_pmi + p610_pj + p610_pv + p610_ps;
+        p610_st = p610_sd + p610_sl + p610_sm + p610_smi + p610_sj + p610_sv + p610_ss;
+        p610_t = p610_pt + p610_st;
+        c6_p610_t_EditText.setText(p610_t+"");
+    }
+
     public void inicio(){
-        if(c6_604){
-            m6_p609_linearlayout.setVisibility(View.VISIBLE); m6_p610_linearlayout.setVisibility(View.VISIBLE);
-            m6_p611_linearlayout.setVisibility(View.VISIBLE); m6_p612_linearlayout.setVisibility(View.VISIBLE);
+        if(edad>=5){
+            if(c6_604){
+                if(c6_p608.equals("0") || c6_p608.equals("1") || c6_p608.equals("4")){
+                    c6_p609_RadioGroup.clearCheck(); m6_p609_linearlayout.setVisibility(View.GONE);
+                }else{m6_p609_linearlayout.setVisibility(View.VISIBLE); }
+                m6_p610_linearlayout.setVisibility(View.VISIBLE);
+                m6_p611_linearlayout.setVisibility(View.VISIBLE); m6_p612_linearlayout.setVisibility(View.VISIBLE);
+            }else{
+                c6_p609_RadioGroup.clearCheck();
+                c6_p610_pd_EditText.setText("");
+                c6_p610_pl_EditText.setText("");
+                c6_p610_pm_EditText.setText("");
+                c6_p610_pmi_EditText.setText("");
+                c6_p610_pj_EditText.setText("");
+                c6_p610_pv_EditText.setText("");
+                c6_p610_ps_EditText.setText("");
+                c6_p610_sd_EditText.setText("");
+                c6_p610_sl_EditText.setText("");
+                c6_p610_sm_EditText.setText("");
+                c6_p610_smi_EditText.setText("");
+                c6_p610_sj_EditText.setText("");
+                c6_p610_sv_EditText.setText("");
+                c6_p610_ss_EditText.setText("");
+                c6_p610_t_EditText.setText("");
+                c6_p611_EditText.setText("");
+                c6_p612_RadioGroup.clearCheck();
+                c6_p612_nro_EditText.setText("");
+                m6_p609_linearlayout.setVisibility(View.GONE); m6_p610_linearlayout.setVisibility(View.GONE);
+                m6_p611_linearlayout.setVisibility(View.GONE); m6_p612_linearlayout.setVisibility(View.GONE);
+            }
         }else{
             c6_p609_RadioGroup.clearCheck();
             c6_p610_pd_EditText.setText("");

@@ -1223,6 +1223,21 @@ public class Data {
         return modulo6;
     }
 
+    public boolean menor_edad_hogar(String idHogar){
+        boolean existe=false;
+        String[] whereArgs = new String[]{idHogar};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaresidentes,null, SQLConstantes.WHERE_CLAUSE_EXISTE_MENOR,whereArgs,null,null,null);
+            if(cursor.getCount() >= 1){
+                existe = true;
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return existe;
+    }
+
     public Modulo7 getModulo7(String idPersona) {
         Modulo7 modulo7 = null;
         String[] whereArgs = new String[]{idPersona};
