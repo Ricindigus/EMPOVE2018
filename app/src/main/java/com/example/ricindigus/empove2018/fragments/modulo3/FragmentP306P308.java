@@ -69,6 +69,9 @@ public class FragmentP306P308 extends FragmentPagina {
     String c3_p307_a;
     String c3_p308_e;
     String c3_p308_m;
+    int c3_p308_e_seleccion;
+    int c3_p308_m_seleccion;
+
 
     public FragmentP306P308() {
         // Required empty public constructor
@@ -178,8 +181,10 @@ public class FragmentP306P308 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p307_d,c3_p307_d);
         contentValues.put(SQLConstantes.modulo3_c3_p307_m,c3_p307_m);
         contentValues.put(SQLConstantes.modulo3_c3_p307_a,c3_p307_a);
-        contentValues.put(SQLConstantes.modulo3_c3_p308_e,data.getCodEstado(c3_p308_e+""));
-        contentValues.put(SQLConstantes.modulo3_c3_p308_m,data.getCodMunicipio(c3_p308_m+"",data.getCodEstado(c3_p308_e+"")));
+        contentValues.put(SQLConstantes.modulo3_c3_p308_e,c3_p308_e);
+        contentValues.put(SQLConstantes.modulo3_c3_p308_m,c3_p308_m);
+        contentValues.put(SQLConstantes.modulo3_c3_p308_e_seleccion,c3_p308_e_seleccion);
+        contentValues.put(SQLConstantes.modulo3_c3_p308_m_seleccion,c3_p308_m_seleccion);
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
@@ -194,6 +199,9 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p307_a  = c3_p307_TextViewAnio.getText().toString();
         c3_p308_e  = getCodigoEstMun(c3_p308_estado_Spinner.getSelectedItem().toString());
         c3_p308_m  = getCodigoEstMun(c3_p308_municipio_Spinner.getSelectedItem().toString());
+        c3_p308_e_seleccion = c3_p308_estado_Spinner.getSelectedItemPosition();
+        c3_p308_m_seleccion = c3_p308_municipio_Spinner.getSelectedItemPosition();
+
     }
 
     public String getCodigoEstMun(String item){
@@ -217,6 +225,10 @@ public class FragmentP306P308 extends FragmentPagina {
             c3_p307_TextViewMes.setText(modulo3.getC3_p307_m());
             c3_p307_TextViewAnio.setText(modulo3.getC3_p307_a());
             if (!modulo3.getC3_p308_e().equals(""))c3_p308_estado_Spinner.setSelection(Integer.parseInt(modulo3.getC3_p308_e()));
+            ArrayList<String> municipios = new ArrayList<>();
+            municipios = data.getMunicipios(data.getCodEstado(modulo3.getC3_p308_e()));
+            data.close();
+            cargarSpinerMunicipios(municipios);
             if (!modulo3.getC3_p308_m().equals(""))c3_p308_municipio_Spinner.setSelection(Integer.parseInt(modulo3.getC3_p308_m()));
         }
         data.close();

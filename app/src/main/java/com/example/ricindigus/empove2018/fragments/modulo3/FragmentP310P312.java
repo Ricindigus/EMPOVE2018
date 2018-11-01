@@ -16,7 +16,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -24,11 +26,13 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
+import com.example.ricindigus.empove2018.modelo.pojos.Ubigeo;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -46,6 +50,8 @@ public class FragmentP310P312 extends FragmentPagina {
     CheckBox ckp310_1,ckp310_2,ckp310_3,ckp310_4,ckp310_5;
     EditText edtp310_especifique;
     RadioGroup rgp311;
+    AutoCompleteTextView autoCompleteTextView;
+    TextView txtDistrito,txtProvincia,txtDepartamento;
 
     LinearLayout lytp310,lytp311,lytp312;
     private String c3_p310_1;
@@ -55,9 +61,9 @@ public class FragmentP310P312 extends FragmentPagina {
     private String c3_p310_4_o;
     private String c3_p310_5;
     private int c3_p311;
-    private String c3_p312_dist;
-    private String c3_p312_prov;
-    private String c3_p312_dep;
+    String c3_p312_dist;
+    String c3_p312_prov;
+    String c3_p312_dep;
 
     public FragmentP310P312() {
         // Required empty public constructor
@@ -81,6 +87,11 @@ public class FragmentP310P312 extends FragmentPagina {
         ckp310_4 = (CheckBox) rootView.findViewById(R.id.mod3_310_checkbox_C3_P310_4);
         ckp310_5 = (CheckBox) rootView.findViewById(R.id.mod3_310_checkbox_C3_P310_5);
         edtp310_especifique = (EditText) rootView.findViewById(R.id.mod3_310_edittext_C3_P310_O);
+        autoCompleteTextView = (AutoCompleteTextView) rootView.findViewById(R.id.mod3_312_autocompletetextview);
+        txtDistrito = (TextView) rootView.findViewById(R.id.mod3_c312_txtDistrito);
+        txtProvincia = (TextView) rootView.findViewById(R.id.mod3_c312_txtProvincia);
+        txtDepartamento = (TextView) rootView.findViewById(R.id.mod3_c312_txtDepartamento);
+
         rgp311 =  (RadioGroup) rootView.findViewById(R.id.mod3_311_radiogroup_C3_P311);
         lytp310 =  (LinearLayout) rootView.findViewById(R.id.layout_m3_p310);
         lytp311 =  (LinearLayout) rootView.findViewById(R.id.layout_m3_p311);
@@ -95,6 +106,41 @@ public class FragmentP310P312 extends FragmentPagina {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         configurarEditText(edtp310_especifique,lytp310,1,30);
+        String[] paises = getResources().getStringArray(R.array.paises);
+        Data data = new Data(contexto);
+        data.open();
+        ArrayAdapter adapter = new ArrayAdapter(getActivity().getApplicationContext(),R.layout.lista_item,R.id.item,data.getUbigeos());
+        data.close();
+        autoCompleteTextView.setAdapter(adapter);
+        autoCompleteTextView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(autoCompleteTextView);
+                    lytp312.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Data data1 = new Data(contexto);
+                data1.open();
+                Ubigeo ubigeo = data1.getUbigeo(autoCompleteTextView.getText().toString());
+                data1.close();
+                txtDepartamento.setText(ubigeo.getNom_departamento());
+                txtProvincia.setText(ubigeo.getNom_provincia());
+                txtDistrito.setText(ubigeo.getNom_distrito());
+                c3_p312_dep = ubigeo.getCod_departamento();
+                c3_p312_prov = ubigeo.getCod_provincia();
+                c3_p312_dist = ubigeo.getCod_distrito();
+                ocultarTeclado(autoCompleteTextView);
+                lytp312.requestFocus();
+            }
+        });
         cargarDatos();
     }
 
@@ -111,9 +157,9 @@ public class FragmentP310P312 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p310_4_o,c3_p310_4_o);
         contentValues.put(SQLConstantes.modulo3_c3_p310_5,c3_p310_5);
         contentValues.put(SQLConstantes.modulo3_c3_p311,c3_p311);
-//        contentValues.put(SQLConstantes.modulo3_c3_p312_dist,c3_p312_dist);
-//        contentValues.put(SQLConstantes.modulo3_c3_p312_prov,c3_p312_prov);
-//        contentValues.put(SQLConstantes.modulo3_c3_p312_dep,c3_p312_dep);
+        contentValues.put(SQLConstantes.modulo3_c3_p312_dist,c3_p312_dist);
+        contentValues.put(SQLConstantes.modulo3_c3_p312_prov,c3_p312_prov);
+        contentValues.put(SQLConstantes.modulo3_c3_p312_dep,c3_p312_dep);
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
@@ -128,6 +174,7 @@ public class FragmentP310P312 extends FragmentPagina {
         if(ckp310_5.isChecked())c3_p310_5 = "1";else c3_p310_5 = "0";
         c3_p310_4_o = edtp310_especifique.getText().toString().trim();
         c3_p311 = rgp311.indexOfChild(rgp311.findViewById(rgp311.getCheckedRadioButtonId()));
+
     }
 
     @Override
@@ -148,6 +195,16 @@ public class FragmentP310P312 extends FragmentPagina {
             if(modulo3.getC3_p310_5().equals("1")) ckp310_5.setChecked(true);
             edtp310_especifique.setText(modulo3.getC3_p310_4_o());
             if(!modulo3.getC3_p311().equals("-1") && !modulo3.getC3_p311().equals(""))((RadioButton)rgp311.getChildAt(Integer.parseInt(modulo3.getC3_p311()))).setChecked(true);
+            if(!modulo3.getC3_p312_dep().equals("")){
+                String codUbigeo = modulo3.getC3_p312_dep()+modulo3.getC3_p312_prov()+modulo3.getC3_p312_dist();
+                Ubigeo ubigeo = data.getUbigeoxId(codUbigeo);
+                c3_p312_dep = ubigeo.getCod_departamento();
+                c3_p312_prov = ubigeo.getCod_provincia();
+                c3_p312_dist = ubigeo.getCod_distrito();
+                txtDepartamento.setText(ubigeo.getNom_departamento());
+                txtProvincia.setText(ubigeo.getNom_provincia());
+                txtDistrito.setText(ubigeo.getNom_distrito());
+            }
         }
         data.close();
     }
@@ -162,6 +219,7 @@ public class FragmentP310P312 extends FragmentPagina {
             mostrarMensaje("PREGUNTA 310: DEBE ESPECIFICAR LA RESPUESTA");return false;
         }
         if (c3_p311 == -1){mostrarMensaje("PREGUNTA 311: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (txtDepartamento.getText().toString().equals("")){mostrarMensaje("PREGUNTA 312: DEBE INDICAR EL UBIGEO"); return false;}
         return true;
     }
 

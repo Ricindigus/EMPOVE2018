@@ -26,6 +26,8 @@ public class Modulo3 {
     private String c3_p307_a;
     private String c3_p308_e;
     private String c3_p308_m;
+    private String c3_p308_e_seleccion;
+    private String c3_p308_m_seleccion;
     private String c3_p310_1;
     private String c3_p310_2;
     private String c3_p310_3;
@@ -80,6 +82,8 @@ public class Modulo3 {
         c3_p307_a= "";
         c3_p308_e= "";
         c3_p308_m= "";
+        c3_p308_e_seleccion= "";
+        c3_p308_m_seleccion= "";
         c3_p310_1= "";
         c3_p310_2= "";
         c3_p310_3= "";
@@ -287,6 +291,22 @@ public class Modulo3 {
 
     public void setC3_p308_m(String c3_p308_m) {
         this.c3_p308_m = c3_p308_m;
+    }
+
+    public String getC3_p308_e_seleccion() {
+        return c3_p308_e_seleccion;
+    }
+
+    public void setC3_p308_e_seleccion(String c3_p308_e_seleccion) {
+        this.c3_p308_e_seleccion = c3_p308_e_seleccion;
+    }
+
+    public String getC3_p308_m_seleccion() {
+        return c3_p308_m_seleccion;
+    }
+
+    public void setC3_p308_m_seleccion(String c3_p308_m_seleccion) {
+        this.c3_p308_m_seleccion = c3_p308_m_seleccion;
     }
 
     public String getC3_p310_1() {
@@ -552,6 +572,8 @@ public class Modulo3 {
         contentValues.put(SQLConstantes.modulo3_c3_p307_a,c3_p307_a);
         contentValues.put(SQLConstantes.modulo3_c3_p308_e,c3_p308_e);
         contentValues.put(SQLConstantes.modulo3_c3_p308_m,c3_p308_m);
+        contentValues.put(SQLConstantes.modulo3_c3_p308_e_seleccion,c3_p308_e_seleccion);
+        contentValues.put(SQLConstantes.modulo3_c3_p308_m_seleccion,c3_p308_m_seleccion);
         contentValues.put(SQLConstantes.modulo3_c3_p310_1,c3_p310_1);
         contentValues.put(SQLConstantes.modulo3_c3_p310_2,c3_p310_2);
         contentValues.put(SQLConstantes.modulo3_c3_p310_3,c3_p310_3);

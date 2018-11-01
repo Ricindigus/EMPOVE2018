@@ -506,6 +506,8 @@ public class SQLConstantes {
     public static String modulo3_c3_p307_a = "c3_p307_a";
     public static String modulo3_c3_p308_e = "c3_p308_e";
     public static String modulo3_c3_p308_m = "c3_p308_m";
+    public static String modulo3_c3_p308_e_seleccion = "c3_p308_e_seleccion";
+    public static String modulo3_c3_p308_m_seleccion = "c3_p308_m_seleccion";
     public static String modulo3_c3_p310_1 = "c3_p310_1";
     public static String modulo3_c3_p310_2 = "c3_p310_2";
     public static String modulo3_c3_p310_3 = "c3_p310_3";
@@ -563,6 +565,8 @@ public class SQLConstantes {
                     modulo3_c3_p307_a  + " TEXT," +
                     modulo3_c3_p308_e  + " TEXT," +
                     modulo3_c3_p308_m  + " TEXT," +
+                    modulo3_c3_p308_e_seleccion  + " TEXT," +
+                    modulo3_c3_p308_m_seleccion  + " TEXT," +
                     modulo3_c3_p310_1  + " TEXT," +
                     modulo3_c3_p310_2  + " TEXT," +
                     modulo3_c3_p310_3  + " TEXT," +
@@ -1568,6 +1572,8 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_ESTADO_COD = municipios_cod_estado+"=?";
     public static final String WHERE_CLAUSE_HOGAR_ID = "id_hogar=?";
     public static final String WHERE_CLAUSE_USUARIO_NOMBRE = "nombre=?";
+    public static final String WHERE_CLAUSE_DESCRIPCION = ubigeo_descripcion+"=?";
+
 
     public static final String WHERE_CLAUSE_EXISTE_MENOR = "id_hogar=? and c2_p205_a<18";
 

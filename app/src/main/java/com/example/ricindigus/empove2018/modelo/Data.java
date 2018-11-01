@@ -24,6 +24,7 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
+import com.example.ricindigus.empove2018.modelo.pojos.Ubigeo;
 import com.example.ricindigus.empove2018.modelo.pojos.Usuario;
 import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
 
@@ -621,6 +622,68 @@ public class Data {
         return municipios;
     }
 
+
+    public ArrayList<String> getUbigeos(){
+        ArrayList<String> ubigeos = new ArrayList<>();
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaubigeo, null,null,null,null,null,null);
+            while (cursor.moveToNext()){
+                String ubigeo = cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_descripcion));
+                ubigeos.add(ubigeo);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return ubigeos;
+    }
+
+    public Ubigeo getUbigeo(String descripcion){
+        Ubigeo ubigeo = null;
+        String[] whereArgs = new String[]{descripcion};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaubigeo,
+                    null,SQLConstantes.WHERE_CLAUSE_DESCRIPCION,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                ubigeo = new Ubigeo();
+                ubigeo.setCod_departamento(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_cod_departamento)));
+                ubigeo.setCod_provincia(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_cod_provincia)));
+                ubigeo.setCod_distrito(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_cod_distrito)));
+                ubigeo.setNom_departamento(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_nom_departamento)));
+                ubigeo.setNom_provincia(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_nom_provincia)));
+                ubigeo.setNom_distrito(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_nom_distrito)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return ubigeo;
+    }
+
+    public Ubigeo getUbigeoxId(String id){
+        Ubigeo ubigeo = null;
+        String[] whereArgs = new String[]{id};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaubigeo,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                ubigeo = new Ubigeo();
+                ubigeo.setCod_departamento(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_cod_departamento)));
+                ubigeo.setCod_provincia(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_cod_provincia)));
+                ubigeo.setCod_distrito(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_cod_distrito)));
+                ubigeo.setNom_departamento(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_nom_departamento)));
+                ubigeo.setNom_provincia(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_nom_provincia)));
+                ubigeo.setNom_distrito(cursor.getString(cursor.getColumnIndex(SQLConstantes.ubigeo_nom_distrito)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return ubigeo;
+    }
+
     public void insertarElemento(String nombreTabla, ContentValues contentValues){
         sqLiteDatabase.insert(nombreTabla,null,contentValues);
     }
@@ -839,6 +902,8 @@ public class Data {
                 modulo3.setC3_p307_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p307_a )));
                 modulo3.setC3_p308_e(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p308_e )));
                 modulo3.setC3_p308_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p308_m )));
+                modulo3.setC3_p308_e(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p308_e_seleccion )));
+                modulo3.setC3_p308_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p308_m_seleccion )));
                 modulo3.setC3_p310_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_1)));
                 modulo3.setC3_p310_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_2)));
                 modulo3.setC3_p310_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_3 )));
@@ -846,9 +911,9 @@ public class Data {
                 modulo3.setC3_p310_4_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_4_o )));
                 modulo3.setC3_p310_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_5 )));
                 modulo3.setC3_p311(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p311)));
-                modulo3.setC3_p312_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_dist)));
+                modulo3.setC3_p312_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_dep)));
                 modulo3.setC3_p312_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_prov)));
-                modulo3.setC3_p312_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_dep)));
+                modulo3.setC3_p312_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_dist)));
                 modulo3.setC3_p313(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p313)));
                 modulo3.setC3_p314(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p314 )));
                 modulo3.setC3_p314_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p314_o)));

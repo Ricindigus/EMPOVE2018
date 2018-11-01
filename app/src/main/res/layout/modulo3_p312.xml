@@ -13,54 +13,73 @@
         android:layout_marginBottom="@dimen/margen_medium"
         android:text="@string/modulo_3_p312"/>
 
+    <AutoCompleteTextView
+        android:id="@+id/mod3_312_autocompletetextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margen_small"
+        android:inputType="text"
+        android:hint="Escriba el distrito"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center_vertical"
-        android:layout_height="@dimen/altura_spinner">
+        android:layout_margin="@dimen/margen_small"
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="@dimen/width_desc_ubigeo"
             android:layout_height="wrap_content"
             android:textSize="@dimen/margen_medium"
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_3_p312_sp1"/>
-        <Spinner
-            android:layout_width="@dimen/width_spinner_ubigeo"
-            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/mod3_c312_txtDistrito"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:paddingLeft="@dimen/margen_small"
+            android:gravity="center_vertical"
+            android:background="@drawable/input_text_enabled"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center_vertical"
-        android:layout_height="@dimen/altura_spinner">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margen_small">
         <TextView
             android:layout_width="@dimen/width_desc_ubigeo"
             android:layout_height="wrap_content"
             android:textSize="@dimen/margen_medium"
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_3_p312_sp2"/>
-        <Spinner
-            android:layout_width="@dimen/width_spinner_ubigeo"
-            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/mod3_c312_txtProvincia"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/margen_small"
+            android:gravity="center_vertical"
+            android:background="@drawable/input_text_enabled"
+            android:layout_height="32dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center_vertical"
-        android:layout_height="@dimen/altura_spinner">
+        android:layout_margin="@dimen/margen_small"
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="@dimen/width_desc_ubigeo"
             android:layout_height="wrap_content"
             android:textSize="@dimen/margen_medium"
             android:layout_marginRight="@dimen/margen_small"
             android:text="@string/modulo_3_p312_sp3"/>
-        <Spinner
-            android:layout_width="@dimen/width_spinner_ubigeo"
-            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/mod3_c312_txtDepartamento"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:paddingLeft="@dimen/margen_small"
+            android:gravity="center_vertical"
+            android:background="@drawable/input_text_enabled"/>
     </LinearLayout>
-
-
-
 </LinearLayout>
