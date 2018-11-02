@@ -14,6 +14,9 @@ public class M3Pregunta309 {
     private String c3_p309_mod;
     private String c3_p309_m;
     private String c3_p309_a;
+    private String c3_p309_m_cod;
+    private String c3_p309_a_cod;
+
 
 
     public M3Pregunta309() {
@@ -26,6 +29,8 @@ public class M3Pregunta309 {
        c3_p309_mod = "";
        c3_p309_m = "";
        c3_p309_a = "";
+        c3_p309_m_cod = "";
+        c3_p309_a_cod = "";
     }
 
     public String get_id() {
@@ -100,6 +105,22 @@ public class M3Pregunta309 {
         this.c3_p309_p_nom = c3_p309_p_nom;
     }
 
+    public String getC3_p309_m_cod() {
+        return c3_p309_m_cod;
+    }
+
+    public void setC3_p309_m_cod(String c3_p309_m_cod) {
+        this.c3_p309_m_cod = c3_p309_m_cod;
+    }
+
+    public String getC3_p309_a_cod() {
+        return c3_p309_a_cod;
+    }
+
+    public void setC3_p309_a_cod(String c3_p309_a_cod) {
+        this.c3_p309_a_cod = c3_p309_a_cod;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_p309_id,_id);
@@ -111,6 +132,8 @@ public class M3Pregunta309 {
         contentValues.put(SQLConstantes.modulo3_c3_p309_mod,c3_p309_mod);
         contentValues.put(SQLConstantes.modulo3_c3_p309_m,c3_p309_m);
         contentValues.put(SQLConstantes.modulo3_c3_p309_a,c3_p309_a);
+        contentValues.put(SQLConstantes.modulo3_c3_p309_m_cod,c3_p309_m_cod);
+        contentValues.put(SQLConstantes.modulo3_c3_p309_a_cod,c3_p309_a_cod);
         return contentValues;
     }
 }

@@ -207,6 +207,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 data.insertarElemento(getNombreTabla(),contentValues);
             }
             data.actualizarElemento(getNombreTabla(),contentValues,_id);
+            data.actualizarValor(SQLConstantes.tablahogares,SQLConstantes.hogar_nroviven,numero,id_hogar);
             data.close();
 
     }

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
@@ -17,15 +16,15 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.activities.EncuestaActivity;
 import com.example.ricindigus.empove2018.activities.agregacion.AgregarResidenteActivity;
-import com.example.ricindigus.empove2018.activities.agregacion.AgregarVisitaActivity;
 import com.example.ricindigus.empove2018.adapters.ResidenteAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
@@ -40,6 +39,7 @@ public class FragmentP201P206 extends FragmentPagina {
     String idVivienda;
     Context context;
 
+    TextView txtNroPersonas;
     FloatingActionButton fab;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -64,6 +64,7 @@ public class FragmentP201P206 extends FragmentPagina {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_p201_p206, container, false);
         fab = (FloatingActionButton) rootView.findViewById(R.id.mod2_fab);
+        txtNroPersonas = (TextView) rootView.findViewById(R.id.mod2_txtNumeroPersonas);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.mod2_recyclerview);
         return rootView;
     }
@@ -87,6 +88,7 @@ public class FragmentP201P206 extends FragmentPagina {
                 startActivity(intent);
             }
         });
+        cargarDatos();
     }
 
     @Override
@@ -101,7 +103,13 @@ public class FragmentP201P206 extends FragmentPagina {
 
     @Override
     public void cargarDatos() {
-
+        Data data = new Data(context);
+        data.open();
+        if (data.existeElemento(SQLConstantes.tablahogares,idHogar)){
+            Hogar hogar = data.getHogar(idHogar);
+            txtNroPersonas.setText(hogar.getNroviven());
+        }
+        data.close();
     }
 
     @Override
@@ -119,6 +127,7 @@ public class FragmentP201P206 extends FragmentPagina {
         Data data =  new Data(context);
         data.open();
         residentes = data.getAllResidentesHogar(idHogar);
+        txtNroPersonas.setText(residentes.size()+"");
         data.close();
     }
 
@@ -127,35 +136,66 @@ public class FragmentP201P206 extends FragmentPagina {
             @Override
             public void onItemClick(View view, final int position) {
                 final PopupMenu popupMenu = new PopupMenu(context,view);
-                popupMenu.getMenuInflater().inflate(R.menu.menu_residente,popupMenu.getMenu());
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch(item.getItemId()){
-                            case R.id.opcion_iniciar_encuesta:
-                                Intent intent1 = new Intent(context, EncuestaActivity.class);
-                                intent1.putExtra("idEncuestado",residentes.get(position).get_id()+"");
-                                intent1.putExtra("numero", residentes.get(position).getNumero() + "");
-                                intent1.putExtra("idHogar", idHogar);
-                                intent1.putExtra("idVivienda", idVivienda);
-                                startActivity(intent1);
-                                break;
-                            case R.id.opcion_editar:
-                                Intent intent2 = new Intent(context, AgregarResidenteActivity.class);
-                                intent2.putExtra("idEncuestado",residentes.get(position).get_id()+"");
-                                intent2.putExtra("numero", residentes.get(position).getNumero() + "");
-                                intent2.putExtra("idHogar", idHogar);
-                                intent2.putExtra("idVivienda", idVivienda);
-                                startActivity(intent2);
-                                break;
-                            case R.id.opcion_eliminar:
-                                break;
-                        }
+                if (residentes.size() == position + 1){
+                    popupMenu.getMenuInflater().inflate(R.menu.menu_residente_1,popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch(item.getItemId()){
+                                case R.id.opcion_iniciar_encuesta:
+                                    Intent intent1 = new Intent(context, EncuestaActivity.class);
+                                    intent1.putExtra("idEncuestado",residentes.get(position).get_id()+"");
+                                    intent1.putExtra("numero", residentes.get(position).getNumero() + "");
+                                    intent1.putExtra("idHogar", idHogar);
+                                    intent1.putExtra("idVivienda", idVivienda);
+                                    startActivity(intent1);
+                                    break;
+                                case R.id.opcion_editar:
+                                    Intent intent2 = new Intent(context, AgregarResidenteActivity.class);
+                                    intent2.putExtra("idEncuestado",residentes.get(position).get_id()+"");
+                                    intent2.putExtra("numero", residentes.get(position).getNumero() + "");
+                                    intent2.putExtra("idHogar", idHogar);
+                                    intent2.putExtra("idVivienda", idVivienda);
+                                    startActivity(intent2);
+                                    break;
+                                case R.id.opcion_eliminar:
+                                    break;
+                            }
 
-                        return true;
-                    }
-                });
-                popupMenu.show();
+                            return true;
+                        }
+                    });
+                    popupMenu.show();
+                }else{
+                    popupMenu.getMenuInflater().inflate(R.menu.menu_residente_2,popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch(item.getItemId()){
+                                case R.id.opcion_iniciar_encuesta:
+                                    Intent intent1 = new Intent(context, EncuestaActivity.class);
+                                    intent1.putExtra("idEncuestado",residentes.get(position).get_id()+"");
+                                    intent1.putExtra("numero", residentes.get(position).getNumero() + "");
+                                    intent1.putExtra("idHogar", idHogar);
+                                    intent1.putExtra("idVivienda", idVivienda);
+                                    startActivity(intent1);
+                                    break;
+                                case R.id.opcion_editar:
+                                    Intent intent2 = new Intent(context, AgregarResidenteActivity.class);
+                                    intent2.putExtra("idEncuestado",residentes.get(position).get_id()+"");
+                                    intent2.putExtra("numero", residentes.get(position).getNumero() + "");
+                                    intent2.putExtra("idHogar", idHogar);
+                                    intent2.putExtra("idVivienda", idVivienda);
+                                    startActivity(intent2);
+                                    break;
+                            }
+
+                            return true;
+                        }
+                    });
+                    popupMenu.show();
+                }
+
             }
         });
         recyclerView.setAdapter(residenteAdapter);

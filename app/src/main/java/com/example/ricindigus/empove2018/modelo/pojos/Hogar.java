@@ -12,6 +12,8 @@ public class Hogar {
     private String estado;
     private String nropersonas;
     private String vive;
+    private String nroviven;
+
 
 
 
@@ -23,6 +25,7 @@ public class Hogar {
         estado = "";
         nropersonas = "";
         vive = "";
+        nroviven = "0";
     }
 
 
@@ -82,6 +85,14 @@ public class Hogar {
         this.vive = vive;
     }
 
+    public String getNroviven() {
+        return nroviven;
+    }
+
+    public void setNroviven(String nroviven) {
+        this.nroviven = nroviven;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.hogar_id,_id);
@@ -91,6 +102,7 @@ public class Hogar {
         contentValues.put(SQLConstantes.hogar_estado,estado);
         contentValues.put(SQLConstantes.hogar_nropersonas,nropersonas);
         contentValues.put(SQLConstantes.hogar_vive,vive);
+        contentValues.put(SQLConstantes.hogar_nroviven,nroviven);
         return  contentValues;
     }
 }

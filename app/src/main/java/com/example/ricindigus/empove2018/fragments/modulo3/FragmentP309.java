@@ -13,8 +13,10 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -22,6 +24,8 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.activities.EncuestaActivity;
+import com.example.ricindigus.empove2018.activities.agregacion.AgregarResidenteActivity;
 import com.example.ricindigus.empove2018.activities.agregacion.AgregarRutaActivity;
 import com.example.ricindigus.empove2018.adapters.M3Pregunta309Adapter;
 import com.example.ricindigus.empove2018.modelo.Data;
@@ -138,7 +142,53 @@ public class FragmentP309 extends FragmentPagina {
     }
 
     public void setearAdapter(){
-        m3Pregunta309Adapter =  new M3Pregunta309Adapter(m3Pregunta309s,contexto);
+        m3Pregunta309Adapter =  new M3Pregunta309Adapter(m3Pregunta309s, contexto, new M3Pregunta309Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, final int position) {
+                final PopupMenu popupMenu = new PopupMenu(contexto,view);
+                if (m3Pregunta309s.size() == position + 1){
+                    popupMenu.getMenuInflater().inflate(R.menu.menu_rutas_1,popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch(item.getItemId()){
+                                case R.id.opcion_editar:
+                                    Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
+                                    intent.putExtra("idEncuestado",idEncuestado);
+                                    intent.putExtra("numero",m3Pregunta309s.get(position).getNumero());
+                                    intent.putExtra("idRuta",m3Pregunta309s.get(position).get_id());
+                                    startActivity(intent);
+                                    break;
+                                case R.id.opcion_eliminar:
+                                    eliminarRuta(position);
+                                    break;
+                            }
+                            return true;
+                        }
+                    });
+                    popupMenu.show();
+                }else{
+                    popupMenu.getMenuInflater().inflate(R.menu.menu_rutas_2,popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch(item.getItemId()){
+                                case R.id.opcion_editar:
+                                    Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
+                                    intent.putExtra("idEncuestado",idEncuestado);
+                                    intent.putExtra("numero",m3Pregunta309s.get(position).getNumero());
+                                    intent.putExtra("idRuta",m3Pregunta309s.get(position).get_id());
+                                    startActivity(intent);
+                                    break;
+                            }
+
+                            return true;
+                        }
+                    });
+                    popupMenu.show();
+                }
+            }
+        });
         recyclerView.setAdapter(m3Pregunta309Adapter);
     }
 
@@ -152,6 +202,15 @@ public class FragmentP309 extends FragmentPagina {
         });
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    public void eliminarRuta(int position){
+        Data data = new Data(contexto);
+        data.open();
+        data.eliminarDato(SQLConstantes.tablam3p309rutas,m3Pregunta309s.get(position).get_id());
+        inicializarDatos();
+        setearAdapter();
+        data.close();
     }
 
     @Override

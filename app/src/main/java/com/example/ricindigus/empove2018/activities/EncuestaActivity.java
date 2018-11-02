@@ -1,9 +1,13 @@
 package com.example.ricindigus.empove2018.activities;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -478,9 +482,7 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
 
 
 
-
-
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.encuesta, menu);
@@ -495,12 +497,36 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_volver_residentes) {
+            salirActivityEncuestado();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void salirActivityEncuestado(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("¿Está seguro que desea salir de la encuesta y volver a la lista de los residentes del hogar?")
+                .setTitle("Aviso")
+                .setCancelable(false)
+                .setNegativeButton("No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+                .setPositiveButton("Sí",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                finish();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    /*
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

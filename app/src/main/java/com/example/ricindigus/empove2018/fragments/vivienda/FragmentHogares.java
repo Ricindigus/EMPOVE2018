@@ -26,16 +26,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ricindigus.empove2018.R;
-import com.example.ricindigus.empove2018.activities.EncuestaActivity;
 import com.example.ricindigus.empove2018.activities.HogarActivity;
 import com.example.ricindigus.empove2018.activities.ViviendaActivity;
-import com.example.ricindigus.empove2018.activities.agregacion.AgregarVisitaActivity;
 import com.example.ricindigus.empove2018.adapters.HogarAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
-import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
 
 import java.util.ArrayList;
 

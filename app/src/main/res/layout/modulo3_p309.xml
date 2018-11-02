@@ -26,6 +26,12 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary">
         <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:theme="@style/TemaCabeceraP309"
+            android:text="Nº"/>
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

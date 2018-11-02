@@ -45,6 +45,7 @@ public class HogarAdapter extends RecyclerView.Adapter<HogarAdapter.ViewHolder>{
         holder.txtNumero.setText(hogars.get(position).getNumero());
         holder.txtJefe.setText(hogars.get(position).getNom_ape());
         holder.txtEstado.setText(hogars.get(position).getEstado());
+        holder.txtNumeroViven.setText(hogars.get(position).getNroviven());
         if(!hogars.get(position).getEstado().equals("0")){
             holder.txtEstado.setText(context.getResources().getStringArray(R.array.visita_array_resultados)[Integer.parseInt(hogars.get(position).getEstado())]);
         }else{
@@ -65,6 +66,7 @@ public class HogarAdapter extends RecyclerView.Adapter<HogarAdapter.ViewHolder>{
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView txtNumero;
+        TextView txtNumeroViven;
         TextView txtJefe;
         TextView txtEstado;
         CardView cardView;
@@ -73,6 +75,7 @@ public class HogarAdapter extends RecyclerView.Adapter<HogarAdapter.ViewHolder>{
             super(itemView);
             cardView = itemView.findViewById(R.id.item_hogar_cardview);
             txtNumero = itemView.findViewById(R.id.item_hogar_textview_numero);
+            txtNumeroViven = itemView.findViewById(R.id.item_hogar_textview_numero_viven);
             txtJefe = itemView.findViewById(R.id.item_hogar_textview_jefe);
             txtEstado = itemView.findViewById(R.id.item_hogar_textview_estado);
         }

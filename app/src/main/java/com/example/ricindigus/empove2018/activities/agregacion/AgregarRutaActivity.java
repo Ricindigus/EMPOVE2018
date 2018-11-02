@@ -81,6 +81,21 @@ public class AgregarRutaActivity extends AppCompatActivity {
         });
 
         configurarEditText(edtCiudad,layoutCiudad,1,20);
+
+        cargarDatos();
+    }
+
+    public void cargarDatos(){
+        Data data = new Data(this);
+        data.open();
+        if(data.existeElemento(getNombreTabla(),_id)){
+            M3Pregunta309 m3Pregunta309 = data.getM3Pregunta309(_id);
+            spPais.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_p()));
+            edtCiudad.setText(m3Pregunta309.getC3_p309_c());
+            spModo.setSelection(data.getNumeroRutaPais(m3Pregunta309.getC3_p309_mod()));
+            spMes.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_m_cod()));
+            spAnio.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_a_cod()));
+        }
     }
 
     public void llenarVariables(){
@@ -103,6 +118,9 @@ public class AgregarRutaActivity extends AppCompatActivity {
         contentValues.put(SQLConstantes.modulo3_c3_p309_mod,modo+"");
         contentValues.put(SQLConstantes.modulo3_c3_p309_m,getResources().getStringArray(R.array.numeros_meses)[mes]);
         contentValues.put(SQLConstantes.modulo3_c3_p309_a,getResources().getStringArray(R.array.numeros_anios)[anio]);
+        contentValues.put(SQLConstantes.modulo3_c3_p309_m_cod,mes);
+        contentValues.put(SQLConstantes.modulo3_c3_p309_a_cod,anio);
+
 
         if(!data.existeElemento(getNombreTabla(),_id)){
             M3Pregunta309 m3Pregunta309 =  new M3Pregunta309();

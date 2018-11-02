@@ -372,6 +372,7 @@ public class Data {
                 hogar.setNom_ape(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nom_ape)));
                 hogar.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_estado)));
                 hogar.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_numero)));
+                hogar.setNroviven(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nroviven)));
                 hogars.add(hogar);
             }
         }finally{
@@ -395,6 +396,7 @@ public class Data {
                 hogar.setNom_ape(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nom_ape)));
                 hogar.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_estado)));
                 hogar.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_numero)));
+                hogar.setNroviven(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nroviven)));
                 hogar.setNropersonas(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nropersonas)));
                 hogar.setVive(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_vive)));
             }
@@ -960,12 +962,42 @@ public class Data {
                 m3Pregunta309.setC3_p309_mod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_mod)));
                 m3Pregunta309.setC3_p309_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_m)));
                 m3Pregunta309.setC3_p309_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_a)));
+                m3Pregunta309.setC3_p309_m_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_m_cod)));
+                m3Pregunta309.setC3_p309_a_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_a_cod)));
                 m3Pregunta309s.add(m3Pregunta309);
             }
         }finally{
             if(cursor != null) cursor.close();
         }
         return m3Pregunta309s;
+    }
+
+    public M3Pregunta309 getM3Pregunta309(String id){
+        M3Pregunta309 m3Pregunta309 = null;
+        String[] whereArgs = new String[]{id};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablam3p309rutas,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                m3Pregunta309 = new M3Pregunta309();
+                m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
+                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_idEncuestado)));
+                m3Pregunta309.setC3_p309_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p)));
+                m3Pregunta309.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_numero)));
+                m3Pregunta309.setC3_p309_p_nom(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p_nom)));
+                m3Pregunta309.setC3_p309_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_c)));
+                m3Pregunta309.setC3_p309_mod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_mod)));
+                m3Pregunta309.setC3_p309_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_m)));
+                m3Pregunta309.setC3_p309_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_a)));
+                m3Pregunta309.setC3_p309_m_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_m_cod)));
+                m3Pregunta309.setC3_p309_a_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_a_cod)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return m3Pregunta309;
     }
 
     public ArrayList<M3Pregunta318> getAllM3Pregunta318(String idEncuestado){

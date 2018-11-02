@@ -34,7 +34,6 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.ricindigus.empove2018.R;
-import com.example.ricindigus.empove2018.adapters.VisitaEncuestadorAdapter;
 import com.example.ricindigus.empove2018.adapters.VisitaSupervisorAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;

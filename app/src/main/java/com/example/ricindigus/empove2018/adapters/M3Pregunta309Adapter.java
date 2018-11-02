@@ -23,10 +23,16 @@ import java.util.ArrayList;
 public class M3Pregunta309Adapter extends RecyclerView.Adapter<M3Pregunta309Adapter.ViewHolder>{
     ArrayList<M3Pregunta309> m3Pregunta309s;
     Context context;
+    OnItemClickListener onItemClickListener;
 
-    public M3Pregunta309Adapter(ArrayList<M3Pregunta309> m3Pregunta309s, Context context) {
+    public interface OnItemClickListener {
+        public void onItemClick(View view, int position);
+    }
+
+    public M3Pregunta309Adapter(ArrayList<M3Pregunta309> m3Pregunta309s, Context context, OnItemClickListener onItemClickListener) {
         this.m3Pregunta309s = m3Pregunta309s;
         this.context = context;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -39,9 +45,16 @@ public class M3Pregunta309Adapter extends RecyclerView.Adapter<M3Pregunta309Adap
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.txtPais.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_p_nom()));
+        holder.txtNumero.setText(String.valueOf(m3Pregunta309s.get(position).getNumero()));
         holder.txtCiudad.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_c()));
         holder.txtModoTransito.setText(context.getResources().getStringArray(R.array.modulo_3_p309_array_modo_transito)[Integer.parseInt(m3Pregunta309s.get(position).getC3_p309_mod())]);
         holder.txtFecha.setText(String.valueOf(m3Pregunta309s.get(position).getC3_p309_m() + "/" +String.valueOf(m3Pregunta309s.get(position).getC3_p309_a())));
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickListener.onItemClick(view,position);
+            }
+        });
     }
 
     @Override
@@ -51,6 +64,7 @@ public class M3Pregunta309Adapter extends RecyclerView.Adapter<M3Pregunta309Adap
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView txtPais;
+        TextView txtNumero;
         TextView txtCiudad;
         TextView txtModoTransito;
         TextView txtFecha;
@@ -63,6 +77,8 @@ public class M3Pregunta309Adapter extends RecyclerView.Adapter<M3Pregunta309Adap
             txtCiudad = itemView.findViewById(R.id.txtciudad);
             txtModoTransito = itemView.findViewById(R.id.txtmodotransito);
             txtFecha = itemView.findViewById(R.id.txtfecha);
+            txtNumero = itemView.findViewById(R.id.txtnumero);
+
         }
     }
 }

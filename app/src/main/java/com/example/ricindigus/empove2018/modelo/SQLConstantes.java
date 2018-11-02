@@ -193,6 +193,7 @@ public class SQLConstantes {
     public static String hogar_numero = "numero";
     public static String hogar_nom_ape = "nom_ape";
     public static String hogar_estado = "estado";
+    public static String hogar_nroviven = "nroviven";
     public static String hogar_nropersonas = "nropersonas";
     public static String hogar_vive = "vive";
 
@@ -205,6 +206,7 @@ public class SQLConstantes {
                     hogar_numero + " TEXT," +
                     hogar_nom_ape + " TEXT," +
                     hogar_vive + " TEXT," +
+                    hogar_nroviven + " TEXT," +
                     hogar_nropersonas + " TEXT," +
                     hogar_estado + " TEXT" + ");"
             ;
@@ -611,7 +613,9 @@ public class SQLConstantes {
     public static String modulo3_c3_p309_c = "c3_p309_c";
     public static String modulo3_c3_p309_mod = "c3_p309_mod";
     public static String modulo3_c3_p309_m = "c3_p309_m";
+    public static String modulo3_c3_p309_m_cod = "c3_p309_m_cod";
     public static String modulo3_c3_p309_a = "c3_p309_a";
+    public static String modulo3_c3_p309_a_cod = "c3_p309_a_cod";
 
     public static final String SQL_CREATE_TABLA_MODULO3_P309_RUTAS =
             "CREATE TABLE " + tablam3p309rutas + "(" +
@@ -623,7 +627,9 @@ public class SQLConstantes {
                     modulo3_c3_p309_c  + " TEXT," +
                     modulo3_c3_p309_mod  + " TEXT," +
                     modulo3_c3_p309_m  + " TEXT," +
-                    modulo3_c3_p309_a + " TEXT" + ");"
+                    modulo3_c3_p309_m_cod  + " TEXT," +
+                    modulo3_c3_p309_a  + " TEXT," +
+                    modulo3_c3_p309_a_cod + " TEXT" + ");"
             ;
 
     /**
