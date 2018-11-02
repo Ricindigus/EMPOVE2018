@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
@@ -74,6 +75,20 @@ public class AgregarPersonaActivity extends AppCompatActivity {
         });
 
         configurarEditText(edtEdad,lyt3,2,2);
+
+        cargarDatos();
+    }
+
+    public void cargarDatos(){
+        Data data = new Data(this);
+        data.open();
+        if(data.existeElemento(getNombreTabla(),_id)){
+            M3Pregunta318 m3Pregunta318 = data.getM3Pregunta318(_id);
+            spParentesco.setSelection(Integer.parseInt(m3Pregunta318.getC3_p318_f()));
+            edtEdad.setText(m3Pregunta318.getC3_p318_e());
+            if(!m3Pregunta318.getC3_p318_s().equals("-1"))((RadioButton)rgSexo.getChildAt(Integer.parseInt(m3Pregunta318.getC3_p318_s()))).setChecked(true);
+            if(!m3Pregunta318.getC3_p318_p().equals("-1"))((RadioButton)rgSiNo.getChildAt(Integer.parseInt(m3Pregunta318.getC3_p318_p()))).setChecked(true);
+        }
     }
 
     public void mostrarMensaje(String m){

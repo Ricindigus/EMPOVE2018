@@ -213,6 +213,11 @@ public class FragmentCaratula extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         llenarVariables();
         int sumaValida = 0;

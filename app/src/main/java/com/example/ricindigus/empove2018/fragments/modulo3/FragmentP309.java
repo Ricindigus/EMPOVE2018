@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
@@ -44,6 +45,7 @@ public class FragmentP309 extends FragmentPagina {
     String idInformante;
     String idHogar;
     Context contexto;
+    LinearLayout layoutp309;
     FloatingActionButton fab;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -66,6 +68,7 @@ public class FragmentP309 extends FragmentPagina {
         fab = (FloatingActionButton) rootView.findViewById(R.id.rutas_fab);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rutas_recyclerview);
         informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
+        layoutp309 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p309);
         return rootView;
     }
 
@@ -85,6 +88,7 @@ public class FragmentP309 extends FragmentPagina {
                 startActivity(intent);
             }
         });
+        llenarVista();
         cargarDatos();
     }
 
@@ -119,6 +123,14 @@ public class FragmentP309 extends FragmentPagina {
         }
         data.close();
 
+    }
+
+    @Override
+    public void llenarVista() {
+        Data data = new Data(contexto);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p309,idEncuestado)) layoutp309.setVisibility(View.GONE);
+        data.close();
     }
 
     @Override

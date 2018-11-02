@@ -329,6 +329,11 @@ public class FragmentP701P705 extends FragmentPagina {
 
     }
 
+    @Override
+    public void llenarVista() {
+
+    }
+
 
     public boolean validarDatos(){
         llenarVariables();

@@ -825,6 +825,11 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public void guardarDatos() {
 
     }

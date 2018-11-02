@@ -689,6 +689,11 @@ public class FragmentVisitasSupervisor extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public void guardarDatos() {
 
     }

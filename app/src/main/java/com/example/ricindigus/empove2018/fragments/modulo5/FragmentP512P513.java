@@ -186,6 +186,11 @@ public class FragmentP512P513 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         llenarVariables();
         if(m5_p512_linearlayout.getVisibility()==View.VISIBLE) {

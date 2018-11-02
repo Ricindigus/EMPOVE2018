@@ -8,6 +8,7 @@ public interface InterfazOperaciones {
     public void guardarDatos();
     public void llenarVariables();
     public void cargarDatos();
+    public void llenarVista();
     public boolean validarDatos();
     public String getNombreTabla();
 }

@@ -260,6 +260,11 @@ public class FragmentP619P622 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         llenarVariables();
         if(c6_p618<0 && m6_p618_linearlayout.getVisibility()==View.VISIBLE){

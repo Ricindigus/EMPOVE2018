@@ -210,6 +210,11 @@ public class FragmentFuncionarios extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         llenarVariables();
         if (dni_coor.trim().equals("")){mostrarMensaje("DNI COORDINADOR: FALTA COMPLETAR");return false;}

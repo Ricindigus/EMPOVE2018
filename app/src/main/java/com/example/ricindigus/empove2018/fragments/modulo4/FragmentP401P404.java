@@ -340,6 +340,11 @@ public class FragmentP401P404 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         llenarVariables();
         if(m4_p401_linearlayout.getVisibility()==View.VISIBLE) {

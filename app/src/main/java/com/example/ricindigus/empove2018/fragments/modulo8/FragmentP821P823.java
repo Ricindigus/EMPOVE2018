@@ -174,6 +174,11 @@ public class FragmentP821P823 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         if(c8_p821_1==0 && c8_p821_2==0 && c8_p821_3==0 && c8_p821_4==0 && c8_p821_5==0 && c8_p821_6==0
                 && c8_p821_7==0 && c8_p821_8==0){

@@ -141,6 +141,7 @@ public class FragmentP310P312 extends FragmentPagina {
                 lytp312.requestFocus();
             }
         });
+        llenarVista();
         cargarDatos();
     }
 
@@ -206,6 +207,16 @@ public class FragmentP310P312 extends FragmentPagina {
                 txtDistrito.setText(ubigeo.getNom_distrito());
             }
         }
+        data.close();
+    }
+
+    @Override
+    public void llenarVista() {
+        Data data = new Data(contexto);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p310,idEncuestado)) lytp310.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p311,idEncuestado)) lytp311.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p312,idEncuestado)) lytp312.setVisibility(View.GONE);
         data.close();
     }
 

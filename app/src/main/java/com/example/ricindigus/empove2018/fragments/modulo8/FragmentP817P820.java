@@ -254,6 +254,11 @@ public class FragmentP817P820 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         if(c8_p817<1){
             mostrarMensaje("PREGUNTA 817: DEBE SELECCIONAR UNA OPCION");

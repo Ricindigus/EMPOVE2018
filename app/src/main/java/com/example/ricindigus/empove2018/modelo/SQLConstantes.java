@@ -35,7 +35,7 @@ public class SQLConstantes {
     public static String tablamunicipios = "municipios";
     public static String tablaestados = "estados";
     public static String tablaubigeo = "ubigeo";
-
+    public static String tablalayouts = "layouts";
 
 
 
@@ -1379,7 +1379,6 @@ public class SQLConstantes {
     public static String modulo8_c8_p816_11 = "c8_p816_11";
     public static String modulo8_c8_p816_12 = "c8_p816_12";
     public static String modulo8_c8_p816_13 = "c8_p816_13";
-
     public static String modulo8_c8_p816_o = "c8_p816_o";
     public static String modulo8_c8_p817 = "c8_p817";
     public static String modulo8_c8_p818 = "c8_p818";
@@ -1561,6 +1560,233 @@ public class SQLConstantes {
                     modulo8_c8_p823_o  +  " TEXT," +
                     modulo8_obs_cap8  +  " TEXT," +
                     modulo8_c8_estado  +  " TEXT" + ");"
+            ;
+
+
+    /**
+     * TABLA LAYOUTS
+     * */
+    public static String layouts_id = "_id";
+    public static String layouts_p301 = "p301";
+    public static String layouts_p302 = "p302";
+    public static String layouts_p303 = "p303";
+    public static String layouts_p304 = "p304";
+    public static String layouts_p305 = "p305";
+    public static String layouts_p306 = "p306";
+    public static String layouts_p307 = "p307";
+    public static String layouts_p308 = "p308";
+    public static String layouts_p309 = "p309";
+    public static String layouts_p310 = "p310";
+    public static String layouts_p311 = "p311";
+    public static String layouts_p312 = "p312";
+    public static String layouts_p313 = "p313";
+    public static String layouts_p314 = "p314";
+    public static String layouts_p315 = "p315";
+    public static String layouts_p316 = "p316";
+    public static String layouts_p317 = "p317";
+    public static String layouts_p318 = "p318";
+    public static String layouts_p401 = "p401";
+    public static String layouts_p402 = "p402";
+    public static String layouts_p403 = "p403";
+    public static String layouts_p404 = "p404";
+    public static String layouts_p405 = "p405";
+    public static String layouts_p406 = "p406";
+    public static String layouts_p407 = "p407";
+    public static String layouts_p408 = "p408";
+    public static String layouts_p409 = "p409";
+    public static String layouts_p410 = "p410";
+    public static String layouts_p411 = "p411";
+    public static String layouts_p412 = "p412";
+    public static String layouts_p413 = "p413";
+    public static String layouts_p414 = "p414";
+    public static String layouts_p415 = "p415";
+    public static String layouts_p416 = "p416";
+    public static String layouts_p501 = "p501";
+    public static String layouts_p502 = "p502";
+    public static String layouts_p503 = "p503";
+    public static String layouts_p504 = "p504";
+    public static String layouts_p505 = "p505";
+    public static String layouts_p506 = "p506";
+    public static String layouts_p507 = "p507";
+    public static String layouts_p508 = "p508";
+    public static String layouts_p509 = "p509";
+    public static String layouts_p510 = "p510";
+    public static String layouts_p511 = "p511";
+    public static String layouts_p512 = "p512";
+    public static String layouts_p513 = "p513";
+    public static String layouts_p601 = "p601";
+    public static String layouts_p602 = "p602";
+    public static String layouts_p603 = "p603";
+    public static String layouts_p604 = "p604";
+    public static String layouts_p605 = "p605";
+    public static String layouts_p606 = "p606";
+    public static String layouts_p607 = "p607";
+    public static String layouts_p608 = "p608";
+    public static String layouts_p609 = "p609";
+    public static String layouts_p610 = "p610";
+    public static String layouts_p611 = "p611";
+    public static String layouts_p612 = "p612";
+    public static String layouts_p613 = "p613";
+    public static String layouts_p614 = "p614";
+    public static String layouts_p615 = "p615";
+    public static String layouts_p616 = "p616";
+    public static String layouts_p617 = "p617";
+    public static String layouts_p618 = "p618";
+    public static String layouts_p619 = "p619";
+    public static String layouts_p620 = "p620";
+    public static String layouts_p621 = "p621";
+    public static String layouts_p622 = "p622";
+    public static String layouts_p623 = "p623";
+    public static String layouts_p624 = "p624";
+    public static String layouts_p625 = "p625";
+    public static String layouts_p626 = "p626";
+    public static String layouts_p627 = "p627";
+    public static String layouts_p628 = "p628";
+    public static String layouts_p629 = "p629";
+    public static String layouts_p630 = "p630";
+    public static String layouts_p701 = "p701";
+    public static String layouts_p702 = "p702";
+    public static String layouts_p703 = "p703";
+    public static String layouts_p704 = "p704";
+    public static String layouts_p705 = "p705";
+    public static String layouts_p706 = "p706";
+    public static String layouts_p707 = "p707";
+    public static String layouts_p708 = "p708";
+    public static String layouts_p709 = "p709";
+    public static String layouts_p801 = "p801";
+    public static String layouts_p802 = "p802";
+    public static String layouts_p803 = "p803";
+    public static String layouts_p804 = "p804";
+    public static String layouts_p805 = "p805";
+    public static String layouts_p806 = "p806";
+    public static String layouts_p807 = "p807";
+    public static String layouts_p808 = "p808";
+    public static String layouts_p809 = "p809";
+    public static String layouts_p811 = "p811";
+    public static String layouts_p812 = "p812";
+    public static String layouts_p813 = "p813";
+    public static String layouts_p814 = "p814";
+    public static String layouts_p815 = "p815";
+    public static String layouts_p816 = "p816";
+    public static String layouts_p817 = "p817";
+    public static String layouts_p818 = "p818";
+    public static String layouts_p819 = "p819";
+    public static String layouts_p820 = "p820";
+    public static String layouts_p821 = "p821";
+    public static String layouts_p822 = "p822";
+    public static String layouts_p823 = "p823";
+
+    public static final String SQL_CREATE_TABLA_LAYOUTS =
+            "CREATE TABLE " + tablalayouts + "(" +
+                    layouts_id  + " TEXT PRIMARY KEY," +
+                    layouts_p301 + " TEXT," +
+                    layouts_p302 + " TEXT," +
+                    layouts_p303 + " TEXT," +
+                    layouts_p304 + " TEXT," +
+                    layouts_p305 + " TEXT," +
+                    layouts_p306 + " TEXT," +
+                    layouts_p307 + " TEXT," +
+                    layouts_p308 + " TEXT," +
+                    layouts_p309 + " TEXT," +
+                    layouts_p310 + " TEXT," +
+                    layouts_p311 + " TEXT," +
+                    layouts_p312 + " TEXT," +
+                    layouts_p313 + " TEXT," +
+                    layouts_p314 + " TEXT," +
+                    layouts_p315 + " TEXT," +
+                    layouts_p316 + " TEXT," +
+                    layouts_p317 + " TEXT," +
+                    layouts_p318 + " TEXT," +
+                    layouts_p401 + " TEXT," +
+                    layouts_p402 + " TEXT," +
+                    layouts_p403 + " TEXT," +
+                    layouts_p404 + " TEXT," +
+                    layouts_p405 + " TEXT," +
+                    layouts_p406 + " TEXT," +
+                    layouts_p407 + " TEXT," +
+                    layouts_p408 + " TEXT," +
+                    layouts_p409 + " TEXT," +
+                    layouts_p410 + " TEXT," +
+                    layouts_p411 + " TEXT," +
+                    layouts_p412 + " TEXT," +
+                    layouts_p413 + " TEXT," +
+                    layouts_p414 + " TEXT," +
+                    layouts_p415 + " TEXT," +
+                    layouts_p416 + " TEXT," +
+                    layouts_p501 + " TEXT," +
+                    layouts_p502 + " TEXT," +
+                    layouts_p503 + " TEXT," +
+                    layouts_p504 + " TEXT," +
+                    layouts_p505 + " TEXT," +
+                    layouts_p506 + " TEXT," +
+                    layouts_p507 + " TEXT," +
+                    layouts_p508 + " TEXT," +
+                    layouts_p509 + " TEXT," +
+                    layouts_p510 + " TEXT," +
+                    layouts_p511 + " TEXT," +
+                    layouts_p512 + " TEXT," +
+                    layouts_p513 + " TEXT," +
+                    layouts_p601 + " TEXT," +
+                    layouts_p602 + " TEXT," +
+                    layouts_p603 + " TEXT," +
+                    layouts_p604 + " TEXT," +
+                    layouts_p605 + " TEXT," +
+                    layouts_p606 + " TEXT," +
+                    layouts_p607 + " TEXT," +
+                    layouts_p608 + " TEXT," +
+                    layouts_p609 + " TEXT," +
+                    layouts_p610 + " TEXT," +
+                    layouts_p611 + " TEXT," +
+                    layouts_p612 + " TEXT," +
+                    layouts_p613 + " TEXT," +
+                    layouts_p614 + " TEXT," +
+                    layouts_p615 + " TEXT," +
+                    layouts_p616 + " TEXT," +
+                    layouts_p617 + " TEXT," +
+                    layouts_p618 + " TEXT," +
+                    layouts_p619 + " TEXT," +
+                    layouts_p620 + " TEXT," +
+                    layouts_p621 + " TEXT," +
+                    layouts_p622 + " TEXT," +
+                    layouts_p623 + " TEXT," +
+                    layouts_p624 + " TEXT," +
+                    layouts_p625 + " TEXT," +
+                    layouts_p626 + " TEXT," +
+                    layouts_p627 + " TEXT," +
+                    layouts_p628 + " TEXT," +
+                    layouts_p629 + " TEXT," +
+                    layouts_p630 + " TEXT," +
+                    layouts_p701 + " TEXT," +
+                    layouts_p702 + " TEXT," +
+                    layouts_p703 + " TEXT," +
+                    layouts_p704 + " TEXT," +
+                    layouts_p705 + " TEXT," +
+                    layouts_p706 + " TEXT," +
+                    layouts_p707 + " TEXT," +
+                    layouts_p708 + " TEXT," +
+                    layouts_p709 + " TEXT," +
+                    layouts_p801 + " TEXT," +
+                    layouts_p802 + " TEXT," +
+                    layouts_p803 + " TEXT," +
+                    layouts_p804 + " TEXT," +
+                    layouts_p805 + " TEXT," +
+                    layouts_p806 + " TEXT," +
+                    layouts_p807 + " TEXT," +
+                    layouts_p808 + " TEXT," +
+                    layouts_p809 + " TEXT," +
+                    layouts_p811 + " TEXT," +
+                    layouts_p812 + " TEXT," +
+                    layouts_p813 + " TEXT," +
+                    layouts_p814 + " TEXT," +
+                    layouts_p815 + " TEXT," +
+                    layouts_p816 + " TEXT," +
+                    layouts_p817 + " TEXT," +
+                    layouts_p818 + " TEXT," +
+                    layouts_p819 + " TEXT," +
+                    layouts_p820 + " TEXT," +
+                    layouts_p821 + " TEXT," +
+                    layouts_p822 + " TEXT," +
+                    layouts_p823  +  " TEXT" + ");"
             ;
 
     /**

@@ -262,6 +262,11 @@ public class FragmentP706P709 extends FragmentPagina {
         data.close();
     }
 
+    @Override
+    public void llenarVista() {
+
+    }
+
     public boolean validarDatos(){
         llenarVariables();
         if (c7_p706 ==-1){mostrarMensaje("PREGUNTA 706: DEBE MARCAR UNA OPCIÓN"); return false;}

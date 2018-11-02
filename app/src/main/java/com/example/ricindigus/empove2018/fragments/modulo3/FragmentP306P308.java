@@ -156,7 +156,7 @@ public class FragmentP306P308 extends FragmentPagina {
                 return false;
             }
         });
-
+        llenarVista();
         cargarDatos();
     }
 
@@ -231,6 +231,16 @@ public class FragmentP306P308 extends FragmentPagina {
             cargarSpinerMunicipios(municipios);
             if (!modulo3.getC3_p308_m().equals(""))c3_p308_municipio_Spinner.setSelection(Integer.parseInt(modulo3.getC3_p308_m()));
         }
+        data.close();
+    }
+
+    @Override
+    public void llenarVista() {
+        Data data = new Data(context);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p306,idEncuestado)) layoutp306.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p307,idEncuestado)) layoutp307.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p308,idEncuestado)) layoutp308.setVisibility(View.GONE);
         data.close();
     }
 

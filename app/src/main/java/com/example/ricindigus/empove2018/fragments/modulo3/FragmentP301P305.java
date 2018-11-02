@@ -186,6 +186,7 @@ public class FragmentP301P305 extends FragmentPagina {
                 controlarEspecifiqueRadio(group, checkedId,4,c3_p305_o_EditText);
             }
         });
+        llenarVista();
         cargarDatos();
     }
 
@@ -254,6 +255,18 @@ public class FragmentP301P305 extends FragmentPagina {
             if(!modulo3.getC3_p305().equals("-1"))((RadioButton)c3_p305_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p305()))).setChecked(true);
             c3_p305_o_EditText.setText(modulo3.getC3_p305_o());
         }
+        data.close();
+    }
+
+    @Override
+    public void llenarVista() {
+        Data data = new Data(context);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p301,idEncuestado)) layout301.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p302,idEncuestado)) layout302.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p303,idEncuestado)) layout303.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p304,idEncuestado)) layout304.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p305,idEncuestado)) layout305.setVisibility(View.GONE);
         data.close();
     }
 

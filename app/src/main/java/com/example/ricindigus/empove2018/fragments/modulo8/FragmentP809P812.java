@@ -181,6 +181,11 @@ public class FragmentP809P812 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         if(c8_p809<1){
             mostrarMensaje("PREGUNTA 809: DEBE SELECCIONAR UNA OPCION");

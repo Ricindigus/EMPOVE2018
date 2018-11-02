@@ -292,6 +292,11 @@ public class FragmentP508P511 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         llenarVariables();
         if(m5_p508_linearlayout.getVisibility()==View.VISIBLE) {

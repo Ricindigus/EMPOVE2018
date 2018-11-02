@@ -171,6 +171,11 @@ public class FragmentHogares extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         return true;
     }

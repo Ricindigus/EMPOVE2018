@@ -22,8 +22,6 @@
                 android:layout_margin="@dimen/margen_small"
                 android:padding="@dimen/margen_medium"
                 android:orientation="vertical"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:background="@drawable/marco_pregunta">
                 <TextView
                     android:layout_width="wrap_content"
@@ -50,8 +48,6 @@
                 android:layout_margin="@dimen/margen_small"
                 android:padding="@dimen/margen_medium"
                 android:orientation="vertical"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:background="@drawable/marco_pregunta">
                 <TextView
                     android:layout_width="wrap_content"
@@ -109,8 +105,6 @@
                 android:layout_margin="@dimen/margen_small"
                 android:padding="@dimen/margen_medium"
                 android:orientation="vertical"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:background="@drawable/marco_pregunta">
                 <TextView
                     android:layout_width="wrap_content"

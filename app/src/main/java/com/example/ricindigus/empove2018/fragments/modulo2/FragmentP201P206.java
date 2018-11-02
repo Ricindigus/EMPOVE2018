@@ -25,6 +25,7 @@ import com.example.ricindigus.empove2018.adapters.ResidenteAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
@@ -113,6 +114,11 @@ public class FragmentP201P206 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         return true;
     }
@@ -143,11 +149,20 @@ public class FragmentP201P206 extends FragmentPagina {
                         public boolean onMenuItemClick(MenuItem item) {
                             switch(item.getItemId()){
                                 case R.id.opcion_iniciar_encuesta:
+                                    String idEncuestado = residentes.get(position).get_id()+"";
                                     Intent intent1 = new Intent(context, EncuestaActivity.class);
-                                    intent1.putExtra("idEncuestado",residentes.get(position).get_id()+"");
+                                    intent1.putExtra("idEncuestado",idEncuestado);
                                     intent1.putExtra("numero", residentes.get(position).getNumero() + "");
                                     intent1.putExtra("idHogar", idHogar);
                                     intent1.putExtra("idVivienda", idVivienda);
+                                    Data data = new Data(context);
+                                    data.open();
+                                    if(!data.existeElemento(SQLConstantes.tablalayouts,idEncuestado)){
+                                        POJOLayout pojoLayout = new POJOLayout();
+                                        pojoLayout.set_id(idEncuestado);
+                                        data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
+                                    }
+                                    data.close();
                                     startActivity(intent1);
                                     break;
                                 case R.id.opcion_editar:

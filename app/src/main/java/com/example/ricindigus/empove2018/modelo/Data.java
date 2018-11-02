@@ -85,6 +85,8 @@ public class Data {
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO6);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO7);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO8);
+                sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_LAYOUTS);
+
                 sqLiteDatabase.close();
             }catch (IOException e){
                 throw new Error("Error: copiando base de datos");
@@ -124,6 +126,8 @@ public class Data {
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO6);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO7);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO8);
+            sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_LAYOUTS);
+
             sqLiteDatabase.close();
         }catch (IOException e){
             throw new Error("Error: copiando base de datos");
@@ -257,6 +261,7 @@ public class Data {
         }
         return id;
     }
+
 
 
     public Marco getMarco(String idVivienda){
@@ -735,9 +740,9 @@ public class Data {
         return valores;
     }
 
-    public String getValor(String nombreTabla, String variable, String idEmpresa){
+    public String getValor(String nombreTabla, String variable, String id){
         String valor = "";
-        String[] whereArgs = new String[]{idEmpresa};
+        String[] whereArgs = new String[]{id};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(nombreTabla, new String[]{variable},SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
@@ -750,6 +755,12 @@ public class Data {
         }
         if(valor == null) valor = "";
         return valor;
+    }
+
+    public boolean ocultarLayoutPregunta(String varLayoutPregunta,String idencuestado){
+        boolean ocultar = false;
+        if (getValor(SQLConstantes.tablalayouts,varLayoutPregunta,idencuestado).equals("0")) ocultar = true;
+        return ocultar;
     }
 
     public void eliminarDato(String tabla, String id){
@@ -1009,7 +1020,7 @@ public class Data {
                     null,SQLConstantes.WHERE_CLAUSE_ID_ENCUESTADO,whereArgs,null,null,null);
             while(cursor.moveToNext()){
                 M3Pregunta318 m3Pregunta318 = new M3Pregunta318();
-                m3Pregunta318.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
+                m3Pregunta318.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_id)));
                 m3Pregunta318.setIdEncuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_idEncuestado)));
                 m3Pregunta318.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_numero)));
                 m3Pregunta318.setC3_p318_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_f)));
@@ -1022,6 +1033,30 @@ public class Data {
             if(cursor != null) cursor.close();
         }
         return m3Pregunta318s;
+    }
+
+    public M3Pregunta318 getM3Pregunta318(String id){
+        M3Pregunta318 m3Pregunta318 = null;
+        String[] whereArgs = new String[]{id};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablam3p318personas,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                m3Pregunta318 = new M3Pregunta318();
+                m3Pregunta318.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_id)));
+                m3Pregunta318.setIdEncuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_idEncuestado)));
+                m3Pregunta318.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_numero)));
+                m3Pregunta318.setC3_p318_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_f)));
+                m3Pregunta318.setC3_p318_s(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_s)));
+                m3Pregunta318.setC3_p318_e(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_e)));
+                m3Pregunta318.setC3_p318_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_p)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return m3Pregunta318;
     }
 
     public Modulo5 getModulo5(String idEncuestado){
@@ -1559,6 +1594,12 @@ public class Data {
 
         return modulo8;
     }
+
+
+    public void borrarAllData(String tabla){
+        sqLiteDatabase.execSQL("delete from "+ tabla);
+    }
+
 }
 
 

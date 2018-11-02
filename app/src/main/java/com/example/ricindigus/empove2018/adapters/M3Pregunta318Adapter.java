@@ -24,10 +24,16 @@ import java.util.ArrayList;
 public class M3Pregunta318Adapter extends RecyclerView.Adapter<M3Pregunta318Adapter.ViewHolder>{
     ArrayList<M3Pregunta318> m3Pregunta318s;
     Context context;
+    OnItemClickListener onItemClickListener;
 
-    public M3Pregunta318Adapter(ArrayList<M3Pregunta318> m3Pregunta318s, Context context) {
+    public interface OnItemClickListener {
+        public void onItemClick(View view, int position);
+    }
+
+    public M3Pregunta318Adapter(ArrayList<M3Pregunta318> m3Pregunta318s, Context context, OnItemClickListener onItemClickListener) {
         this.m3Pregunta318s = m3Pregunta318s;
         this.context = context;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -44,6 +50,12 @@ public class M3Pregunta318Adapter extends RecyclerView.Adapter<M3Pregunta318Adap
         holder.txtParentesco.setText(context.getResources().getStringArray(R.array.modulo_3_p318_array_parentesco)[Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_f())]);
         if(Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_p()) == 1) holder.txtSino.setText("SÍ");
         else if(Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_p()) == 2) holder.txtSino.setText("NO");
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickListener.onItemClick(view,position);
+            }
+        });
     }
 
     @Override

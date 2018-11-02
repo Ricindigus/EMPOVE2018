@@ -287,6 +287,11 @@ public class FragmentP108P113 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         llenarVariables();
         if (c1_p108 == -1){mostrarMensaje("PREGUNTA 108: DEBE MARCAR UNA OPCIÓN"); return false;}

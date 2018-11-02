@@ -282,6 +282,11 @@ public class FragmentP805P808 extends FragmentPagina {
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public boolean validarDatos() {
         llenarVariables();
         if(c8_p805_1<1){

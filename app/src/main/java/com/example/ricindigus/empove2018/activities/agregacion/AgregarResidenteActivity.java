@@ -186,6 +186,11 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     }
 
     @Override
+    public void llenarVista() {
+
+    }
+
+    @Override
     public void guardarDatos(){
 
             Data data = new Data(this);

@@ -148,6 +148,7 @@ public class FragmentP313P317 extends FragmentPagina {
         });
 
         controlarChecked(ck11p315,edtp315Especifique);
+        llenarVista();
         cargarDatos();
     }
 
@@ -242,6 +243,17 @@ public class FragmentP313P317 extends FragmentPagina {
             edtp316Especifique.setText(modulo3.getC3_p316_o());
             edtp317Especifique.setText(modulo3.getC3_p317_o());
         }
+        data.close();
+    }
+
+    @Override
+    public void llenarVista() {
+        Data data = new Data(contexto);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p313,idEncuestado)) lytp313.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p314,idEncuestado)) lytp314.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p315,idEncuestado)) lytp315.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p316,idEncuestado)) lytp316.setVisibility(View.GONE);
         data.close();
     }
 
