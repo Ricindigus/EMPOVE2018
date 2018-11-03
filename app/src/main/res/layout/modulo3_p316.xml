@@ -50,6 +50,6 @@
             android:text="@string/modulo_3_p316_sp5"/>
         <EditText
             android:id="@+id/mod3_316_edittext_C3_P316_O"
-            style="@style/TemaInputEspecifiqueRadio"/>
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
     </RadioGroup>
 </LinearLayout>

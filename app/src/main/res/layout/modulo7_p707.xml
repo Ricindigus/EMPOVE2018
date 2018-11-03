@@ -21,6 +21,10 @@
         android:id="@+id/mod7_707_radiogroup_C7_P707"
         style="@style/EstiloRadioGroup">
         <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+        <RadioButton
             android:id="@+id/mod7_707_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -48,7 +48,7 @@
             android:text="@string/modulo_3_p306_sp5"/>
         <EditText
             android:id="@+id/mod3_306_edittext_C3_P306_O"
-            style="@style/TemaInputEspecifiqueRadio"/>
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
         <RadioButton
             android:id="@+id/mod3_306_rb6"
             android:layout_width="wrap_content"

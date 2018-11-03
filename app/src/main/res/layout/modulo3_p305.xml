@@ -43,7 +43,7 @@
             android:text="@string/modulo_3_p305_sp4"/>
         <EditText
             android:id="@+id/mod3_305_edittext_C3_P305_O"
-            style="@style/TemaInputEspecifiqueRadio"/>
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
     </RadioGroup>
 
 

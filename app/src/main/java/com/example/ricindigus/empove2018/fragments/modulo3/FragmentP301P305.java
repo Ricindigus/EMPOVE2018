@@ -134,6 +134,16 @@ public class FragmentP301P305 extends FragmentPagina {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+        Data data =  new Data(context);
+        data.open();
+        ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
+        data.close();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        informanteSpinner.setAdapter(adapter);
+
         c3_p301_d_f_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,17 +163,7 @@ public class FragmentP301P305 extends FragmentPagina {
             }
         });
 
-        Data data =  new Data(context);
-        data.open();
-        ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
-        data.close();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        informanteSpinner.setAdapter(adapter);
-
         configurarEditText(c3_p305_o_EditText,layout301,1,30);
-//        p303edtMes.setFilters(new InputFilter[]{new InputFilterMinMax("1", "12"),new InputFilter.LengthFilter(2)});
-//        p303edtAnio.setFilters(new InputFilter[]{new InputFilterMinMax("1", "2018"),new InputFilter.LengthFilter(4)});
 
         c3_p303_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

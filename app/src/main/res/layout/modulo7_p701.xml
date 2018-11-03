@@ -20,6 +20,10 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/modulo_7_p701_si"/>
         <RadioButton
             android:layout_width="wrap_content"
