@@ -32,8 +32,6 @@ public class Modulo3 {
     private String c3_p310_2;
     private String c3_p310_3;
     private String c3_p310_4;
-    private String c3_p310_4_o;
-    private String c3_p310_5;
     private String c3_p311;
     private String c3_p312_dist;
     private String c3_p312_prov;
@@ -51,13 +49,10 @@ public class Modulo3 {
     private String c3_p315_8;
     private String c3_p315_9;
     private String c3_p315_10;
-    private String c3_p315_11;
-    private String c3_p315_11_o;
-    private String c3_p315_12;
+    private String c3_p315_10_o;
     private String c3_p316;
     private String c3_p316_o;
     private String c3_p317;
-    private String c3_p317_o;
     private String c3_p318;
 
     public Modulo3() {
@@ -88,8 +83,6 @@ public class Modulo3 {
         c3_p310_2= "";
         c3_p310_3= "";
         c3_p310_4= "";
-        c3_p310_4_o= "";
-        c3_p310_5= "";
         c3_p311= "";
         c3_p312_dist= "";
         c3_p312_prov= "";
@@ -107,13 +100,10 @@ public class Modulo3 {
         c3_p315_8= "";
         c3_p315_9= "";
         c3_p315_10= "";
-        c3_p315_11= "";
-        c3_p315_11_o= "";
-        c3_p315_12= "";
+        c3_p315_10_o= "";
         c3_p316= "";
         c3_p316_o= "";
         c3_p317= "";
-        c3_p317_o= "";
         c3_p318= "";
     }
 
@@ -203,14 +193,6 @@ public class Modulo3 {
 
     public void setC3_p303_no_nacio(String c3_p303_no_nacio) {
         this.c3_p303_no_nacio = c3_p303_no_nacio;
-    }
-
-    public String getC3_p318() {
-        return c3_p318;
-    }
-
-    public void setC3_p318(String c3_p318) {
-        this.c3_p318 = c3_p318;
     }
 
     public String getC3_p304() {
@@ -339,22 +321,6 @@ public class Modulo3 {
 
     public void setC3_p310_4(String c3_p310_4) {
         this.c3_p310_4 = c3_p310_4;
-    }
-
-    public String getC3_p310_4_o() {
-        return c3_p310_4_o;
-    }
-
-    public void setC3_p310_4_o(String c3_p310_4_o) {
-        this.c3_p310_4_o = c3_p310_4_o;
-    }
-
-    public String getC3_p310_5() {
-        return c3_p310_5;
-    }
-
-    public void setC3_p310_5(String c3_p310_5) {
-        this.c3_p310_5 = c3_p310_5;
     }
 
     public String getC3_p311() {
@@ -493,28 +459,12 @@ public class Modulo3 {
         this.c3_p315_10 = c3_p315_10;
     }
 
-    public String getC3_p315_11() {
-        return c3_p315_11;
+    public String getC3_p315_10_o() {
+        return c3_p315_10_o;
     }
 
-    public void setC3_p315_11(String c3_p315_11) {
-        this.c3_p315_11 = c3_p315_11;
-    }
-
-    public String getC3_p315_11_o() {
-        return c3_p315_11_o;
-    }
-
-    public void setC3_p315_11_o(String c3_p315_11_o) {
-        this.c3_p315_11_o = c3_p315_11_o;
-    }
-
-    public String getC3_p315_12() {
-        return c3_p315_12;
-    }
-
-    public void setC3_p315_12(String c3_p315_12) {
-        this.c3_p315_12 = c3_p315_12;
+    public void setC3_p315_10_o(String c3_p315_10_o) {
+        this.c3_p315_10_o = c3_p315_10_o;
     }
 
     public String getC3_p316() {
@@ -541,12 +491,12 @@ public class Modulo3 {
         this.c3_p317 = c3_p317;
     }
 
-    public String getC3_p317_o() {
-        return c3_p317_o;
+    public String getC3_p318() {
+        return c3_p318;
     }
 
-    public void setC3_p317_o(String c3_p317_o) {
-        this.c3_p317_o = c3_p317_o;
+    public void setC3_p318(String c3_p318) {
+        this.c3_p318 = c3_p318;
     }
 
     public ContentValues toValues(){
@@ -578,8 +528,6 @@ public class Modulo3 {
         contentValues.put(SQLConstantes.modulo3_c3_p310_2,c3_p310_2);
         contentValues.put(SQLConstantes.modulo3_c3_p310_3,c3_p310_3);
         contentValues.put(SQLConstantes.modulo3_c3_p310_4,c3_p310_4);
-        contentValues.put(SQLConstantes.modulo3_c3_p310_4_o,c3_p310_4_o);
-        contentValues.put(SQLConstantes.modulo3_c3_p310_5,c3_p310_5);
         contentValues.put(SQLConstantes.modulo3_c3_p311,c3_p311);
         contentValues.put(SQLConstantes.modulo3_c3_p312_dist,c3_p312_dist);
         contentValues.put(SQLConstantes.modulo3_c3_p312_prov,c3_p312_prov);
@@ -597,13 +545,10 @@ public class Modulo3 {
         contentValues.put(SQLConstantes.modulo3_c3_p315_8,c3_p315_8);
         contentValues.put(SQLConstantes.modulo3_c3_p315_9,c3_p315_9);
         contentValues.put(SQLConstantes.modulo3_c3_p315_10,c3_p315_10);
-        contentValues.put(SQLConstantes.modulo3_c3_p315_11,c3_p315_11);
-        contentValues.put(SQLConstantes.modulo3_c3_p315_11_o,c3_p315_11_o);
-        contentValues.put(SQLConstantes.modulo3_c3_p315_12,c3_p315_12);
+        contentValues.put(SQLConstantes.modulo3_c3_p315_10_o,c3_p315_10_o);
         contentValues.put(SQLConstantes.modulo3_c3_p316,c3_p316);
         contentValues.put(SQLConstantes.modulo3_c3_p316_o,c3_p316_o);
         contentValues.put(SQLConstantes.modulo3_c3_p317,c3_p317);
-        contentValues.put(SQLConstantes.modulo3_c3_p317_o,c3_p317_o);
         contentValues.put(SQLConstantes.modulo3_c3_p318,c3_p318);
         return contentValues;
     }

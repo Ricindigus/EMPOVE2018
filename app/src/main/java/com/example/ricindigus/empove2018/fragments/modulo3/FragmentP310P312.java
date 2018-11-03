@@ -47,8 +47,7 @@ public class FragmentP310P312 extends FragmentPagina {
     String idInformante;
 
     Spinner spInformante;
-    CheckBox ckp310_1,ckp310_2,ckp310_3,ckp310_4,ckp310_5;
-    EditText edtp310_especifique;
+    CheckBox ckp310_1,ckp310_2,ckp310_3,ckp310_4;
     RadioGroup rgp311;
     AutoCompleteTextView autoCompleteTextView;
     TextView txtDistrito,txtProvincia,txtDepartamento;
@@ -58,8 +57,6 @@ public class FragmentP310P312 extends FragmentPagina {
     private String c3_p310_2;
     private String c3_p310_3;
     private String c3_p310_4;
-    private String c3_p310_4_o;
-    private String c3_p310_5;
     private int c3_p311;
     String c3_p312_dist;
     String c3_p312_prov;
@@ -85,19 +82,14 @@ public class FragmentP310P312 extends FragmentPagina {
         ckp310_2 = (CheckBox) rootView.findViewById(R.id.mod3_310_checkbox_C3_P310_2);
         ckp310_3 = (CheckBox) rootView.findViewById(R.id.mod3_310_checkbox_C3_P310_3);
         ckp310_4 = (CheckBox) rootView.findViewById(R.id.mod3_310_checkbox_C3_P310_4);
-        ckp310_5 = (CheckBox) rootView.findViewById(R.id.mod3_310_checkbox_C3_P310_5);
-        edtp310_especifique = (EditText) rootView.findViewById(R.id.mod3_310_edittext_C3_P310_O);
         autoCompleteTextView = (AutoCompleteTextView) rootView.findViewById(R.id.mod3_312_autocompletetextview);
         txtDistrito = (TextView) rootView.findViewById(R.id.mod3_c312_txtDistrito);
         txtProvincia = (TextView) rootView.findViewById(R.id.mod3_c312_txtProvincia);
         txtDepartamento = (TextView) rootView.findViewById(R.id.mod3_c312_txtDepartamento);
-
         rgp311 =  (RadioGroup) rootView.findViewById(R.id.mod3_311_radiogroup_C3_P311);
         lytp310 =  (LinearLayout) rootView.findViewById(R.id.layout_m3_p310);
         lytp311 =  (LinearLayout) rootView.findViewById(R.id.layout_m3_p311);
         lytp312 =  (LinearLayout) rootView.findViewById(R.id.layout_m3_p312);
-
-        controlarChecked(ckp310_4,edtp310_especifique);
 
         return rootView;
     }
@@ -105,7 +97,6 @@ public class FragmentP310P312 extends FragmentPagina {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        configurarEditText(edtp310_especifique,lytp310,1,30);
         String[] paises = getResources().getStringArray(R.array.paises);
         Data data = new Data(contexto);
         data.open();
@@ -143,6 +134,24 @@ public class FragmentP310P312 extends FragmentPagina {
             }
         });
 
+        ckp310_4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    ckp310_1.setChecked(false);
+                    ckp310_2.setChecked(false);
+                    ckp310_3.setChecked(false);
+                    ckp310_1.setEnabled(false);
+                    ckp310_2.setEnabled(false);
+                    ckp310_3.setEnabled(false);
+                }else{
+                    ckp310_1.setEnabled(true);
+                    ckp310_2.setEnabled(true);
+                    ckp310_3.setEnabled(true);
+                }
+            }
+        });
+
         rgp311.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -170,8 +179,6 @@ public class FragmentP310P312 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p310_2,c3_p310_2);
         contentValues.put(SQLConstantes.modulo3_c3_p310_3,c3_p310_3);
         contentValues.put(SQLConstantes.modulo3_c3_p310_4,c3_p310_4);
-        contentValues.put(SQLConstantes.modulo3_c3_p310_4_o,c3_p310_4_o);
-        contentValues.put(SQLConstantes.modulo3_c3_p310_5,c3_p310_5);
         contentValues.put(SQLConstantes.modulo3_c3_p311,c3_p311);
         contentValues.put(SQLConstantes.modulo3_c3_p312_dist,c3_p312_dist);
         contentValues.put(SQLConstantes.modulo3_c3_p312_prov,c3_p312_prov);
@@ -187,8 +194,6 @@ public class FragmentP310P312 extends FragmentPagina {
         if(ckp310_2.isChecked())c3_p310_2 = "1";else c3_p310_2 = "0";
         if(ckp310_3.isChecked())c3_p310_3 = "1";else c3_p310_3 = "0";
         if(ckp310_4.isChecked())c3_p310_4 = "1";else c3_p310_4 = "0";
-        if(ckp310_5.isChecked())c3_p310_5 = "1";else c3_p310_5 = "0";
-        c3_p310_4_o = edtp310_especifique.getText().toString().trim();
         c3_p311 = rgp311.indexOfChild(rgp311.findViewById(rgp311.getCheckedRadioButtonId()));
 
     }
@@ -208,8 +213,6 @@ public class FragmentP310P312 extends FragmentPagina {
             if(modulo3.getC3_p310_2().equals("1")) ckp310_2.setChecked(true);
             if(modulo3.getC3_p310_3().equals("1")) ckp310_3.setChecked(true);
             if(modulo3.getC3_p310_4().equals("1")) ckp310_4.setChecked(true);
-            if(modulo3.getC3_p310_5().equals("1")) ckp310_5.setChecked(true);
-            edtp310_especifique.setText(modulo3.getC3_p310_4_o());
             if(!modulo3.getC3_p311().equals("-1") && !modulo3.getC3_p311().equals(""))((RadioButton)rgp311.getChildAt(Integer.parseInt(modulo3.getC3_p311()))).setChecked(true);
             if(!modulo3.getC3_p312_dep().equals("")){
                 String codUbigeo = modulo3.getC3_p312_dep()+modulo3.getC3_p312_prov()+modulo3.getC3_p312_dist();
@@ -241,10 +244,7 @@ public class FragmentP310P312 extends FragmentPagina {
         if(spInformante.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (lytp310.getVisibility() == View.VISIBLE){
             if (c3_p310_1.equals("0") && c3_p310_2.equals("0") && c3_p310_3.equals("0")
-                    && c3_p310_4.equals("0") && c3_p310_5.equals("0")) {mostrarMensaje("PREGUNTA 310: DEBE MARCAR AL MENOS UNA OPCION");return false;}
-            if (c3_p310_4.equals("1") && c3_p310_4_o.trim().equals("")){
-                mostrarMensaje("PREGUNTA 310: DEBE ESPECIFICAR LA RESPUESTA");return false;
-            }
+                    && c3_p310_4.equals("0")) {mostrarMensaje("PREGUNTA 310: DEBE MARCAR AL MENOS UNA OPCION");return false;}
         }
         if (c3_p311 == -1){mostrarMensaje("PREGUNTA 311: DEBE MARCAR UNA OPCIÓN"); return false;}
         if(lytp312.getVisibility() == View.VISIBLE){

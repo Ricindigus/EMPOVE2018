@@ -26,23 +26,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_3_p310_sp3"/>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <CheckBox
-            android:id="@+id/mod3_310_checkbox_C3_P310_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/margen_small"
-            android:text="@string/modulo_3_p310_sp4"/>
-        <EditText
-            android:id="@+id/mod3_310_edittext_C3_P310_O"
-            style="@style/TemaInputEspecifique"/>
-    </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<CheckBox-->
+            <!--android:id="@+id/mod3_310_checkbox_C3_P310_4"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/margen_small"-->
+            <!--android:text="@string/modulo_3_p310_sp4"/>-->
+        <!--<EditText-->
+            <!--android:id="@+id/mod3_310_edittext_C3_P310_O"-->
+            <!--style="@style/TemaInputEspecifique"/>-->
+    <!--</LinearLayout>-->
     <CheckBox
-        android:id="@+id/mod3_310_checkbox_C3_P310_5"
+        android:id="@+id/mod3_310_checkbox_C3_P310_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/modulo_3_p310_sp5"/>
+        android:text="@string/modulo_3_p310_sp4"/>
 </LinearLayout>

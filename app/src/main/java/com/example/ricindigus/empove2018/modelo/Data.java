@@ -923,8 +923,6 @@ public class Data {
                 modulo3.setC3_p310_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_2)));
                 modulo3.setC3_p310_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_3 )));
                 modulo3.setC3_p310_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_4 )));
-                modulo3.setC3_p310_4_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_4_o )));
-                modulo3.setC3_p310_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_5 )));
                 modulo3.setC3_p311(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p311)));
                 modulo3.setC3_p312_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_dep)));
                 modulo3.setC3_p312_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_prov)));
@@ -941,14 +939,11 @@ public class Data {
                 modulo3.setC3_p315_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_7)));
                 modulo3.setC3_p315_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_8)));
                 modulo3.setC3_p315_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_9)));
-                modulo3.setC3_p315_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_10 )));
-                modulo3.setC3_p315_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_11 )));
-                modulo3.setC3_p315_11_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_11_o)));
-                modulo3.setC3_p315_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_12)));
+                modulo3.setC3_p315_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_10)));
+                modulo3.setC3_p315_10_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_10_o)));
                 modulo3.setC3_p316(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p316)));
                 modulo3.setC3_p316_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p316_o )));
                 modulo3.setC3_p317(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p317 )));
-                modulo3.setC3_p317_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p317_o)));
                 modulo3.setC3_p318(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318)));
             }
         }finally{

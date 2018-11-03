@@ -44,8 +44,8 @@ public class FragmentP313P317 extends FragmentPagina {
 
     Spinner spInformante;
     RadioGroup rgp313,rgp314,rgp316,rgp317;
-    CheckBox ck1p315,ck2p315,ck3p315,ck4p315,ck5p315,ck6p315,ck7p315,ck8p315,ck9p315,ck10p315,ck11p315,ck12p315;
-    EditText edtp314Especifique,edtp315Especifique,edtp316Especifique,edtp317Especifique;
+    CheckBox ck1p315,ck2p315,ck3p315,ck4p315,ck5p315,ck6p315,ck7p315,ck8p315,ck9p315,ck10p315;
+    EditText edtp314Especifique,edtp315Especifique,edtp316Especifique;
     LinearLayout lytp313,lytp314,lytp315,lytp316,lytp317;
 
     private int c3_p313;
@@ -61,13 +61,10 @@ public class FragmentP313P317 extends FragmentPagina {
     private String c3_p315_8;
     private String c3_p315_9;
     private String c3_p315_10;
-    private String c3_p315_11;
-    private String c3_p315_11_o;
-    private String c3_p315_12;
+    private String c3_p315_10_o;
     private int c3_p316;
     private String c3_p316_o;
     private int c3_p317;
-    private String c3_p317_o;
 
     public FragmentP313P317() {
         // Required empty public constructor
@@ -101,8 +98,6 @@ public class FragmentP313P317 extends FragmentPagina {
         ck8p315 = (CheckBox) rootView.findViewById(R.id.mod3_315_checkbox_C3_P315_8);
         ck9p315 = (CheckBox) rootView.findViewById(R.id.mod3_315_checkbox_C3_P315_9);
         ck10p315 = (CheckBox) rootView.findViewById(R.id.mod3_315_checkbox_C3_P315_10);
-        ck11p315 = (CheckBox) rootView.findViewById(R.id.mod3_315_checkbox_C3_P315_11);
-        ck12p315 = (CheckBox) rootView.findViewById(R.id.mod3_315_checkbox_C3_P315_12);
 
         lytp313 =  (LinearLayout) rootView.findViewById(R.id.layout_m3_p313);
         lytp314 =  (LinearLayout) rootView.findViewById(R.id.layout_m3_p314);
@@ -113,7 +108,6 @@ public class FragmentP313P317 extends FragmentPagina {
         edtp314Especifique = (EditText) rootView.findViewById(R.id.mod3_314_edittext_C3_P314_O);
         edtp315Especifique = (EditText) rootView.findViewById(R.id.mod3_315_edittext_C3_P315_O);
         edtp316Especifique = (EditText) rootView.findViewById(R.id.mod3_316_edittext_C3_P316_O);
-        edtp317Especifique = (EditText) rootView.findViewById(R.id.mod3_317_edittext_C3_P317_O);
 
         return rootView;
     }
@@ -124,7 +118,6 @@ public class FragmentP313P317 extends FragmentPagina {
         configurarEditText(edtp314Especifique,lytp314,1,30);
         configurarEditText(edtp315Especifique,lytp315,1,30);
         configurarEditText(edtp316Especifique,lytp316,1,30);
-        configurarEditText(edtp317Especifique,lytp317,1,30);
 
         rgp313.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -151,14 +144,9 @@ public class FragmentP313P317 extends FragmentPagina {
             }
         });
 
-        rgp317.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                controlarEspecifiqueRadio(group, checkedId,5,edtp317Especifique);
-            }
-        });
 
-        controlarChecked(ck11p315,edtp315Especifique);
+
+        controlarChecked(ck10p315,edtp315Especifique);
         llenarVista();
         cargarDatos();
     }
@@ -179,16 +167,15 @@ public class FragmentP313P317 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p315_5,c3_p315_5);
         contentValues.put(SQLConstantes.modulo3_c3_p315_6,c3_p315_6);
         contentValues.put(SQLConstantes.modulo3_c3_p315_7,c3_p315_7);
+
         contentValues.put(SQLConstantes.modulo3_c3_p315_8,c3_p315_8);
         contentValues.put(SQLConstantes.modulo3_c3_p315_9,c3_p315_9);
         contentValues.put(SQLConstantes.modulo3_c3_p315_10,c3_p315_10);
-        contentValues.put(SQLConstantes.modulo3_c3_p315_11,c3_p315_11);
-        contentValues.put(SQLConstantes.modulo3_c3_p315_11_o,c3_p315_11_o);
-        contentValues.put(SQLConstantes.modulo3_c3_p315_12,c3_p315_12);
+        contentValues.put(SQLConstantes.modulo3_c3_p315_10_o,c3_p315_10_o);
+
         contentValues.put(SQLConstantes.modulo3_c3_p316,c3_p316+"");
         contentValues.put(SQLConstantes.modulo3_c3_p316_o,c3_p316_o);
         contentValues.put(SQLConstantes.modulo3_c3_p317,c3_p317+"");
-        contentValues.put(SQLConstantes.modulo3_c3_p317_o,c3_p317_o);
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
@@ -206,16 +193,15 @@ public class FragmentP313P317 extends FragmentPagina {
         if (ck5p315.isChecked())c3_p315_5 = "1";else c3_p315_5 = "0";
         if (ck6p315.isChecked())c3_p315_6 = "1";else c3_p315_6 = "0";
         if (ck7p315.isChecked())c3_p315_7 = "1";else c3_p315_7 = "0";
+
         if (ck8p315.isChecked())c3_p315_8 = "1";else c3_p315_8 = "0";
         if (ck9p315.isChecked())c3_p315_9 = "1";else c3_p315_9 = "0";
         if (ck10p315.isChecked())c3_p315_10 = "1";else c3_p315_10 = "0";
-        if (ck11p315.isChecked())c3_p315_11 = "1";else c3_p315_11 = "0";
-        if (ck12p315.isChecked())c3_p315_12 = "1";else c3_p315_12 = "0";
-        c3_p315_11_o = edtp315Especifique.getText().toString().trim();
+        c3_p315_10_o = edtp315Especifique.getText().toString().trim();
         c3_p316 = rgp316.indexOfChild(rgp316.findViewById(rgp316.getCheckedRadioButtonId()));
         c3_p316_o = edtp316Especifique.getText().toString().trim();
         c3_p317 = rgp317.indexOfChild(rgp317.findViewById(rgp317.getCheckedRadioButtonId()));
-        c3_p317_o = edtp317Especifique.getText().toString().trim();
+
     }
 
     @Override
@@ -241,18 +227,17 @@ public class FragmentP313P317 extends FragmentPagina {
             if(modulo3.getC3_p315_5().equals("1")) ck5p315.setChecked(true);
             if(modulo3.getC3_p315_6().equals("1")) ck6p315.setChecked(true);
             if(modulo3.getC3_p315_7().equals("1")) ck7p315.setChecked(true);
+
             if(modulo3.getC3_p315_8().equals("1")) ck8p315.setChecked(true);
             if(modulo3.getC3_p315_9().equals("1")) ck9p315.setChecked(true);
             if(modulo3.getC3_p315_10().equals("1")) ck10p315.setChecked(true);
-            if(modulo3.getC3_p315_11().equals("1")) ck11p315.setChecked(true);
-            if(modulo3.getC3_p315_12().equals("1")) ck12p315.setChecked(true);
-            edtp315Especifique.setText(modulo3.getC3_p315_11_o());
+
+            edtp315Especifique.setText(modulo3.getC3_p315_10_o());
             if(!modulo3.getC3_p316().equals("-1") && !modulo3.getC3_p316().equals(""))
                 ((RadioButton)rgp316.getChildAt(Integer.parseInt(modulo3.getC3_p316()))).setChecked(true);
             if(!modulo3.getC3_p317().equals("-1") && !modulo3.getC3_p317().equals(""))
                 ((RadioButton)rgp317.getChildAt(Integer.parseInt(modulo3.getC3_p317()))).setChecked(true);
             edtp316Especifique.setText(modulo3.getC3_p316_o());
-            edtp317Especifique.setText(modulo3.getC3_p317_o());
         }
         data.close();
     }
@@ -283,11 +268,9 @@ public class FragmentP313P317 extends FragmentPagina {
 
         if (c3_p315_1.equals("0") && c3_p315_2.equals("0") && c3_p315_3.equals("0")
                 && c3_p315_4.equals("0") && c3_p315_5.equals("0")&& c3_p315_6.equals("0")
-                && c3_p315_7.equals("0")&& c3_p315_8.equals("0")&& c3_p315_9.equals("0")
-                && c3_p315_8.equals("0")&& c3_p315_9.equals("0")&& c3_p315_10.equals("0")
-                && c3_p315_11.equals("0")&& c3_p315_12.equals("0"))
-        {mostrarMensaje("PREGUNTA 315: DEBE MARCAR AL MENOS UNA OPCION");return false;}
-        if (c3_p315_11.equals("1") && c3_p315_11_o.trim().equals("")){
+                && c3_p315_7.equals("0")&& c3_p315_8.equals("0") && c3_p315_9.equals("0")
+                && c3_p315_10.equals("0")) {mostrarMensaje("PREGUNTA 315: DEBE MARCAR AL MENOS UNA OPCION");return false;}
+        if (c3_p315_10.equals("1") && c3_p315_10_o.trim().equals("")){
             mostrarMensaje("PREGUNTA 315: DEBE ESPECIFICAR LA RESPUESTA");return false;
         }
         if (c3_p316 == -1){mostrarMensaje("PREGUNTA 316: DEBE MARCAR UNA OPCIÓN"); return false;}
@@ -295,9 +278,7 @@ public class FragmentP313P317 extends FragmentPagina {
             if (c3_p316_o.trim().equals("")){mostrarMensaje("PREGUNTA 316: DEBE ESPECIFICAR");return false;}
         }
         if (c3_p317 == -1){mostrarMensaje("PREGUNTA 317: DEBE MARCAR UNA OPCIÓN"); return false;}
-        if (c3_p317 == 5){
-            if (c3_p317_o.trim().equals("")){mostrarMensaje("PREGUNTA 317: DEBE ESPECIFICAR");return false;}
-        }
+
         return true;
     }
 

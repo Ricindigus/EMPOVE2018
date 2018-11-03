@@ -41,16 +41,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_3_p317_sp4"/>
-
-            <RadioButton
-                android:id="@+id/mod3_317_rb5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_3_p317_sp5"/>
-            <EditText
-                android:id="@+id/mod3_317_edittext_C3_P317_O"
-                style="@style/TemaInputEspecifiqueRadio"/>
-
     </RadioGroup>
 </LinearLayout>

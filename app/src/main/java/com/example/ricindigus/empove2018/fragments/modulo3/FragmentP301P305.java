@@ -382,8 +382,6 @@ public class FragmentP301P305 extends FragmentPagina {
             contentValues.put(SQLConstantes.modulo3_c3_p310_2,"");
             contentValues.put(SQLConstantes.modulo3_c3_p310_3,"");
             contentValues.put(SQLConstantes.modulo3_c3_p310_4,"");
-            contentValues.put(SQLConstantes.modulo3_c3_p310_4_o,"");
-            contentValues.put(SQLConstantes.modulo3_c3_p310_5,"");
             data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
             data.borrarAllData(SQLConstantes.tablam3p309rutas);
             contentValues = new ContentValues();

@@ -412,8 +412,8 @@
     <string name="modulo_3_p310_sp1">1.Con un grupo familiar</string>
     <string name="modulo_3_p310_sp2">2.Con un grupo no familiar</string>
     <string name="modulo_3_p310_sp3">3.Solo(a)</string>
-    <string name="modulo_3_p310_sp4">4.Otro</string>
-    <string name="modulo_3_p310_sp5">5.NO DESEA RESPONDER</string>
+    <!--<string name="modulo_3_p310_sp4">4.Otro</string>-->
+    <string name="modulo_3_p310_sp4">5.NO DESEA RESPONDER</string>
     <string name="modulo_3_p310_especifique">Especifique</string>
 
     <string name="modulo_3_p311">311.DESDE QUE LLEGÓ AL PERÚ. ¿HA VIVIDO SIEMPRE EN ESTE DISTRITO?</string>

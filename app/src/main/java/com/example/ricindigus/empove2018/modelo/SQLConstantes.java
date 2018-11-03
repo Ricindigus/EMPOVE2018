@@ -588,8 +588,6 @@ public class SQLConstantes {
     public static String modulo3_c3_p310_2 = "c3_p310_2";
     public static String modulo3_c3_p310_3 = "c3_p310_3";
     public static String modulo3_c3_p310_4 = "c3_p310_4";
-    public static String modulo3_c3_p310_4_o = "c3_p310_4_o";
-    public static String modulo3_c3_p310_5 = "c3_p310_5";
     public static String modulo3_c3_p311 = "c3_p311";
     public static String modulo3_c3_p312_dist = "c3_p312_dist";
     public static String modulo3_c3_p312_prov = "c3_p312_prov";
@@ -607,13 +605,10 @@ public class SQLConstantes {
     public static String modulo3_c3_p315_8 = "c3_p315_8";
     public static String modulo3_c3_p315_9 = "c3_p315_9";
     public static String modulo3_c3_p315_10 = "c3_p315_10";
-    public static String modulo3_c3_p315_11 = "c3_p315_11";
-    public static String modulo3_c3_p315_11_o = "c3_p315_11_o";
-    public static String modulo3_c3_p315_12 = "c3_p315_12";
+    public static String modulo3_c3_p315_10_o = "c3_p315_10_o";
     public static String modulo3_c3_p316 = "c3_p316";
     public static String modulo3_c3_p316_o = "c3_p316_o";
     public static String modulo3_c3_p317 = "c3_p317";
-    public static String modulo3_c3_p317_o = "c3_p317_o";
     public static String modulo3_c3_p318 = "c3_p318";
 
 
@@ -647,8 +642,6 @@ public class SQLConstantes {
                     modulo3_c3_p310_2  + " TEXT," +
                     modulo3_c3_p310_3  + " TEXT," +
                     modulo3_c3_p310_4  + " TEXT," +
-                    modulo3_c3_p310_4_o  + " TEXT," +
-                    modulo3_c3_p310_5  + " TEXT," +
                     modulo3_c3_p311  + " TEXT," +
                     modulo3_c3_p312_dist  + " TEXT," +
                     modulo3_c3_p312_prov  + " TEXT," +
@@ -666,13 +659,10 @@ public class SQLConstantes {
                     modulo3_c3_p315_8  + " TEXT," +
                     modulo3_c3_p315_9  + " TEXT," +
                     modulo3_c3_p315_10  + " TEXT," +
-                    modulo3_c3_p315_11  + " TEXT," +
-                    modulo3_c3_p315_11_o  + " TEXT," +
-                    modulo3_c3_p315_12  + " TEXT," +
+                    modulo3_c3_p315_10_o  + " TEXT," +
                     modulo3_c3_p316  + " TEXT," +
                     modulo3_c3_p316_o  + " TEXT," +
                     modulo3_c3_p317  + " TEXT," +
-                    modulo3_c3_p317_o  + " TEXT," +
                     modulo3_c3_p318 + " TEXT" + ");"
             ;
 
