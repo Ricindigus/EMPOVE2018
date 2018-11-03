@@ -137,8 +137,23 @@ public class FragmentP310P312 extends FragmentPagina {
                 c3_p312_dep = ubigeo.getCod_departamento();
                 c3_p312_prov = ubigeo.getCod_provincia();
                 c3_p312_dist = ubigeo.getCod_distrito();
+                autoCompleteTextView.setText("");
                 ocultarTeclado(autoCompleteTextView);
                 lytp312.requestFocus();
+            }
+        });
+
+        rgp311.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+                switch (seleccionado){
+                    case 1:
+                        txtDepartamento.setText("");txtProvincia.setText("");txtDistrito.setText("");
+                        c3_p312_dep = "";c3_p312_prov = "";c3_p312_dist = "";
+                        lytp312.setVisibility(View.GONE);break;
+                    case 2:lytp312.setVisibility(View.VISIBLE);break;
+                }
             }
         });
         llenarVista();
@@ -224,13 +239,17 @@ public class FragmentP310P312 extends FragmentPagina {
     public boolean validarDatos() {
         llenarVariables();
         if(spInformante.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
-        if (c3_p310_1.equals("0") && c3_p310_2.equals("0") && c3_p310_3.equals("0") && c3_p310_4.equals("0") && c3_p310_5.equals("0"))
-        {mostrarMensaje("PREGUNTA 310: DEBE MARCAR AL MENOS UNA OPCION");return false;}
-        if (c3_p310_4.equals("1") && c3_p310_4_o.trim().equals("")){
-            mostrarMensaje("PREGUNTA 310: DEBE ESPECIFICAR LA RESPUESTA");return false;
+        if (lytp310.getVisibility() == View.VISIBLE){
+            if (c3_p310_1.equals("0") && c3_p310_2.equals("0") && c3_p310_3.equals("0")
+                    && c3_p310_4.equals("0") && c3_p310_5.equals("0")) {mostrarMensaje("PREGUNTA 310: DEBE MARCAR AL MENOS UNA OPCION");return false;}
+            if (c3_p310_4.equals("1") && c3_p310_4_o.trim().equals("")){
+                mostrarMensaje("PREGUNTA 310: DEBE ESPECIFICAR LA RESPUESTA");return false;
+            }
         }
         if (c3_p311 == -1){mostrarMensaje("PREGUNTA 311: DEBE MARCAR UNA OPCIÓN"); return false;}
-        if (txtDepartamento.getText().toString().equals("")){mostrarMensaje("PREGUNTA 312: DEBE INDICAR EL UBIGEO"); return false;}
+        if(lytp312.getVisibility() == View.VISIBLE){
+            if (txtDepartamento.getText().toString().equals("")){mostrarMensaje("PREGUNTA 312: DEBE INDICAR EL UBIGEO"); return false;}
+        }
         return true;
     }
 

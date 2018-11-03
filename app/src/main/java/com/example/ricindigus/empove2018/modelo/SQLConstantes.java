@@ -36,6 +36,8 @@ public class SQLConstantes {
     public static String tablaestados = "estados";
     public static String tablaubigeo = "ubigeo";
     public static String tablalayouts = "layouts";
+    public static String tablafragments= "fragments";
+
 
 
 
@@ -209,6 +211,78 @@ public class SQLConstantes {
                     hogar_nroviven + " TEXT," +
                     hogar_nropersonas + " TEXT," +
                     hogar_estado + " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA FRAGMENTS
+     * */
+
+    public static String fragments_id = "_id";
+    public static String fragments_p301p305 = "p301p305";
+    public static String fragments_p306p308 = "p306p308";
+    public static String fragments_p309 = "p309";
+    public static String fragments_p310p312 = "p310p312";
+    public static String fragments_p313p317 = "p313p317";
+    public static String fragments_p318 = "p318";
+    public static String fragments_p401p404 = "p401p404";
+    public static String fragments_p405p407 = "p405p407";
+    public static String fragments_p408p410 = "p408p410";
+    public static String fragments_p411p416 = "p411p416";
+    public static String fragments_p501p505 = "p501p505";
+    public static String fragments_p506p507 = "p506p507";
+    public static String fragments_p508p511 = "p508p511";
+    public static String fragments_p512p513 = "p512p513";
+    public static String fragments_p601p604 = "p601p604";
+    public static String fragments_p605p608 = "p605p608";
+    public static String fragments_p609p612 = "p609p612";
+    public static String fragments_p613p618 = "p613p618";
+    public static String fragments_p619p622 = "p619p622";
+    public static String fragments_p623p625 = "p623p625";
+    public static String fragments_p626p629 = "p626p629";
+    public static String fragments_p630 = "p630";
+    public static String fragments_p701p705 = "p701p705";
+    public static String fragments_p706p709 = "p706p709";
+    public static String fragments_p801p804 = "p801p804";
+    public static String fragments_p805p808 = "p805p808";
+    public static String fragments_p809p812 = "p809p812";
+    public static String fragments_p813p816 = "p813p816";
+    public static String fragments_p817p820 = "p817p820";
+    public static String fragments_p821p823 = "p821p823";
+
+
+    public static final String SQL_CREATE_TABLA_FRAGMENTS =
+            "CREATE TABLE " + tablafragments + "(" +
+                    fragments_id  + " TEXT PRIMARY KEY," +
+                    fragments_p301p305  + " TEXT," +
+                    fragments_p306p308  + " TEXT," +
+                    fragments_p309  + " TEXT," +
+                    fragments_p310p312  + " TEXT," +
+                    fragments_p313p317  + " TEXT," +
+                    fragments_p318  + " TEXT," +
+                    fragments_p401p404  + " TEXT," +
+                    fragments_p405p407  + " TEXT," +
+                    fragments_p408p410  + " TEXT," +
+                    fragments_p411p416  + " TEXT," +
+                    fragments_p501p505  + " TEXT," +
+                    fragments_p506p507  + " TEXT," +
+                    fragments_p508p511  + " TEXT," +
+                    fragments_p512p513  + " TEXT," +
+                    fragments_p601p604  + " TEXT," +
+                    fragments_p605p608  + " TEXT," +
+                    fragments_p609p612  + " TEXT," +
+                    fragments_p613p618  + " TEXT," +
+                    fragments_p619p622  + " TEXT," +
+                    fragments_p623p625  + " TEXT," +
+                    fragments_p626p629  + " TEXT," +
+                    fragments_p630  + " TEXT," +
+                    fragments_p701p705  + " TEXT," +
+                    fragments_p706p709  + " TEXT," +
+                    fragments_p801p804  + " TEXT," +
+                    fragments_p805p808  + " TEXT," +
+                    fragments_p809p812  + " TEXT," +
+                    fragments_p813p816  + " TEXT," +
+                    fragments_p817p820  + " TEXT," +
+                    fragments_p821p823 + " TEXT" + ");"
             ;
 
     /**

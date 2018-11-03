@@ -4,8 +4,8 @@ public class TipoFragmentEncuestado {
     public static final int P301P305 = 1;
     public static final int P306P308 = 2;
     public static final int P309 = 3;
-    public static final int P310P313 = 4;
-    public static final int P314P317 = 5;
+    public static final int P310P312 = 4;
+    public static final int P313P317 = 5;
     public static final int P318 = 6;
     public static final int P401P404 = 7;
     public static final int P405P407 = 8;

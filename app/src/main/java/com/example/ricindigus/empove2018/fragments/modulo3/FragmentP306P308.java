@@ -197,8 +197,8 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p307_d  = c3_p307_TextViewDia.getText().toString();
         c3_p307_m  = c3_p307_TextViewMes.getText().toString();
         c3_p307_a  = c3_p307_TextViewAnio.getText().toString();
-        c3_p308_e  = getCodigoEstMun(c3_p308_estado_Spinner.getSelectedItem().toString());
-        c3_p308_m  = getCodigoEstMun(c3_p308_municipio_Spinner.getSelectedItem().toString());
+        if (c3_p308_estado_Spinner.getSelectedItemPosition() > 0) c3_p308_e  = getCodigoEstMun(c3_p308_estado_Spinner.getSelectedItem().toString());
+        if (c3_p308_municipio_Spinner.getSelectedItemPosition() > 0) c3_p308_m  = getCodigoEstMun(c3_p308_municipio_Spinner.getSelectedItem().toString());
         c3_p308_e_seleccion = c3_p308_estado_Spinner.getSelectedItemPosition();
         c3_p308_m_seleccion = c3_p308_municipio_Spinner.getSelectedItemPosition();
 

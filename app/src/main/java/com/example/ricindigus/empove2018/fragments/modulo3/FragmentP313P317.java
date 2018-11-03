@@ -122,9 +122,20 @@ public class FragmentP313P317 extends FragmentPagina {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         configurarEditText(edtp314Especifique,lytp314,1,30);
-        configurarEditText(edtp315Especifique,lytp314,1,30);
-        configurarEditText(edtp316Especifique,lytp314,1,30);
-        configurarEditText(edtp317Especifique,lytp314,1,30);
+        configurarEditText(edtp315Especifique,lytp315,1,30);
+        configurarEditText(edtp316Especifique,lytp316,1,30);
+        configurarEditText(edtp317Especifique,lytp317,1,30);
+
+        rgp313.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+                switch (seleccionado){
+                    case 1:rgp314.clearCheck();edtp314Especifique.setText("");lytp314.setVisibility(View.GONE);break;
+                    case 2: lytp314.setVisibility(View.VISIBLE);break;
+                }
+            }
+        });
 
         rgp314.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -262,10 +273,14 @@ public class FragmentP313P317 extends FragmentPagina {
         llenarVariables();
         if(spInformante.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p313 == -1){mostrarMensaje("PREGUNTA 314: DEBE MARCAR UNA OPCIÓN"); return false;}
-        if (c3_p314 == -1){mostrarMensaje("PREGUNTA 314: DEBE MARCAR UNA OPCIÓN"); return false;}
-        if (c3_p314 == 3){
-            if (c3_p314_o.trim().equals("")){mostrarMensaje("PREGUNTA 314: DEBE ESPECIFICAR");return false;}
+
+        if (lytp314.getVisibility() == View.VISIBLE){
+            if (c3_p314 == -1){mostrarMensaje("PREGUNTA 314: DEBE MARCAR UNA OPCIÓN"); return false;}
+            if (c3_p314 == 3){
+                if (c3_p314_o.trim().equals("")){mostrarMensaje("PREGUNTA 314: DEBE ESPECIFICAR");return false;}
+            }
         }
+
         if (c3_p315_1.equals("0") && c3_p315_2.equals("0") && c3_p315_3.equals("0")
                 && c3_p315_4.equals("0") && c3_p315_5.equals("0")&& c3_p315_6.equals("0")
                 && c3_p315_7.equals("0")&& c3_p315_8.equals("0")&& c3_p315_9.equals("0")

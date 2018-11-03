@@ -25,6 +25,7 @@ import com.example.ricindigus.empove2018.adapters.ResidenteAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
@@ -161,6 +162,9 @@ public class FragmentP201P206 extends FragmentPagina {
                                         POJOLayout pojoLayout = new POJOLayout();
                                         pojoLayout.set_id(idEncuestado);
                                         data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
+                                        POJOFragment pojoFragment = new POJOFragment();
+                                        pojoFragment.set_id(idEncuestado);
+                                        data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
                                     }
                                     data.close();
                                     startActivity(intent1);

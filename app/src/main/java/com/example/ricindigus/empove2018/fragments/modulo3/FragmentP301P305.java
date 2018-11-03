@@ -118,9 +118,9 @@ public class FragmentP301P305 extends FragmentPagina {
 
         layout301 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p301);
         layout302 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p302);
-        layout301 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p303);
-        layout301 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p304);
-        layout301 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p305);
+        layout303 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p303);
+        layout304 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p304);
+        layout305 = (LinearLayout) rootView.findViewById(R.id.layout_m3_p305);
 
 
         c3_p304_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod3_304_radiogroup_C3_P304);
@@ -173,9 +173,23 @@ public class FragmentP301P305 extends FragmentPagina {
                     p303spAnio.setSelection(0);
                     p303spMes.setEnabled(false);
                     p303spAnio.setEnabled(false);
+                    c3_p304_RadioGroup.clearCheck();layout304.setVisibility(View.GONE);
+                    c3_p305_RadioGroup.clearCheck();c3_p305_o_EditText.setText("");layout305.setVisibility(View.GONE);
                 }else{
-                    p303spMes.setEnabled(true);
-                    p303spAnio.setEnabled(true);
+                    p303spMes.setEnabled(true);p303spAnio.setEnabled(true);
+                    layout304.setVisibility(View.VISIBLE);
+                    layout305.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        c3_p304_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+                switch (seleccionado){
+                    case 1:layout305.setVisibility(View.VISIBLE);break;
+                    case 2: c3_p305_RadioGroup.clearCheck();c3_p305_o_EditText.setText("");layout305.setVisibility(View.GONE);break;
                 }
             }
         });
@@ -217,6 +231,7 @@ public class FragmentP301P305 extends FragmentPagina {
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
+        ocultarOtrosLayouts();
     }
 
     @Override
@@ -280,13 +295,16 @@ public class FragmentP301P305 extends FragmentPagina {
             if(c3_p303_m == 0) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR MES");return false;}
             if(c3_p303_a == 0) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR ANIO");return false;}
         }
-        if (c3_p304 == -1){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}
-
-        if (c3_p305 == -1){mostrarMensaje("PREGUNTA 305: DEBE MARCAR UNA OPCIÓN");return false;}
-        else if (c3_p305 == 4){
-            if(c3_p305_o.trim().equals("")){ mostrarMensaje("PREGUNTA 305: DEBE ESPECIFICAR EL PUESTO DE CONTROL");return false;}
+        if (layout304.getVisibility() == View.VISIBLE){
+            if (c3_p304 == -1){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}
         }
 
+        if (layout305.getVisibility() == View.VISIBLE){
+            if (layout305.getVisibility() == View.VISIBLE && c3_p305 == -1){mostrarMensaje("PREGUNTA 305: DEBE MARCAR UNA OPCIÓN");return false;}
+            else if (c3_p305 == 4){
+                if(c3_p305_o.trim().equals("")){ mostrarMensaje("PREGUNTA 305: DEBE ESPECIFICAR EL PUESTO DE CONTROL");return false;}
+            }
+        }
         return true;
     }
 
@@ -342,6 +360,57 @@ public class FragmentP301P305 extends FragmentPagina {
             editTextEspecifique.setText("");
             editTextEspecifique.setBackgroundResource(R.drawable.input_text_disabled);
             editTextEspecifique.setEnabled(false);
+        }
+    }
+
+    public void ocultarOtrosLayouts(){
+        if (c3_p303_CheckBox.isChecked()){
+           // 6,7,8,9,10
+            Data data = new Data(context);
+            data.open();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.modulo3_c3_p306,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p306_o,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p307_d,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p307_m,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p307_a,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p308_e,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p308_m,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p308_e_seleccion,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p308_m_seleccion,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p310_1,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p310_2,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p310_3,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p310_4,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p310_4_o,"");
+            contentValues.put(SQLConstantes.modulo3_c3_p310_5,"");
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+            data.borrarAllData(SQLConstantes.tablam3p309rutas);
+            contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.layouts_p306,"0");
+            contentValues.put(SQLConstantes.layouts_p307,"0");
+            contentValues.put(SQLConstantes.layouts_p308,"0");
+            contentValues.put(SQLConstantes.layouts_p309,"0");
+            contentValues.put(SQLConstantes.layouts_p310,"0");
+            data.actualizarElemento(SQLConstantes.tablalayouts,contentValues,idEncuestado);
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p306p308,"-1",idEncuestado);
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p309,"-1",idEncuestado);
+            data.close();
+        }else{
+            Data data = new Data(context);
+            data.open();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.layouts_p306,"1");
+            contentValues.put(SQLConstantes.layouts_p307,"1");
+            contentValues.put(SQLConstantes.layouts_p308,"1");
+            contentValues.put(SQLConstantes.layouts_p309,"1");
+            contentValues.put(SQLConstantes.layouts_p310,"1");
+            data.actualizarElemento(SQLConstantes.tablalayouts,contentValues,idEncuestado);
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p306p308,idEncuestado).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p306p308,"1",idEncuestado);
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p309,idEncuestado).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p309,"1",idEncuestado);
+            data.close();
         }
     }
 }
