@@ -49,7 +49,7 @@ public class FragmentP313P317 extends FragmentPagina {
     LinearLayout lytp313,lytp314,lytp315,lytp316,lytp317;
 
     private int c3_p313;
-    private int c3_p314;
+    private String c3_p314;
     private String c3_p314_o;
     private String c3_p315_1;
     private String c3_p315_2;
@@ -184,7 +184,7 @@ public class FragmentP313P317 extends FragmentPagina {
     public void llenarVariables() {
         idInformante = spInformante.getSelectedItemPosition() + "";
         c3_p313  = rgp313.indexOfChild(rgp313.findViewById(rgp313.getCheckedRadioButtonId()));
-        c3_p314 = rgp314.indexOfChild(rgp314.findViewById(rgp314.getCheckedRadioButtonId()));
+        c3_p314 = rgp314.indexOfChild(rgp314.findViewById(rgp314.getCheckedRadioButtonId()))+"";
         c3_p314_o = edtp314Especifique.getText().toString().trim();
         if (ck1p315.isChecked())c3_p315_1 = "1";else c3_p315_1 = "0";
         if (ck2p315.isChecked())c3_p315_2 = "1";else c3_p315_2 = "0";
@@ -260,10 +260,13 @@ public class FragmentP313P317 extends FragmentPagina {
         if (c3_p313 == -1){mostrarMensaje("PREGUNTA 314: DEBE MARCAR UNA OPCIÓN"); return false;}
 
         if (lytp314.getVisibility() == View.VISIBLE){
-            if (c3_p314 == -1){mostrarMensaje("PREGUNTA 314: DEBE MARCAR UNA OPCIÓN"); return false;}
-            if (c3_p314 == 3){
+            if (c3_p314.equals("-1")){mostrarMensaje("PREGUNTA 314: DEBE MARCAR UNA OPCIÓN"); return false;}
+            if (c3_p314.equals("3")){
                 if (c3_p314_o.trim().equals("")){mostrarMensaje("PREGUNTA 314: DEBE ESPECIFICAR");return false;}
             }
+        }else{
+            c3_p314 = "";
+            c3_p314_o = "";
         }
 
         if (c3_p315_1.equals("0") && c3_p315_2.equals("0") && c3_p315_3.equals("0")

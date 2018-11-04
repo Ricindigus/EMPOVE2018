@@ -41,10 +41,10 @@ public class FragmentP801P804 extends FragmentPagina {
     LinearLayout m8_p801_linearlayout, m8_p802_linearlayout, m8_p803_linearlayout, m8_p804_linearlayout;
     Spinner informanteSpinner;
 
-    int c8_p801;
-    int c8_p802;
-    int c8_p803;
-    int c8_p804;
+    String c8_p801;
+    String c8_p802;
+    String c8_p803;
+    String c8_p804;
 
     @SuppressLint("ValidFragment")
     public FragmentP801P804( String idEncuestado, Context context) {
@@ -96,7 +96,7 @@ public class FragmentP801P804 extends FragmentPagina {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, residentes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         informanteSpinner.setAdapter(adapter);
-        //cargarDatos();
+        cargarDatos();
     }
 
     @Override
@@ -104,10 +104,11 @@ public class FragmentP801P804 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo8_c8_p801,""+c8_p801);
-        contentValues.put(SQLConstantes.modulo8_c8_p802,""+c8_p802);
-        contentValues.put(SQLConstantes.modulo8_c8_p803,""+c8_p803);
-        contentValues.put(SQLConstantes.modulo8_c8_p804,""+c8_p804);
+        contentValues.put(SQLConstantes.modulo8_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo8_c8_p801,c8_p801);
+        contentValues.put(SQLConstantes.modulo8_c8_p802,c8_p802);
+        contentValues.put(SQLConstantes.modulo8_c8_p803,c8_p803);
+        contentValues.put(SQLConstantes.modulo8_c8_p804,c8_p804);
 
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo8 modulo8 = new Modulo8();
@@ -123,10 +124,10 @@ public class FragmentP801P804 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
-        c8_p801 = c8_p801_RadioGroup.indexOfChild(c8_p801_RadioGroup.findViewById(c8_p801_RadioGroup.getCheckedRadioButtonId()));
-        c8_p802 = c8_p802_RadioGroup.indexOfChild(c8_p802_RadioGroup.findViewById(c8_p802_RadioGroup.getCheckedRadioButtonId()));
-        c8_p803 = c8_p803_RadioGroup.indexOfChild(c8_p803_RadioGroup.findViewById(c8_p803_RadioGroup.getCheckedRadioButtonId()));
-        c8_p804 = c8_p804_RadioGroup.indexOfChild(c8_p804_RadioGroup.findViewById(c8_p804_RadioGroup.getCheckedRadioButtonId()));
+        c8_p801 = c8_p801_RadioGroup.indexOfChild(c8_p801_RadioGroup.findViewById(c8_p801_RadioGroup.getCheckedRadioButtonId()))+"";
+        c8_p802 = c8_p802_RadioGroup.indexOfChild(c8_p802_RadioGroup.findViewById(c8_p802_RadioGroup.getCheckedRadioButtonId()))+"";
+        c8_p803 = c8_p803_RadioGroup.indexOfChild(c8_p803_RadioGroup.findViewById(c8_p803_RadioGroup.getCheckedRadioButtonId()))+"";
+        c8_p804 = c8_p804_RadioGroup.indexOfChild(c8_p804_RadioGroup.findViewById(c8_p804_RadioGroup.getCheckedRadioButtonId()))+"";
     }
 
     @Override
@@ -134,17 +135,13 @@ public class FragmentP801P804 extends FragmentPagina {
         Data data =  new Data(context);
         data.open();
         if(data.existeElemento(getNombreTabla(),idEncuestado)){
-
-                Modulo8 modulo8 = data.getModulo8(idEncuestado);
-                //informanteSpinner.setSelection(Integer.parseInt(modulo8.getIdInformante()));
-                //informanteSpinner.setSelection(1);
-                if(!modulo8.getC8_p801().equals("-1") && !modulo8.getC8_p801().equals(""))((RadioButton)c8_p801_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p801()))).setChecked(true);
-                if(!modulo8.getC8_p802().equals("-1") && !modulo8.getC8_p802().equals(""))((RadioButton)c8_p802_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p802()))).setChecked(true);
-                if(!modulo8.getC8_p803().equals("-1") && !modulo8.getC8_p803().equals(""))((RadioButton)c8_p803_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p803()))).setChecked(true);
-                if(!modulo8.getC8_p804().equals("-1") && !modulo8.getC8_p804().equals(""))((RadioButton)c8_p804_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p804()))).setChecked(true);
-
-
-             }
+            Modulo8 modulo8 = data.getModulo8(idEncuestado);
+            if (modulo8.getIdInformante() != null)informanteSpinner.setSelection(Integer.parseInt(modulo8.getIdInformante()));
+            if(!modulo8.getC8_p801().equals("-1") && !modulo8.getC8_p801().equals(""))((RadioButton)c8_p801_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p801()))).setChecked(true);
+            if(!modulo8.getC8_p802().equals("-1") && !modulo8.getC8_p802().equals(""))((RadioButton)c8_p802_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p802()))).setChecked(true);
+            if(!modulo8.getC8_p803().equals("-1") && !modulo8.getC8_p803().equals(""))((RadioButton)c8_p803_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p803()))).setChecked(true);
+            if(!modulo8.getC8_p804().equals("-1") && !modulo8.getC8_p804().equals(""))((RadioButton)c8_p804_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p804()))).setChecked(true);
+        }
         data.close();
 
     }
@@ -159,13 +156,10 @@ public class FragmentP801P804 extends FragmentPagina {
         llenarVariables();
         if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
 
-        if (c8_p801 == -1){mostrarMensaje("PREGUNTA 801: DEBE MARCAR UNA OPCIÓN"); return false;}
-
-        if (c8_p802  == -1){mostrarMensaje("PREGUNTA 802: DEBE MARCAR UNA OPCIÓN"); return false;}
-
-        if (c8_p803 == -1){mostrarMensaje("PREGUNTA 803: DEBE MARCAR UNA OPCIÓN"); return false;}
-
-        if (c8_p804 == -1){mostrarMensaje("PREGUNTA 804: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c8_p801.equals("-1")){mostrarMensaje("PREGUNTA 801: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c8_p802.equals("-1")){mostrarMensaje("PREGUNTA 802: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c8_p803.equals("-1")){mostrarMensaje("PREGUNTA 803: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c8_p804.equals("-1")){mostrarMensaje("PREGUNTA 804: DEBE MARCAR UNA OPCIÓN"); return false;}
 
 
         return true;
@@ -183,7 +177,7 @@ public class FragmentP801P804 extends FragmentPagina {
         alertDialog.show();
     }
 
-    //XD
+
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo8;

@@ -45,7 +45,7 @@ public class FragmentP318 extends FragmentPagina {
     Context contexto;
     String idInformante;
     String idHogar;
-    ArrayList<M3Pregunta318> m3Pregunta318s;
+    ArrayList<M3Pregunta318> m3Pregunta318s = new ArrayList<>();
     Spinner spInformante;
     RecyclerView recyclerView;
     RadioGroup radioGroup;
@@ -98,7 +98,6 @@ public class FragmentP318 extends FragmentPagina {
                 if(seleccionado == 1) lytRecyclerP318.setVisibility(View.VISIBLE);
                 else {
                     ocultarYEliminarRecycler();
-
                 }
             }
         });

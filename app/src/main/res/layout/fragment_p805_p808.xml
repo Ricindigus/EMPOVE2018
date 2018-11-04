@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
+            <include layout="@layout/cabecera"/>
             <include layout="@layout/modulo8_p805" android:id="@+id/layout_m8_p805"/>
             <include layout="@layout/modulo8_p806" android:id="@+id/layout_m8_p806"/>
             <include layout="@layout/modulo8_p807" android:id="@+id/layout_m8_p807"/>

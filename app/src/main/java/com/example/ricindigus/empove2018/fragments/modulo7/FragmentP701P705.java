@@ -60,33 +60,33 @@ public class FragmentP701P705 extends FragmentPagina {
             m7_p705_linearlayout;
     Spinner informanteSpinner;
 
-    private int c7_p701;
-    private int c7_p702_1;
-    private int c7_p702_2;
-    private int c7_p702_3;
-    private int c7_p702_4;
-    private int c7_p702_5;
-    private int c7_p702_6;
-    private int c7_p702_7;
-    private int c7_p702_8;
-    private int c7_p702_9;
-    private int c7_p702_10;
+    private String c7_p701;
+    private String c7_p702_1;
+    private String c7_p702_2;
+    private String c7_p702_3;
+    private String c7_p702_4;
+    private String c7_p702_5;
+    private String c7_p702_6;
+    private String c7_p702_7;
+    private String c7_p702_8;
+    private String c7_p702_9;
+    private String c7_p702_10;
     private String c7_p702_o;
-    private int c7_p703;
-    private int c7_p704_1;
-    private int c7_p704_2;
-    private int c7_p704_3;
-    private int c7_p704_4;
-    private int c7_p704_5;
-    private int c7_p704_6;
+    private String c7_p703;
+    private String c7_p704_1;
+    private String c7_p704_2;
+    private String c7_p704_3;
+    private String c7_p704_4;
+    private String c7_p704_5;
+    private String c7_p704_6;
     private String c7_p704_o;
-    private int c7_p705_1;
-    private int c7_p705_2;
-    private int c7_p705_3;
-    private int c7_p705_4;
-    private int c7_p705_5;
-    private int c7_p705_6;
-    private int c7_p705_7;
+    private String c7_p705_1;
+    private String c7_p705_2;
+    private String c7_p705_3;
+    private String c7_p705_4;
+    private String c7_p705_5;
+    private String c7_p705_6;
+    private String c7_p705_7;
     private String c7_p705_o;
 
     @SuppressLint("ValidFragment")
@@ -235,35 +235,33 @@ public class FragmentP701P705 extends FragmentPagina {
         data.open();
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo7_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo7_c7_p701, c7_p701+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_1, c7_p702_1+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_2, c7_p702_2+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_3, c7_p702_3+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_4, c7_p702_4+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_5, c7_p702_5+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_6, c7_p702_6+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_7, c7_p702_7+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_8, c7_p702_8+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_9, c7_p702_9+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p702_10, c7_p702_10+"");
+        contentValues.put(SQLConstantes.modulo7_c7_p701, c7_p701);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_1, c7_p702_1);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_2, c7_p702_2);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_3, c7_p702_3);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_4, c7_p702_4);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_5, c7_p702_5);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_6, c7_p702_6);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_7, c7_p702_7);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_8, c7_p702_8);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_9, c7_p702_9);
+        contentValues.put(SQLConstantes.modulo7_c7_p702_10, c7_p702_10);
         contentValues.put(SQLConstantes.modulo7_c7_p702_o, c7_p702_o);
-        contentValues.put(SQLConstantes.modulo7_c7_p703,c7_p703+"");
-
-        contentValues.put(SQLConstantes.modulo7_c7_p704_1,c7_p704_1+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p704_2,c7_p704_2+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p704_3,c7_p704_3+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p704_4,c7_p704_4+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p704_5,c7_p704_5+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p704_6,c7_p704_6+"");
+        contentValues.put(SQLConstantes.modulo7_c7_p703,c7_p703);
+        contentValues.put(SQLConstantes.modulo7_c7_p704_1,c7_p704_1);
+        contentValues.put(SQLConstantes.modulo7_c7_p704_2,c7_p704_2);
+        contentValues.put(SQLConstantes.modulo7_c7_p704_3,c7_p704_3);
+        contentValues.put(SQLConstantes.modulo7_c7_p704_4,c7_p704_4);
+        contentValues.put(SQLConstantes.modulo7_c7_p704_5,c7_p704_5);
+        contentValues.put(SQLConstantes.modulo7_c7_p704_6,c7_p704_6);
         contentValues.put(SQLConstantes.modulo7_c7_p704_o,c7_p704_o);
-
-        contentValues.put(SQLConstantes.modulo7_c7_p705_1,c7_p705_1+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p705_2,c7_p705_2+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p705_3,c7_p705_3+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p705_4,c7_p705_4+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p705_5,c7_p705_5+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p705_6,c7_p705_6+"");
-        contentValues.put(SQLConstantes.modulo7_c7_p705_7,c7_p705_7+"");
+        contentValues.put(SQLConstantes.modulo7_c7_p705_1,c7_p705_1);
+        contentValues.put(SQLConstantes.modulo7_c7_p705_2,c7_p705_2);
+        contentValues.put(SQLConstantes.modulo7_c7_p705_3,c7_p705_3);
+        contentValues.put(SQLConstantes.modulo7_c7_p705_4,c7_p705_4);
+        contentValues.put(SQLConstantes.modulo7_c7_p705_5,c7_p705_5);
+        contentValues.put(SQLConstantes.modulo7_c7_p705_6,c7_p705_6);
+        contentValues.put(SQLConstantes.modulo7_c7_p705_7,c7_p705_7);
         contentValues.put(SQLConstantes.modulo7_c7_p705_o,c7_p705_o);
 
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
@@ -280,33 +278,33 @@ public class FragmentP701P705 extends FragmentPagina {
 
     public void llenarVariables(){
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
-        c7_p701 = c7_p701_RadioGroup.indexOfChild(c7_p701_RadioGroup.findViewById(c7_p701_RadioGroup.getCheckedRadioButtonId()));
-        if (c7_p702_1_Checkbox.isChecked()) c7_p702_1 = 1; else c7_p702_1 = 0;
-        if (c7_p702_2_Checkbox.isChecked()) c7_p702_2 = 1; else c7_p702_2 = 0;
-        if (c7_p702_3_Checkbox.isChecked()) c7_p702_3 = 1; else c7_p702_3 = 0;
-        if (c7_p702_4_Checkbox.isChecked()) c7_p702_4 = 1; else c7_p702_4 = 0;
-        if (c7_p702_5_Checkbox.isChecked()) c7_p702_5 = 1; else c7_p702_5 = 0;
-        if (c7_p702_6_Checkbox.isChecked()) c7_p702_6 = 1; else c7_p702_6 = 0;
-        if (c7_p702_7_Checkbox.isChecked()) c7_p702_7 = 1; else c7_p702_7 = 0;
-        if (c7_p702_8_Checkbox.isChecked()) c7_p702_8 = 1; else c7_p702_8 = 0;
-        if (c7_p702_9_Checkbox.isChecked()) c7_p702_9 = 1; else c7_p702_9 = 0;
-        if (c7_p702_10_Checkbox.isChecked()) c7_p702_10 =1; else c7_p702_10 = 0;
+        c7_p701 = c7_p701_RadioGroup.indexOfChild(c7_p701_RadioGroup.findViewById(c7_p701_RadioGroup.getCheckedRadioButtonId()))+"";
+        if (c7_p702_1_Checkbox.isChecked()) c7_p702_1 = "1"; else c7_p702_1 = "0";
+        if (c7_p702_2_Checkbox.isChecked()) c7_p702_2 = "1"; else c7_p702_2 = "0";
+        if (c7_p702_3_Checkbox.isChecked()) c7_p702_3 = "1"; else c7_p702_3 = "0";
+        if (c7_p702_4_Checkbox.isChecked()) c7_p702_4 = "1"; else c7_p702_4 = "0";
+        if (c7_p702_5_Checkbox.isChecked()) c7_p702_5 = "1"; else c7_p702_5 = "0";
+        if (c7_p702_6_Checkbox.isChecked()) c7_p702_6 = "1"; else c7_p702_6 = "0";
+        if (c7_p702_7_Checkbox.isChecked()) c7_p702_7 = "1"; else c7_p702_7 = "0";
+        if (c7_p702_8_Checkbox.isChecked()) c7_p702_8 = "1"; else c7_p702_8 = "0";
+        if (c7_p702_9_Checkbox.isChecked()) c7_p702_9 = "1"; else c7_p702_9 = "0";
+        if (c7_p702_10_Checkbox.isChecked()) c7_p702_10 ="1"; else c7_p702_10 = "0";
         c7_p702_o = c7_p702_o_EditText.getText().toString();
-        c7_p703 = c7_p703_RadioGroup.indexOfChild(c7_p703_RadioGroup.findViewById(c7_p703_RadioGroup.getCheckedRadioButtonId()));
-        if (c7_p704_1_Checkbox.isChecked()) c7_p704_1 = 1; else c7_p704_1 = 0;
-        if (c7_p704_2_Checkbox.isChecked()) c7_p704_2 = 1; else c7_p704_2 = 0;
-        if (c7_p704_3_Checkbox.isChecked()) c7_p704_3 = 1; else c7_p704_3 = 0;
-        if (c7_p704_4_Checkbox.isChecked()) c7_p704_4 = 1; else c7_p704_4 = 0;
-        if (c7_p704_5_Checkbox.isChecked()) c7_p704_5 = 1; else c7_p704_5 = 0;
-        if (c7_p704_6_Checkbox.isChecked()) c7_p704_6 = 1; else c7_p704_6 = 0;
+        c7_p703 = c7_p703_RadioGroup.indexOfChild(c7_p703_RadioGroup.findViewById(c7_p703_RadioGroup.getCheckedRadioButtonId()))+"";
+        if (c7_p704_1_Checkbox.isChecked()) c7_p704_1 = "1"; else c7_p704_1 = "0";
+        if (c7_p704_2_Checkbox.isChecked()) c7_p704_2 = "1"; else c7_p704_2 = "0";
+        if (c7_p704_3_Checkbox.isChecked()) c7_p704_3 = "1"; else c7_p704_3 = "0";
+        if (c7_p704_4_Checkbox.isChecked()) c7_p704_4 = "1"; else c7_p704_4 = "0";
+        if (c7_p704_5_Checkbox.isChecked()) c7_p704_5 = "1"; else c7_p704_5 = "0";
+        if (c7_p704_6_Checkbox.isChecked()) c7_p704_6 = "1"; else c7_p704_6 = "0";
         c7_p704_o = c7_p704_o_EditText.getText().toString();
-        if (c7_p705_1_Checkbox.isChecked()) c7_p705_1 = 1; else c7_p705_1 = 0;
-        if (c7_p705_2_Checkbox.isChecked()) c7_p705_2 = 1; else c7_p705_2 = 0;
-        if (c7_p705_3_Checkbox.isChecked()) c7_p705_3 = 1; else c7_p705_3 = 0;
-        if (c7_p705_4_Checkbox.isChecked()) c7_p705_4 = 1; else c7_p705_4 = 0;
-        if (c7_p705_5_Checkbox.isChecked()) c7_p705_5 = 1; else c7_p705_5 = 0;
-        if (c7_p705_6_Checkbox.isChecked()) c7_p705_6 = 1; else c7_p705_6 = 0;
-        if (c7_p705_7_Checkbox.isChecked()) c7_p705_7 = 1; else c7_p705_7 = 0;
+        if (c7_p705_1_Checkbox.isChecked()) c7_p705_1 = "1"; else c7_p705_1 = "0";
+        if (c7_p705_2_Checkbox.isChecked()) c7_p705_2 = "1"; else c7_p705_2 = "0";
+        if (c7_p705_3_Checkbox.isChecked()) c7_p705_3 = "1"; else c7_p705_3 = "0";
+        if (c7_p705_4_Checkbox.isChecked()) c7_p705_4 = "1"; else c7_p705_4 = "0";
+        if (c7_p705_5_Checkbox.isChecked()) c7_p705_5 = "1"; else c7_p705_5 = "0";
+        if (c7_p705_6_Checkbox.isChecked()) c7_p705_6 = "1"; else c7_p705_6 = "0";
+        if (c7_p705_7_Checkbox.isChecked()) c7_p705_7 = "1"; else c7_p705_7 = "0";
         c7_p705_o = c7_p705_o_EditText.getText().toString();
 
     }
@@ -319,32 +317,32 @@ public class FragmentP701P705 extends FragmentPagina {
             Modulo7 modulo7 = data.getModulo7(idEncuestado);
             informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
             if(!modulo7.getC7_p701().equals("-1"))((RadioButton)c7_p701_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p701()))).setChecked(true);
-            if(modulo7.getC7_p702_1().equals("1")) c7_p702_1_Checkbox.setChecked(true);if(modulo7.getC7_p702_1().equals("0")) c7_p702_1_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_2().equals("1")) c7_p702_2_Checkbox.setChecked(true);if(modulo7.getC7_p702_2().equals("0")) c7_p702_2_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_3().equals("1")) c7_p702_3_Checkbox.setChecked(true);if(modulo7.getC7_p702_3().equals("0")) c7_p702_3_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_4().equals("1")) c7_p702_4_Checkbox.setChecked(true);if(modulo7.getC7_p702_4().equals("0")) c7_p702_4_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_5().equals("1")) c7_p702_5_Checkbox.setChecked(true);if(modulo7.getC7_p702_5().equals("0")) c7_p702_5_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_6().equals("1")) c7_p702_6_Checkbox.setChecked(true);if(modulo7.getC7_p702_6().equals("0")) c7_p702_6_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_7().equals("1")) c7_p702_7_Checkbox.setChecked(true);if(modulo7.getC7_p702_7().equals("0")) c7_p702_7_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_8().equals("1")) c7_p702_8_Checkbox.setChecked(true);if(modulo7.getC7_p702_8().equals("0")) c7_p702_8_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_9().equals("1")) c7_p702_9_Checkbox.setChecked(true);if(modulo7.getC7_p702_9().equals("0")) c7_p702_9_Checkbox.setChecked(false);
-            if(modulo7.getC7_p702_10().equals("1")) c7_p702_10_Checkbox.setChecked(true);if(modulo7.getC7_p702_10().equals("0")) c7_p702_10_Checkbox.setChecked(false);
+            if(modulo7.getC7_p702_1().equals("1")) c7_p702_1_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_2().equals("1")) c7_p702_2_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_3().equals("1")) c7_p702_3_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_4().equals("1")) c7_p702_4_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_5().equals("1")) c7_p702_5_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_6().equals("1")) c7_p702_6_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_7().equals("1")) c7_p702_7_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_8().equals("1")) c7_p702_8_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_9().equals("1")) c7_p702_9_Checkbox.setChecked(true);
+            if(modulo7.getC7_p702_10().equals("1")) c7_p702_10_Checkbox.setChecked(true);
             c7_p702_o_EditText.setText(modulo7.getC7_p702_o());
             if(!modulo7.getC7_p703().equals("-1"))((RadioButton)c7_p703_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p703()))).setChecked(true);
-            if(modulo7.getC7_p704_1().equals("1")) c7_p704_1_Checkbox.setChecked(true);if(modulo7.getC7_p704_1().equals("0")) c7_p704_1_Checkbox.setChecked(false);
-            if(modulo7.getC7_p704_2().equals("1")) c7_p704_2_Checkbox.setChecked(true);if(modulo7.getC7_p704_2().equals("0")) c7_p704_2_Checkbox.setChecked(false);
-            if(modulo7.getC7_p704_3().equals("1")) c7_p704_3_Checkbox.setChecked(true);if(modulo7.getC7_p704_3().equals("0")) c7_p704_3_Checkbox.setChecked(false);
-            if(modulo7.getC7_p704_4().equals("1")) c7_p704_4_Checkbox.setChecked(true);if(modulo7.getC7_p704_4().equals("0")) c7_p704_4_Checkbox.setChecked(false);
-            if(modulo7.getC7_p704_5().equals("1")) c7_p704_5_Checkbox.setChecked(true);if(modulo7.getC7_p704_5().equals("0")) c7_p704_5_Checkbox.setChecked(false);
-            if(modulo7.getC7_p704_6().equals("1")) c7_p704_6_Checkbox.setChecked(true);if(modulo7.getC7_p704_6().equals("0")) c7_p704_6_Checkbox.setChecked(false);
+            if(modulo7.getC7_p704_1().equals("1")) c7_p704_1_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_2().equals("1")) c7_p704_2_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_3().equals("1")) c7_p704_3_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_4().equals("1")) c7_p704_4_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_5().equals("1")) c7_p704_5_Checkbox.setChecked(true);
+            if(modulo7.getC7_p704_6().equals("1")) c7_p704_6_Checkbox.setChecked(true);
             c7_p704_o_EditText.setText(modulo7.getC7_p704_o());
-            if(modulo7.getC7_p705_1().equals("1")) c7_p705_1_Checkbox.setChecked(true);if(modulo7.getC7_p705_1().equals("0")) c7_p705_1_Checkbox.setChecked(false);
-            if(modulo7.getC7_p705_2().equals("1")) c7_p705_2_Checkbox.setChecked(true);if(modulo7.getC7_p705_2().equals("0")) c7_p705_2_Checkbox.setChecked(false);
-            if(modulo7.getC7_p705_3().equals("1")) c7_p705_3_Checkbox.setChecked(true);if(modulo7.getC7_p705_3().equals("0")) c7_p705_3_Checkbox.setChecked(false);
-            if(modulo7.getC7_p705_4().equals("1")) c7_p705_4_Checkbox.setChecked(true);if(modulo7.getC7_p705_4().equals("0")) c7_p705_4_Checkbox.setChecked(false);
-            if(modulo7.getC7_p705_5().equals("1")) c7_p705_5_Checkbox.setChecked(true);if(modulo7.getC7_p705_5().equals("0")) c7_p705_5_Checkbox.setChecked(false);
-            if(modulo7.getC7_p705_6().equals("1")) c7_p705_6_Checkbox.setChecked(true);if(modulo7.getC7_p705_6().equals("0")) c7_p705_6_Checkbox.setChecked(false);
-            if(modulo7.getC7_p705_7().equals("1")) c7_p705_7_Checkbox.setChecked(true);if(modulo7.getC7_p705_7().equals("0")) c7_p705_7_Checkbox.setChecked(false);
+            if(modulo7.getC7_p705_1().equals("1")) c7_p705_1_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_2().equals("1")) c7_p705_2_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_3().equals("1")) c7_p705_3_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_4().equals("1")) c7_p705_4_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_5().equals("1")) c7_p705_5_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_6().equals("1")) c7_p705_6_Checkbox.setChecked(true);
+            if(modulo7.getC7_p705_7().equals("1")) c7_p705_7_Checkbox.setChecked(true);
             c7_p705_o_EditText.setText(modulo7.getC7_p705_o());
         }
         data.close();
@@ -367,43 +365,67 @@ public class FragmentP701P705 extends FragmentPagina {
 
     public boolean validarDatos(){
         llenarVariables();
-        if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
-        if (c7_p701 == -1){mostrarMensaje("PREGUNTA 701: DEBE MARCAR UNA OPCIÓN"); return false;}
-
-
+        if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+        if (c7_p701.equals("-1")){mostrarMensaje("PREGUNTA 701: DEBE MARCAR UNA OPCIÓN"); return false;}
 
         if (m7_p702_linearlayout.getVisibility() == View.VISIBLE){
-            if (c7_p702_1 == 0 && c7_p702_2 == 0 && c7_p702_3== 0 && c7_p702_4== 0 && c7_p702_5== 0 && c7_p702_6== 0
-                    && c7_p702_7== 0 && c7_p702_8== 0 && c7_p702_9== 0 && c7_p702_10== 0){
+            if (c7_p702_1.equals("0") && c7_p702_2.equals("0") && c7_p702_3.equals("0") && c7_p702_4.equals("0") && c7_p702_5.equals("0") && c7_p702_6.equals("0")
+                    && c7_p702_7.equals("0") && c7_p702_8.equals("0") && c7_p702_9.equals("0") && c7_p702_10.equals("0")){
                 mostrarMensaje("PREGUNTA 702: DEBE SELECCIONAR ALGUNA OPCION");return false;
             }
-            if (c7_p702_10 == 1){
+            if (c7_p702_10.equals("1")){
                 if (c7_p702_o.trim().equals("")){ mostrarMensaje("PREGUNTA 702 - OPCION 10: DEBE ESPECIFICAR OTRO");return false;}
             }
+        }else{
+            c7_p702_1 = "";
+            c7_p702_2 = "";
+            c7_p702_3 = "";
+            c7_p702_4 = "";
+            c7_p702_5 = "";
+            c7_p702_6 = "";
+            c7_p702_7 = "";
+            c7_p702_8 = "";
+            c7_p702_9 = "";
+            c7_p702_10 = "";
+            c7_p702_o = "";
         }
 
-        if (c7_p703 ==-1){ mostrarMensaje("PREGUNTA 703: DEBE MARCAR UNA OPCIÓN"); return false; }
+        if (c7_p703.equals("-1")){ mostrarMensaje("PREGUNTA 703: DEBE MARCAR UNA OPCIÓN"); return false; }
 
         if (m7_p704_linearlayout.getVisibility() == View.VISIBLE){
-            if (c7_p704_1 == 0 && c7_p704_2 == 0 && c7_p704_3 == 0 && c7_p704_4== 0 && c7_p704_5== 0 && c7_p704_6== 0){
+            if (c7_p704_1.equals("0") && c7_p704_2.equals("0") && c7_p704_3.equals("0") && c7_p704_4.equals("0") && c7_p704_5.equals("0") && c7_p704_6.equals("0")){
                 mostrarMensaje("PREGUNTA 704: DEBE SELECCIONAR ALGUNA OPCION"); return false;
             }
-            if (c7_p704_6 == 1){
+            if (c7_p704_6.equals("1")){
                 if (c7_p704_o.trim().equals("")){ mostrarMensaje("PREGUNTA 704 - OPCION 6: DEBE ESPECIFICAR OTRO"); return false; }
             }
+        }else{
+            c7_p704_1 = "";
+            c7_p704_2 = "";
+            c7_p704_3 = "";
+            c7_p704_4 = "";
+            c7_p704_5 = "";
+            c7_p704_6 = "";
+            c7_p704_o = "";
         }
 
         if (m7_p705_linearlayout.getVisibility() == View.VISIBLE){
-            if (c7_p705_1 == 0 && c7_p705_2 == 0 && c7_p705_3 == 0 && c7_p705_4 == 0 && c7_p705_5 == 0 && c7_p705_6 == 0 && c7_p705_7 == 0){
+            if (c7_p705_1.equals("0") && c7_p705_2.equals("0") && c7_p705_3.equals("0") && c7_p705_4.equals("0") && c7_p705_5.equals("0") && c7_p705_6.equals("0") && c7_p705_7.equals("0")){
                 mostrarMensaje("PREGUNTA 705: DEBE SELECCIONAR ALGUNA OPCION"); return false;
             }
-            if (c7_p705_6 == 1){
+            if (c7_p705_6.equals("1")){
                 if (c7_p705_o.trim().equals("")){ mostrarMensaje("PREGUNTA 705 - OPCION 6: DEBE ESPECIFICAR OTRO");return false; }
             }
+        }else{
+            c7_p705_1 = "";
+            c7_p705_2 = "";
+            c7_p705_3 = "";
+            c7_p705_4 = "";
+            c7_p705_5 = "";
+            c7_p705_6 = "";
+            c7_p705_7 = "";
+            c7_p705_o = "";
         }
-
-
-
         return true;
     }
 

@@ -76,12 +76,12 @@ public class FragmentP301P305 extends FragmentPagina {
     String c3_p301_d;
     String c3_p301_m;
     String c3_p301_a;
-    int c3_p302;
-    int c3_p303_m;
-    int c3_p303_a;
-    int c3_p303_no_nacio;
-    int c3_p304;
-    int c3_p305;
+    String c3_p302;
+    String c3_p303_m;
+    String c3_p303_a;
+    String c3_p303_no_nacio;
+    String c3_p304;
+    String c3_p305;
     String c3_p305_o;
 
     public FragmentP301P305() {
@@ -215,12 +215,12 @@ public class FragmentP301P305 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p301_d,c3_p301_d);
         contentValues.put(SQLConstantes.modulo3_c3_p301_m,c3_p301_m);
         contentValues.put(SQLConstantes.modulo3_c3_p301_a,c3_p301_a);
-        contentValues.put(SQLConstantes.modulo3_c3_p302,data.getCodigoPais(c3_p302));
-        contentValues.put(SQLConstantes.modulo3_c3_p303_m,c3_p303_m+"");
-        contentValues.put(SQLConstantes.modulo3_c3_p303_a,getResources().getStringArray(R.array.numeros_anios)[c3_p303_a]);
-        contentValues.put(SQLConstantes.modulo3_c3_p303_no_nacio, c3_p303_no_nacio+"");
-        contentValues.put(SQLConstantes.modulo3_c3_p304,c3_p304+"");
-        contentValues.put(SQLConstantes.modulo3_c3_p305,c3_p305+"");
+        contentValues.put(SQLConstantes.modulo3_c3_p302,data.getCodigoPais(Integer.parseInt(c3_p302)));
+        contentValues.put(SQLConstantes.modulo3_c3_p303_m,c3_p303_m);
+        contentValues.put(SQLConstantes.modulo3_c3_p303_a,getResources().getStringArray(R.array.numeros_anios)[Integer.parseInt(c3_p303_a)]);
+        contentValues.put(SQLConstantes.modulo3_c3_p303_no_nacio, c3_p303_no_nacio);
+        contentValues.put(SQLConstantes.modulo3_c3_p304,c3_p304);
+        contentValues.put(SQLConstantes.modulo3_c3_p305,c3_p305);
         contentValues.put(SQLConstantes.modulo3_c3_p305_o,c3_p305_o);
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo3 modulo3 = new Modulo3();
@@ -240,13 +240,13 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p301_d = c3_p301_d_TextView.getText().toString();
         c3_p301_m = c3_p301_m_TextView.getText().toString();
         c3_p301_a = c3_p301_a_TextView.getText().toString();
-        c3_p302 = c3_p302_Spinner.getSelectedItemPosition();
-        c3_p303_m = p303spMes.getSelectedItemPosition();
-        c3_p303_a = p303spAnio.getSelectedItemPosition();
-        if(c3_p303_CheckBox.isChecked())c3_p303_no_nacio = 1;
-        else c3_p303_no_nacio = 0;
-        c3_p304 = c3_p304_RadioGroup.indexOfChild(c3_p304_RadioGroup.findViewById(c3_p304_RadioGroup.getCheckedRadioButtonId()));
-        c3_p305  = c3_p305_RadioGroup.indexOfChild(c3_p305_RadioGroup.findViewById(c3_p305_RadioGroup.getCheckedRadioButtonId()));
+        c3_p302 = c3_p302_Spinner.getSelectedItemPosition() + "";
+        c3_p303_m = p303spMes.getSelectedItemPosition() + "";
+        c3_p303_a = p303spAnio.getSelectedItemPosition() + "";
+        if(c3_p303_CheckBox.isChecked())c3_p303_no_nacio = 1 + "";
+        else c3_p303_no_nacio = 0 + "";
+        c3_p304 = c3_p304_RadioGroup.indexOfChild(c3_p304_RadioGroup.findViewById(c3_p304_RadioGroup.getCheckedRadioButtonId())) + "";
+        c3_p305  = c3_p305_RadioGroup.indexOfChild(c3_p305_RadioGroup.findViewById(c3_p305_RadioGroup.getCheckedRadioButtonId())) + "";
         c3_p305_o = c3_p305_o_EditText.getText().toString();
     }
 
@@ -266,8 +266,8 @@ public class FragmentP301P305 extends FragmentPagina {
                 p303spMes.setSelection(Integer.parseInt(modulo3.getC3_p303_m()));
                 p303spAnio.setSelection(2019 - Integer.parseInt(modulo3.getC3_p303_a()));
             }
-            if(!modulo3.getC3_p304().equals("-1"))((RadioButton)c3_p304_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p304()))).setChecked(true);
-            if(!modulo3.getC3_p305().equals("-1"))((RadioButton)c3_p305_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p305()))).setChecked(true);
+            if(!modulo3.getC3_p304().equals("-1") && !modulo3.getC3_p304().equals(""))((RadioButton)c3_p304_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p304()))).setChecked(true);
+            if(!modulo3.getC3_p305().equals("-1") && !modulo3.getC3_p305().equals(""))((RadioButton)c3_p305_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p305()))).setChecked(true);
             c3_p305_o_EditText.setText(modulo3.getC3_p305_o());
         }
         data.close();
@@ -288,22 +288,25 @@ public class FragmentP301P305 extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         llenarVariables();
-        if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+        if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p301_d.trim().equals("")){mostrarMensaje("PREGUNTA 301: DEBE AGREGAR FECHA");return false;}
-        if (c3_p302 == 0) {mostrarMensaje("PREGUNTA 302: DEBE INDICAR PAIS DE NACIMIENTO");return false;}
+        if (c3_p302.equals("0")) {mostrarMensaje("PREGUNTA 302: DEBE INDICAR PAIS DE NACIMIENTO");return false;}
         if (!c3_p303_CheckBox.isChecked()){
-            if(c3_p303_m == 0) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR MES");return false;}
-            if(c3_p303_a == 0) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR ANIO");return false;}
+            if(c3_p303_m.equals("0")) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR MES");return false;}
+            if(c3_p303_a.equals("0")) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR ANIO");return false;}
         }
         if (layout304.getVisibility() == View.VISIBLE){
-            if (c3_p304 == -1){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}
-        }
+            if (c3_p304.equals("-1")){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}
+        }else{ c3_p304 = "";}
 
         if (layout305.getVisibility() == View.VISIBLE){
-            if (layout305.getVisibility() == View.VISIBLE && c3_p305 == -1){mostrarMensaje("PREGUNTA 305: DEBE MARCAR UNA OPCIÓN");return false;}
-            else if (c3_p305 == 4){
+            if (layout305.getVisibility() == View.VISIBLE && c3_p305.equals("-1")){mostrarMensaje("PREGUNTA 305: DEBE MARCAR UNA OPCIÓN");return false;}
+            else if (c3_p305.equals("4")){
                 if(c3_p305_o.trim().equals("")){ mostrarMensaje("PREGUNTA 305: DEBE ESPECIFICAR EL PUESTO DE CONTROL");return false;}
             }
+        }else{
+            c3_p305 = "";
+            c3_p305_o = "";
         }
         return true;
     }

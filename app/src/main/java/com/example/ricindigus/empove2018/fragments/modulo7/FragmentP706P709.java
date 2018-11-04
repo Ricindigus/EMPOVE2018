@@ -27,6 +27,7 @@ import android.widget.Spinner;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
@@ -41,7 +42,7 @@ public class FragmentP706P709 extends FragmentPagina {
 
     Context context;
     String idEncuestado;
-    String idVivienda, idHogar, idInformante;
+    String idInformante;
 
     RadioGroup c7_p706_RadioGroup, c7_p707_RadioGroup;
     EditText c7_p707_o_EditText;
@@ -52,37 +53,30 @@ public class FragmentP706P709 extends FragmentPagina {
     LinearLayout m7_p706_linearlayout, m7_p707_linearlayout, m7_p708_linearlayout, m7_p709_linearlayout;
     Spinner informanteSpinner;
 
-    private int c7_p706;
-    private int c7_p707;
+    private String c7_p706;
+    private String c7_p707;
     private String c7_p707_o;
-    private int c7_p708_1;
-    private int c7_p708_2;
-    private int c7_p708_3;
-    private int c7_p708_4;
-    private int c7_p708_5;
-    private int c7_p709_1;
-    private int c7_p709_2;
-    private int c7_p709_3;
-    private int c7_p709_4;
-    private int c7_p709_5;
-    private int c7_p709_6;
-    private int c7_p709_7;
-    private int c7_p709_8;
-    private int c7_p709_9;
-    private int c7_p709_10;
+    private String c7_p708_1;
+    private String c7_p708_2;
+    private String c7_p708_3;
+    private String c7_p708_4;
+    private String c7_p708_5;
+    private String c7_p709_1;
+    private String c7_p709_2;
+    private String c7_p709_3;
+    private String c7_p709_4;
+    private String c7_p709_5;
+    private String c7_p709_6;
+    private String c7_p709_7;
+    private String c7_p709_8;
+    private String c7_p709_9;
+    private String c7_p709_10;
     private String c7_p709_o;
 
     @SuppressLint("ValidFragment")
     public FragmentP706P709(String idEncuestado, Context context) {
         this.context = context;
         this.idEncuestado = idEncuestado;
-        Data data = new Data(context);
-        data.open();
-        Residente residente = data.getResidente(idEncuestado);
-        idVivienda = residente.getId_vivienda();
-        idHogar = residente.getId_hogar();
-        idInformante = "";
-        data.close();
     }
 
     public FragmentP706P709() {
@@ -130,13 +124,6 @@ public class FragmentP706P709 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Data data = new Data(context);
-        data.open();
-        ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
-        data.close();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, residentes);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        informanteSpinner.setAdapter(adapter);
 
         c7_p707_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -213,64 +200,64 @@ public class FragmentP706P709 extends FragmentPagina {
     }
 
     public void llenarVariables(){
-        c7_p706 = c7_p706_RadioGroup.indexOfChild(c7_p706_RadioGroup.findViewById(c7_p706_RadioGroup.getCheckedRadioButtonId()));
-        c7_p707 = c7_p707_RadioGroup.indexOfChild(c7_p707_RadioGroup.findViewById(c7_p707_RadioGroup.getCheckedRadioButtonId()));
+        c7_p706 = c7_p706_RadioGroup.indexOfChild(c7_p706_RadioGroup.findViewById(c7_p706_RadioGroup.getCheckedRadioButtonId()))+"";
+        c7_p707 = c7_p707_RadioGroup.indexOfChild(c7_p707_RadioGroup.findViewById(c7_p707_RadioGroup.getCheckedRadioButtonId()))+"";
         c7_p707_o = c7_p707_o_EditText.getText().toString();
 
-        if (c7_p708_1_Checkbox.isChecked()) c7_p708_1 = 1; else c7_p708_1 = 0;
-        if (c7_p708_2_Checkbox.isChecked()) c7_p708_2 = 1; else c7_p708_2 = 0;
-        if (c7_p708_3_Checkbox.isChecked()) c7_p708_3 = 1; else c7_p708_3 = 0;
-        if (c7_p708_4_Checkbox.isChecked()) c7_p708_4 = 1; else c7_p708_4 = 0;
-        if (c7_p708_5_Checkbox.isChecked()) c7_p708_5 = 1; else c7_p708_5 = 0;
+        if (c7_p708_1_Checkbox.isChecked()) c7_p708_1 = "1"; else c7_p708_1 = "0";
+        if (c7_p708_2_Checkbox.isChecked()) c7_p708_2 = "1"; else c7_p708_2 = "0";
+        if (c7_p708_3_Checkbox.isChecked()) c7_p708_3 = "1"; else c7_p708_3 = "0";
+        if (c7_p708_4_Checkbox.isChecked()) c7_p708_4 = "1"; else c7_p708_4 = "0";
+        if (c7_p708_5_Checkbox.isChecked()) c7_p708_5 = "1"; else c7_p708_5 = "0";
 
-        if (c7_p709_1_Checkbox.isChecked()) c7_p709_1 = 1; else c7_p709_1 = 0;
-        if (c7_p709_2_Checkbox.isChecked()) c7_p709_2 = 1; else c7_p709_2 = 0;
-        if (c7_p709_3_Checkbox.isChecked()) c7_p709_3 = 1; else c7_p709_3 = 0;
-        if (c7_p709_4_Checkbox.isChecked()) c7_p709_4 = 1; else c7_p709_4 = 0;
-        if (c7_p709_5_Checkbox.isChecked()) c7_p709_5 = 1; else c7_p709_5 = 0;
-        if (c7_p709_6_Checkbox.isChecked()) c7_p709_6 = 1; else c7_p709_6 = 0;
-        if (c7_p709_7_Checkbox.isChecked()) c7_p709_7 = 1; else c7_p709_7 = 0;
-        if (c7_p709_8_Checkbox.isChecked()) c7_p709_8 = 1; else c7_p709_8 = 0;
-        if (c7_p709_9_Checkbox.isChecked()) c7_p709_9 = 1; else c7_p709_9 = 0;
-        if (c7_p709_10_Checkbox.isChecked()) c7_p709_10 = 1; else c7_p709_10 = 0;
+        if (c7_p709_1_Checkbox.isChecked()) c7_p709_1 = "1"; else c7_p709_1 = "0";
+        if (c7_p709_2_Checkbox.isChecked()) c7_p709_2 = "1"; else c7_p709_2 = "0";
+        if (c7_p709_3_Checkbox.isChecked()) c7_p709_3 = "1"; else c7_p709_3 = "0";
+        if (c7_p709_4_Checkbox.isChecked()) c7_p709_4 = "1"; else c7_p709_4 = "0";
+        if (c7_p709_5_Checkbox.isChecked()) c7_p709_5 = "1"; else c7_p709_5 = "0";
+        if (c7_p709_6_Checkbox.isChecked()) c7_p709_6 = "1"; else c7_p709_6 = "0";
+        if (c7_p709_7_Checkbox.isChecked()) c7_p709_7 = "1"; else c7_p709_7 = "0";
+        if (c7_p709_8_Checkbox.isChecked()) c7_p709_8 = "1"; else c7_p709_8 = "0";
+        if (c7_p709_9_Checkbox.isChecked()) c7_p709_9 = "1"; else c7_p709_9 = "0";
+        if (c7_p709_10_Checkbox.isChecked()) c7_p709_10 = "1"; else c7_p709_10 = "0";
         c7_p709_o = c7_p709_o_EditText.getText().toString();
 
     }
 
     public boolean validarDatos(){
         llenarVariables();
-        if (c7_p706 ==-1){mostrarMensaje("PREGUNTA 706: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c7_p706.equals("-1")){mostrarMensaje("PREGUNTA 706: DEBE MARCAR UNA OPCIÓN"); return false;}
 
-        if (c7_p707 ==-1){mostrarMensaje("PREGUNTA 707: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c7_p707.equals("-1")){mostrarMensaje("PREGUNTA 707: DEBE MARCAR UNA OPCIÓN"); return false;}
 
-        if (c7_p707==1){
+        if (c7_p707.equals("1")){
             if(c7_p707_o.trim().equals("")){ mostrarMensaje("PREGUNTA 707 - OPCION 8: DEBE ESPECIFICAR OTRO");return false; }
         }
-        if(c7_p708_1 == 0 && c7_p708_2 == 0 && c7_p708_3 == 0 && c7_p708_4 == 0 && c7_p708_5 == 0){
+        if(c7_p708_1.equals("0") && c7_p708_2.equals("0") && c7_p708_3.equals("0") && c7_p708_4.equals("0") && c7_p708_5.equals("0")){
             mostrarMensaje("PREGUNTA 708: DEBE SELECCIONAR ALGUNA OPCION");return false;
         }
 
-        if(c7_p709_1 == 0 && c7_p709_2 == 0 && c7_p709_3 == 0 && c7_p709_4 == 0 && c7_p709_5 == 0 &&
-                c7_p709_6 == 0 && c7_p709_7 == 0 && c7_p709_8 == 0 && c7_p709_9 == 0 && c7_p709_10 == 0){
+        if(c7_p709_1.equals("0") && c7_p709_2.equals("0") && c7_p709_3.equals("0") && c7_p709_4.equals("0") && c7_p709_5.equals("0") &&
+                c7_p709_6.equals("0") && c7_p709_7.equals("0") && c7_p709_8.equals("0") && c7_p709_9.equals("0") && c7_p709_10.equals("0")){
             mostrarMensaje("PREGUNTA 709: DEBE SELECCIONAR LAS TRES PRINCIPALES RAZONES O INDICAR QUE YA ESTAN CUBIERTAS");return false;
         }else{
-            if (c7_p709_10 == 0){
+            if (c7_p709_10.equals("0")){
                 int contCheck = 0;
-                if(c7_p709_1 == 1) contCheck ++;
-                if(c7_p709_2 == 1) contCheck ++;
-                if(c7_p709_3 == 1) contCheck ++;
-                if(c7_p709_4 == 1) contCheck ++;
-                if(c7_p709_5 == 1) contCheck ++;
-                if(c7_p709_6 == 1) contCheck ++;
-                if(c7_p709_7 == 1) contCheck ++;
-                if(c7_p709_8 == 1) contCheck ++;
-                if(c7_p709_9 == 1) contCheck ++;
+                if(c7_p709_1.equals("1")) contCheck ++;
+                if(c7_p709_2.equals("1")) contCheck ++;
+                if(c7_p709_3.equals("1")) contCheck ++;
+                if(c7_p709_4.equals("1")) contCheck ++;
+                if(c7_p709_5.equals("1")) contCheck ++;
+                if(c7_p709_6.equals("1")) contCheck ++;
+                if(c7_p709_7.equals("1")) contCheck ++;
+                if(c7_p709_8.equals("1")) contCheck ++;
+                if(c7_p709_9.equals("1")) contCheck ++;
                 if (contCheck < 3){
                     mostrarMensaje("PREGUNTA 709: DEBE SELECCIONAR LAS TRES PRINCIPALES RAZONES");return false;
                 }else if (contCheck > 3){ mostrarMensaje("PREGUNTA 709: DEBE SELECCIONAR SOLO TRES PRINCIPALES RAZONES");return false;}
             }
         }
-        if (c7_p709_9 == 1){
+        if (c7_p709_9.equals("1")){
             if(c7_p709_o.trim().equals("")){mostrarMensaje("PREGUNTA 709 - OPCION 9: DEBE ESPECIFICAR OTRO");return false; }
         }
         return true;
@@ -313,6 +300,11 @@ public class FragmentP706P709 extends FragmentPagina {
         data.open();
         if(data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo7 modulo7 =  data.getModulo7(idEncuestado);
+            ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(modulo7.getIdHogar());
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            informanteSpinner.setAdapter(adapter);
+            informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
             if(!modulo7.getC7_p706().equals("-1") && !modulo7.getC7_p706().equals("")) ((RadioButton)c7_p706_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p706()))).setChecked(true);
             if(!modulo7.getC7_p707().equals("-1") && !modulo7.getC7_p707().equals("")) ((RadioButton)c7_p707_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p707()))).setChecked(true);
             c7_p707_o_EditText.setText(modulo7.getC7_p707_o());

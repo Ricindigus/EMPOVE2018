@@ -62,15 +62,15 @@ public class FragmentP306P308 extends FragmentPagina {
     Spinner c3_p308_estado_Spinner, c3_p308_municipio_Spinner;
     LinearLayout layoutp306, layoutp307, layoutp308;
 
-    int c3_p306;
+    String c3_p306;
     String c3_p306_o;
     String c3_p307_d;
     String c3_p307_m;
     String c3_p307_a;
     String c3_p308_e;
     String c3_p308_m;
-    int c3_p308_e_seleccion;
-    int c3_p308_m_seleccion;
+    String c3_p308_e_seleccion;
+    String c3_p308_m_seleccion;
 
 
     public FragmentP306P308() {
@@ -131,7 +131,7 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p306_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                controlarEspecifiqueRadio(group, checkedId,6,c3_p306_EditText);
+                controlarEspecifiqueRadio(group, checkedId,5,c3_p306_EditText);
             }
         });
 
@@ -176,7 +176,7 @@ public class FragmentP306P308 extends FragmentPagina {
         data.open();
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo3_c3_p306,c3_p306+"");
+        contentValues.put(SQLConstantes.modulo3_c3_p306,c3_p306);
         contentValues.put(SQLConstantes.modulo3_c3_p306_o,c3_p306_o);
         contentValues.put(SQLConstantes.modulo3_c3_p307_d,c3_p307_d);
         contentValues.put(SQLConstantes.modulo3_c3_p307_m,c3_p307_m);
@@ -192,15 +192,15 @@ public class FragmentP306P308 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
-        c3_p306 = c3_p306_RadioGroup.indexOfChild(c3_p306_RadioGroup.findViewById(c3_p306_RadioGroup.getCheckedRadioButtonId()));
+        c3_p306 = c3_p306_RadioGroup.indexOfChild(c3_p306_RadioGroup.findViewById(c3_p306_RadioGroup.getCheckedRadioButtonId())) +"";
         c3_p306_o  = c3_p306_EditText.getText().toString();
         c3_p307_d  = c3_p307_TextViewDia.getText().toString();
         c3_p307_m  = c3_p307_TextViewMes.getText().toString();
         c3_p307_a  = c3_p307_TextViewAnio.getText().toString();
         if (c3_p308_estado_Spinner.getSelectedItemPosition() > 0) c3_p308_e  = getCodigoEstMun(c3_p308_estado_Spinner.getSelectedItem().toString());
         if (c3_p308_municipio_Spinner.getSelectedItemPosition() > 0) c3_p308_m  = getCodigoEstMun(c3_p308_municipio_Spinner.getSelectedItem().toString());
-        c3_p308_e_seleccion = c3_p308_estado_Spinner.getSelectedItemPosition();
-        c3_p308_m_seleccion = c3_p308_municipio_Spinner.getSelectedItemPosition();
+        c3_p308_e_seleccion = c3_p308_estado_Spinner.getSelectedItemPosition()+"";
+        c3_p308_m_seleccion = c3_p308_municipio_Spinner.getSelectedItemPosition()+"";
 
     }
 
@@ -247,9 +247,9 @@ public class FragmentP306P308 extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         llenarVariables();
-        if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
-        if (c3_p306 == -1){mostrarMensaje("PREGUNTA 306: DEBE MARCAR UNA OPCIÓN"); return false;}
-        if (c3_p306 == 6){
+        if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+        if (c3_p306.equals("-1")){mostrarMensaje("PREGUNTA 306: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c3_p306.equals("6")){
             if (c3_p306_o.trim().equals("")){mostrarMensaje("PREGUNTA 306: DEBE ESPECIFICAR");return false;}
         }
         if (c3_p307_d.trim().equals("")){mostrarMensaje("PREGUNTA 307: DEBE AGREGAR FECHA");return false;}

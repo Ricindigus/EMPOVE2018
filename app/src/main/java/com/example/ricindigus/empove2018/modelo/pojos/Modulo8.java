@@ -1447,6 +1447,11 @@ public class Modulo8 {
         contentValues.put(SQLConstantes.modulo8_c8_p816_6,c8_p816_6);
         contentValues.put(SQLConstantes.modulo8_c8_p816_7,c8_p816_7);
         contentValues.put(SQLConstantes.modulo8_c8_p816_8,c8_p816_8);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_9,c8_p816_9);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_10,c8_p816_10);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_11,c8_p816_11);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_12,c8_p816_12);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_13,c8_p816_13);
         contentValues.put(SQLConstantes.modulo8_c8_p816_o,c8_p816_o);
         contentValues.put(SQLConstantes.modulo8_c8_p817,c8_p817);
         contentValues.put(SQLConstantes.modulo8_c8_p818,c8_p818);

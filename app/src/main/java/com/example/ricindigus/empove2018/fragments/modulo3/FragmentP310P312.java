@@ -57,10 +57,10 @@ public class FragmentP310P312 extends FragmentPagina {
     private String c3_p310_2;
     private String c3_p310_3;
     private String c3_p310_4;
-    private int c3_p311;
-    String c3_p312_dist;
-    String c3_p312_prov;
-    String c3_p312_dep;
+    private String c3_p311;
+    private String c3_p312_dist;
+    private String c3_p312_prov;
+    private String c3_p312_dep;
 
     public FragmentP310P312() {
         // Required empty public constructor
@@ -194,7 +194,7 @@ public class FragmentP310P312 extends FragmentPagina {
         if(ckp310_2.isChecked())c3_p310_2 = "1";else c3_p310_2 = "0";
         if(ckp310_3.isChecked())c3_p310_3 = "1";else c3_p310_3 = "0";
         if(ckp310_4.isChecked())c3_p310_4 = "1";else c3_p310_4 = "0";
-        c3_p311 = rgp311.indexOfChild(rgp311.findViewById(rgp311.getCheckedRadioButtonId()));
+        c3_p311 = rgp311.indexOfChild(rgp311.findViewById(rgp311.getCheckedRadioButtonId())) + "";
 
     }
 
@@ -245,10 +245,19 @@ public class FragmentP310P312 extends FragmentPagina {
         if (lytp310.getVisibility() == View.VISIBLE){
             if (c3_p310_1.equals("0") && c3_p310_2.equals("0") && c3_p310_3.equals("0")
                     && c3_p310_4.equals("0")) {mostrarMensaje("PREGUNTA 310: DEBE MARCAR AL MENOS UNA OPCION");return false;}
+        }else{
+            c3_p310_1 = "";
+            c3_p310_2 = "";
+            c3_p310_3 = "";
+            c3_p310_4 = "";
         }
-        if (c3_p311 == -1){mostrarMensaje("PREGUNTA 311: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c3_p311.equals("-1")){mostrarMensaje("PREGUNTA 311: DEBE MARCAR UNA OPCIÓN"); return false;}
         if(lytp312.getVisibility() == View.VISIBLE){
             if (txtDepartamento.getText().toString().equals("")){mostrarMensaje("PREGUNTA 312: DEBE INDICAR EL UBIGEO"); return false;}
+        }else{
+            c3_p312_dist = "";
+            c3_p312_prov = "";
+            c3_p312_dep = "";
         }
         return true;
     }

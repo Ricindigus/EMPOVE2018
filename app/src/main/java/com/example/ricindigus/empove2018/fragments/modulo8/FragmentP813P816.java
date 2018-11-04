@@ -15,23 +15,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP813P816 extends FragmentPagina {
-
+    String idEncuestado;
+    String idInformante;
     Context context;
-    String idVivienda, idHogar, idInformante, idPersona;
+
+    Spinner informanteSpinner;
 
     CheckBox c8_p813_1_Checkbox, c8_p813_2_Checkbox, c8_p813_3_Checkbox , c8_p813_4_Checkbox, c8_p813_5_Checkbox,
             c8_p813_6_Checkbox, c8_p813_7_Checkbox, c8_p813_8_Checkbox, c8_p813_9_Checkbox, c8_p813_10_Checkbox,
@@ -46,65 +56,63 @@ public class FragmentP813P816 extends FragmentPagina {
     EditText c8_p816_o_EditText;
     LinearLayout m8_p813_linearlayout, m8_p814_linearlayout, m8_p815_linearlayout, m8_p816_linearlayout;
 
-    private int c8_p813_1;
-    private int c8_p813_2;
-    private int c8_p813_3;
-    private int c8_p813_4;
-    private int c8_p813_5;
-    private int c8_p813_6;
-    private int c8_p813_7;
-    private int c8_p813_8;
-    private int c8_p813_9;
-    private int c8_p813_10;
-    private int c8_p813_11;
-    private int c8_p813_12;
-    private int c8_p813_13;
-    private int c8_p813_14;
+    private String c8_p813_1;
+    private String c8_p813_2;
+    private String c8_p813_3;
+    private String c8_p813_4;
+    private String c8_p813_5;
+    private String c8_p813_6;
+    private String c8_p813_7;
+    private String c8_p813_8;
+    private String c8_p813_9;
+    private String c8_p813_10;
+    private String c8_p813_11;
+    private String c8_p813_12;
+    private String c8_p813_13;
+    private String c8_p813_14;
     private String c8_p813_o;
-    private int c8_p814_1;
-    private int c8_p814_2;
-    private int c8_p814_3;
-    private int c8_p814_4;
-    private int c8_p814_5;
-    private int c8_p814_6;
-    private int c8_p814_7;
-    private int c8_p814_8;
-    private int c8_p815;
-    private int c8_p816_1;
-    private int c8_p816_2;
-    private int c8_p816_3;
-    private int c8_p816_4;
-    private int c8_p816_5;
-    private int c8_p816_6;
-    private int c8_p816_7;
-    private int c8_p816_8;
-    private int c8_p816_9;
-    private int c8_p816_10;
-    private int c8_p816_11;
-    private int c8_p816_12;
-    private int c8_p816_13;
+    private String c8_p814_1;
+    private String c8_p814_2;
+    private String c8_p814_3;
+    private String c8_p814_4;
+    private String c8_p814_5;
+    private String c8_p814_6;
+    private String c8_p814_7;
+    private String c8_p814_8;
+    private String c8_p815;
+    private String c8_p816_1;
+    private String c8_p816_2;
+    private String c8_p816_3;
+    private String c8_p816_4;
+    private String c8_p816_5;
+    private String c8_p816_6;
+    private String c8_p816_7;
+    private String c8_p816_8;
+    private String c8_p816_9;
+    private String c8_p816_10;
+    private String c8_p816_11;
+    private String c8_p816_12;
+    private String c8_p816_13;
     private String c8_p816_o;
 
-    @SuppressLint("ValidFragment")
-    public FragmentP813P816(Context context, String idVivienda, String idHogar, String idInformante, String idPersona) {
-        this.context = context;
-        this.idVivienda = idVivienda;
-        this.idHogar = idHogar;
-        this.idInformante = idInformante;
-        this.idPersona = idPersona;
-    }
+
 
     public FragmentP813P816() {
         // Required empty public constructor
     }
 
+    @SuppressLint("ValidFragment")
+    public FragmentP813P816(String idEncuestado, Context context) {
+        this.idEncuestado = idEncuestado;
+        this.context = context;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_p813_p816, container, false);
-
+        informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
         c8_p813_1_Checkbox = (CheckBox) rootView.findViewById(R.id.mod8_813_checkbox_C8_P813_1);
         c8_p813_2_Checkbox = (CheckBox) rootView.findViewById(R.id.mod8_813_checkbox_C8_P813_2);
         c8_p813_3_Checkbox = (CheckBox) rootView.findViewById(R.id.mod8_813_checkbox_C8_P813_3);
@@ -158,179 +166,314 @@ public class FragmentP813P816 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        c8_p813_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c8_p813_o_EditText.setOnKeyListener(new View.OnKeyListener() {
+
+        configurarEditText(c8_p813_o_EditText,m8_p813_linearlayout,1,30);
+        configurarEditText(c8_p816_o_EditText,m8_p816_linearlayout,1,30);
+
+        c8_p815_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c8_p813_o_EditText);
-                    m8_p813_linearlayout.requestFocus();
-                    return true;
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+                switch (seleccionado){
+                    case 1:
+                        m8_p816_linearlayout.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        c8_p816_1_Checkbox.setChecked(false);
+                        c8_p816_2_Checkbox.setChecked(false);
+                        c8_p816_3_Checkbox.setChecked(false);
+                        c8_p816_4_Checkbox.setChecked(false);
+                        c8_p816_5_Checkbox.setChecked(false);
+                        c8_p816_6_Checkbox.setChecked(false);
+                        c8_p816_7_Checkbox.setChecked(false);
+                        c8_p816_8_Checkbox.setChecked(false);
+                        c8_p816_9_Checkbox.setChecked(false);
+                        c8_p816_10_Checkbox.setChecked(false);
+                        c8_p816_11_Checkbox.setChecked(false);
+                        c8_p816_12_Checkbox.setChecked(false);
+                        c8_p816_13_Checkbox.setChecked(false);
+                        c8_p816_o_EditText.setText("");
+                        m8_p816_linearlayout.setVisibility(View.GONE);
+                        break;
                 }
-                return false;
             }
         });
-        c8_p816_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c8_p816_o_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c8_p816_o_EditText);
-                    m8_p816_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
+        controlarChecked(c8_p816_13_Checkbox,c8_p816_o_EditText);
+        controlarChecked(c8_p813_14_Checkbox,c8_p813_o_EditText);
+
+        llenarVista();
         cargarDatos();
     }
 
     @Override
     public void guardarDatos() {
-
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo8_c8_p813_1,""+c8_p813_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_2,""+c8_p813_2);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_3,""+c8_p813_3);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_4,""+c8_p813_4);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_5,""+c8_p813_5);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_6,""+c8_p813_6);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_7,""+c8_p813_7);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_8,""+c8_p813_8);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_9,""+c8_p813_9);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_10,""+c8_p813_10);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_11,""+c8_p813_11);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_12,""+c8_p813_12);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_13,""+c8_p813_13);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_14,""+c8_p813_14);
-        contentValues.put(SQLConstantes.modulo8_c8_p813_o,""+c8_p813_o);
+        contentValues.put(SQLConstantes.modulo8_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_1,c8_p813_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_2,c8_p813_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_3,c8_p813_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_4,c8_p813_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_5,c8_p813_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_6,c8_p813_6);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_7,c8_p813_7);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_8,c8_p813_8);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_9,c8_p813_9);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_10,c8_p813_10);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_11,c8_p813_11);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_12,c8_p813_12);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_13,c8_p813_13);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_14,c8_p813_14);
+        contentValues.put(SQLConstantes.modulo8_c8_p813_o,c8_p813_o);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_1,c8_p814_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_2,c8_p814_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_3,c8_p814_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_4,c8_p814_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_5,c8_p814_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_6,c8_p814_6);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_7,c8_p814_7);
+        contentValues.put(SQLConstantes.modulo8_c8_p814_8,c8_p814_8);
+        contentValues.put(SQLConstantes.modulo8_c8_p815,c8_p815);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_1,c8_p816_1);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_2,c8_p816_2);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_3,c8_p816_3);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_4,c8_p816_4);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_5,c8_p816_5);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_6,c8_p816_6);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_7,c8_p816_7);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_8,c8_p816_8);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_9,c8_p816_9);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_10,c8_p816_10);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_11,c8_p816_11);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_12,c8_p816_12);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_13,c8_p816_13);
+        contentValues.put(SQLConstantes.modulo8_c8_p816_o,c8_p816_o);
 
-        contentValues.put(SQLConstantes.modulo8_c8_p814_1,""+c8_p814_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p814_2,""+c8_p814_2);
-        contentValues.put(SQLConstantes.modulo8_c8_p814_3,""+c8_p814_3);
-        contentValues.put(SQLConstantes.modulo8_c8_p814_4,""+c8_p814_4);
-        contentValues.put(SQLConstantes.modulo8_c8_p814_5,""+c8_p814_5);
-        contentValues.put(SQLConstantes.modulo8_c8_p814_6,""+c8_p814_6);
-        contentValues.put(SQLConstantes.modulo8_c8_p814_7,""+c8_p814_7);
-        contentValues.put(SQLConstantes.modulo8_c8_p814_8,""+c8_p814_8);
-
-        contentValues.put(SQLConstantes.modulo8_c8_p815,""+c8_p815);
-
-        contentValues.put(SQLConstantes.modulo8_c8_p816_1,""+c8_p816_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_2,""+c8_p816_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_3,""+c8_p816_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_4,""+c8_p816_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_5,""+c8_p816_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_6,""+c8_p816_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_7,""+c8_p816_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_8,""+c8_p816_1);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_9,""+c8_p816_9);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_10,""+c8_p816_10);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_11,""+c8_p816_11);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_12,""+c8_p816_12);
-        contentValues.put(SQLConstantes.modulo8_c8_p816_13,""+c8_p816_13);
-
-        if(data.existeElemento(getNombreTabla(),idPersona)){
-            data.actualizarElemento(getNombreTabla(),contentValues,idPersona);
+        if(data.existeElemento(getNombreTabla(),idEncuestado)){
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         }else{
-            contentValues.put(SQLConstantes.modulo8_idVivienda,""+idVivienda);
-            contentValues.put(SQLConstantes.modulo8_idHogar,""+idHogar);
-            contentValues.put(SQLConstantes.modulo8_idInformante,""+idInformante);
-            contentValues.put(SQLConstantes.modulo8_id,""+idPersona);
+
+            contentValues.put(SQLConstantes.modulo8_id,""+idEncuestado);
             data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.close();
+        ocultarOtrosLayouts();
+    }
+
+    @Override
+    public void llenarVariables() {
+        idInformante = informanteSpinner.getSelectedItemPosition() + "";
+        if(c8_p813_1_Checkbox.isChecked()) c8_p813_1 = "1"; else c8_p813_1 = "0";
+        if(c8_p813_2_Checkbox.isChecked()) c8_p813_2 = "1"; else c8_p813_2 = "0";
+        if(c8_p813_3_Checkbox.isChecked()) c8_p813_3 = "1"; else c8_p813_3 = "0";
+        if(c8_p813_4_Checkbox.isChecked()) c8_p813_4 = "1"; else c8_p813_4 = "0";
+        if(c8_p813_5_Checkbox.isChecked()) c8_p813_5 = "1"; else c8_p813_5 = "0";
+        if(c8_p813_6_Checkbox.isChecked()) c8_p813_6 = "1"; else c8_p813_6 = "0";
+        if(c8_p813_7_Checkbox.isChecked()) c8_p813_7 = "1"; else c8_p813_7 = "0";
+        if(c8_p813_8_Checkbox.isChecked()) c8_p813_8 = "1"; else c8_p813_8 = "0";
+        if(c8_p813_9_Checkbox.isChecked()) c8_p813_9 = "1"; else c8_p813_9 = "0";
+        if(c8_p813_10_Checkbox.isChecked()) c8_p813_10 = "1"; else c8_p813_10 = "0";
+        if(c8_p813_11_Checkbox.isChecked()) c8_p813_11 = "1"; else c8_p813_11 = "0";
+        if(c8_p813_12_Checkbox.isChecked()) c8_p813_12 = "1"; else c8_p813_12 = "0";
+        if(c8_p813_13_Checkbox.isChecked()) c8_p813_13 = "1"; else c8_p813_13 = "0";
+        if(c8_p813_14_Checkbox.isChecked()) c8_p813_14 = "1"; else c8_p813_14 = "0";
+        c8_p813_o = c8_p813_o_EditText.getText().toString();
+        if(c8_p814_1_Checkbox.isChecked()) c8_p814_1 = "1"; else c8_p814_1 = "0";
+        if(c8_p814_2_Checkbox.isChecked()) c8_p814_2 = "1"; else c8_p814_2 = "0";
+        if(c8_p814_3_Checkbox.isChecked()) c8_p814_3 = "1"; else c8_p814_3 = "0";
+        if(c8_p814_4_Checkbox.isChecked()) c8_p814_4 = "1"; else c8_p814_4 = "0";
+        if(c8_p814_5_Checkbox.isChecked()) c8_p814_5 = "1"; else c8_p814_5 = "0";
+        if(c8_p814_6_Checkbox.isChecked()) c8_p814_6 = "1"; else c8_p814_6 = "0";
+        if(c8_p814_7_Checkbox.isChecked()) c8_p814_7 = "1"; else c8_p814_7 = "0";
+        if(c8_p814_8_Checkbox.isChecked()) c8_p814_8 = "1"; else c8_p814_8 = "0";
+        c8_p815 = c8_p815_RadioGroup.indexOfChild(c8_p815_RadioGroup.findViewById(c8_p815_RadioGroup.getCheckedRadioButtonId()))+"";
+        if(c8_p816_1_Checkbox.isChecked()) c8_p816_1 = "1"; else c8_p816_1 = "0";
+        if(c8_p816_2_Checkbox.isChecked()) c8_p816_2 = "1"; else c8_p816_2 = "0";
+        if(c8_p816_3_Checkbox.isChecked()) c8_p816_3 = "1"; else c8_p816_3 = "0";
+        if(c8_p816_4_Checkbox.isChecked()) c8_p816_4 = "1"; else c8_p816_4 = "0";
+        if(c8_p816_5_Checkbox.isChecked()) c8_p816_5 = "1"; else c8_p816_5 = "0";
+        if(c8_p816_6_Checkbox.isChecked()) c8_p816_6 = "1"; else c8_p816_6 = "0";
+        if(c8_p816_7_Checkbox.isChecked()) c8_p816_7 = "1"; else c8_p816_7 = "0";
+        if(c8_p816_8_Checkbox.isChecked()) c8_p816_8 = "1"; else c8_p816_8 = "0";
+        if(c8_p816_9_Checkbox.isChecked()) c8_p816_9 = "1"; else c8_p816_9 = "0";
+        if(c8_p816_10_Checkbox.isChecked()) c8_p816_10 = "1"; else c8_p816_10 = "0";
+        if(c8_p816_11_Checkbox.isChecked()) c8_p816_11 = "1"; else c8_p816_11 = "0";
+        if(c8_p816_12_Checkbox.isChecked()) c8_p816_12 = "1"; else c8_p816_12 = "0";
+        if(c8_p816_13_Checkbox.isChecked()) c8_p816_13 = "1"; else c8_p816_13 = "0";
+        c8_p816_o = c8_p816_o_EditText.getText().toString();
+    }
+
+    @Override
+    public void cargarDatos() {
+        Data data = new Data(context);
+        data.open();
+        if(data.existeElemento(getNombreTabla(), idEncuestado)){
+            Modulo8 modulo8 = data.getModulo8(idEncuestado);
+            ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(modulo8.getIdHogar());
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            informanteSpinner.setAdapter(adapter);
+            informanteSpinner.setSelection(Integer.parseInt(modulo8.getIdInformante()));
+            if(modulo8.getC8_p813_1().equals("1")) c8_p813_1_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_2().equals("1")) c8_p813_2_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_3().equals("1")) c8_p813_3_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_4().equals("1")) c8_p813_4_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_5().equals("1")) c8_p813_5_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_6().equals("1")) c8_p813_6_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_7().equals("1")) c8_p813_7_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_8().equals("1")) c8_p813_8_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_9().equals("1")) c8_p813_9_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_10().equals("1")) c8_p813_10_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_11().equals("1")) c8_p813_11_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_12().equals("1")) c8_p813_12_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_13().equals("1")) c8_p813_13_Checkbox.setChecked(true);
+            if(modulo8.getC8_p813_14().equals("1")) c8_p813_14_Checkbox.setChecked(true);
+            c8_p813_o_EditText.setText(modulo8.getC8_p813_o());
+            if(modulo8.getC8_p814_1().equals("1")) c8_p814_1_Checkbox.setChecked(true);
+            if(modulo8.getC8_p814_2().equals("1")) c8_p814_2_Checkbox.setChecked(true);
+            if(modulo8.getC8_p814_3().equals("1")) c8_p814_3_Checkbox.setChecked(true);
+            if(modulo8.getC8_p814_4().equals("1")) c8_p814_4_Checkbox.setChecked(true);
+            if(modulo8.getC8_p814_5().equals("1")) c8_p814_5_Checkbox.setChecked(true);
+            if(modulo8.getC8_p814_6().equals("1")) c8_p814_6_Checkbox.setChecked(true);
+            if(modulo8.getC8_p814_7().equals("1")) c8_p814_7_Checkbox.setChecked(true);
+            if(modulo8.getC8_p814_8().equals("1")) c8_p814_8_Checkbox.setChecked(true);
+
+            if(!modulo8.getC8_p815().equals("-1")&&!modulo8.getC8_p815().equals(""))((RadioButton)c8_p815_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p815()))).setChecked(true);
+
+            if(modulo8.getC8_p816_1().equals("1")) c8_p816_1_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_2().equals("1")) c8_p816_2_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_3().equals("1")) c8_p816_3_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_4().equals("1")) c8_p816_4_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_5().equals("1")) c8_p816_5_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_6().equals("1")) c8_p816_6_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_7().equals("1")) c8_p816_7_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_8().equals("1")) c8_p816_8_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_9().equals("1")) c8_p816_9_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_10().equals("1")) c8_p816_10_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_11().equals("1")) c8_p816_11_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_12().equals("1")) c8_p816_12_Checkbox.setChecked(true);
+            if(modulo8.getC8_p816_13().equals("1")) c8_p816_13_Checkbox.setChecked(true);
+            c8_p816_o_EditText.setText(modulo8.getC8_p816_o());
         }
         data.close();
     }
 
     @Override
-    public void llenarVariables() {
-        if(c8_p813_1_Checkbox.isChecked()) c8_p813_1 = 1; else c8_p813_1 = 0;
-        if(c8_p813_2_Checkbox.isChecked()) c8_p813_2 = 1; else c8_p813_2 = 0;
-        if(c8_p813_3_Checkbox.isChecked()) c8_p813_3 = 1; else c8_p813_3 = 0;
-        if(c8_p813_4_Checkbox.isChecked()) c8_p813_4 = 1; else c8_p813_4 = 0;
-        if(c8_p813_5_Checkbox.isChecked()) c8_p813_5 = 1; else c8_p813_5 = 0;
-        if(c8_p813_6_Checkbox.isChecked()) c8_p813_6 = 1; else c8_p813_6 = 0;
-        if(c8_p813_7_Checkbox.isChecked()) c8_p813_7 = 1; else c8_p813_7 = 0;
-        if(c8_p813_8_Checkbox.isChecked()) c8_p813_8 = 1; else c8_p813_8 = 0;
-        if(c8_p813_9_Checkbox.isChecked()) c8_p813_9 = 1; else c8_p813_9 = 0;
-        if(c8_p813_10_Checkbox.isChecked()) c8_p813_10 = 1; else c8_p813_10 = 0;
-        if(c8_p813_11_Checkbox.isChecked()) c8_p813_11 = 1; else c8_p813_11 = 0;
-        if(c8_p813_12_Checkbox.isChecked()) c8_p813_12 = 1; else c8_p813_12 = 0;
-        if(c8_p813_13_Checkbox.isChecked()) c8_p813_13 = 1; else c8_p813_13 = 0;
-        if(c8_p813_14_Checkbox.isChecked()) c8_p813_14 = 1; else c8_p813_14 = 0;
-        c8_p813_o = c8_p813_o_EditText.getText().toString();
-        if(c8_p814_1_Checkbox.isChecked()) c8_p814_1 = 1; else c8_p814_1 = 0;
-        if(c8_p814_2_Checkbox.isChecked()) c8_p814_2 = 1; else c8_p814_2 = 0;
-        if(c8_p814_3_Checkbox.isChecked()) c8_p814_3 = 1; else c8_p814_3 = 0;
-        if(c8_p814_4_Checkbox.isChecked()) c8_p814_4 = 1; else c8_p814_4 = 0;
-        if(c8_p814_5_Checkbox.isChecked()) c8_p814_5 = 1; else c8_p814_5 = 0;
-        if(c8_p814_6_Checkbox.isChecked()) c8_p814_6 = 1; else c8_p814_6 = 0;
-        if(c8_p814_7_Checkbox.isChecked()) c8_p814_7 = 1; else c8_p814_7 = 0;
-        if(c8_p814_8_Checkbox.isChecked()) c8_p814_8 = 1; else c8_p814_8 = 0;
-        c8_p815 = c8_p815_RadioGroup.indexOfChild(c8_p815_RadioGroup.findViewById(c8_p815_RadioGroup.getCheckedRadioButtonId()));
-        if(c8_p816_1_Checkbox.isChecked()) c8_p816_1 = 1; else c8_p816_1 = 0;
-        if(c8_p816_2_Checkbox.isChecked()) c8_p816_2 = 1; else c8_p816_2 = 0;
-        if(c8_p816_3_Checkbox.isChecked()) c8_p816_3 = 1; else c8_p816_3 = 0;
-        if(c8_p816_4_Checkbox.isChecked()) c8_p816_4 = 1; else c8_p816_4 = 0;
-        if(c8_p816_5_Checkbox.isChecked()) c8_p816_5 = 1; else c8_p816_5 = 0;
-        if(c8_p816_6_Checkbox.isChecked()) c8_p816_6 = 1; else c8_p816_6 = 0;
-        if(c8_p816_7_Checkbox.isChecked()) c8_p816_7 = 1; else c8_p816_7 = 0;
-        if(c8_p816_8_Checkbox.isChecked()) c8_p816_8 = 1; else c8_p816_8 = 0;
-        if(c8_p816_9_Checkbox.isChecked()) c8_p816_9 = 1; else c8_p816_9 = 0;
-        if(c8_p816_10_Checkbox.isChecked()) c8_p816_10 = 1; else c8_p816_10 = 0;
-        if(c8_p816_11_Checkbox.isChecked()) c8_p816_11 = 1; else c8_p816_11 = 0;
-        if(c8_p816_12_Checkbox.isChecked()) c8_p816_12 = 1; else c8_p816_12 = 0;
-        if(c8_p816_13_Checkbox.isChecked()) c8_p816_13 = 1; else c8_p816_13 = 0;
-        c8_p816_o = c8_p816_o_EditText.getText().toString();
-
-    }
-
-    @Override
-    public void cargarDatos() {
-
-    }
-
-    @Override
     public void llenarVista() {
-
+        Data data = new Data(context);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p813,idEncuestado)) m8_p813_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p814,idEncuestado)) m8_p814_linearlayout.setVisibility(View.GONE);
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
-        if(c8_p813_1==0 && c8_p813_2==0 && c8_p813_3==0 && c8_p813_4==0 && c8_p813_5==0 && c8_p813_6==0
-                && c8_p813_7==0 && c8_p813_8==0 && c8_p813_9==0 && c8_p813_10==0 && c8_p813_11==0 && c8_p813_12==0 && c8_p813_13==0 && c8_p813_14==0){
-            mostrarMensaje("PREGUNTA 813: DEBE SELECCIONAR ALGUNA OPCION");
-            return false;
+        llenarVariables();
+        if (m8_p813_linearlayout.getVisibility() == View.VISIBLE){
+            if(c8_p813_1.equals("0") && c8_p813_2.equals("0") && c8_p813_3.equals("0") && c8_p813_4.equals("0") && c8_p813_5.equals("0") && c8_p813_6.equals("0")
+                    && c8_p813_7.equals("0") && c8_p813_8.equals("0") && c8_p813_9.equals("0") && c8_p813_10.equals("0") && c8_p813_11.equals("0") && c8_p813_12.equals("0") && c8_p813_13.equals("0") && c8_p813_14.equals("0")){
+                mostrarMensaje("PREGUNTA 813: DEBE SELECCIONAR ALGUNA OPCION");
+                return false;
+            }
+            if (c8_p813_14.equals("1")){
+                if(c8_p813_o.trim().equals("")){ mostrarMensaje("PREGUNTA 813 - OPCION 14: DEBE ESPECIFICAR OTRO");return false;}
+            }
         }
-        if (c8_p813_14==1){
-            if(c8_p813_o.trim().length()==0){
-                mostrarMensaje("PREGUNTA 813 - OPCION 14: DEBE ESPECIFICAR OTRO");
+
+        if (m8_p814_linearlayout.getVisibility() == View.VISIBLE){
+            if(c8_p814_1.equals("0") && c8_p814_2.equals("0") && c8_p814_3.equals("0") && c8_p814_4.equals("0") && c8_p814_5.equals("0") && c8_p814_6.equals("0")
+                    && c8_p814_7.equals("0") && c8_p814_8.equals("0") ){
+                mostrarMensaje("PREGUNTA 814: DEBE SELECCIONAR ALGUNA OPCION");
                 return false;
             }
         }
-        if(c8_p814_1==0 && c8_p814_2==0 && c8_p814_3==0 && c8_p814_4==0 && c8_p814_5==0 && c8_p814_6==0
-                && c8_p814_7==0 && c8_p814_8==0 ){
-            mostrarMensaje("PREGUNTA 814: DEBE SELECCIONAR ALGUNA OPCION");
-            return false;
-        }
-        if(c8_p815<1){
-            mostrarMensaje("PREGUNTA 815: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c8_p816_1==0 && c8_p816_2==0 && c8_p816_3==0 && c8_p816_4==0 && c8_p816_5==0 && c8_p816_6==0
-                && c8_p816_7==0 && c8_p816_8==0 && c8_p816_9==0 && c8_p816_10==0 && c8_p816_11==0 && c8_p816_12==0 && c8_p816_13==0){
-            mostrarMensaje("PREGUNTA 813: DEBE SELECCIONAR ALGUNA OPCION");
-            return false;
-        }
-        if (c8_p816_13==1){
-            if(c8_p816_o.trim().length()==0){
-                mostrarMensaje("PREGUNTA 816 - OPCION 13: DEBE ESPECIFICAR OTRO");
+
+        if(c8_p815.equals("-1")){ mostrarMensaje("PREGUNTA 815: DEBE SELECCIONAR UNA OPCION");return false;}
+
+        if (m8_p816_linearlayout.getVisibility() == View.VISIBLE){
+            if(c8_p816_1.equals("0") && c8_p816_2.equals("0") && c8_p816_3.equals("0") && c8_p816_4.equals("0")&& c8_p816_5.equals("0")&& c8_p816_6.equals("0")
+                    && c8_p816_7.equals("0")&& c8_p816_8.equals("0")&& c8_p816_9.equals("0")&& c8_p816_10.equals("0")&& c8_p816_11.equals("0")&& c8_p816_12.equals("0")&& c8_p816_13.equals("0")){
+                mostrarMensaje("PREGUNTA 816: DEBE SELECCIONAR ALGUNA OPCION");
                 return false;
             }
+
+            if (c8_p816_13.equals("1")){
+                if(c8_p816_o.trim().equals("")){ mostrarMensaje("PREGUNTA 816 - OPCION 13: DEBE ESPECIFICAR OTRO");return false;}
+            }
         }
-        return false;
+
+
+        return true;
+    }
+
+    public void ocultarOtrosLayouts(){
+        if (c8_p815_RadioGroup.indexOfChild(c8_p815_RadioGroup.findViewById(c8_p815_RadioGroup.getCheckedRadioButtonId())) == 2){
+            Data data = new Data(context);
+            data.open();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.modulo8_c8_p817,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p817,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p818,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_1,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_2,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_3,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_4,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_5,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_6,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_7,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_8,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_9,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_10,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_11,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_12,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_13,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_14,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p819_o,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_1,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_2,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_3,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_4,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_5,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_6,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_7,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_8,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_9,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_10,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_11,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p820_o,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p821_1,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p821_2,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p821_3,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p821_4,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p821_5,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p821_6,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p821_7,"");
+            contentValues.put(SQLConstantes.modulo8_c8_p821_8,"");
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+            contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.layouts_p817,"0");
+            contentValues.put(SQLConstantes.layouts_p818,"0");
+            contentValues.put(SQLConstantes.layouts_p819,"0");
+            contentValues.put(SQLConstantes.layouts_p820,"0");
+            contentValues.put(SQLConstantes.layouts_p821,"0");
+            data.actualizarElemento(SQLConstantes.tablalayouts,contentValues,idEncuestado);
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,"-1",idEncuestado);
+        }else{
+            Data data = new Data(context);
+            data.open();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.layouts_p817,"1");
+            contentValues.put(SQLConstantes.layouts_p818,"1");
+            contentValues.put(SQLConstantes.layouts_p819,"1");
+            contentValues.put(SQLConstantes.layouts_p820,"1");
+            contentValues.put(SQLConstantes.layouts_p821,"1");
+            data.actualizarElemento(SQLConstantes.tablalayouts,contentValues,idEncuestado);
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,idEncuestado).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,"1",idEncuestado);
+            data.close();
+        }
     }
 
     public void mostrarMensaje(String m){
@@ -344,7 +487,7 @@ public class FragmentP813P816 extends FragmentPagina {
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-//XD
+
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablamodulo8;
@@ -358,5 +501,42 @@ public class FragmentP813P816 extends FragmentPagina {
     public void mostrarTeclado(){
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(editText);
+                    view.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+    }
+
+
+    public void controlarChecked(CheckBox checkBox,final EditText editText){
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    editText.setBackgroundResource(R.drawable.input_text_enabled);
+                    editText.setEnabled(true);
+                }else{
+                    editText.setText("");
+                    editText.setBackgroundResource(R.drawable.input_text_disabled);
+                    editText.setEnabled(false);
+                }
+            }
+        });
     }
 }

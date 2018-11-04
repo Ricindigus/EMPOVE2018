@@ -30,6 +30,10 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_medium"
                 android:text="@string/modulo_8_p805_si"/>
             <RadioButton
@@ -59,6 +63,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,6 +102,10 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_medium"
                 android:text="@string/modulo_8_p805_si"/>
             <RadioButton
@@ -123,6 +135,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,6 +174,10 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margen_medium"
                 android:text="@string/modulo_8_p805_si"/>
             <RadioButton
@@ -171,6 +191,4 @@
                 android:text="@string/modulo_8_p805_nosabe"/>
         </RadioGroup>
     </LinearLayout>
-
-
 </LinearLayout>

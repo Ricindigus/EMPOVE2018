@@ -1445,7 +1445,7 @@ public class Data {
         try {
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo8,
                     null,SQLConstantes.WHERE_CLAUSE_ID, whereArgs, null,null, null);
-            if(cursor.getCount() ==1){
+            if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 modulo8 = new Modulo8();
                 modulo8.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id)));

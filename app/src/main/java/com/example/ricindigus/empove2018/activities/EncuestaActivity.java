@@ -456,24 +456,32 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 case TipoFragmentEncuestado.P805P808:
                     FragmentP805P808 fragmentP805P808 = new FragmentP805P808(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP805P808);
-                    //tFragment = TipoFragmentEncuestado.P805P808;
-                    //fragmentActual = fragmentP805P808;
+                    tFragment = TipoFragmentEncuestado.P805P808;
+                    fragmentActual = fragmentP805P808;
                     break;
                 case TipoFragmentEncuestado.P809P812:
-                    FragmentP809P812 fragmentP809P812 = new FragmentP809P812();
+                    FragmentP809P812 fragmentP809P812 = new FragmentP809P812(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP809P812);
+                    tFragment = TipoFragmentEncuestado.P809P812;
+                    fragmentActual = fragmentP809P812;
                     break;
                 case TipoFragmentEncuestado.P813P816:
-                    FragmentP813P816 fragmentP813P816 = new FragmentP813P816();
+                    FragmentP813P816 fragmentP813P816 = new FragmentP813P816(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP813P816);
+                    tFragment = TipoFragmentEncuestado.P813P816;
+                    fragmentActual = fragmentP813P816;
                     break;
                 case TipoFragmentEncuestado.P817P820:
-                    FragmentP817P820 fragmentP817P820 = new FragmentP817P820();
+                    FragmentP817P820 fragmentP817P820 = new FragmentP817P820(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP817P820);
+                    tFragment = TipoFragmentEncuestado.P817P820;
+                    fragmentActual = fragmentP817P820;
                     break;
                 case TipoFragmentEncuestado.P821P823:
-                    FragmentP821P823 fragmentP821P823 = new FragmentP821P823();
+                    FragmentP821P823 fragmentP821P823 = new FragmentP821P823(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP821P823);
+                    tFragment = TipoFragmentEncuestado.P821P823;
+                    fragmentActual = fragmentP821P823;
                     break;
             }
             fragmentTransaction.commit();

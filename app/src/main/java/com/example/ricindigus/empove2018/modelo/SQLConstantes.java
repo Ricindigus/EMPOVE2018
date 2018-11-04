@@ -1577,6 +1577,11 @@ public class SQLConstantes {
                     modulo8_c8_p816_6  +  " TEXT," +
                     modulo8_c8_p816_7  +  " TEXT," +
                     modulo8_c8_p816_8  +  " TEXT," +
+                    modulo8_c8_p816_9  +  " TEXT," +
+                    modulo8_c8_p816_10  +  " TEXT," +
+                    modulo8_c8_p816_11  +  " TEXT," +
+                    modulo8_c8_p816_12  +  " TEXT," +
+                    modulo8_c8_p816_13  +  " TEXT," +
                     modulo8_c8_p816_o  +  " TEXT," +
                     modulo8_c8_p817  +  " TEXT," +
                     modulo8_c8_p818  +  " TEXT," +
@@ -1726,6 +1731,7 @@ public class SQLConstantes {
     public static String layouts_p807 = "p807";
     public static String layouts_p808 = "p808";
     public static String layouts_p809 = "p809";
+    public static String layouts_p810 = "p810";
     public static String layouts_p811 = "p811";
     public static String layouts_p812 = "p812";
     public static String layouts_p813 = "p813";
@@ -1838,6 +1844,7 @@ public class SQLConstantes {
                     layouts_p807 + " TEXT," +
                     layouts_p808 + " TEXT," +
                     layouts_p809 + " TEXT," +
+                    layouts_p810 + " TEXT," +
                     layouts_p811 + " TEXT," +
                     layouts_p812 + " TEXT," +
                     layouts_p813 + " TEXT," +
