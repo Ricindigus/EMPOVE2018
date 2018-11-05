@@ -270,7 +270,7 @@ public class FragmentP401P404 extends FragmentPagina {
             c4_p401_o_EditText.setText(modulo4.getC4_p401_o());
             if(modulo4.getC4_p401_5().equals("1")) c4_p401_5_CheckBox.setChecked(true);
             if(modulo4.getC4_p401_5().equals("0")) c4_p401_5_CheckBox.setChecked(false);
-            if(!(modulo4.getC4_p402().equals("-1") || modulo4.getC4_p402().equals("")))((RadioButton)c4_p402_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p402()))).setChecked(true);
+            if(!modulo4.getC4_p402().equals("-1") && !modulo4.getC4_p402().equals(""))((RadioButton)c4_p402_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p402()))).setChecked(true);
             if(modulo4.getC4_p403_1().equals("1")) c4_p403_1_CheckBox.setChecked(true);
             if(modulo4.getC4_p403_1().equals("0")) c4_p403_1_CheckBox.setChecked(false);
             if(modulo4.getC4_p403_2().equals("1")) c4_p403_2_CheckBox.setChecked(true);
@@ -300,8 +300,7 @@ public class FragmentP401P404 extends FragmentPagina {
             if(modulo4.getC4_p403_14().equals("1")) c4_p403_14_CheckBox.setChecked(true);
             if(modulo4.getC4_p403_14().equals("0")) c4_p403_14_CheckBox.setChecked(false);
             c4_p403_o_EditText.setText(modulo4.getC4_p403_o());
-            Log.e("cargardatos", "modulo4.getC4_p404(): "+modulo4.getC4_p404() );
-            if(!(modulo4.getC4_p404().equals("-1") || modulo4.getC4_p404().equals("")))((RadioButton)c4_p404_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p404()))).setChecked(true);
+            if(modulo4.getC4_p404().equals("-1") && !modulo4.getC4_p404().equals(""))((RadioButton)c4_p404_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p404()))).setChecked(true);
         }
         data.close();
     }

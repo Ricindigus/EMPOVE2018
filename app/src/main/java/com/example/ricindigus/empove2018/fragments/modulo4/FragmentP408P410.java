@@ -164,14 +164,14 @@ public class FragmentP408P410 extends FragmentPagina {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
             if(!modulo4.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo4.getIdInformante()));
-            if(!(modulo4.getC4_p408_1().equals("-1") && !modulo4.getC4_p408_1().equals("")))((RadioButton)c4_p408_1_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_1()))).setChecked(true);
-            if(!(modulo4.getC4_p408_2().equals("-1") && !modulo4.getC4_p408_2().equals("")))((RadioButton)c4_p408_2_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_2()))).setChecked(true);
-            if(!(modulo4.getC4_p408_3().equals("-1") && !modulo4.getC4_p408_3().equals("")))((RadioButton)c4_p408_3_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_3()))).setChecked(true);
-            if(!(modulo4.getC4_p408_4().equals("-1") && !modulo4.getC4_p408_4().equals("")))((RadioButton)c4_p408_4_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_4()))).setChecked(true);
-            if(!(modulo4.getC4_p408_5().equals("-1") && !modulo4.getC4_p408_5().equals("")))((RadioButton)c4_p408_5_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_5()))).setChecked(true);
-            if(!(modulo4.getC4_p408_6().equals("-1") && !modulo4.getC4_p408_6().equals("")))((RadioButton)c4_p408_6_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_6()))).setChecked(true);
-            if(!(modulo4.getC4_p409().equals("-1") && !modulo4.getC4_p409().equals("")))((RadioButton)c4_p409_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p409()))).setChecked(true);
-            if(!(modulo4.getC4_p410().equals("-1") && !modulo4.getC4_p410().equals("")))((RadioButton)c4_p410_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p410()))).setChecked(true);
+            if(!modulo4.getC4_p408_1().equals("-1") && !modulo4.getC4_p408_1().equals(""))((RadioButton)c4_p408_1_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_1()))).setChecked(true);
+            if(!modulo4.getC4_p408_2().equals("-1") && !modulo4.getC4_p408_2().equals(""))((RadioButton)c4_p408_2_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_2()))).setChecked(true);
+            if(!modulo4.getC4_p408_3().equals("-1") && !modulo4.getC4_p408_3().equals(""))((RadioButton)c4_p408_3_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_3()))).setChecked(true);
+            if(!modulo4.getC4_p408_4().equals("-1") && !modulo4.getC4_p408_4().equals(""))((RadioButton)c4_p408_4_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_4()))).setChecked(true);
+            if(!modulo4.getC4_p408_5().equals("-1") && !modulo4.getC4_p408_5().equals(""))((RadioButton)c4_p408_5_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_5()))).setChecked(true);
+            if(!modulo4.getC4_p408_6().equals("-1") && !modulo4.getC4_p408_6().equals(""))((RadioButton)c4_p408_6_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_6()))).setChecked(true);
+            if(!modulo4.getC4_p409().equals("-1") && !modulo4.getC4_p409().equals(""))((RadioButton)c4_p409_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p409()))).setChecked(true);
+            if(!modulo4.getC4_p410().equals("-1") && !modulo4.getC4_p410().equals(""))((RadioButton)c4_p410_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p410()))).setChecked(true);
         }
 //        inicio();
         data.close();

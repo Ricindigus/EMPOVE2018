@@ -565,8 +565,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             mostrarLayoutPregunta(SQLConstantes.layouts_p413);
             mostrarLayoutPregunta(SQLConstantes.layouts_p414);
             mostrarLayoutPregunta(SQLConstantes.layouts_p415);
-        }
-        else{ ocultarP412();ocultarP413();ocultarP414();ocultarP415(); }
+        } else{ ocultarP412();ocultarP413();ocultarP414();ocultarP415(); }
 
         if (iEdad >= 15) mostrarLayoutPregunta(SQLConstantes.layouts_p416);
         else ocultarP416();

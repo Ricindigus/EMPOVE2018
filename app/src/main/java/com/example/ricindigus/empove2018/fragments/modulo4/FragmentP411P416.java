@@ -322,10 +322,10 @@ public class FragmentP411P416 extends FragmentPagina {
             if(modulo4.getC4_p411_13().equals("1")) c4_p411_13_CheckBox.setChecked(true);
             if(modulo4.getC4_p411_14().equals("1")) c4_p411_14_CheckBox.setChecked(true);
             c4_p411_o_EditText.setText(modulo4.getC4_p411_o());
-            if(!(modulo4.getC4_p412().equals("-1") && !modulo4.getC4_p412().equals("")))((RadioButton)c4_p412_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p412()))).setChecked(true);
-            if(!(modulo4.getC4_p413().equals("-1") && !modulo4.getC4_p413().equals("")))((RadioButton)c4_p413_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p413()))).setChecked(true);
-            if(!(modulo4.getC4_p414().equals("-1") && !modulo4.getC4_p414().equals("")))((RadioButton)c4_p414_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p414()))).setChecked(true);
-            if(!(modulo4.getC4_p415().equals("-1") && !modulo4.getC4_p415().equals("")))((RadioButton)c4_p415_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p415()))).setChecked(true);
+            if(!modulo4.getC4_p412().equals("-1") && !modulo4.getC4_p412().equals(""))((RadioButton)c4_p412_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p412()))).setChecked(true);
+            if(!modulo4.getC4_p413().equals("-1") && !modulo4.getC4_p413().equals(""))((RadioButton)c4_p413_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p413()))).setChecked(true);
+            if(!modulo4.getC4_p414().equals("-1") && !modulo4.getC4_p414().equals(""))((RadioButton)c4_p414_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p414()))).setChecked(true);
+            if(!modulo4.getC4_p415().equals("-1") && !modulo4.getC4_p415().equals(""))((RadioButton)c4_p415_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p415()))).setChecked(true);
             if(modulo4.getC4_p416_1().equals("1")) c4_p416_1_CheckBox.setChecked(true);
             if(modulo4.getC4_p416_2().equals("1")) c4_p416_2_CheckBox.setChecked(true);
             if(modulo4.getC4_p416_3().equals("1")) c4_p416_3_CheckBox.setChecked(true);

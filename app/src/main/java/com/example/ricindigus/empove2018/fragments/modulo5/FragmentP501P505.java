@@ -177,13 +177,13 @@ public class FragmentP501P505 extends FragmentPagina {
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo5 modulo5 = data.getModulo5(idEncuestado);
-            if(!(modulo5.getC5_p501().equals("-1") || modulo5.getC5_p501().equals("")))((RadioButton)c5_p501_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p501()))).setChecked(true);
+            if(!modulo5.getC5_p501().equals("-1") && !modulo5.getC5_p501().equals(""))((RadioButton)c5_p501_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p501()))).setChecked(true);
             c5_p502_c_EditText.setText(modulo5.getC5_p502_c());
             if(modulo5.getC5_p502().equals("0")) c5_p502_CheckBox.setChecked(false);
             if(modulo5.getC5_p502().equals("1")) c5_p502_CheckBox.setChecked(true);
-            if(!(modulo5.getC5_p503().equals("-1") || modulo5.getC5_p503().equals("")))((RadioButton)c5_p503_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p503()))).setChecked(true);
-            if(!(modulo5.getC5_p504().equals("-1") || modulo5.getC5_p504().equals("")))((RadioButton)c5_p504_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p504()))).setChecked(true);
-            if(!(modulo5.getC5_p505().equals("-1") || modulo5.getC5_p505().equals("")))((RadioButton)c5_p505_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p505()))).setChecked(true);
+            if(!modulo5.getC5_p503().equals("-1") && ! modulo5.getC5_p503().equals(""))((RadioButton)c5_p503_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p503()))).setChecked(true);
+            if(!modulo5.getC5_p504().equals("-1") && !modulo5.getC5_p504().equals(""))((RadioButton)c5_p504_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p504()))).setChecked(true);
+            if(!modulo5.getC5_p505().equals("-1") && !modulo5.getC5_p505().equals(""))((RadioButton)c5_p505_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p505()))).setChecked(true);
         }
         data.close();
     }
