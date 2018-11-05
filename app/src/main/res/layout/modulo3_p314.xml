@@ -13,6 +13,10 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_3_p314"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_3_p314_ind"/>
     <RadioGroup
         android:id="@+id/mod3_314_radiogroup_C3_P314"
         android:layout_width="match_parent"

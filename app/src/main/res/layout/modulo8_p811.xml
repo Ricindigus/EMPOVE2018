@@ -11,6 +11,10 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_8_p811"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_8_p811_ind"/>
     <RadioGroup
         android:id="@+id/mod8_811_radiogroup_C8_P811"
         android:layout_width="wrap_content"

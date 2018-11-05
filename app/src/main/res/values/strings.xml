@@ -365,7 +365,7 @@
     <string name="modulo_3_p305_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_3_p305_sp1">1.Tumbes</string>
     <string name="modulo_3_p305_sp2">2.Tacna</string>
-    <string name="modulo_3_p305_sp3">3.Lima</string>
+    <string name="modulo_3_p305_sp3">3.Lima (aeropuerto)</string>
     <string name="modulo_3_p305_sp4">4.Otro</string>
     <string name="modulo_3_p305_especifique">Especifique</string>
 
@@ -413,14 +413,14 @@
     <string name="modulo_3_p310_sp2">2.Con un grupo no familiar</string>
     <string name="modulo_3_p310_sp3">3.Solo(a)</string>
     <!--<string name="modulo_3_p310_sp4">4.Otro</string>-->
-    <string name="modulo_3_p310_sp4">5.NO DESEA RESPONDER</string>
+    <string name="modulo_3_p310_sp4">4.NO DESEA RESPONDER</string>
     <string name="modulo_3_p310_especifique">Especifique</string>
 
     <string name="modulo_3_p311">311.DESDE QUE LLEGÓ AL PERÚ. ¿HA VIVIDO SIEMPRE EN ESTE DISTRITO?</string>
     <string name="modulo_3_p311_sp1">1.Sí</string>
     <string name="modulo_3_p311_sp2">2.No</string>
 
-    <string name="modulo_3_p312">312.¿CUÁL FUE EL ÚLTIMO DISTRITO EN EL QUE VIVIÓ, ANTES DE LLEGAR A ESTE LUGAR?</string>
+    <string name="modulo_3_p312">312.¿CUÁL FUE EL ÚLTIMO DISTRITO, PROVINCIA, DEPARTAMENTO EN EL QUE VIVIÓ, ANTES DE LLEGAR A ESTE LUGAR?</string>
     <string name="modulo_3_p312_sp1">Distrito</string>
     <string name="modulo_3_p312_sp2">Provincia</string>
     <string name="modulo_3_p312_sp3">Departamento</string>
@@ -445,9 +445,9 @@
     <string name="modulo_3_p315_sp5">5.Con Permiso Temporal de Trabajo – PTP</string>
     <string name="modulo_3_p315_sp6">6.Solicitante de refugio</string>
     <string name="modulo_3_p315_sp7">7.Refugiado</string>
-    <string name="modulo_3_p315_sp8">8.Carta andina</string>
-    <string name="modulo_3_p315_sp9">9.Carnet de Extranjería</string>
-    <string name="modulo_3_p315_sp10">10.DNI</string>
+    <string name="modulo_3_p315_sp8">8.Carnet de Extranjería</string>
+    <string name="modulo_3_p315_sp9">9.DNI</string>
+    <string name="modulo_3_p315_sp10">10.Otra Situación</string>
     <string name="modulo_3_p315_sp11">11.Otra situación</string>
     <string name="modulo_3_p315_sp12">12.NINGUNA DE LAS SITUACIONES</string>
     <string name="modulo_3_p315_especifique">Especifique</string>
@@ -455,9 +455,9 @@
     <string name="modulo_3_p316">316.EN EL PERÚ, ¿CON QUIÉN ESTÁ VIVIENDO:</string>
     <string name="modulo_3_p316_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_3_p316_sp1">1.Con su familia</string>
-    <string name="modulo_3_p316_sp2">2.Con amigos(as)</string>
-    <string name="modulo_3_p316_sp3">3.Con su familia y amigos(as)</string>
-    <string name="modulo_3_p316_sp4">4.Solo(a)</string>
+    <string name="modulo_3_p316_sp2">2.Con amigos/as</string>
+    <string name="modulo_3_p316_sp3">3.Con su familia y amigos/as</string>
+    <string name="modulo_3_p316_sp4">4.Solo/a</string>
     <string name="modulo_3_p316_sp5">5.Otro</string>
     <string name="modulo_3_p316_especifique">Especifique</string>
 
@@ -1102,23 +1102,23 @@
 
     <string name="modulo_7_p707">707.EN LA COMUNIDAD O BARRIO, DONDE VIVE, ¿PARTICIPA USTED EN ASOCIACIONES/ESPACIOS DE REUNIÓN COMUNITARIOS, COMO:</string>
     <string name="modulo_7_p707_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
-    <string name="modulo_7_p707_sp1">1.Iglesia</string>
-    <string name="modulo_7_p707_sp2">2.Junta de vecinos</string>
-    <string name="modulo_7_p707_sp3">3.Asociaciones de padres</string>
-    <string name="modulo_7_p707_sp4">4.Asociación de venezolanos</string>
-    <string name="modulo_7_p707_sp5">5.Asociación de refugiados</string>
-    <string name="modulo_7_p707_sp6">6.Grupos juveniles</string>
-    <string name="modulo_7_p707_sp7">7.Grupos deportivos</string>
-    <string name="modulo_7_p707_sp8">8.Otra institución</string>
+    <string name="modulo_7_p707_sp1">1.Iglesia?</string>
+    <string name="modulo_7_p707_sp2">2.Junta de vecinos?</string>
+    <string name="modulo_7_p707_sp3">3.Asociaciones de padres?</string>
+    <string name="modulo_7_p707_sp4">4.Asociación de venezolanos?</string>
+    <string name="modulo_7_p707_sp5">5.Asociación de refugiados?</string>
+    <string name="modulo_7_p707_sp6">6.Grupos juveniles?</string>
+    <string name="modulo_7_p707_sp7">7.Grupos deportivos?</string>
+    <string name="modulo_7_p707_sp8">8.Otra institución?</string>
     <string name="modulo_7_p707_especifique">Especifique</string>
     <string name="modulo_7_p707_sp9">9.NO PARTICIPA</string>
 
-    <string name="modulo_7_p708">708.¿PERTENECE A ALGUNA COMUNIDAD VIRTUAL DE VENEZOLANOS?</string>
-    <string name="modulo_7_p708_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
-    <string name="modulo_7_p708_sp1">1.Redes sociales por Facebook</string>
-    <string name="modulo_7_p708_sp2">2.Redes sociales por Twitter</string>
-    <string name="modulo_7_p708_sp3">3.Grupos de WhatsApp</string>
-    <string name="modulo_7_p708_sp4">4.YouTube</string>
+    <string name="modulo_7_p708">708. USTED ¿PERTENECE A ALGUNA COMUNIDAD VIRTUAL DE VENEZOLANOS, TALES COMO:</string>
+    <string name="modulo_7_p708_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
+    <string name="modulo_7_p708_sp1">1.Redes sociales por Facebook?</string>
+    <string name="modulo_7_p708_sp2">2.Redes sociales por Twitter?</string>
+    <string name="modulo_7_p708_sp3">3.Grupos de WhatsApp?</string>
+    <string name="modulo_7_p708_sp4">4.YouTube?</string>
     <string name="modulo_7_p708_sp5">5.NO PARTICIPA</string>
 
     <string name="modulo_7_p709">709. ¿CUÁLES SERÍAN LAS TRES PRINCIPALES NECESIDADES, QUE NO ESTÁN SIENDO CUBIERTAS EN SU HOGAR HOY EN DÍA?</string>
@@ -1160,7 +1160,7 @@
     <string name="modulo_8_p802_sp2">2.No</string>
     <string name="modulo_8_p802_sp3">3.VIVÍA SOLO(A) / NO APLICA</string>
 
-    <string name="modulo_8_p803">QUIÉN DECIDE PRINCIPALMENTE CÓMO SE GASTA EL DINERO QUE USTED GANA?  </string>
+    <string name="modulo_8_p803">803.QUIÉN DECIDE PRINCIPALMENTE CÓMO SE GASTA EL DINERO QUE USTED GANA?  </string>
     <string name="modulo_8_p803_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_8_p803_sp1">1.Persona entrevistada</string>
     <string name="modulo_8_p803_sp2">2.Esposo/a o compañero/a</string>
@@ -1168,7 +1168,7 @@
     <string name="modulo_8_p803_sp4">4.Alguien más</string>
     <string name="modulo_8_p803_sp5">5.Persona entrevistada y alguien más</string>
 
-    <string name="modulo_8_p804">804.EN VENEZUELA, ¿TAMBIÉN SE PRESENTABA LA MISMA SITUACIÓN?</string>
+    <string name="modulo_8_p804">804.EN VENEZUELA, ¿TAMBIÉN SE PRESENTABA LA MISMA SITUACIÓN SOBRE EL GASTO DEL DINERO?</string>
     <string name="modulo_8_p804_sp1">1.Sí</string>
     <string name="modulo_8_p804_sp2">2.No</string>
     <string name="modulo_8_p804_sp3">3.VIVÍA SOLO(A) / NO APLICA</string>
@@ -1205,8 +1205,8 @@
     <string name="modulo_8_p807_si">1.Sí</string>
     <string name="modulo_8_p807_no">2.No</string>
 
-    <string name="modulo_8_p808">808.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ? </string>
-    <string name="modulo_8_p808_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p808">808.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ VERBALMENTE A LA VÍCTIMA? </string>
+    <string name="modulo_8_p808_ind">(Entregue la tarjeta, espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_8_p808_sp1">1.Esposo/a o compañero/a</string>
     <string name="modulo_8_p808_sp2">2.Padre</string>
     <string name="modulo_8_p808_sp3">3.Madre</string>
@@ -1226,8 +1226,8 @@
     <string name="modulo_8_p809_si">1.Sí</string>
     <string name="modulo_8_p809_no">2.No</string>
 
-    <string name="modulo_8_p810">810.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ?</string>
-    <string name="modulo_8_p810_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p810">810.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ FÍSICAMENTE A LA VÍCTIMA?</string>
+    <string name="modulo_8_p810_ind">(Entregue la tarjeta, espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_8_p810_sp1">1.Esposo/a o compañero/a</string>
     <string name="modulo_8_p810_sp2">2.Padre</string>
     <string name="modulo_8_p810_sp3">3.Madre</string>
@@ -1254,7 +1254,7 @@
     <string name="modulo_8_p812_no">2.No</string>
 
     <string name="modulo_8_p813">813.USTED TIENE CONOCIMIENTO, ¿A QUIÉN O A DÓNDE RECURRIÓ?</string>
-    <string name="modulo_8_p813_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p813_ind">(Entregue la tarjeta, espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_8_p813_sp1">1.Esposo/a o compañero/a</string>
     <string name="modulo_8_p813_sp2">2.Padre o madre</string>
     <string name="modulo_8_p813_sp3">3.Familiar</string>
@@ -1271,7 +1271,7 @@
     <string name="modulo_8_p813_sp14">14.Otro</string>
     <string name="modulo_8_p813_especifique">Especifique</string>
 
-    <string name="modulo_8_p814">814.SABE USTED, ¿PORQUE NO PIDIÓ AYUDA LA PERSONA QUE FUE VÍCTIMA DE MALTRATO FÍSICO?</string>
+    <string name="modulo_8_p814">814.USTED SABE, ¿PORQUE NO PIDIÓ AYUDA LA PERSONA QUE FUE VÍCTIMA DE MALTRATO FÍSICO?</string>
     <string name="modulo_8_p814_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_8_p814_sp1">1.No sabía a donde ir/ no conoce los servicios</string>
     <string name="modulo_8_p814_sp2">2.De nada sirve</string>
@@ -1287,7 +1287,7 @@
     <string name="modulo_8_p815_no">2.No</string>
 
     <string name="modulo_8_p816">816.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ SEXUALMENTE? </string>
-    <string name="modulo_8_p816_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p816_ind">(Entregue la tarjeta, espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_8_p816_sp1">1.Esposo/a o compañero/a</string>
     <string name="modulo_8_p816_sp2">2.Padre</string>
     <string name="modulo_8_p816_sp3">3.Madre</string>
@@ -1314,7 +1314,7 @@
     <string name="modulo_8_p818_no">2.No</string>
 
     <string name="modulo_8_p819">819.	USTED SABE, ¿A QUIÉN O A DÓNDE RECURRIÓ?</string>
-    <string name="modulo_8_p819_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_8_p819_ind">(Entregue la tarjeta, espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_8_p819_sp1">1.Esposo/a o compañero/a</string>
     <string name="modulo_8_p819_sp2">2.Padre o madre</string>
     <string name="modulo_8_p819_sp3">3.Familiar</string>

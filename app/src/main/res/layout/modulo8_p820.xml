@@ -11,6 +11,10 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_8_p820"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_8_p820_ind"/>
     <CheckBox
         android:id="@+id/mod8_820_checkbox_C8_P820_1"
         android:layout_width="wrap_content"
