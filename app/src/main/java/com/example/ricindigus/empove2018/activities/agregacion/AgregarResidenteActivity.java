@@ -192,7 +192,6 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             if(!residente.getC2_p206().equals(""))c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
         }
         data.close();
-
     }
 
     @Override
