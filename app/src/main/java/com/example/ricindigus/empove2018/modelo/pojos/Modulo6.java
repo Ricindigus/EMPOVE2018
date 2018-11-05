@@ -116,11 +116,11 @@ public class Modulo6 {
     private String obs_cap6;
     private String c6_estado;
 
-    public Modulo6() {
-        _id = "";
+    public Modulo6(String _id, String idHogar, String idVivienda) {
+        this._id = _id;
+        this.idHogar = idHogar;
+        this.idVivienda = idVivienda;
         idInformante= "";
-        idHogar= "";
-        idVivienda= "";
         c6_p601= "";
         c6_p602= "";
         c6_p603= "";
@@ -227,6 +227,9 @@ public class Modulo6 {
         c6_p630_2frec= "";
         obs_cap6= "";
         c6_estado= "";
+    }
+
+    public Modulo6() {
     }
 
     public String get_id() {

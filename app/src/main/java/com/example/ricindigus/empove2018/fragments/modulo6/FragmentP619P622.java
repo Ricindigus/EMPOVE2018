@@ -206,11 +206,7 @@ public class FragmentP619P622 extends FragmentPagina {
         }
 
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo6 modulo6 = new Modulo6();
-            modulo6.setIdInformante(idInformante);
-            modulo6.set_id(idEncuestado);
-            modulo6.setIdVivienda(idVivienda);
-            modulo6.setIdHogar(idHogar);
+            Modulo6 modulo6 = new Modulo6(idEncuestado,idHogar,idVivienda);
             data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);

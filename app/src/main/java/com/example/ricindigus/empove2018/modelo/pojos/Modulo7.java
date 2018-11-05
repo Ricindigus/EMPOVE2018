@@ -59,11 +59,11 @@ public class Modulo7 {
     private String obs_cap7;
     private String c7_estado;
 
-    public Modulo7() {
-        _id = "";
+    public Modulo7(String _id, String idHogar, String idVivienda) {
+        this._id = _id;
+        this.idHogar = idHogar;
+        this.idVivienda = idVivienda;
         idInformante= "";
-        idHogar= "";
-        idVivienda= "";
         c7_p701= "";
         c7_p702_1= "";
         c7_p702_2= "";
@@ -113,6 +113,9 @@ public class Modulo7 {
         c7_p709_o= "";
         obs_cap7= "";
         c7_estado= "";
+    }
+
+    public Modulo7() {
     }
 
     public String get_id() {

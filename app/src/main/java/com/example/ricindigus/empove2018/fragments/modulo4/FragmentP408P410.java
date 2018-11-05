@@ -17,12 +17,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
@@ -31,18 +33,18 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo4;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentP408P410 extends FragmentPagina {
     String idEncuestado;
-    String idVivienda, idHogar, idInformante;
+    String idInformante;
     Context context;
 
-//    CheckBox c4_p408_1_CheckBox, c4_p408_2_CheckBox, c4_p408_3_CheckBox, c4_p408_4_CheckBox, c4_p408_5_CheckBox,
-//            c4_p408_6_CheckBox, c4_p408_7_CheckBox, c4_p408_8_CheckBox, c4_p408_9_CheckBox, c4_p408_10_CheckBox,
-//            c4_p408_11_CheckBox, c4_p408_12_CheckBox, c4_p408_13_CheckBox, c4_p408_14_CheckBox;
-//    EditText c4_p408_o_EditText;
+    Spinner informanteSpinner;
+
     RadioGroup c4_p408_1_RadioGroup, c4_p408_2_RadioGroup, c4_p408_3_RadioGroup, c4_p408_4_RadioGroup,
         c4_p408_5_RadioGroup, c4_p408_6_RadioGroup;
     RadioGroup c4_p409_RadioGroup, c4_p410_RadioGroup;
@@ -66,9 +68,6 @@ public class FragmentP408P410 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         Residente residente = data.getResidente(idEncuestado);
-        idHogar = residente.getId_hogar();
-        idVivienda = residente.getId_vivienda();
-        idInformante = "";
         if(residente.getC2_p204()=="") sexo = -1; else sexo = Integer.parseInt(residente.getC2_p204());
         if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         data.close();
@@ -84,6 +83,7 @@ public class FragmentP408P410 extends FragmentPagina {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_p408_p410, container, false);
+        informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
 
         c4_p408_1_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_408_radiogroup_C4_P408_1);
         c4_p408_2_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod4_408_radiogroup_C4_P408_2);
@@ -128,6 +128,7 @@ public class FragmentP408P410 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo4_idInformante,idInformante);
         contentValues.put(SQLConstantes.modulo4_c4_p408_1,c4_p408_1+"");
         contentValues.put(SQLConstantes.modulo4_c4_p408_2,c4_p408_2+"");
         contentValues.put(SQLConstantes.modulo4_c4_p408_3,c4_p408_3+"");
@@ -136,21 +137,13 @@ public class FragmentP408P410 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo4_c4_p408_6,c4_p408_6+"");
         contentValues.put(SQLConstantes.modulo4_c4_p409,c4_p409+"");
         contentValues.put(SQLConstantes.modulo4_c4_p410,c4_p410+"");
-
-        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo4 modulo4 = new Modulo4();
-            modulo4.setIdInformante(idInformante);
-            modulo4.set_id(idEncuestado);
-            modulo4.setIdVivienda(idVivienda);
-            modulo4.setIdHogar(idHogar);
-            data.insertarElemento(getNombreTabla(),modulo4.toValues());
-        }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
 
     @Override
     public void llenarVariables() {
+        idInformante = informanteSpinner.getSelectedItemPosition()+"";
         c4_p408_1 = c4_p408_1_RadioGroup.indexOfChild(c4_p408_1_RadioGroup.findViewById(c4_p408_1_RadioGroup.getCheckedRadioButtonId()));
         c4_p408_2 = c4_p408_2_RadioGroup.indexOfChild(c4_p408_2_RadioGroup.findViewById(c4_p408_2_RadioGroup.getCheckedRadioButtonId()));
         c4_p408_3 = c4_p408_3_RadioGroup.indexOfChild(c4_p408_3_RadioGroup.findViewById(c4_p408_3_RadioGroup.getCheckedRadioButtonId()));
@@ -167,6 +160,11 @@ public class FragmentP408P410 extends FragmentPagina {
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo4 modulo4 = data.getModulo4(idEncuestado);
+            ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(modulo4.getIdHogar());
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            informanteSpinner.setAdapter(adapter);
+            informanteSpinner.setSelection(Integer.parseInt(modulo4.getIdInformante()));
             if(!(modulo4.getC4_p408_1().equals("-1") || modulo4.getC4_p408_1().equals("")))((RadioButton)c4_p408_1_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_1()))).setChecked(true);
             if(!(modulo4.getC4_p408_2().equals("-1") || modulo4.getC4_p408_2().equals("")))((RadioButton)c4_p408_2_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_2()))).setChecked(true);
             if(!(modulo4.getC4_p408_3().equals("-1") || modulo4.getC4_p408_3().equals("")))((RadioButton)c4_p408_3_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_3()))).setChecked(true);

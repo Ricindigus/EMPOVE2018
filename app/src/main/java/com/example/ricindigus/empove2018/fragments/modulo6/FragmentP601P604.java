@@ -189,6 +189,7 @@ public class FragmentP601P604 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo6_idInformante,idInformante);
         contentValues.put(SQLConstantes.modulo6_c6_p601,c6_p601+"");
         contentValues.put(SQLConstantes.modulo6_c6_p602,c6_p602+"");
         contentValues.put(SQLConstantes.modulo6_c6_p603,c6_p603+"");
@@ -248,21 +249,13 @@ public class FragmentP601P604 extends FragmentPagina {
         }
 
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo6 modulo6 = new Modulo6();
-            modulo6.setIdInformante(idInformante);
-            modulo6.set_id(idEncuestado);
-            modulo6.setIdVivienda(idVivienda);
-            modulo6.setIdHogar(idHogar);
+            Modulo6 modulo6 = new Modulo6(idEncuestado,idHogar,idVivienda);
             data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         if(edad<5){
             data.eliminarDato(getNombreTabla(),idEncuestado);
-            Modulo6 modulo6 = new Modulo6();
-            modulo6.setIdInformante(idInformante);
-            modulo6.set_id(idEncuestado);
-            modulo6.setIdVivienda(idVivienda);
-            modulo6.setIdHogar(idHogar);
+            Modulo6 modulo6 = new Modulo6(idEncuestado,idHogar,idVivienda);
             data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
         data.close();

@@ -223,10 +223,7 @@ public class FragmentP301P305 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_c3_p305,c3_p305);
         contentValues.put(SQLConstantes.modulo3_c3_p305_o,c3_p305_o);
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo3 modulo3 = new Modulo3();
-            modulo3.set_id(idEncuestado);
-            modulo3.setIdVivienda(idVivienda);
-            modulo3.setIdHogar(idHogar);
+            Modulo3 modulo3 = new Modulo3(idEncuestado,idHogar,idVivienda);
             data.insertarElemento(getNombreTabla(),modulo3.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);

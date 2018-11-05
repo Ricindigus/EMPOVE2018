@@ -26,6 +26,12 @@ import android.widget.Spinner;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo4;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.InterfazOperaciones;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -192,28 +198,47 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
 
     @Override
     public void guardarDatos(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.residentes_c2_p202,c2_p202);
+        contentValues.put(SQLConstantes.residentes_c2_p203,c2_p203);
+        contentValues.put(SQLConstantes.residentes_c2_p204,c2_p204);
+        contentValues.put(SQLConstantes.residentes_c2_p205_a,c2_p205_a);
+        contentValues.put(SQLConstantes.residentes_c2_p205_m,c2_p205_m);
+        contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
 
-            Data data = new Data(this);
-            data.open();
-            ContentValues contentValues = new ContentValues();
-            contentValues.put(SQLConstantes.residentes_c2_p202,c2_p202);
-            contentValues.put(SQLConstantes.residentes_c2_p203,c2_p203);
-            contentValues.put(SQLConstantes.residentes_c2_p204,c2_p204);
-            contentValues.put(SQLConstantes.residentes_c2_p205_a,c2_p205_a);
-            contentValues.put(SQLConstantes.residentes_c2_p205_m,c2_p205_m);
-            contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
+        if(!data.existeElemento(getNombreTabla(),_id)){
+            contentValues.put(SQLConstantes.residentes_id,_id);
+            contentValues.put(SQLConstantes.residentes_idHogar, id_hogar);
+            contentValues.put(SQLConstantes.residentes_idInformante, id_informante);
+            contentValues.put(SQLConstantes.residentes_idVivienda, id_vivienda);
+            contentValues.put(SQLConstantes.residentes_numero,numero);
+            data.insertarElemento(getNombreTabla(),contentValues);
+        }
+        data.actualizarElemento(getNombreTabla(),contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablahogares,SQLConstantes.hogar_nroviven,numero,id_hogar);
+        data.close();
+        ocultarOtrosLayouts();
+//        crearModulos();
 
-            if(!data.existeElemento(getNombreTabla(),_id)){
-                contentValues.put(SQLConstantes.residentes_id,_id);
-                contentValues.put(SQLConstantes.residentes_idHogar, id_hogar);
-                contentValues.put(SQLConstantes.residentes_idInformante, id_informante);
-                contentValues.put(SQLConstantes.residentes_idVivienda, id_vivienda);
-                contentValues.put(SQLConstantes.residentes_numero,numero);
-                data.insertarElemento(getNombreTabla(),contentValues);
-            }
-            data.actualizarElemento(getNombreTabla(),contentValues,_id);
-            data.actualizarValor(SQLConstantes.tablahogares,SQLConstantes.hogar_nroviven,numero,id_hogar);
-            data.close();
+    }
+
+
+    public void crearModulos(){
+        Data data = new Data(this);
+        data.open();
+        Modulo3 modulo3 = new Modulo3(_id,id_hogar,id_vivienda);
+        Modulo4 modulo4 = new Modulo4(_id,id_hogar,id_vivienda);
+        Modulo5 modulo5 = new Modulo5(_id,id_hogar,id_vivienda);
+        Modulo6 modulo6 = new Modulo6(_id,id_hogar,id_vivienda);
+        Modulo7 modulo7 = new Modulo7(_id,id_hogar,id_vivienda);
+        Modulo8 modulo8 = new Modulo8(_id,id_hogar,id_vivienda);
+        data.close();
+    }
+
+
+    public void ocultarOtrosLayouts(){
 
     }
 

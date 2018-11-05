@@ -142,10 +142,13 @@ public class Modulo8 {
     private String c8_estado;
 
     public Modulo8() {
-        _id = "";
+    }
+
+    public Modulo8(String _id, String idHogar, String idVivienda) {
+        this._id = _id;
+        this.idHogar = idHogar;
+        this.idVivienda = idVivienda;
         idInformante= "";
-        idHogar= "";
-        idVivienda= "";
         c8_p801= "";
         c8_p802= "";
         c8_p803= "";

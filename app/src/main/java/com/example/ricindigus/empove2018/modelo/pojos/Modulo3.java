@@ -55,11 +55,12 @@ public class Modulo3 {
     private String c3_p317;
     private String c3_p318;
 
-    public Modulo3() {
-        _id = "";
-        idInformante= "";
-        idHogar= "";
-        idVivienda= "";
+
+
+    public Modulo3(String _id, String idHogar, String idVivienda) {
+        this._id = _id;
+        this.idHogar = idHogar;
+        this.idVivienda = idVivienda;
         c3_p301_d= "";
         c3_p301_m= "";
         c3_p301_a= "";
@@ -106,6 +107,8 @@ public class Modulo3 {
         c3_p317= "";
         c3_p318= "";
     }
+
+    public Modulo3() { }
 
     public String get_id() {
         return _id;
