@@ -138,11 +138,7 @@ public class FragmentP301P305 extends FragmentPagina {
 
         Data data =  new Data(context);
         data.open();
-        ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
-        data.close();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        informanteSpinner.setAdapter(adapter);
+
 
         c3_p301_d_f_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -253,15 +249,19 @@ public class FragmentP301P305 extends FragmentPagina {
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo3 modulo3 = data.getModulo3(idEncuestado);
-            informanteSpinner.setSelection(Integer.parseInt(modulo3.getIdInformante()));
+            ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            informanteSpinner.setAdapter(adapter);
+            if(!modulo3.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo3.getIdInformante()));
             c3_p301_d_TextView.setText(modulo3.getC3_p301_d());
             c3_p301_m_TextView.setText(modulo3.getC3_p301_m());
             c3_p301_a_TextView.setText(modulo3.getC3_p301_a());
-            c3_p302_Spinner.setSelection(data.getNumeroPais(modulo3.getC3_p302()));
-            if(Integer.parseInt(modulo3.getC3_p303_no_nacio()) == 1) c3_p303_CheckBox.setChecked(true);
+            if(!modulo3.getC3_p302().equals(""))c3_p302_Spinner.setSelection(data.getNumeroPais(modulo3.getC3_p302()));
+            if(modulo3.getC3_p303_no_nacio().equals("1")) c3_p303_CheckBox.setChecked(true);
             else{
-                p303spMes.setSelection(Integer.parseInt(modulo3.getC3_p303_m()));
-                p303spAnio.setSelection(2019 - Integer.parseInt(modulo3.getC3_p303_a()));
+                if(!modulo3.getC3_p303_m().equals(""))p303spMes.setSelection(Integer.parseInt(modulo3.getC3_p303_m()));
+                if(!modulo3.getC3_p303_a().equals(""))p303spAnio.setSelection(2019 - Integer.parseInt(modulo3.getC3_p303_a()));
             }
             if(!modulo3.getC3_p304().equals("-1") && !modulo3.getC3_p304().equals(""))((RadioButton)c3_p304_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p304()))).setChecked(true);
             if(!modulo3.getC3_p305().equals("-1") && !modulo3.getC3_p305().equals(""))((RadioButton)c3_p305_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p305()))).setChecked(true);

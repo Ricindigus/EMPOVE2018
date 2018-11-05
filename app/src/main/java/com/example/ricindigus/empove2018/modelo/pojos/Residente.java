@@ -121,6 +121,7 @@ public class Residente {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.residentes_id,_id);
+        contentValues.put(SQLConstantes.residentes_numero,numero);
         contentValues.put(SQLConstantes.residentes_idInformante, id_informante);
         contentValues.put(SQLConstantes.residentes_idHogar, id_hogar);
         contentValues.put(SQLConstantes.residentes_idVivienda, id_vivienda);

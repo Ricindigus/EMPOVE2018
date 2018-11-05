@@ -50,14 +50,14 @@ public class FragmentP408P410 extends FragmentPagina {
     RadioGroup c4_p409_RadioGroup, c4_p410_RadioGroup;
     LinearLayout m4_p408_linearlayout, m4_p409_linearlayout, m4_p410_linearlayout;
 
-    private int c4_p408_1;
-    private int c4_p408_2;
-    private int c4_p408_3;
-    private int c4_p408_4;
-    private int c4_p408_5;
-    private int c4_p408_6;
-    private int c4_p409;
-    private int c4_p410;
+    private String c4_p408_1;
+    private String c4_p408_2;
+    private String c4_p408_3;
+    private String c4_p408_4;
+    private String c4_p408_5;
+    private String c4_p408_6;
+    private String c4_p409;
+    private String c4_p410;
 
     private int edad, sexo;
 
@@ -65,12 +65,12 @@ public class FragmentP408P410 extends FragmentPagina {
     public FragmentP408P410(String idEncuestado, Context context) {
         this.idEncuestado = idEncuestado;
         this.context = context;
-        Data data = new Data(context);
-        data.open();
-        Residente residente = data.getResidente(idEncuestado);
-        if(residente.getC2_p204()=="") sexo = -1; else sexo = Integer.parseInt(residente.getC2_p204());
-        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
-        data.close();
+//        Data data = new Data(context);
+//        data.open();
+//        Residente residente = data.getResidente(idEncuestado);
+//        if(residente.getC2_p204()=="") sexo = -1; else sexo = Integer.parseInt(residente.getC2_p204());
+//        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+//        data.close();
     }
 
     public FragmentP408P410() {
@@ -109,17 +109,16 @@ public class FragmentP408P410 extends FragmentPagina {
         c4_p409_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                Log.e("onViewCreated", "onCheckedChanged: "+ radioGroup.indexOfChild(c4_p409_RadioGroup.findViewById(c4_p409_RadioGroup.getCheckedRadioButtonId())));
-                Log.e("onViewCreated", "i: "+ i);
                 int pos = radioGroup.indexOfChild(c4_p409_RadioGroup.findViewById(c4_p409_RadioGroup.getCheckedRadioButtonId()));
                 switch (pos){
-                    case 0: m4_p410_linearlayout.setVisibility(View.VISIBLE); break;
-                    case 1: m4_p410_linearlayout.setVisibility(View.GONE);
+                    case 1: m4_p410_linearlayout.setVisibility(View.VISIBLE); break;
+                    case 2: m4_p410_linearlayout.setVisibility(View.GONE);
                         limpiar_p410();
                         break;
                 }
             }
         });
+        llenarVista();
         cargarDatos();
     }
 
@@ -129,14 +128,14 @@ public class FragmentP408P410 extends FragmentPagina {
         data.open();
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo4_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo4_c4_p408_1,c4_p408_1+"");
-        contentValues.put(SQLConstantes.modulo4_c4_p408_2,c4_p408_2+"");
-        contentValues.put(SQLConstantes.modulo4_c4_p408_3,c4_p408_3+"");
-        contentValues.put(SQLConstantes.modulo4_c4_p408_4,c4_p408_4+"");
-        contentValues.put(SQLConstantes.modulo4_c4_p408_5,c4_p408_5+"");
-        contentValues.put(SQLConstantes.modulo4_c4_p408_6,c4_p408_6+"");
-        contentValues.put(SQLConstantes.modulo4_c4_p409,c4_p409+"");
-        contentValues.put(SQLConstantes.modulo4_c4_p410,c4_p410+"");
+        contentValues.put(SQLConstantes.modulo4_c4_p408_1,c4_p408_1);
+        contentValues.put(SQLConstantes.modulo4_c4_p408_2,c4_p408_2);
+        contentValues.put(SQLConstantes.modulo4_c4_p408_3,c4_p408_3);
+        contentValues.put(SQLConstantes.modulo4_c4_p408_4,c4_p408_4);
+        contentValues.put(SQLConstantes.modulo4_c4_p408_5,c4_p408_5);
+        contentValues.put(SQLConstantes.modulo4_c4_p408_6,c4_p408_6);
+        contentValues.put(SQLConstantes.modulo4_c4_p409,c4_p409);
+        contentValues.put(SQLConstantes.modulo4_c4_p410,c4_p410);
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
     }
@@ -144,14 +143,14 @@ public class FragmentP408P410 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
-        c4_p408_1 = c4_p408_1_RadioGroup.indexOfChild(c4_p408_1_RadioGroup.findViewById(c4_p408_1_RadioGroup.getCheckedRadioButtonId()));
-        c4_p408_2 = c4_p408_2_RadioGroup.indexOfChild(c4_p408_2_RadioGroup.findViewById(c4_p408_2_RadioGroup.getCheckedRadioButtonId()));
-        c4_p408_3 = c4_p408_3_RadioGroup.indexOfChild(c4_p408_3_RadioGroup.findViewById(c4_p408_3_RadioGroup.getCheckedRadioButtonId()));
-        c4_p408_4 = c4_p408_4_RadioGroup.indexOfChild(c4_p408_4_RadioGroup.findViewById(c4_p408_4_RadioGroup.getCheckedRadioButtonId()));
-        c4_p408_5 = c4_p408_5_RadioGroup.indexOfChild(c4_p408_5_RadioGroup.findViewById(c4_p408_5_RadioGroup.getCheckedRadioButtonId()));
-        c4_p408_6 = c4_p408_6_RadioGroup.indexOfChild(c4_p408_6_RadioGroup.findViewById(c4_p408_6_RadioGroup.getCheckedRadioButtonId()));
-        c4_p409 = c4_p409_RadioGroup.indexOfChild(c4_p409_RadioGroup.findViewById(c4_p409_RadioGroup.getCheckedRadioButtonId()));
-        c4_p410 = c4_p410_RadioGroup.indexOfChild(c4_p410_RadioGroup.findViewById(c4_p410_RadioGroup.getCheckedRadioButtonId()));
+        c4_p408_1 = c4_p408_1_RadioGroup.indexOfChild(c4_p408_1_RadioGroup.findViewById(c4_p408_1_RadioGroup.getCheckedRadioButtonId()))+"";
+        c4_p408_2 = c4_p408_2_RadioGroup.indexOfChild(c4_p408_2_RadioGroup.findViewById(c4_p408_2_RadioGroup.getCheckedRadioButtonId()))+"";
+        c4_p408_3 = c4_p408_3_RadioGroup.indexOfChild(c4_p408_3_RadioGroup.findViewById(c4_p408_3_RadioGroup.getCheckedRadioButtonId()))+"";
+        c4_p408_4 = c4_p408_4_RadioGroup.indexOfChild(c4_p408_4_RadioGroup.findViewById(c4_p408_4_RadioGroup.getCheckedRadioButtonId()))+"";
+        c4_p408_5 = c4_p408_5_RadioGroup.indexOfChild(c4_p408_5_RadioGroup.findViewById(c4_p408_5_RadioGroup.getCheckedRadioButtonId()))+"";
+        c4_p408_6 = c4_p408_6_RadioGroup.indexOfChild(c4_p408_6_RadioGroup.findViewById(c4_p408_6_RadioGroup.getCheckedRadioButtonId()))+"";
+        c4_p409 = c4_p409_RadioGroup.indexOfChild(c4_p409_RadioGroup.findViewById(c4_p409_RadioGroup.getCheckedRadioButtonId()))+"";
+        c4_p410 = c4_p410_RadioGroup.indexOfChild(c4_p410_RadioGroup.findViewById(c4_p410_RadioGroup.getCheckedRadioButtonId()))+"";
     }
 
     @Override
@@ -164,62 +163,75 @@ public class FragmentP408P410 extends FragmentPagina {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
-            informanteSpinner.setSelection(Integer.parseInt(modulo4.getIdInformante()));
-            if(!(modulo4.getC4_p408_1().equals("-1") || modulo4.getC4_p408_1().equals("")))((RadioButton)c4_p408_1_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_1()))).setChecked(true);
-            if(!(modulo4.getC4_p408_2().equals("-1") || modulo4.getC4_p408_2().equals("")))((RadioButton)c4_p408_2_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_2()))).setChecked(true);
-            if(!(modulo4.getC4_p408_3().equals("-1") || modulo4.getC4_p408_3().equals("")))((RadioButton)c4_p408_3_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_3()))).setChecked(true);
-            if(!(modulo4.getC4_p408_4().equals("-1") || modulo4.getC4_p408_4().equals("")))((RadioButton)c4_p408_4_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_4()))).setChecked(true);
-            if(!(modulo4.getC4_p408_5().equals("-1") || modulo4.getC4_p408_5().equals("")))((RadioButton)c4_p408_5_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_5()))).setChecked(true);
-            if(!(modulo4.getC4_p408_6().equals("-1") || modulo4.getC4_p408_6().equals("")))((RadioButton)c4_p408_6_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_6()))).setChecked(true);
-            if(!(modulo4.getC4_p409().equals("-1") || modulo4.getC4_p409().equals("")))((RadioButton)c4_p409_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p409()))).setChecked(true);
-            if(!(modulo4.getC4_p410().equals("-1") || modulo4.getC4_p410().equals("")))((RadioButton)c4_p410_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p410()))).setChecked(true);
+            if(!modulo4.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo4.getIdInformante()));
+            if(!(modulo4.getC4_p408_1().equals("-1") && !modulo4.getC4_p408_1().equals("")))((RadioButton)c4_p408_1_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_1()))).setChecked(true);
+            if(!(modulo4.getC4_p408_2().equals("-1") && !modulo4.getC4_p408_2().equals("")))((RadioButton)c4_p408_2_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_2()))).setChecked(true);
+            if(!(modulo4.getC4_p408_3().equals("-1") && !modulo4.getC4_p408_3().equals("")))((RadioButton)c4_p408_3_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_3()))).setChecked(true);
+            if(!(modulo4.getC4_p408_4().equals("-1") && !modulo4.getC4_p408_4().equals("")))((RadioButton)c4_p408_4_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_4()))).setChecked(true);
+            if(!(modulo4.getC4_p408_5().equals("-1") && !modulo4.getC4_p408_5().equals("")))((RadioButton)c4_p408_5_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_5()))).setChecked(true);
+            if(!(modulo4.getC4_p408_6().equals("-1") && !modulo4.getC4_p408_6().equals("")))((RadioButton)c4_p408_6_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p408_6()))).setChecked(true);
+            if(!(modulo4.getC4_p409().equals("-1") && !modulo4.getC4_p409().equals("")))((RadioButton)c4_p409_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p409()))).setChecked(true);
+            if(!(modulo4.getC4_p410().equals("-1") && !modulo4.getC4_p410().equals("")))((RadioButton)c4_p410_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p410()))).setChecked(true);
         }
-        inicio();
+//        inicio();
         data.close();
     }
 
     @Override
     public void llenarVista() {
-
+        Data data = new Data(context);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p408,idEncuestado)) m4_p408_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p409,idEncuestado)) m4_p409_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p410,idEncuestado)) m4_p410_linearlayout.setVisibility(View.GONE);
+        data.close();
     }
 
     @Override
     public boolean validarDatos() {
         llenarVariables();
+        if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+
         if(m4_p408_linearlayout.getVisibility()==View.VISIBLE){
-            if(c4_p408_1<0){
+            if(c4_p408_1.equals("-1")){
                 mostrarMensaje("PREGUNTA 408-1: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c4_p408_2<0){
+            if(c4_p408_2.equals("-1")){
                 mostrarMensaje("PREGUNTA 408-2: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c4_p408_3<0){
+            if(c4_p408_3.equals("-1")){
                 mostrarMensaje("PREGUNTA 408-3: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c4_p408_4<0){
+            if(c4_p408_4.equals("-1")){
                 mostrarMensaje("PREGUNTA 408-4: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c4_p408_5<0){
+            if(c4_p408_5.equals("-1")){
                 mostrarMensaje("PREGUNTA 408-5: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
-            if(c4_p408_6<0){
+            if(c4_p408_6.equals("-1")){
                 mostrarMensaje("PREGUNTA 408-6: DEBE SELECCIONAR UNA OPCION");
                 return false;
             }
         }
-        if(c4_p409<0 && m4_p409_linearlayout.getVisibility()==View.VISIBLE){
-            mostrarMensaje("PREGUNTA 409: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c4_p410<0 && m4_p410_linearlayout.getVisibility()==View.VISIBLE){
-            mostrarMensaje("PREGUNTA 410: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
+        if (m4_p409_linearlayout.getVisibility()==View.VISIBLE){
+            if(c4_p409.equals("-1")){
+                mostrarMensaje("PREGUNTA 409: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+        }else c4_p409 = "";
+
+        if (m4_p410_linearlayout.getVisibility()==View.VISIBLE){
+            if(c4_p410.equals("-1")){
+                mostrarMensaje("PREGUNTA 410: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+        }else c4_p410 = "";
+
         return true;
     }
 

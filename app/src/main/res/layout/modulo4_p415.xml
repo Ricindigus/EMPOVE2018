@@ -17,6 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
             android:id="@+id/mod4_415_rbSi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

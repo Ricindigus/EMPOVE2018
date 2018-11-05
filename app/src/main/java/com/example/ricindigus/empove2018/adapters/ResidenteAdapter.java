@@ -43,19 +43,28 @@ public class ResidenteAdapter extends RecyclerView.Adapter<ResidenteAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.txtNumero.setText(String.valueOf(residentes.get(position).getNumero()));
-        holder.txtNombre.setText(String.valueOf(residentes.get(position).getC2_p202()));
+        holder.txtNumero.setText(residentes.get(position).getNumero());
+        holder.txtNombre.setText(residentes.get(position).getC2_p202());
 
         holder.txtParentesco.setText(context.getResources().getStringArray(R.array.modulo_2_p203_parentescos)[Integer.parseInt(residentes.get(position).getC2_p203())]);
 
-        holder.txtSexo.setText(String.valueOf(residentes.get(position).getC2_p204()));
-        holder.txtSexo.setText(context.getResources().getStringArray(R.array.modulo_2_p204_sexo)[Integer.parseInt(residentes.get(position).getC2_p204())]);
+//        holder.txtSexo.setText(String.valueOf(residentes.get(position).getC2_p204()));
+        if(!residentes.get(position).getC2_p204().equals(""))
+            holder.txtSexo.setText(context.getResources().getStringArray(R.array.modulo_2_p204_sexo)[Integer.parseInt(residentes.get(position).getC2_p204())]);
+        else holder.txtSexo.setText("");
 
-        if(!residentes.get(position).getC2_p205_a().equals(""))
-            holder.txtEdad.setText(String.valueOf(residentes.get(position).getC2_p205_a()) + " Años");
-        else
-            holder.txtEdad.setText(String.valueOf(residentes.get(position).getC2_p205_m()) + " Meses");
-        holder.txtEstadoCivil.setText(context.getResources().getStringArray(R.array.modulo_2_p206_estado_civil)[Integer.parseInt(residentes.get(position).getC2_p206())]);
+        if(residentes.get(position).getC2_p205_a().equals("") && residentes.get(position).getC2_p205_m().equals("")){
+            holder.txtEdad.setText("");
+        }else{
+            if(!residentes.get(position).getC2_p205_a().equals(""))
+                holder.txtEdad.setText(String.valueOf(residentes.get(position).getC2_p205_a()) + " Años");
+            else
+                holder.txtEdad.setText(String.valueOf(residentes.get(position).getC2_p205_m()) + " Meses");
+        }
+
+        if(!residentes.get(position).getC2_p206().equals(""))
+            holder.txtEstadoCivil.setText(context.getResources().getStringArray(R.array.modulo_2_p206_estado_civil)[Integer.parseInt(residentes.get(position).getC2_p206())]);
+        else holder.txtEstadoCivil.setText("");
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -178,6 +178,7 @@ public class FragmentP401P404 extends FragmentPagina {
         });
 
         cargarDatos();
+        llenarVista();
     }
 
     @Override
@@ -257,7 +258,7 @@ public class FragmentP401P404 extends FragmentPagina {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
-            if (modulo4.getIdInformante() != null)informanteSpinner.setSelection(Integer.parseInt(modulo4.getIdInformante()));
+            if(!modulo4.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo4.getIdInformante()));
             if(modulo4.getC4_p401_1().equals("1")) c4_p401_1_CheckBox.setChecked(true);
             if(modulo4.getC4_p401_1().equals("0")) c4_p401_1_CheckBox.setChecked(false);
             if(modulo4.getC4_p401_2().equals("1")) c4_p401_2_CheckBox.setChecked(true);
@@ -269,7 +270,6 @@ public class FragmentP401P404 extends FragmentPagina {
             c4_p401_o_EditText.setText(modulo4.getC4_p401_o());
             if(modulo4.getC4_p401_5().equals("1")) c4_p401_5_CheckBox.setChecked(true);
             if(modulo4.getC4_p401_5().equals("0")) c4_p401_5_CheckBox.setChecked(false);
-            Log.e("cargardatos", "modulo4.getC4_p402(): "+modulo4.getC4_p402() );
             if(!(modulo4.getC4_p402().equals("-1") || modulo4.getC4_p402().equals("")))((RadioButton)c4_p402_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p402()))).setChecked(true);
             if(modulo4.getC4_p403_1().equals("1")) c4_p403_1_CheckBox.setChecked(true);
             if(modulo4.getC4_p403_1().equals("0")) c4_p403_1_CheckBox.setChecked(false);
@@ -308,7 +308,13 @@ public class FragmentP401P404 extends FragmentPagina {
 
     @Override
     public void llenarVista() {
-
+        Data data = new Data(context);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p401,idEncuestado)) m4_p401_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p402,idEncuestado)) m4_p402_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p403,idEncuestado)) m4_p403_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p404,idEncuestado)) m4_p404_linearlayout.setVisibility(View.GONE);
+        data.close();
     }
 
     @Override

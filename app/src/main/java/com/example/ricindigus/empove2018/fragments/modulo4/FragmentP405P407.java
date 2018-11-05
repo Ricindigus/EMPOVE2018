@@ -234,7 +234,7 @@ public class FragmentP405P407 extends FragmentPagina {
             }
         });
 
-
+        llenarVista();
         cargarDatos();
     }
 
@@ -339,7 +339,7 @@ public class FragmentP405P407 extends FragmentPagina {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
-            informanteSpinner.setSelection(Integer.parseInt(modulo4.getIdInformante()));
+            if(!modulo4.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo4.getIdInformante()));
             if(modulo4.getC4_p405_1().equals("1")) c4_p405_1_CheckBox.setChecked(true);
             if(modulo4.getC4_p405_2().equals("1")) c4_p405_2_CheckBox.setChecked(true);
             if(modulo4.getC4_p405_3().equals("1")) c4_p405_3_CheckBox.setChecked(true);
@@ -378,7 +378,12 @@ public class FragmentP405P407 extends FragmentPagina {
 
     @Override
     public void llenarVista() {
-
+        Data data = new Data(context);
+        data.open();
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p405,idEncuestado)) m4_p405_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p406,idEncuestado)) m4_p406_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p407,idEncuestado)) m4_p407_linearlayout.setVisibility(View.GONE);
+        data.close();
     }
 
     @Override

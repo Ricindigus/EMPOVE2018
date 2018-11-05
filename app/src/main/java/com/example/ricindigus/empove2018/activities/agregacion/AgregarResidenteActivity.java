@@ -180,12 +180,16 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.open();
         if(data.existeElemento(getNombreTabla(),_id)){
             Residente residente = data.getResidente(_id);
+            if (residente.getNumero().equals("1")){
+                c2_p202_TextInputET.setEnabled(false);
+                c2_p203_Spinner.setEnabled(false);
+            }
             c2_p202_TextInputET.setText(residente.getC2_p202());
             c2_p203_Spinner.setSelection(Integer.parseInt(residente.getC2_p203()));
-            ((RadioButton)c2_p204_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p204()))).setChecked(true);
+            if (!residente.getC2_p204().equals(""))((RadioButton)c2_p204_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p204()))).setChecked(true);
             c2_p205_a_TextInputET.setText(residente.getC2_p205_a());
             c2_p205_m_TextInputET.setText(residente.getC2_p205_m());
-            c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
+            if(!residente.getC2_p206().equals(""))c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
         }
         data.close();
 
@@ -219,9 +223,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.actualizarElemento(getNombreTabla(),contentValues,_id);
         data.actualizarValor(SQLConstantes.tablahogares,SQLConstantes.hogar_nroviven,numero,id_hogar);
         data.close();
-        ocultarOtrosLayouts();
-//        crearModulos();
-
+        crearModulos();
+        ocultarOtrosLayouts(c2_p205_a,c2_p204+"");
     }
 
 
@@ -234,12 +237,363 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         Modulo6 modulo6 = new Modulo6(_id,id_hogar,id_vivienda);
         Modulo7 modulo7 = new Modulo7(_id,id_hogar,id_vivienda);
         Modulo8 modulo8 = new Modulo8(_id,id_hogar,id_vivienda);
+        if (!data.existeElemento(SQLConstantes.tablamodulo3,_id)) data.insertarElemento(SQLConstantes.tablamodulo3,modulo3.toValues());
+        if (!data.existeElemento(SQLConstantes.tablamodulo4,_id)) data.insertarElemento(SQLConstantes.tablamodulo4,modulo4.toValues());
+        if (!data.existeElemento(SQLConstantes.tablamodulo5,_id)) data.insertarElemento(SQLConstantes.tablamodulo5,modulo5.toValues());
+        if (!data.existeElemento(SQLConstantes.tablamodulo6,_id)) data.insertarElemento(SQLConstantes.tablamodulo6,modulo6.toValues());
+        if (!data.existeElemento(SQLConstantes.tablamodulo7,_id)) data.insertarElemento(SQLConstantes.tablamodulo7,modulo7.toValues());
+        if (!data.existeElemento(SQLConstantes.tablamodulo8,_id)) data.insertarElemento(SQLConstantes.tablamodulo8,modulo8.toValues());
         data.close();
     }
 
+    public void ocultarP409(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p409,"",_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p409,"0",_id);
+        data.close();
+    }
 
-    public void ocultarOtrosLayouts(){
+    public void ocultarP410(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p410,"",_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p410,"0",_id);
+        data.close();
+    }
 
+    public void ocultarP411(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo4_c4_p411_1,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_2,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_3,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_4,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_5,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_6,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_7,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_8,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_9,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_10,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_11,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_12,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_13,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_14,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p411_o,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo4,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p411,"0",_id);
+        data.close();
+
+    }
+
+    public void ocultarP412(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p412,"",_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p412,"0",_id);
+        data.close();
+    }
+
+    public void ocultarP413(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p413,"",_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p413,"0",_id);
+        data.close();
+    }
+    public void ocultarP414(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p414,"",_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p414,"0",_id);
+        data.close();
+    }
+    public void ocultarP415(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p415,"",_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p415,"0",_id);
+        data.close();
+    }
+    public void ocultarP416(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo4_c4_p416_1,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_2,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_3,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_4,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_5,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_6,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_7,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_8,"");
+        contentValues.put(SQLConstantes.modulo4_c4_p416_o,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo4,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p416,"0",_id);
+        data.close();
+    }
+
+    public void ocultarP508(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo5_c5_p508_1,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_2,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_3,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_4,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_5,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_6,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_7,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_8,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_9,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_10,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_11,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p508_o,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo5,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p508,"0",_id);
+        data.close();
+
+    }
+    public void ocultarP509(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo5,SQLConstantes.modulo5_c5_p509,"",_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p509,"0",_id);
+        data.close();
+    }
+    public void ocultarP510(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo5,SQLConstantes.modulo5_c5_p510,"",_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p510,"0",_id);
+        data.close();
+    }
+    public void ocultarP511(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo5_c5_p511,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p511_o,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo5,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p511,"0",_id);
+        data.close();
+    }
+    public void ocultarP512(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo5_c5_p512,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p512_o,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo5,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p512,"0",_id);
+        data.close();
+    }
+    public void ocultarP513(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo5_c5_p512,"");
+        contentValues.put(SQLConstantes.modulo5_c5_p513_o,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo5,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p513,"0",_id);
+        data.close();
+    }
+
+    public void ocultarP629(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo6_c6_p629_1,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_2,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_3,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_4,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_o,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_1_f,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_1_m,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_2_f,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_2_m,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_3_f,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_3_m,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_4_f,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p629_4_m,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo6,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p629,"0",_id);
+        data.close();
+    }
+    public void ocultarP630(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1med,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1o,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1frec,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1mont,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2med,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2o,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2frec,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2mont,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo6,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p630,"0",_id);
+        data.close();
+    }
+
+    public void mostrarLayoutPregunta(String varLayout){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablalayouts,varLayout,"1",_id);
+        data.close();
+    }
+
+    public void ocultarCapitulo5(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p501p505,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,"-1",_id);
+        data.close();
+    }
+    public void mostrarCapitulo5(){
+        Data data = new Data(this);
+        data.open();
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p501p505,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p501p505,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,"1",_id);
+        data.close();
+    }
+    public void ocultarCapitulo6(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p601p604,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p605p608,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,"-1",_id);
+        data.close();
+    }
+    public void mostrarCapitulo6(){
+        Data data = new Data(this);
+        data.open();
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p601p604,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p601p604,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p605p608,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p605p608,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,"1",_id);
+        data.close();
+    }
+    public void ocultarCapitulo7(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p701p705,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,"-1",_id);
+        data.close();
+    }
+    public void mostrarCapitulo7(){
+        Data data = new Data(this);
+        data.open();
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p701p705,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p701p705,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,"1",_id);
+        data.close();
+    }
+    public void ocultarCapitulo8(){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p801p804,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p805p808,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p809p812,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p813p816,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,"-1",_id);
+        data.close();
+    }
+    public void mostrarCapitulo8(){
+        Data data = new Data(this);
+        data.open();
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p801p804,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p801p804,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p805p808,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p805p808,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p809p812,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p809p812,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p813p816,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p813p816,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,"1",_id);
+        data.close();
+    }
+
+    public void ocultarOtrosLayouts(String edad, String sexo){
+        int iEdad = 0;
+        int iSexo = 0;
+        if (!edad.equals("")) iEdad = Integer.parseInt(edad);
+        iSexo = Integer.parseInt(sexo);
+
+        if (iEdad >= 18 || numero.equals("1")){ mostrarLayoutPregunta(SQLConstantes.layouts_p409);mostrarLayoutPregunta(SQLConstantes.layouts_p410);
+        }else{ ocultarP409();ocultarP410(); }
+
+        if (iEdad <= 17)ocultarP411();
+        else mostrarLayoutPregunta(SQLConstantes.layouts_p411);
+
+        if (iEdad >= 12 && iEdad <= 49 && iSexo == 2){
+            mostrarLayoutPregunta(SQLConstantes.layouts_p412);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p413);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p414);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p415);
+        }
+        else{ ocultarP412();ocultarP413();ocultarP414();ocultarP415(); }
+
+        if (iEdad >= 15) mostrarLayoutPregunta(SQLConstantes.layouts_p416);
+        else ocultarP416();
+
+        if (iEdad >= 3) mostrarCapitulo5();
+        else ocultarCapitulo5();
+
+        if (iEdad >= 5) { mostrarCapitulo6();mostrarCapitulo7(); }
+        else { ocultarCapitulo6();ocultarCapitulo7(); }
+
+        if (iEdad >= 18) mostrarCapitulo8();
+        else ocultarCapitulo8();
+
+
+        if (iEdad >= 3 && iEdad <=25){
+            mostrarLayoutPregunta(SQLConstantes.layouts_p508);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p509);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p510);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p511);
+        } else { ocultarP508();ocultarP509();ocultarP510();ocultarP511();}
+
+        if (iEdad >= 14){
+            mostrarLayoutPregunta(SQLConstantes.layouts_p512);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p513);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p629);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p630);
+        } else { ocultarP512();ocultarP513();ocultarP629();ocultarP630(); }
     }
 
     public void mostrarMensaje(String m){

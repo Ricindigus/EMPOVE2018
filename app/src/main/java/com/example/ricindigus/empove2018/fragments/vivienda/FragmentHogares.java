@@ -32,6 +32,7 @@ import com.example.ricindigus.empove2018.adapters.HogarAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
 import java.util.ArrayList;
@@ -80,7 +81,8 @@ public class FragmentHogares extends FragmentPagina {
         layoutManager = new LinearLayoutManager(context);
         hogaresRecyclerView.setLayoutManager(layoutManager);
         cargarDatos();
-//        setearAdapter();
+        inicializarDatos();
+        setearAdapter();
         agregarHogarFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +101,6 @@ public class FragmentHogares extends FragmentPagina {
     }
 
     public void setearAdapter(){
-        inicializarDatos();
         hogarAdapter = new HogarAdapter(hogares, context,new HogarAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, final int position) {
@@ -206,7 +207,8 @@ public class FragmentHogares extends FragmentPagina {
                         // TODO Do something
                         if(!jefeEditText.getText().toString().trim().equals("")){
                             Hogar hogar = new Hogar();
-                            hogar.set_id(idVivienda+"_"+(hogares.size()+1));
+                            String id = idVivienda+"_"+(hogares.size()+1);
+                            hogar.set_id(id);
                             hogar.setId_vivienda(idVivienda);
                             hogar.setNumero((hogares.size()+1)+"");
                             hogar.setNom_ape(jefeEditText.getText().toString());
@@ -214,6 +216,13 @@ public class FragmentHogares extends FragmentPagina {
                             Data data = new Data(context);
                             data.open();
                             data.insertarElemento(getNombreTabla(),hogar.toValues());
+                            Residente residente = new Residente();
+                            residente.set_id(id + "_1");
+                            residente.setId_hogar(id);
+                            residente.setNumero("1");
+                            residente.setC2_p202(jefeEditText.getText().toString());
+                            residente.setC2_p203("1");
+                            data.insertarElemento(SQLConstantes.tablaresidentes,residente.toValues());
                             data.close();
                             inicializarDatos();
                             setearAdapter();
@@ -251,10 +260,11 @@ public class FragmentHogares extends FragmentPagina {
                             hogar.setNom_ape(jefeEditText.getText().toString());
                             Data data = new Data(context);
                             data.open();
-                            data.actualizarElemento(getNombreTabla(),hogar.toValues(),hogar.get_id());
+                            data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_c2_p202,jefeEditText.getText().toString(),hogar.get_id()+ "_1");
+                            data.actualizarValor(getNombreTabla(),SQLConstantes.hogar_nom_ape,jefeEditText.getText().toString(),hogar.get_id());
                             data.close();
-//                            inicializarDatos();
-//                            setearAdapter();
+                            inicializarDatos();
+                            setearAdapter();
                             alertDialog.dismiss();
                         }else Toast.makeText(context, "DEBE INDICAR NOMBRES Y APELLIDOS DEL JEDE DE HOGAR", Toast.LENGTH_SHORT).show();
                     }
@@ -291,9 +301,9 @@ public class FragmentHogares extends FragmentPagina {
         numeroHogaresTextView.setText(hogares.size()+"");
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        setearAdapter();
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        setearAdapter();
+//    }
 }

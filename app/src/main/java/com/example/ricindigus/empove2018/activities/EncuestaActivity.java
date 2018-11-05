@@ -121,12 +121,12 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                     tFragment++;
                     if(tFragment == 31) tFragment = 1;
                     habilitarFragment(tFragment);
-                    setFragment(tFragment,1);
-//                    while(!setFragment(tFragment,1)){
-//                        tFragment++;
-//                        if(tFragment == 31) tFragment = 1;
-//                        habilitarFragment(tFragment);
-//                    }
+//                    setFragment(tFragment,1);
+                    while(!setFragment(tFragment,1)){
+                        tFragment++;
+                        if(tFragment == 31) tFragment = 1;
+                        habilitarFragment(tFragment);
+                    }
                 }
             }
         });
@@ -136,10 +136,10 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
             public void onClick(View v) {
                 ocultarTeclado(btnAtras);
                 tFragment--;
-                setFragment(tFragment,-1);
-//                while(!setFragment(tFragment,-1)){
-//                    tFragment--;
-//                }
+//                setFragment(tFragment,-1);
+                while(!setFragment(tFragment,-1)){
+                    tFragment--;
+                }
             }
         });
 
@@ -289,7 +289,7 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
     }
 
     public boolean setFragment(int tipoFragment, int direccion){
-//        if (seteoValido(tipoFragment)){
+        if (seteoValido(tipoFragment)){
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             if(direccion != 0){
@@ -486,8 +486,8 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
             }
             fragmentTransaction.commit();
             return true;
-//        }
-//        return false;
+        }
+        return false;
 
     }
 
