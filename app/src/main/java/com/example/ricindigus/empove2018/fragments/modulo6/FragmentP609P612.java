@@ -667,7 +667,7 @@ public class FragmentP609P612 extends FragmentPagina {
             }
         });
 
-        c6_p612_nro_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(4)});
+        c6_p612_nro_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
         c6_p612_nro_EditText.setInputType(18);
         c6_p612_nro_EditText.setTransformationMethod(null);
         cargarDatos();
@@ -781,61 +781,121 @@ public class FragmentP609P612 extends FragmentPagina {
                 mostrarMensaje("PREGUNTA 610 PRINCIPAL - DOMINGO: DEBE INGRESAR HORAS TRABAJADAS");
                 return false;
             }
+            if(!rango(0,23,c6_p610_pd)){
+                mostrarMensaje("PREGUNTA 610 PRINCIPAL - DOMINGO: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
+                return false;
+            }
             if(c6_p610_pl.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 PRINCIPAL - LUNES: DEBE INGRESAR HORAS TRABAJADAS");
+                return false;
+            }
+            if(!rango(0,23,c6_p610_pl)){
+                mostrarMensaje("PREGUNTA 610 PRINCIPAL - LUNES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
                 return false;
             }
             if(c6_p610_pm.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 PRINCIPAL - MARTES: DEBE INGRESAR HORAS TRABAJADAS");
                 return false;
             }
+            if(!rango(0,23,c6_p610_pm)){
+                mostrarMensaje("PREGUNTA 610 PRINCIPAL - MARTES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
+                return false;
+            }
             if(c6_p610_pmi.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 PRINCIPAL - MIERCOLES: DEBE INGRESAR HORAS TRABAJADAS");
+                return false;
+            }
+            if(!rango(0,23,c6_p610_pmi)){
+                mostrarMensaje("PREGUNTA 610 PRINCIPAL - MIERCOLES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
                 return false;
             }
             if(c6_p610_pj.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 PRINCIPAL - JUEVES: DEBE INGRESAR HORAS TRABAJADAS");
                 return false;
             }
+            if(!rango(0,23,c6_p610_pj)){
+                mostrarMensaje("PREGUNTA 610 PRINCIPAL - JUEVES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
+                return false;
+            }
             if(c6_p610_pv.trim().length()==0){
-                mostrarMensaje("PREGUNTA 610 PRINCIPAL - VIERENS: DEBE INGRESAR HORAS TRABAJADAS");
+                mostrarMensaje("PREGUNTA 610 PRINCIPAL - VIERNES: DEBE INGRESAR HORAS TRABAJADAS");
+                return false;
+            }
+            if(!rango(0,23,c6_p610_pv)){
+                mostrarMensaje("PREGUNTA 610 PRINCIPAL - VIERNES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
                 return false;
             }
             if(c6_p610_ps.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 PRINCIPAL - SABADO: DEBE INGRESAR HORAS TRABAJADAS");
                 return false;
             }
+            if(!rango(0,23,c6_p610_ps)){
+                mostrarMensaje("PREGUNTA 610 PRINCIPAL - SABADO: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
+                return false;
+            }
             if(c6_p610_sd.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 SECUNDARIA - DOMINGO: DEBE INGRESAR HORAS TRABAJADAS");
+                return false;
+            }
+            if(!rango(0,23,c6_p610_sd)){
+                mostrarMensaje("PREGUNTA 610 SECUNDARIA - DOMINGO: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
                 return false;
             }
             if(c6_p610_sl.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 SECUNDARIA - LUNES: DEBE INGRESAR HORAS TRABAJADAS");
                 return false;
             }
+            if(!rango(0,23,c6_p610_sl)){
+                mostrarMensaje("PREGUNTA 610 SECUNDARIA - LUNES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
+                return false;
+            }
             if(c6_p610_sm.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 SECUNDARIA - MARTES: DEBE INGRESAR HORAS TRABAJADAS");
+                return false;
+            }
+            if(!rango(0,23,c6_p610_sm)){
+                mostrarMensaje("PREGUNTA 610 SECUNDARIA - MARTES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
                 return false;
             }
             if(c6_p610_smi.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 SECUNDARIA - MIERCOLES: DEBE INGRESAR HORAS TRABAJADAS");
                 return false;
             }
+            if(!rango(0,23,c6_p610_smi)){
+                mostrarMensaje("PREGUNTA 610 SECUNDARIA - MIERCOLES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
+                return false;
+            }
             if(c6_p610_sj.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 SECUNDARIA - JUEVES: DEBE INGRESAR HORAS TRABAJADAS");
                 return false;
             }
+            if(!rango(0,23,c6_p610_sj)){
+                mostrarMensaje("PREGUNTA 610 SECUNDARIA - JUEVES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
+                return false;
+            }
             if(c6_p610_sv.trim().length()==0){
-                mostrarMensaje("PREGUNTA 610 SECUNDARIA - VIERENS: DEBE INGRESAR HORAS TRABAJADAS");
+                mostrarMensaje("PREGUNTA 610 SECUNDARIA - VIERNES: DEBE INGRESAR HORAS TRABAJADAS");
+                return false;
+            }
+            if(!rango(0,23,c6_p610_sv)){
+                mostrarMensaje("PREGUNTA 610 SECUNDARIA - VIERNES: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
                 return false;
             }
             if(c6_p610_ss.trim().length()==0){
                 mostrarMensaje("PREGUNTA 610 SECUNDARIA - SABADO: DEBE INGRESAR HORAS TRABAJADAS");
                 return false;
             }
+            if(!rango(0,23,c6_p610_ss)){
+                mostrarMensaje("PREGUNTA 610 SECUNDARIA - SABADO: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 23");
+                return false;
+            }
         }
         if(c6_p611.trim().length()==0 && m6_p611_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 611: DEBE INGRESAR HORAS TRABAJADAS EN LA SEMANA");
+            return false;
+        }
+        if(!rango(1,168,c6_p611)){
+            mostrarMensaje("PREGUNTA 611: DEBE INGRESAR HORAS TRABAJADAS ENTRE 1 Y 168");
             return false;
         }
         if(m6_p612_linearlayout.getVisibility()==View.VISIBLE){
@@ -846,6 +906,10 @@ public class FragmentP609P612 extends FragmentPagina {
             if(c6_p612==0){
                 if(c6_p612_nro.trim().length()==0){
                     mostrarMensaje("PREGUNTA 612 - OPCION 1: NRO DE PERSONAS");
+                    return false;
+                }
+                if(!rango(1,98,c6_p612_nro)){
+                    mostrarMensaje("PREGUNTA 612: DEBE INGRESAR RANGO ENTRE 1 Y 98");
                     return false;
                 }
             }
@@ -920,6 +984,10 @@ public class FragmentP609P612 extends FragmentPagina {
         enunciado_p610 = enunciado_p610.replace("FECHAINI", fecha_inicial);
         enunciado_p610 = enunciado_p610.replace("FECHAFIN", fecha_final);
         c6_p610_TextView.setText(enunciado_p610);
+    }
+
+    public boolean rango(int ini, int fin, String numero){
+        if(Integer.parseInt(numero)>=ini && Integer.parseInt(numero)<=fin) return true; else return false;
     }
 
     public void inicio(){

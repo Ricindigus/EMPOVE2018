@@ -195,9 +195,13 @@ public class FragmentP613P618 extends FragmentPagina {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
                     limpiar_p616();
+                    c6_p616_mon_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
+                    c6_p616_esp_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
                     c6_p616_mon_EditText.setEnabled(false);
                     c6_p616_esp_EditText.setEnabled(false);
                 }else{
+                    c6_p616_mon_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                    c6_p616_esp_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
                     c6_p616_mon_EditText.setEnabled(true);
                     c6_p616_esp_EditText.setEnabled(true);
                 }
@@ -337,8 +341,16 @@ public class FragmentP613P618 extends FragmentPagina {
                 mostrarMensaje("PREGUNTA 614 - DINERO: DEBE ESPECIFICAR");
                 return false;
             }
+            if(!rango(1,99998,c6_p614_mon)){
+                mostrarMensaje("PREGUNTA 614 - DINERO: DEBE INGRESAR HORAS TRABAJADAS ENTRE  1 Y 99998");
+                return false;
+            }
             if(c6_p614_esp.trim().length()==0){
                 mostrarMensaje("PREGUNTA 614 - ESPECIE: DEBE ESPECIFICAR");
+                return false;
+            }
+            if(!rango(0,99998,c6_p614_esp)){
+                mostrarMensaje("PREGUNTA 614 - ESPECIE: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 99998");
                 return false;
             }
         }
@@ -347,8 +359,16 @@ public class FragmentP613P618 extends FragmentPagina {
                 mostrarMensaje("PREGUNTA 615 - DINERO: DEBE ESPECIFICAR");
                 return false;
             }
+            if(!rango(1,99998,c6_p615_mon)){
+                mostrarMensaje("PREGUNTA 615 - DINERO: DEBE INGRESAR HORAS TRABAJADAS ENTRE  1 Y 99998");
+                return false;
+            }
             if(c6_p615_esp.trim().length()==0){
                 mostrarMensaje("PREGUNTA 615 - ESPECIE: DEBE ESPECIFICAR");
+                return false;
+            }
+            if(!rango(0,99998,c6_p615_esp)){
+                mostrarMensaje("PREGUNTA 615 - ESPECIE: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 99998");
                 return false;
             }
         }
@@ -358,8 +378,16 @@ public class FragmentP613P618 extends FragmentPagina {
                     mostrarMensaje("PREGUNTA 616 - DINERO: DEBE ESPECIFICAR");
                     return false;
                 }
+                if(!rango(0,99998,c6_p616_mon)){
+                    mostrarMensaje("PREGUNTA 616 - DINERO: DEBE INGRESAR HORAS TRABAJADAS ENTRE  1 Y 99998");
+                    return false;
+                }
                 if(c6_p616_esp.trim().length()==0){
                     mostrarMensaje("PREGUNTA 616 - ESPECIE: DEBE ESPECIFICAR");
+                    return false;
+                }
+                if(!rango(0,99998,c6_p616_esp)){
+                    mostrarMensaje("PREGUNTA 616 - ESPECIE: DEBE INGRESAR HORAS TRABAJADAS ENTRE  0 Y 99998");
                     return false;
                 }
             }
@@ -423,6 +451,10 @@ public class FragmentP613P618 extends FragmentPagina {
         c6_p617_dist_Spinner.setSelection(-1);
         c6_p617_prov_Spinner.setSelection(-1);
         c6_p617_dep_Spinner.setSelection(-1);
+    }
+
+    public boolean rango(int ini, int fin, String numero){
+        if(Integer.parseInt(numero)>=ini && Integer.parseInt(numero)<=fin) return true; else return false;
     }
 
     public void inicio(){
