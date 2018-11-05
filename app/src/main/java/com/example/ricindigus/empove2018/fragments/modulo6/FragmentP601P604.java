@@ -11,6 +11,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
@@ -27,6 +29,8 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,6 +40,7 @@ public class FragmentP601P604 extends FragmentPagina {
     String idVivienda, idHogar, idInformante;
     Context context;
 
+    TextView c6_p601_TextView;
     RadioGroup c6_p601_RadioGroup, c6_p602_RadioGroup, c6_p603_RadioGroup,
             c6_p604_1_RadioGroup, c6_p604_2_RadioGroup, c6_p604_3_RadioGroup, c6_p604_4_RadioGroup,
             c6_p604_5_RadioGroup, c6_p604_6_RadioGroup, c6_p604_7_RadioGroup, c6_p604_8_RadioGroup,
@@ -85,6 +90,8 @@ public class FragmentP601P604 extends FragmentPagina {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_p601_p604, container, false);
+
+        c6_p601_TextView = (TextView) rootView.findViewById(R.id.mod6_601_textview_C6_P601);
         c6_p601_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_601_radiogroup_C6_P601);
         c6_p602_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_602_radiogroup_C6_P602);
         c6_p603_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_603_radiogroup_C6_P603);
@@ -429,6 +436,43 @@ public class FragmentP601P604 extends FragmentPagina {
         c6_p604_o_EditText.setText("");
     }
 
+    public String NombreMes(int mes){
+        String nom_mes="";
+        switch(mes){
+            case 0: nom_mes="ENERO"; break;
+            case 1: nom_mes="FEBRERO"; break;
+            case 2: nom_mes="MARZO"; break;
+            case 3: nom_mes="ABRIL"; break;
+            case 4: nom_mes="MAYO"; break;
+            case 5: nom_mes="JUNIO"; break;
+            case 6: nom_mes="JULIO"; break;
+            case 7: nom_mes="AGOSTO"; break;
+            case 8: nom_mes="SETIEMBRE"; break;
+            case 9: nom_mes="OCTUBRE"; break;
+            case 10: nom_mes="NOVIEMBRE"; break;
+            case 11: nom_mes="DICIEMBRE"; break;
+        }
+        return nom_mes;
+    }
+
+    public void fecha(){
+        Calendar calendario;
+        int mm=0, dd=0;
+        String fecha_inicial="", fecha_final="";
+        calendario = Calendar.getInstance();
+        mm = calendario.get(Calendar.MONTH);
+        dd = calendario.get(Calendar.DAY_OF_MONTH);
+        fecha_final = "" + dd + " DE " + NombreMes(mm);
+        calendario.add(Calendar.DAY_OF_MONTH,-7);
+        mm = calendario.get(Calendar.MONTH);
+        dd = calendario.get(Calendar.DAY_OF_MONTH);
+        fecha_inicial = "" + dd + " DE " + NombreMes(mm);
+        String enunciado_p601 = c6_p601_TextView.getText()+"";
+        enunciado_p601 = enunciado_p601.replace("FECHAINI", fecha_inicial);
+        enunciado_p601 = enunciado_p601.replace("FECHAFIN", fecha_final);
+        c6_p601_TextView.setText(enunciado_p601);
+    }
+
     public void inicio(){
         int pos_601 = c6_p601_RadioGroup.indexOfChild(c6_p601_RadioGroup.findViewById(c6_p601_RadioGroup.getCheckedRadioButtonId()));
         int pos_602 = c6_p602_RadioGroup.indexOfChild(c6_p602_RadioGroup.findViewById(c6_p602_RadioGroup.getCheckedRadioButtonId()));
@@ -456,5 +500,6 @@ public class FragmentP601P604 extends FragmentPagina {
             m6_p601_linearlayout.setVisibility(View.GONE); m6_p602_linearlayout.setVisibility(View.GONE);
             m6_p603_linearlayout.setVisibility(View.GONE); m6_p604_linearlayout.setVisibility(View.GONE);
         }
+        fecha();
     }
 }

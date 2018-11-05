@@ -993,7 +993,7 @@ public class Modulo6 {
     }
 
     public String getC6_p629_3_f() {
-        return c6_p629_3_f;
+        if(c6_p629_3_f==null) return ""; else return c6_p629_3_f;
     }
 
     public void setC6_p629_3_f(String c6_p629_3_f) {

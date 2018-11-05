@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
@@ -29,6 +30,8 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +43,8 @@ public class FragmentP626P629 extends FragmentPagina {
 
     RadioGroup c6_p626_RadioGroup, c6_p627_RadioGroup;
     EditText c6_p628_EditText;
+
+    TextView c6_p629_TextView;
     RadioGroup c6_p629_1_RadioGroup, c6_p629_2_RadioGroup, c6_p629_3_RadioGroup, c6_p629_4_RadioGroup;
     EditText c6_p629_o_EditText;
     Spinner c6_p629_1_f_Spinner;
@@ -100,6 +105,7 @@ public class FragmentP626P629 extends FragmentPagina {
         c6_p627_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_627_radiogroup_C6_P627);
         c6_p628_EditText = (EditText) rootView.findViewById(R.id.mod6_628_edittext_C6_P628);
 
+        c6_p629_TextView = (TextView) rootView.findViewById(R.id.mod6_601_textview_C6_P629);
         c6_p629_1_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_629_radiogroup_C6_P629_1);
         c6_p629_2_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_629_radiogroup_C6_P629_2);
         c6_p629_3_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_629_radiogroup_C6_P629_3);
@@ -515,6 +521,41 @@ public class FragmentP626P629 extends FragmentPagina {
         c6_p629_4_m_EditText.setText("");
     }
 
+
+    public String NombreMes(int mes){
+        String nom_mes="";
+        switch(mes){
+            case 0: nom_mes="ENERO"; break;
+            case 1: nom_mes="FEBRERO"; break;
+            case 2: nom_mes="MARZO"; break;
+            case 3: nom_mes="ABRIL"; break;
+            case 4: nom_mes="MAYO"; break;
+            case 5: nom_mes="JUNIO"; break;
+            case 6: nom_mes="JULIO"; break;
+            case 7: nom_mes="AGOSTO"; break;
+            case 8: nom_mes="SETIEMBRE"; break;
+            case 9: nom_mes="OCTUBRE"; break;
+            case 10: nom_mes="NOVIEMBRE"; break;
+            case 11: nom_mes="DICIEMBRE"; break;
+        }
+        return nom_mes;
+    }
+
+    public void fecha(){
+        Calendar calendario;
+        int mm=0;
+        String fecha_inicial="", fecha_final="";
+        calendario = Calendar.getInstance();
+        mm = calendario.get(Calendar.MONTH);
+        fecha_final = "" + NombreMes(mm);
+        calendario.add(Calendar.MONTH,-6);
+        mm = calendario.get(Calendar.MONTH);
+        fecha_inicial = "" + NombreMes(mm);
+        String enunciado_p629 = c6_p629_TextView.getText()+"";
+        enunciado_p629 = enunciado_p629.replace("FECHAINI", fecha_inicial);
+        enunciado_p629 = enunciado_p629.replace("FECHAFIN", fecha_final);
+        c6_p629_TextView.setText(enunciado_p629);
+    }
     public void inicio(){
         if(edad>=5){
             m6_p626_linearlayout.setVisibility(View.VISIBLE);
@@ -535,5 +576,6 @@ public class FragmentP626P629 extends FragmentPagina {
             m6_p626_linearlayout.setVisibility(View.GONE); m6_p627_linearlayout.setVisibility(View.GONE);
             m6_p628_linearlayout.setVisibility(View.GONE); m6_p629_linearlayout.setVisibility(View.GONE);
         }
+        fecha();
     }
 }

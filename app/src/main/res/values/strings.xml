@@ -794,7 +794,8 @@
     <string name="modulo_6_submenu_7">Preguntas 626 - 629</string>
     <string name="modulo_6_submenu_8">Preguntas 630</string>
 
-    <string name="modulo_6_p601">601.LA SEMANA PASADA, DEL… AL… ¿TUVO UD. ALGÚN TRABAJO? (sin contar con los quehaceres del hogar)?</string>
+    <string name="modulo_6_p601">601.LA SEMANA PASADA, DEL FECHAINI AL FECHAFIN ¿TUVO USTED ALGÚN TRABAJO?</string>
+    <string name="modulo_6_p601_ind"><i><b>(sin contar con los quehaceres del hogar)?</b></i></string>
     <string name="modulo_6_p601_sp1">1.Si</string>
     <string name="modulo_6_p601_sp2">2.No</string>
 
@@ -807,7 +808,7 @@
     <string name="modulo_6_p603_sp2">2.No</string>
 
     <string name="modulo_6_p604">604.LA SEMANA PASADA REALIZÓ ALGUNA ACTIVIDAD AL MENOS UNA HORA PARA OBTENER INGRESOS EN DINERO O EN ESPECIE, COMO:</string>
-    <string name="modulo_6_p604_ind">(Lea cada alternativa y seleccione un código para cada una de ellas)</string>
+    <string name="modulo_6_p604_ind"><i><b>(Lea cada una de las alternativas y seleccione un código para cada una de ellas)</b></i></string>
     <string name="modulo_6_p604_sp1">1.¿Trabajando en un negocio propio o de un familiar?</string>
     <string name="modulo_6_p604_sp2">2.¿Ofreciendo algún servicio personal?</string>
     <string name="modulo_6_p604_sp3">3.¿Haciendo algo en casa para vender?</string>
@@ -832,8 +833,8 @@
     <string name="modulo_6_p607">607.¿A QUÉ SE DEDICA EL NEGOCIO, ORGANISMO O EMPRESA EN LA QUE TRABAJÓ EN SU OCUPACIÓN PRINCIPAL?</string>
     <string name="modulo_6_p607_especifique">Especifique</string>
 
-    <string name="modulo_6_p608">608.UD. SE DESEMPEÑÓ EN SU OCUPACIÓN PRINCIPAL O NEGOCIO COMO:</string>
-    <string name="modulo_6_p608_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p608">608.USTED SE DESEMPEÑÓ EN SU OCUPACIÓN PRINCIPAL O NEGOCIO COMO:</string>
+    <string name="modulo_6_p608_ind"><i><b>(Lea cada alternativa y seleccione solo un código)</b></i></string>
     <string name="modulo_6_p608_sp1">1.¿Empleador o patrono?</string>
     <string name="modulo_6_p608_sp2">2.¿Trabajador independiente?</string>
     <string name="modulo_6_p608_sp3">3.¿Empleado?</string>
@@ -847,7 +848,7 @@
     <string name="modulo_6_p609_sp1">1.Sí</string>
     <string name="modulo_6_p609_sp2">2.No</string>
 
-    <string name="modulo_6_p610">610.¿LA SEMANA PASADA, DEL...... AL......... ¿CUÁNTAS HORAS TRABAJÓ EN SU OCUPACIÓN PRINCIPAL Y OCUPACIÓN(ES)  SECUNDARIA(S)?</string>
+    <string name="modulo_6_p610">610.¿LA SEMANA PASADA, DEL FECHAINI AL FECHAFIN ¿CUÁNTAS HORAS TRABAJÓ EN SU OCUPACIÓN PRINCIPAL Y OCUPACIÓN(ES)  SECUNDARIA(S)?</string>
     <string name="modulo_6_p610_sp1">Ocupación Principal</string>
     <string name="modulo_6_p610_sp2">Ocupación(es) Secundaria(s)</string>
     <string name="modulo_6_p610_dom">Dom</string>
@@ -869,8 +870,8 @@
 
     <string name="sub_modulo_6_1">Las preguntas 613 y 614, es solo para empleado, obrero o trabajador del hogar</string>
 
-    <string name="modulo_6_p613">613.EN SU OCUPACIÓN PRINCIPAL, ¿LA FRECUENCIA CON QUE A UD. LE PAGAN ES:</string>
-    <string name="modulo_6_p613_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p613">613.EN SU OCUPACIÓN PRINCIPAL, ¿LA FRECUENCIA CON QUE A USTED LE PAGAN ES:</string>
+    <string name="modulo_6_p613_ind"><i><b>(Lea cada alternativa y seleccione solo un código)</b></i></string>
     <string name="modulo_6_p613_sp1">1.Diario?</string>
     <string name="modulo_6_p613_sp2">2.Semanal?</string>
     <string name="modulo_6_p613_sp3">3.Quincenal?</string>
@@ -905,7 +906,7 @@
     <string name="sub_modulo_6_3">Verifique el MÓDULO II, si se registró a personas menores de 18 años de edad.</string>
 
     <string name="modulo_6_p618">625.¿CON QUIÉN DEJA A LOS/AS MENORES DE EDAD DEL HOGAR, CUANDO ESTÁ TRABAJANDO?</string>
-    <string name="modulo_6_p618_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p618_ind"><i><b>(Espere la respuesta y seleccione uno o más códigos)</b></i></string>
     <string name="modulo_6_p618_sp1">1.Con familiares y parientes</string>
     <string name="modulo_6_p618_sp2">2.En la cuna/colegio</string>
     <string name="modulo_6_p618_sp3">3.Con amigos/as</string>
@@ -921,7 +922,7 @@
     <string name="modulo_6_p619_sp2">2.No</string>
 
     <string name="modulo_6_p620">619.¿QUÉ ESTUVO HACIENDO LA SEMANA PASADA:</string>
-    <string name="modulo_6_p620_ind">(Lea la pregunta y seleccione un código de respuesta)</string>
+    <string name="modulo_6_p620_ind"><i><b>(Lea cada una de las alternativas y seleccione un código para cada una de ellas)</b></i></string>
     <string name="modulo_6_p620_sp1">1.Hizo trámites, busco local, gestionó préstamos para establecer su propio negocio?</string>
     <string name="modulo_6_p620_sp2">2.Reparando sus activos (local, máquina, equipo)?</string>
     <string name="modulo_6_p620_sp3">3.Esperando el inicio de un trabajo dependiente, (obrero, empleado o trabajador del hogar)?</string>
@@ -944,7 +945,7 @@
     <string name="modulo_6_p622_no">2.No</string>
 
     <string name="modulo_6_p623">622.¿POR QUÉ NO BUSCÓ TRABAJO?</string>
-    <string name="modulo_6_p623_ind">(Espere la respuesta y seleccione solo un código)</string>
+    <string name="modulo_6_p623_ind"><i><b>(Espere la respuesta y seleccione solo un código)</b></i></string>
     <string name="modulo_6_p623_sp1">1.No hay trabajo</string>
     <string name="modulo_6_p623_sp2">2.Se cansó de esperar</string>
     <string name="modulo_6_p623_sp3">3.Por su edad</string>
@@ -960,7 +961,7 @@
     <string name="modulo_6_p623_sp12">12.SI BUSCÓ TRABAJO</string>
 
     <string name="modulo_6_p624">623.¿QUÉ HIZO LA SEMANA PASADA PARA CONSEGUIR TRABAJO?</string>
-    <string name="modulo_6_p624_ind">(Espere la respuesta y seleccione solo un código)</string>
+    <string name="modulo_6_p624_ind"><i><b>(Espere la respuesta y seleccione solo un código)</b></i></string>
     <string name="modulo_6_p624_sp1">1.Empleador/patrono</string>
     <string name="modulo_6_p624_sp2">2.Agencia de empleo/Bolsa de trabajo</string>
     <string name="modulo_6_p624_sp3">3.Solo amigos y parientes</string>
@@ -977,7 +978,7 @@
     <string name="sub_modulo_6_5">TRABAJO EN PERÚ</string>
 
     <string name="modulo_6_p626">626.USTED, ¿HA TRABAJADO O HA DESEMPEÑADO ALGUNA ACTIVIDAD SIN RECIBIR EL PAGO ACORDADO?</string>
-    <string name="modulo_6_p626_ind">(Espere la respuesta y seleccione solo un código)</string>
+    <string name="modulo_6_p626_ind"><i><b>(Espere la respuesta y seleccione solo un código)</b></i></string>
     <string name="modulo_6_p626_sp1">1.Sí, recibió menos de lo establecido</string>
     <string name="modulo_6_p626_sp2">2.Sí, no recibió pago alguno</string>
     <string name="modulo_6_p626_sp3">3.No</string>
@@ -997,8 +998,8 @@
     <string name="sub_modulo_6_8">INGRESOS NO LABORALES </string>
     <string name="sub_modulo_6_8_ind">(Personas de 14 años y más de edad)</string>
 
-    <string name="modulo_6_p629">629.EN LOS ÚLTIMOS 6 MESES DE …… A …… ¿RECIBIÓ INGRESOS POR CONCEPTO DE:</string>
-    <string name="modulo_6_p629_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p629">629.EN LOS ÚLTIMOS 6 MESES DE FECHAINI A FECHAFIN ¿RECIBIÓ INGRESOS POR CONCEPTO DE:</string>
+    <string name="modulo_6_p629_ind"><i><b>(Lea cada alternativa y seleccione solo un código)</b></i></string>
     <string name="modulo_6_p629_sp1">a.Pensión de divorcio, alimentos y/o jubilación</string>
     <string name="modulo_6_p629_sp2">b.Arrendamiento de casas, maquinarias, vehículos?</string>
     <string name="modulo_6_p629_sp3">c.Ingresos financieros?</string>
@@ -1019,7 +1020,7 @@
     <string name="sub_modulo_6_9_ind">(Personas de 14 años y más de edad)</string>
 
     <string name="modulo_6_p630">630.EN LOS ÚLTIMOS TRES MESES, ¿USTED HA ENVIADO REMESAS/DINERO A:</string>
-    <string name="modulo_6_p630_ind">(Lea cada alternativa y seleccione solo un código)</string>
+    <string name="modulo_6_p630_ind"><i><b>(Lea cada alternativa y seleccione solo un código)</b></i></string>
     <string name="modulo_6_p630_sp1">a.Venezuela?</string>
     <string name="modulo_6_p630_sp2">b.Otro país?</string>
     <string name="modulo_6_p630_si">1.Sí</string>
