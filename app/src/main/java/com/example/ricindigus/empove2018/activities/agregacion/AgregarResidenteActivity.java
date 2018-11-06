@@ -32,9 +32,13 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.InterfazOperaciones;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
+
+import java.util.ArrayList;
 
 public class AgregarResidenteActivity extends AppCompatActivity implements InterfazOperaciones{
 
@@ -140,6 +144,17 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 llenarVariables();
                 if (validarDatos()){
                     guardarDatos();
+                    Data data = new Data(AgregarResidenteActivity.this);
+                    data.open();
+
+                    String val = data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p401,_id);
+                    String frag = data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p501p505,_id);
+                    ArrayList<Residente> residentes = data.getAllResidentesHogar(id_hogar);
+                    for (Residente r: residentes){
+                        POJOLayout pojoLayout = data.getLayouts(r.get_id());
+                        POJOFragment pojoFragment = data.getFragmentsLayouts(r.get_id());
+                    }
+                    data.close();
                     finish();
                 }
                 return true;
@@ -221,6 +236,14 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         }
         data.actualizarElemento(getNombreTabla(),contentValues,_id);
         data.actualizarValor(SQLConstantes.tablahogares,SQLConstantes.hogar_nroviven,numero,id_hogar);
+        if(!data.existeElemento(SQLConstantes.tablalayouts,_id)){
+            POJOLayout pojoLayout = new POJOLayout();
+            pojoLayout.set_id(_id);
+            data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
+            POJOFragment pojoFragment = new POJOFragment();
+            pojoFragment.set_id(_id);
+            data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
+        }
         data.close();
         crearModulos();
         ocultarOtrosLayouts(c2_p205_a,c2_p204+"");
@@ -245,6 +268,133 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.close();
     }
 
+
+
+    public void ocultarOtrosLayouts(String edad, String sexo){
+        Data data = new Data(AgregarResidenteActivity.this);
+        data.open();
+        int iEdad = 0;
+        int iSexo = 0;
+        if (!edad.equals("")) iEdad = Integer.parseInt(edad);
+        iSexo = Integer.parseInt(sexo);
+
+        ArrayList<Residente> residentes = data.getAllResidentesHogar(id_hogar);
+        boolean todosMayoresEdad = true;
+        for (Residente r : residentes){
+            int ed = 0;
+            if (!r.getC2_p205_a().equals("")) ed = Integer.parseInt(r.getC2_p205_a());
+            if (ed < 18) todosMayoresEdad = false;
+        }
+
+        if (todosMayoresEdad){
+            for (Residente r : residentes){
+                ocultarP409(r.get_id());
+                ocultarP410(r.get_id());
+            }
+        }else{
+            for (Residente r : residentes){
+                int ed = 0;
+                if (!r.getC2_p205_a().equals("")) ed = Integer.parseInt(r.getC2_p205_a());
+                if (ed >= 18 || r.getNumero().equals("1")) {
+                    mostrarLayoutPregunta(SQLConstantes.layouts_p409,r.get_id());
+                    mostrarLayoutPregunta(SQLConstantes.layouts_p410,r.get_id());
+                }else{
+                    ocultarP409(r.get_id());
+                    ocultarP410(r.get_id());
+                }
+            }
+        }
+
+        if (iEdad <= 17)mostrarLayoutPregunta(SQLConstantes.layouts_p411);
+        else ocultarP411();
+
+        if (iEdad >= 12 && iEdad <= 49 && iSexo == 2){
+            mostrarLayoutPregunta(SQLConstantes.layouts_p412);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p413);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p414);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p415);
+        } else{ ocultarP412();ocultarP413();ocultarP414();ocultarP415(); }
+
+        if (iEdad >= 15) mostrarLayoutPregunta(SQLConstantes.layouts_p416);
+        else ocultarP416();
+
+
+
+        if (iEdad >= 3) mostrarCapitulo5();
+        else ocultarCapitulo5();
+
+        if (iEdad >= 5) { mostrarCapitulo6();mostrarCapitulo7(); }
+        else { ocultarCapitulo6();ocultarCapitulo7(); }
+
+        if (iEdad >= 18) mostrarCapitulo8();
+        else ocultarCapitulo8();
+
+
+        if (iEdad >= 3 && iEdad <=25){
+            mostrarLayoutPregunta(SQLConstantes.layouts_p508);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p509);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p510);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p511);
+        } else { ocultarP508();ocultarP509();ocultarP510();ocultarP511();}
+
+        if (iEdad >= 14){
+            mostrarLayoutPregunta(SQLConstantes.layouts_p512);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p513);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p629);
+            mostrarLayoutPregunta(SQLConstantes.layouts_p630);
+        } else { ocultarP512();ocultarP513();ocultarP629();ocultarP630(); }
+
+
+        if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p411,_id).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p412,_id).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p413,_id).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p414,_id).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p415,_id).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p416,_id).equals("0")){
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p411p416,"-1",_id);
+        }else {
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p411p416,_id).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p411p416,"1",_id);
+        }
+        data.close();
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(editText);
+                    view.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
     public void ocultarP409(){
         Data data = new Data(this);
         data.open();
@@ -253,11 +403,27 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.close();
     }
 
+    public void ocultarP409(String idEncuestado){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p409,"",idEncuestado);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p409,"0",idEncuestado);
+        data.close();
+    }
+
     public void ocultarP410(){
         Data data = new Data(this);
         data.open();
         data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p410,"",_id);
         data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p410,"0",_id);
+        data.close();
+    }
+
+    public void ocultarP410(String idEncuestado){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_c4_p410,"",idEncuestado);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p410,"0",idEncuestado);
         data.close();
     }
 
@@ -446,6 +612,13 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.close();
     }
 
+    public void mostrarLayoutPregunta(String varLayout, String idEncuestado){
+        Data data = new Data(this);
+        data.open();
+        data.actualizarValor(SQLConstantes.tablalayouts,varLayout,"1",idEncuestado);
+        data.close();
+    }
+
     public void ocultarCapitulo5(){
         Data data = new Data(this);
         data.open();
@@ -545,88 +718,5 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,"1",_id);
         data.close();
-    }
-
-    public void ocultarOtrosLayouts(String edad, String sexo){
-        int iEdad = 0;
-        int iSexo = 0;
-        if (!edad.equals("")) iEdad = Integer.parseInt(edad);
-        iSexo = Integer.parseInt(sexo);
-
-        if (iEdad >= 18 || numero.equals("1")){ mostrarLayoutPregunta(SQLConstantes.layouts_p409);mostrarLayoutPregunta(SQLConstantes.layouts_p410);
-        }else{ ocultarP409();ocultarP410(); }
-
-        if (iEdad <= 17)ocultarP411();
-        else mostrarLayoutPregunta(SQLConstantes.layouts_p411);
-
-        if (iEdad >= 12 && iEdad <= 49 && iSexo == 2){
-            mostrarLayoutPregunta(SQLConstantes.layouts_p412);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p413);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p414);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p415);
-        } else{ ocultarP412();ocultarP413();ocultarP414();ocultarP415(); }
-
-        if (iEdad >= 15) mostrarLayoutPregunta(SQLConstantes.layouts_p416);
-        else ocultarP416();
-
-        if (iEdad >= 3) mostrarCapitulo5();
-        else ocultarCapitulo5();
-
-        if (iEdad >= 5) { mostrarCapitulo6();mostrarCapitulo7(); }
-        else { ocultarCapitulo6();ocultarCapitulo7(); }
-
-        if (iEdad >= 18) mostrarCapitulo8();
-        else ocultarCapitulo8();
-
-
-        if (iEdad >= 3 && iEdad <=25){
-            mostrarLayoutPregunta(SQLConstantes.layouts_p508);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p509);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p510);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p511);
-        } else { ocultarP508();ocultarP509();ocultarP510();ocultarP511();}
-
-        if (iEdad >= 14){
-            mostrarLayoutPregunta(SQLConstantes.layouts_p512);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p513);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p629);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p630);
-        } else { ocultarP512();ocultarP513();ocultarP629();ocultarP630(); }
-    }
-
-    public void mostrarMensaje(String m){
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(m);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
-        final AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
-    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
-
-        editText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(editText);
-                    view.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        if (tipo == 2) {
-            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        }
-    }
-
-    public void ocultarTeclado(View view){
-        InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

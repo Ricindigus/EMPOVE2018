@@ -162,17 +162,6 @@ public class FragmentP201P206 extends FragmentPagina {
                                             intent1.putExtra("numero", residentes.get(position).getNumero() + "");
                                             intent1.putExtra("idHogar", idHogar);
                                             intent1.putExtra("idVivienda", idVivienda);
-                                            Data data = new Data(context);
-                                            data.open();
-                                            if(!data.existeElemento(SQLConstantes.tablalayouts,idEncuestado)){
-                                                POJOLayout pojoLayout = new POJOLayout();
-                                                pojoLayout.set_id(idEncuestado);
-                                                data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
-                                                POJOFragment pojoFragment = new POJOFragment();
-                                                pojoFragment.set_id(idEncuestado);
-                                                data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
-                                            }
-                                            data.close();
                                             startActivity(intent1);
                                         }
                                         break;
@@ -210,17 +199,6 @@ public class FragmentP201P206 extends FragmentPagina {
                                             intent1.putExtra("idHogar", idHogar);
                                             intent1.putExtra("idVivienda", idVivienda);
                                             startActivity(intent1);
-                                            Data data = new Data(context);
-                                            data.open();
-                                            if(!data.existeElemento(SQLConstantes.tablalayouts,idEncuestado)){
-                                                POJOLayout pojoLayout = new POJOLayout();
-                                                pojoLayout.set_id(idEncuestado);
-                                                data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
-                                                POJOFragment pojoFragment = new POJOFragment();
-                                                pojoFragment.set_id(idEncuestado);
-                                                data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
-                                            }
-                                            data.close();
                                         }
                                         break;
                                     case R.id.opcion_editar:

@@ -101,6 +101,7 @@ public class POJOLayout {
     private String p807;
     private String p808;
     private String p809;
+    private String p810;
     private String p811;
     private String p812;
     private String p813;
@@ -212,6 +213,7 @@ public class POJOLayout {
         p807 = "1";
         p808 = "1";
         p809 = "1";
+        p810 = "1";
         p811 = "1";
         p812 = "1";
         p813 = "1";
@@ -995,6 +997,14 @@ public class POJOLayout {
         this.p809 = p809;
     }
 
+    public String getP810() {
+        return p810;
+    }
+
+    public void setP810(String p810) {
+        this.p810 = p810;
+    }
+
     public String getP811() {
         return p811;
     }
@@ -1197,6 +1207,7 @@ public class POJOLayout {
         contentValues.put(SQLConstantes.layouts_p807,p807);
         contentValues.put(SQLConstantes.layouts_p808,p808);
         contentValues.put(SQLConstantes.layouts_p809,p809);
+        contentValues.put(SQLConstantes.layouts_p810,p810);
         contentValues.put(SQLConstantes.layouts_p811,p811);
         contentValues.put(SQLConstantes.layouts_p812,p812);
         contentValues.put(SQLConstantes.layouts_p813,p813);

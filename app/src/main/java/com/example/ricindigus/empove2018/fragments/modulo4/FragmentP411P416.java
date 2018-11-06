@@ -344,12 +344,18 @@ public class FragmentP411P416 extends FragmentPagina {
     public void llenarVista() {
         Data data = new Data(context);
         data.open();
-        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p411,idEncuestado)) m4_p411_linearlayout.setVisibility(View.GONE);
-        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p412,idEncuestado)) m4_p412_linearlayout.setVisibility(View.GONE);
-        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p413,idEncuestado)) m4_p413_linearlayout.setVisibility(View.GONE);
-        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p414,idEncuestado)) m4_p414_linearlayout.setVisibility(View.GONE);
-        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p415,idEncuestado)) m4_p415_linearlayout.setVisibility(View.GONE);
-        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p416,idEncuestado)) m4_p416_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p411,idEncuestado))
+            m4_p411_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p412,idEncuestado))
+            m4_p412_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p413,idEncuestado))
+            m4_p413_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p414,idEncuestado))
+            m4_p414_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p415,idEncuestado))
+            m4_p415_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p416,idEncuestado))
+            m4_p416_linearlayout.setVisibility(View.GONE);
         data.close();
     }
 

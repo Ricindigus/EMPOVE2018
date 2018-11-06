@@ -185,6 +185,8 @@ public class FragmentP408P410 extends FragmentPagina {
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p409,idEncuestado)) m4_p409_linearlayout.setVisibility(View.GONE);
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p410,idEncuestado)) m4_p410_linearlayout.setVisibility(View.GONE);
         data.close();
+
+
     }
 
     @Override

@@ -300,7 +300,7 @@ public class FragmentP401P404 extends FragmentPagina {
             if(modulo4.getC4_p403_14().equals("1")) c4_p403_14_CheckBox.setChecked(true);
             if(modulo4.getC4_p403_14().equals("0")) c4_p403_14_CheckBox.setChecked(false);
             c4_p403_o_EditText.setText(modulo4.getC4_p403_o());
-            if(modulo4.getC4_p404().equals("-1") && !modulo4.getC4_p404().equals(""))((RadioButton)c4_p404_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p404()))).setChecked(true);
+            if(!modulo4.getC4_p404().equals("-1") && !modulo4.getC4_p404().equals(""))((RadioButton)c4_p404_RadioGroup.getChildAt(Integer.parseInt(modulo4.getC4_p404()))).setChecked(true);
         }
         data.close();
     }
