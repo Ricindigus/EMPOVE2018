@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -99,6 +100,9 @@ public class FragmentFuncionarios extends FragmentPagina {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         configurarEditText(dniCoordinador,cvCoordinador,2,8);
+//        dniCoordinador.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(8)});
+//        dniCoordinador.setInputType(18);
+//        dniCoordinador.setTransformationMethod(null);
         configurarEditText(dniSupervisor,cvsupervisor,2,8);
         configurarEditText(dniEncuestador,cvEncuestador,2,8);
         configurarEditText(numeroPersonas,layoutPersonas,2,2);
@@ -131,8 +135,11 @@ public class FragmentFuncionarios extends FragmentPagina {
             }
         });
         if (tipo == 2) {
-            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+//            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+//            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+            editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(longitud)});
+            editText.setInputType(18);
+            editText.setTransformationMethod(null);
         }
     }
 
@@ -174,7 +181,7 @@ public class FragmentFuncionarios extends FragmentPagina {
 
     @Override
     public void llenarVariables() {
-        dni_encu = dniEncuestador.getText().toString().trim();
+        dni_encu = dniEncuestador.getText().toString();
         dni_coor = dniCoordinador.getText().toString().trim();
         dni_sup = dniSupervisor.getText().toString().trim();
 
@@ -217,13 +224,17 @@ public class FragmentFuncionarios extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         llenarVariables();
-        if (dni_coor.trim().equals("")){mostrarMensaje("DNI COORDINADOR: FALTA COMPLETAR");return false;}
-        if (dni_sup.trim().equals("")){mostrarMensaje("DNI SUPERVISOR: FALTA COMPLETAR");return false;}
         if (dni_encu.trim().equals("")){mostrarMensaje("DNI ENCUESTADOR: FALTA COMPLETAR");return false;}
-
-        if (nombre_coord.trim().equals("")){mostrarMensaje("NOMBRE COORDINADOR: FALTA COMPLETAR");return false;}
-        if (nombre_sup.trim().equals("")){mostrarMensaje("NOMBRE SUPERVISOR: FALTA COMPLETAR");return false;}
+        if (dni_encu.length()!=8){mostrarMensaje("DNI ENCUESTADOR: COMPLETAR 8 DIGITOS");return false;}
         if (nombre_encu.trim().equals("")){mostrarMensaje("NOMBRE ENCUESTADOR: FALTA COMPLETAR");return false;}
+
+        if (dni_sup.trim().equals("")){mostrarMensaje("DNI SUPERVISOR: FALTA COMPLETAR");return false;}
+        if (dni_sup.length()!=8){mostrarMensaje("DNI SUPERVISOR: COMPLETAR 8 DIGITOS");return false;}
+        if (nombre_sup.trim().equals("")){mostrarMensaje("NOMBRE SUPERVISOR: FALTA COMPLETAR");return false;}
+
+        if (dni_coor.trim().equals("")){mostrarMensaje("DNI COORDINADOR: FALTA COMPLETAR");return false;}
+        if (dni_coor.length()!=8){mostrarMensaje("DNI COORDINADOR: COMPLETAR 8 DIGITOS");return false;}
+        if (nombre_coord.trim().equals("")){mostrarMensaje("NOMBRE COORDINADOR: FALTA COMPLETAR");return false;}
 
         if (vive == -1){mostrarMensaje("PREGUNTA 15: DEBE MARCAR UNA OPCIÓN"); return false;}
         else{

@@ -168,6 +168,18 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         if(c2_p203 == 0) {mostrarMensaje("PREGUNTA 203: DEBE INDICSR EL PARENTESCO"); return false;}
         if(c2_p204 == -1) {mostrarMensaje("PREGUNTA 204: DEBE INDICAR EL SEXO"); return false;}
         if(c2_p205_a.trim().equals("") && c2_p205_m.trim().equals("")) {mostrarMensaje("PREGUNTA 205: DEBE INDICAR LA EDAD EN AÑOS O MESES"); return false;}
+        if(!c2_p205_a.trim().equals("")) {
+            if(Integer.parseInt(c2_p205_a)<1 || Integer.parseInt(c2_p205_a)>99){
+                mostrarMensaje("PREGUNTA 205: AÑOS DEBE SER MAYOR QUE CERO");
+                return false;
+            }
+        }
+        if(!c2_p205_m.trim().equals("")) {
+            if(Integer.parseInt(c2_p205_m)<1 || Integer.parseInt(c2_p205_m)>11){
+                mostrarMensaje("PREGUNTA 205: MESES DEBE ESTAR EN EL INTERVALO DE 1 A 11");
+                return false;
+            }
+        }
         if(c2_p206 == 0) {mostrarMensaje("PREGUNTA 206: DEBE INDICAR EL ESTADO CIVIL"); return false;}
         return true;
     }

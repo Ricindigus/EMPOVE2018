@@ -166,8 +166,11 @@ public class FragmentP101P107 extends FragmentPagina {
             }
         });
         if (tipo == 2) {
-            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+//            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+//            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+            editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(longitud)});
+            editText.setInputType(18);
+            editText.setTransformationMethod(null);
         }
     }
 
@@ -273,8 +276,10 @@ public class FragmentP101P107 extends FragmentPagina {
         }
 
         if (c1_p105.trim().equals("")){mostrarMensaje("PREGUNTA 105: FALTA COMPLETAR LA PREGUNTA");return false;}
-        if (c1_p106.trim().equals("")){mostrarMensaje("PREGUNTA 105: FALTA COMPLETAR LA PREGUNTA");return false;}
-        if (c1_p107.trim().equals("")){mostrarMensaje("PREGUNTA 105: FALTA COMPLETAR LA PREGUNTA");return false;}
+        if(Integer.parseInt(c1_p105)==0){mostrarMensaje("PREGUNTA 105: NO PUEDE SER CERO");return false;}
+        if (c1_p106.trim().equals("")){mostrarMensaje("PREGUNTA 106: FALTA COMPLETAR LA PREGUNTA");return false;}
+        if (c1_p107.trim().equals("")){mostrarMensaje("PREGUNTA 107: FALTA COMPLETAR LA PREGUNTA");return false;}
+        if(Integer.parseInt(c1_p107)==0){mostrarMensaje("PREGUNTA 107: NO PUEDE SER CERO");return false;}
         return true;
     }
 

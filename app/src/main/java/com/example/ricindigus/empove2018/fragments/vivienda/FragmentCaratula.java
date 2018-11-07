@@ -225,15 +225,27 @@ public class FragmentCaratula extends FragmentPagina {
         if(tipvia == 0){ mostrarMensaje("Debe indicar el tipo de via"); return false; }
         if(nomvia.equals("")){ mostrarMensaje("Debe completar el NOMBRE DE LA VÍA"); return false; }
         if(nropta.equals("")){ mostrarMensaje("Debe completar NÚMERO DE LA PUERTA"); return false; }
-        if(block.equals("")){ mostrarMensaje("Debe completar BLOCK"); return false; }
-        if(interior.equals("")){ mostrarMensaje("Debe completar INTERIOR"); return false; }
+        if(es_cero(nropta)){ mostrarMensaje("NO PUEDE SER CERO, NÚMERO DE LA PUERTA"); return false; }
+//        if(block.equals("")){ mostrarMensaje("Debe completar BLOCK"); return false; }
+//        if(interior.equals("")){ mostrarMensaje("Debe completar INTERIOR"); return false; }
         if(piso.equals("")){ mostrarMensaje("Debe completar el PISO"); return false; }
-        if(mza.equals("")){ mostrarMensaje("Debe completar la MANZANA"); return false; }
-        if(lote.equals("")){ mostrarMensaje("Debe completar el LOTE"); return false; }
-        if(km.equals("")){ mostrarMensaje("Debe completar el KM"); return false; }
-        if(telefono.equals("")){ mostrarMensaje("Debe completar el TELÉFONO"); return false; }
+        if(es_cero(piso)){ mostrarMensaje("NO PUEDE SER CERO, PISO"); return false; }
+//        if(mza.equals("")){ mostrarMensaje("Debe completar la MANZANA"); return false; }
+//        if(lote.equals("")){ mostrarMensaje("Debe completar el LOTE"); return false; }
+//        if(km.equals("")){ mostrarMensaje("Debe completar el KM"); return false; }
+//        if(telefono.equals("")){ mostrarMensaje("Debe completar el TELÉFONO"); return false; }
 //        if(t_hogar.equals("")){ mostrarMensaje("Debe indicar la CANTIDAD DE HOGARES"); return false; }
         return true;
+    }
+
+    public boolean es_cero(String numero){
+        int cant_cero=0;
+        for(int i=0;i<numero.length();i++){
+            if(numero.charAt(i)=='0'){
+                cant_cero++;
+            }
+        }
+        if(cant_cero==numero.length()) return true; else return false;
     }
 
     @Override

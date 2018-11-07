@@ -16,6 +16,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputFilter;
+import android.text.method.DigitsKeyListener;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -190,7 +191,9 @@ public class FragmentHogares extends FragmentPagina {
         AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
         final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_jefe_hogar, null);
         final EditText jefeEditText = (EditText) dialogView.findViewById(R.id.dialog_jefe_edittext_nombre);
+
         jefeEditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
+//        jefeEditText.setInputType(1);jefeEditText.setKeyListener(DigitsKeyListener.getInstance("ABCDEFGHIJKLMNOPQRSTUVWXYZ "));
         alert.setTitle("AGREGAR HOGAR");
         alert.setView(dialogView);
         alert.setPositiveButton("Agregar",null);
