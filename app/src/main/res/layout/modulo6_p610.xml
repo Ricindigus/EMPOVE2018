@@ -226,8 +226,8 @@
             android:textStyle="bold"
             android:textSize="@dimen/texto_small"
             android:text="@string/modulo_6_p610_total"/>
-        <EditText
-            android:id="@+id/mod6_610_edittext_C6_P610_T"
+        <TextView
+            android:id="@+id/mod6_610_textview_C6_P610_T"
             android:layout_width="@dimen/longitud_input_n_horas"
             android:layout_height="@dimen/altura_input_solo"
             android:background="@drawable/input_text_enabled"/>

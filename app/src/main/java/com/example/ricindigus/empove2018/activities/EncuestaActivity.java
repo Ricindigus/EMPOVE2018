@@ -101,7 +101,9 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("RESIDENTE N° " + numero + " - HOGAR N° " + hogar.getNumero() + " - VIVIENDA N° " + hogar.getId_vivienda());
-        getSupportActionBar().setSubtitle(residente.getC2_p202());
+
+        if (residente.getC2_p205_a().equals("")) getSupportActionBar().setSubtitle(residente.getC2_p202() + "("+ residente.getC2_p205_m() +" meses)");
+        else getSupportActionBar().setSubtitle(residente.getC2_p202() + "("+ residente.getC2_p205_a() +" años)");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

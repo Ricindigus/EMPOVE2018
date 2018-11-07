@@ -297,7 +297,7 @@ public class FragmentP301P305 extends FragmentPagina {
         }else{ c3_p304 = "";}
 
         if (layout305.getVisibility() == View.VISIBLE){
-            if (layout305.getVisibility() == View.VISIBLE && c3_p305.equals("-1")){mostrarMensaje("PREGUNTA 305: DEBE MARCAR UNA OPCIÓN");return false;}
+            if (c3_p305.equals("-1")){mostrarMensaje("PREGUNTA 305: DEBE MARCAR UNA OPCIÓN");return false;}
             else if (c3_p305.equals("4")){
                 if(c3_p305_o.trim().equals("")){ mostrarMensaje("PREGUNTA 305: DEBE ESPECIFICAR EL PUESTO DE CONTROL");return false;}
             }

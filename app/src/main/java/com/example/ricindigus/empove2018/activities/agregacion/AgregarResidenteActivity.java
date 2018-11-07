@@ -335,14 +335,24 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             mostrarLayoutPregunta(SQLConstantes.layouts_p509);
             mostrarLayoutPregunta(SQLConstantes.layouts_p510);
             mostrarLayoutPregunta(SQLConstantes.layouts_p511);
-        } else { ocultarP508();ocultarP509();ocultarP510();ocultarP511();}
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,_id).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"1",_id);
+        } else {
+            ocultarP508();ocultarP509();ocultarP510();ocultarP511();
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"-1",_id);
+        }
 
         if (iEdad >= 14){
             mostrarLayoutPregunta(SQLConstantes.layouts_p512);
             mostrarLayoutPregunta(SQLConstantes.layouts_p513);
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,_id).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,"1",_id);
             mostrarLayoutPregunta(SQLConstantes.layouts_p629);
             mostrarLayoutPregunta(SQLConstantes.layouts_p630);
-        } else { ocultarP512();ocultarP513();ocultarP629();ocultarP630(); }
+        } else {
+            ocultarP512();ocultarP513();
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,"-1",_id);
+            ocultarP629();ocultarP630(); }
 
 
         if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p411,_id).equals("0") &&

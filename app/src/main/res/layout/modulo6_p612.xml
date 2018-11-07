@@ -25,12 +25,7 @@
             android:text="@string/modulo_6_p612_sp1"/>
         <EditText
             android:id="@+id/mod6_612_edittext_C6_P612_NRO"
-            android:layout_width="@dimen/longitud_input_n_horas"
-            android:layout_height="@dimen/altura_input_especifique"
-            android:background="@drawable/input_text_disabled"
-            android:hint="@string/modulo_6_p612_npersonas"
-            android:layout_marginLeft="@dimen/margen_xlarge"
-            android:paddingLeft="@dimen/margen_small"/>
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
         
         <RadioButton
             android:id="@+id/mod6_612_rb2"

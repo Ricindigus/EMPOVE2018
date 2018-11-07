@@ -18,6 +18,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -49,7 +51,8 @@ public class FragmentP609P612 extends FragmentPagina {
     EditText c6_p610_pd_EditText, c6_p610_pl_EditText, c6_p610_pm_EditText, c6_p610_pmi_EditText,
             c6_p610_pj_EditText, c6_p610_pv_EditText, c6_p610_ps_EditText,
             c6_p610_sd_EditText, c6_p610_sl_EditText, c6_p610_sm_EditText, c6_p610_smi_EditText,
-            c6_p610_sj_EditText, c6_p610_sv_EditText, c6_p610_ss_EditText, c6_p610_t_EditText;
+            c6_p610_sj_EditText, c6_p610_sv_EditText, c6_p610_ss_EditText;
+    TextView c6_p610_t_TextView;
     EditText c6_p611_EditText;
     RadioGroup c6_p612_RadioGroup;
     EditText c6_p612_nro_EditText;
@@ -143,7 +146,7 @@ public class FragmentP609P612 extends FragmentPagina {
         c6_p610_sv_EditText = (EditText) rootView.findViewById(R.id.mod6_610_edittext_C6_P610_SV);
         c6_p610_ss_EditText = (EditText) rootView.findViewById(R.id.mod6_610_edittext_C6_P610_SS);
 
-        c6_p610_t_EditText = (EditText) rootView.findViewById(R.id.mod6_610_edittext_C6_P610_T);
+        c6_p610_t_TextView = (TextView) rootView.findViewById(R.id.mod6_610_textview_C6_P610_T);
 
         c6_p611_EditText = (EditText) rootView.findViewById(R.id.mod6_611_edittext_C6_P611);
 
@@ -162,188 +165,24 @@ public class FragmentP609P612 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        c6_p610_pd_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_pd_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_pl_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_pl_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_pm_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_pm_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_pmi_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_pmi_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_pj_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_pj_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_pv_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_pv_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_ps_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_ps_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
 
-        c6_p610_sd_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_sd_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_sl_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_sl_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_sm_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_sm_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_smi_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_smi_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_sj_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_sj_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_sv_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_sv_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p610_ss_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_ss_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
+        configurarEditText(c6_p610_pd_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_pl_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_pm_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_pmi_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_pj_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_pv_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_ps_EditText,m6_p610_linearlayout,2,2);
 
-        c6_p610_t_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p610_t_EditText);
-                    m6_p610_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
+        configurarEditText(c6_p610_sd_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_sl_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_sm_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_smi_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_sj_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_sv_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_ss_EditText,m6_p610_linearlayout,2,2);
+
+
 
         c6_p610_pd_EditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -643,10 +482,7 @@ public class FragmentP609P612 extends FragmentPagina {
         c6_p610_sv_EditText.setTransformationMethod(null);
         c6_p610_ss_EditText.setTransformationMethod(null);
 
-        c6_p610_t_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(3)});
-        c6_p610_t_EditText.setInputType(18);
-        c6_p610_t_EditText.setTransformationMethod(null);
-        c6_p610_t_EditText.setEnabled(false);
+
 
         c6_p611_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(3)});
         c6_p611_EditText.setInputType(18);
@@ -725,7 +561,7 @@ public class FragmentP609P612 extends FragmentPagina {
         c6_p610_sj = c6_p610_sj_EditText.getText().toString();
         c6_p610_sv = c6_p610_sv_EditText.getText().toString();
         c6_p610_ss = c6_p610_ss_EditText.getText().toString();
-        c6_p610_t = c6_p610_t_EditText.getText().toString();
+        c6_p610_t = c6_p610_t_TextView.getText().toString();
         c6_p611 = c6_p611_EditText.getText().toString();
         c6_p612 = c6_p612_RadioGroup.indexOfChild(c6_p612_RadioGroup.findViewById(c6_p612_RadioGroup.getCheckedRadioButtonId()));
         c6_p612_nro = c6_p612_nro_EditText.getText().toString();
@@ -755,7 +591,7 @@ public class FragmentP609P612 extends FragmentPagina {
             c6_p610_sj_EditText.setText(modulo6.getC6_p610_sj());
             c6_p610_sv_EditText.setText(modulo6.getC6_p610_sv());
             c6_p610_ss_EditText.setText(modulo6.getC6_p610_ss());
-            c6_p610_t_EditText.setText(modulo6.getC6_p610_t());
+            c6_p610_t_TextView.setText(modulo6.getC6_p610_t());
             c6_p611_EditText.setText(modulo6.getC6_p611());
             if(!(modulo6.getC6_p612().equals("-1") || modulo6.getC6_p612().equals("")))((RadioButton)c6_p612_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p612()))).setChecked(true);
             c6_p612_nro_EditText.setText(modulo6.getC6_p612_nro());
@@ -948,7 +784,7 @@ public class FragmentP609P612 extends FragmentPagina {
         p610_pt = p610_pd + p610_pl + p610_pm + p610_pmi + p610_pj + p610_pv + p610_ps;
         p610_st = p610_sd + p610_sl + p610_sm + p610_smi + p610_sj + p610_sv + p610_ss;
         p610_t = p610_pt + p610_st;
-        c6_p610_t_EditText.setText(p610_t+"");
+        c6_p610_t_TextView.setText(p610_t+"");
     }
     public String NombreMes(int mes){
         String nom_mes="";
@@ -1014,7 +850,7 @@ public class FragmentP609P612 extends FragmentPagina {
                 c6_p610_sj_EditText.setText("");
                 c6_p610_sv_EditText.setText("");
                 c6_p610_ss_EditText.setText("");
-                c6_p610_t_EditText.setText("");
+                c6_p610_t_TextView.setText("");
                 c6_p611_EditText.setText("");
                 c6_p612_RadioGroup.clearCheck();
                 c6_p612_nro_EditText.setText("");
@@ -1037,7 +873,7 @@ public class FragmentP609P612 extends FragmentPagina {
             c6_p610_sj_EditText.setText("");
             c6_p610_sv_EditText.setText("");
             c6_p610_ss_EditText.setText("");
-            c6_p610_t_EditText.setText("");
+            c6_p610_t_TextView.setText("");
             c6_p611_EditText.setText("");
             c6_p612_RadioGroup.clearCheck();
             c6_p612_nro_EditText.setText("");
@@ -1046,4 +882,53 @@ public class FragmentP609P612 extends FragmentPagina {
         }
         fecha();
     }
+
+    private void controlarEspecifiqueRadio(RadioGroup group, int checkedId, int opcionEsp, EditText editTextEspecifique) {
+        int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+        if(seleccionado == opcionEsp){
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_enabled);
+            editTextEspecifique.setEnabled(true);
+        }else{
+            editTextEspecifique.setText("");
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_disabled);
+            editTextEspecifique.setEnabled(false);
+        }
+    }
+
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(editText);
+                    view.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+    }
+
+    public void controlarChecked(CheckBox checkBox, final EditText editText){
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    editText.setBackgroundResource(R.drawable.input_text_enabled);
+                    editText.setEnabled(true);
+                }else{
+                    editText.setText("");
+                    editText.setBackgroundResource(R.drawable.input_text_disabled);
+                    editText.setEnabled(false);
+                }
+            }
+        });
+    }
+
 }

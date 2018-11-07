@@ -32,6 +32,10 @@
             android:gravity="center"
             android:orientation="horizontal">
             <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <RadioButton
                 android:id="@+id/mod6_604_rb11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,6 +64,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:id="@+id/mod6_604_rb21"
                 android:layout_width="wrap_content"
@@ -90,6 +98,10 @@
             android:gravity="center"
             android:orientation="horizontal">
             <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <RadioButton
                 android:id="@+id/mod6_604_rb31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,6 +130,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:id="@+id/mod6_604_rb41"
                 android:layout_width="wrap_content"
@@ -148,6 +164,10 @@
             android:gravity="center"
             android:orientation="horizontal">
             <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <RadioButton
                 android:id="@+id/mod6_604_rb51"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -176,6 +196,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:id="@+id/mod6_604_rb61"
                 android:layout_width="wrap_content"
@@ -206,6 +230,10 @@
             android:gravity="center"
             android:orientation="horizontal">
             <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <RadioButton
                 android:id="@+id/mod6_604_rb71"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -234,6 +262,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:id="@+id/mod6_604_rb81"
                 android:layout_width="wrap_content"
@@ -264,6 +296,10 @@
             android:gravity="center"
             android:orientation="horizontal">
             <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+            <RadioButton
                 android:id="@+id/mod6_604_rb9_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -292,6 +328,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:id="@+id/mod6_604_rb10_1"
                 android:layout_width="wrap_content"
@@ -330,6 +370,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:id="@+id/mod6_604_rb11_1"
                 android:layout_width="wrap_content"

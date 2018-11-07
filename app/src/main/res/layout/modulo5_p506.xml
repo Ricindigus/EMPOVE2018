@@ -17,285 +17,90 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+        <RadioButton
             android:id="@+id/mod5_506_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_5_p506_sp1"/>
-        <LinearLayout
-            android:id="@+id/layout_m5_506_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:padding="@dimen/margen_medium"
-            android:layout_marginLeft="@dimen/margen_small"
-            android:background="@drawable/marco_subpregunta"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_5_p506_anio"/>
-            <EditText
-                android:id="@+id/mod5_506_sp1_textview_C5_P506_2"
-                android:layout_width="@dimen/longitud_input_n"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_text_enabled"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margen_large"
-                android:text="@string/modulo_5_p506_cent_est"/>
-            <RadioGroup
-                android:id="@+id/mod5_506_sp1_radiogroup_C5_P506_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/mod5_506_sp1_rb_estatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_estatal"/>
-                <RadioButton
-                    android:id="@+id/mod5_506_sp1_rb_noestatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_no_estatal"/>
-            </RadioGroup>
-        </LinearLayout>
         <RadioButton
             android:id="@+id/mod5_506_rb2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp2"/>
-        <LinearLayout
-            android:id="@+id/layout_m5_506_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:padding="@dimen/margen_medium"
-            android:layout_marginLeft="@dimen/margen_small"
-            android:background="@drawable/marco_subpregunta"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_5_p506_grado"/>
-            <EditText
-                android:id="@+id/mod5_506_sp2_textview_C5_P506_3"
-                android:layout_width="@dimen/longitud_input_n"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_text_enabled"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margen_large"
-                android:text="@string/modulo_5_p506_cent_est"/>
-            <RadioGroup
-                android:id="@+id/mod5_506_sp2_radiogroup_C5_P506_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/mod5_506_sp2_rb_estatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_estatal"/>
-                <RadioButton
-                    android:id="@+id/mod5_506_sp2_rb_noestatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_no_estatal"/>
-            </RadioGroup>
-        </LinearLayout>
         <RadioButton
             android:id="@+id/mod5_506_rb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp3"/>
-        <LinearLayout
-            android:id="@+id/layout_m5_506_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:padding="@dimen/margen_medium"
-            android:layout_marginLeft="@dimen/margen_small"
-            android:background="@drawable/marco_subpregunta"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_5_p506_anio"/>
-            <EditText
-                android:id="@+id/mod5_506_sp3_textview_C5_P506_2"
-                android:layout_width="@dimen/longitud_input_n"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_text_enabled"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margen_large"
-                android:text="@string/modulo_5_p506_cent_est"/>
-            <RadioGroup
-                android:id="@+id/mod5_506_sp3_radiogroup_C5_P506_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/mod5_506_sp3_rb_estatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_estatal"/>
-                <RadioButton
-                    android:id="@+id/mod5_506_sp3_rb_noestatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_no_estatal"/>
-            </RadioGroup>
-        </LinearLayout>
         <RadioButton
             android:id="@+id/mod5_506_rb4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp4"/>
-        <LinearLayout
-            android:id="@+id/layout_m5_506_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:padding="@dimen/margen_medium"
-            android:layout_marginLeft="@dimen/margen_small"
-            android:background="@drawable/marco_subpregunta"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_5_p506_anio"/>
-            <EditText
-                android:id="@+id/mod5_506_sp4_textview_C5_P506_2"
-                android:layout_width="@dimen/longitud_input_n"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_text_enabled"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margen_large"
-                android:text="@string/modulo_5_p506_cent_est"/>
-            <RadioGroup
-                android:id="@+id/mod5_506_sp4_radiogroup_C5_P506_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/mod5_506_sp4_rb_estatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_estatal"/>
-                <RadioButton
-                    android:id="@+id/mod5_506_sp4_rb_noestatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_no_estatal"/>
-            </RadioGroup>
-        </LinearLayout>
         <RadioButton
             android:id="@+id/mod5_506_rb5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp5"/>
-        <LinearLayout
-            android:id="@+id/layout_m5_506_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:padding="@dimen/margen_medium"
-            android:layout_marginLeft="@dimen/margen_small"
-            android:background="@drawable/marco_subpregunta"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_5_p506_anio"/>
-            <EditText
-                android:id="@+id/mod5_506_sp5_textview_C5_P506_2"
-                android:layout_width="@dimen/longitud_input_n"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_text_enabled"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margen_large"
-                android:text="@string/modulo_5_p506_cent_est"/>
-            <RadioGroup
-                android:id="@+id/mod5_506_sp5_radiogroup_C5_P506_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/mod5_506_sp5_rb_estatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_estatal"/>
-                <RadioButton
-                    android:id="@+id/mod5_506_sp5_rb_noestatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_no_estatal"/>
-            </RadioGroup>
-        </LinearLayout>
         <RadioButton
             android:id="@+id/mod5_506_rb6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_small"
             android:text="@string/modulo_5_p506_sp6"/>
-        <LinearLayout
-            android:id="@+id/layout_m5_506_6"
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/layout_m5_506_subpregunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margen_medium"
+        android:layout_marginLeft="@dimen/margen_small"
+        android:background="@drawable/marco_subpregunta"
+        android:orientation="horizontal">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:padding="@dimen/margen_medium"
-            android:layout_marginLeft="@dimen/margen_small"
-            android:background="@drawable/marco_subpregunta"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="Año o Grado"/>
+        <EditText
+            android:id="@+id/mod5_506_sp6_edittext_C5_P506_2o3"
+            android:layout_width="@dimen/longitud_input_n"
+            android:gravity="center"
+            android:inputType="numberPassword"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_text_enabled"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen_large"
+            android:text="@string/modulo_5_p506_cent_est"/>
+        <RadioGroup
+            android:id="@+id/mod5_506_radiogroup_C5_P506_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_5_p506_anio"/>
-            <EditText
-                android:id="@+id/mod5_506_sp6_textview_C5_P506_2"
-                android:layout_width="@dimen/longitud_input_n"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_text_enabled"/>
-            <TextView
+                android:visibility="gone"/>
+            <RadioButton
+                android:id="@+id/mod5_506_sp6_rb_estatal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margen_large"
-                android:text="@string/modulo_5_p506_cent_est"/>
-            <RadioGroup
-                android:id="@+id/mod5_506_sp6_radiogroup_C5_P506_4"
+                android:text="@string/modulo_5_p506_estatal"/>
+            <RadioButton
+                android:id="@+id/mod5_506_sp6_rb_noestatal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/mod5_506_sp6_rb_estatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_estatal"/>
-                <RadioButton
-                    android:id="@+id/mod5_506_sp6_rb_noestatal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/modulo_5_p506_no_estatal"/>
-            </RadioGroup>
-        </LinearLayout>
-    </RadioGroup>
+                android:text="@string/modulo_5_p506_no_estatal"/>
+        </RadioGroup>
+    </LinearLayout>
 </LinearLayout>

@@ -158,13 +158,7 @@ public class FragmentP701P705 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Data data =  new Data(context);
-        data.open();
-        ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
-        data.close();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        informanteSpinner.setAdapter(adapter);
+
 
         controlarChecked(c7_p702_10_Checkbox,c7_p702_o_EditText);
         controlarChecked(c7_p704_6_Checkbox,c7_p704_o_EditText);
@@ -312,8 +306,13 @@ public class FragmentP701P705 extends FragmentPagina {
         data.open();
         if(data.existeElemento(getNombreTabla(), idEncuestado)){
             Modulo7 modulo7 = data.getModulo7(idEncuestado);
-            informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
-            if(!modulo7.getC7_p701().equals("-1"))((RadioButton)c7_p701_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p701()))).setChecked(true);
+            ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
+            data.close();
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            informanteSpinner.setAdapter(adapter);
+            if(!modulo7.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
+            if(!modulo7.getC7_p701().equals("-1") && !modulo7.getC7_p701().equals(""))((RadioButton)c7_p701_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p701()))).setChecked(true);
             if(modulo7.getC7_p702_1().equals("1")) c7_p702_1_Checkbox.setChecked(true);
             if(modulo7.getC7_p702_2().equals("1")) c7_p702_2_Checkbox.setChecked(true);
             if(modulo7.getC7_p702_3().equals("1")) c7_p702_3_Checkbox.setChecked(true);
@@ -325,7 +324,7 @@ public class FragmentP701P705 extends FragmentPagina {
             if(modulo7.getC7_p702_9().equals("1")) c7_p702_9_Checkbox.setChecked(true);
             if(modulo7.getC7_p702_10().equals("1")) c7_p702_10_Checkbox.setChecked(true);
             c7_p702_o_EditText.setText(modulo7.getC7_p702_o());
-            if(!modulo7.getC7_p703().equals("-1"))((RadioButton)c7_p703_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p703()))).setChecked(true);
+            if(!modulo7.getC7_p703().equals("-1") && !modulo7.getC7_p703().equals(""))((RadioButton)c7_p703_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p703()))).setChecked(true);
             if(modulo7.getC7_p704_1().equals("1")) c7_p704_1_Checkbox.setChecked(true);
             if(modulo7.getC7_p704_2().equals("1")) c7_p704_2_Checkbox.setChecked(true);
             if(modulo7.getC7_p704_3().equals("1")) c7_p704_3_Checkbox.setChecked(true);

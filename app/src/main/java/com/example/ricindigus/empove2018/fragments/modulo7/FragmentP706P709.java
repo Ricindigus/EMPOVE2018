@@ -304,7 +304,7 @@ public class FragmentP706P709 extends FragmentPagina {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
-            informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
+            if(!modulo7.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
             if(!modulo7.getC7_p706().equals("-1") && !modulo7.getC7_p706().equals("")) ((RadioButton)c7_p706_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p706()))).setChecked(true);
             if(!modulo7.getC7_p707().equals("-1") && !modulo7.getC7_p707().equals("")) ((RadioButton)c7_p707_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p707()))).setChecked(true);
             c7_p707_o_EditText.setText(modulo7.getC7_p707_o());

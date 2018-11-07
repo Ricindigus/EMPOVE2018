@@ -89,13 +89,7 @@ public class FragmentP801P804 extends FragmentPagina {
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
-        Data data = new Data(context);
-        data.open();
-        ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
-        data.close();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, residentes);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        informanteSpinner.setAdapter(adapter);
+
         cargarDatos();
     }
 
@@ -133,7 +127,12 @@ public class FragmentP801P804 extends FragmentPagina {
         data.open();
         if(data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo8 modulo8 = data.getModulo8(idEncuestado);
-            if (modulo8.getIdInformante() != null)informanteSpinner.setSelection(Integer.parseInt(modulo8.getIdInformante()));
+            ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(idHogar);
+            data.close();
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            informanteSpinner.setAdapter(adapter);
+            if(!modulo8.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo8.getIdInformante()));
             if(!modulo8.getC8_p801().equals("-1") && !modulo8.getC8_p801().equals(""))((RadioButton)c8_p801_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p801()))).setChecked(true);
             if(!modulo8.getC8_p802().equals("-1") && !modulo8.getC8_p802().equals(""))((RadioButton)c8_p802_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p802()))).setChecked(true);
             if(!modulo8.getC8_p803().equals("-1") && !modulo8.getC8_p803().equals(""))((RadioButton)c8_p803_RadioGroup.getChildAt(Integer.parseInt(modulo8.getC8_p803()))).setChecked(true);
