@@ -29,6 +29,8 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -100,7 +102,6 @@ public class FragmentP701P705 extends FragmentPagina {
         idHogar = residente.getId_hogar();
         idInformante = "";
         data.close();
-
     }
 
     public FragmentP701P705(){
@@ -311,7 +312,7 @@ public class FragmentP701P705 extends FragmentPagina {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
-            if(!modulo7.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
+            if(!modulo7.getIdInformante().equals("")) informanteSpinner.setSelection(Integer.parseInt(modulo7.getIdInformante()));
             if(!modulo7.getC7_p701().equals("-1") && !modulo7.getC7_p701().equals(""))((RadioButton)c7_p701_RadioGroup.getChildAt(Integer.parseInt(modulo7.getC7_p701()))).setChecked(true);
             if(modulo7.getC7_p702_1().equals("1")) c7_p702_1_Checkbox.setChecked(true);
             if(modulo7.getC7_p702_2().equals("1")) c7_p702_2_Checkbox.setChecked(true);
@@ -350,6 +351,8 @@ public class FragmentP701P705 extends FragmentPagina {
     public void llenarVista() {
         Data data = new Data(context);
         data.open();
+        POJOFragment pojoFragment = data.getFragmentsLayouts(idEncuestado);
+        POJOLayout pojoLayout = data.getLayouts(idEncuestado);
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p701,idEncuestado)) m7_p701_linearlayout.setVisibility(View.GONE);
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p702,idEncuestado)) m7_p702_linearlayout.setVisibility(View.GONE);
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p703,idEncuestado)) m7_p703_linearlayout.setVisibility(View.GONE);

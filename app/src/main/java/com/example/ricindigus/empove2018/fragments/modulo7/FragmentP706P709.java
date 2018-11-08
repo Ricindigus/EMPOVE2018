@@ -200,6 +200,7 @@ public class FragmentP706P709 extends FragmentPagina {
     }
 
     public void llenarVariables(){
+        idInformante = informanteSpinner.getSelectedItemPosition()+"";
         c7_p706 = c7_p706_RadioGroup.indexOfChild(c7_p706_RadioGroup.findViewById(c7_p706_RadioGroup.getCheckedRadioButtonId()))+"";
         c7_p707 = c7_p707_RadioGroup.indexOfChild(c7_p707_RadioGroup.findViewById(c7_p707_RadioGroup.getCheckedRadioButtonId()))+"";
         c7_p707_o = c7_p707_o_EditText.getText().toString();
@@ -226,6 +227,7 @@ public class FragmentP706P709 extends FragmentPagina {
 
     public boolean validarDatos(){
         llenarVariables();
+        if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c7_p706.equals("-1")){mostrarMensaje("PREGUNTA 706: DEBE MARCAR UNA OPCIÓN"); return false;}
 
         if (c7_p707.equals("-1")){mostrarMensaje("PREGUNTA 707: DEBE MARCAR UNA OPCIÓN"); return false;}
