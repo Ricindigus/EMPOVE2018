@@ -57,6 +57,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     private int c2_p204;
     private String c2_p205_a;
     private String c2_p205_m;
+
     private int c2_p206;
 
     private LinearLayout linearLayout202,linearLayout203,linearLayout204,linearLayout205,linearLayout206;
@@ -182,11 +183,19 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         }
         if(c2_p206 == 0) {mostrarMensaje("PREGUNTA 206: DEBE INDICAR EL ESTADO CIVIL"); return false;}
         if(!c2_p205_a.trim().equals("")){
-            if(Integer.parseInt(c2_p205_a)<12 && c2_p206!=6){
-                mostrarMensaje("PREGUNTA 206: DEBE SELECCIONAR ESTADO CIVIL (SOLTERO/A)"); return false;
+            if(Integer.parseInt(c2_p205_a)<12){
+                if(c2_p203==1 || c2_p203==2 || c2_p203==4 || c2_p203==6 || c2_p203==10){
+                    mostrarMensaje("PREGUNTA 203: NO SE DEBE SELECCIONAR LAS OPCIONES (Jefe/a del hogar, Esposo/a o compañero/a, Yerno/Nuera, Padres/Suegros, Pensionista)"); return false;
+                }
+                if(c2_p206!=6){
+                    mostrarMensaje("PREGUNTA 206: DEBE SELECCIONAR ESTADO CIVIL (SOLTERO/A)"); return false;
+                }
             }
         }
         if(!c2_p205_m.trim().equals("")){
+            if(c2_p203==1 || c2_p203==2 || c2_p203==4 || c2_p203==6 || c2_p203==10){
+                mostrarMensaje("PREGUNTA 203: NO SE DEBE SELECCIONAR LAS OPCIONES (Jefe/a del hogar, Esposo/a o compañero/a, Yerno/Nuera, Padres/Suegros, Pensionista)"); return false;
+            }
             if(c2_p206!=6){
                 mostrarMensaje("PREGUNTA 206: DEBE SELECCIONAR ESTADO CIVIL (SOLTERO/A)"); return false;
             }

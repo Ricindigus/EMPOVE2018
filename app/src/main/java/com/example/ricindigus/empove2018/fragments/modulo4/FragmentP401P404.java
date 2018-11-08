@@ -324,6 +324,9 @@ public class FragmentP401P404 extends FragmentPagina {
         if (c4_p401_1.equals("0") && c4_p401_2.equals("0") && c4_p401_3.equals("0") && c4_p401_4.equals("0")) {
             mostrarMensaje("PREGUNTA 401: DEBE SELECCIONAR ALGUNA OPCION");return false;
         }
+        if (c4_p401_1.equals("1") && c4_p401_3.equals("1")) {
+            mostrarMensaje("PREGUNTA 401: DEBE SELECCIONAR SIMULTANEAMENTE (ESSALUD Y Seguro Integral de Salud – SIS)");return false;
+        }
         if (c4_p401_4.equals("1")) {
             if (c4_p401_o.trim().equals("")){ mostrarMensaje("PREGUNTA 401 - OPCION 4: DEBE ESPECIFICAR OTRO");return false;}
         }

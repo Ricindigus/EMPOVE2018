@@ -1425,6 +1425,7 @@
 
     <string-array name="rutas_paises">
         <item>Seleccione país</item>
+        <item>VENEZUELA</item>
         <item>COLOMBIA</item>
         <item>ECUADOR </item>
         <item>BRASIL</item>

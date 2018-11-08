@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -22,6 +23,7 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta309;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -39,6 +41,10 @@ public class AgregarRutaActivity extends AppCompatActivity {
     String numero;
     String pais_nombre;
 
+    String c3_p307_d;
+    String c3_p307_m;
+    String c3_p307_a;
+    String c3_p309_a="";
 
     LinearLayout layoutCiudad;
 
@@ -97,6 +103,13 @@ public class AgregarRutaActivity extends AppCompatActivity {
             spModo.setSelection(data.getNumeroRutaPais(m3Pregunta309.getC3_p309_mod()));
             spMes.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_m_cod()));
             spAnio.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_a_cod()));
+            Modulo3 modulo3 = data.getModulo3(idEncuestado);
+            c3_p307_d  = modulo3.getC3_p307_d();
+            c3_p307_m  = modulo3.getC3_p307_m();
+            c3_p307_a  = modulo3.getC3_p307_a();
+            Log.e("c3_p307_d", "cargarDatos: "+c3_p307_d);
+            Log.e("c3_p307_m", "cargarDatos: "+c3_p307_m);
+            Log.e("c3_p307_a", "cargarDatos: "+c3_p307_a);
         }
     }
 
@@ -107,6 +120,7 @@ public class AgregarRutaActivity extends AppCompatActivity {
         mes = spMes.getSelectedItemPosition();
         anio = spAnio.getSelectedItemPosition();
         modo = spModo.getSelectedItemPosition();
+        c3_p309_a = spAnio.getSelectedItem().toString();
     }
 
     public void guardarDatos(){
@@ -144,6 +158,13 @@ public class AgregarRutaActivity extends AppCompatActivity {
         if(modo == 0){mostrarMensaje("DEBE SELECCIONAR EL MODO DE TRANSPORTE");return false;}
         if(mes == 0){mostrarMensaje("DEBE INDICAR EL MES");return false;}
         if(anio == 0){mostrarMensaje("DEBE INDICAR EL AÑO");return false;}
+        if(Integer.parseInt(c3_p307_a)>Integer.parseInt(c3_p309_a)){
+            mostrarMensaje("PREGUNTA 309: AÑO DEBE SER MAYOR O IGUAL QUE EL AÑO DE INICIO DE VIAJE("+c3_p307_a+")");return false;
+        }else if(Integer.parseInt(c3_p307_a)==Integer.parseInt(c3_p309_a)){
+            if(Integer.parseInt(c3_p307_m)>mes){
+                mostrarMensaje("PREGUNTA 309: MES DEBE SER MAYOR O IGUAL QUE EL MES DE NACIMENTO("+c3_p307_m+")");return false;
+            }
+        }
         return true;
     }
 

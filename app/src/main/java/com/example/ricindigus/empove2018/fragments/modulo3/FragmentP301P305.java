@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -79,6 +80,7 @@ public class FragmentP301P305 extends FragmentPagina {
     String c3_p302;
     String c3_p303_m;
     String c3_p303_a;
+    String p303_a;
     String c3_p303_no_nacio;
     String c3_p304;
     String c3_p305;
@@ -236,6 +238,7 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p302 = c3_p302_Spinner.getSelectedItemPosition() + "";
         c3_p303_m = p303spMes.getSelectedItemPosition() + "";
         c3_p303_a = p303spAnio.getSelectedItemPosition() + "";
+        p303_a  = p303spAnio.getSelectedItem().toString();
         if(c3_p303_CheckBox.isChecked())c3_p303_no_nacio = 1 + "";
         else c3_p303_no_nacio = 0 + "";
         c3_p304 = c3_p304_RadioGroup.indexOfChild(c3_p304_RadioGroup.findViewById(c3_p304_RadioGroup.getCheckedRadioButtonId())) + "";
@@ -291,6 +294,17 @@ public class FragmentP301P305 extends FragmentPagina {
         if (!c3_p303_CheckBox.isChecked()){
             if(c3_p303_m.equals("0")) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR MES");return false;}
             if(c3_p303_a.equals("0")) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR ANIO");return false;}
+            Log.e("p303_a", "validarDatos: "+ p303_a);
+            Log.e("c3_p301_a", "validarDatos: "+ c3_p301_a);
+            Log.e("c3_p303_m", "validarDatos: "+ c3_p303_m);
+            Log.e("c3_p301_m", "validarDatos: "+ c3_p301_m);
+            if(Integer.parseInt(p303_a)<Integer.parseInt(c3_p301_a)){
+                mostrarMensaje("PREGUNTA 303: AÑO DE INGRESO DEBE SER MAYOR O IGUAL QUE EL AÑO DE NACIMENTO");return false;
+            }else if(Integer.parseInt(p303_a)==Integer.parseInt(c3_p301_a)){
+                if(Integer.parseInt(c3_p303_m)<Integer.parseInt(c3_p301_m)){
+                    mostrarMensaje("PREGUNTA 303: MES DE INGRESO DEBE SER MAYOR O IGUAL QUE EL MES DE NACIMENTO");return false;
+                }
+            }
         }
         if (layout304.getVisibility() == View.VISIBLE){
             if (c3_p304.equals("-1")){mostrarMensaje("PREGUNTA 304: DEBE MARCAR UNA OPCIÓN"); return false;}

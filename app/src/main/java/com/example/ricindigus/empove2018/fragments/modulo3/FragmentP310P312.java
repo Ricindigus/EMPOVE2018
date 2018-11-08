@@ -133,6 +133,24 @@ public class FragmentP310P312 extends FragmentPagina {
             }
         });
 
+        ckp310_3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    ckp310_1.setChecked(false);
+                    ckp310_2.setChecked(false);
+                    ckp310_4.setChecked(false);
+                    ckp310_1.setEnabled(false);
+                    ckp310_2.setEnabled(false);
+                    ckp310_4.setEnabled(false);
+                }else{
+                    ckp310_1.setEnabled(true);
+                    ckp310_2.setEnabled(true);
+                    ckp310_4.setEnabled(true);
+                }
+            }
+        });
+
         ckp310_4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

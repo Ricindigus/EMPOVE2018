@@ -62,6 +62,10 @@ public class FragmentP306P308 extends FragmentPagina {
     Spinner c3_p308_estado_Spinner, c3_p308_municipio_Spinner;
     LinearLayout layoutp306, layoutp307, layoutp308;
 
+    String fecha_301="",fecha_307="";
+    String c3_p301_d;
+    String c3_p301_m;
+    String c3_p301_a;
     String c3_p306;
     String c3_p306_o;
     String c3_p307_d;
@@ -202,6 +206,8 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p308_e_seleccion = c3_p308_estado_Spinner.getSelectedItemPosition()+"";
         c3_p308_m_seleccion = c3_p308_municipio_Spinner.getSelectedItemPosition()+"";
 
+        fecha_301 = c3_p301_a + c3_p301_m + c3_p301_d;
+        fecha_307 = c3_p307_a + c3_p307_m + c3_p307_d;
     }
 
     public String getCodigoEstMun(String item){
@@ -214,6 +220,9 @@ public class FragmentP306P308 extends FragmentPagina {
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo3 modulo3 = data.getModulo3(idEncuestado);
+            c3_p301_d = modulo3.getC3_p301_d();
+            c3_p301_m = modulo3.getC3_p301_m();
+            c3_p301_a = modulo3.getC3_p301_a();
             ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(modulo3.getIdHogar());
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -253,6 +262,9 @@ public class FragmentP306P308 extends FragmentPagina {
             if (c3_p306_o.trim().equals("")){mostrarMensaje("PREGUNTA 306: DEBE ESPECIFICAR");return false;}
         }
         if (c3_p307_d.trim().equals("")){mostrarMensaje("PREGUNTA 307: DEBE AGREGAR FECHA");return false;}
+        if(Integer.parseInt(fecha_307)<Integer.parseInt(fecha_301)){
+            mostrarMensaje("PREGUNTA 307: DEBE SER MAYOR O IGUAL A LA FECHA DE NACIMIENTO ("+c3_p301_d+"/"+c3_p301_m+"/"+c3_p301_a+")");return false;
+        }
         if (c3_p308_estado_Spinner.getSelectedItemPosition() == 0){mostrarMensaje("PREGUNTA 308: DEBE INDICAR ESTADO");return false;}
         if (c3_p308_municipio_Spinner.getSelectedItemPosition() == 0){mostrarMensaje("PREGUNTA 308: DEBE INDICAR MUNICIPIO");return false;}
         return true;

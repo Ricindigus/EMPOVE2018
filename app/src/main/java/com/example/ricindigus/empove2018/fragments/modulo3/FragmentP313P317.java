@@ -281,7 +281,9 @@ public class FragmentP313P317 extends FragmentPagina {
             if (c3_p316_o.trim().equals("")){mostrarMensaje("PREGUNTA 316: DEBE ESPECIFICAR");return false;}
         }
         if (c3_p317 == -1){mostrarMensaje("PREGUNTA 317: DEBE MARCAR UNA OPCIÓN"); return false;}
-
+        if(c3_p316 == 4 && c3_p317!=1){
+            mostrarMensaje("PREGUNTA 317: DEBE SELECCIONAR LA OPCIÓN(1.Duerme solo en la habitación)"); return false;
+        }
         return true;
     }
 
