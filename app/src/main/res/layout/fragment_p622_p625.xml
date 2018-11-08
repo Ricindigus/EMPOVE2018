@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".fragments.modulo6.FragmentP619P622">
+    tools:context=".fragments.modulo6.FragmentP622P625">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -22,10 +22,11 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
-            <include layout="@layout/modulo6_p619" android:id="@+id/layout_m6_p619"/>
-            <include layout="@layout/modulo6_p620" android:id="@+id/layout_m6_p620"/>
-            <include layout="@layout/modulo6_p621" android:id="@+id/layout_m6_p621"/>
-            <include layout="@layout/modulo6_p622" android:id="@+id/layout_m6_p622"/>
+            <include layout="@layout/cabecera"/>
+            <include layout="@layout/modulo6_p622" android:id="@+id/layout_m6_p623"/>
+            <include layout="@layout/modulo6_p623" android:id="@+id/layout_m6_p624"/>
+            <include layout="@layout/modulo6_p624" android:id="@+id/layout_m6_p625"/>
+            <include layout="@layout/modulo6_p625" android:id="@+id/layout_m6_p618"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -16,6 +16,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margen_small"
         android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/texto_medium"
+            android:text="S/."/>
         <EditText
             android:id="@+id/mod6_616_edittext_C6_P616_MON"
             android:layout_width="@dimen/longitud_input_n_horas"
@@ -23,13 +28,20 @@
             android:background="@drawable/input_text_enabled"
             android:paddingLeft="@dimen/margen_small"
             android:layout_marginRight="@dimen/margen_large"
+            android:inputType="numberPassword"
             android:hint="@string/modulo_6_p616_dinero"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/texto_medium"
+            android:text="S/."/>
         <EditText
             android:id="@+id/mod6_616_edittext_C6_P616_ESP"
             android:layout_width="@dimen/longitud_input_n_horas"
             android:layout_height="@dimen/altura_input_especifique"
             android:background="@drawable/input_text_enabled"
             android:paddingLeft="@dimen/margen_small"
+            android:inputType="numberPassword"
             android:hint="@string/modulo_6_p616_especie"/>
     </LinearLayout>
     <CheckBox

@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -29,8 +31,10 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -171,27 +175,18 @@ public class FragmentP601P604 extends FragmentPagina {
                 int pos = radioGroup.indexOfChild(c6_p604_11_RadioGroup.findViewById(c6_p604_11_RadioGroup.getCheckedRadioButtonId()));
                 if(pos==1){
                     c6_p604_o_EditText.setEnabled(true);
-                    c6_p604_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                    c6_p604_o_EditText.setBackgroundResource(R.drawable.input_text_enabled);
                 }else{
                     c6_p604_o_EditText.setText("");
-                    c6_p604_o_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
+                    c6_p604_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
                     c6_p604_o_EditText.setEnabled(false);
                 }
             }
         });
-        c6_p604_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c6_p604_o_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p604_o_EditText);
-                    m6_p604_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
+
+        configurarEditText(c6_p604_o_EditText,m6_p604_linearlayout,1,30);
         cargarDatos();
+
     }
 
     @Override
@@ -285,7 +280,8 @@ public class FragmentP601P604 extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         llenarVariables();
-        idInformante = informanteSpinner.getSelectedItemPosition()+"";
+        if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+
         if(c6_p601.equals("-1")){
             mostrarMensaje("PREGUNTA 601: DEBE SELECCIONAR UNA OPCION");
             return false;
@@ -491,6 +487,56 @@ public class FragmentP601P604 extends FragmentPagina {
             if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,idEncuestado).equals("-1"))
                 data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"1",idEncuestado);
         }
+        POJOLayout pojoLayout = data.getLayouts(idEncuestado);
         data.close();
+
+    }
+
+    private void controlarEspecifiqueRadio(RadioGroup group, int checkedId, int opcionEsp, EditText editTextEspecifique) {
+        int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+        if(seleccionado == opcionEsp){
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_enabled);
+            editTextEspecifique.setEnabled(true);
+        }else{
+            editTextEspecifique.setText("");
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_disabled);
+            editTextEspecifique.setEnabled(false);
+        }
+    }
+
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(editText);
+                    view.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+    }
+
+    public void controlarChecked(CheckBox checkBox, final EditText editText){
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    editText.setBackgroundResource(R.drawable.input_text_enabled);
+                    editText.setEnabled(true);
+                }else{
+                    editText.setText("");
+                    editText.setBackgroundResource(R.drawable.input_text_disabled);
+                    editText.setEnabled(false);
+                }
+            }
+        });
     }
 }

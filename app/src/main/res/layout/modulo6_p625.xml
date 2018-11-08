@@ -10,22 +10,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
-        android:text="@string/modulo_6_p625"/>
-    <LinearLayout
+        android:text="@string/modulo_6_p618"/>
+    <TextView
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_marginTop="@dimen/margen_medium"
-        android:layout_height="@dimen/altura_input_solo">
-        <TextView
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_ind"/>
+    <CheckBox
+        android:id="@+id/mod6_618_checkbox_C6_P618_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp1"/>
+    <CheckBox
+        android:id="@+id/mod6_618_checkbox_C6_P618_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp2"/>
+    <CheckBox
+        android:id="@+id/mod6_618_checkbox_C6_P618_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp3"/>
+    <CheckBox
+        android:id="@+id/mod6_618_checkbox_C6_P618_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp4"/>
+    <CheckBox
+        android:id="@+id/mod6_618_checkbox_C6_P618_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_6_p618_sp5"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/mod6_618_checkbox_C6_P618_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/texto_small"
-            android:layout_marginRight="@dimen/margen_medium"
-            android:text="@string/modulo_6_p625_semana"/>
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_6_p618_sp6"/>
         <EditText
-            android:id="@+id/mod6_625_edittext_C6_P625"
-            android:layout_width="@dimen/longitud_input_n_horas"
-            android:layout_height="@dimen/altura_input_especifique"
-            android:background="@drawable/input_text_enabled"/>
+            android:id="@+id/mod6_618_edittext_C6_P618_O"
+            style="@style/TemaInputEspecifique"/>
     </LinearLayout>
+
 </LinearLayout>

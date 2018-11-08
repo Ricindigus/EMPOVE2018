@@ -21,7 +21,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/texto_small"
             android:text="@string/modulo_6_p630_sp1"/>
@@ -30,6 +30,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,10 +47,11 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_m6_630_1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="@dimen/margen_medium"
+        android:visibility="gone"
         android:background="@drawable/marco_subpregunta">
         <TextView
             android:layout_width="wrap_content"
@@ -58,6 +63,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,7 +82,7 @@
                 android:text="@string/modulo_6_p630_med3"/>
             <EditText
                 android:id="@+id/mod6_630_edittext_C6_P630_1_O"
-                style="@style/TemaInputEspecifiqueRadio"/>
+                style="@style/TemaInputEspecifiqueRadioIntermedio"/>
         </RadioGroup>
         <TextView
             android:layout_width="wrap_content"
@@ -81,12 +90,18 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/margen_medium"
             android:text="@string/modulo_6_p630_frecuencia"/>
-        <Spinner
-            android:id="@+id/mod6_630_spinner_C6_P630_1_FREC"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawSelectorOnTop="true"
-            android:entries="@array/modulo_6_p630_frecuencia"/>
+            android:layout_height="32dp"
+            android:layout_margin="@dimen/margen_small">
+            <Spinner
+                android:id="@+id/mod6_630_spinner_C6_P630_1_FREC"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawSelectorOnTop="true"
+                android:entries="@array/modulo_6_p630_frecuencia"/>
+        </android.support.v7.widget.CardView>
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,12 +109,18 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/margen_medium"
             android:text="@string/modulo_6_p630_monto"/>
-        <Spinner
-            android:id="@+id/mod6_630_spinner_C6_P630_1_MONT"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawSelectorOnTop="true"
-            android:entries="@array/modulo_6_p630_monto"/>
+            android:layout_height="32dp"
+            android:layout_margin="@dimen/margen_small">
+            <Spinner
+                android:id="@+id/mod6_630_spinner_C6_P630_1_MONT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawSelectorOnTop="true"
+                android:entries="@array/modulo_6_p630_monto"/>
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -108,7 +129,7 @@
         android:layout_marginTop="@dimen/margen_medium"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/texto_small"
             android:text="@string/modulo_6_p630_sp2"/>
@@ -117,6 +138,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -130,10 +155,11 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_m6_630_2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="@dimen/margen_medium"
+        android:visibility="gone"
         android:background="@drawable/marco_subpregunta">
         <TextView
             android:layout_width="wrap_content"
@@ -145,6 +171,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -160,7 +190,7 @@
                 android:text="@string/modulo_6_p630_med3"/>
             <EditText
                 android:id="@+id/mod6_630_edittext_C6_P630_2_O"
-                style="@style/TemaInputEspecifiqueRadio"/>
+                style="@style/TemaInputEspecifiqueRadioIntermedio"/>
         </RadioGroup>
         <TextView
             android:layout_width="wrap_content"
@@ -168,12 +198,17 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/margen_medium"
             android:text="@string/modulo_6_p630_frecuencia"/>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_margin="@dimen/margen_small">
         <Spinner
             android:id="@+id/mod6_630_spinner_C6_P630_2_FREC"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:drawSelectorOnTop="true"
             android:entries="@array/modulo_6_p630_frecuencia"/>
+        </android.support.v7.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"
@@ -181,11 +216,17 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/margen_medium"
             android:text="@string/modulo_6_p630_monto"/>
-        <Spinner
-            android:id="@+id/mod6_630_spinner_C6_P630_2_MONT"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawSelectorOnTop="true"
-            android:entries="@array/modulo_6_p630_monto"/>
+            android:layout_height="32dp"
+            android:layout_margin="@dimen/margen_small">
+            <Spinner
+                android:id="@+id/mod6_630_spinner_C6_P630_2_MONT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawSelectorOnTop="true"
+                android:entries="@array/modulo_6_p630_monto"/>
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 </LinearLayout>

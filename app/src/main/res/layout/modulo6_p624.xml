@@ -10,54 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
-        android:text="@string/modulo_6_p624"/>
-    <TextView
+        android:text="@string/modulo_6_p625"/>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/modulo_6_p624_ind"/>
-    <RadioGroup
-        android:id="@+id/mod6_624_radiogroup_C6_P624"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/mod6_624_rb1"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margen_medium"
+        android:layout_height="@dimen/altura_input_solo">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p624_sp1"/>
-        <RadioButton
-            android:id="@+id/mod6_624_rb2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p624_sp2"/>
-        <RadioButton
-            android:id="@+id/mod6_624_rb3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p624_sp3"/>
-        <RadioButton
-            android:id="@+id/mod6_624_rb4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p624_sp4"/>
-        <RadioButton
-            android:id="@+id/mod6_624_rb5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p624_sp5"/>
-        <RadioButton
-            android:id="@+id/mod6_624_rb10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/margen_small"
-            android:text="@string/modulo_6_p624_sp6"/>
+            android:textSize="@dimen/texto_small"
+            android:layout_marginRight="@dimen/margen_medium"
+            android:text="@string/modulo_6_p625_semana"/>
         <EditText
-            android:id="@+id/mod6_624_edittext_C6_P624_O"
-            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
-        <RadioButton
-            android:id="@+id/mod5_624_rb11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p624_sp7"/>
-    </RadioGroup>
+            android:id="@+id/mod6_625_edittext_C6_P625"
+            android:layout_width="@dimen/longitud_input_n_horas"
+            android:layout_height="@dimen/altura_input_especifique"
+            android:inputType="numberPassword"
+            android:gravity="center"
+            android:background="@drawable/input_text_enabled"/>
+    </LinearLayout>
 </LinearLayout>

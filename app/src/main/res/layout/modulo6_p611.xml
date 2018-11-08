@@ -26,6 +26,8 @@
             android:id="@+id/mod6_611_edittext_C6_P611"
             android:layout_width="@dimen/longitud_input_n_horas"
             android:layout_height="@dimen/altura_input_especifique"
+            android:gravity="center"
+            android:inputType="numberPassword"
             android:background="@drawable/input_text_enabled"/>
     </LinearLayout>
 </LinearLayout>

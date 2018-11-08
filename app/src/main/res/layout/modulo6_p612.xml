@@ -18,6 +18,11 @@
         android:layout_marginTop="@dimen/margen_small"
         android:layout_height="wrap_content">
         <RadioButton
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <RadioButton
             android:id="@+id/mod6_612_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +30,14 @@
             android:text="@string/modulo_6_p612_sp1"/>
         <EditText
             android:id="@+id/mod6_612_edittext_C6_P612_NRO"
-            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
+            android:inputType="numberPassword"
+            android:enabled="false"
+            android:layout_height="32dp"
+            android:background="@drawable/input_text_disabled"
+            android:hint="Especifique"
+            android:paddingLeft="@dimen/margen_small"
+            android:layout_marginLeft="32dp"
+            android:layout_width="128dp"/>
         
         <RadioButton
             android:id="@+id/mod6_612_rb2"

@@ -15,6 +15,7 @@
         android:id="@+id/mod6_607_edittext_C6_P607"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="@string/modulo_6_p607_especifique"
         />
 </LinearLayout>

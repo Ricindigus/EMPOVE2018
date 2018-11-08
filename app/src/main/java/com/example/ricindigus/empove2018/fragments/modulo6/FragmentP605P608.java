@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -28,8 +30,10 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 import java.util.ArrayList;
 
@@ -207,7 +211,8 @@ public class FragmentP605P608 extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         llenarVariables();
-        idInformante = informanteSpinner.getSelectedItemPosition()+"";
+        if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+
         if(c6_p605.trim().equals("") && m6_p605_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 605: DEBE ESPECIFICAR");return false;
         }
@@ -268,16 +273,14 @@ public class FragmentP605P608 extends FragmentPagina {
             contentValues.put(SQLConstantes.layouts_p609,"0");
             data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
 
-            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p605p608,"-1",idEncuestado);
-            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"-1",idEncuestado);
-
         }else{
             ContentValues contentValues = new ContentValues();
             contentValues.put(SQLConstantes.layouts_p609,"1");
             data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
         }
+        POJOLayout pojoLayout = data.getLayouts(idEncuestado);
 
-        if (!c6_p608.equals("1") && !c6_p608.equals("4") && !c6_p608.equals("6")){
+        if (!c6_p608.equals("3") && !c6_p608.equals("4") && !c6_p608.equals("6")){
             ContentValues contentValues = new ContentValues();
             contentValues.put(SQLConstantes.modulo6_c6_p613,"");
             contentValues.put(SQLConstantes.modulo6_c6_p614_mon,"");
@@ -294,7 +297,56 @@ public class FragmentP605P608 extends FragmentPagina {
             contentValues.put(SQLConstantes.layouts_p614,"1");
             data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
         }
+        POJOLayout pojoLayout1 = data.getLayouts(idEncuestado);
         data.close();
+    }
+
+    private void controlarEspecifiqueRadio(RadioGroup group, int checkedId, int opcionEsp, EditText editTextEspecifique) {
+        int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+        if(seleccionado == opcionEsp){
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_enabled);
+            editTextEspecifique.setEnabled(true);
+        }else{
+            editTextEspecifique.setText("");
+            editTextEspecifique.setBackgroundResource(R.drawable.input_text_disabled);
+            editTextEspecifique.setEnabled(false);
+        }
+    }
+
+    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    ocultarTeclado(editText);
+                    view.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+        if (tipo == 2) {
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+    }
+
+    public void controlarChecked(CheckBox checkBox, final EditText editText){
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    editText.setBackgroundResource(R.drawable.input_text_enabled);
+                    editText.setEnabled(true);
+                }else{
+                    editText.setText("");
+                    editText.setBackgroundResource(R.drawable.input_text_disabled);
+                    editText.setEnabled(false);
+                }
+            }
+        });
     }
 
 }

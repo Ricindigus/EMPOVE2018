@@ -42,9 +42,9 @@ import com.example.ricindigus.empove2018.fragments.modulo5.FragmentP512P513;
 import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP601P604;
 import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP605P608;
 import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP609P612;
-import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP613P618;
-import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP619P622;
-import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP623P625;
+import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP613P617;
+import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP618P621;
+import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP622P625;
 import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP626P629;
 import com.example.ricindigus.empove2018.fragments.modulo6.FragmentP630;
 import com.example.ricindigus.empove2018.fragments.modulo7.FragmentP701P705;
@@ -408,22 +408,22 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                     fragmentActual = fragmentP609P612;
                     break;
                 case TipoFragmentEncuestado.P613P618:
-                    FragmentP613P618 fragmentP613P618 = new FragmentP613P618(idEncuestado,EncuestaActivity.this);
-                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP613P618);
+                    FragmentP613P617 fragmentP613P617 = new FragmentP613P617(idEncuestado,EncuestaActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP613P617);
                     tFragment = TipoFragmentEncuestado.P613P618;
-                    fragmentActual = fragmentP613P618;
+                    fragmentActual = fragmentP613P617;
                     break;
                 case TipoFragmentEncuestado.P619P622:
-                    FragmentP619P622 fragmentP619P622 = new FragmentP619P622(idEncuestado,EncuestaActivity.this);
-                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP619P622);
+                    FragmentP618P621 fragmentP618P621 = new FragmentP618P621(idEncuestado,EncuestaActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP618P621);
                     tFragment = TipoFragmentEncuestado.P619P622;
-                    fragmentActual = fragmentP619P622;
+                    fragmentActual = fragmentP618P621;
                     break;
                 case TipoFragmentEncuestado.P623P625:
-                    FragmentP623P625 fragmentP623P625 = new FragmentP623P625(idEncuestado,EncuestaActivity.this);
-                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP623P625);
+                    FragmentP622P625 fragmentP622P625 = new FragmentP622P625(idEncuestado,EncuestaActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP622P625);
                     tFragment = TipoFragmentEncuestado.P623P625;
-                    fragmentActual = fragmentP623P625;
+                    fragmentActual = fragmentP622P625;
                     break;
                 case TipoFragmentEncuestado.P626P629:
                     FragmentP626P629 fragmentP626P629 = new FragmentP626P629(idEncuestado,EncuestaActivity.this);
