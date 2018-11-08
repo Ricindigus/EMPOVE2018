@@ -571,8 +571,6 @@ public class SQLConstantes {
     public static String modulo3_c3_p302 = "c3_p302";
     public static String modulo3_c3_p303_m = "c3_p303_m";
     public static String modulo3_c3_p303_a = "c3_p303_a";
-    public static String modulo3_c3_p303_m_cod = "c3_p303_m_cod";
-    public static String modulo3_c3_p303_a_cod = "c3_p303_a_cod";
     public static String modulo3_c3_p303_no_nacio = "c3_p303_no_nacio";
     public static String modulo3_c3_p304 = "c3_p304";
     public static String modulo3_c3_p305 = "c3_p305";
@@ -626,10 +624,8 @@ public class SQLConstantes {
                     modulo3_c3_p301_a  + " TEXT," +
                     modulo3_c3_p302  + " TEXT," +
                     modulo3_c3_p303_no_nacio + " TEXT," +
-                    modulo3_c3_p303_a  + " TEXT," +
-                    modulo3_c3_p303_m  + " TEXT," +
-                    modulo3_c3_p303_a_cod  + " TEXT," +
-                    modulo3_c3_p303_m_cod  + " TEXT," +
+                    modulo3_c3_p303_a + " TEXT," +
+                    modulo3_c3_p303_m + " TEXT," +
                     modulo3_c3_p304  + " TEXT," +
                     modulo3_c3_p305  + " TEXT," +
                     modulo3_c3_p305_o  + " TEXT," +

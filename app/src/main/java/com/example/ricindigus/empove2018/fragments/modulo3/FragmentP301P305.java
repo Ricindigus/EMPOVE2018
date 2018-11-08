@@ -260,8 +260,8 @@ public class FragmentP301P305 extends FragmentPagina {
             if(!modulo3.getC3_p302().equals(""))c3_p302_Spinner.setSelection(data.getNumeroPais(modulo3.getC3_p302()));
             if(modulo3.getC3_p303_no_nacio().equals("1")) c3_p303_CheckBox.setChecked(true);
             else{
-                if(!modulo3.getC3_p303_m_cod().equals(""))p303spMes.setSelection(Integer.parseInt(modulo3.getC3_p303_m_cod()));
-                if(!modulo3.getC3_p303_a_cod().equals(""))p303spAnio.setSelection(2019 - Integer.parseInt(modulo3.getC3_p303_a_cod()));
+                if(!modulo3.getC3_p303_m().equals(""))p303spMes.setSelection(Integer.parseInt(modulo3.getC3_p303_m()));
+                if(!modulo3.getC3_p303_a().equals(""))p303spAnio.setSelection(2019 - Integer.parseInt(modulo3.getC3_p303_a()));
             }
             if(!modulo3.getC3_p304().equals("-1") && !modulo3.getC3_p304().equals(""))((RadioButton)c3_p304_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p304()))).setChecked(true);
             if(!modulo3.getC3_p305().equals("-1") && !modulo3.getC3_p305().equals(""))((RadioButton)c3_p305_RadioGroup.getChildAt(Integer.parseInt(modulo3.getC3_p305()))).setChecked(true);

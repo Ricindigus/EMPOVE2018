@@ -324,8 +324,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p301_m, modulo3.getC3_p301_m());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p301_a, modulo3.getC3_p301_a());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p302, modulo3.getC3_p302());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p303_m, modulo3.getC3_p303_m_cod());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p303_a, modulo3.getC3_p303_a_cod());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p303_m, modulo3.getC3_p303_m());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p303_a, modulo3.getC3_p303_a());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p303_no_nacio, modulo3.getC3_p303_no_nacio());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p304, modulo3.getC3_p304());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p305, modulo3.getC3_p305());
