@@ -13,8 +13,9 @@ public class Modulo3 {
     private String c3_p301_m;
     private String c3_p301_a;
     private String c3_p302;
-    private String c3_p303_m;
-    private String c3_p303_a;
+    private String c3_p303_m_cod;
+    private String c3_p303_a_cod;
+
     private String c3_p303_no_nacio;
     private String c3_p304;
     private String c3_p305;
@@ -64,8 +65,8 @@ public class Modulo3 {
         c3_p301_m= "";
         c3_p301_a= "";
         c3_p302= "";
-        c3_p303_m= "";
-        c3_p303_a= "";
+        c3_p303_m_cod = "";
+        c3_p303_a_cod = "";
         c3_p303_no_nacio= "";
         c3_p304= "";
         c3_p305= "";
@@ -173,20 +174,20 @@ public class Modulo3 {
         this.c3_p302 = c3_p302;
     }
 
-    public String getC3_p303_m() {
-        return c3_p303_m;
+    public String getC3_p303_m_cod() {
+        return c3_p303_m_cod;
     }
 
-    public void setC3_p303_m(String c3_p303_m) {
-        this.c3_p303_m = c3_p303_m;
+    public void setC3_p303_m_cod(String c3_p303_m_cod) {
+        this.c3_p303_m_cod = c3_p303_m_cod;
     }
 
-    public String getC3_p303_a() {
-        return c3_p303_a;
+    public String getC3_p303_a_cod() {
+        return c3_p303_a_cod;
     }
 
-    public void setC3_p303_a(String c3_p303_a) {
-        this.c3_p303_a = c3_p303_a;
+    public void setC3_p303_a_cod(String c3_p303_a_cod) {
+        this.c3_p303_a_cod = c3_p303_a_cod;
     }
 
     public String getC3_p303_no_nacio() {
@@ -511,8 +512,8 @@ public class Modulo3 {
         contentValues.put(SQLConstantes.modulo3_c3_p301_m,c3_p301_m);
         contentValues.put(SQLConstantes.modulo3_c3_p301_a,c3_p301_a);
         contentValues.put(SQLConstantes.modulo3_c3_p302,c3_p302);
-        contentValues.put(SQLConstantes.modulo3_c3_p303_m,c3_p303_m);
-        contentValues.put(SQLConstantes.modulo3_c3_p303_a,c3_p303_a);
+        contentValues.put(SQLConstantes.modulo3_c3_p303_m, c3_p303_m_cod);
+        contentValues.put(SQLConstantes.modulo3_c3_p303_a, c3_p303_a_cod);
         contentValues.put(SQLConstantes.modulo3_c3_p303_no_nacio, c3_p303_no_nacio);
         contentValues.put(SQLConstantes.modulo3_c3_p304,c3_p304);
         contentValues.put(SQLConstantes.modulo3_c3_p305,c3_p305);

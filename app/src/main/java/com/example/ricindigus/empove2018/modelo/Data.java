@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
-import com.example.ricindigus.empove2018.modelo.pojos.Estado;
 import com.example.ricindigus.empove2018.modelo.pojos.Funcionario;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.modelo.pojos.ItemMarco;
@@ -383,6 +382,8 @@ public class Data {
                 hogar.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_estado)));
                 hogar.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_numero)));
                 hogar.setNroviven(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nroviven)));
+                hogar.setVive(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_vive)));
+                hogar.setNropersonas(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nropersonas)));
                 hogars.add(hogar);
             }
         }finally{
@@ -1013,8 +1014,10 @@ public class Data {
                 modulo3.setC3_p301_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_m)));
                 modulo3.setC3_p301_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_a )));
                 modulo3.setC3_p302(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p302 )));
-                modulo3.setC3_p303_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_m )));
-                modulo3.setC3_p303_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_a )));
+                modulo3.setC3_p303_m_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_m )));
+                modulo3.setC3_p303_a_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_a )));
+                modulo3.setC3_p303_m_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_m_cod )));
+                modulo3.setC3_p303_a_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_a_cod )));
                 modulo3.setC3_p303_no_nacio(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_no_nacio)));
                 modulo3.setC3_p304(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p304 )));
                 modulo3.setC3_p305(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p305 )));
@@ -1078,8 +1081,10 @@ public class Data {
                 modulo3.setC3_p301_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_m)));
                 modulo3.setC3_p301_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_a )));
                 modulo3.setC3_p302(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p302 )));
-                modulo3.setC3_p303_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_m )));
-                modulo3.setC3_p303_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_a )));
+                modulo3.setC3_p303_m_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_m )));
+                modulo3.setC3_p303_a_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_a )));
+                modulo3.setC3_p303_m_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_m_cod )));
+                modulo3.setC3_p303_a_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_a_cod )));
                 modulo3.setC3_p303_no_nacio(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_no_nacio)));
                 modulo3.setC3_p304(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p304 )));
                 modulo3.setC3_p305(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p305 )));
