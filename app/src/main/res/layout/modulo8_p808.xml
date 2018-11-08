@@ -91,6 +91,7 @@
             android:layout_height="@dimen/altura_input_especifique"
             android:paddingLeft="@dimen/margen_small"
             android:text="@string/modulo_8_p810_especifique"
+            android:enabled="false"
             android:background="@drawable/input_text_disabled"/>
     </LinearLayout>
 
