@@ -92,54 +92,11 @@ public class FragmentP605P608 extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        c6_p605_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c6_p605_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p605_EditText);
-                    m6_p605_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p606_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c6_p606_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p606_EditText);
-                    m6_p606_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p607_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c6_p607_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p607_EditText);
-                    m6_p607_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
-        c6_p608_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        c6_p608_o_EditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    ocultarTeclado(c6_p608_o_EditText);
-                    m6_p608_linearlayout.requestFocus();
-                    return true;
-                }
-                return false;
-            }
-        });
+        configurarEditText(c6_p605_EditText,m6_p605_linearlayout,1,50);
+        configurarEditText(c6_p606_EditText,m6_p606_linearlayout,1,500);
+        configurarEditText(c6_p607_EditText,m6_p607_linearlayout,1,50);
+        configurarEditText(c6_p608_o_EditText,m6_p608_linearlayout,1,30);
+
         c6_p608_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -154,6 +111,7 @@ public class FragmentP605P608 extends FragmentPagina {
                 }
             }
         });
+        llenarVista();
         cargarDatos();
     }
 

@@ -198,8 +198,40 @@ public class FragmentP813P816 extends FragmentPagina {
                 }
             }
         });
+
+        checkOcultaP814(c8_p813_1_Checkbox);
+        checkOcultaP814(c8_p813_2_Checkbox);
+        checkOcultaP814(c8_p813_3_Checkbox);
+        checkOcultaP814(c8_p813_4_Checkbox);
+        checkOcultaP814(c8_p813_5_Checkbox);
+        checkOcultaP814(c8_p813_6_Checkbox);
+        checkOcultaP814(c8_p813_7_Checkbox);
+        checkOcultaP814(c8_p813_8_Checkbox);
+        checkOcultaP814(c8_p813_9_Checkbox);
+        checkOcultaP814(c8_p813_10_Checkbox);
+        checkOcultaP814(c8_p813_11_Checkbox);
+        checkOcultaP814(c8_p813_12_Checkbox);
+        checkOcultaP814(c8_p813_13_Checkbox);
+
+
+        c8_p813_14_Checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    ocultarP814();
+                    c8_p813_o_EditText.setEnabled(true);
+                    c8_p813_o_EditText.setBackgroundResource(R.drawable.input_text_enabled);
+                }
+                else{
+                    if (noCheckeadoP813()) mostrarP814();
+                    c8_p813_o_EditText.setText("");
+                    c8_p813_o_EditText.setEnabled(false);
+                    c8_p813_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
+                }
+            }
+        });
+
         controlarChecked(c8_p816_13_Checkbox,c8_p816_o_EditText);
-        controlarChecked(c8_p813_14_Checkbox,c8_p813_o_EditText);
 
         llenarVista();
         cargarDatos();
@@ -536,6 +568,40 @@ public class FragmentP813P816 extends FragmentPagina {
                     editText.setBackgroundResource(R.drawable.input_text_disabled);
                     editText.setEnabled(false);
                 }
+            }
+        });
+    }
+
+    public void mostrarP814(){
+        m8_p814_linearlayout.setVisibility(View.VISIBLE);
+    }
+
+    public void ocultarP814(){
+        c8_p814_1_Checkbox.setChecked(false);
+        c8_p814_2_Checkbox.setChecked(false);
+        c8_p814_3_Checkbox.setChecked(false);
+        c8_p814_4_Checkbox.setChecked(false);
+        c8_p814_5_Checkbox.setChecked(false);
+        c8_p814_6_Checkbox.setChecked(false);
+        c8_p814_7_Checkbox.setChecked(false);
+        c8_p814_8_Checkbox.setChecked(false);
+        m8_p814_linearlayout.setVisibility(View.GONE);
+    }
+
+    public boolean noCheckeadoP813(){
+        return !c8_p813_1_Checkbox.isChecked() && !c8_p813_2_Checkbox.isChecked() && !c8_p813_3_Checkbox.isChecked() &&
+                !c8_p813_4_Checkbox.isChecked() && !c8_p813_5_Checkbox.isChecked() && !c8_p813_6_Checkbox.isChecked() &&
+                !c8_p813_7_Checkbox.isChecked() && !c8_p813_8_Checkbox.isChecked() && !c8_p813_9_Checkbox.isChecked() &&
+                !c8_p813_10_Checkbox.isChecked() && !c8_p813_11_Checkbox.isChecked() && !c8_p813_12_Checkbox.isChecked() &&
+                !c8_p813_13_Checkbox.isChecked() && !c8_p813_14_Checkbox.isChecked();
+    }
+
+    public void checkOcultaP814(CheckBox checkBox){
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){ ocultarP814(); }
+                else{ if (noCheckeadoP813()) mostrarP814(); }
             }
         });
     }

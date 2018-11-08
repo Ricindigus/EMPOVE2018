@@ -60,10 +60,15 @@
                 android:layout_margin="5dp"
                 android:drawSelectorOnTop="true"
                 android:entries="@array/modulo_6_p629_frecuencia" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_medium"
+                android:text="Monto: "/>
             <EditText
                 android:id="@+id/mod6_629_edittext_C6_P629_1_M"
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:paddingLeft="@dimen/margen_small"
                 android:paddingRight="@dimen/margen_small"
                 android:layout_height="@dimen/altura_input_especifique"
@@ -114,10 +119,15 @@
                 android:layout_margin="5dp"
                 android:drawSelectorOnTop="true"
                 android:entries="@array/modulo_6_p629_frecuencia" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_medium"
+                android:text="Monto: "/>
             <EditText
                 android:id="@+id/mod6_629_edittext_C6_P629_2_M"
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:paddingLeft="@dimen/margen_small"
                 android:paddingRight="@dimen/margen_small"
                 android:layout_height="@dimen/altura_input_especifique"
@@ -167,10 +177,15 @@
                 android:layout_margin="5dp"
                 android:drawSelectorOnTop="true"
                 android:entries="@array/modulo_6_p629_frecuencia" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_medium"
+                android:text="Monto: "/>
             <EditText
                 android:id="@+id/mod6_629_edittext_C6_P629_3_M"
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:paddingLeft="@dimen/margen_small"
                 android:paddingRight="@dimen/margen_small"
                 android:layout_height="@dimen/altura_input_especifique"
@@ -198,7 +213,13 @@
                     android:text="@string/modulo_6_p629_sp4"/>
                 <EditText
                     android:id="@+id/mod6_629_edittext_C6_P629_O"
-                    style="@style/TemaInputEspecifique"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/altura_input_especifique"
+                    android:background="@drawable/input_text_disabled"
+                    android:hint="Especifique"
+                    android:inputType="text"
+                    android:layout_marginRight="@dimen/margen_small"
+                    android:paddingLeft="@dimen/margen_small"/>
             </LinearLayout>
             <RadioGroup
                 android:id="@+id/mod6_629_radiogroup_C6_P629_4"
@@ -229,10 +250,15 @@
                 android:layout_margin="5dp"
                 android:drawSelectorOnTop="true"
                 android:entries="@array/modulo_6_p629_frecuencia" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen_medium"
+                android:text="Monto: "/>
             <EditText
                 android:id="@+id/mod6_629_edittext_C6_P629_4_M"
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:paddingLeft="@dimen/margen_small"
                 android:paddingRight="@dimen/margen_small"
                 android:layout_height="@dimen/altura_input_especifique"

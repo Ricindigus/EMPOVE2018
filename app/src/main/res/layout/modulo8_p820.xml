@@ -77,10 +77,6 @@
             android:text="@string/modulo_8_p820_sp11"/>
         <EditText
             android:id="@+id/mod8_820_edittext_C8_P820_O"
-            android:layout_width="@dimen/width_input_especifique"
-            android:layout_height="@dimen/altura_input_especifique"
-            android:paddingLeft="@dimen/margen_small"
-            android:text="@string/modulo_8_p820_especifique"
-            android:background="@drawable/input_text_disabled"/>
+            style="@style/TemaInputEspecifique"/>
     </LinearLayout>
 </LinearLayout>

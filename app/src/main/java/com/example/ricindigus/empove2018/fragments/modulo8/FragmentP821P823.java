@@ -132,6 +132,7 @@ public class FragmentP821P823 extends FragmentPagina {
                 }
             }
         });
+        llenarVista();
         cargarDatos();
     }
 
