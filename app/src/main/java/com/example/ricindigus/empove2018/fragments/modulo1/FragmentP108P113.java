@@ -132,7 +132,7 @@ public class FragmentP108P113 extends FragmentPagina {
         c1_p109_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                controlarEspecifiqueRadio(group, checkedId,6,c1_p109_o_EditText);
+                controlarEspecifiqueRadio(group, checkedId,5,c1_p109_o_EditText);
             }
         });
         c1_p110_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -150,7 +150,7 @@ public class FragmentP108P113 extends FragmentPagina {
         c1_p112_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                controlarEspecifiqueRadio(group, checkedId,5,c1_p112_o_EditText);
+                controlarEspecifiqueRadio(group, checkedId,8,c1_p112_o_EditText);
             }
         });
         c1_p113_7_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

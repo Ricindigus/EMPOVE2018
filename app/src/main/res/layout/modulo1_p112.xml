@@ -40,15 +40,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_1_p112_sp4"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_1_p112_sp5"/>
-            <EditText
-                android:id="@+id/mod1_112_edittext_C1_P112_O"
-                style="@style/TemaInputEspecifiqueRadio"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_1_p112_sp5"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_1_p112_sp6"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_1_p112_sp7"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_1_p112_sp8"/>
+        <EditText
+            android:id="@+id/mod1_112_edittext_C1_P112_O"
+            style="@style/TemaInputEspecifiqueRadio"/>
 
     </RadioGroup>
 

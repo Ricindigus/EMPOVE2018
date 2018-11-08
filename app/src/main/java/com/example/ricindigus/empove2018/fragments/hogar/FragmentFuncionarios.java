@@ -227,15 +227,26 @@ public class FragmentFuncionarios extends FragmentPagina {
         if (dni_encu.trim().equals("")){mostrarMensaje("DNI ENCUESTADOR: FALTA COMPLETAR");return false;}
         if (dni_encu.length()!=8){mostrarMensaje("DNI ENCUESTADOR: COMPLETAR 8 DIGITOS");return false;}
         if (nombre_encu.trim().equals("")){mostrarMensaje("NOMBRE ENCUESTADOR: FALTA COMPLETAR");return false;}
+        if(!dni_sup.equals("") || !nombre_sup.equals("")){
+            if (dni_sup.trim().equals("")){mostrarMensaje("DNI SUPERVISOR: FALTA COMPLETAR");return false;}
+            if (dni_sup.length()!=8){mostrarMensaje("DNI SUPERVISOR: COMPLETAR 8 DIGITOS");return false;}
+            if (nombre_sup.trim().equals("")){mostrarMensaje("NOMBRE SUPERVISOR: FALTA COMPLETAR");return false;}
+        }
 
-        if (dni_sup.trim().equals("")){mostrarMensaje("DNI SUPERVISOR: FALTA COMPLETAR");return false;}
-        if (dni_sup.length()!=8){mostrarMensaje("DNI SUPERVISOR: COMPLETAR 8 DIGITOS");return false;}
-        if (nombre_sup.trim().equals("")){mostrarMensaje("NOMBRE SUPERVISOR: FALTA COMPLETAR");return false;}
-
-        if (dni_coor.trim().equals("")){mostrarMensaje("DNI COORDINADOR: FALTA COMPLETAR");return false;}
-        if (dni_coor.length()!=8){mostrarMensaje("DNI COORDINADOR: COMPLETAR 8 DIGITOS");return false;}
-        if (nombre_coord.trim().equals("")){mostrarMensaje("NOMBRE COORDINADOR: FALTA COMPLETAR");return false;}
-
+        if(!dni_coor.equals("") || !nombre_coord.equals("")) {
+            if (dni_coor.trim().equals("")) {
+                mostrarMensaje("DNI COORDINADOR: FALTA COMPLETAR");
+                return false;
+            }
+            if (dni_coor.length() != 8) {
+                mostrarMensaje("DNI COORDINADOR: COMPLETAR 8 DIGITOS");
+                return false;
+            }
+            if (nombre_coord.trim().equals("")) {
+                mostrarMensaje("NOMBRE COORDINADOR: FALTA COMPLETAR");
+                return false;
+            }
+        }
         if (vive == -1){mostrarMensaje("PREGUNTA 15: DEBE MARCAR UNA OPCIÓN"); return false;}
         else{
             if (vive == 1){

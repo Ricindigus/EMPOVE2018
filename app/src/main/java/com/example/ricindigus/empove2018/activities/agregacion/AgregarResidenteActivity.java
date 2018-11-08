@@ -181,6 +181,16 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             }
         }
         if(c2_p206 == 0) {mostrarMensaje("PREGUNTA 206: DEBE INDICAR EL ESTADO CIVIL"); return false;}
+        if(!c2_p205_a.trim().equals("")){
+            if(Integer.parseInt(c2_p205_a)<12 && c2_p206!=6){
+                mostrarMensaje("PREGUNTA 206: DEBE SELECCIONAR ESTADO CIVIL (SOLTERO/A)"); return false;
+            }
+        }
+        if(!c2_p205_m.trim().equals("")){
+            if(c2_p206!=6){
+                mostrarMensaje("PREGUNTA 206: DEBE SELECCIONAR ESTADO CIVIL (SOLTERO/A)"); return false;
+            }
+        }
         return true;
     }
 
