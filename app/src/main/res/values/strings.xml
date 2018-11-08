@@ -223,8 +223,8 @@
 
     <string name="modulo_1_p110">110.EL AGUA QUE UTILIZAN EN EL HOGAR ¿PROCEDE PRINCIPALMENTE DE:</string>
     <string name="modulo_1_p110_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
-    <string name="modulo_1_p110_sp1">1.Red pública, dentro de la itemMarco?</string>
-    <string name="modulo_1_p110_sp2">2.Red pública, fuera de la itemMarco pero dentro del edificio?</string>
+    <string name="modulo_1_p110_sp1">1.Red pública, dentro de la vivienda?</string>
+    <string name="modulo_1_p110_sp2">2.Red pública, fuera de la vivienda pero dentro del edificio?</string>
     <string name="modulo_1_p110_sp3">3.Pilón o pileta de uso público?</string>
     <string name="modulo_1_p110_sp4">4.Camión cisterna u otro similar?</string>
     <string name="modulo_1_p110_sp5">5.Pozo (agua subterránea)?</string>
@@ -571,7 +571,7 @@
     <string name="modulo_4_p407_sp4">4.No confía en los médicos</string>
     <string name="modulo_4_p407_sp5">5.No era tan grave / No fue necesario</string>
     <string name="modulo_4_p407_sp6">6.No tiene seguro</string>
-    <string name="modulo_4_p407_sp7">7.Se auto receto o repitió receta anterior</string>
+    <string name="modulo_4_p407_sp7">7.Se auto medico o repitió receta anterior</string>
     <string name="modulo_4_p407_sp8">8.Falta de tiempo</string>
     <string name="modulo_4_p407_sp9">9.Por maltrato de personal de salud</string>
     <string name="modulo_4_p407_sp10">10.Por falta de documentos</string>
@@ -642,9 +642,9 @@
 
     <string name="modulo_4_p416">416.AHORA ME GUSTARÍA CONVERSAR CON USTED SOBRE SALUD SEXUAL Y REPRODUCTIVA, ES DECIR ACERCA DE LAS DIFERENTES FORMAS O MÉTODOS QUE UNA PAREJA PUEDE USAR PARA EVITAR UN EMBARAZO ¿HA TENIDO USTED ACCESO A LOS SERVICIOS DE:</string>
     <string name="modulo_4_p416_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
-    <string name="modulo_4_p416_sp1">1.Método tradicional (ritmo, coito interrumpido, temperatura corporal, moco cervical, lactancia materna)?</string>
-    <string name="modulo_4_p416_sp2">2.Método moderno (Hormonal, barrera, dispositivos, definitivo)?</string>
-    <string name="modulo_4_p416_sp3">3.Método de emergencia (Píldoras del día siguiente, entre otros)?</string>
+    <string name="modulo_4_p416_sp1">1.Método tradicional (ritmo, temperatura corporal, moco cervical, lactancia materna exclusiva)?</string>
+    <string name="modulo_4_p416_sp2">2.Método moderno (Hormonal, barrera, dispositivo intrauterino, definitivo)?</string>
+    <string name="modulo_4_p416_sp3">3.Anticoncepción de emergencia (Píldora del día siguiente, entre otros)?</string>
     <string name="modulo_4_p416_sp4">4.Prueba de VIH y otras infecciones de transmisión sexual?</string>
     <string name="modulo_4_p416_sp5">5.Educación y consejería?</string>
     <string name="modulo_4_p416_sp6">6.Otro servicio?</string>
