@@ -318,6 +318,7 @@ public class Data {
         return marco;
     }
 
+
     public ArrayList<ItemMarco> getListMarco(String idUsuario){
         ArrayList<ItemMarco> itemMarcos = new ArrayList<>();
         String[] whereArgs = new String[]{String.valueOf(idUsuario)};
@@ -439,6 +440,7 @@ public class Data {
         return funcionario;
     }
 
+
     public ArrayList<VisitaEncuestador> getAllVisitasHogar(String idHogar){
         ArrayList<VisitaEncuestador> visitaEncuestadors = new ArrayList<>();
         String[] whereArgs = new String[]{String.valueOf(idHogar)};
@@ -446,6 +448,41 @@ public class Data {
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablavisitasencuestador,
                     null,SQLConstantes.WHERE_CLAUSE_HOGAR_ID,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                VisitaEncuestador visitaEncuestador = new VisitaEncuestador();
+                visitaEncuestador.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id)));
+                visitaEncuestador.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id_vivienda)));
+                visitaEncuestador.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id_hogar)));
+                visitaEncuestador.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_numero)));
+                visitaEncuestador.setVis_fecha_dd(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_dd)));
+                visitaEncuestador.setVis_fecha_mm(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_mm)));
+                visitaEncuestador.setVis_fecha_aa(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_aa)));
+                visitaEncuestador.setVis_hor_ini(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_hor_ini)));
+                visitaEncuestador.setVis_min_ini(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_min_ini)));
+                visitaEncuestador.setVis_hor_fin(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_hor_fin)));
+                visitaEncuestador.setVis_min_fin(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_min_fin)));
+                visitaEncuestador.setProx_vis_fecha_dd(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_prox_vis_fecha_dd)));
+                visitaEncuestador.setProx_vis_fecha_mm(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_prox_vis_fecha_mm)));
+                visitaEncuestador.setProx_vis_fecha_aa(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_prox_vis_fecha_aa)));
+                visitaEncuestador.setProx_vis_hor(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_prox_vis_hor)));
+                visitaEncuestador.setProx_vis_min(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_prox_vis_min)));
+                visitaEncuestador.setVis_resu(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu)));
+                visitaEncuestador.setVis_resu_esp(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu_esp)));
+                visitaEncuestadors.add(visitaEncuestador);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return visitaEncuestadors;
+    }
+
+    public ArrayList<VisitaEncuestador> getAllVisitasVivienda(String idVivienda){
+        ArrayList<VisitaEncuestador> visitaEncuestadors = new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(idVivienda)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablavisitasencuestador,
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 VisitaEncuestador visitaEncuestador = new VisitaEncuestador();
                 visitaEncuestador.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id)));
@@ -492,6 +529,34 @@ public class Data {
             while (cursor.moveToNext()){
                 Residente residente = new Residente();
                 residente.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id)));
+                residente.setId_informante(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idInformante)));
+                residente.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idHogar)));
+                residente.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idVivienda)));
+                residente.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_numero)));
+                residente.setC2_p202(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p202)));
+                residente.setC2_p203(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p203)));
+                residente.setC2_p204(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p204)));
+                residente.setC2_p205_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_a)));
+                residente.setC2_p205_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_m)));
+                residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
+                residentes.add(residente);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return residentes;
+    }
+
+    public ArrayList<Residente> getAllResidentesVivienda(String idVivienda){
+        ArrayList<Residente> residentes = new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(idVivienda)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaresidentes,
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                Residente residente = new Residente();
+                residente.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id)));
                 residente.setId_informante(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idInformante)));
                 residente.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idHogar)));
                 residente.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idVivienda)));
@@ -819,9 +884,9 @@ public class Data {
      * retornar pojo modulo1
      * */
 
-    public Modulo1V getModulo1V(String idEncuestado){
+    public Modulo1V getModulo1V(String idVivienda){
         Modulo1V modulo1V = null;
-        String[] whereArgs = new String[]{idEncuestado};
+        String[] whereArgs = new String[]{idVivienda};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo1v,
@@ -889,6 +954,46 @@ public class Data {
         return modulo1H;
     }
 
+    public ArrayList<Modulo1H> getAllModulo1H(String idVivienda){
+        ArrayList<Modulo1H> modulo1Hs = new ArrayList<>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo1h,
+                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+            while(cursor.moveToNext()){
+                Modulo1H modulo1H = new Modulo1H();
+                modulo1H.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_id)));
+                modulo1H.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_idVivienda)));
+                modulo1H.setC1_p108(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p108)));
+                modulo1H.setC1_p108_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p108_o)));
+                modulo1H.setC1_p109(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p109)));
+                modulo1H.setC1_p109_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p109_o)));
+                modulo1H.setC1_p110(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p110)));
+                modulo1H.setC1_p110_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p110_o)));
+                modulo1H.setC1_p111(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p111)));
+                modulo1H.setC1_p111_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p111_o)));
+                modulo1H.setC1_p112(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p112)));
+                modulo1H.setC1_p112_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p112_o)));
+                modulo1H.setC1_p113_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_1)));
+                modulo1H.setC1_p113_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_2)));
+                modulo1H.setC1_p113_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_3)));
+                modulo1H.setC1_p113_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_4)));
+                modulo1H.setC1_p113_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_5)));
+                modulo1H.setC1_p113_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_6)));
+                modulo1H.setC1_p113_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_7)));
+                modulo1H.setC1_p113_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_8)));
+                modulo1H.setC1_p113_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_9)));
+                modulo1H.setC1_p113_7_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_7_o)));
+                modulo1H.setC1_p113_8_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_8_o)));
+                modulo1H.setC1_p113_9_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_9_o)));
+                modulo1Hs.add(modulo1H);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo1Hs;
+    }
 
     public Modulo3 getModulo3(String idEncuestado){
         Modulo3 modulo3 = null;
@@ -956,6 +1061,72 @@ public class Data {
         return modulo3;
     }
 
+    public ArrayList<Modulo3> getAllModulo3(String idVivienda){
+        ArrayList<Modulo3> modulo3s = new ArrayList<>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo3,
+                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                Modulo3 modulo3 = new Modulo3();
+                modulo3.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id)));
+                modulo3.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idInformante)));
+                modulo3.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idHogar)));
+                modulo3.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idVivienda)));
+                modulo3.setC3_p301_d(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_d)));
+                modulo3.setC3_p301_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_m)));
+                modulo3.setC3_p301_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_a )));
+                modulo3.setC3_p302(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p302 )));
+                modulo3.setC3_p303_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_m )));
+                modulo3.setC3_p303_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_a )));
+                modulo3.setC3_p303_no_nacio(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_no_nacio)));
+                modulo3.setC3_p304(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p304 )));
+                modulo3.setC3_p305(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p305 )));
+                modulo3.setC3_p305_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p305_o)));
+                modulo3.setC3_p306(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p306 )));
+                modulo3.setC3_p306_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p306_o )));
+                modulo3.setC3_p307_d(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p307_d )));
+                modulo3.setC3_p307_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p307_m )));
+                modulo3.setC3_p307_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p307_a )));
+                modulo3.setC3_p308_e(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p308_e )));
+                modulo3.setC3_p308_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p308_m )));
+                modulo3.setC3_p308_e(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p308_e_seleccion )));
+                modulo3.setC3_p308_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p308_m_seleccion )));
+                modulo3.setC3_p310_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_1)));
+                modulo3.setC3_p310_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_2)));
+                modulo3.setC3_p310_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_3 )));
+                modulo3.setC3_p310_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p310_4 )));
+                modulo3.setC3_p311(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p311)));
+                modulo3.setC3_p312_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_dep)));
+                modulo3.setC3_p312_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_prov)));
+                modulo3.setC3_p312_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p312_dist)));
+                modulo3.setC3_p313(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p313)));
+                modulo3.setC3_p314(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p314 )));
+                modulo3.setC3_p314_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p314_o)));
+                modulo3.setC3_p315_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_1 )));
+                modulo3.setC3_p315_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_2)));
+                modulo3.setC3_p315_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_3 )));
+                modulo3.setC3_p315_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_4 )));
+                modulo3.setC3_p315_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_5 )));
+                modulo3.setC3_p315_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_6)));
+                modulo3.setC3_p315_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_7)));
+                modulo3.setC3_p315_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_8)));
+                modulo3.setC3_p315_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_9)));
+                modulo3.setC3_p315_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_10)));
+                modulo3.setC3_p315_10_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p315_10_o)));
+                modulo3.setC3_p316(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p316)));
+                modulo3.setC3_p316_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p316_o )));
+                modulo3.setC3_p317(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p317 )));
+                modulo3.setC3_p318(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318)));
+                modulo3s.add(modulo3);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo3s;
+    }
+
     public ArrayList<M3Pregunta309> getAllM3Pregunta309(String idEncuestado){
         ArrayList<M3Pregunta309> m3Pregunta309s = new ArrayList<>();
         String[] whereArgs = new String[]{idEncuestado};
@@ -967,6 +1138,35 @@ public class Data {
                 M3Pregunta309 m3Pregunta309 = new M3Pregunta309();
                 m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
                 m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_idEncuestado)));
+                m3Pregunta309.setC3_p309_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p)));
+                m3Pregunta309.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_numero)));
+                m3Pregunta309.setC3_p309_p_nom(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p_nom)));
+                m3Pregunta309.setC3_p309_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_c)));
+                m3Pregunta309.setC3_p309_mod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_mod)));
+                m3Pregunta309.setC3_p309_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_m)));
+                m3Pregunta309.setC3_p309_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_a)));
+                m3Pregunta309.setC3_p309_m_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_m_cod)));
+                m3Pregunta309.setC3_p309_a_cod(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_a_cod)));
+                m3Pregunta309s.add(m3Pregunta309);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return m3Pregunta309s;
+    }
+
+    public ArrayList<M3Pregunta309> getAllM3Pregunta309Vivienda(String idVivienda){
+        ArrayList<M3Pregunta309> m3Pregunta309s = new ArrayList<>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablam3p309rutas,
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
+            while(cursor.moveToNext()){
+                M3Pregunta309 m3Pregunta309 = new M3Pregunta309();
+                m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
+                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_idEncuestado)));
+                m3Pregunta309.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id_vivienda)));
                 m3Pregunta309.setC3_p309_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p)));
                 m3Pregunta309.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_numero)));
                 m3Pregunta309.setC3_p309_p_nom(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p_nom)));
@@ -1036,6 +1236,31 @@ public class Data {
         return m3Pregunta318s;
     }
 
+    public ArrayList<M3Pregunta318> getAllM3Pregunta318Vivienda(String idVivienda){
+        ArrayList<M3Pregunta318> m3Pregunta318s = new ArrayList<>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablam3p318personas,
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
+            while(cursor.moveToNext()){
+                M3Pregunta318 m3Pregunta318 = new M3Pregunta318();
+                m3Pregunta318.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_id)));
+                m3Pregunta318.setIdEncuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_idEncuestado)));
+                m3Pregunta318.setIdEncuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_id_vivienda)));
+                m3Pregunta318.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_numero)));
+                m3Pregunta318.setC3_p318_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_f)));
+                m3Pregunta318.setC3_p318_s(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_s)));
+                m3Pregunta318.setC3_p318_e(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_e)));
+                m3Pregunta318.setC3_p318_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_p)));
+                m3Pregunta318s.add(m3Pregunta318);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return m3Pregunta318s;
+    }
+
     public M3Pregunta318 getM3Pregunta318(String id){
         M3Pregunta318 m3Pregunta318 = null;
         String[] whereArgs = new String[]{id};
@@ -1060,62 +1285,7 @@ public class Data {
         return m3Pregunta318;
     }
 
-    public Modulo5 getModulo5(String idEncuestado){
-        Modulo5 modulo5 = null;
-        String[] whereArgs = new String[]{idEncuestado};
-        Cursor cursor = null;
-        try{
-            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo5,
-                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
-            if(cursor.getCount() == 1){
-                cursor.moveToFirst();
-                modulo5 = new Modulo5();
-                modulo5.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id)));
-                modulo5.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idInformante)));
-                modulo5.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idHogar)));
-                modulo5.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idVivienda)));
-                modulo5.setC5_p501(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p501)));
-                modulo5.setC5_p502_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_c)));
-                modulo5.setC5_p502(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502)));
-                modulo5.setC5_p503(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p503)));
-                modulo5.setC5_p504(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p504)));
-                modulo5.setC5_p505(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p505)));
-                modulo5.setC5_p506_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_1)));
-                modulo5.setC5_p506_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_2)));
-                modulo5.setC5_p506_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_3)));
-                modulo5.setC5_p506_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_4)));
-                modulo5.setC5_p507(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507)));
-                modulo5.setC5_p507_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_dist)));
-                modulo5.setC5_p507_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_prov)));
-                modulo5.setC5_p507_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_dep)));
-                modulo5.setC5_p508_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_1)));
-                modulo5.setC5_p508_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_2)));
-                modulo5.setC5_p508_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_3)));
-                modulo5.setC5_p508_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_4)));
-                modulo5.setC5_p508_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_5)));
-                modulo5.setC5_p508_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_6)));
-                modulo5.setC5_p508_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_7)));
-                modulo5.setC5_p508_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_8)));
-                modulo5.setC5_p508_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_9)));
-                modulo5.setC5_p508_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_10)));
-                modulo5.setC5_p508_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_11)));
-                modulo5.setC5_p508_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_o)));
-                modulo5.setC5_p509(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p509)));
-                modulo5.setC5_p510(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p510)));
-                modulo5.setC5_p511(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p511)));
-                modulo5.setC5_p511_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p511_o)));
-                modulo5.setC5_p512(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p512)));
-                modulo5.setC5_p512_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p512_o)));
-                modulo5.setC5_p513(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513)));
-                modulo5.setC5_p513_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513_o)));
-                modulo5.setObs_cap5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_obs_cap5)));
-                modulo5.setC5_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_estado)));
-            }
-        }finally{
-            if(cursor != null) cursor.close();
-        }
-        return modulo5;
-    }
+
 
     public Modulo4 getModulo4(String idEncuestado){
         Modulo4 modulo4 = null;
@@ -1227,6 +1397,232 @@ public class Data {
             if(cursor != null) cursor.close();
         }
         return modulo4;
+    }
+
+    public ArrayList<Modulo4> getAllModulo4(String idVivienda){
+        ArrayList<Modulo4> modulo4s = new ArrayList<>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo4,
+                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                Modulo4 modulo4 = new Modulo4();
+                modulo4.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id)));
+                modulo4.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idInformante)));
+                modulo4.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idHogar)));
+                modulo4.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idVivienda)));
+                modulo4.setC4_p401_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_1)));
+                modulo4.setC4_p401_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_2)));
+                modulo4.setC4_p401_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_3)));
+                modulo4.setC4_p401_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_4)));
+                modulo4.setC4_p401_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_5)));
+                modulo4.setC4_p401_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_o)));
+                modulo4.setC4_p402(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p402)));
+                modulo4.setC4_p403_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_1)));
+                modulo4.setC4_p403_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_2)));
+                modulo4.setC4_p403_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_3)));
+                modulo4.setC4_p403_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_4)));
+                modulo4.setC4_p403_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_5)));
+                modulo4.setC4_p403_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_6)));
+                modulo4.setC4_p403_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_7)));
+                modulo4.setC4_p403_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_8)));
+                modulo4.setC4_p403_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_9)));
+                modulo4.setC4_p403_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_10)));
+                modulo4.setC4_p403_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_11)));
+                modulo4.setC4_p403_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_12)));
+                modulo4.setC4_p403_13(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_13)));
+                modulo4.setC4_p403_14(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_14)));
+                modulo4.setC4_p403_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p403_o)));
+                modulo4.setC4_p404(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p404)));
+                modulo4.setC4_p405_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p405_1)));
+                modulo4.setC4_p405_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p405_2)));
+                modulo4.setC4_p405_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p405_3)));
+                modulo4.setC4_p405_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p405_4)));
+                modulo4.setC4_p405_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p405_5)));
+                modulo4.setC4_p405_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p405_6)));
+                modulo4.setC4_p405_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p405_7)));
+                modulo4.setC4_p406_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_1)));
+                modulo4.setC4_p406_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_2)));
+                modulo4.setC4_p406_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_3)));
+                modulo4.setC4_p406_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_4)));
+                modulo4.setC4_p406_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_5)));
+                modulo4.setC4_p406_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_6)));
+                modulo4.setC4_p406_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_7)));
+                modulo4.setC4_p406_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_8)));
+                modulo4.setC4_p406_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p406_o)));
+                modulo4.setC4_p407_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_1)));
+                modulo4.setC4_p407_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_2)));
+                modulo4.setC4_p407_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_3)));
+                modulo4.setC4_p407_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_4)));
+                modulo4.setC4_p407_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_5)));
+                modulo4.setC4_p407_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_6)));
+                modulo4.setC4_p407_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_7)));
+                modulo4.setC4_p407_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_8)));
+                modulo4.setC4_p407_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_9)));
+                modulo4.setC4_p407_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_10)));
+                modulo4.setC4_p407_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_11)));
+                modulo4.setC4_p407_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_12)));
+                modulo4.setC4_p407_13(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_13)));
+                modulo4.setC4_p407_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p407_o)));
+                modulo4.setC4_p408_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p408_1)));
+                modulo4.setC4_p408_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p408_2)));
+                modulo4.setC4_p408_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p408_3)));
+                modulo4.setC4_p408_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p408_4)));
+                modulo4.setC4_p408_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p408_5)));
+                modulo4.setC4_p408_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p408_6)));
+                modulo4.setC4_p409(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p409)));
+                modulo4.setC4_p410(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p410)));
+                modulo4.setC4_p411_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_1)));
+                modulo4.setC4_p411_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_2)));
+                modulo4.setC4_p411_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_3)));
+                modulo4.setC4_p411_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_4)));
+                modulo4.setC4_p411_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_5)));
+                modulo4.setC4_p411_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_6)));
+                modulo4.setC4_p411_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_7)));
+                modulo4.setC4_p411_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_8)));
+                modulo4.setC4_p411_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_9)));
+                modulo4.setC4_p411_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_10)));
+                modulo4.setC4_p411_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_11)));
+                modulo4.setC4_p411_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_12)));
+                modulo4.setC4_p411_13(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_13)));
+                modulo4.setC4_p411_14(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_14)));
+                modulo4.setC4_p411_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p411_o)));
+                modulo4.setC4_p412(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p412)));
+                modulo4.setC4_p413(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p413)));
+                modulo4.setC4_p414(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p414)));
+                modulo4.setC4_p415(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p415)));
+                modulo4.setC4_p416_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_1)));
+                modulo4.setC4_p416_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_2)));
+                modulo4.setC4_p416_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_3)));
+                modulo4.setC4_p416_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_4)));
+                modulo4.setC4_p416_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_5)));
+                modulo4.setC4_p416_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_6)));
+                modulo4.setC4_p416_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_7)));
+                modulo4.setC4_p416_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_8)));
+                modulo4.setC4_p416_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_o)));
+                modulo4.setObs_cap4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_obs_cap4)));
+                modulo4.setC4_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_estado)));
+                modulo4s.add(modulo4);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo4s;
+    }
+
+    public Modulo5 getModulo5(String idEncuestado){
+        Modulo5 modulo5 = null;
+        String[] whereArgs = new String[]{idEncuestado};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo5,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                modulo5 = new Modulo5();
+                modulo5.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id)));
+                modulo5.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idInformante)));
+                modulo5.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idHogar)));
+                modulo5.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idVivienda)));
+                modulo5.setC5_p501(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p501)));
+                modulo5.setC5_p502_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_c)));
+                modulo5.setC5_p502(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502)));
+                modulo5.setC5_p503(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p503)));
+                modulo5.setC5_p504(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p504)));
+                modulo5.setC5_p505(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p505)));
+                modulo5.setC5_p506_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_1)));
+                modulo5.setC5_p506_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_2)));
+                modulo5.setC5_p506_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_3)));
+                modulo5.setC5_p506_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_4)));
+                modulo5.setC5_p507(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507)));
+                modulo5.setC5_p507_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_dist)));
+                modulo5.setC5_p507_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_prov)));
+                modulo5.setC5_p507_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_dep)));
+                modulo5.setC5_p508_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_1)));
+                modulo5.setC5_p508_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_2)));
+                modulo5.setC5_p508_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_3)));
+                modulo5.setC5_p508_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_4)));
+                modulo5.setC5_p508_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_5)));
+                modulo5.setC5_p508_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_6)));
+                modulo5.setC5_p508_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_7)));
+                modulo5.setC5_p508_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_8)));
+                modulo5.setC5_p508_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_9)));
+                modulo5.setC5_p508_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_10)));
+                modulo5.setC5_p508_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_11)));
+                modulo5.setC5_p508_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_o)));
+                modulo5.setC5_p509(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p509)));
+                modulo5.setC5_p510(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p510)));
+                modulo5.setC5_p511(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p511)));
+                modulo5.setC5_p511_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p511_o)));
+                modulo5.setC5_p512(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p512)));
+                modulo5.setC5_p512_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p512_o)));
+                modulo5.setC5_p513(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513)));
+                modulo5.setC5_p513_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513_o)));
+                modulo5.setObs_cap5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_obs_cap5)));
+                modulo5.setC5_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_estado)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo5;
+    }
+
+    public ArrayList<Modulo5> getAllModulo5(String idVivienda){
+        ArrayList<Modulo5> modulo5s = new ArrayList<>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo5,
+                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                Modulo5 modulo5 = new Modulo5();
+                modulo5.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id)));
+                modulo5.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idInformante)));
+                modulo5.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idHogar)));
+                modulo5.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idVivienda)));
+                modulo5.setC5_p501(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p501)));
+                modulo5.setC5_p502_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_c)));
+                modulo5.setC5_p502(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502)));
+                modulo5.setC5_p503(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p503)));
+                modulo5.setC5_p504(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p504)));
+                modulo5.setC5_p505(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p505)));
+                modulo5.setC5_p506_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_1)));
+                modulo5.setC5_p506_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_2)));
+                modulo5.setC5_p506_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_3)));
+                modulo5.setC5_p506_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p506_4)));
+                modulo5.setC5_p507(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507)));
+                modulo5.setC5_p507_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_dist)));
+                modulo5.setC5_p507_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_prov)));
+                modulo5.setC5_p507_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p507_dep)));
+                modulo5.setC5_p508_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_1)));
+                modulo5.setC5_p508_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_2)));
+                modulo5.setC5_p508_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_3)));
+                modulo5.setC5_p508_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_4)));
+                modulo5.setC5_p508_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_5)));
+                modulo5.setC5_p508_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_6)));
+                modulo5.setC5_p508_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_7)));
+                modulo5.setC5_p508_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_8)));
+                modulo5.setC5_p508_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_9)));
+                modulo5.setC5_p508_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_10)));
+                modulo5.setC5_p508_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_11)));
+                modulo5.setC5_p508_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p508_o)));
+                modulo5.setC5_p509(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p509)));
+                modulo5.setC5_p510(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p510)));
+                modulo5.setC5_p511(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p511)));
+                modulo5.setC5_p511_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p511_o)));
+                modulo5.setC5_p512(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p512)));
+                modulo5.setC5_p512_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p512_o)));
+                modulo5.setC5_p513(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513)));
+                modulo5.setC5_p513_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513_o)));
+                modulo5.setObs_cap5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_obs_cap5)));
+                modulo5.setC5_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_estado)));
+                modulo5s.add(modulo5);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo5s;
     }
 
     public Modulo6 getModulo6(String idEncuestado){
@@ -1356,6 +1752,133 @@ public class Data {
         return modulo6;
     }
 
+    public ArrayList<Modulo6> getAllModulo6(String idVivienda){
+        ArrayList<Modulo6> modulo6s = new ArrayList<Modulo6>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo6,
+                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                Modulo6 modulo6 = new Modulo6();
+                modulo6.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id)));
+                modulo6.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idInformante)));
+                modulo6.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idHogar)));
+                modulo6.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idVivienda)));
+                modulo6.setC6_p601(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p601)));
+                modulo6.setC6_p602(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p602)));
+                modulo6.setC6_p603(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p603)));
+                modulo6.setC6_p604_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_1)));
+                modulo6.setC6_p604_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_2)));
+                modulo6.setC6_p604_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_3)));
+                modulo6.setC6_p604_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_4)));
+                modulo6.setC6_p604_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_5)));
+                modulo6.setC6_p604_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_6)));
+                modulo6.setC6_p604_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_7)));
+                modulo6.setC6_p604_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_8)));
+                modulo6.setC6_p604_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_9)));
+                modulo6.setC6_p604_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_10)));
+                modulo6.setC6_p604_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_11)));
+                modulo6.setC6_p604_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p604_o)));
+                modulo6.setC6_p605(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p605)));
+                modulo6.setC6_p606(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p606)));
+                modulo6.setC6_p607(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p607)));
+                modulo6.setC6_p608(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p608)));
+                modulo6.setC6_p608_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p608_o)));
+                modulo6.setC6_p609(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p609)));
+                modulo6.setC6_p610_pd(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pd)));
+                modulo6.setC6_p610_pl(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pl)));
+                modulo6.setC6_p610_pm(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pm)));
+                modulo6.setC6_p610_pmi(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pmi)));
+                modulo6.setC6_p610_pj(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pj)));
+                modulo6.setC6_p610_pv(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pv)));
+                modulo6.setC6_p610_ps(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_ps)));
+                modulo6.setC6_p610_pt(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_pt)));
+                modulo6.setC6_p610_sd(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sd)));
+                modulo6.setC6_p610_sl(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sl)));
+                modulo6.setC6_p610_sm(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sm)));
+                modulo6.setC6_p610_smi(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_smi)));
+                modulo6.setC6_p610_sj(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sj)));
+                modulo6.setC6_p610_sv(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_sv)));
+                modulo6.setC6_p610_ss(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_ss)));
+                modulo6.setC6_p610_st(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_st)));
+                modulo6.setC6_p610_t(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p610_t)));
+                modulo6.setC6_p611(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p611)));
+                modulo6.setC6_p612(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p612)));
+                modulo6.setC6_p612_nro(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p612_nro)));
+                modulo6.setC6_p613(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p613)));
+                modulo6.setC6_p614_mon(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p614_mon)));
+                modulo6.setC6_p614_esp(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p614_esp)));
+                modulo6.setC6_p615_mon(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p615_mon)));
+                modulo6.setC6_p615_esp(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p615_esp)));
+                modulo6.setC6_p616_mon(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p616_mon)));
+                modulo6.setC6_p616_esp(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p616_esp)));
+                modulo6.setC6_p616_nas(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p616_nas)));
+                modulo6.setC6_p617(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p617)));
+                modulo6.setC6_p617_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p617_dist)));
+                modulo6.setC6_p617_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p617_prov)));
+                modulo6.setC6_p617_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p617_dep)));
+                modulo6.setC6_p625_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_1)));
+                modulo6.setC6_p625_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_2)));
+                modulo6.setC6_p625_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_3)));
+                modulo6.setC6_p625_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_4)));
+                modulo6.setC6_p625_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_5)));
+                modulo6.setC6_p625_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_6)));
+                modulo6.setC6_p625_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p625_o)));
+                modulo6.setC6_p618(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p618)));
+                modulo6.setC6_p619_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_1)));
+                modulo6.setC6_p619_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_2)));
+                modulo6.setC6_p619_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_3)));
+                modulo6.setC6_p619_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_4)));
+                modulo6.setC6_p619_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_5)));
+                modulo6.setC6_p619_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_6)));
+                modulo6.setC6_p619_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_7)));
+                modulo6.setC6_p619_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_8)));
+                modulo6.setC6_p619_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_9)));
+                modulo6.setC6_p619_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p619_o)));
+                modulo6.setC6_p620(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p620)));
+                modulo6.setC6_p621(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p621)));
+                modulo6.setC6_p622(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p622)));
+                modulo6.setC6_p622_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p622_o)));
+                modulo6.setC6_p623(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p623)));
+                modulo6.setC6_p623_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p623_o)));
+                modulo6.setC6_p624(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p624)));
+                modulo6.setC6_p626(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p626)));
+                modulo6.setC6_p627(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p627)));
+                modulo6.setC6_p628(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p628)));
+                modulo6.setC6_p629_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_1)));
+                modulo6.setC6_p629_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_2)));
+                modulo6.setC6_p629_1_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_1_f)));
+                modulo6.setC6_p629_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_4)));
+                modulo6.setC6_p629_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_o)));
+                modulo6.setC6_p629_1_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_1_m)));
+                modulo6.setC6_p629_2_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_2_f)));
+                modulo6.setC6_p629_2_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_2_m)));
+                modulo6.setC6_p629_2_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_2_m)));
+                modulo6.setC6_p629_3_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_3_m)));
+                modulo6.setC6_p629_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_3)));
+                modulo6.setC6_p629_4_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_4_f)));
+                modulo6.setC6_p629_4_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p629_4_m)));
+                modulo6.setC6_p630_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1)));
+                modulo6.setC6_p630_1med(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1med)));
+                modulo6.setC6_p630_1o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1o)));
+                modulo6.setC6_p630_1frec(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1frec)));
+                modulo6.setC6_p630_1mont(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_1mont)));
+                modulo6.setC6_p630_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2)));
+                modulo6.setC6_p630_2med(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2med)));
+                modulo6.setC6_p630_2o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2o)));
+                modulo6.setC6_p630_2frec(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2frec)));
+                modulo6.setC6_p630_2mont(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2mont)));
+                modulo6.setObs_cap6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_obs_cap6)));
+                modulo6.setC6_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_estado)));
+                modulo6s.add(modulo6);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo6s;
+    }
+
     public boolean menor_edad_hogar(String idHogar){
         boolean existe=false;
         String[] whereArgs = new String[]{idHogar};
@@ -1440,6 +1963,76 @@ public class Data {
             if(cursor != null) cursor.close();
         }
         return modulo7;
+    }
+
+    public ArrayList<Modulo7> getAllModulo7(String idVivienda) {
+        ArrayList<Modulo7> modulo7s = new ArrayList<>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo7,
+                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                Modulo7 modulo7 = new Modulo7();
+                modulo7.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id)));
+                modulo7.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idInformante)));
+                modulo7.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idHogar)));
+                modulo7.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idVivienda)));
+                modulo7.setC7_p701(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p701)));
+                modulo7.setC7_p702_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_1)));
+                modulo7.setC7_p702_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_2)));
+                modulo7.setC7_p702_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_3)));
+                modulo7.setC7_p702_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_4)));
+                modulo7.setC7_p702_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_5)));
+                modulo7.setC7_p702_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_6)));
+                modulo7.setC7_p702_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_7)));
+                modulo7.setC7_p702_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_8)));
+                modulo7.setC7_p702_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_9)));
+                modulo7.setC7_p702_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_10)));
+                modulo7.setC7_p702_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_o)));
+                modulo7.setC7_p703(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p703)));
+                modulo7.setC7_p704_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p704_1)));
+                modulo7.setC7_p704_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p704_2)));
+                modulo7.setC7_p704_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p704_3)));
+                modulo7.setC7_p704_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p704_4)));
+                modulo7.setC7_p704_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p704_5)));
+                modulo7.setC7_p704_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p704_6)));
+                modulo7.setC7_p704_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p704_o)));
+                modulo7.setC7_p705_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p705_1)));
+                modulo7.setC7_p705_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p705_2)));
+                modulo7.setC7_p705_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p705_3)));
+                modulo7.setC7_p705_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p705_4)));
+                modulo7.setC7_p705_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p705_5)));
+                modulo7.setC7_p705_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p705_6)));
+                modulo7.setC7_p705_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p705_7)));
+                modulo7.setC7_p705_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p705_o)));
+                modulo7.setC7_p706(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p706)));
+                modulo7.setC7_p707(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p707)));
+                modulo7.setC7_p707_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p707_o)));
+                modulo7.setC7_p708_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p708_1)));
+                modulo7.setC7_p708_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p708_2)));
+                modulo7.setC7_p708_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p708_3)));
+                modulo7.setC7_p708_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p708_4)));
+                modulo7.setC7_p708_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p708_5)));
+                modulo7.setC7_p709_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_1)));
+                modulo7.setC7_p709_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_2)));
+                modulo7.setC7_p709_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_3)));
+                modulo7.setC7_p709_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_4)));
+                modulo7.setC7_p709_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_5)));
+                modulo7.setC7_p709_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_6)));
+                modulo7.setC7_p709_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_7)));
+                modulo7.setC7_p709_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_8)));
+                modulo7.setC7_p709_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_9)));
+                modulo7.setC7_p709_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_10)));
+                modulo7.setC7_p709_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_o)));
+                modulo7.setObs_cap7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_obs_cap7)));
+                modulo7.setC7_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_estado)));
+                modulo7s.add(modulo7);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return modulo7s;
     }
 
     public Modulo8 getModulo8(String idEncuestado) {
@@ -1596,6 +2189,157 @@ public class Data {
         return modulo8;
     }
 
+    public ArrayList<Modulo8> getAllModulo8(String idVivienda) {
+        ArrayList<Modulo8> modulo8s = new ArrayList<>();
+        String[] whereArgs = new String[]{idVivienda};
+        Cursor cursor = null;
+        try {
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo8,
+                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA, whereArgs, null,null, null);
+            if(cursor.moveToNext()){
+                Modulo8 modulo8 = new Modulo8();
+                modulo8.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id)));
+                modulo8.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idInformante)));
+                modulo8.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idHogar)));
+                modulo8.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idVivienda)));
+                modulo8.setC8_p801(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p801)));
+                modulo8.setC8_p802(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p802)));
+                modulo8.setC8_p803(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p803)));
+                modulo8.setC8_p804(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p804)));
+                modulo8.setC8_p805_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p805_1)));
+                modulo8.setC8_p805_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p805_2)));
+                modulo8.setC8_p805_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p805_3)));
+                modulo8.setC8_p805_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p805_4)));
+                modulo8.setC8_p805_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p805_5)));
+                modulo8.setC8_p806_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p806_1)));
+                modulo8.setC8_p806_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p806_2)));
+                modulo8.setC8_p806_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p806_3)));
+                modulo8.setC8_p806_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p806_4)));
+                modulo8.setC8_p806_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p806_5)));
+                modulo8.setC8_p806_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p806_6)));
+                modulo8.setC8_p807(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p807)));
+                modulo8.setC8_p808_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_1)));
+                modulo8.setC8_p808_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_2)));
+                modulo8.setC8_p808_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_3)));
+                modulo8.setC8_p808_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_4)));
+                modulo8.setC8_p808_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_5)));
+                modulo8.setC8_p808_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_6)));
+                modulo8.setC8_p808_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_7)));
+                modulo8.setC8_p808_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_8)));
+                modulo8.setC8_p808_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_9)));
+                modulo8.setC8_p808_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_10)));
+                modulo8.setC8_p808_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_11)));
+                modulo8.setC8_p808_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_12)));
+                modulo8.setC8_p808_13(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_13)));
+                modulo8.setC8_p808_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p808_o)));
+                modulo8.setC8_p809(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p809)));
+                modulo8.setC8_p810_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_1)));
+                modulo8.setC8_p810_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_2)));
+                modulo8.setC8_p810_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_3)));
+                modulo8.setC8_p810_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_4)));
+                modulo8.setC8_p810_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_5)));
+                modulo8.setC8_p810_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_6)));
+                modulo8.setC8_p810_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_7)));
+                modulo8.setC8_p810_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_8)));
+                modulo8.setC8_p810_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_9)));
+                modulo8.setC8_p810_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_10)));
+                modulo8.setC8_p810_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_11)));
+                modulo8.setC8_p810_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_12)));
+                modulo8.setC8_p810_13(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_13)));
+                modulo8.setC8_p810_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p810_o)));
+                modulo8.setC8_p811(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p811)));
+                modulo8.setC8_p812(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p812)));
+                modulo8.setC8_p813_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_1)));
+                modulo8.setC8_p813_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_2)));
+                modulo8.setC8_p813_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_3)));
+                modulo8.setC8_p813_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_4)));
+                modulo8.setC8_p813_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_5)));
+                modulo8.setC8_p813_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_6)));
+                modulo8.setC8_p813_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_7)));
+                modulo8.setC8_p813_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_8)));
+                modulo8.setC8_p813_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_9)));
+                modulo8.setC8_p813_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_10)));
+                modulo8.setC8_p813_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_11)));
+                modulo8.setC8_p813_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_12)));
+                modulo8.setC8_p813_13(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_13)));
+                modulo8.setC8_p813_14(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_14)));
+                modulo8.setC8_p813_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p813_o)));
+                modulo8.setC8_p814_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p814_1)));
+                modulo8.setC8_p814_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p814_2)));
+                modulo8.setC8_p814_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p814_3)));
+                modulo8.setC8_p814_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p814_4)));
+                modulo8.setC8_p814_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p814_5)));
+                modulo8.setC8_p814_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p814_6)));
+                modulo8.setC8_p814_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p814_7)));
+                modulo8.setC8_p814_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p814_8)));
+                modulo8.setC8_p815(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p815)));
+                modulo8.setC8_p816_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_1)));
+                modulo8.setC8_p816_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_2)));
+                modulo8.setC8_p816_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_3)));
+                modulo8.setC8_p816_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_4)));
+                modulo8.setC8_p816_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_5)));
+                modulo8.setC8_p816_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_6)));
+                modulo8.setC8_p816_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_7)));
+                modulo8.setC8_p816_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_8)));
+                modulo8.setC8_p816_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_9)));
+                modulo8.setC8_p816_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_10)));
+                modulo8.setC8_p816_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_11)));
+                modulo8.setC8_p816_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_12)));
+                modulo8.setC8_p816_13(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_13)));
+                modulo8.setC8_p816_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p816_o)));
+                modulo8.setC8_p817(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p817)));
+                modulo8.setC8_p818(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p818)));
+                modulo8.setC8_p819_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_1)));
+                modulo8.setC8_p819_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_2)));
+                modulo8.setC8_p819_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_3)));
+                modulo8.setC8_p819_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_4)));
+                modulo8.setC8_p819_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_5)));
+                modulo8.setC8_p819_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_6)));
+                modulo8.setC8_p819_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_7)));
+                modulo8.setC8_p819_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_8)));
+                modulo8.setC8_p819_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_9)));
+                modulo8.setC8_p819_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_10)));
+                modulo8.setC8_p819_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_11)));
+                modulo8.setC8_p819_12(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_12)));
+                modulo8.setC8_p819_13(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_13)));
+                modulo8.setC8_p819_14(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_14)));
+                modulo8.setC8_p819_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p819_o)));
+                modulo8.setC8_p820_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_1)));
+                modulo8.setC8_p820_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_2)));
+                modulo8.setC8_p820_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_3)));
+                modulo8.setC8_p820_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_4)));
+                modulo8.setC8_p820_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_5)));
+                modulo8.setC8_p820_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_6)));
+                modulo8.setC8_p820_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_7)));
+                modulo8.setC8_p820_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_8)));
+                modulo8.setC8_p820_9(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_9)));
+                modulo8.setC8_p820_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_10)));
+                modulo8.setC8_p820_11(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_11)));
+                modulo8.setC8_p820_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p820_o)));
+                modulo8.setC8_p821_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p821_1)));
+                modulo8.setC8_p821_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p821_2)));
+                modulo8.setC8_p821_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p821_3)));
+                modulo8.setC8_p821_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p821_4)));
+                modulo8.setC8_p821_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p821_5)));
+                modulo8.setC8_p821_6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p821_6)));
+                modulo8.setC8_p821_7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p821_7)));
+                modulo8.setC8_p821_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p821_8)));
+                modulo8.setC8_p822(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p822)));
+                modulo8.setC8_p823_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_1)));
+                modulo8.setC8_p823_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_2)));
+                modulo8.setC8_p823_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_3)));
+                modulo8.setC8_p823_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_4)));
+                modulo8.setC8_p823_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_5)));
+                modulo8.setObs_cap8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_obs_cap8)));
+                modulo8.setC8_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_estado)));
+                modulo8s.add(modulo8);
+            }
+        }finally {
+            if (cursor!=null) cursor.close();
+        }
+
+        return modulo8s;
+    }
 
     public POJOLayout getLayouts(String idEncuestado){
         POJOLayout pojoLayout = null;

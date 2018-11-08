@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                     if(nombreUsuario.equals("ADMIN")){
                         Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
                         startActivity(intent);
+                        finish();
                     }else{
                         Data data =  new Data(LoginActivity.this);
                         data.open();
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("nombreUsuario",nombreUsuario);
                                 intent.putExtra("idUsuario",user.get_id()+"");
                                 startActivity(intent);
+                                finish();
                             }else{
                                 Toast.makeText(LoginActivity.this, "PASSWORD INCORRECTO", Toast.LENGTH_SHORT).show();
                             }

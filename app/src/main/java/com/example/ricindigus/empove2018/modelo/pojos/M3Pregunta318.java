@@ -7,6 +7,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 public class M3Pregunta318 {
     private String _id;
     private String idEncuestado;
+    private String id_vivienda;
     private String numero;
     private String c3_p318_f;
     private String c3_p318_s;
@@ -16,11 +17,20 @@ public class M3Pregunta318 {
     public M3Pregunta318() {
         _id = "";
         idEncuestado = "";
+        id_vivienda = "";
         numero = "";
         c3_p318_f = "";
         c3_p318_s = "";
         c3_p318_e = "";
         c3_p318_p = "";
+    }
+
+    public String getId_vivienda() {
+        return id_vivienda;
+    }
+
+    public void setId_vivienda(String id_vivienda) {
+        this.id_vivienda = id_vivienda;
     }
 
     public String get_id() {
@@ -83,6 +93,7 @@ public class M3Pregunta318 {
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_p318_id,_id);
         contentValues.put(SQLConstantes.modulo3_p318_idEncuestado,idEncuestado);
+        contentValues.put(SQLConstantes.modulo3_p318_id_vivienda,id_vivienda);
         contentValues.put(SQLConstantes.modulo3_p318_numero,numero);
         contentValues.put(SQLConstantes.modulo3_c3_p318_f,c3_p318_f);
         contentValues.put(SQLConstantes.modulo3_c3_p318_s,c3_p318_s);

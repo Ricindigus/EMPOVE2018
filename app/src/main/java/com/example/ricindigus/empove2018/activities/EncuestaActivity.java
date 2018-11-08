@@ -318,7 +318,7 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                     fragmentActual = fragmentP306P308;
                     break;
                 case TipoFragmentEncuestado.P309:
-                    FragmentP309 fragmentP309 = new FragmentP309(idEncuestado,EncuestaActivity.this);
+                    FragmentP309 fragmentP309 = new FragmentP309(idEncuestado,idVivienda,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP309);
                     tFragment = TipoFragmentEncuestado.P309;
                     fragmentActual = fragmentP309;
@@ -336,7 +336,7 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                     fragmentActual = fragmentP313P317;
                     break;
                 case TipoFragmentEncuestado.P318:
-                    FragmentP318 fragmentP318 = new FragmentP318(idEncuestado,EncuestaActivity.this);
+                    FragmentP318 fragmentP318 = new FragmentP318(idEncuestado,idVivienda,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP318);
                     tFragment = TipoFragmentEncuestado.P318;
                     fragmentActual = fragmentP318;

@@ -46,8 +46,8 @@
             android:name=".activities.agregacion.AgregarRutaActivity"
             android:configChanges="screenSize|orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:theme="@style/TemaTransparente"/>
+            android:theme="@style/TemaTransparente"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".activities.agregacion.AgregarPersonaActivity"
             android:configChanges="screenSize|orientation|keyboardHidden"
@@ -65,7 +65,9 @@
         <activity
             android:name=".activities.HogarActivity"
             android:label="@string/title_activity_hogar"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities.ExportarActivity" />
+        <activity android:name=".activities.ImportarActivity"></activity>
     </application>
 
 </manifest>

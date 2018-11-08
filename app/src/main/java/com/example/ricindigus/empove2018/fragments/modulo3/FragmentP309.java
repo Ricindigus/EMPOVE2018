@@ -43,6 +43,7 @@ import java.util.ArrayList;
 public class FragmentP309 extends FragmentPagina {
     String idEncuestado;
     String idInformante;
+    String idVivienda;
     String idHogar;
     Context contexto;
     LinearLayout layoutp309;
@@ -52,13 +53,15 @@ public class FragmentP309 extends FragmentPagina {
     M3Pregunta309Adapter m3Pregunta309Adapter;
     ArrayList<M3Pregunta309> m3Pregunta309s;
     Spinner informanteSpinner;
+
     public FragmentP309() {
         // Required empty public constructor
     }
 
     @SuppressLint("ValidFragment")
-    public FragmentP309(String idEncuestado, Context contexto) {
+    public FragmentP309(String idEncuestado, String idVivienda,Context contexto) {
         this.idEncuestado = idEncuestado;
+        this.idVivienda = idVivienda;
         this.contexto = contexto;
     }
 
@@ -83,6 +86,7 @@ public class FragmentP309 extends FragmentPagina {
             public void onClick(View v) {
                 Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
                 intent.putExtra("idEncuestado",idEncuestado);
+                intent.putExtra("idVivienda",idVivienda);
                 intent.putExtra("numero",(m3Pregunta309s.size()+1)+"");
                 intent.putExtra("idRuta",idEncuestado + "_" +(m3Pregunta309s.size()+1));
                 startActivity(intent);
@@ -167,6 +171,7 @@ public class FragmentP309 extends FragmentPagina {
                                 case R.id.opcion_editar:
                                     Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
                                     intent.putExtra("idEncuestado",idEncuestado);
+                                    intent.putExtra("idVivienda",idVivienda);
                                     intent.putExtra("numero",m3Pregunta309s.get(position).getNumero());
                                     intent.putExtra("idRuta",m3Pregunta309s.get(position).get_id());
                                     startActivity(intent);
@@ -188,6 +193,7 @@ public class FragmentP309 extends FragmentPagina {
                                 case R.id.opcion_editar:
                                     Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
                                     intent.putExtra("idEncuestado",idEncuestado);
+                                    intent.putExtra("idVivienda",idVivienda);
                                     intent.putExtra("numero",m3Pregunta309s.get(position).getNumero());
                                     intent.putExtra("idRuta",m3Pregunta309s.get(position).get_id());
                                     startActivity(intent);

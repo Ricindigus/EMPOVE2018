@@ -23,6 +23,8 @@ public class Funcionario {
         nombre_coord= "";
     }
 
+
+
     public String get_id() {
         return _id;
     }
@@ -30,7 +32,6 @@ public class Funcionario {
     public void set_id(String _id) {
         this._id = _id;
     }
-
     public String getDni_encu() {
         return dni_encu;
     }

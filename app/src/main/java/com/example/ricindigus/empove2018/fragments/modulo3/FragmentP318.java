@@ -42,6 +42,7 @@ import java.util.ArrayList;
  */
 public class FragmentP318 extends FragmentPagina {
     String idEncuestado;
+    String idVivienda;
     Context contexto;
     String idInformante;
     String idHogar;
@@ -65,8 +66,9 @@ public class FragmentP318 extends FragmentPagina {
     }
 
     @SuppressLint("ValidFragment")
-    public FragmentP318(String idEncuestado, Context contexto) {
+    public FragmentP318(String idEncuestado,String idVivienda, Context contexto) {
         this.idEncuestado = idEncuestado;
+        this.idVivienda = idVivienda;
         this.contexto = contexto;
     }
 
@@ -108,6 +110,7 @@ public class FragmentP318 extends FragmentPagina {
                 Intent intent = new Intent(contexto, AgregarPersonaActivity.class);
                 intent.putExtra("numero",(m3Pregunta318s.size()+1)+"");
                 intent.putExtra("idEncuestado",idEncuestado);
+                intent.putExtra("idVivienda",idVivienda);
                 intent.putExtra("id",idEncuestado+"_persona"+(m3Pregunta318s.size()+1)+"");
                 startActivity(intent);
             }
@@ -174,6 +177,7 @@ public class FragmentP318 extends FragmentPagina {
                                 case R.id.opcion_editar:
                                     Intent intent =  new Intent(contexto, AgregarPersonaActivity.class);
                                     intent.putExtra("idEncuestado",idEncuestado);
+                                    intent.putExtra("idVivienda",idVivienda);
                                     intent.putExtra("numero",m3Pregunta318s.get(position).getNumero());
                                     intent.putExtra("id",m3Pregunta318s.get(position).get_id());
                                     startActivity(intent);
@@ -195,12 +199,12 @@ public class FragmentP318 extends FragmentPagina {
                                 case R.id.opcion_editar:
                                     Intent intent =  new Intent(contexto, AgregarPersonaActivity.class);
                                     intent.putExtra("idEncuestado",idEncuestado);
+                                    intent.putExtra("idVivienda",idVivienda);
                                     intent.putExtra("numero",m3Pregunta318s.get(position).getNumero());
                                     intent.putExtra("id",m3Pregunta318s.get(position).get_id());
                                     startActivity(intent);
                                     break;
                             }
-
                             return true;
                         }
                     });

@@ -7,6 +7,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 public class M3Pregunta309 {
     private String _id;
     private String id_encuestado;
+    private String id_vivienda;
     private String numero;
     private String c3_p309_p;
     private String c3_p309_p_nom;
@@ -22,6 +23,7 @@ public class M3Pregunta309 {
     public M3Pregunta309() {
        _id = "";
        id_encuestado = "";
+        id_vivienda = "";
         numero = "";
        c3_p309_p = "";
         c3_p309_p_nom = "";
@@ -31,6 +33,14 @@ public class M3Pregunta309 {
        c3_p309_a = "";
         c3_p309_m_cod = "";
         c3_p309_a_cod = "";
+    }
+
+    public String getId_vivienda() {
+        return id_vivienda;
+    }
+
+    public void setId_vivienda(String id_vivienda) {
+        this.id_vivienda = id_vivienda;
     }
 
     public String get_id() {
@@ -125,6 +135,7 @@ public class M3Pregunta309 {
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_p309_id,_id);
         contentValues.put(SQLConstantes.modulo3_p309_idEncuestado,id_encuestado);
+        contentValues.put(SQLConstantes.modulo3_p309_id_vivienda,id_vivienda);
         contentValues.put(SQLConstantes.modulo3_p309_numero,numero);
         contentValues.put(SQLConstantes.modulo3_c3_p309_p,c3_p309_p);
         contentValues.put(SQLConstantes.modulo3_c3_p309_p_nom,c3_p309_p_nom);

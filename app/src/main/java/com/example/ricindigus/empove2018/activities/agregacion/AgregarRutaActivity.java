@@ -32,7 +32,7 @@ public class AgregarRutaActivity extends AppCompatActivity {
     Spinner spAnio, spMes;
     Spinner spModo;
     TextView btnCancelar, btnGuardar;
-    String _id, idEncuestado;
+    String _id, idEncuestado, idVivienda;
     int pais,anio,mes;
     String ciudad;
     int modo;
@@ -48,8 +48,10 @@ public class AgregarRutaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_agregar_ruta);
 
         idEncuestado = getIntent().getExtras().getString("idEncuestado");
+        idVivienda = getIntent().getExtras().getString("idVivienda");
         _id = getIntent().getExtras().getString("idRuta");
         numero = getIntent().getExtras().getString("numero");
+
 
         spPais = (Spinner) findViewById(R.id.agregar_ruta_spPais);
         edtCiudad = (TextInputEditText) findViewById(R.id.agregar_ruta_edtCiudad);
@@ -126,6 +128,7 @@ public class AgregarRutaActivity extends AppCompatActivity {
             M3Pregunta309 m3Pregunta309 =  new M3Pregunta309();
             m3Pregunta309.set_id(_id);
             m3Pregunta309.setId_encuestado(idEncuestado);
+            m3Pregunta309.setId_vivienda(idVivienda);
             data.insertarElemento(getNombreTabla(),m3Pregunta309.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,_id);

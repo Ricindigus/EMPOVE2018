@@ -37,7 +37,7 @@ public class AgregarPersonaActivity extends AppCompatActivity {
     Toolbar toolbar;
     LinearLayout lyt1,lyt2,lyt3,lyt4;
 
-    String numero, idEncuestado, _id;
+    String numero, idEncuestado,idVivienda, _id;
 
 
     private int c3_p318_f;
@@ -52,6 +52,8 @@ public class AgregarPersonaActivity extends AppCompatActivity {
 
         _id = getIntent().getExtras().getString("id");
         idEncuestado = getIntent().getExtras().getString("idEncuestado");
+        idVivienda = getIntent().getExtras().getString("idVivienda");
+
         numero = getIntent().getExtras().getString("numero");
 
         spParentesco = (Spinner) findViewById(R.id.agregar_persona_sp_parentesco);
@@ -179,6 +181,7 @@ public class AgregarPersonaActivity extends AppCompatActivity {
             M3Pregunta318 m3Pregunta318 =  new M3Pregunta318();
             m3Pregunta318.set_id(_id);
             m3Pregunta318.setIdEncuestado(idEncuestado);
+            m3Pregunta318.setId_vivienda(idVivienda);
             data.insertarElemento(getNombreTabla(),m3Pregunta318.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,_id);

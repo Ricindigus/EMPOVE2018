@@ -671,6 +671,7 @@ public class SQLConstantes {
      * */
     public static String modulo3_p309_id = "_id";
     public static String modulo3_p309_idEncuestado = "id_encuestado";
+    public static String modulo3_p309_id_vivienda = "id_vivienda";
     public static String modulo3_p309_numero = "numero";
     public static String modulo3_c3_p309_p = "c3_p309_p";
     public static String modulo3_c3_p309_p_nom = "c3_p309_p_nom";
@@ -685,6 +686,7 @@ public class SQLConstantes {
             "CREATE TABLE " + tablam3p309rutas + "(" +
                     modulo3_p309_id  + " TEXT PRIMARY KEY," +
                     modulo3_p309_idEncuestado + " TEXT," +
+                    modulo3_p309_id_vivienda + " TEXT," +
                     modulo3_p309_numero  + " TEXT," +
                     modulo3_c3_p309_p  + " TEXT," +
                     modulo3_c3_p309_p_nom  + " TEXT," +
@@ -701,6 +703,7 @@ public class SQLConstantes {
      * */
     public static String modulo3_p318_id = "_id";
     public static String modulo3_p318_idEncuestado = "id_encuestado";
+    public static String modulo3_p318_id_vivienda = "id_vivienda";
     public static String modulo3_p318_numero = "numero";
     public static String modulo3_c3_p318_f = "c3_p318_f";
     public static String modulo3_c3_p318_s = "c3_p318_s";
@@ -711,6 +714,7 @@ public class SQLConstantes {
             "CREATE TABLE " + tablam3p318personas + "(" +
                     modulo3_p318_id  + " TEXT PRIMARY KEY," +
                     modulo3_p318_idEncuestado + " TEXT," +
+                    modulo3_p318_id_vivienda + " TEXT," +
                     modulo3_p318_numero + " TEXT," +
                     modulo3_c3_p318_f  + " TEXT," +
                     modulo3_c3_p318_s  + " TEXT," +
@@ -1872,6 +1876,7 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_CONGLOMERADO = "conglomerado=?";
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
     public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";
+    public static final String WHERE_CLAUSE_IDVIVIENDA = "idVivienda=?";
     public static final String WHERE_CLAUSE_ESTADO_COD = municipios_cod_estado+"=?";
     public static final String WHERE_CLAUSE_HOGAR_ID = "id_hogar=?";
     public static final String WHERE_CLAUSE_USUARIO_NOMBRE = "nombre=?";

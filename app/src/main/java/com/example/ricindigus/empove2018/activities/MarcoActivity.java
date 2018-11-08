@@ -8,7 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -57,6 +60,35 @@ public class MarcoActivity extends AppCompatActivity {
         spConglomerados = (Spinner) findViewById(R.id.marco_sp_conglomerado);
         btnFiltrar = (Button) findViewById(R.id.marco_btnFiltrar);
         btnMostrarTodo = (Button) findViewById(R.id.marco_btnMotrarTodo);
+
+        Toolbar toolbar =  (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getResources().getString(R.string.nombre_encuesta));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MarcoActivity.this);
+                builder.setMessage("¿Está seguro que desea salir de la aplicación?")
+                        .setTitle("Aviso")
+                        .setCancelable(false)
+                        .setNegativeButton("No",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                })
+                        .setPositiveButton("Sí",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        finish();
+                                    }
+                                });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+
+
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_encuestado);
         recyclerView.setHasFixedSize(true);
@@ -205,29 +237,28 @@ public class MarcoActivity extends AppCompatActivity {
         spConglomerados.setAdapter(adapter);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_marco,menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()){
-//            case R.id.opcion_exportar:
-//                Intent intent = new Intent(MarcoActivity.this,ExportarActivity.class);
-//                intent.putExtra("idUsuario",idUsuario);
-//                intent.putExtra("permisoUsuario",permisoUsuario);
-//                startActivity(intent);
-//                return true;
-//            case R.id.opcion_importar:
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_marco,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.opcion_exportar:
+                Intent intent = new Intent(MarcoActivity.this,ExportarActivity.class);
+                intent.putExtra("idUsuario",idUsuario);
+                startActivity(intent);
+                return true;
+            case R.id.opcion_importar:
 //                Intent intent1 = new Intent(MarcoActivity.this,ImportarActivity.class);
 //                startActivity(intent1);
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     @SuppressLint("NewApi")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // TODO Auto-generated method stub
