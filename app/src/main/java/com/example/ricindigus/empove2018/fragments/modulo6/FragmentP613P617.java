@@ -50,6 +50,7 @@ public class FragmentP613P617 extends FragmentPagina {
     Spinner informanteSpinner;
     AutoCompleteTextView autoCompleteTextView;
     RadioGroup c6_p613_RadioGroup;
+    TextView c6_p614_TextView;
     EditText c6_p614_mon_EditText, c6_p614_esp_EditText, c6_p615_mon_EditText, c6_p615_esp_EditText,
             c6_p616_mon_EditText, c6_p616_esp_EditText;
     CheckBox c6_p616_nas_Checkbox;
@@ -93,6 +94,7 @@ public class FragmentP613P617 extends FragmentPagina {
 
         autoCompleteTextView = (AutoCompleteTextView) rootView.findViewById(R.id.mod6_617_autocompletetextview);
         c6_p613_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_613_radiogroup_C6_P613);
+        c6_p614_TextView = (TextView) rootView.findViewById(R.id.mod6_614_TextView_C6_P614);
         c6_p614_mon_EditText = (EditText) rootView.findViewById(R.id.mod6_614_edittext_C6_P614_MON);
         c6_p614_esp_EditText = (EditText) rootView.findViewById(R.id.mod6_614_edittext_C6_P614_ESP);
         c6_p615_mon_EditText = (EditText) rootView.findViewById(R.id.mod6_615_edittext_C6_P615_MON);
@@ -121,13 +123,31 @@ public class FragmentP613P617 extends FragmentPagina {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        configurarEditText(c6_p614_esp_EditText,m6_p614_linearlayout,2,2);
-        configurarEditText(c6_p614_mon_EditText,m6_p614_linearlayout,2,2);
-        configurarEditText(c6_p615_esp_EditText,m6_p615_linearlayout,2,2);
-        configurarEditText(c6_p615_mon_EditText,m6_p615_linearlayout,2,2);
-        configurarEditText(c6_p616_esp_EditText,m6_p616_linearlayout,2,2);
-        configurarEditText(c6_p616_mon_EditText,m6_p616_linearlayout,2,2);
+        c6_p613_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                String tiempo =  "614.¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN EL TIEMPO ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?";
+                int pos = radioGroup.indexOfChild(c6_p613_RadioGroup.findViewById(c6_p613_RadioGroup.getCheckedRadioButtonId()));
+                switch(pos){
+                    case 1:
+                        tiempo = "614.¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN EL DÍA ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?";break;
+                    case 2:
+                        tiempo = "614.¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN LA SEMANA ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?";break;
+                    case 3:
+                        tiempo = "614.¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN LA QUINCENA ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?";break;
+                    case 4:
+                        tiempo = "614.¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN EL MES ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?";break;
+                }
+                c6_p614_TextView.setText(tiempo);
+            }
+        });
 
+        configurarEditText(c6_p614_esp_EditText,m6_p614_linearlayout,2,6);
+        configurarEditText(c6_p614_mon_EditText,m6_p614_linearlayout,2,6);
+        configurarEditText(c6_p615_esp_EditText,m6_p615_linearlayout,2,6);
+        configurarEditText(c6_p615_mon_EditText,m6_p615_linearlayout,2,6);
+        configurarEditText(c6_p616_esp_EditText,m6_p616_linearlayout,2,6);
+        configurarEditText(c6_p616_mon_EditText,m6_p616_linearlayout,2,6);
 
         c6_p616_nas_Checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -297,17 +317,17 @@ public class FragmentP613P617 extends FragmentPagina {
                 mostrarMensaje("PREGUNTA 614 - DINERO: DEBE ESPECIFICAR");
                 return false;
             }
-            if(c6_p614_esp.trim().equals("")){
-                mostrarMensaje("PREGUNTA 614 - ESPECIE: DEBE ESPECIFICAR");
-                return false;
-            }
+//            if(c6_p614_esp.trim().equals("")){
+//                mostrarMensaje("PREGUNTA 614 - ESPECIE: DEBE ESPECIFICAR");
+//                return false;
+//            }
         }else{
             c6_p614_mon = "";c6_p614_esp = "";
         }
 
         if(m6_p615_linearlayout.getVisibility()==View.VISIBLE){
             if(c6_p615_mon.trim().equals("")){ mostrarMensaje("PREGUNTA 615 - DINERO: DEBE ESPECIFICAR");return false; }
-            if(c6_p615_esp.trim().equals("")){ mostrarMensaje("PREGUNTA 615 - ESPECIE: DEBE ESPECIFICAR");return false; }
+//            if(c6_p615_esp.trim().equals("")){ mostrarMensaje("PREGUNTA 615 - ESPECIE: DEBE ESPECIFICAR");return false; }
         }else{
             c6_p615_mon = ""; c6_p615_esp = "";
         }
@@ -315,7 +335,7 @@ public class FragmentP613P617 extends FragmentPagina {
         if(m6_p616_linearlayout.getVisibility()==View.VISIBLE){
             if(c6_p616_nas.equals("0")){
                 if(c6_p616_mon.trim().equals("")){ mostrarMensaje("PREGUNTA 616 - DINERO: DEBE ESPECIFICAR");return false; }
-                if(c6_p616_esp.trim().equals("")){ mostrarMensaje("PREGUNTA 616 - ESPECIE: DEBE ESPECIFICAR");return false; }
+//                if(c6_p616_esp.trim().equals("")){ mostrarMensaje("PREGUNTA 616 - ESPECIE: DEBE ESPECIFICAR");return false; }
             }
         }else{ c6_p616_nas=""; c6_p616_mon = ""; c6_p616_esp ="";}
 

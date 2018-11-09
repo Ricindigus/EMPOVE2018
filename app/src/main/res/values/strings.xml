@@ -496,9 +496,9 @@
     </string-array>
 
     <!--Strings asociados al módulo 4: SALUD-->
-    <string name="modulo_4_nombre">IV. SALUD(Para todas las personas)</string>
+    <string name="modulo_4_nombre">IV. SALUD (Para todas las personas)</string>
     <string name="modulo_4_menu">Módulo IV: Salud</string>
-    <string name="modulo_4_submenu_1">Preguntas 401 - 404</string>
+    <string name="modulo_4_submenu_1">Preguntas 401 - 404</string>0
     <string name="modulo_4_submenu_2">Preguntas 405 - 407</string>
     <string name="modulo_4_submenu_3">Preguntas 408 - 410</string>
     <string name="modulo_4_submenu_4">Preguntas 411 - 416</string>
@@ -636,14 +636,14 @@
     <string name="modulo_4_p414_sp1">1.Sí</string>
     <string name="modulo_4_p414_sp2">2.No</string>
 
-    <string name="modulo_4_p415">415.DESDE SU LLEGADA AL PERÚ, ¿HA VIVIDO SITUACIONES DE ACOSO DE ALGÚN TIPO: SEXUAL, LABORAL, EN LA CALLE?</string>
+    <string name="modulo_4_p415">415.DESDE SU LLEGADA AL PERÚ, ¿HA VIVIDO SITUACIONES DE ACOSO DE ALGÚN TIPO: SEXUAL, LABORAL, ESCOLAR, CIBERACOSO, ETC.?</string>
     <string name="modulo_4_p415_sp1">1.Sí</string>
     <string name="modulo_4_p415_sp2">2.No</string>
 
     <string name="sub_modulo_4_2">Para personas de 15 y más años de edad</string>
 
-    <string name="modulo_4_p416">416.AHORA ME GUSTARÍA CONVERSAR CON USTED SOBRE SALUD SEXUAL Y REPRODUCTIVA, ES DECIR ACERCA DE LAS DIFERENTES FORMAS O MÉTODOS QUE UNA PAREJA PUEDE USAR PARA EVITAR UN EMBARAZO ¿HA TENIDO USTED ACCESO A LOS SERVICIOS DE:</string>
-    <string name="modulo_4_p416_ind">(Espere la respuesta y seleccione uno o más códigos)</string>
+    <string name="modulo_4_p416">416.AHORA ME GUSTARÍA CONVERSAR CON USTED SOBRE SALUD SEXUAL Y REPRODUCTIVA; ES DECIR, ACERCA DE LAS DIFERENTES FORMAS O MÉTODOS QUE UNA PERSONA PUEDE USAR PARA EVITAR UN EMBARAZO Y/O ENFERMEDADES DE TRASMISIÓN SEXUAL ¿HA TENIDO USTED ACCESO A:</string>
+    <string name="modulo_4_p416_ind">(Lea cada alternativa y seleccione uno o más códigos)</string>
     <string name="modulo_4_p416_sp1">1.Método tradicional (ritmo, temperatura corporal, moco cervical, lactancia materna exclusiva)?</string>
     <string name="modulo_4_p416_sp2">2.Método moderno (Hormonal, barrera, dispositivo intrauterino, definitivo)?</string>
     <string name="modulo_4_p416_sp3">3.Anticoncepción de emergencia (Píldora del día siguiente, entre otros)?</string>
@@ -691,7 +691,7 @@
     <string name="modulo_5_p503_sp2">2.No</string>
 
 
-    <string name="modulo_5_p504">504.ESTE AÑO, ¿ESTÁ INSCRITO / MATRICULADO EN ALGÚN CENTRO O PROGRAMA DE EDUCACIÓN BÁSICA O SUPERIOR EN PERÚ?:</string>
+    <string name="modulo_5_p504">504.ESTE AÑO, ¿ESTÁ INSCRITO / MATRICULADO EN ALGÚN CENTRO O PROGRAMA DE EDUCACIÓN BÁSICA O SUPERIOR EN PERÚ?</string>
     <string name="modulo_5_p504_sp1">1.Sí</string>
     <string name="modulo_5_p504_sp2">2.No</string>
 
@@ -784,7 +784,7 @@
     <string name="modulo_5_p513_especifique">Especifique</string>
 
     <!--Strings asociados al módulo 6: EMPLEO-->
-    <string name="modulo_6_nombre">VI. EMPLEO (Para personas de 5 años a más de edad)</string>
+    <string name="modulo_6_nombre">VI. EMPLEO (Para personas de 5 y más años de edad)</string>
     <string name="modulo_6_menu">Módulo VI: Empleo</string>
     <string name="modulo_6_submenu_1">Preguntas 601 - 604</string>
     <string name="modulo_6_submenu_2">Preguntas 605 - 608</string>
@@ -878,7 +878,7 @@
     <string name="modulo_6_p613_sp3">3.Quincenal?</string>
     <string name="modulo_6_p613_sp4">4.Mensual?</string>
 
-    <string name="modulo_6_p614">614.¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN EL (LA)……… ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?</string>
+    <string name="modulo_6_p614">614.¿CUÁNTO FUE SU INGRESO TOTAL SIN DESCUENTOS EN EL TIEMPO ANTERIOR, INCLUYENDO HORAS EXTRAS, BONIFICACIONES, PAGO POR CONCEPTO DE REFRIGERIO, MOVILIDAD, COMISIONES, ETC.?</string>
     <string name="modulo_6_p614_dinero">En Dinero</string>
     <string name="modulo_6_p614_especie">En Especie</string>
     <string name="modulo_6_p614_entero">(En enteros)</string>
@@ -906,7 +906,7 @@
 
     <string name="sub_modulo_6_3">Verifique el MÓDULO II, si se registró a personas menores de 18 años de edad.</string>
 
-    <string name="modulo_6_p618">625.¿CON QUIÉN DEJA A LOS/AS MENORES DE EDAD DEL HOGAR, CUANDO ESTÁ TRABAJANDO?</string>
+    <string name="modulo_6_p618">625.¿CON QUIÉN DEJA A LOS/AS MENORES DE EDAD DEL HOGAR, CUANDO ESTÁ TRABAJANDO Y/O BUSCANDO TRABAJO?</string>
     <string name="modulo_6_p618_ind"><i><b>(Espere la respuesta y seleccione uno o más códigos)</b></i></string>
     <string name="modulo_6_p618_sp1">1.Con familiares y parientes</string>
     <string name="modulo_6_p618_sp2">2.En la cuna/colegio</string>
@@ -1050,7 +1050,7 @@
     </string-array>
 
     <!--Strings asociados al módulo 7: DISCRIMINACIÓN -->
-    <string name="modulo_7_nombre">VII. DISCRIMINACIÓN (Para personas de 5 años a más edad)</string>
+    <string name="modulo_7_nombre">VII. DISCRIMINACIÓN (Para personas de 5 y más años de edad)</string>
     <string name="modulo_7_menu">Módulo VII: Discriminación</string>
     <string name="modulo_7_submenu_1">Preguntas 701 - 705</string>
     <string name="modulo_7_submenu_2">Preguntas 706 - 709</string>
@@ -1066,7 +1066,7 @@
     <string name="modulo_7_p702_sp3">3.En el establecimiento de salud</string>
     <string name="modulo_7_p702_sp4">4.En las Instituciones de Justicia</string>
     <string name="modulo_7_p702_sp5">5.En la calle/lugares públicos</string>
-    <string name="modulo_7_p702_sp6">6.En el transporte público (bus, colectivo, Metro de Lima, Corredor azul, Metropolitano, entre otros)</string>
+    <string name="modulo_7_p702_sp6">6.En el transporte público (bus, colectivo, Metro de Lima, Corredor azul, Metropolitano, etc.)</string>
     <string name="modulo_7_p702_sp7">7.En las oficinas de Migración</string>
     <string name="modulo_7_p702_sp8">8.En las oficinas de la Cancillería</string>
     <string name="modulo_7_p702_sp9">9.En tu comunidad/barrio</string>
@@ -1124,7 +1124,7 @@
     <string name="modulo_7_p708_sp5">5.NO PARTICIPA</string>
 
     <string name="modulo_7_p709">709. ¿CUÁLES SERÍAN LAS TRES PRINCIPALES NECESIDADES, QUE NO ESTÁN SIENDO CUBIERTAS EN SU HOGAR HOY EN DÍA?</string>
-    <string name="modulo_7_p709_ind">(Espere la respuesta y seleccione solo las tres principales razones)</string>
+    <string name="modulo_7_p709_ind">(Espere la respuesta y seleccione solo las tres principales necesidades)</string>
     <string name="modulo_7_p709_sp1">1.Alimentos</string>
     <string name="modulo_7_p709_sp2">2.Ayuda médica</string>
     <string name="modulo_7_p709_sp3">3.Asistencia para regularizar la situación migratoria y/o estatus de refugiado</string>
@@ -1307,7 +1307,7 @@
 
     <string name="modulo_8_p817">817.ESTAS SITUACIONES, SOBRE VIOLENCIA SEXUAL SON:</string>
     <string name="modulo_8_p817_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
-    <string name="modulo_8_p817_sp1">1.¿Más frecuentes que cuando vivía en Venezuela)?</string>
+    <string name="modulo_8_p817_sp1">1.¿Más frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_8_p817_sp2">2.¿Menos frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_8_p817_sp3">3.¿Igual de frecuentes que cuando vivía en Venezuela?</string>
 
@@ -1363,7 +1363,7 @@
     <string name="modulo_8_p822_si">1.Sí</string>
     <string name="modulo_8_p822_no">2.No</string>
 
-    <string name="modulo_8_p823">823.SABE USTED, SI ÉSTA SITUACIÓN SE DIÓ PARA ACCEDER A:</string>
+    <string name="modulo_8_p823">823.USTED SABE, SI ÉSTA SITUACIÓN SE DIÓ PARA ACCEDER A:</string>
     <string name="modulo_8_p823_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_8_p823_sp1">1.¿Una oportunidad laboral?</string>
     <string name="modulo_8_p823_sp2">2.¿Dinero?</string>

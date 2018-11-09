@@ -26,6 +26,28 @@
             <include layout="@layout/modulo8_p821" android:id="@+id/layout_m8_p821"/>
             <include layout="@layout/modulo8_p822" android:id="@+id/layout_m8_p822"/>
             <include layout="@layout/modulo8_p823" android:id="@+id/layout_m8_p823"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="AGRADECIMIENTO"
+                    android:textColor="@color/colorIcons"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:background="@color/greyBluePrimaryDark"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/agradecimeinto"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:background="@color/greyBluePrimaryLight"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

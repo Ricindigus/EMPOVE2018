@@ -418,6 +418,53 @@ public class FragmentP601P604 extends FragmentPagina {
     public void ocultarOtrosLayouts() {
         Data data = new Data(context);
         data.open();
+        if(c6_p601.equals("1") || c6_p602.equals("1") || c6_p603.equals("1")){
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.modulo6_c6_p618,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_1,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_2,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_3,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_4,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_5,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_6,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_7,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_8,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_9,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619_o,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p620,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p621,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p622,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p622_o,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p623,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p623_o,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p624,"");
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+
+            contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.layouts_p618,"0");
+            contentValues.put(SQLConstantes.layouts_p619,"0");
+            contentValues.put(SQLConstantes.layouts_p620,"0");
+            contentValues.put(SQLConstantes.layouts_p621,"0");
+            contentValues.put(SQLConstantes.layouts_p622,"0");
+            contentValues.put(SQLConstantes.layouts_p623,"0");
+            contentValues.put(SQLConstantes.layouts_p624,"0");
+            data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
+
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,"-1",idEncuestado);
+        }else{
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.layouts_p618,"1");
+            contentValues.put(SQLConstantes.layouts_p619,"1");
+            contentValues.put(SQLConstantes.layouts_p620,"1");
+            contentValues.put(SQLConstantes.layouts_p621,"1");
+            contentValues.put(SQLConstantes.layouts_p622,"1");
+            contentValues.put(SQLConstantes.layouts_p623,"1");
+            contentValues.put(SQLConstantes.layouts_p624,"1");
+            data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,idEncuestado).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,"1",idEncuestado);
+        }
+
         if (c6_p604_1.equals("2") && c6_p604_2.equals("2") && c6_p604_3.equals("2") &&
                 c6_p604_4.equals("2") && c6_p604_5.equals("2") && c6_p604_6.equals("2") &&
                 c6_p604_7.equals("2") && c6_p604_8.equals("2") && c6_p604_9.equals("2") &&
@@ -473,6 +520,7 @@ public class FragmentP601P604 extends FragmentPagina {
 
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p605p608,"-1",idEncuestado);
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"-1",idEncuestado);
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,"-1",idEncuestado);
 
         }else{
             ContentValues contentValues = new ContentValues();
@@ -486,6 +534,8 @@ public class FragmentP601P604 extends FragmentPagina {
                 data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p605p608,"1",idEncuestado);
             if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,idEncuestado).equals("-1"))
                 data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"1",idEncuestado);
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,idEncuestado).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,"1",idEncuestado);
         }
         POJOLayout pojoLayout = data.getLayouts(idEncuestado);
         data.close();

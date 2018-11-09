@@ -9,6 +9,7 @@
     android:focusableInTouchMode="true"
     android:background="@drawable/marco_pregunta">
     <TextView
+        android:id="@+id/mod6_614_TextView_C6_P614"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
