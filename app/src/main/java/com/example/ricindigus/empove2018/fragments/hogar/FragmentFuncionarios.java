@@ -174,7 +174,7 @@ public class FragmentFuncionarios extends FragmentPagina {
 
         ContentValues contentValues1 = new ContentValues();
         contentValues1.put(SQLConstantes.hogar_vive,vive+"");
-        contentValues1.put(SQLConstantes.hogar_nropersonas,nropersonas);
+//        contentValues1.put(SQLConstantes.hogar_nropersonas,nropersonas);
         data.actualizarElemento(SQLConstantes.tablahogares,contentValues1,idHogar);
         data.close();
     }
@@ -189,8 +189,9 @@ public class FragmentFuncionarios extends FragmentPagina {
         nombre_sup = nomSupervisor.getText().toString().trim();
         nombre_encu = nomEncuestador.getText().toString().trim();
 
-        vive = radiogroupPersonas.indexOfChild(radiogroupPersonas.findViewById(radiogroupPersonas.getCheckedRadioButtonId()));
-        nropersonas = numeroPersonas.getText().toString().trim();
+//        vive = radiogroupPersonas.indexOfChild(radiogroupPersonas.findViewById(radiogroupPersonas.getCheckedRadioButtonId()));
+        vive = 1;
+//        nropersonas = numeroPersonas.getText().toString().trim();
     }
 
     @Override
@@ -208,12 +209,12 @@ public class FragmentFuncionarios extends FragmentPagina {
             nomCoordinador.setText(funcionario.getNombre_coord());
             nomEncuestador.setText(funcionario.getNombre_encu());
 
-            Hogar hogar = data.getHogar(idHogar);
-            if(!hogar.getVive().equals("-1") && !hogar.getVive().equals(""))((RadioButton)radiogroupPersonas.getChildAt(Integer.parseInt(hogar.getVive()))).setChecked(true);
-            numeroPersonas.setText(hogar.getNropersonas());
+//            Hogar hogar = data.getHogar(idHogar);
+//            if(!hogar.getVive().equals("-1") && !hogar.getVive().equals(""))((RadioButton)radiogroupPersonas.getChildAt(Integer.parseInt(hogar.getVive()))).setChecked(true);
+//            numeroPersonas.setText(hogar.getNropersonas());
         }
         data.close();
-
+        layoutPersonas.setVisibility(View.GONE);
     }
 
     @Override
@@ -247,12 +248,12 @@ public class FragmentFuncionarios extends FragmentPagina {
                 return false;
             }
         }
-        if (vive == -1){mostrarMensaje("PREGUNTA 15: DEBE MARCAR UNA OPCIÓN"); return false;}
-        else{
-            if (vive == 1){
-                if (nropersonas.trim().equals("")){mostrarMensaje("PREGUNTA 15: DEBE ESPECIFICAR NUMERO DE PERSONAS");return false;}
-            }
-        }
+//        if (vive == -1){mostrarMensaje("PREGUNTA 15: DEBE MARCAR UNA OPCIÓN"); return false;}
+//        else{
+//            if (vive == 1){
+//                if (nropersonas.trim().equals("")){mostrarMensaje("PREGUNTA 15: DEBE ESPECIFICAR NUMERO DE PERSONAS");return false;}
+//            }
+//        }
         return true;
     }
 

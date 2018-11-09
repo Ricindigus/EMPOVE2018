@@ -11,6 +11,10 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_4_p404"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_4_p404_ind"/>
     <RadioGroup
         android:id="@+id/mod4_404_radiogroup_C4_P404"
         android:orientation="vertical"

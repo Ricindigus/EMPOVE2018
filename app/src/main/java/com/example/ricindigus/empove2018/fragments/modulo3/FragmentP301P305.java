@@ -42,8 +42,13 @@ import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMetho
  * A simple {@link Fragment} subclass.
  */
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class FragmentP301P305 extends FragmentPagina {
     String idEncuestado;
@@ -83,6 +88,8 @@ public class FragmentP301P305 extends FragmentPagina {
     String c3_p305;
     String c3_p305_o;
 
+    int edad=0, edad_ingresada=0;
+
     public FragmentP301P305() {
         // Required empty public constructor
     }
@@ -97,6 +104,7 @@ public class FragmentP301P305 extends FragmentPagina {
         idHogar = residente.getId_hogar();
         idVivienda = residente.getId_vivienda();
         idInformante = "";
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         data.close();
     }
 
@@ -228,11 +236,13 @@ public class FragmentP301P305 extends FragmentPagina {
 
     @Override
     public void llenarVariables() {
+        String fecha_naci="";
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
         c3_p301_d = c3_p301_d_TextView.getText().toString();
         c3_p301_m = c3_p301_m_TextView.getText().toString();
         c3_p301_a = c3_p301_a_TextView.getText().toString();
-        c3_p302 = c3_p302_Spinner.getSelectedItemPosition() + "";
+        fecha_naci = c3_p301_a + "-" + c3_p301_m + "-" + c3_p301_d;
+                c3_p302 = c3_p302_Spinner.getSelectedItemPosition() + "";
         c3_p303_m = p303spMes.getSelectedItemPosition() + "";
         c3_p303_a = p303spAnio.getSelectedItemPosition() + "";
         p303_a  = p303spAnio.getSelectedItem().toString();
@@ -241,6 +251,17 @@ public class FragmentP301P305 extends FragmentPagina {
         c3_p304 = c3_p304_RadioGroup.indexOfChild(c3_p304_RadioGroup.findViewById(c3_p304_RadioGroup.getCheckedRadioButtonId())) + "";
         c3_p305  = c3_p305_RadioGroup.indexOfChild(c3_p305_RadioGroup.findViewById(c3_p305_RadioGroup.getCheckedRadioButtonId())) + "";
         c3_p305_o = c3_p305_o_EditText.getText().toString();
+        try {
+        DateFormat dateFormat = dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        Date fechaNacimiento = dateFormat.parse(fecha_naci);
+        Calendar cal = Calendar.getInstance();
+        Date fechaActual = cal.getTime();
+            edad_ingresada= getEdad(fechaNacimiento, fechaActual);
+            Log.e("Edad :", "llenarVariables: "+String.valueOf(edad_ingresada) );
+            Log.e("Edad cap 200 :", "llenarVariables: "+String.valueOf(edad) );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -287,6 +308,7 @@ public class FragmentP301P305 extends FragmentPagina {
         llenarVariables();
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p301_d.trim().equals("")){mostrarMensaje("PREGUNTA 301: DEBE AGREGAR FECHA");return false;}
+        if (edad!=edad_ingresada){mostrarMensaje("PREGUNTA 301: NO COINCIDE CON EDAD INGRESADA CAPITULO 200("+edad+")");return false;}
         if (c3_p302.equals("0")) {mostrarMensaje("PREGUNTA 302: DEBE INDICAR PAIS DE NACIMIENTO");return false;}
         if (!c3_p303_CheckBox.isChecked()){
             if(c3_p303_m.equals("0")) {mostrarMensaje("PREGUNTA 303: DEBE AGREGAR MES");return false;}
@@ -421,5 +443,13 @@ public class FragmentP301P305 extends FragmentPagina {
                 data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p309,"1",idEncuestado);
             data.close();
         }
+    }
+
+    public  int getEdad(Date fechaNacimiento, Date fechaActual) {
+        DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        int dIni = Integer.parseInt(formatter.format(fechaNacimiento));
+        int dEnd = Integer.parseInt(formatter.format(fechaActual));
+        int age = (dEnd-dIni)/10000;
+        return age;
     }
 }

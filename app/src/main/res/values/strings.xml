@@ -45,7 +45,7 @@
     <string name="caratula_aer">7.AER N°</string>
     <string name="caratula_n_vivienda">7.VIVIENDA N°</string>
 
-    <string name="caratula_direccion">8.DIRECCIÓN DE LA VIVIENDA</string>
+    <string name="caratula_direccion">8.DIRECCIÓN DE LA VIVIENDA <i>(Para tipo de vía seleccione sólo un código)</i></string>
     <string-array name="caratula_array_tipo_via">
         <item>Seleccione</item>
         <item>1.Avenida</item>
@@ -335,7 +335,7 @@
     </string-array>
 
     <!--Strings asociados al módulo 3: SITUACIÓN MIGRATORIA DE LA PERSONA-->
-    <string name="modulo_3_nombre">III. SITUACIÓN MIGRATORIA DE LA PERSONA (Todas las personas)</string>
+    <string name="modulo_3_nombre">III. SITUACIÓN MIGRATORIA DE LA PERSONA (Para todas las personas)</string>
     <string name="modulo_3_menu">Módulo III: Situación Migratoria</string>
     <string name="modulo_3_submenu_1">Preguntas 301 - 305</string>
     <string name="modulo_3_submenu_2">Preguntas 306 - 308</string>
@@ -429,7 +429,7 @@
     <string name="modulo_3_p313_sp1">1.Sí</string>
     <string name="modulo_3_p313_sp2">2.No</string>
 
-    <string name="modulo_3_p314">314.¿CUÁL ES EL PAÍS A DONDE PIENSA CONTINUAR SU VIAJE?</string>
+    <string name="modulo_3_p314">314.DE NO QUEDARSE EN PERÚ, ¿A QUÉ PAÍS PIENSA CONTINUAR SU VIAJE?</string>
     <string name="modulo_3_p314_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_3_p314_sp1">1.Chile</string>
     <string name="modulo_3_p314_sp2">2.Argentina</string>
@@ -484,19 +484,19 @@
     <string name="modulo_3_p318_12meses_no">2.No</string>
     <string-array name="modulo_3_p318_array_parentesco">
         <item>Seleccione relación parentesco</item>
-        <item>Papá</item>
-        <item>Mamá</item>
-        <item>Esposo/a o Compañero/a</item>
-        <item>Hijo/a o Hijastro/a</item>
-        <item>Yerno/Nuera</item>
-        <item>Nieto/a</item>
-        <item>Suegros</item>
-        <item>Hermano/a</item>
-        <item>Otro/pariente</item>
+        <item>1.Papá</item>
+        <item>2.Mamá</item>
+        <item>3.Esposo/a o Compañero/a</item>
+        <item>4.Hijo/a o Hijastro/a</item>
+        <item>5.Yerno/Nuera</item>
+        <item>6.Nieto/a</item>
+        <item>7.Suegros</item>
+        <item>8.Hermano/a</item>
+        <item>9.Otro/pariente</item>
     </string-array>
 
     <!--Strings asociados al módulo 4: SALUD-->
-    <string name="modulo_4_nombre">IV. SALUD(Todas las personas)</string>
+    <string name="modulo_4_nombre">IV. SALUD(Para todas las personas)</string>
     <string name="modulo_4_menu">Módulo IV: Salud</string>
     <string name="modulo_4_submenu_1">Preguntas 401 - 404</string>
     <string name="modulo_4_submenu_2">Preguntas 405 - 407</string>
@@ -581,6 +581,8 @@
     <string name="modulo_4_p407_especifique">Especifique</string>
 
     <string name="sub_modulo_4_1">Para personas de 0 a 17 años de edad</string>
+    <string name="modulo_4_p408_p1">DISCAPACIDAD</string>
+    <string name="modulo_4_p408_p2">A continuación, le haré algunas preguntas para saber si Usted presenta alguna limitación o dificultad PERMANENTE, que le impida o dificulte desarrollarse normalmente en sus actividades diarias.</string>
     <string name="modulo_4_p408">408.¿TIENE UD. LIMITACIONES DE FORMA PERMANENTE, PARA:</string>
     <string name="modulo_4_p408_ind">(Lea cada alternativa y seleccione un código para cada una de ellas)</string>
     <string name="modulo_4_p408_si">Sí</string>
