@@ -115,6 +115,7 @@ public class FragmentP622P625 extends FragmentPagina {
         configurarEditText(c6_p622_o_EditText,m6_p622_linearlayout,1,30);
         configurarEditText(c6_p623_o_EditText,m6_p623_linearlayout,1,30);
         configurarEditText(c6_p624_EditText,m6_p624_linearlayout,2,30);
+        configurarEditText(c6_p625_o_EditText,m6_p625_linearlayout,1,30);
 
 
         c6_p622_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

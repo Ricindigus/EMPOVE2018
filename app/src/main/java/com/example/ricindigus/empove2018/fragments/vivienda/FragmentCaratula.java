@@ -158,11 +158,11 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
                 if(pos == 7){
                     tipvia_o_EditText.setEnabled(true);
-                    tipvia_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                    tipvia_o_EditText.setBackgroundResource(R.drawable.input_text_enabled);
                 }else{
                     tipvia_o_EditText.setEnabled(false);
                     tipvia_o_EditText.setText("");
-                    tipvia_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+                    tipvia_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
                 }
             }
             @Override

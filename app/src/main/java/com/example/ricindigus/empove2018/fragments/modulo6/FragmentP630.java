@@ -178,11 +178,11 @@ public class FragmentP630 extends FragmentPagina {
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
                 if(pos == 6){
                     c6_p630_1frec_o_EditText.setEnabled(true);
-                    c6_p630_1frec_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                    c6_p630_1frec_o_EditText.setBackgroundResource(R.drawable.input_text_enabled);
                 }else{
                     c6_p630_1frec_o_EditText.setEnabled(false);
                     c6_p630_1frec_o_EditText.setText("");
-                    c6_p630_1frec_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+                    c6_p630_1frec_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
                 }
             }
             @Override
@@ -209,16 +209,20 @@ public class FragmentP630 extends FragmentPagina {
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
                 if(pos == 6){
                     c6_p630_2frec_o_EditText.setEnabled(true);
-                    c6_p630_2frec_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                    c6_p630_2frec_o_EditText.setBackgroundResource(R.drawable.input_text_enabled);
                 }else{
                     c6_p630_2frec_o_EditText.setEnabled(false);
                     c6_p630_2frec_o_EditText.setText("");
-                    c6_p630_2frec_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+                    c6_p630_2frec_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
                 }
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {}
         });
+
+        configurarEditText(c6_p630_1frec_o_EditText,m6_p630_1_linearlayout,1,30);
+        configurarEditText(c6_p630_2frec_o_EditText,m6_p630_2_linearlayout,1,30);
+
         cargarDatos();
     }
 
@@ -272,6 +276,7 @@ public class FragmentP630 extends FragmentPagina {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
             if(!modulo6.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo6.getIdInformante()));
+
             if(!modulo6.getC6_p630_1().equals("-1") && !modulo6.getC6_p630_1().equals(""))((RadioButton)c6_p630_1_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_1()))).setChecked(true);
             if(!modulo6.getC6_p630_1med().equals("-1") && !modulo6.getC6_p630_1med().equals(""))((RadioButton)c6_p630_1med_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_1med()))).setChecked(true);
             c6_p630_1o_EditText.setText(modulo6.getC6_p630_1o());
