@@ -610,6 +610,8 @@ public class SQLConstantes {
     public static String modulo3_c3_p316_o = "c3_p316_o";
     public static String modulo3_c3_p317 = "c3_p317";
     public static String modulo3_c3_p318 = "c3_p318";
+    public static String modulo3_obs_cap3 = "obs_cap3";
+    public static String modulo3_c3_estado = "c3_estado";
 
 
 
@@ -663,7 +665,9 @@ public class SQLConstantes {
                     modulo3_c3_p316  + " TEXT," +
                     modulo3_c3_p316_o  + " TEXT," +
                     modulo3_c3_p317  + " TEXT," +
-                    modulo3_c3_p318 + " TEXT" + ");"
+                    modulo3_c3_p318  + " TEXT," +
+                    modulo3_obs_cap3  + " TEXT," +
+                    modulo3_c3_estado + " TEXT" + ");"
             ;
 
     /**

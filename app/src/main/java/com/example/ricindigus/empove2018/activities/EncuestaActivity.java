@@ -1,11 +1,13 @@
 package com.example.ricindigus.empove2018.activities;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
+import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +18,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.adapters.ExpandListAdapter;
@@ -78,6 +83,8 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
     private TextView btnSiguiente;
     int tFragment = 1;
     FragmentPagina fragmentActual;
+    int moduloActual = 3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -310,180 +317,210 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP301P305);
                     tFragment = TipoFragmentEncuestado.P301P305;
                     fragmentActual = fragmentP301P305;
+                    moduloActual = 3;
                     break;
                 case TipoFragmentEncuestado.P306P308:
                     FragmentP306P308 fragmentP306P308 = new FragmentP306P308(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP306P308);
                     tFragment = TipoFragmentEncuestado.P306P308;
                     fragmentActual = fragmentP306P308;
+                    moduloActual = 3;
                     break;
                 case TipoFragmentEncuestado.P309:
                     FragmentP309 fragmentP309 = new FragmentP309(idEncuestado,idVivienda,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP309);
                     tFragment = TipoFragmentEncuestado.P309;
                     fragmentActual = fragmentP309;
+                    moduloActual = 3;
                     break;
                 case TipoFragmentEncuestado.P310P312:
                     FragmentP310P312 fragmentP310P312 = new FragmentP310P312(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP310P312);
                     tFragment = TipoFragmentEncuestado.P310P312;
                     fragmentActual = fragmentP310P312;
+                    moduloActual = 3;
                     break;
                 case TipoFragmentEncuestado.P313P317:
                     FragmentP313P317 fragmentP313P317 = new FragmentP313P317(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP313P317);
                     tFragment = TipoFragmentEncuestado.P313P317;
                     fragmentActual = fragmentP313P317;
+                    moduloActual = 3;
                     break;
                 case TipoFragmentEncuestado.P318:
                     FragmentP318 fragmentP318 = new FragmentP318(idEncuestado,idVivienda,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP318);
                     tFragment = TipoFragmentEncuestado.P318;
                     fragmentActual = fragmentP318;
+                    moduloActual = 3;
                     break;
                 case TipoFragmentEncuestado.P401P404:
                     FragmentP401P404 fragmentP401P404 = new FragmentP401P404(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP401P404);
                     tFragment = TipoFragmentEncuestado.P401P404;
                     fragmentActual = fragmentP401P404;
+                    moduloActual = 4;
                     break;
                 case TipoFragmentEncuestado.P405P407:
                     FragmentP405P407 fragmentP405P407 = new FragmentP405P407(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP405P407);
                     tFragment = TipoFragmentEncuestado.P405P407;
                     fragmentActual = fragmentP405P407;
+                    moduloActual = 4;
                     break;
                 case TipoFragmentEncuestado.P408P410:
                     FragmentP408P410 fragmentP408P410 = new FragmentP408P410(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP408P410);
                     tFragment = TipoFragmentEncuestado.P408P410;
                     fragmentActual = fragmentP408P410;
+                    moduloActual = 4;
                     break;
                 case TipoFragmentEncuestado.P411P416:
                     FragmentP411P416 fragmentP411P416 = new FragmentP411P416(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP411P416);
                     tFragment = TipoFragmentEncuestado.P411P416;
                     fragmentActual = fragmentP411P416;
+                    moduloActual = 4;
                     break;
                 case TipoFragmentEncuestado.P501P505:
                     FragmentP501P505 fragmentP501P505 = new FragmentP501P505(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP501P505);
                     tFragment = TipoFragmentEncuestado.P501P505;
                     fragmentActual = fragmentP501P505;
+                    moduloActual = 5;
                     break;
                 case TipoFragmentEncuestado.P506P507:
                     FragmentP506P507 fragmentP506P507 = new FragmentP506P507(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP506P507);
                     tFragment = TipoFragmentEncuestado.P506P507;
                     fragmentActual = fragmentP506P507;
+                    moduloActual = 5;
                     break;
                 case TipoFragmentEncuestado.P508P511:
                     FragmentP508P511 fragmentP508P511 = new FragmentP508P511(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP508P511);
                     tFragment = TipoFragmentEncuestado.P508P511;
                     fragmentActual = fragmentP508P511;
+                    moduloActual = 5;
                     break;
                 case TipoFragmentEncuestado.P512P513:
                     FragmentP512P513 fragmentP512P513 = new FragmentP512P513(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP512P513);
                     tFragment = TipoFragmentEncuestado.P512P513;
                     fragmentActual = fragmentP512P513;
+                    moduloActual = 5;
                     break;
                 case TipoFragmentEncuestado.P601P604:
                     FragmentP601P604 fragmentP601P604 = new FragmentP601P604(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP601P604);
                     tFragment = TipoFragmentEncuestado.P601P604;
                     fragmentActual = fragmentP601P604;
+                    moduloActual = 6;
                     break;
                 case TipoFragmentEncuestado.P605P608:
                     FragmentP605P608 fragmentP605P608 = new FragmentP605P608(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP605P608);
                     tFragment = TipoFragmentEncuestado.P605P608;
                     fragmentActual = fragmentP605P608;
+                    moduloActual = 6;
                     break;
                 case TipoFragmentEncuestado.P609P612:
                     FragmentP609P612 fragmentP609P612 = new FragmentP609P612(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP609P612);
                     tFragment = TipoFragmentEncuestado.P609P612;
                     fragmentActual = fragmentP609P612;
+                    moduloActual = 6;
                     break;
                 case TipoFragmentEncuestado.P613P618:
                     FragmentP613P617 fragmentP613P617 = new FragmentP613P617(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP613P617);
                     tFragment = TipoFragmentEncuestado.P613P618;
                     fragmentActual = fragmentP613P617;
+                    moduloActual = 6;
                     break;
                 case TipoFragmentEncuestado.P619P622:
                     FragmentP618P621 fragmentP618P621 = new FragmentP618P621(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP618P621);
                     tFragment = TipoFragmentEncuestado.P619P622;
                     fragmentActual = fragmentP618P621;
+                    moduloActual = 6;
                     break;
                 case TipoFragmentEncuestado.P623P625:
                     FragmentP622P625 fragmentP622P625 = new FragmentP622P625(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP622P625);
                     tFragment = TipoFragmentEncuestado.P623P625;
                     fragmentActual = fragmentP622P625;
+                    moduloActual = 6;
                     break;
                 case TipoFragmentEncuestado.P626P629:
                     FragmentP626P629 fragmentP626P629 = new FragmentP626P629(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP626P629);
                     tFragment = TipoFragmentEncuestado.P626P629;
                     fragmentActual = fragmentP626P629;
+                    moduloActual = 6;
                     break;
                 case TipoFragmentEncuestado.P630:
                     FragmentP630 fragmentP630 = new FragmentP630(idEncuestado,EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP630);
                     tFragment = TipoFragmentEncuestado.P630;
                     fragmentActual = fragmentP630;
+                    moduloActual = 6;
                     break;
                 case TipoFragmentEncuestado.P701P705:
                     FragmentP701P705 fragmentP701P705 = new FragmentP701P705(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP701P705);
                     tFragment = TipoFragmentEncuestado.P701P705;
                     fragmentActual = fragmentP701P705;
+                    moduloActual = 7;
                     break;
                 case TipoFragmentEncuestado.P706P709:
                     FragmentP706P709 fragmentP706P709 = new FragmentP706P709(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP706P709);
                     tFragment = TipoFragmentEncuestado.P706P709;
                     fragmentActual = fragmentP706P709;
+                    moduloActual = 7;
                     break;
                 case TipoFragmentEncuestado.P801P804:
                     FragmentP801P804 fragmentP801P804 = new FragmentP801P804(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP801P804);
                     tFragment = TipoFragmentEncuestado.P801P804;
                     fragmentActual = fragmentP801P804;
+                    moduloActual = 8;
                     break;
                 case TipoFragmentEncuestado.P805P808:
                     FragmentP805P808 fragmentP805P808 = new FragmentP805P808(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP805P808);
                     tFragment = TipoFragmentEncuestado.P805P808;
                     fragmentActual = fragmentP805P808;
+                    moduloActual = 8;
                     break;
                 case TipoFragmentEncuestado.P809P812:
                     FragmentP809P812 fragmentP809P812 = new FragmentP809P812(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP809P812);
                     tFragment = TipoFragmentEncuestado.P809P812;
                     fragmentActual = fragmentP809P812;
+                    moduloActual = 8;
                     break;
                 case TipoFragmentEncuestado.P813P816:
                     FragmentP813P816 fragmentP813P816 = new FragmentP813P816(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP813P816);
                     tFragment = TipoFragmentEncuestado.P813P816;
                     fragmentActual = fragmentP813P816;
+                    moduloActual = 8;
                     break;
                 case TipoFragmentEncuestado.P817P820:
                     FragmentP817P820 fragmentP817P820 = new FragmentP817P820(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP817P820);
                     tFragment = TipoFragmentEncuestado.P817P820;
                     fragmentActual = fragmentP817P820;
+                    moduloActual = 8;
                     break;
                 case TipoFragmentEncuestado.P821P823:
                     FragmentP821P823 fragmentP821P823 = new FragmentP821P823(idEncuestado, EncuestaActivity.this);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentP821P823);
                     tFragment = TipoFragmentEncuestado.P821P823;
                     fragmentActual = fragmentP821P823;
+                    moduloActual = 8;
                     break;
             }
             fragmentTransaction.commit();
@@ -774,14 +811,66 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        final int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_volver_residentes) {
             salirActivityEncuestado();
             return true;
+        }else if (id == R.id.action_registrar_observacion) {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            final View dialogView = this.getLayoutInflater().inflate(R.layout.dialog_observaciones, null);
+            LinearLayout lytObservaciones = dialogView.findViewById(R.id.dialog_lytObservaciones);
+            final EditText edtObservaciones = dialogView.findViewById(R.id.dialog_edtObservaciones);
+            edtObservaciones.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+            dialog.setView(dialogView);
+            dialog.setTitle("OBSERVACIONES MODULO " + moduloActual);
+            dialog.setPositiveButton("Guardar", null);
+            dialog.setNegativeButton("Cancelar", null);
+            final AlertDialog alertDialog = dialog.create();
+            alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface dialogInterface) {
+                    Data data = new Data(EncuestaActivity.this);
+                    data.open();
+                    switch (moduloActual){
+                        case 3:edtObservaciones.setText(data.getValor(SQLConstantes.tablamodulo3,SQLConstantes.modulo3_obs_cap3,idEncuestado));break;
+                        case 4:edtObservaciones.setText(data.getValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_obs_cap4,idEncuestado));break;
+                        case 5:edtObservaciones.setText(data.getValor(SQLConstantes.tablamodulo5,SQLConstantes.modulo5_obs_cap5,idEncuestado));break;
+                        case 6:edtObservaciones.setText(data.getValor(SQLConstantes.tablamodulo6,SQLConstantes.modulo6_obs_cap6,idEncuestado));break;
+                        case 7:edtObservaciones.setText(data.getValor(SQLConstantes.tablamodulo7,SQLConstantes.modulo7_obs_cap7,idEncuestado));break;
+                        case 8:edtObservaciones.setText(data.getValor(SQLConstantes.tablamodulo8,SQLConstantes.modulo8_obs_cap8,idEncuestado));break;
+                    }
+                    data.close();
+                    Button b = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    b.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Data data = new Data(EncuestaActivity.this);
+                            data.open();
+                            switch (moduloActual){
+                                case 3: data.actualizarValor(SQLConstantes.tablamodulo3,SQLConstantes.modulo3_obs_cap3,edtObservaciones.getText().toString(),idEncuestado);
+                                    break;
+                                case 4: data.actualizarValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_obs_cap4,edtObservaciones.getText().toString(),idEncuestado);
+                                    break;
+                                case 5: data.actualizarValor(SQLConstantes.tablamodulo5,SQLConstantes.modulo5_obs_cap5,edtObservaciones.getText().toString(),idEncuestado);
+                                    break;
+                                case 6: data.actualizarValor(SQLConstantes.tablamodulo6,SQLConstantes.modulo6_obs_cap6,edtObservaciones.getText().toString(),idEncuestado);
+                                    break;
+                                case 7: data.actualizarValor(SQLConstantes.tablamodulo7,SQLConstantes.modulo7_obs_cap7,edtObservaciones.getText().toString(),idEncuestado);
+                                    break;
+                                case 8: data.actualizarValor(SQLConstantes.tablamodulo8,SQLConstantes.modulo8_obs_cap8,edtObservaciones.getText().toString(),idEncuestado);
+                                    break;
+                            }
+                            data.close();
+                            alertDialog.dismiss();
+                        }
+                    });
+                }
+            });
+            alertDialog.show();
+            return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

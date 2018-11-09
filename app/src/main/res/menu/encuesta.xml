@@ -6,4 +6,9 @@
         android:orderInCategory="100"
         android:title="VOLVER A LISTA RESIDENTES"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/action_registrar_observacion"
+        android:orderInCategory="100"
+        android:title="Registrar Observación"
+        app:showAsAction="never" />
 </menu>
