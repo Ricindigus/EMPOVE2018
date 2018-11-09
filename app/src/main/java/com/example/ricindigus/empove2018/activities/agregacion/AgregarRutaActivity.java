@@ -103,14 +103,14 @@ public class AgregarRutaActivity extends AppCompatActivity {
             spModo.setSelection(data.getNumeroRutaPais(m3Pregunta309.getC3_p309_mod()));
             spMes.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_m_cod()));
             spAnio.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_a_cod()));
-            Modulo3 modulo3 = data.getModulo3(idEncuestado);
-            c3_p307_d  = modulo3.getC3_p307_d();
-            c3_p307_m  = modulo3.getC3_p307_m();
-            c3_p307_a  = modulo3.getC3_p307_a();
-            Log.e("c3_p307_d", "cargarDatos: "+c3_p307_d);
-            Log.e("c3_p307_m", "cargarDatos: "+c3_p307_m);
-            Log.e("c3_p307_a", "cargarDatos: "+c3_p307_a);
         }
+        Modulo3 modulo3 = data.getModulo3(idEncuestado);
+        c3_p307_d  = modulo3.getC3_p307_d();
+        c3_p307_m  = modulo3.getC3_p307_m();
+        c3_p307_a  = modulo3.getC3_p307_a();
+        Log.e("c3_p307_d", "cargarDatos: "+c3_p307_d);
+        Log.e("c3_p307_m", "cargarDatos: "+c3_p307_m);
+        Log.e("c3_p307_a", "cargarDatos: "+c3_p307_a);
     }
 
     public void llenarVariables(){

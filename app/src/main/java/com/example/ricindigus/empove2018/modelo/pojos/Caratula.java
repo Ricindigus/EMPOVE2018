@@ -16,6 +16,7 @@ public class Caratula {
     private String latitud;
     private String longitud;
     private String tipvia;
+    private String tipvia_o;
     private String nomvia;
     private String nropta;
     private String block;
@@ -38,6 +39,7 @@ public class Caratula {
         latitud="";
         longitud="";
         tipvia="";
+        tipvia_o="";
         nomvia="";
         nropta="";
         block="";
@@ -120,6 +122,14 @@ public class Caratula {
 
     public void setTipvia(String tipvia) {
         this.tipvia = tipvia;
+    }
+
+    public String getTipvia_o() {
+        return tipvia_o;
+    }
+
+    public void setTipvia_o(String tipvia_o) {
+        this.tipvia_o = tipvia_o;
     }
 
     public String getNomvia() {
@@ -231,6 +241,7 @@ public class Caratula {
         contentValues.put(SQLConstantes.caratula_longitud,longitud);
         contentValues.put(SQLConstantes.caratula_latitud,latitud);
         contentValues.put(SQLConstantes.caratula_tipvia,tipvia);
+        contentValues.put(SQLConstantes.caratula_tipvia_o,tipvia_o);
         contentValues.put(SQLConstantes.caratula_nomvia,nomvia);
         contentValues.put(SQLConstantes.caratula_nropta,nropta);
         contentValues.put(SQLConstantes.caratula_block,block);

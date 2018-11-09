@@ -53,6 +53,7 @@ public class FragmentP506P507 extends FragmentPagina {
     Spinner informanteSpinner;
 
     RadioGroup c5_p506_1_RadioGroup, c5_p506_4_RadioGroup;
+    TextView c5_p506_2o3_TextView;
     EditText c5_p506_2o3_EditText;
     RadioGroup c5_p507_RadioGroup;
     AutoCompleteTextView autoCompleteTextView;
@@ -91,6 +92,7 @@ public class FragmentP506P507 extends FragmentPagina {
 
         c5_p506_1_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_506_radiogroup_C5_P506_1);
         c5_p506_2o3_EditText = (EditText) rootView.findViewById(R.id.mod5_506_sp6_edittext_C5_P506_2o3);
+        c5_p506_2o3_TextView = (TextView) rootView.findViewById(R.id.mod5_506_sp6_TextView_C5_P506_2o3);
         c5_p506_4_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_506_radiogroup_C5_P506_4);
 
         c5_p507_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_507_radiogroup_C5_P507);
@@ -113,6 +115,18 @@ public class FragmentP506P507 extends FragmentPagina {
         super.onViewCreated(view, savedInstanceState);
 
         configurarEditText(c5_p506_2o3_EditText,m5_p506_subpregunta_linearlayout,2,1);
+
+        c5_p506_1_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int seleccionado = group.indexOfChild(group.findViewById(checkedId));
+                switch (seleccionado){
+                    case 2:
+                        c5_p506_2o3_TextView.setText("Grado");break;
+                    default: c5_p506_2o3_TextView.setText("Año");break;
+                }
+            }
+        });
 
         c5_p507_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

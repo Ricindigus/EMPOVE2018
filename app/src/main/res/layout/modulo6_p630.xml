@@ -101,7 +101,9 @@
                 android:drawSelectorOnTop="true"
                 android:entries="@array/modulo_6_p630_frecuencia"/>
         </android.support.v7.widget.CardView>
-
+        <EditText
+            android:id="@+id/mod6_630_edittext_C6_P630_1_FREC_O"
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -209,7 +211,9 @@
             android:drawSelectorOnTop="true"
             android:entries="@array/modulo_6_p630_frecuencia"/>
         </android.support.v7.widget.CardView>
-
+        <EditText
+            android:id="@+id/mod6_630_edittext_C6_P630_2_FREC_O"
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
