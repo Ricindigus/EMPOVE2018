@@ -161,9 +161,11 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            salirActivityEncuestado();
         }
     }
+
+
 
     public void habilitarFragment(int tipoFragment){
         Data data =  new Data(this);

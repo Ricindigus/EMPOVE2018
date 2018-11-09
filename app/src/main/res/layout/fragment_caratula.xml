@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".fragments.modulo1V.FragmentP101P107">
+    tools:context=".fragments.vivienda.FragmentCaratula">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -24,6 +24,7 @@
             android:orientation="vertical">
             <include layout="@layout/caratula_pubicacion_geo"/>
             <include layout="@layout/caratula_pubicacion_mue"/>
+            <include layout="@layout/caratula_pgps"/>
             <include layout="@layout/caratula_pdireccion_viv"/>
             <!--<include layout="@layout/caratula_pcant_hogares"/>-->
         </LinearLayout>

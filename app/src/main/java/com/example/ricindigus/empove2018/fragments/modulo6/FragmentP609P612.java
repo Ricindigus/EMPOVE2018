@@ -35,6 +35,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterMinMax;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 import java.util.ArrayList;
@@ -160,21 +161,21 @@ public class FragmentP609P612 extends FragmentPagina {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        configurarEditText(c6_p610_pd_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_pl_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_pm_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_pmi_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_pj_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_pv_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_ps_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_pd_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_pl_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_pm_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_pmi_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_pj_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_pv_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_ps_EditText,m6_p610_linearlayout,3,2);
 
-        configurarEditText(c6_p610_sd_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_sl_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_sm_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_smi_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_sj_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_sv_EditText,m6_p610_linearlayout,2,2);
-        configurarEditText(c6_p610_ss_EditText,m6_p610_linearlayout,2,2);
+        configurarEditText(c6_p610_sd_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_sl_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_sm_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_smi_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_sj_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_sv_EditText,m6_p610_linearlayout,3,2);
+        configurarEditText(c6_p610_ss_EditText,m6_p610_linearlayout,3,2);
 
 
         configurarEditText(c6_p611_EditText,m6_p611_linearlayout,2,3);
@@ -320,8 +321,8 @@ public class FragmentP609P612 extends FragmentPagina {
         if(c6_p610_pm.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - MARTES: DEBE INGRESAR HORAS TRABAJADAS");return false; }
         if(c6_p610_pmi.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - MIERCOLES: DEBE INGRESAR HORAS TRABAJADAS");return false; }
         if(c6_p610_pj.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - JUEVES: DEBE INGRESAR HORAS TRABAJADAS");return false; }
-        if(c6_p610_pv.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - SABADO: DEBE INGRESAR HORAS TRABAJADAS");return false; }
-        if(c6_p610_ps.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - DOMINGO: DEBE INGRESAR HORAS TRABAJADAS");return false; }
+        if(c6_p610_pv.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - VIERNES: DEBE INGRESAR HORAS TRABAJADAS");return false; }
+        if(c6_p610_ps.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - SABADO: DEBE INGRESAR HORAS TRABAJADAS");return false; }
 
         if(c6_p610_sd.trim().equals("")){ mostrarMensaje("PREGUNTA 610 SECUNDARIA - DOMINGO: DEBE INGRESAR HORAS TRABAJADAS");return false; }
         if(c6_p610_sl.trim().equals("")){ mostrarMensaje("PREGUNTA 610 SECUNDARIA - LUNES: DEBE INGRESAR HORAS TRABAJADAS");return false; }
@@ -460,6 +461,11 @@ public class FragmentP609P612 extends FragmentPagina {
         });
         if (tipo == 2) {
             editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+
+        if (tipo == 3){
+            editText.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "24")});
             editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         }
     }

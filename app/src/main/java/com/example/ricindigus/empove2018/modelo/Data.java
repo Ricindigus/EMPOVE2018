@@ -862,6 +862,8 @@ public class Data {
                 caratula.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_zona)));
                 caratula.setManzana_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_manzana_id)));
                 caratula.setVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_vivienda)));
+                caratula.setLatitud(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_latitud)));
+                caratula.setLongitud(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_longitud)));
                 caratula.setTipvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_tipvia)));
                 caratula.setNomvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nomvia)));
                 caratula.setNropta(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nropta)));

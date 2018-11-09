@@ -151,6 +151,8 @@ public class SQLConstantes {
     public static String caratula_zona = "zona";
     public static String caratula_manzana_id = "manzana_id";
     public static String caratula_vivienda = "vivienda";
+    public static String caratula_latitud = "latitud";
+    public static String caratula_longitud = "longitud";
     public static String caratula_tipvia = "tipvia";
     public static String caratula_nomvia = "nomvia";
     public static String caratula_nropta = "nropta";
@@ -173,6 +175,8 @@ public class SQLConstantes {
                     caratula_zona  + " TEXT," +
                     caratula_manzana_id  + " TEXT," +
                     caratula_vivienda  + " TEXT," +
+                    caratula_latitud + " TEXT," +
+                    caratula_longitud  + " TEXT," +
                     caratula_tipvia  + " TEXT," +
                     caratula_nomvia  + " TEXT," +
                     caratula_nropta  + " TEXT," +

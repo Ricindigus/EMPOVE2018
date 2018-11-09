@@ -63,6 +63,8 @@
         android:gravity="center_vertical"
         android:padding="@dimen/margen_medium"
         android:layout_marginLeft="@dimen/margen_small"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
         android:background="@drawable/marco_subpregunta"
         android:orientation="horizontal">
         <TextView

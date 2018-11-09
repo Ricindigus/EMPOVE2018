@@ -13,6 +13,8 @@ public class Caratula {
     private String zona;
     private String manzana_id;
     private String vivienda;
+    private String latitud;
+    private String longitud;
     private String tipvia;
     private String nomvia;
     private String nropta;
@@ -33,6 +35,8 @@ public class Caratula {
         zona="";
         manzana_id="";
         vivienda="";
+        latitud="";
+        longitud="";
         tipvia="";
         nomvia="";
         nropta="";
@@ -198,6 +202,22 @@ public class Caratula {
         this.t_hogar = t_hogar;
     }
 
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.caratula_id,_id);
@@ -208,6 +228,8 @@ public class Caratula {
         contentValues.put(SQLConstantes.caratula_zona,zona);
         contentValues.put(SQLConstantes.caratula_manzana_id,manzana_id);
         contentValues.put(SQLConstantes.caratula_vivienda,vivienda);
+        contentValues.put(SQLConstantes.caratula_longitud,longitud);
+        contentValues.put(SQLConstantes.caratula_latitud,latitud);
         contentValues.put(SQLConstantes.caratula_tipvia,tipvia);
         contentValues.put(SQLConstantes.caratula_nomvia,nomvia);
         contentValues.put(SQLConstantes.caratula_nropta,nropta);

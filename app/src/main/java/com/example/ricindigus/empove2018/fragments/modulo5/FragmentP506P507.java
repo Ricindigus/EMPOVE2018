@@ -114,7 +114,6 @@ public class FragmentP506P507 extends FragmentPagina {
 
         configurarEditText(c5_p506_2o3_EditText,m5_p506_subpregunta_linearlayout,2,1);
 
-
         c5_p507_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
