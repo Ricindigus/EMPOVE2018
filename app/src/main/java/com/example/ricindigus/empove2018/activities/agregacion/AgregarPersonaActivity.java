@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,6 +26,7 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta309;
 import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta318;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 public class AgregarPersonaActivity extends AppCompatActivity {
@@ -44,6 +46,8 @@ public class AgregarPersonaActivity extends AppCompatActivity {
     private int c3_p318_s;
     private String c3_p318_e;
     private int c3_p318_p;
+
+    int edad=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +95,12 @@ public class AgregarPersonaActivity extends AppCompatActivity {
             if(!m3Pregunta318.getC3_p318_s().equals("-1"))((RadioButton)rgSexo.getChildAt(Integer.parseInt(m3Pregunta318.getC3_p318_s()))).setChecked(true);
             if(!m3Pregunta318.getC3_p318_p().equals("-1"))((RadioButton)rgSiNo.getChildAt(Integer.parseInt(m3Pregunta318.getC3_p318_p()))).setChecked(true);
         }
+        Data data2 = new Data(this);
+        data2.open();
+        Residente residente = data2.getResidente(idEncuestado);
+        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data2.close();
+        Log.e("edad", "cargarDatos: "+edad );
     }
 
     public void mostrarMensaje(String m){
@@ -165,6 +175,9 @@ public class AgregarPersonaActivity extends AppCompatActivity {
         if (c3_p318_s == -1){mostrarMensaje("SEXO: DEBE MARCAR UNA OPCIÓN"); return false;}
         if (c3_p318_p == -1){mostrarMensaje("PIENSA TRER A SU FAMILIAR: DEBE MARCAR UNA OPCIÓN"); return false;}
         if (c3_p318_e.equals("")){mostrarMensaje("EDAD: DEBE INDICAR SU EDAD"); return false;}
+        if(c3_p318_f==1 || c3_p318_f==2){
+            if(Integer.parseInt(c3_p318_e)<edad) mostrarMensaje("EDAD: DEBE SER MAYOR O IGUAL A SU EDAD("+edad+")"); return false;
+        }
         return true;
     }
 
