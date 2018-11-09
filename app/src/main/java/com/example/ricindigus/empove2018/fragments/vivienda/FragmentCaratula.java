@@ -11,9 +11,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -37,12 +39,13 @@ public class FragmentCaratula extends FragmentPagina {
     TextView nom_dep_TextView, nom_prov_TextView, nom_dist_TextView, nom_ccpp_TextView;
     TextView zona_TextView, manzana_id_TextView, vivienda_TextView;
     Spinner tipvia_Spinner;
-    EditText nomvia_EditText, nropta_EditText, block_EditText, interior_EditText, piso_EditText, mza_EditText,
+    EditText tipvia_o_EditText, nomvia_EditText, nropta_EditText, block_EditText, interior_EditText, piso_EditText, mza_EditText,
             lote_EditText, km_EditText, telefono_EditText;
 //    EditText t_hogar_EditText;
 
     //variables
     private int tipvia = -1;
+    private String tipvia_o="";
     private String nom_dep;
     private String nom_prov;
     private String nom_dist;
@@ -85,6 +88,7 @@ public class FragmentCaratula extends FragmentPagina {
         vivienda_TextView = (TextView) rootView.findViewById(R.id.caratula_textview_VIVIENDA);
 
         tipvia_Spinner = (Spinner) rootView.findViewById(R.id.caratula_spinner_TIPVIA);
+        tipvia_o_EditText = (EditText) rootView.findViewById(R.id.caratula_edittext_TIPVIA_O);
         nomvia_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_NOMVIA);
         nropta_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_NROPTA);
         block_EditText = (EditText) rootView.findViewById(R.id.caratula_textview_BLOCK);
@@ -101,6 +105,22 @@ public class FragmentCaratula extends FragmentPagina {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        tipvia_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                if(pos == 7){
+                    tipvia_o_EditText.setEnabled(true);
+                    tipvia_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                }else{
+                    tipvia_o_EditText.setEnabled(false);
+                    tipvia_o_EditText.setText("");
+                    tipvia_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
+        tipvia_o_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
         nomvia_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
         nropta_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
         block_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
@@ -124,6 +144,7 @@ public class FragmentCaratula extends FragmentPagina {
         data.open();
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.caratula_tipvia,tipvia+"");
+        contentValues.put(SQLConstantes.caratula_tipvia_o,tipvia_o);
         contentValues.put(SQLConstantes.caratula_nomvia,nomvia);
         contentValues.put(SQLConstantes.caratula_nropta,nropta);
         contentValues.put(SQLConstantes.caratula_block,block);
@@ -160,6 +181,7 @@ public class FragmentCaratula extends FragmentPagina {
         manzana_id = manzana_id_TextView.getText().toString();
         vivienda = vivienda_TextView.getText().toString();
         tipvia = tipvia_Spinner.getSelectedItemPosition();
+        tipvia_o = tipvia_o_EditText.getText().toString();
         nomvia = nomvia_EditText.getText().toString();
         nropta = nropta_EditText.getText().toString();
         block = block_EditText.getText().toString();
@@ -186,7 +208,8 @@ public class FragmentCaratula extends FragmentPagina {
             zona_TextView.setText(caratula.getZona());
             manzana_id_TextView.setText(caratula.getManzana_id());
             vivienda_TextView.setText(caratula.getVivienda());
-
+            Log.e("getTipvia_o", "cargarDatos: "+caratula.getTipvia_o() );
+            tipvia_o_EditText.setText(caratula.getTipvia_o());
             if(!caratula.getTipvia().equals("") || !caratula.getTipvia().equals("0"))tipvia_Spinner.setSelection(Integer.parseInt(caratula.getTipvia()));
             nomvia_EditText.setText(caratula.getNomvia());
             nropta_EditText.setText(caratula.getNropta());
@@ -223,6 +246,12 @@ public class FragmentCaratula extends FragmentPagina {
         int sumaValida = 0;
         String mensaje = "";
         if(tipvia == 0){ mostrarMensaje("Debe indicar el tipo de via"); return false; }
+        if(tipvia == 7){
+            Log.e("tipvia_o", "validarDatos: "+tipvia_o );
+            if(tipvia_o.trim().equals("")){
+                mostrarMensaje("TIPO DE VIA: DEBE ESPECIFICAR OTRO"); return false;
+            }
+        }
         if(nomvia.equals("")){ mostrarMensaje("Debe completar el NOMBRE DE LA VÍA"); return false; }
         if(nropta.equals("")){ mostrarMensaje("Debe completar NÚMERO DE LA PUERTA"); return false; }
         if(es_cero(nropta)){ mostrarMensaje("NO PUEDE SER CERO, NÚMERO DE LA PUERTA"); return false; }

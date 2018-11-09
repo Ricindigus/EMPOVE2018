@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -46,7 +47,7 @@ public class FragmentP630 extends FragmentPagina {
 
     Spinner informanteSpinner;
     RadioGroup c6_p630_1_RadioGroup, c6_p630_1med_RadioGroup;
-    EditText c6_p630_1o_EditText;
+    EditText c6_p630_1o_EditText, c6_p630_1frec_o_EditText, c6_p630_2frec_o_EditText;
     Spinner c6_p630_1frec_Spinner, c6_p630_1mont_Spinner;
     RadioGroup c6_p630_2_RadioGroup, c6_p630_2med_RadioGroup;
     EditText c6_p630_2o_EditText;
@@ -58,12 +59,14 @@ public class FragmentP630 extends FragmentPagina {
     private String c6_p630_1med;
     private String c6_p630_1o;
     private String c6_p630_1frec;
+    private String c6_p630_1frec_o;
     private String c6_p630_1mont;
     private String c6_p630_2;
     private String c6_p630_2med;
     private String c6_p630_2o;
     private String c6_p630_2mont;
     private String c6_p630_2frec;
+    private String c6_p630_2frec_o;
 
 
     @SuppressLint("ValidFragment")
@@ -87,12 +90,14 @@ public class FragmentP630 extends FragmentPagina {
         c6_p630_1med_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_1_MED);
         c6_p630_1o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_1_O);
         c6_p630_1frec_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_1_FREC);
+        c6_p630_1frec_o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_1_FREC_O);
         c6_p630_1mont_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_1_MONT);
 
         c6_p630_2_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_2);
         c6_p630_2med_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_630_radiogroup_C6_P630_2_MED);
         c6_p630_2o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_2_O);
         c6_p630_2frec_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_2_FREC);
+        c6_p630_2frec_o_EditText = (EditText) rootView.findViewById(R.id.mod6_630_edittext_C6_P630_2_FREC_O);
         c6_p630_2mont_Spinner = (Spinner) rootView.findViewById(R.id.mod6_630_spinner_C6_P630_2_MONT);
 
         m6_p630_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p630);
@@ -167,6 +172,23 @@ public class FragmentP630 extends FragmentPagina {
                 }
             }
         });
+
+        c6_p630_1frec_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                if(pos == 6){
+                    c6_p630_1frec_o_EditText.setEnabled(true);
+                    c6_p630_1frec_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                }else{
+                    c6_p630_1frec_o_EditText.setEnabled(false);
+                    c6_p630_1frec_o_EditText.setText("");
+                    c6_p630_1frec_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
+
         c6_p630_2med_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -181,6 +203,22 @@ public class FragmentP630 extends FragmentPagina {
                 }
             }
         });
+
+        c6_p630_2frec_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                if(pos == 6){
+                    c6_p630_2frec_o_EditText.setEnabled(true);
+                    c6_p630_2frec_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text);
+                }else{
+                    c6_p630_2frec_o_EditText.setEnabled(false);
+                    c6_p630_2frec_o_EditText.setText("");
+                    c6_p630_2frec_o_EditText.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
         cargarDatos();
     }
 
@@ -194,11 +232,13 @@ public class FragmentP630 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo6_c6_p630_1med,c6_p630_1med);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1o,c6_p630_1o);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1frec,c6_p630_1frec);
+        contentValues.put(SQLConstantes.modulo6_c6_p630_1frec_o,c6_p630_1frec_o);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1mont,c6_p630_1mont);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2,c6_p630_2);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2med,c6_p630_2med);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2o,c6_p630_2o);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2frec,c6_p630_2frec);
+        contentValues.put(SQLConstantes.modulo6_c6_p630_2frec_o,c6_p630_2frec_o);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2mont,c6_p630_2mont);
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
         data.close();
@@ -211,11 +251,13 @@ public class FragmentP630 extends FragmentPagina {
         c6_p630_1med = c6_p630_1med_RadioGroup.indexOfChild(c6_p630_1med_RadioGroup.findViewById(c6_p630_1med_RadioGroup.getCheckedRadioButtonId()))+ "";
         c6_p630_1o = c6_p630_1o_EditText.getText().toString();
         c6_p630_1frec = c6_p630_1frec_Spinner.getSelectedItemPosition()+ "";
+        c6_p630_1frec_o = c6_p630_1frec_o_EditText.getText().toString();
         c6_p630_1mont = c6_p630_1mont_Spinner.getSelectedItemPosition()+ "";
         c6_p630_2 = c6_p630_2_RadioGroup.indexOfChild(c6_p630_2_RadioGroup.findViewById(c6_p630_2_RadioGroup.getCheckedRadioButtonId()))+ "";
         c6_p630_2med = c6_p630_2med_RadioGroup.indexOfChild(c6_p630_2med_RadioGroup.findViewById(c6_p630_2med_RadioGroup.getCheckedRadioButtonId()))+ "";
         c6_p630_2o = c6_p630_2o_EditText.getText().toString();
         c6_p630_2frec = c6_p630_2frec_Spinner.getSelectedItemPosition()+ "";
+        c6_p630_2frec_o = c6_p630_2frec_o_EditText.getText().toString();
         c6_p630_2mont = c6_p630_2mont_Spinner.getSelectedItemPosition()+ "";
     }
 
@@ -234,11 +276,13 @@ public class FragmentP630 extends FragmentPagina {
             if(!modulo6.getC6_p630_1med().equals("-1") && !modulo6.getC6_p630_1med().equals(""))((RadioButton)c6_p630_1med_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_1med()))).setChecked(true);
             c6_p630_1o_EditText.setText(modulo6.getC6_p630_1o());
             if(!modulo6.getC6_p630_1frec().equals("")) c6_p630_1frec_Spinner.setSelection(Integer.parseInt(modulo6.getC6_p630_1frec()));
+            c6_p630_1frec_o_EditText.setText(modulo6.getC6_p630_1frec_o());
             if(!modulo6.getC6_p630_1mont().equals("")) c6_p630_1mont_Spinner.setSelection(Integer.parseInt(modulo6.getC6_p630_1mont()));
             if(!modulo6.getC6_p630_2().equals("-1") && !modulo6.getC6_p630_2().equals(""))((RadioButton)c6_p630_2_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_2()))).setChecked(true);
             if(!modulo6.getC6_p630_2med().equals("-1") && !modulo6.getC6_p630_2med().equals(""))((RadioButton)c6_p630_2med_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p630_2med()))).setChecked(true);
             c6_p630_2o_EditText.setText(modulo6.getC6_p630_2o());
             if(!modulo6.getC6_p630_2frec().equals("")) c6_p630_2frec_Spinner.setSelection(Integer.parseInt(modulo6.getC6_p630_2frec()));
+            c6_p630_2frec_o_EditText.setText(modulo6.getC6_p630_2frec_o());
             if(!modulo6.getC6_p630_2mont().equals("")) c6_p630_2mont_Spinner.setSelection(Integer.parseInt(modulo6.getC6_p630_2mont()));
         }
         data.close();
@@ -260,6 +304,11 @@ public class FragmentP630 extends FragmentPagina {
                 if (c6_p630_1o.trim().equals("")){ mostrarMensaje("PREGUNTA 630-A: DEBE ESPECIFICAR OTRO");return false; }
             }
             if (c6_p630_1frec.equals("0")) { mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR FRECUENCIA");return false; }
+            if (c6_p630_1frec.equals("6")) {
+                if(c6_p630_1frec_o.trim().equals("")){
+                    mostrarMensaje("PREGUNTA 630-A: DEBE ESPECIFICAR OTRA FRECUENCIA");return false;
+                }
+            }
             if (c6_p630_1mont.equals("0")) { mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR MONTO");return false; }
         }
 
@@ -270,6 +319,11 @@ public class FragmentP630 extends FragmentPagina {
                 if (c6_p630_2o.trim().equals("")) { mostrarMensaje("PREGUNTA 630-B: DEBE ESPECIFICAR OTRO");return false; }
             }
             if (c6_p630_2frec.equals("0")) { mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR FRECUENCIA");return false; }
+            if (c6_p630_2frec.equals("6")) {
+                if(c6_p630_2frec_o.trim().equals("")){
+                    mostrarMensaje("PREGUNTA 630-B: DEBE ESPECIFICAR OTRA FRECUENCIA");return false;
+                }
+            }
             if (c6_p630_2mont.equals("0")) { mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR MONTO");return false; }
         }
         return true;

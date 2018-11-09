@@ -152,6 +152,7 @@ public class SQLConstantes {
     public static String caratula_manzana_id = "manzana_id";
     public static String caratula_vivienda = "vivienda";
     public static String caratula_tipvia = "tipvia";
+    public static String caratula_tipvia_o = "tipvia_o";
     public static String caratula_nomvia = "nomvia";
     public static String caratula_nropta = "nropta";
     public static String caratula_block = "block";
@@ -174,6 +175,7 @@ public class SQLConstantes {
                     caratula_manzana_id  + " TEXT," +
                     caratula_vivienda  + " TEXT," +
                     caratula_tipvia  + " TEXT," +
+                    caratula_tipvia_o  + " TEXT," +
                     caratula_nomvia  + " TEXT," +
                     caratula_nropta  + " TEXT," +
                     caratula_block  + " TEXT," +
@@ -1122,11 +1124,13 @@ public class SQLConstantes {
     public static String modulo6_c6_p630_1med = "c6_p630_1med";
     public static String modulo6_c6_p630_1o = "c6_p630_1o";
     public static String modulo6_c6_p630_1frec = "c6_p630_1frec";
+    public static String modulo6_c6_p630_1frec_o = "c6_p630_1frec_o";
     public static String modulo6_c6_p630_1mont = "c6_p630_1mont";
     public static String modulo6_c6_p630_2 = "c6_p630_2";
     public static String modulo6_c6_p630_2med = "c6_p630_2med";
     public static String modulo6_c6_p630_2o = "c6_p630_2o";
     public static String modulo6_c6_p630_2frec = "c6_p630_2frec";
+    public static String modulo6_c6_p630_2frec_o = "c6_p630_2frec_o";
     public static String modulo6_c6_p630_2mont = "c6_p630_2mont";
     public static String modulo6_obs_cap6 = "obs_cap6";
     public static String modulo6_c6_estado = "c6_estado";
@@ -1235,11 +1239,13 @@ public class SQLConstantes {
                     modulo6_c6_p630_1med  +  " TEXT," +
                     modulo6_c6_p630_1o  +  " TEXT," +
                     modulo6_c6_p630_1frec  +  " TEXT," +
+                    modulo6_c6_p630_1frec_o  +  " TEXT," +
                     modulo6_c6_p630_1mont  +  " TEXT," +
                     modulo6_c6_p630_2  +  " TEXT," +
                     modulo6_c6_p630_2med  +  " TEXT," +
                     modulo6_c6_p630_2o  +  " TEXT," +
                     modulo6_c6_p630_2frec  +  " TEXT," +
+                    modulo6_c6_p630_2frec_o  +  " TEXT," +
                     modulo6_c6_p630_2mont  +  " TEXT," +
                     modulo6_obs_cap6  +  " TEXT," +
                     modulo6_c6_estado  +  " TEXT" + ");"
