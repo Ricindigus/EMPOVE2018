@@ -18,6 +18,61 @@
             android:textColor="@color/icons"
             android:gravity="center"
             android:background="@color/colorPrimary"/>
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_small"
+            android:background="@color/greyBluePrimaryDark">
+            <TextView
+                android:text="ID"
+                android:textStyle="bold"
+                android:textColor="@color/colorIcons"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="12sp"/>
+            <TextView
+                android:text="AÑO"
+                android:textStyle="bold"
+                android:textColor="@color/colorIcons"
+                android:layout_width="0dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+            <TextView
+                android:text="MES"
+                android:textStyle="bold"
+                android:textColor="@color/colorIcons"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+            <TextView
+                android:text="PERIODO"
+                android:textStyle="bold"
+                android:textColor="@color/colorIcons"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+            <TextView
+                android:text="CONGLOMERADO"
+                android:textStyle="bold"
+                android:textColor="@color/colorIcons"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+        </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

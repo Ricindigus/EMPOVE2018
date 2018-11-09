@@ -143,32 +143,41 @@ public class SQLConstantes {
      * TABLA CARATULA
      * */
 
-    public static String caratula_id = "_id";
-    public static String caratula_nom_dep = "nom_dep";
-    public static String caratula_nom_prov = "nom_prov";
-    public static String caratula_nom_dist = "nom_dist";
-    public static String caratula_nom_ccpp = "nom_ccpp";
-    public static String caratula_zona = "zona";
-    public static String caratula_manzana_id = "manzana_id";
-    public static String caratula_vivienda = "vivienda";
-    public static String caratula_latitud = "latitud";
-    public static String caratula_longitud = "longitud";
-    public static String caratula_tipvia = "tipvia";
-    public static String caratula_tipvia_o = "tipvia_o";
-    public static String caratula_nomvia = "nomvia";
-    public static String caratula_nropta = "nropta";
-    public static String caratula_block = "block";
-    public static String caratula_interior = "interior";
-    public static String caratula_piso = "piso";
-    public static String caratula_mza = "mza";
-    public static String caratula_lote = "lote";
-    public static String caratula_km = "km";
-    public static String caratula_telefono = "telefono";
-    public static String caratula_t_hogar = "t_hogar";
+    public static final String caratula_id = "_id";
+    public static final String caratula_anio = "anio";
+    public static final String caratula_mes = "mes";
+    public static final String caratula_periodo = "periodo";
+    public static final String caratula_conglomerado = "conglomerado";
+    public static final String caratula_nom_dep = "nom_dep";
+    public static final String caratula_nom_prov = "nom_prov";
+    public static final String caratula_nom_dist = "nom_dist";
+    public static final String caratula_nom_ccpp = "nom_ccpp";
+    public static final String caratula_zona = "zona";
+    public static final String caratula_manzana_id = "manzana_id";
+    public static final String caratula_vivienda = "vivienda";
+    public static final String caratula_latitud = "latitud";
+    public static final String caratula_longitud = "longitud";
+    public static final String caratula_tipvia = "tipvia";
+    public static final String caratula_tipvia_o = "tipvia_o";
+    public static final String caratula_nomvia = "nomvia";
+    public static final String caratula_nropta = "nropta";
+    public static final String caratula_block = "block";
+    public static final String caratula_interior = "interior";
+    public static final String caratula_piso = "piso";
+    public static final String caratula_mza = "mza";
+    public static final String caratula_lote = "lote";
+    public static final String caratula_km = "km";
+    public static final String caratula_telefono = "telefono";
+    public static final String caratula_t_hogar = "t_hogar";
+    public static final String caratula_usuario = "usuario";
 
     public static final String SQL_CREATE_TABLA_CARATULA =
             "CREATE TABLE " + tablacaratula + "(" +
                     caratula_id  + " INTEGER PRIMARY KEY, " +
+                    caratula_anio + " TEXT," +
+                    caratula_mes + " TEXT," +
+                    caratula_periodo+ " TEXT," +
+                    caratula_conglomerado + " TEXT," +
                     caratula_nom_dep + " TEXT," +
                     caratula_nom_prov  + " TEXT," +
                     caratula_nom_dist  + " TEXT," +
@@ -189,7 +198,8 @@ public class SQLConstantes {
                     caratula_lote  + " TEXT," +
                     caratula_km  + " TEXT," +
                     caratula_telefono  + " TEXT," +
-                    caratula_t_hogar + " TEXT" + ");"
+                    caratula_t_hogar  + " TEXT," +
+                    caratula_usuario + " TEXT" + ");"
             ;
 
     /**
@@ -424,13 +434,13 @@ public class SQLConstantes {
      * TABLA FUNCIONARIOS
      * */
 
-    public static String funcionarios_id = "_id";
-    public static String funcionarios_dni_encu = "dni_encu";
-    public static String funcionarios_dni_sup = "dni_sup";
-    public static String funcionarios_dni_coord = "dni_coor";
-    public static String funcionarios_nombre_encu = "nombre_encu";
-    public static String funcionarios_nombre_sup = "nombre_sup";
-    public static String funcionarios_nombre_coord = "nombre_coord";
+    public static final String funcionarios_id = "_id";
+    public static final String funcionarios_dni_encu = "dni_encu";
+    public static final String funcionarios_dni_sup = "dni_sup";
+    public static final String funcionarios_dni_coord = "dni_coor";
+    public static final String funcionarios_nombre_encu = "nombre_encu";
+    public static final String funcionarios_nombre_sup = "nombre_sup";
+    public static final String funcionarios_nombre_coord = "nombre_coord";
 
     public static final String SQL_CREATE_TABLA_FUNCIONARIOS =
             "CREATE TABLE " + tablafuncionarios + "(" +
@@ -1889,6 +1899,7 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_PERIODO = "periodo=?";
     public static final String WHERE_CLAUSE_CONGLOMERADO = "conglomerado=?";
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
+    public static final String WHERE_CLAUSE_USUARIO = "usuario=?";
     public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";
     public static final String WHERE_CLAUSE_IDVIVIENDA = "idVivienda=?";
     public static final String WHERE_CLAUSE_ESTADO_COD = municipios_cod_estado+"=?";

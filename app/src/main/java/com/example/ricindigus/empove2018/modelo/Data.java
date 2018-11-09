@@ -882,6 +882,49 @@ public class Data {
         return caratula;
     }
 
+    public ArrayList<Caratula> getAllCaratulasUsuario(String idUsuario){
+        ArrayList<Caratula> caratulas = new ArrayList<>();
+        String[] whereArgs = new String[]{idUsuario};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablacaratula,
+                    null,SQLConstantes.WHERE_CLAUSE_USUARIO,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                Caratula caratula = new Caratula();
+                caratula.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.caratula_id)));
+                caratula.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_anio)));
+                caratula.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_mes)));
+                caratula.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_periodo)));
+                caratula.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_conglomerado)));
+                caratula.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_usuario)));
+                caratula.setNom_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_dep)));
+                caratula.setNom_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_prov)));
+                caratula.setNom_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_dist)));
+                caratula.setNom_ccpp(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_ccpp)));
+                caratula.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_zona)));
+                caratula.setManzana_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_manzana_id)));
+                caratula.setVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_vivienda)));
+                caratula.setLatitud(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_latitud)));
+                caratula.setLongitud(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_longitud)));
+                caratula.setTipvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_tipvia)));
+                caratula.setNomvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nomvia)));
+                caratula.setNropta(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nropta)));
+                caratula.setBlock(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_block)));
+                caratula.setInterior(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_interior)));
+                caratula.setPiso(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_piso)));
+                caratula.setMza(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_mza)));
+                caratula.setLote(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_lote)));
+                caratula.setKm(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_km)));
+                caratula.setTelefono(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_telefono)));
+                caratula.setT_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_t_hogar)));
+                caratulas.add(caratula);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return caratulas;
+    }
+
 
     /**
      * retornar pojo modulo1

@@ -252,8 +252,8 @@ public class MarcoActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.opcion_importar:
-//                Intent intent1 = new Intent(MarcoActivity.this,ImportarActivity.class);
-//                startActivity(intent1);
+                Intent intent1 = new Intent(MarcoActivity.this,ImportarActivity.class);
+                startActivity(intent1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -305,7 +305,11 @@ public class MarcoActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
                 intent.putExtra("nombreUsuario", nombreUsuario);
                 intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
-                intent.putExtra("idConglomerado", itemMarcos.get(position).getConglomerado()+"");
+                intent.putExtra("vivienda_conglomerado", itemMarcos.get(position).getConglomerado()+"");
+                intent.putExtra("vivienda_mes", itemMarcos.get(position).getMes()+"");
+                intent.putExtra("vivienda_anio", itemMarcos.get(position).getAnio()+"");
+                intent.putExtra("vivienda_periodo", itemMarcos.get(position).getPeriodo()+"");
+                intent.putExtra("idUsuario", idUsuario);
                 startActivity(intent);
             }
         });

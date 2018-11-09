@@ -27,10 +27,14 @@ import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
 
 public class ViviendaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private String idEncuestado;
     private String idVivienda;
-    private String idHogar;
+    public static String vivienda_anio;
+    public static String vivienda_mes;
+    public static String vivienda_periodo;
+    public static String vivienda_conglomerado;
     private String nombreUsuario;
+    private String idUsuario;
+
     private TextView btnAtras;
     private TextView btnSiguiente;
     int tFragment = 1;
@@ -45,12 +49,18 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         btnSiguiente = (TextView) findViewById(R.id.boton_siguiente);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        String conglomerado = getIntent().getExtras().getString("idConglomerado");
+
         idVivienda = getIntent().getExtras().getString("idVivienda");
         nombreUsuario = getIntent().getExtras().getString("nombreUsuario");
+        idUsuario = getIntent().getExtras().getString("idUsuario");
+        vivienda_anio = getIntent().getExtras().getString("vivienda_anio");
+        vivienda_mes = getIntent().getExtras().getString("vivienda_mes");
+        vivienda_periodo = getIntent().getExtras().getString("vivienda_periodo");
+        vivienda_conglomerado = getIntent().getExtras().getString("vivienda_conglomerado");
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("VIVIENDA N° " + idVivienda);
-        getSupportActionBar().setSubtitle("CONGLOMERADO N° " + conglomerado);
+        getSupportActionBar().setSubtitle("CONGLOMERADO N° " + vivienda_conglomerado);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -124,7 +134,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         switch (tipoFragment){
             case TipoFragmentVivienda.CARATULA:
                 btnAtras.setVisibility(View.GONE);
-                FragmentCaratula fragmentCaratula = new FragmentCaratula(idVivienda,ViviendaActivity.this);
+                FragmentCaratula fragmentCaratula = new FragmentCaratula(idVivienda,vivienda_mes,vivienda_anio,vivienda_conglomerado,vivienda_periodo,idUsuario,ViviendaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula);
                 fragmentActual = fragmentCaratula;
                 tFragment = TipoFragmentVivienda.CARATULA;

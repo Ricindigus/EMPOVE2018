@@ -48,7 +48,7 @@ import static android.os.Environment.getExternalStorageDirectory;
 
 public class ExportarActivity extends AppCompatActivity {
 
-    ArrayList<ItemMarco> marcos;
+    ArrayList<Caratula> marcos;
     ArrayList<ExportarItem> exportarItems;
     private String idUsuario;
     private RecyclerView recyclerView;
@@ -108,16 +108,16 @@ public class ExportarActivity extends AppCompatActivity {
         });
     }
     private void inicializarDatos() {
-        marcos = new ArrayList<ItemMarco>();
+        marcos = new ArrayList<Caratula>();
         exportarItems = new ArrayList<>();
         Data data = new Data(this);
         data.open();
-        marcos = data.getListMarco(idUsuario);
+        marcos = data.getAllCaratulasUsuario(idUsuario);
         data.close();
 
-        for(ItemMarco itemMarco: marcos){
-            ExportarItem exportarItem = new ExportarItem(0,itemMarco.get_id()+"",itemMarco.getAnio(), itemMarco.getMes(),
-                    itemMarco.getPeriodo(),itemMarco.getConglomerado(),itemMarco.getNorden());
+        for(Caratula caratula: marcos){
+            ExportarItem exportarItem = new ExportarItem(0,caratula.get_id()+"",caratula.getAnio(), caratula.getMes(),
+                    caratula.getPeriodo(),caratula.getConglomerado());
             exportarItems.add(exportarItem);
         }
     }

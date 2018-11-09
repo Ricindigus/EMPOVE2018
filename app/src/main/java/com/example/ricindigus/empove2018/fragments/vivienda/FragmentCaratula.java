@@ -68,11 +68,15 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
     private ToggleButton btnGPS;
     private TextView txtLatitud, txtLongitud, txtAltitud;
     private Context contexto;
-    private String idEmpresa;
 
 
 
     String idVivienda;
+    String idMes;
+    String idAnio;
+    String idConglomerado;
+    String idPeriodo;
+    String idUsuario;
     Context context;
 
     TextView nom_dep_TextView, nom_prov_TextView, nom_dist_TextView, nom_ccpp_TextView;
@@ -107,8 +111,13 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
 
 
     @SuppressLint("ValidFragment")
-    public FragmentCaratula(String idVivienda, Context context) {
+    public FragmentCaratula(String idVivienda, String idMes, String idAnio, String idConglomerado, String idPeriodo, String idUsuario, Context context) {
         this.idVivienda = idVivienda;
+        this.idMes = idMes;
+        this.idAnio = idAnio;
+        this.idConglomerado = idConglomerado;
+        this.idPeriodo = idPeriodo;
+        this.idUsuario = idUsuario;
         this.context = context;
     }
 
@@ -228,6 +237,11 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             data.actualizarElemento(getNombreTabla(),contentValues,idVivienda);
         }else{
             contentValues.put(SQLConstantes.caratula_id,idVivienda);
+            contentValues.put(SQLConstantes.caratula_mes,idMes);
+            contentValues.put(SQLConstantes.caratula_anio,idAnio);
+            contentValues.put(SQLConstantes.caratula_periodo,idPeriodo);
+            contentValues.put(SQLConstantes.caratula_usuario,idUsuario);
+            contentValues.put(SQLConstantes.caratula_conglomerado,idConglomerado);
             contentValues.put(SQLConstantes.caratula_nom_dep,nom_dep);
             contentValues.put(SQLConstantes.caratula_nom_prov,nom_prov);
             contentValues.put(SQLConstantes.caratula_nom_dist,nom_dist);

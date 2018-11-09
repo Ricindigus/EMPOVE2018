@@ -11,17 +11,15 @@ public class ExportarItem {
     private String mes;
     private String periodo;
     private String conglomerado;
-    private String NroOrden;
 
 
-    public ExportarItem(int seleccionado, String idVivienda, String anio, String mes, String periodo, String conglomerado, String nroOrden) {
+    public ExportarItem(int seleccionado, String idVivienda, String anio, String mes, String periodo, String conglomerado) {
         this.seleccionado = seleccionado;
         this.idVivienda = idVivienda;
         this.anio = anio;
         this.mes = mes;
         this.periodo = periodo;
         this.conglomerado = conglomerado;
-        NroOrden = nroOrden;
     }
 
     public int getSeleccionado() {
@@ -72,11 +70,4 @@ public class ExportarItem {
         this.conglomerado = conglomerado;
     }
 
-    public String getNroOrden() {
-        return NroOrden;
-    }
-
-    public void setNroOrden(String nroOrden) {
-        NroOrden = nroOrden;
-    }
 }

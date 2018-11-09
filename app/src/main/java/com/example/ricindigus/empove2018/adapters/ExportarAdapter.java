@@ -59,7 +59,6 @@ public class ExportarAdapter extends RecyclerView.Adapter<ExportarAdapter.ViewHo
         holder.txtMes.setText(exportarItems.get(position).getMes().toString());
         holder.txtPeriodo.setText(exportarItems.get(position).getPeriodo().toString());
         holder.txtConglomerado.setText(exportarItems.get(position).getConglomerado().toString());
-        holder.txtNroOrden.setText(exportarItems.get(position).getNroOrden().toString());
     }
 
     @Override
@@ -75,7 +74,6 @@ public class ExportarAdapter extends RecyclerView.Adapter<ExportarAdapter.ViewHo
         TextView txtMes;
         TextView txtPeriodo;
         TextView txtConglomerado;
-        TextView txtNroOrden;
 
 
         public ViewHolder(View itemView) {
@@ -87,7 +85,6 @@ public class ExportarAdapter extends RecyclerView.Adapter<ExportarAdapter.ViewHo
             txtMes = (TextView)itemView.findViewById(R.id.exportacion_txtMes);
             txtPeriodo = (TextView)itemView.findViewById(R.id.exportacion_txtPeriodo);
             txtConglomerado = (TextView)itemView.findViewById(R.id.exportacion_txtConglomerado);
-            txtNroOrden = (TextView)itemView.findViewById(R.id.exportacion_txtNroOrden);
         }
     }
 }

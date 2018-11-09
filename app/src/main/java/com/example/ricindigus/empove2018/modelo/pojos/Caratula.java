@@ -6,6 +6,10 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class Caratula {
     private int _id;
+    private String anio;
+    private String mes;
+    private String periodo;
+    private String conglomerado;
     private String nom_dep;
     private String nom_prov;
     private String nom_dist;
@@ -27,8 +31,15 @@ public class Caratula {
     private String km;
     private String telefono;
     private String t_hogar;
+    private String usuario;
+
 
     public Caratula() {
+        _id = 0;
+        anio="";
+        mes="";
+        periodo="";
+        conglomerado="";
         nom_dep="";
         nom_prov="";
         nom_dist="";
@@ -50,6 +61,15 @@ public class Caratula {
         km="";
         telefono="";
         t_hogar="0";
+        t_hogar="usuario";
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public int get_id() {
@@ -58,6 +78,38 @@ public class Caratula {
 
     public void set_id(int _id) {
         this._id = _id;
+    }
+
+    public String getAnio() {
+        return anio;
+    }
+
+    public void setAnio(String anio) {
+        this.anio = anio;
+    }
+
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+
+    public String getConglomerado() {
+        return conglomerado;
+    }
+
+    public void setConglomerado(String conglomerado) {
+        this.conglomerado = conglomerado;
     }
 
     public String getNom_dep() {
@@ -231,6 +283,10 @@ public class Caratula {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.caratula_id,_id);
+        contentValues.put(SQLConstantes.caratula_mes,mes);
+        contentValues.put(SQLConstantes.caratula_anio,anio);
+        contentValues.put(SQLConstantes.caratula_periodo,periodo);
+        contentValues.put(SQLConstantes.caratula_conglomerado,conglomerado);
         contentValues.put(SQLConstantes.caratula_nom_dep,nom_dep);
         contentValues.put(SQLConstantes.caratula_nom_prov,nom_prov);
         contentValues.put(SQLConstantes.caratula_nom_dist,nom_dist);
@@ -252,6 +308,7 @@ public class Caratula {
         contentValues.put(SQLConstantes.caratula_km,km);
         contentValues.put(SQLConstantes.caratula_telefono,telefono);
         contentValues.put(SQLConstantes.caratula_t_hogar,t_hogar);
+        contentValues.put(SQLConstantes.caratula_usuario,usuario);
         return contentValues;
     }
 }
