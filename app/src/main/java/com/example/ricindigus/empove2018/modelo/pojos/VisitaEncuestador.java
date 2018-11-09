@@ -1,5 +1,9 @@
 package com.example.ricindigus.empove2018.modelo.pojos;
 
+import android.content.ContentValues;
+
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+
 public class VisitaEncuestador {
     private String _id;
     private String id_vivienda;
@@ -206,4 +210,26 @@ public class VisitaEncuestador {
     }
 
 
+    public ContentValues toValues(){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.visita_encuestador_id,_id);
+        contentValues.put(SQLConstantes.visita_encuestador_id_vivienda,id_vivienda);
+        contentValues.put(SQLConstantes.visita_encuestador_id_hogar,id_hogar);
+        contentValues.put(SQLConstantes.visita_encuestador_numero,numero);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_fecha_dd,vis_fecha_dd);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_fecha_mm,vis_fecha_mm);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_fecha_aa,vis_fecha_aa);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_hor_ini,vis_hor_ini);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_min_ini,vis_min_ini);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_hor_fin,vis_hor_fin);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_min_fin,vis_min_fin);
+        contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_dd,prox_vis_fecha_dd);
+        contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_mm,prox_vis_fecha_mm);
+        contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_aa,prox_vis_fecha_aa);
+        contentValues.put(SQLConstantes.visita_encuestador_prox_vis_hor,prox_vis_hor);
+        contentValues.put(SQLConstantes.visita_encuestador_prox_vis_min,prox_vis_min);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_resu,vis_resu);
+        contentValues.put(SQLConstantes.visita_encuestador_vis_resu_esp,vis_resu_esp);
+        return contentValues;
+    }
 }

@@ -46,6 +46,8 @@ public class ImportarActivity extends AppCompatActivity {
     private Button btnVolver;
     private EditText edtArchivo;
     private VisitaEncuestador currentVisita;
+    private Hogar currentHogar;
+
 
 
     private Caratula caratula;
@@ -144,13 +146,16 @@ public class ImportarActivity extends AppCompatActivity {
                 data.eliminarDato(SQLConstantes.tablacaratula,idVivienda);
                 data.insertarElemento(SQLConstantes.tablacaratula,caratula.toValues());
             }
+            if(visitas.size()>0){data.deleteAllVisitas(idVivienda);data.insertarVisitas(visitas);}
+            if(hogares.size()>0){data.deleteAllHogares(idVivienda);data.insertarHogares(hogares);}
+
             if(!funcionario.get_id().equals("")){
                 data.eliminarDato(SQLConstantes.tablafuncionarios,idVivienda);
                 data.insertarElemento(SQLConstantes.tablafuncionarios,funcionario.toValues());
             }
 
 //            if(!datosEntrevista.getID().equals("")){data.deleteDatosEntrevista(idEmpresa);data.insertarDatosEntrevista(datosEntrevista);}
-//            if(visitas.size()>0){data.deleteAllVisitas(idEmpresa);data.insertarVisitas(visitas);}
+
 //
 //            if(!modulo1.getMODULO1_ID().equals("")){data.deleteModulo1(idEmpresa);data.insertarModulo1(modulo1);}
 //            if(!modulo2.getMODULO2_ID().equals("")){data.deleteModulo2(idEmpresa);data.insertarModulo2(modulo2);}
@@ -186,7 +191,8 @@ public class ImportarActivity extends AppCompatActivity {
         switch (currentTag){
 
             case "CARATULA":agregarVariableCaratula(currentVariable,text);break;
-//            case "VISITA":agregarVariableVisita(currentVariable,text);break;
+            case "HOGAR":agregarVariableHogar(currentVariable,text);break;
+            case "VISITA_ENCUESTADOR":agregarVariableVisita(currentVariable,text);break;
             case "FUNCIONARIO":agregarVariableFuncionario(currentVariable,text);break;
 //            case "MODULO1V":agregarVariableModulo1V(currentVariable,text);break;
 //            case "MODULO2":agregarVariableModulo2(currentVariable,text);break;
@@ -205,7 +211,8 @@ public class ImportarActivity extends AppCompatActivity {
     private void handleStarTag(String name) {
         switch (name){
             case "CARATULA":currentTag = "CARATULA";break;
-//            case "VISITA":currentTag = "VISITA";currentVisita = new Visita();break;
+            case "HOGAR":currentTag = "HOGARES";currentHogar = new Hogar();break;
+            case "VISITA_ENCUESTADOR":currentTag = "VISITA_ENCUESTADOR";currentVisita = new VisitaEncuestador();break;
             case "FUNCIONARIO":currentTag = "FUNCIONARIO";break;
 //            case "MODULO1V":currentTag = "MODULO1V";break;
 
@@ -225,7 +232,8 @@ public class ImportarActivity extends AppCompatActivity {
     }
     public void handleEndTag(String name){
         switch (name){
-//            case "VISITA": visitas.add(currentVisita);break;
+            case "HOGAR": hogares.add(currentHogar);break;
+            case "VISITA_ENCUESTADOR": visitas.add(currentVisita);break;
 //            case "MODULO5_II":modulo5Dinamicos.add(currentModulo5Dinamico);break;
         }
     }
@@ -262,6 +270,41 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.caratula_usuario:caratula.setUsuario(valor);break;
         }
     }
+    public void agregarVariableHogar(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.hogar_id:currentHogar.set_id(valor);break;
+            case SQLConstantes.hogar_id_vivienda:currentHogar.setId_vivienda(valor);break;
+            case SQLConstantes.hogar_numero:currentHogar.setNumero(valor);break;
+            case SQLConstantes.hogar_nom_ape:currentHogar.setNom_ape(valor);break;
+            case SQLConstantes.hogar_estado:currentHogar.setEstado(valor);break;
+            case SQLConstantes.hogar_nroviven:currentHogar.setNroviven(valor);break;
+            case SQLConstantes.hogar_nropersonas:currentHogar.setNropersonas(valor);break;
+            case SQLConstantes.hogar_vive:currentHogar.setVive(valor);break;
+        }
+    }
+
+    public void agregarVariableVisita(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.visita_encuestador_id:currentVisita.set_id(valor);break;
+            case SQLConstantes.visita_encuestador_id_vivienda:currentVisita.setId_vivienda(valor);break;
+            case SQLConstantes.visita_encuestador_id_hogar:currentVisita.setId_hogar(valor);break;
+            case SQLConstantes.visita_encuestador_numero:currentVisita.setNumero(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_dd:currentVisita.setVis_fecha_dd(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_mm:currentVisita.setVis_fecha_mm(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_aa:currentVisita.setVis_fecha_aa(valor);break;
+            case SQLConstantes.visita_encuestador_vis_hor_ini:currentVisita.setVis_hor_ini(valor);break;
+            case SQLConstantes.visita_encuestador_vis_min_ini:currentVisita.setVis_min_ini(valor);break;
+            case SQLConstantes.visita_encuestador_vis_hor_fin:currentVisita.setVis_hor_fin(valor);break;
+            case SQLConstantes.visita_encuestador_vis_min_fin:currentVisita.setVis_min_fin(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_fecha_dd:currentVisita.setProx_vis_fecha_dd(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_fecha_mm:currentVisita.setProx_vis_fecha_mm(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_fecha_aa:currentVisita.setProx_vis_fecha_aa(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_hor:currentVisita.setProx_vis_hor(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_min:currentVisita.setProx_vis_min(valor);break;
+            case SQLConstantes.visita_encuestador_vis_resu:currentVisita.setVis_resu(valor);break;
+            case SQLConstantes.visita_encuestador_vis_resu_esp:currentVisita.setVis_resu_esp(valor);break;
+        }
+    }
     public void agregarVariableFuncionario(String campo, String valor){
         switch (campo){
             case SQLConstantes.funcionarios_id:funcionario.set_id(valor);break;
@@ -273,38 +316,7 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.funcionarios_nombre_coord:funcionario.setNombre_coord(valor);break;
         }
     }
-//    public void agregarVariableVisita(String campo, String valor){
-//        switch (campo){
-//            case "ID":currentVisita.setID_EMPRESA(valor);datosEntrevista.setID(valor);break;
-//            case SQLConstantes.VISITA_N:currentVisita.setN_VISITA(valor);break;
-//            case SQLConstantes.VISITA_DNI_OPERADOR:currentVisita.setDNI_OPERADOR_E(valor);datosEntrevista.setDNI_OPERADOR(valor);break;
-//            case SQLConstantes.VISITA_NOMBRE_OPERADOR:currentVisita.setV_OPERADOR_E(valor);datosEntrevista.setNOM_OPERADOR(valor);break;
-//            case SQLConstantes.VISITA_DNI_JEFE:currentVisita.setDNI_JEFE_EQUIPO(valor);datosEntrevista.setDNI_JEFE(valor);break;
-//            case SQLConstantes.VISITA_NOMBRE_JEFE:currentVisita.setV_JEFE_EQUIPO(valor);datosEntrevista.setNOM_JEFE(valor);break;
-//            case SQLConstantes.VISITA_DNI_SUPERVISOR:currentVisita.setDNI_SUPERVISOR(valor);datosEntrevista.setDNI_SUPERVISOR(valor);break;
-//            case SQLConstantes.VISITA_NOMBRE_SUPERVISOR:currentVisita.setV_SUPERVISOR(valor);datosEntrevista.setNOM_SUPERVISOR(valor);break;
-//            case SQLConstantes.VISITA_DIA:currentVisita.setV_DIA(valor);break;
-//            case SQLConstantes.VISITA_MES:currentVisita.setV_MES(valor);break;
-//            case SQLConstantes.VISITA_ANIO:currentVisita.setV_ANIO(valor);break;
-//            case SQLConstantes.VISITA_HORAI:currentVisita.setV_HORA_I(valor);break;
-//            case SQLConstantes.VISITA_MINUTOI:currentVisita.setV_MINUTO_I(valor);break;
-//            case SQLConstantes.VISITA_HORAF:currentVisita.setV_HORA_F(valor);break;
-//            case SQLConstantes.VISITA_MINUTOF:currentVisita.setV_MINUTO_F(valor);break;
-//            case SQLConstantes.VISITA_RESULTADO:currentVisita.setR_VISITA(valor);break;
-//            case SQLConstantes.VISITA_RESULTADO_ESP:currentVisita.setR_VISITA_ESP(valor);break;
-//            case SQLConstantes.VISITA_PROX_DIA:currentVisita.setV_PROX_FECHA_DIA(valor);break;
-//            case SQLConstantes.VISITA_PROX_MES:currentVisita.setV_PROX_FECHA_MES(valor);break;
-//            case SQLConstantes.VISITA_PROX_ANIO:currentVisita.setV_PROX_FECHA_ANIO(valor);break;
-//            case SQLConstantes.VISITA_PROX_HORA:currentVisita.setV_PROX_HORA(valor);break;
-//            case SQLConstantes.VISITA_PROX_MINUTO:currentVisita.setV_PROX_MIN(valor);break;
-//            case SQLConstantes.DATOS_RESULTADO_FINAL:datosEntrevista.setR_ENCUESTA(valor);break;
-//            case SQLConstantes.DATOS_RESULTADO_FINAL_ESP:datosEntrevista.setR_ENCUESTA_ESP(valor);break;
-//            case SQLConstantes.DATOS_FECHA_FINAL_DIA:datosEntrevista.setR_FECHA_DIA(valor);break;
-//            case SQLConstantes.DATOS_FECHA_FINAL_MES:datosEntrevista.setR_FECHA_MES(valor);break;
-//            case SQLConstantes.DATOS_FECHA_FINAL_ANIO:datosEntrevista.setR_FECHA_ANIO(valor);break;
-//            case SQLConstantes.DATOS_ESTADO_ENVIO:datosEntrevista.setR_ESTADO_ENVIO(valor);break;
-//        }
-//    }
+
 
 //    public void agregarVariableModulo1(String campo, String valor){
 //        switch (campo){

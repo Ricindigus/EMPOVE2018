@@ -206,14 +206,14 @@ public class SQLConstantes {
      * TABLA HOGARES
      * */
 
-    public static String hogar_id = "_id";
-    public static String hogar_id_vivienda = "id_vivienda";
-    public static String hogar_numero = "numero";
-    public static String hogar_nom_ape = "nom_ape";
-    public static String hogar_estado = "estado";
-    public static String hogar_nroviven = "nroviven";
-    public static String hogar_nropersonas = "nropersonas";
-    public static String hogar_vive = "vive";
+    public static final String hogar_id = "_id";
+    public static final String hogar_id_vivienda = "id_vivienda";
+    public static final String hogar_numero = "numero";
+    public static final String hogar_nom_ape = "nom_ape";
+    public static final String hogar_estado = "estado";
+    public static final String hogar_nroviven = "nroviven";
+    public static final String hogar_nropersonas = "nropersonas";
+    public static final String hogar_vive = "vive";
 
 
 
@@ -305,24 +305,24 @@ public class SQLConstantes {
      * TABLA VISITA ENCUESTADOR
      * */
 
-    public static String visita_encuestador_id = "_id";
-    public static String visita_encuestador_id_vivienda = "id_vivienda";
-    public static String visita_encuestador_id_hogar = "id_hogar";
-    public static String visita_encuestador_numero = "numero";
-    public static String visita_encuestador_vis_fecha_dd = "vis_fecha_dd";
-    public static String visita_encuestador_vis_fecha_mm = "vis_fecha_mm";
-    public static String visita_encuestador_vis_fecha_aa = "vis_fecha_aa";
-    public static String visita_encuestador_vis_hor_ini = "vis_hor_ini";
-    public static String visita_encuestador_vis_min_ini = "vis_min_ini";
-    public static String visita_encuestador_vis_hor_fin = "vis_hor_fin";
-    public static String visita_encuestador_vis_min_fin = "vis_min_fin";
-    public static String visita_encuestador_prox_vis_fecha_dd = "prox_vis_fecha_dd";
-    public static String visita_encuestador_prox_vis_fecha_mm = "prox_vis_fecha_mm";
-    public static String visita_encuestador_prox_vis_fecha_aa = "prox_vis_fecha_aa";
-    public static String visita_encuestador_prox_vis_hor = "prox_vis_hor";
-    public static String visita_encuestador_prox_vis_min = "prox_vis_min";
-    public static String visita_encuestador_vis_resu = "vis_resu";
-    public static String visita_encuestador_vis_resu_esp = "vis_resu_esp";
+    public static final String visita_encuestador_id = "_id";
+    public static final String visita_encuestador_id_vivienda = "id_vivienda";
+    public static final String visita_encuestador_id_hogar = "id_hogar";
+    public static final String visita_encuestador_numero = "numero";
+    public static final String visita_encuestador_vis_fecha_dd = "vis_fecha_dd";
+    public static final String visita_encuestador_vis_fecha_mm = "vis_fecha_mm";
+    public static final String visita_encuestador_vis_fecha_aa = "vis_fecha_aa";
+    public static final String visita_encuestador_vis_hor_ini = "vis_hor_ini";
+    public static final String visita_encuestador_vis_min_ini = "vis_min_ini";
+    public static final String visita_encuestador_vis_hor_fin = "vis_hor_fin";
+    public static final String visita_encuestador_vis_min_fin = "vis_min_fin";
+    public static final String visita_encuestador_prox_vis_fecha_dd = "prox_vis_fecha_dd";
+    public static final String visita_encuestador_prox_vis_fecha_mm = "prox_vis_fecha_mm";
+    public static final String visita_encuestador_prox_vis_fecha_aa = "prox_vis_fecha_aa";
+    public static final String visita_encuestador_prox_vis_hor = "prox_vis_hor";
+    public static final String visita_encuestador_prox_vis_min = "prox_vis_min";
+    public static final String visita_encuestador_vis_resu = "vis_resu";
+    public static final String visita_encuestador_vis_resu_esp = "vis_resu_esp";
 
 
 
