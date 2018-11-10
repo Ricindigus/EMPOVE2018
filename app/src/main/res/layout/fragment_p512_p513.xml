@@ -23,7 +23,27 @@
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
             <include layout="@layout/cabecera"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="ETNICIDAD"
+                android:textColor="@color/colorIcons"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/margen_small"
+                android:layout_marginRight="@dimen/margen_small"
+                android:background="@color/greyBluePrimaryDark"/>
             <include layout="@layout/modulo5_p512" android:id="@+id/layout_m5_p512"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="LGTBI"
+                android:textColor="@color/colorIcons"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/margen_small"
+                android:layout_marginRight="@dimen/margen_small"
+                android:background="@color/greyBluePrimaryDark"/>
             <include layout="@layout/modulo5_p513" android:id="@+id/layout_m5_p513"/>
         </LinearLayout>
     </ScrollView>

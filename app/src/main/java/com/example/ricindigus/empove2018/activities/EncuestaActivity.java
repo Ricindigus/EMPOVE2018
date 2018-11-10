@@ -128,12 +128,15 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
                     tFragment++;
-                    if(tFragment == 31) tFragment = 1;
+                    if(tFragment == 31) salirEncuestaFinalizada();//tFragment = 1;
                     habilitarFragment(tFragment);
 //                    setFragment(tFragment,1);
                     while(!setFragment(tFragment,1)){
                         tFragment++;
-                        if(tFragment == 31) tFragment = 1;
+                        if(tFragment == 31)
+//                            tFragment = 1;
+                            salirEncuestaFinalizada();
+
                         habilitarFragment(tFragment);
                     }
                 }
@@ -896,6 +899,22 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         AlertDialog alert = builder.create();
         alert.show();
     }
+
+    public void salirEncuestaFinalizada(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Se finalizó la encuesta para este residente")
+                .setTitle("Aviso")
+                .setCancelable(false)
+                .setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                finish();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 
     /*
 

@@ -23,6 +23,29 @@
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
             <include layout="@layout/cabecera"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="@dimen/margen_small"
+                android:layout_marginLeft="@dimen/margen_small">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/modulo_4_p408_p1"
+                    android:textColor="@color/colorIcons"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:background="@color/greyBluePrimaryDark"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/modulo_4_p408_p2"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:background="@color/greyBluePrimaryLight"/>
+            </LinearLayout>
             <include layout="@layout/modulo4_p408" android:id="@+id/layout_m4_p408"/>
             <include layout="@layout/modulo4_p409" android:id="@+id/layout_m4_p409"/>
             <include layout="@layout/modulo4_p410" android:id="@+id/layout_m4_p410"/>

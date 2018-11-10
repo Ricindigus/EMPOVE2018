@@ -6,14 +6,7 @@
     android:layout_margin="@dimen/margen_layout_pregunta"
     android:padding="@dimen/padding_layout_pregunta"
     android:background="@drawable/marco_pregunta">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="LGTBI"
-        android:textColor="@color/colorIcons"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:background="@color/greyBluePrimaryDark"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

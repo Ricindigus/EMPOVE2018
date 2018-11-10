@@ -23,6 +23,16 @@
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
             <include layout="@layout/cabecera"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="TRABAJO EN PERÚ"
+                android:textColor="@color/colorIcons"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/margen_small"
+                android:layout_marginRight="@dimen/margen_small"
+                android:background="@color/greyBluePrimaryDark"/>
             <include layout="@layout/modulo6_p626" android:id="@+id/layout_m6_p626"/>
             <include layout="@layout/modulo6_p627" android:id="@+id/layout_m6_p627"/>
             <include layout="@layout/modulo6_p628" android:id="@+id/layout_m6_p628"/>

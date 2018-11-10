@@ -23,6 +23,16 @@
             android:padding="@dimen/margen_small"
             android:orientation="vertical">
             <include layout="@layout/cabecera"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="DESOCUPADOS"
+                android:textColor="@color/colorIcons"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/margen_small"
+                android:layout_marginLeft="@dimen/margen_small"
+                android:background="@color/greyBluePrimaryDark"/>
             <include layout="@layout/modulo6_p618" android:id="@+id/layout_m6_p619"/>
             <include layout="@layout/modulo6_p619" android:id="@+id/layout_m6_p620"/>
             <include layout="@layout/modulo6_p620" android:id="@+id/layout_m6_p621"/>
