@@ -11,6 +11,10 @@
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_5_p506"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_5_p506_ind"/>
     <RadioGroup
         android:id="@+id/mod5_506_radiogroup_C5_P506_1"
         android:padding="@dimen/margen_small"

@@ -8,6 +8,14 @@
     android:background="@drawable/marco_pregunta">
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="DESOCUPADOS"
+        android:textColor="@color/colorIcons"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/greyBluePrimaryDark"/>
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_6_p619"/>

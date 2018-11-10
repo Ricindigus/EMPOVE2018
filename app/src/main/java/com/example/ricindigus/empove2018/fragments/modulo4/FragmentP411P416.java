@@ -7,6 +7,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
@@ -158,6 +159,18 @@ public class FragmentP411P416 extends FragmentPagina {
 
         controlarChecked(c4_p411_13_CheckBox,c4_p411_o_EditText);
         controlarChecked(c4_p416_6_CheckBox,c4_p416_o_EditText);
+
+        c4_p412_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                int pos = radioGroup.indexOfChild(c4_p412_RadioGroup.findViewById(c4_p412_RadioGroup.getCheckedRadioButtonId()));
+                if(pos>1){
+                    m4_p413_linearlayout.setVisibility(View.GONE); limpiar_p413();
+                }else{
+                    m4_p413_linearlayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         c4_p416_7_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

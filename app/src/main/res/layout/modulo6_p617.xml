@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margen_small"
             android:inputType="text"
-            android:hint="Escriba el distrito"/>
+            android:hint="Escriba un distrito valido"/>
 
         <LinearLayout
             android:orientation="horizontal"

@@ -462,10 +462,13 @@ public class FragmentP609P612 extends FragmentPagina {
         if (tipo == 2) {
             editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
             editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+//            editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(longitud)});
+//            editText.setInputType(18);
+//            editText.setTransformationMethod(null);
         }
 
         if (tipo == 3){
-            editText.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "24")});
+            editText.setFilters(new InputFilter[]{ new InputFilterMinMax("0", "23")});
             editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
         }
     }

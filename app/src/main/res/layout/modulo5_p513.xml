@@ -8,9 +8,21 @@
     android:background="@drawable/marco_pregunta">
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="LGTBI"
+        android:textColor="@color/colorIcons"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/greyBluePrimaryDark"/>
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
         android:text="@string/modulo_5_p513"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_5_p513_ind"/>
     <RadioGroup
         android:id="@+id/mod5_513_radiogroup_C5_P513"
         android:orientation="vertical"
