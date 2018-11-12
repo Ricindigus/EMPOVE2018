@@ -17,49 +17,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p707_ind"/>
-    <RadioGroup
-        android:id="@+id/mod7_707_radiogroup_C7_P707"
-        style="@style/EstiloRadioGroup">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"/>
-        <RadioButton
-            android:id="@+id/mod7_707_rb1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_7_p707_sp1"/>
-        <RadioButton
-            android:id="@+id/mod7_707_rb2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_7_p707_sp2"/>
-        <RadioButton
-            android:id="@+id/mod7_707_rb3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_7_p707_sp3"/>
-        <RadioButton
-            android:id="@+id/mod7_707_rb4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_7_p707_sp4"/>
-        <RadioButton
-            android:id="@+id/mod7_707_rb5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_7_p707_sp5"/>
-        <RadioButton
-            android:id="@+id/mod7_707_rb6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_7_p707_sp6"/>
-        <RadioButton
-            android:id="@+id/mod7_707_rb7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_7_p707_sp7"/>
-        <RadioButton
+
+    <CheckBox
+        android:id="@+id/mod7_707_rb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_7_p707_sp1"/>
+    <CheckBox
+        android:id="@+id/mod7_707_rb2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_7_p707_sp2"/>
+    <CheckBox
+        android:id="@+id/mod7_707_rb3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_7_p707_sp3"/>
+    <CheckBox
+        android:id="@+id/mod7_707_rb4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_7_p707_sp4"/>
+    <CheckBox
+        android:id="@+id/mod7_707_rb5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_7_p707_sp5"/>
+    <CheckBox
+        android:id="@+id/mod7_707_rb6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_7_p707_sp6"/>
+    <CheckBox
+        android:id="@+id/mod7_707_rb7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modulo_7_p707_sp7"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
             android:id="@+id/mod7_707_rb8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,12 +65,11 @@
             android:text="@string/modulo_7_p707_sp8"/>
         <EditText
             android:id="@+id/mod7_707_edittext_C7_P707_O"
-            style="@style/TemaInputEspecifiqueRadioIntermedio"
-            android:hint="@string/modulo_7_p707_especifique"/>
-        <RadioButton
-            android:id="@+id/mod7_707_rb9"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/modulo_7_p707_sp9"/>
-    </RadioGroup>
+            style="@style/TemaInputEspecifique"/>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/mod7_707_rb9"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/modulo_7_p707_sp9"/>
 </LinearLayout>

@@ -48,8 +48,7 @@
                         android:id="@+id/dialog_finalizar_visita_txtHoraFin"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:clickable="false"/>
+                        android:gravity="center"/>
                 </android.support.v7.widget.CardView>
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -104,10 +103,11 @@
                     android:id="@+id/dialog_finalizar_visita_edtEspecifique"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="40dp"
+                    android:layout_height="24dp"
                     android:gravity="center_vertical"
                     android:inputType="text"
                     android:paddingLeft="@dimen/margen_small"
+                    android:background="@drawable/input_text_enabled"
                     android:enabled="false"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>

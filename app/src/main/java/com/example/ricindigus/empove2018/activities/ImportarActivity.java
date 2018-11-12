@@ -194,7 +194,7 @@ public class ImportarActivity extends AppCompatActivity {
             case "HOGAR":agregarVariableHogar(currentVariable,text);break;
             case "VISITA_ENCUESTADOR":agregarVariableVisita(currentVariable,text);break;
             case "FUNCIONARIO":agregarVariableFuncionario(currentVariable,text);break;
-//            case "MODULO1V":agregarVariableModulo1V(currentVariable,text);break;
+            case "MODULO1V":agregarVariableModulo1V(currentVariable,text);break;
 //            case "MODULO2":agregarVariableModulo2(currentVariable,text);break;
 //            case "MODULO3":agregarVariableModulo3(currentVariable,text);break;
 //            case "MODULO4":agregarVariableModulo4(currentVariable,text);break;
@@ -214,7 +214,7 @@ public class ImportarActivity extends AppCompatActivity {
             case "HOGAR":currentTag = "HOGARES";currentHogar = new Hogar();break;
             case "VISITA_ENCUESTADOR":currentTag = "VISITA_ENCUESTADOR";currentVisita = new VisitaEncuestador();break;
             case "FUNCIONARIO":currentTag = "FUNCIONARIO";break;
-//            case "MODULO1V":currentTag = "MODULO1V";break;
+            case "MODULO1V":currentTag = "MODULO1V";break;
 
 //            case "MODULO1":currentTag = "MODULO1";break;
 //            case "MODULO2":currentTag = "MODULO2";break;
@@ -308,6 +308,33 @@ public class ImportarActivity extends AppCompatActivity {
     public void agregarVariableFuncionario(String campo, String valor){
         switch (campo){
             case SQLConstantes.funcionarios_id:funcionario.set_id(valor);break;
+            case SQLConstantes.funcionarios_dni_encu:funcionario.setDni_encu(valor);break;
+            case SQLConstantes.funcionarios_dni_sup:funcionario.setDni_sup(valor);break;
+            case SQLConstantes.funcionarios_dni_coord:funcionario.setDni_coor(valor);break;
+            case SQLConstantes.funcionarios_nombre_encu:funcionario.setNombre_encu(valor);break;
+            case SQLConstantes.funcionarios_nombre_sup:funcionario.setNombre_sup(valor);break;
+            case SQLConstantes.funcionarios_nombre_coord:funcionario.setNombre_coord(valor);break;
+        }
+    }
+
+
+    public void agregarVariableModulo1V(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.modulo1_v_id:modulo1V.set_id(valor);break;
+
+
+//            case SQLConstantes.modulo1_v_c1_p101: = "c1_p101";
+//            case SQLConstantes.modulo1_v_c1_p101_o: = "c1_p101_o";
+//            case SQLConstantes.modulo1_v_c1_p102: = "c1_p102";
+//            case SQLConstantes.modulo1_v_c1_p102_o: = "c1_p102_o";
+//            case SQLConstantes.modulo1_v_c1_p103: = "c1_p103";
+//            case SQLConstantes.modulo1_v_c1_p103_o: = "c1_p103_o";
+//            case SQLConstantes.modulo1_v_c1_p104: = "c1_p104";
+//            case SQLConstantes.modulo1_v_c1_p104_o: = "c1_p104_o";
+//            case SQLConstantes.modulo1_v_c1_p105: = "c1_p105";
+//            case SQLConstantes.modulo1_v_c1_p106: = "c1_p106";
+//            case SQLConstantes.modulo1_v_c1_p107: = "c1_p107";
+
             case SQLConstantes.funcionarios_dni_encu:funcionario.setDni_encu(valor);break;
             case SQLConstantes.funcionarios_dni_sup:funcionario.setDni_sup(valor);break;
             case SQLConstantes.funcionarios_dni_coord:funcionario.setDni_coor(valor);break;

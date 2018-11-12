@@ -6,11 +6,11 @@
         android:orderInCategory="100"
         android:title="Finalizar"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/opcion_editar"
-        android:orderInCategory="100"
-        android:title="Editar"
-        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/opcion_editar"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="Editar"-->
+        <!--app:showAsAction="never" />-->
     <item
         android:id="@+id/opcion_eliminar"
         android:orderInCategory="100"

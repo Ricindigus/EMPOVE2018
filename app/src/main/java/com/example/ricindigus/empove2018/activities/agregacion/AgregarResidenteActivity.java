@@ -166,7 +166,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
 
     public boolean validarDatos(){
         if(c2_p202.trim().equals("")){mostrarMensaje("PREGUNTA 202: DEBE INDICAR EL NOMBRE"); return false;}
-        if(c2_p203 == 0) {mostrarMensaje("PREGUNTA 203: DEBE INDICSR EL PARENTESCO"); return false;}
+        if(c2_p203 == 0) {mostrarMensaje("PREGUNTA 203: DEBE INDICAR EL PARENTESCO"); return false;}
         if(c2_p204 == -1) {mostrarMensaje("PREGUNTA 204: DEBE INDICAR EL SEXO"); return false;}
         if(c2_p205_a.trim().equals("") && c2_p205_m.trim().equals("")) {mostrarMensaje("PREGUNTA 205: DEBE INDICAR LA EDAD EN AÑOS O MESES"); return false;}
         if(!c2_p205_a.trim().equals("")) {

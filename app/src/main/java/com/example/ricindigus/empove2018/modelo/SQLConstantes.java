@@ -457,18 +457,18 @@ public class SQLConstantes {
     /**
      * TABLA MODULO 1 VIVIENDA
      * */
-    public static String modulo1_v_id = "_id";
-    public static String modulo1_v_c1_p101 = "c1_p101";
-    public static String modulo1_v_c1_p101_o = "c1_p101_o";
-    public static String modulo1_v_c1_p102 = "c1_p102";
-    public static String modulo1_v_c1_p102_o = "c1_p102_o";
-    public static String modulo1_v_c1_p103 = "c1_p103";
-    public static String modulo1_v_c1_p103_o = "c1_p103_o";
-    public static String modulo1_v_c1_p104 = "c1_p104";
-    public static String modulo1_v_c1_p104_o = "c1_p104_o";
-    public static String modulo1_v_c1_p105 = "c1_p105";
-    public static String modulo1_v_c1_p106 = "c1_p106";
-    public static String modulo1_v_c1_p107 = "c1_p107";
+    public static final String modulo1_v_id = "_id";
+    public static final String modulo1_v_c1_p101 = "c1_p101";
+    public static final String modulo1_v_c1_p101_o = "c1_p101_o";
+    public static final String modulo1_v_c1_p102 = "c1_p102";
+    public static final String modulo1_v_c1_p102_o = "c1_p102_o";
+    public static final String modulo1_v_c1_p103 = "c1_p103";
+    public static final String modulo1_v_c1_p103_o = "c1_p103_o";
+    public static final String modulo1_v_c1_p104 = "c1_p104";
+    public static final String modulo1_v_c1_p104_o = "c1_p104_o";
+    public static final String modulo1_v_c1_p105 = "c1_p105";
+    public static final String modulo1_v_c1_p106 = "c1_p106";
+    public static final String modulo1_v_c1_p107 = "c1_p107";
 
 
     /**
