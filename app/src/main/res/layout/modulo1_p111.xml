@@ -42,7 +42,7 @@
             android:text="@string/modulo_1_p111_sp4"/>
         <EditText
             android:id="@+id/mod1_111_edittext_C1_P111_O"
-            style="@style/TemaInputEspecifiqueRadio"/>
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

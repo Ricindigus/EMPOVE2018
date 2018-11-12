@@ -303,7 +303,7 @@ public class FragmentP108P113 extends FragmentPagina {
 
         if (c1_p109 == -1){mostrarMensaje("PREGUNTA 109: DEBE MARCAR UNA OPCIÓN"); return false;}
         else{
-            if (c1_p109 == 6){
+            if (c1_p109 == 5){
                 if (c1_p109_o.trim().equals("")){mostrarMensaje("PREGUNTA 109: DEBE ESPECIFICAR");return false;}
             }
         }

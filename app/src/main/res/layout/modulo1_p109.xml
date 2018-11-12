@@ -44,16 +44,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modulo_1_p109_sp5"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margen_small"
-                android:text="@string/modulo_1_p109_sp6"/>
-            <EditText
-                android:id="@+id/mod1_109_edittext_C1_P109_O"
-                style="@style/TemaInputEspecifiqueRadio"/>
-
+        <EditText
+            android:id="@+id/mod1_109_edittext_C1_P109_O"
+            style="@style/TemaInputEspecifiqueRadioIntermedio"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_small"
+            android:text="@string/modulo_1_p109_sp6"/>
     </RadioGroup>
 
 </LinearLayout>

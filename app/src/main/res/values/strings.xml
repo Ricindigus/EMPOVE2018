@@ -244,8 +244,8 @@
 
     <string name="modulo_1_p112">112.¿EL BAÑO O SERVICIO HIGIÉNICO QUE TIENE SU HOGAR ESTÁ CONECTADO A:</string>
     <string name="modulo_1_p112_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
-    <string name="modulo_1_p112_sp1">1.Red pública de desagüe dentro de la itemMarco?</string>
-    <string name="modulo_1_p112_sp2">2.Red pública de desagüe fuera de la itemMarco pero dentro del edificio?</string>
+    <string name="modulo_1_p112_sp1">1.Red pública de desagüe dentro de la vivienda?</string>
+    <string name="modulo_1_p112_sp2">2.Red pública de desagüe fuera de la vivienda pero dentro del edificio?</string>
     <string name="modulo_1_p112_sp3">3.Letrina (con tratamiento)?</string>
     <string name="modulo_1_p112_sp4">4.Pozo séptico, tanque séptico o biodigestor?</string>
     <string name="modulo_1_p112_sp5">5.Pozo ciego o negro?</string>
@@ -425,7 +425,7 @@
     <string name="modulo_3_p312_sp2">Provincia</string>
     <string name="modulo_3_p312_sp3">Departamento</string>
 
-    <string name="modulo_3_p313">313.USTED, ¿PIENSA QUEDARSE A VIVIR EN PERÚ O VA A CONTINUAR SU VIAJE A OTRO PAÍS?</string>
+    <string name="modulo_3_p313">313.USTED, ¿PIENSA QUEDARSE A VIVIR EN EL PERÚ?</string>
     <string name="modulo_3_p313_sp1">1.Sí</string>
     <string name="modulo_3_p313_sp2">2.No</string>
 

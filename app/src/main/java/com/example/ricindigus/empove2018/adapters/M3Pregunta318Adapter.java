@@ -46,7 +46,8 @@ public class M3Pregunta318Adapter extends RecyclerView.Adapter<M3Pregunta318Adap
     @Override
     public void onBindViewHolder(M3Pregunta318Adapter.ViewHolder holder, final int position) {
         holder.txtEdad.setText(String.valueOf(m3Pregunta318s.get(position).getC3_p318_e()));
-        holder.txtSexo.setText(String.valueOf(m3Pregunta318s.get(position).getC3_p318_s()));
+        if(Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_s()) == 1) holder.txtSexo.setText("HOMBRE");
+        else if(Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_s()) == 2) holder.txtSexo.setText("MUJER");
         holder.txtParentesco.setText(context.getResources().getStringArray(R.array.modulo_3_p318_array_parentesco)[Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_f())]);
         if(Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_p()) == 1) holder.txtSino.setText("SÍ");
         else if(Integer.parseInt(m3Pregunta318s.get(position).getC3_p318_p()) == 2) holder.txtSino.setText("NO");

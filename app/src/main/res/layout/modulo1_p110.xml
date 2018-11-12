@@ -61,7 +61,7 @@
                 android:text="@string/modulo_1_p110_sp8"/>
             <EditText
                 android:id="@+id/mod1_110_edittext_C1_P110_O"
-                style="@style/TemaInputEspecifiqueRadio"/>
+                style="@style/TemaInputEspecifiqueRadioIntermedio"/>
 
     </RadioGroup>
 

@@ -100,7 +100,6 @@ public class AgregarPersonaActivity extends AppCompatActivity {
         Residente residente = data2.getResidente(idEncuestado);
         if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         data2.close();
-        Log.e("edad", "cargarDatos: "+edad );
     }
 
     public void mostrarMensaje(String m){
@@ -176,7 +175,7 @@ public class AgregarPersonaActivity extends AppCompatActivity {
         if (c3_p318_p == -1){mostrarMensaje("PIENSA TRER A SU FAMILIAR: DEBE MARCAR UNA OPCIÓN"); return false;}
         if (c3_p318_e.equals("")){mostrarMensaje("EDAD: DEBE INDICAR SU EDAD"); return false;}
         if(c3_p318_f==1 || c3_p318_f==2){
-            if(Integer.parseInt(c3_p318_e)<edad) mostrarMensaje("EDAD: DEBE SER MAYOR O IGUAL A SU EDAD("+edad+")"); return false;
+            if(Integer.parseInt(c3_p318_e)<edad){ mostrarMensaje("EDAD: DEBE SER MAYOR O IGUAL A SU EDAD("+edad+")"); return false;}
         }
         return true;
     }
