@@ -580,6 +580,7 @@ public class Data {
                 residente.setC2_p205_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_a)));
                 residente.setC2_p205_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_m)));
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
+                residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
                 residentes.add(residente);
             }
         }finally{
@@ -608,6 +609,7 @@ public class Data {
                 residente.setC2_p205_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_a)));
                 residente.setC2_p205_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_m)));
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
+                residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
                 residentes.add(residente);
             }
         }finally{
@@ -657,6 +659,7 @@ public class Data {
                 residente.setC2_p205_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_a)));
                 residente.setC2_p205_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_m)));
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
+                residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
             }
         }finally{
             if(cursor != null) cursor.close();

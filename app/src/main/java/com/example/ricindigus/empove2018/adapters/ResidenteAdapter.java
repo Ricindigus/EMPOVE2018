@@ -65,6 +65,17 @@ public class ResidenteAdapter extends RecyclerView.Adapter<ResidenteAdapter.View
         if(!residentes.get(position).getC2_p206().equals(""))
             holder.txtEstadoCivil.setText(context.getResources().getStringArray(R.array.modulo_2_p206_estado_civil)[Integer.parseInt(residentes.get(position).getC2_p206())]);
         else holder.txtEstadoCivil.setText("");
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickListener.onItemClick(view,position);
+            }
+        });
+
+        if(residentes.get(position).getC2_p207().equals("1")) holder.txtLlegoVenezuela.setText("SI");
+        else if (residentes.get(position).getC2_p207().equals("2"))holder.txtLlegoVenezuela.setText("NO");
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +96,7 @@ public class ResidenteAdapter extends RecyclerView.Adapter<ResidenteAdapter.View
         TextView txtSexo;
         TextView txtEdad;
         TextView txtEstadoCivil;
+        TextView txtLlegoVenezuela;
         CardView cardView;
 
         public ViewHolder(View itemView) {
@@ -96,7 +108,7 @@ public class ResidenteAdapter extends RecyclerView.Adapter<ResidenteAdapter.View
             txtSexo = itemView.findViewById(R.id.item_residente_sexo);
             txtEdad = itemView.findViewById(R.id.item_residente_edad);
             txtEstadoCivil = itemView.findViewById(R.id.item_residente_estado_civil);
-
+            txtLlegoVenezuela = itemView.findViewById(R.id.item_residente_llego_venezuela);
         }
     }
 }

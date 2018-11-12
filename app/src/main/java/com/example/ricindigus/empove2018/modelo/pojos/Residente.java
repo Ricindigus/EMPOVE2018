@@ -16,6 +16,7 @@ public class Residente {
     private String c2_p205_a;
     private String c2_p205_m;
     private String c2_p206;
+    private String c2_p207;
 
     public Residente() {
         _id = "";
@@ -28,6 +29,7 @@ public class Residente {
         c2_p205_a = "";
         c2_p205_m = "";
         c2_p206 = "";
+        c2_p207 = "";
     }
 
     public String get_id() {
@@ -118,6 +120,14 @@ public class Residente {
         this.c2_p206 = c2_p206;
     }
 
+    public String getC2_p207() {
+        return c2_p207;
+    }
+
+    public void setC2_p207(String c2_p207) {
+        this.c2_p207 = c2_p207;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.residentes_id,_id);
@@ -131,6 +141,7 @@ public class Residente {
         contentValues.put(SQLConstantes.residentes_c2_p205_a,c2_p205_a);
         contentValues.put(SQLConstantes.residentes_c2_p205_m,c2_p205_m);
         contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
+        contentValues.put(SQLConstantes.residentes_c2_p207,c2_p207);
         return contentValues;
     }
 }

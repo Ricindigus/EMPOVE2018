@@ -20,6 +20,7 @@
             <include layout="@layout/modulo2_p204" android:id="@+id/layout_m2_p204"/>
             <include layout="@layout/modulo2_p205" android:id="@+id/layout_m2_p205"/>
             <include layout="@layout/modulo2_p206" android:id="@+id/layout_m2_p206"/>
+            <include layout="@layout/modulo2_p207" android:id="@+id/layout_m2_p207"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

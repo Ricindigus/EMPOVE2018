@@ -156,13 +156,17 @@ public class FragmentP201P206 extends FragmentPagina {
                                         if(residente.getC2_p204().equals("")){
                                             Toast.makeText(context, "DEBE COMPLETAR LOS DATOS DEL JEFE DE HOGAR ANTES DE INICIAR LA ENCUESTA", Toast.LENGTH_SHORT).show();
                                         }else{
-                                            String idEncuestado = residentes.get(position).get_id()+"";
-                                            Intent intent1 = new Intent(context, EncuestaActivity.class);
-                                            intent1.putExtra("idEncuestado",idEncuestado);
-                                            intent1.putExtra("numero", residentes.get(position).getNumero() + "");
-                                            intent1.putExtra("idHogar", idHogar);
-                                            intent1.putExtra("idVivienda", idVivienda);
-                                            startActivity(intent1);
+                                            if (residentes.get(position).getC2_p207().equals("2")){
+                                                Toast.makeText(context, "LA ENCUESTA ESta DIRIGIDA SOLO A LA POBLACION VENEZOLANA", Toast.LENGTH_SHORT).show();
+                                            }else{
+                                                String idEncuestado = residentes.get(position).get_id()+"";
+                                                Intent intent1 = new Intent(context, EncuestaActivity.class);
+                                                intent1.putExtra("idEncuestado",idEncuestado);
+                                                intent1.putExtra("numero", residentes.get(position).getNumero() + "");
+                                                intent1.putExtra("idHogar", idHogar);
+                                                intent1.putExtra("idVivienda", idVivienda);
+                                                startActivity(intent1);
+                                            }
                                         }
                                         break;
                                     case R.id.opcion_editar:
@@ -192,13 +196,17 @@ public class FragmentP201P206 extends FragmentPagina {
                                         if(residente.getC2_p204().equals("")){
                                             Toast.makeText(context, "DEBE COMPLETAR LOS DATOS DEL JEFE DE HOGAR ANTES DE INICIAR LA ENCUESTA", Toast.LENGTH_SHORT).show();
                                         }else{
-                                            String idEncuestado = residentes.get(position).get_id()+"";
-                                            Intent intent1 = new Intent(context, EncuestaActivity.class);
-                                            intent1.putExtra("idEncuestado",idEncuestado);
-                                            intent1.putExtra("numero", residentes.get(position).getNumero() + "");
-                                            intent1.putExtra("idHogar", idHogar);
-                                            intent1.putExtra("idVivienda", idVivienda);
-                                            startActivity(intent1);
+                                            if (residentes.get(position).getC2_p207().equals("2")){
+                                                Toast.makeText(context, "LA ENCUESTA ESTA DIRIGIDA SOLO A LA POBLACION VENEZOLANA", Toast.LENGTH_SHORT).show();
+                                            }else{
+                                                String idEncuestado = residentes.get(position).get_id()+"";
+                                                Intent intent1 = new Intent(context, EncuestaActivity.class);
+                                                intent1.putExtra("idEncuestado",idEncuestado);
+                                                intent1.putExtra("numero", residentes.get(position).getNumero() + "");
+                                                intent1.putExtra("idHogar", idHogar);
+                                                intent1.putExtra("idVivienda", idVivienda);
+                                                startActivity(intent1);
+                                            }
                                         }
                                         break;
                                     case R.id.opcion_editar:

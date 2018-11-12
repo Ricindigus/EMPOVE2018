@@ -283,6 +283,8 @@
     <string name="modulo_2_cab_sexo">Sexo</string>
     <string name="modulo_2_cab_edad">Edad</string>
     <string name="modulo_2_cab_estado_civil">Estado Civil</string>
+    <string name="modulo_2_cab_llego_venezuela">Venezolano(a)</string>
+
 
     <string name="modulo_2_p202_nombre">Primer Nombre</string>
     <string name="modulo_2_p202_boton_guardar">guardar persona</string>
@@ -333,6 +335,7 @@
         <item>Separado/a o Ex conviviente</item>
         <item>Soltero/a</item>
     </string-array>
+    <string name="modulo_2_p207">207.¿LLEGÓ DE VENEZUELA?</string>
 
     <!--Strings asociados al módulo 3: SITUACIÓN MIGRATORIA DE LA PERSONA-->
     <string name="modulo_3_nombre">III. SITUACIÓN MIGRATORIA DE LA PERSONA (Para todas las personas)</string>

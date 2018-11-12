@@ -44,7 +44,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
 
     TextInputEditText c2_p202_TextInputET, c2_p205_a_TextInputET, c2_p205_m_TextInputET;
     Spinner c2_p203_Spinner,c2_p206_Spinner;
-    RadioGroup c2_p204_RadioGroup;
+    RadioGroup c2_p204_RadioGroup,c2_p207_RadioGroup;
     Toolbar toolbar;
 
     private String _id;
@@ -59,6 +59,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     private String c2_p205_m;
 
     private int c2_p206;
+    private int c2_p207;
+
 
     private LinearLayout linearLayout202,linearLayout203,linearLayout204,linearLayout205,linearLayout206;
 
@@ -85,6 +87,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         c2_p205_a_TextInputET = (TextInputEditText) findViewById(R.id.mod2_205_textinputedittext_C2_P205_A);
         c2_p205_m_TextInputET = (TextInputEditText) findViewById(R.id.mod2_205_textinputedittext_C2_P205_M);
         c2_p206_Spinner = (Spinner) findViewById(R.id.mod2_206_spinner_C2_P206);
+        c2_p207_RadioGroup = (RadioGroup) findViewById(R.id.mod2_207_radiogroup_C2_P207);
         toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("AGREGAR RESIDENTE");
@@ -200,6 +203,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 mostrarMensaje("PREGUNTA 206: DEBE SELECCIONAR ESTADO CIVIL (SOLTERO/A)"); return false;
             }
         }
+        if(c2_p207 == -1) {mostrarMensaje("PREGUNTA 207: DEBE INDICAR SI LLEGÓ DE VENEZUELA"); return false;}
         return true;
     }
 
@@ -218,6 +222,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         c2_p205_a = c2_p205_a_TextInputET.getText().toString();
         c2_p205_m = c2_p205_m_TextInputET.getText().toString();
         c2_p206 = c2_p206_Spinner.getSelectedItemPosition();
+        c2_p207 = c2_p207_RadioGroup.indexOfChild(c2_p207_RadioGroup.findViewById(c2_p207_RadioGroup.getCheckedRadioButtonId()));
     }
 
     @Override
@@ -236,6 +241,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             c2_p205_a_TextInputET.setText(residente.getC2_p205_a());
             c2_p205_m_TextInputET.setText(residente.getC2_p205_m());
             if(!residente.getC2_p206().equals(""))c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
+            if (!residente.getC2_p207().equals(""))((RadioButton)c2_p207_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p207()))).setChecked(true);
+
         }
         data.close();
     }
@@ -256,6 +263,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         contentValues.put(SQLConstantes.residentes_c2_p205_a,c2_p205_a);
         contentValues.put(SQLConstantes.residentes_c2_p205_m,c2_p205_m);
         contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
+        contentValues.put(SQLConstantes.residentes_c2_p207,c2_p207);
 
         if(!data.existeElemento(getNombreTabla(),_id)){
             contentValues.put(SQLConstantes.residentes_id,_id);

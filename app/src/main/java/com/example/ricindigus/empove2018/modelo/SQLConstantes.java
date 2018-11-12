@@ -558,6 +558,8 @@ public class SQLConstantes {
     public static String residentes_c2_p205_a = "c2_p205_a";
     public static String residentes_c2_p205_m = "c2_p205_m";
     public static String residentes_c2_p206 = "c2_p206";
+    public static String residentes_c2_p207 = "c2_p207";
+
 
     public static final String SQL_CREATE_TABLA_MODULO2 =
             "CREATE TABLE " + tablaresidentes + "(" +
@@ -571,7 +573,8 @@ public class SQLConstantes {
                     residentes_c2_p204 + " TEXT," +
                     residentes_c2_p205_a + " TEXT," +
                     residentes_c2_p205_m + " TEXT," +
-                    residentes_c2_p206 + " TEXT" + ");"
+                    residentes_c2_p206 + " TEXT," +
+                    residentes_c2_p207 + " TEXT" + ");"
             ;
 
     /**

@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/TemaTextoPregunta"
-        android:text="@string/modulo_2_p204"/>
+        android:text="@string/modulo_2_p207"/>
     <RadioGroup
-        android:id="@+id/mod2_204_radiogroup_C2_P204"
+        android:id="@+id/mod2_207_radiogroup_C2_P207"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margen_small"
@@ -24,15 +24,15 @@
             android:layout_height="wrap_content"
             android:visibility="gone"/>
         <RadioButton
-            android:id="@+id/mo2_204_rb1"
+            android:id="@+id/mo2_207_rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margen_medium"
-            android:text="@string/modulo_2_p204_sp1"/>
+            android:text="SI"/>
         <RadioButton
-            android:id="@+id/mo2_204_rb2"
+            android:id="@+id/mo2_207_rb2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/modulo_2_p204_sp2"/>
+            android:text="NO"/>
     </RadioGroup>
 </LinearLayout>
