@@ -245,7 +245,7 @@ public class FragmentHogares extends FragmentPagina {
         AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
         final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_jefe_hogar, null);
         final EditText jefeEditText = (EditText) dialogView.findViewById(R.id.dialog_jefe_edittext_nombre);
-        jefeEditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
+        jefeEditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40), new InputFilterSoloLetras()});
         alert.setTitle("EDITAR HOGAR");
         alert.setView(dialogView);
         alert.setPositiveButton("Guardar",null);

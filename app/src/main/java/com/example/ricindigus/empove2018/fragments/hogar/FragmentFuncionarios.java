@@ -29,6 +29,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Funcionario;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 /**
@@ -107,9 +108,9 @@ public class FragmentFuncionarios extends FragmentPagina {
         configurarEditText(dniEncuestador,cvEncuestador,2,8);
         configurarEditText(numeroPersonas,layoutPersonas,2,2);
 
-        configurarEditText(nomEncuestador,cvEncuestador,1,30);
-        configurarEditText(nomSupervisor,cvsupervisor,1,30);
-        configurarEditText(nomCoordinador,cvCoordinador,1,30);
+        configurarEditText(nomEncuestador,cvEncuestador,0,30);
+        configurarEditText(nomSupervisor,cvsupervisor,0,30);
+        configurarEditText(nomCoordinador,cvCoordinador,0,30);
 
         radiogroupPersonas.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -121,6 +122,9 @@ public class FragmentFuncionarios extends FragmentPagina {
     }
 
     private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+
+        if (tipo == 0) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud), new InputFilterSoloLetras()});
+
         if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
 
         editText.setOnKeyListener(new View.OnKeyListener() {

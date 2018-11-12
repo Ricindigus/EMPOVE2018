@@ -10,6 +10,8 @@ public class InputFilterSoloLetras implements InputFilter {
         if(src.toString().matches("[a-zA-Z ]+")){
             return src;
         }
-        return "";
+        String letras=src.toString();
+
+        return letras.replaceAll("[^A-Za-z]", "");//src.subSequence(start,end-1);//src.substring(1,src.length()-1)
     }
 }
