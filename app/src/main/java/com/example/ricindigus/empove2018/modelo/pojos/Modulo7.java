@@ -38,7 +38,15 @@ public class Modulo7 {
     private String c7_p705_7;
     private String c7_p705_o;
     private String c7_p706;
-    private String c7_p707;
+    private String c7_p707_1;
+    private String c7_p707_2;
+    private String c7_p707_3;
+    private String c7_p707_4;
+    private String c7_p707_5;
+    private String c7_p707_6;
+    private String c7_p707_7;
+    private String c7_p707_8;
+    private String c7_p707_9;
     private String c7_p707_o;
     private String c7_p708_1;
     private String c7_p708_2;
@@ -93,7 +101,15 @@ public class Modulo7 {
         c7_p705_7= "";
         c7_p705_o= "";
         c7_p706= "";
-        c7_p707= "";
+        c7_p707_1= "";
+        c7_p707_2= "";
+        c7_p707_3= "";
+        c7_p707_4= "";
+        c7_p707_5= "";
+        c7_p707_6= "";
+        c7_p707_7= "";
+        c7_p707_8= "";
+        c7_p707_9= "";
         c7_p707_o= "";
         c7_p708_1= "";
         c7_p708_2= "";
@@ -382,12 +398,76 @@ public class Modulo7 {
         this.c7_p706 = c7_p706;
     }
 
-    public String getC7_p707() {
-        return c7_p707;
+    public String getC7_p707_1() {
+        return c7_p707_1;
     }
 
-    public void setC7_p707(String c7_p707) {
-        this.c7_p707 = c7_p707;
+    public void setC7_p707_1(String c7_p707_1) {
+        this.c7_p707_1 = c7_p707_1;
+    }
+
+    public String getC7_p707_2() {
+        return c7_p707_2;
+    }
+
+    public void setC7_p707_2(String c7_p707_2) {
+        this.c7_p707_2 = c7_p707_2;
+    }
+
+    public String getC7_p707_3() {
+        return c7_p707_3;
+    }
+
+    public void setC7_p707_3(String c7_p707_3) {
+        this.c7_p707_3 = c7_p707_3;
+    }
+
+    public String getC7_p707_4() {
+        return c7_p707_4;
+    }
+
+    public void setC7_p707_4(String c7_p707_4) {
+        this.c7_p707_4 = c7_p707_4;
+    }
+
+    public String getC7_p707_5() {
+        return c7_p707_5;
+    }
+
+    public void setC7_p707_5(String c7_p707_5) {
+        this.c7_p707_5 = c7_p707_5;
+    }
+
+    public String getC7_p707_6() {
+        return c7_p707_6;
+    }
+
+    public void setC7_p707_6(String c7_p707_6) {
+        this.c7_p707_6 = c7_p707_6;
+    }
+
+    public String getC7_p707_7() {
+        return c7_p707_7;
+    }
+
+    public void setC7_p707_7(String c7_p707_7) {
+        this.c7_p707_7 = c7_p707_7;
+    }
+
+    public String getC7_p707_8() {
+        return c7_p707_8;
+    }
+
+    public void setC7_p707_8(String c7_p707_8) {
+        this.c7_p707_8 = c7_p707_8;
+    }
+
+    public String getC7_p707_9() {
+        return c7_p707_9;
+    }
+
+    public void setC7_p707_9(String c7_p707_9) {
+        this.c7_p707_9 = c7_p707_9;
     }
 
     public String getC7_p707_o() {
@@ -577,7 +657,15 @@ public class Modulo7 {
         contentValues.put(SQLConstantes.modulo7_c7_p705_7,c7_p705_7);
         contentValues.put(SQLConstantes.modulo7_c7_p705_o,c7_p705_o);
         contentValues.put(SQLConstantes.modulo7_c7_p706,c7_p706);
-        contentValues.put(SQLConstantes.modulo7_c7_p707,c7_p707);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_1,c7_p707_1);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_2,c7_p707_2);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_3,c7_p707_3);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_4,c7_p707_4);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_5,c7_p707_5);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_6,c7_p707_6);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_7,c7_p707_7);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_8,c7_p707_8);
+        contentValues.put(SQLConstantes.modulo7_c7_p707_9,c7_p707_9);
         contentValues.put(SQLConstantes.modulo7_c7_p707_o,c7_p707_o);
         contentValues.put(SQLConstantes.modulo7_c7_p708_1,c7_p708_1);
         contentValues.put(SQLConstantes.modulo7_c7_p708_2,c7_p708_2);

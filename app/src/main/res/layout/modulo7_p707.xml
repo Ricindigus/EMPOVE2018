@@ -19,37 +19,37 @@
         android:text="@string/modulo_7_p707_ind"/>
 
     <CheckBox
-        android:id="@+id/mod7_707_rb1"
+        android:id="@+id/mod7_707_checkbox_C7_P707_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p707_sp1"/>
     <CheckBox
-        android:id="@+id/mod7_707_rb2"
+        android:id="@+id/mod7_707_checkbox_C7_P707_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p707_sp2"/>
     <CheckBox
-        android:id="@+id/mod7_707_rb3"
+        android:id="@+id/mod7_707_checkbox_C7_P707_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p707_sp3"/>
     <CheckBox
-        android:id="@+id/mod7_707_rb4"
+        android:id="@+id/mod7_707_checkbox_C7_P707_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p707_sp4"/>
     <CheckBox
-        android:id="@+id/mod7_707_rb5"
+        android:id="@+id/mod7_707_checkbox_C7_P707_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p707_sp5"/>
     <CheckBox
-        android:id="@+id/mod7_707_rb6"
+        android:id="@+id/mod7_707_checkbox_C7_P707_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p707_sp6"/>
     <CheckBox
-        android:id="@+id/mod7_707_rb7"
+        android:id="@+id/mod7_707_checkbox_C7_P707_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modulo_7_p707_sp7"/>
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <CheckBox
-            android:id="@+id/mod7_707_rb8"
+            android:id="@+id/mod7_707_checkbox_C7_P707_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margen_small"
@@ -68,7 +68,7 @@
             style="@style/TemaInputEspecifique"/>
     </LinearLayout>
     <CheckBox
-        android:id="@+id/mod7_707_rb9"
+        android:id="@+id/mod7_707_checkbox_C7_P707_9"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="@string/modulo_7_p707_sp9"/>

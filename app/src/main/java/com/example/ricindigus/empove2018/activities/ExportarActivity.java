@@ -712,7 +712,15 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p705_7, modulo7.getC7_p705_7());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p705_o, modulo7.getC7_p705_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p706, modulo7.getC7_p706());
-                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707, modulo7.getC7_p707());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_1, modulo7.getC7_p707_1());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_2, modulo7.getC7_p707_2());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_3, modulo7.getC7_p707_3());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_4, modulo7.getC7_p707_4());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_5, modulo7.getC7_p707_5());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_6, modulo7.getC7_p707_6());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_7, modulo7.getC7_p707_7());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_8, modulo7.getC7_p707_8());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_9, modulo7.getC7_p707_9());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p707_o, modulo7.getC7_p707_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p708_1, modulo7.getC7_p708_1());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p708_2, modulo7.getC7_p708_2());

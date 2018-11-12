@@ -1301,7 +1301,15 @@ public class SQLConstantes {
     public static String modulo7_c7_p705_7 = "c7_p705_7";
     public static String modulo7_c7_p705_o = "c7_p705_o";
     public static String modulo7_c7_p706 = "c7_p706";
-    public static String modulo7_c7_p707 = "c7_p707";
+    public static String modulo7_c7_p707_1 = "c7_p707_1";
+    public static String modulo7_c7_p707_2 = "c7_p707_2";
+    public static String modulo7_c7_p707_3 = "c7_p707_3";
+    public static String modulo7_c7_p707_4 = "c7_p707_4";
+    public static String modulo7_c7_p707_5 = "c7_p707_5";
+    public static String modulo7_c7_p707_6 = "c7_p707_6";
+    public static String modulo7_c7_p707_7 = "c7_p707_7";
+    public static String modulo7_c7_p707_8 = "c7_p707_8";
+    public static String modulo7_c7_p707_9 = "c7_p707_9";
     public static String modulo7_c7_p707_o = "c7_p707_o";
     public static String modulo7_c7_p708_1 = "c7_p708_1";
     public static String modulo7_c7_p708_2 = "c7_p708_2";
@@ -1358,7 +1366,15 @@ public class SQLConstantes {
                     modulo7_c7_p705_7  +  " TEXT," +
                     modulo7_c7_p705_o  +  " TEXT," +
                     modulo7_c7_p706  +  " TEXT," +
-                    modulo7_c7_p707  +  " TEXT," +
+                    modulo7_c7_p707_1  +  " TEXT," +
+                    modulo7_c7_p707_2  +  " TEXT," +
+                    modulo7_c7_p707_3  +  " TEXT," +
+                    modulo7_c7_p707_4  +  " TEXT," +
+                    modulo7_c7_p707_5  +  " TEXT," +
+                    modulo7_c7_p707_6  +  " TEXT," +
+                    modulo7_c7_p707_7  +  " TEXT," +
+                    modulo7_c7_p707_8  +  " TEXT," +
+                    modulo7_c7_p707_9  +  " TEXT," +
                     modulo7_c7_p707_o  +  " TEXT," +
                     modulo7_c7_p708_1  +  " TEXT," +
                     modulo7_c7_p708_2  +  " TEXT," +
