@@ -16,6 +16,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.method.DigitsKeyListener;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -35,6 +36,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 
 import java.util.ArrayList;
 
@@ -192,8 +194,8 @@ public class FragmentHogares extends FragmentPagina {
         final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_jefe_hogar, null);
         final EditText jefeEditText = (EditText) dialogView.findViewById(R.id.dialog_jefe_edittext_nombre);
 
-        jefeEditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(40)});
-//        jefeEditText.setInputType(1);jefeEditText.setKeyListener(DigitsKeyListener.getInstance("ABCDEFGHIJKLMNOPQRSTUVWXYZ "));
+        jefeEditText.setFilters(new InputFilter[] {new InputFilter.AllCaps(),new InputFilter.LengthFilter(40),new InputFilterSoloLetras()});
+
         alert.setTitle("AGREGAR HOGAR");
         alert.setView(dialogView);
         alert.setPositiveButton("Agregar",null);
