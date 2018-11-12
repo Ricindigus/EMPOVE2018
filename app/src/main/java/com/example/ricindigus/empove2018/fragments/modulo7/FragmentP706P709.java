@@ -31,6 +31,7 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 import java.util.ArrayList;
@@ -133,8 +134,8 @@ public class FragmentP706P709 extends FragmentPagina {
         });
 
         controlarChecked(c7_p709_9_Checkbox,c7_p709_o_EditText);
-        configurarEditText(c7_p707_o_EditText,m7_p707_linearlayout,1,30);
-        configurarEditText(c7_p709_o_EditText,m7_p709_linearlayout,1,30);
+        configurarEditText(c7_p707_o_EditText,m7_p707_linearlayout,0,30);
+        configurarEditText(c7_p709_o_EditText,m7_p709_linearlayout,0,30);
 
         c7_p708_5_Checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -376,25 +377,26 @@ public class FragmentP706P709 extends FragmentPagina {
         }
     }
 
-    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
-
+    private void configurarEditText(final EditText editText, final View viewLayout, int tipo,int longitud){
+        switch (tipo){
+            case 0:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud), new InputFilterSoloLetras()});break;
+            case 1:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});break;
+            case 2:editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+                editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());break;
+        }
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     ocultarTeclado(editText);
-                    view.requestFocus();
+                    viewLayout.requestFocus();
                     return true;
                 }
                 return false;
             }
         });
-        if (tipo == 2) {
-            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        }
     }
+
 
 
     public void controlarChecked(CheckBox checkBox,final EditText editText){

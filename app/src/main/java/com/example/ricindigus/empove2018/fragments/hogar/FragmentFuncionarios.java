@@ -101,11 +101,9 @@ public class FragmentFuncionarios extends FragmentPagina {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         configurarEditText(dniCoordinador,cvCoordinador,2,8);
-//        dniCoordinador.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(8)});
-//        dniCoordinador.setInputType(18);
-//        dniCoordinador.setTransformationMethod(null);
         configurarEditText(dniSupervisor,cvsupervisor,2,8);
         configurarEditText(dniEncuestador,cvEncuestador,2,8);
+
         configurarEditText(numeroPersonas,layoutPersonas,2,2);
 
         configurarEditText(nomEncuestador,cvEncuestador,0,30);
@@ -121,31 +119,27 @@ public class FragmentFuncionarios extends FragmentPagina {
         cargarDatos();
     }
 
-    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
-
-        if (tipo == 0) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud), new InputFilterSoloLetras()});
-
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
-
+    private void configurarEditText(final EditText editText, final View viewLayout, int tipo,int longitud){
+        switch (tipo){
+            case 0:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud), new InputFilterSoloLetras()});break;
+            case 1:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});break;
+            case 2:editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+                editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());break;
+        }
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     ocultarTeclado(editText);
-                    view.requestFocus();
+                    viewLayout.requestFocus();
                     return true;
                 }
                 return false;
             }
         });
-        if (tipo == 2) {
-//            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-//            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-            editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(longitud)});
-            editText.setInputType(18);
-            editText.setTransformationMethod(null);
-        }
     }
+
+
 
     private void controlarEspecifiqueRadio(RadioGroup group, int checkedId, int opcionEsp, EditText editTextEspecifique) {
         int seleccionado = group.indexOfChild(group.findViewById(checkedId));

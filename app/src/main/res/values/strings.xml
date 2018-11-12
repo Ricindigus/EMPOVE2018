@@ -143,7 +143,7 @@
     <string name="sub_modulo_1_1_101">POR OBSERVACIÓN</string>
 
     <string name="modulo_1_p101">101.TIPO DE VIVIENDA:</string>
-    <string name="modulo_1_p101_ind">(Observe la itemMarco y seleccione solo un código)</string>
+    <string name="modulo_1_p101_ind">(Observe la vivienda y seleccione solo un código)</string>
     <string name="modulo_1_p101_sp1">1.Casa independiente</string>
     <string name="modulo_1_p101_sp2">2.Departamento en edificio</string>
     <string name="modulo_1_p101_sp3">3.Vivienda en quinta</string>
@@ -541,7 +541,7 @@
     <string name="modulo_4_p404_sp2">2.Sí, pero no con la frecuencia necesaria</string>
     <string name="modulo_4_p404_sp3">3.No recibe tratamiento</string>
 
-    <string name="modulo_4_p405">405.DESDE SU LLEGADA AL PERÚ ¿PRESENTÓ USTED ALGÚN(A):</string>
+    <string name="modulo_4_p405">405.DESDE SU LLEGADA AL PERÚ ¿PRESENTÓ USTED ALGÚN/A:</string>
     <string name="modulo_4_p405_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_4_p405_sp1">1.Síntoma o malestar (tos, dolor de cabeza, fiebre, nauseas)?</string>
     <string name="modulo_4_p405_sp2">2.Enfermedad (gripe, colitis, etc.)?</string>
@@ -558,7 +558,7 @@
     <string name="modulo_4_p406_sp3">3.Consultorio particular</string>
     <string name="modulo_4_p406_sp4">4.Clínica particular</string>
     <string name="modulo_4_p406_sp5">5.Farmacia o botica</string>
-    <string name="modulo_4_p406_sp6">6.Se auto medicó</string>
+    <string name="modulo_4_p406_sp6">6.Se automedicó</string>
     <string name="modulo_4_p406_sp7">7.Otro</string>
     <string name="modulo_4_p406_sp8">8.NO BUSCO ATENCIÓN</string>
     <string name="modulo_4_p406_especifique">Especifique</string>
@@ -571,7 +571,7 @@
     <string name="modulo_4_p407_sp4">4.No confía en los médicos</string>
     <string name="modulo_4_p407_sp5">5.No era tan grave / No fue necesario</string>
     <string name="modulo_4_p407_sp6">6.No tiene seguro</string>
-    <string name="modulo_4_p407_sp7">7.Se auto medico o repitió receta anterior</string>
+    <string name="modulo_4_p407_sp7">7.Se automedicó o repitió receta anterior</string>
     <string name="modulo_4_p407_sp8">8.Falta de tiempo</string>
     <string name="modulo_4_p407_sp9">9.Por maltrato de personal de salud</string>
     <string name="modulo_4_p407_sp10">10.Por falta de documentos</string>
@@ -646,7 +646,7 @@
     <string name="modulo_4_p416_ind">(Lea cada alternativa y seleccione uno o más códigos)</string>
     <string name="modulo_4_p416_sp1">1.Método tradicional (ritmo, temperatura corporal, moco cervical, lactancia materna exclusiva)?</string>
     <string name="modulo_4_p416_sp2">2.Método moderno (Hormonal, barrera, dispositivo intrauterino, definitivo)?</string>
-    <string name="modulo_4_p416_sp3">3.Anticoncepción de emergencia (Píldora del día siguiente, entre otros)?</string>
+    <string name="modulo_4_p416_sp3">3.Anticoncepción de emergencia (Píldoras del día siguiente)?</string>
     <string name="modulo_4_p416_sp4">4.Prueba de VIH y otras infecciones de transmisión sexual?</string>
     <string name="modulo_4_p416_sp5">5.Educación y consejería?</string>
     <string name="modulo_4_p416_sp6">6.Otro servicio?</string>
@@ -1055,7 +1055,7 @@
     <string name="modulo_7_submenu_1">Preguntas 701 - 705</string>
     <string name="modulo_7_submenu_2">Preguntas 706 - 709</string>
 
-    <string name="modulo_7_p701">701.¿USTED, SE HA SENTIDO DISCRIMINADO POR SER PERSONA VENEZOLANA DESDE QUE LLEGÓ AL PERÚ?</string>
+    <string name="modulo_7_p701">701.USTED, ¿SE HA SENTIDO DISCRIMINADO POR SER PERSONA VENEZOLANA DESDE QUE LLEGÓ AL PERÚ?</string>
     <string name="modulo_7_p701_si">1.Sí</string>
     <string name="modulo_7_p701_no">2.No</string>
 
@@ -1251,7 +1251,7 @@
     <string name="modulo_8_p811_sp2">2.¿Menos frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_8_p811_sp3">3.¿Igual de frecuentes que cuando vivía en Venezuela?</string>
 
-    <string name="modulo_8_p812">812.SABE USTED, ¿SI ESTA PERSONA ACUDIÓ A PEDIR AYUDA A ALGUNA PERSONA O INSTITUCIÓN?</string>
+    <string name="modulo_8_p812">812.USTED SABE, ¿SI ESTA PERSONA ACUDIÓ A PEDIR AYUDA A ALGUNA PERSONA O INSTITUCIÓN?</string>
     <string name="modulo_8_p812_si">1.Sí</string>
     <string name="modulo_8_p812_no">2.No</string>
 
@@ -1288,7 +1288,7 @@
     <string name="modulo_8_p815_si">1.Sí</string>
     <string name="modulo_8_p815_no">2.No</string>
 
-    <string name="modulo_8_p816">816.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE MALTRATÓ SEXUALMENTE? </string>
+    <string name="modulo_8_p816">816.USTED, ¿SABE O CONOCE QUIÉN FUE LA PERSONA QUE VIOLENTÓ SEXUALMENTE A LA VÍCTIMA? </string>
     <string name="modulo_8_p816_ind">(Entregue la tarjeta, espere la respuesta y seleccione uno o más códigos)</string>
     <string name="modulo_8_p816_sp1">1.Esposo/a o compañero/a</string>
     <string name="modulo_8_p816_sp2">2.Padre</string>
@@ -1311,7 +1311,7 @@
     <string name="modulo_8_p817_sp2">2.¿Menos frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_8_p817_sp3">3.¿Igual de frecuentes que cuando vivía en Venezuela?</string>
 
-    <string name="modulo_8_p818">818.¿SABE USTED SI ESTA PERSONA, QUE SUFRIÓ VIOLENCIA SEXUAL, ACUDIÓ A ALGUNA PERSONA O INSTITUCIÓN PARA PEDIR AYUDA?</string>
+    <string name="modulo_8_p818">818.¿USTED SABE SI ESTA PERSONA, QUE SUFRIÓ VIOLENCIA SEXUAL, ACUDIÓ A ALGUNA PERSONA O INSTITUCIÓN PARA PEDIR AYUDA?</string>
     <string name="modulo_8_p818_si">1.Sí</string>
     <string name="modulo_8_p818_no">2.No</string>
 

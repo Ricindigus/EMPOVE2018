@@ -291,6 +291,7 @@ public class FragmentHogares extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         data.eliminarDato(getNombreTabla(),hogares.get(position).get_id());
+        inicializarDatos();
         setearAdapter();
         data.close();
         actualizarNumeroHogares();
