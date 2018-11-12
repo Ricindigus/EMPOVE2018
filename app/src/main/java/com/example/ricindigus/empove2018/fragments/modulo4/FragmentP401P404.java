@@ -32,6 +32,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo4;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 import java.util.ArrayList;
@@ -144,9 +145,9 @@ public class FragmentP401P404 extends FragmentPagina {
         super.onViewCreated(view, savedInstanceState);
 
         controlarChecked(c4_p401_4_CheckBox,c4_p401_o_EditText);
-        configurarEditText(c4_p401_o_EditText,m4_p401_linearlayout,1,30);
+        configurarEditText(c4_p401_o_EditText,m4_p401_linearlayout,0,30);
         controlarChecked(c4_p403_14_CheckBox,c4_p403_o_EditText);
-        configurarEditText(c4_p403_o_EditText,m4_p403_linearlayout,1,30);
+        configurarEditText(c4_p403_o_EditText,m4_p403_linearlayout,0,30);
 
 
         c4_p402_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -409,7 +410,12 @@ public class FragmentP401P404 extends FragmentPagina {
     }
 
     private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+        switch (tipo){
+            case 0:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud), new InputFilterSoloLetras()});break;
+            case 1:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});break;
+            case 2:editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+                editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());break;
+        }
 
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -422,10 +428,6 @@ public class FragmentP401P404 extends FragmentPagina {
                 return false;
             }
         });
-        if (tipo == 2) {
-            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        }
     }
 
     public void controlarChecked(CheckBox checkBox,final EditText editText){

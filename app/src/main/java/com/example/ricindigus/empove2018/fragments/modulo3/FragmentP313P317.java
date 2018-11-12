@@ -30,6 +30,7 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 import java.util.ArrayList;
@@ -115,9 +116,9 @@ public class FragmentP313P317 extends FragmentPagina {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        configurarEditText(edtp314Especifique,lytp314,1,30);
-        configurarEditText(edtp315Especifique,lytp315,1,30);
-        configurarEditText(edtp316Especifique,lytp316,1,30);
+        configurarEditText(edtp314Especifique,lytp314,0,30);
+        configurarEditText(edtp315Especifique,lytp315,0,30);
+        configurarEditText(edtp316Especifique,lytp316,0,30);
 
         rgp313.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -311,7 +312,12 @@ public class FragmentP313P317 extends FragmentPagina {
     }
 
     private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+        switch (tipo){
+            case 0:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud), new InputFilterSoloLetras()});break;
+            case 1:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});break;
+            case 2:editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+                editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());break;
+        }
 
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -324,10 +330,6 @@ public class FragmentP313P317 extends FragmentPagina {
                 return false;
             }
         });
-        if (tipo == 2) {
-            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        }
     }
 
 

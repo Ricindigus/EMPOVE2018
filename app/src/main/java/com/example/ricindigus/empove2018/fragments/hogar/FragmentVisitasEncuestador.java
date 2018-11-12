@@ -19,6 +19,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,6 +46,7 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -507,6 +509,8 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
         final CardView cardViewProxFecha= (CardView) dialogView.findViewById(R.id.dialog_cardview_proxFecha);
         final CardView cardViewProxHora = (CardView) dialogView.findViewById(R.id.dialog_cardview_proxHora);
         String especifique = "";
+
+        edtEspecifique.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(100), new InputFilterSoloLetras()});
 
         txtHoraF.setOnClickListener(new View.OnClickListener() {
             @Override

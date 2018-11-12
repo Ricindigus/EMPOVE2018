@@ -25,6 +25,7 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo1V;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 /**
@@ -127,10 +128,10 @@ public class FragmentP101P107 extends FragmentPagina {
             }
         });
 
-        configurarEditText(c1_p101_o_EditText,m1_p101_linearlayout,1,30);
-        configurarEditText(c1_p102_o_EditText,m1_p102_linearlayout,1,30);
-        configurarEditText(c1_p103_o_EditText,m1_p103_linearlayout,1,30);
-        configurarEditText(c1_p104_o_EditText,m1_p104_linearlayout,1,30);
+        configurarEditText(c1_p101_o_EditText,m1_p101_linearlayout,0,30);
+        configurarEditText(c1_p102_o_EditText,m1_p102_linearlayout,0,30);
+        configurarEditText(c1_p103_o_EditText,m1_p103_linearlayout,0,30);
+        configurarEditText(c1_p104_o_EditText,m1_p104_linearlayout,0,30);
 
         configurarEditText(c1_p105_EditText,m1_p105_linearlayout,2,2);
         configurarEditText(c1_p106_EditText,m1_p106_linearlayout,2,2);
@@ -152,7 +153,12 @@ public class FragmentP101P107 extends FragmentPagina {
     }
 
     private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+        switch (tipo){
+            case 0:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud), new InputFilterSoloLetras()});break;
+            case 1:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});break;
+            case 2:editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+                editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());break;
+        }
 
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -165,13 +171,11 @@ public class FragmentP101P107 extends FragmentPagina {
                 return false;
             }
         });
-        if (tipo == 2) {
-//            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-//            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-            editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(longitud)});
-            editText.setInputType(18);
-            editText.setTransformationMethod(null);
-        }
+//        if (tipo == 2) {
+//            editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(longitud)});
+//            editText.setInputType(18);
+//            editText.setTransformationMethod(null);
+//        }
     }
 
     @Override

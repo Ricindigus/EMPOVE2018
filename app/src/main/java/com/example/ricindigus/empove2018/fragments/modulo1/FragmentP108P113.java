@@ -27,6 +27,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo1H;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo1V;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
 /**
@@ -172,14 +173,14 @@ public class FragmentP108P113 extends FragmentPagina {
             }
         });
 
-        configurarEditText(c1_p108_o_EditText,m1_p108_linearlayout,1,30);
-        configurarEditText(c1_p109_o_EditText,m1_p109_linearlayout,1,30);
-        configurarEditText(c1_p110_o_EditText,m1_p110_linearlayout,1,30);
-        configurarEditText(c1_p111_o_EditText,m1_p111_linearlayout,1,30);
-        configurarEditText(c1_p112_o_EditText,m1_p112_linearlayout,1,30);
-        configurarEditText(c1_p113_7o_EditText,m1_p113_linearlayout,1,30);
-        configurarEditText(c1_p113_8o_EditText,m1_p113_linearlayout,1,30);
-        configurarEditText(c1_p113_9o_EditText,m1_p113_linearlayout,1,30);
+        configurarEditText(c1_p108_o_EditText,m1_p108_linearlayout,0,30);
+        configurarEditText(c1_p109_o_EditText,m1_p109_linearlayout,0,30);
+        configurarEditText(c1_p110_o_EditText,m1_p110_linearlayout,0,30);
+        configurarEditText(c1_p111_o_EditText,m1_p111_linearlayout,0,30);
+        configurarEditText(c1_p112_o_EditText,m1_p112_linearlayout,0,30);
+        configurarEditText(c1_p113_7o_EditText,m1_p113_linearlayout,0,30);
+        configurarEditText(c1_p113_8o_EditText,m1_p113_linearlayout,0,30);
+        configurarEditText(c1_p113_9o_EditText,m1_p113_linearlayout,0,30);
 
         cargarDatos();
     }
@@ -388,7 +389,12 @@ public class FragmentP108P113 extends FragmentPagina {
     }
 
     private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
-        if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
+        switch (tipo){
+            case 0:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud), new InputFilterSoloLetras()});break;
+            case 1:editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});break;
+            case 2:editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
+                editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());break;
+        }
 
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -401,10 +407,6 @@ public class FragmentP108P113 extends FragmentPagina {
                 return false;
             }
         });
-        if (tipo == 2) {
-            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(longitud)});
-            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        }
     }
 
     public void ocultarTeclado(View view){
