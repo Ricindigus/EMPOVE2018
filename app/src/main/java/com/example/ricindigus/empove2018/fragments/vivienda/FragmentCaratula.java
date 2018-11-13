@@ -321,6 +321,24 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
 
 
         }
+
+        String script_tablas_bd_hasta3 = "\n"+ SQLConstantes.SQL_CREATE_TABLA_CARATULA + "\n" + SQLConstantes.SQL_CREATE_TABLA_FUNCIONARIOS +
+                "\n" + SQLConstantes.SQL_CREATE_TABLA_HOGARES + "\n" + SQLConstantes.SQL_CREATE_TABLA_VISITA_ENCUESTADOR +
+                "\n" + SQLConstantes.SQL_CREATE_TABLA_VISITA_SUPERVISOR + "\n" + SQLConstantes.SQL_CREATE_TABLA_RESULTADO_ENCUESTADOR +
+                "\n" + SQLConstantes.SQL_CREATE_TABLA_RESULTADO_SUPERVISOR + "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO1H +
+                "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO1V + "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO2 +
+                "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO3 + "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO3_P309_RUTAS +
+                "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO3_P318_PERSONAS;
+        String script_tablas_bd_desde4_6 = "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO4 +
+                "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO5 + "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO6;
+        String script_tablas_bd_desde7_8 = "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO7 + "\n" + SQLConstantes.SQL_CREATE_TABLA_MODULO8;
+        String script_tablas_bd_despues8 = "\n" + SQLConstantes.SQL_CREATE_TABLA_LAYOUTS + "\n" + SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS;
+
+        Log.e("TABLA_CARATULA hasta 3", "cargarDatos: " +  script_tablas_bd_hasta3);
+        Log.e("TABLA_CARATULA des 4-6", "cargarDatos: " +  script_tablas_bd_desde4_6);
+        Log.e("TABLA_CARATULA des 7-8", "cargarDatos: " +  script_tablas_bd_desde7_8);
+        Log.e("TABLA_CARATULA desp 8", "cargarDatos: " +  script_tablas_bd_despues8);
+
         data.close();
     }
 

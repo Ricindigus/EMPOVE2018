@@ -368,45 +368,52 @@ public class ExportarActivity extends AppCompatActivity {
                     serializer.endTag("", "MODULO3");
                 }
                 serializer.endTag("", "MODULO3S");
+                for (Modulo3 modulo3 : modulo3s) {
+                    m3Pregunta309s = data.getAllM3Pregunta309(modulo3.get_id());
+                    if(m3Pregunta309s.size()>0) {
+                        serializer.startTag("", "M3P309RUTAS");
+                        for (M3Pregunta309 m3Pregunta309 : m3Pregunta309s) {
+                            serializer.startTag("", "M3P309RUTA");
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id, m3Pregunta309.get_id());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_p309_idEncuestado, m3Pregunta309.getId_encuestado());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id_vivienda, m3Pregunta309.getId_vivienda());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_p309_numero, m3Pregunta309.getNumero());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p, m3Pregunta309.getC3_p309_p());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p_nom, m3Pregunta309.getC3_p309_p_nom());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_c, m3Pregunta309.getC3_p309_c());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_mod, m3Pregunta309.getC3_p309_mod());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_m, m3Pregunta309.getC3_p309_m());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_a, m3Pregunta309.getC3_p309_a());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_m_cod, m3Pregunta309.getC3_p309_m_cod());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_a_cod, m3Pregunta309.getC3_p309_a_cod());
+                            serializer.endTag("", "M3P309RUTA");
+                        }
+                        serializer.endTag("", "M3P309RUTAS");
+                    }
+                }
+                for (Modulo3 modulo3 : modulo3s) {
+                    m3Pregunta318s = data.getAllM3Pregunta318(modulo3.get_id());
+                    if(m3Pregunta318s.size()>0) {
+                        serializer.startTag("", "M3P318PERSONAS");
+                        for (M3Pregunta318 m3Pregunta318 : m3Pregunta318s) {
+                            serializer.startTag("", "M3P318PERSONA");
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id, m3Pregunta318.get_id());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_p318_idEncuestado, m3Pregunta318.getIdEncuestado());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id_vivienda, m3Pregunta318.getId_vivienda());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_p318_numero, m3Pregunta318.getNumero());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_f, m3Pregunta318.getC3_p318_f());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_s, m3Pregunta318.getC3_p318_s());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_e, m3Pregunta318.getC3_p318_e());
+                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_p, m3Pregunta318.getC3_p318_p());
+                            serializer.endTag("", "M3P318PERSONA");
+                        }
+                        serializer.endTag("", "M3P318PERSONAS");
+                    }
+                }
+
             }
 
-            if(m3Pregunta309s.size()>0) {
-                serializer.startTag("", "M3P309RUTAS");
-                for (M3Pregunta309 m3Pregunta309 : m3Pregunta309s) {
-                    serializer.startTag("", "M3P309RUTA");
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id, m3Pregunta309.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_idEncuestado, m3Pregunta309.getId_encuestado());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id_vivienda, m3Pregunta309.getId_vivienda());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_numero, m3Pregunta309.getNumero());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p, m3Pregunta309.getC3_p309_p());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p_nom, m3Pregunta309.getC3_p309_p_nom());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_c, m3Pregunta309.getC3_p309_c());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_mod, m3Pregunta309.getC3_p309_mod());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_m, m3Pregunta309.getC3_p309_m());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_a, m3Pregunta309.getC3_p309_a());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_m_cod, m3Pregunta309.getC3_p309_m_cod());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_a_cod, m3Pregunta309.getC3_p309_a_cod());
-                    serializer.endTag("", "M3P309RUTA");
-                }
-                serializer.endTag("", "M3P309RUTAS");
-            }
 
-            if(m3Pregunta318s.size()>0) {
-                serializer.startTag("", "M3P318PERSONAS");
-                for (M3Pregunta318 m3Pregunta318 : m3Pregunta318s) {
-                    serializer.startTag("", "M3P318PERSONA");
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id, m3Pregunta318.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p318_idEncuestado, m3Pregunta318.getIdEncuestado());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id_vivienda, m3Pregunta318.getId_vivienda());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p318_numero, m3Pregunta318.getNumero());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_f, m3Pregunta318.getC3_p318_f());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_s, m3Pregunta318.getC3_p318_s());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_e, m3Pregunta318.getC3_p318_e());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_p, m3Pregunta318.getC3_p318_p());
-                    serializer.endTag("", "M3P318PERSONA");
-                }
-                serializer.endTag("", "M3P318PERSONAS");
-            }
 
             if(modulo4s.size()>0) {
                 serializer.startTag("", "MODULO4S");
