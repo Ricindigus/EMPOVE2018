@@ -1621,6 +1621,8 @@ public class Data {
                 modulo5.setC5_p501(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p501)));
                 modulo5.setC5_p502_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_c)));
                 modulo5.setC5_p502(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502)));
+                modulo5.setC5_p502_eleccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_eleccion)));
+                modulo5.setC5_p502_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_o)));
                 modulo5.setC5_p503(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p503)));
                 modulo5.setC5_p504(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p504)));
                 modulo5.setC5_p505(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p505)));
@@ -1677,6 +1679,8 @@ public class Data {
                 modulo5.setC5_p501(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p501)));
                 modulo5.setC5_p502_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_c)));
                 modulo5.setC5_p502(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502)));
+                modulo5.setC5_p502_eleccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_eleccion)));
+                modulo5.setC5_p502_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_o)));
                 modulo5.setC5_p503(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p503)));
                 modulo5.setC5_p504(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p504)));
                 modulo5.setC5_p505(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p505)));

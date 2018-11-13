@@ -12,6 +12,8 @@ public class Modulo5 {
     private String c5_p501;
     private String c5_p502_c;
     private String c5_p502;
+    private String c5_p502_eleccion;
+    private String c5_p502_o;
     private String c5_p503;
     private String c5_p504;
     private String c5_p505;
@@ -54,6 +56,8 @@ public class Modulo5 {
         c5_p501= "";
         c5_p502_c= "";
         c5_p502= "";
+        c5_p502_eleccion= "";
+        c5_p502_o= "";
         c5_p503= "";
         c5_p504= "";
         c5_p505= "";
@@ -146,6 +150,22 @@ public class Modulo5 {
 
     public void setC5_p502(String c5_p502) {
         this.c5_p502 = c5_p502;
+    }
+
+    public String getC5_p502_eleccion() {
+        return c5_p502_eleccion;
+    }
+
+    public void setC5_p502_eleccion(String c5_p502_eleccion) {
+        this.c5_p502_eleccion = c5_p502_eleccion;
+    }
+
+    public String getC5_p502_o() {
+        return c5_p502_o;
+    }
+
+    public void setC5_p502_o(String c5_p502_o) {
+        this.c5_p502_o = c5_p502_o;
     }
 
     public String getC5_p503() {
@@ -421,6 +441,8 @@ public class Modulo5 {
         contentValues.put(SQLConstantes.modulo5_c5_p501,c5_p501);
         contentValues.put(SQLConstantes.modulo5_c5_p502_c,c5_p502_c);
         contentValues.put(SQLConstantes.modulo5_c5_p502,c5_p502);
+        contentValues.put(SQLConstantes.modulo5_c5_p502_eleccion,c5_p502_eleccion);
+        contentValues.put(SQLConstantes.modulo5_c5_p502_o,c5_p502_o);
         contentValues.put(SQLConstantes.modulo5_c5_p503,c5_p503);
         contentValues.put(SQLConstantes.modulo5_c5_p504,c5_p504);
         contentValues.put(SQLConstantes.modulo5_c5_p505,c5_p505);

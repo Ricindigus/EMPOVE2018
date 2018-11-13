@@ -954,7 +954,9 @@ public class SQLConstantes {
     public static String modulo5_idVivienda = "idVivienda";
     public static String modulo5_c5_p501 = "c5_p501";
     public static String modulo5_c5_p502_c = "c5_p502_c";
+    public static String modulo5_c5_p502_eleccion = "c5_p502_eleccion";
     public static String modulo5_c5_p502 = "c5_p502";
+    public static String modulo5_c5_p502_o = "c5_p502_o";
     public static String modulo5_c5_p503 = "c5_p503";
     public static String modulo5_c5_p504 = "c5_p504";
     public static String modulo5_c5_p505 = "c5_p505";
@@ -1001,6 +1003,8 @@ public class SQLConstantes {
                     modulo5_c5_p501  +  " TEXT," +
                     modulo5_c5_p502_c  +  " TEXT," +
                     modulo5_c5_p502  +  " TEXT," +
+                    modulo5_c5_p502_eleccion  +  " TEXT," +
+                    modulo5_c5_p502_o  +  " TEXT," +
                     modulo5_c5_p503  +  " TEXT," +
                     modulo5_c5_p504  +  " TEXT," +
                     modulo5_c5_p505  +  " TEXT," +
