@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -34,6 +35,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
+import com.example.ricindigus.empove2018.modelo.pojos.Ubigeo;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -50,17 +52,18 @@ public class FragmentP501P505 extends FragmentPagina {
 
 
     RadioGroup c5_p501_RadioGroup, c5_p503_RadioGroup, c5_p504_RadioGroup, c5_p505_RadioGroup;
+    TextView txtNombreCarrera, txtCodigoCarrera;
     EditText c5_p502_o_EditText;
-    Spinner c5_p502_Spinner;
+    AutoCompleteTextView c5_p502_Autocomplete;
     CheckBox c5_p502_c_CheckBox;
     LinearLayout m5_p501_linearlayout, m5_p502_linearlayout, m5_p503_linearlayout, m5_p504_linearlayout,
             m5_p505_linearlayout;
 
     private String c5_p501;
-    private String c5_p502_c="";
-    private String c5_p502="";
-    private String c5_p502_o="";
-    private String c5_p502_eleccion="";
+    private String c5_p502_c;
+    private String c5_p502;
+    private String c5_p502_eleccion;
+    private String c5_p502_o;
     private String c5_p503;
     private String c5_p504;
     private String c5_p505;
@@ -91,9 +94,13 @@ public class FragmentP501P505 extends FragmentPagina {
         informanteSpinner = (Spinner) rootView.findViewById(R.id.cabecera_spinner_informante);
 
         c5_p501_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_501_radiogroup_C5_P501);
-        c5_p502_Spinner = (Spinner) rootView.findViewById(R.id.mod5_502_spinner_C5_P502);
-        c5_p502_c_CheckBox = (CheckBox) rootView.findViewById(R.id.mod5_502_checkbox_C5_P502_C);
+
+        c5_p502_Autocomplete = (AutoCompleteTextView) rootView.findViewById(R.id.mod5_502_autocompletetextview);
+        txtCodigoCarrera = (TextView) rootView.findViewById(R.id.mod5_c502_txtCodigoCarrera);
+        txtNombreCarrera = (TextView) rootView.findViewById(R.id.mod5_c502_txtNombreCarrera);
         c5_p502_o_EditText = (EditText) rootView.findViewById(R.id.mod5_502_edittext_C5_P502_o);
+        c5_p502_c_CheckBox = (CheckBox) rootView.findViewById(R.id.mod5_502_checkbox_C5_P502_C);
+
         c5_p503_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_503_radiogroup_C5_P503);
         c5_p504_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_504_radiogroup_C5_P504);
         c5_p505_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod5_505_radiogroup_C5_P505);
@@ -114,12 +121,14 @@ public class FragmentP501P505 extends FragmentPagina {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    c5_p502_Spinner.setSelection(0);
-                    c5_p502_Spinner.setEnabled(false);
+                    txtNombreCarrera.setText("");
+                    txtCodigoCarrera.setText("");
                     c5_p502_o_EditText.setText("");
+                    c5_p502_Autocomplete.setEnabled(false);
+                    c5_p502_o_EditText.setEnabled(false);
                     c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
                 }else{
-                    c5_p502_Spinner.setEnabled(true);
+                    c5_p502_Autocomplete.setEnabled(true);
                 }
             }
         });
@@ -130,47 +139,73 @@ public class FragmentP501P505 extends FragmentPagina {
                 int pos = radioGroup.indexOfChild(c5_p501_RadioGroup.findViewById(c5_p501_RadioGroup.getCheckedRadioButtonId()));
 
                 if(pos>=1 && pos<=6){
-                    m5_p502_linearlayout.setVisibility(View.GONE); limpiar_p502();
+                    txtCodigoCarrera.setText("");
+                    txtNombreCarrera.setText("");
+                    c5_p502_o_EditText.setText("");
+                    c5_p502_o_EditText.setEnabled(false);
+                    m5_p502_linearlayout.setVisibility(View.GONE);
                 }else{
                     m5_p502_linearlayout.setVisibility(View.VISIBLE);
                 }
 
                 if (pos == 7 || pos == 8){
-                    c5_p502_o_EditText.setText("");c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
-                    String[] residentes = getResources().getStringArray(R.array.array_carreras_tecnicas);
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    c5_p502_Spinner.setAdapter(adapter);
+                    limpiar_p502();
+                    ArrayAdapter adapter = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.lista_item,R.id.item, getResources().getStringArray(R.array.array_carreras_tecnicas));
+                    c5_p502_Autocomplete.setAdapter(adapter);
+                    c5_p502_Autocomplete.setOnKeyListener(new View.OnKeyListener() {
+                        @Override
+                        public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                            if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                                    (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                                ocultarTeclado(c5_p502_Autocomplete);
+                                m5_p502_linearlayout.requestFocus();
+                                return true;
+                            }
+                            return false;
+                        }
+                    });
                 }
 
                 if (pos >= 9 && pos <= 11){
-                    c5_p502_o_EditText.setText("");c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
-                    String[] residentes = getResources().getStringArray(R.array.array_carreras_universitarias);
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    c5_p502_Spinner.setAdapter(adapter);
+                    limpiar_p502();
+                    ArrayAdapter adapter = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.lista_item,R.id.item, getResources().getStringArray(R.array.array_carreras_universitarias));
+                    c5_p502_Autocomplete.setAdapter(adapter);
+                    c5_p502_Autocomplete.setOnKeyListener(new View.OnKeyListener() {
+                        @Override
+                        public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                            if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                                    (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                                ocultarTeclado(c5_p502_Autocomplete);
+                                m5_p502_linearlayout.requestFocus();
+                                return true;
+                            }
+                            return false;
+                        }
+                    });
                 }
 
             }
         });
 
-        c5_p502_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        c5_p502_Autocomplete.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position > 0){
-                    c5_p502_eleccion = c5_p502_Spinner.getSelectedItemPosition()+"";
-                    String item = c5_p502_Spinner.getSelectedItem().toString();
-                    c5_p502 = item.substring(0,item.indexOf("-"));
-                    if (c5_p502.equals("99999")){
-                        c5_p502_o_EditText.setEnabled(true);
-                        c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_enabled);
-                    } else {c5_p502_o_EditText.setText("");c5_p502_o_EditText.setEnabled(false);c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);}
-                }else {c5_p502_o_EditText.setText("");c5_p502_o_EditText.setEnabled(false);}
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String textoCarrera = c5_p502_Autocomplete.getText().toString();
+                String codigo = textoCarrera.substring(0,textoCarrera.indexOf("-"));
+                if (codigo.equals("99999")){
+                    c5_p502_o_EditText.setEnabled(true);
+                    c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_enabled);
+                } else {
+                    c5_p502_o_EditText.setText("");
+                    c5_p502_o_EditText.setEnabled(false);
+                    c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
+                }
+                String nombre = textoCarrera.substring(textoCarrera.indexOf("-")+2);
+                txtCodigoCarrera.setText(codigo);
+                txtNombreCarrera.setText(nombre);
+                c5_p502_Autocomplete.setText("");
+                ocultarTeclado(c5_p502_Autocomplete);
+                m5_p502_linearlayout.requestFocus();
             }
         });
         cargarDatos();
@@ -204,13 +239,9 @@ public class FragmentP501P505 extends FragmentPagina {
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
         c5_p501 = c5_p501_RadioGroup.indexOfChild(c5_p501_RadioGroup.findViewById(c5_p501_RadioGroup.getCheckedRadioButtonId()))+"";
-        if (m5_p502_linearlayout.getVisibility()==View.VISIBLE){
-            c5_p502_eleccion = c5_p502_Spinner.getSelectedItemPosition()+"";
-            String item = c5_p502_Spinner.getSelectedItem().toString();
-            c5_p502 = item.substring(0,item.indexOf("-"));
-            c5_p502_o = c5_p502_o_EditText.getText().toString();
-            if(c5_p502_c_CheckBox.isChecked()) c5_p502_c = "1"; else c5_p502_c = "0";
-        }
+        c5_p502 = txtCodigoCarrera.getText().toString();
+        c5_p502_eleccion = txtNombreCarrera.getText().toString();
+        if (c5_p502_c_CheckBox.isChecked()) c5_p502_c = "1"; else c5_p502_c = "0";
         c5_p502_o = c5_p502_o_EditText.getText().toString();
         c5_p503 = c5_p503_RadioGroup.indexOfChild(c5_p503_RadioGroup.findViewById(c5_p503_RadioGroup.getCheckedRadioButtonId()))+"";
         c5_p504 = c5_p504_RadioGroup.indexOfChild(c5_p504_RadioGroup.findViewById(c5_p504_RadioGroup.getCheckedRadioButtonId()))+"";
@@ -229,8 +260,9 @@ public class FragmentP501P505 extends FragmentPagina {
             informanteSpinner.setAdapter(adapter);
             if(!modulo5.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo5.getIdInformante()));
             if(!modulo5.getC5_p501().equals("-1") && !modulo5.getC5_p501().equals(""))((RadioButton)c5_p501_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p501()))).setChecked(true);
-            if(!modulo5.getC5_p502_eleccion().equals(""))c5_p502_Spinner.setSelection(Integer.parseInt(modulo5.getC5_p502_eleccion()));
-            if(!modulo5.getC5_p502_o().equals("")) c5_p502_o_EditText.setText(modulo5.getC5_p502_o());
+            txtNombreCarrera.setText(modulo5.getC5_p502_eleccion());
+            txtCodigoCarrera.setText(modulo5.getC5_p502());
+            if (modulo5.getC5_p502().equals("99999"))c5_p502_o_EditText.setText(modulo5.getC5_p502_o());
             if(modulo5.getC5_p502_c().equals("1")) c5_p502_c_CheckBox.setChecked(true);
             if(!modulo5.getC5_p503().equals("-1") && ! modulo5.getC5_p503().equals(""))((RadioButton)c5_p503_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p503()))).setChecked(true);
             if(!modulo5.getC5_p504().equals("-1") && !modulo5.getC5_p504().equals(""))((RadioButton)c5_p504_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p504()))).setChecked(true);
@@ -253,7 +285,7 @@ public class FragmentP501P505 extends FragmentPagina {
 
         if (m5_p502_linearlayout.getVisibility()==View.VISIBLE){
             if(c5_p502_c.equals("0")){
-                if(c5_p502_eleccion.equals("0")){ mostrarMensaje("PREGUNTA 502: DEBE SELECCIONAR UNA OPCION");return false; }
+                if(c5_p502.equals("")){ mostrarMensaje("PREGUNTA 502: DEBE INDICAR LA CARRERA");return false; }
                 if(c5_p502.equals("99999")){
                     if (c5_p502_o.trim().equals("")){ mostrarMensaje("PREGUNTA 502: DEBE ESPECIFICAR EL NOMBRE DE LA CARRERA");return false; }
                 }
@@ -299,10 +331,16 @@ public class FragmentP501P505 extends FragmentPagina {
     }
 
     public void limpiar_p502(){
-        c5_p502_o_EditText.setText("");c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
-        c5_p502_Spinner.setSelection(0);
-        c5_p502_c_CheckBox.setChecked(false);
+        txtCodigoCarrera.setText("");
+        txtNombreCarrera.setText("");
+        c5_p502_o_EditText.setText("");
+        c5_p502_o_EditText.setEnabled(false);
+        c5_p502_o_EditText.setBackgroundResource(R.drawable.input_text_disabled);
+        c5_p502_c_CheckBox.setEnabled(true);
+        c5_p502_Autocomplete.setEnabled(true);
     }
+
+
 
     private void controlarEspecifiqueRadio(RadioGroup group, int checkedId, int opcionEsp, EditText editTextEspecifique) {
         int seleccionado = group.indexOfChild(group.findViewById(checkedId));

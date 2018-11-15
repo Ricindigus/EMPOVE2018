@@ -123,7 +123,7 @@
     <string name="funcionario_dni">DNI</string>
     <string name="funcionario_nombres">NOMBRES Y APELLIDOS</string>
     <string name="funcionario_encuestador">ENCUESTADOR/A</string>
-    <string name="funcionario_supervisor">SUPERVISOR/A</string>
+    <string name="funcionario_supervisor">SUPERVISOR/A LOCAL</string>
     <string name="funcionario_coordinador">COORDINADOR/A</string>
 
 
@@ -274,7 +274,7 @@
     <string name="modulo_2_menu">Módulo II: Características de los residentes del hogar</string>
     <string name="modulo_2_submenu_1">Preguntas 201 - 206</string>
 
-    <string name="modulo_2_p202_pregunta_miembros">¿CUÁLES SON LAS PERSONAS QUE VIVEN PERMANENTEMENTE EN ESTE HOGAR Y DE LAS QUE ESTÁN ALOJADAS AQUÍ?</string>
+    <string name="modulo_2_p202_pregunta_miembros">¿CUÁL ES EL PRIMER NOMBRE DE CADA UNA DE LAS PERSONAS QUE VIVEN PERMANENTEMENTE EN ESTE HOGAR Y DE LAS QUE ESTÁN ALOJADAS AQUÍ?</string>
     <string name="modulo_2_p202_ind">(No olvide registrar a los miembros del hogar ausentes y recién nacidos)</string>
 
     <string name="modulo_2_cab_nro">N°</string>
@@ -328,12 +328,12 @@
     <string name="modulo_2_p206">206.ACTUALMENTE, ¿CUÁL ES SU ESTADO CIVIL O CONYUGAL?</string>
     <string-array name="modulo_2_p206_estado_civil">
         <item>Seleccione Estado Civil</item>
-        <item>Conviviente</item>
-        <item>Casado/a</item>
-        <item>Viudo/a</item>
-        <item>Divorciado/a</item>
-        <item>Separado/a o Ex conviviente</item>
-        <item>Soltero/a</item>
+        <item>1.Conviviente</item>
+        <item>2.Casado/a</item>
+        <item>3.Viudo/a</item>
+        <item>4.Divorciado/a</item>
+        <item>5.Separado/a o Ex conviviente</item>
+        <item>6.Soltero/a</item>
     </string-array>
     <string name="modulo_2_p207">207.¿LLEGÓ DE VENEZUELA?</string>
 
@@ -1390,51 +1390,51 @@
 
     <string-array name="paises">
         <item>Seleccione País</item>
-        <item>Antigua y Barbuda</item>
-        <item>Argentina</item>
-        <item>Bahamas</item>
-        <item>Barbados</item>
-        <item>Belice</item>
-        <item>Bolivia</item>
-        <item>Brasil</item>
-        <item>Canadá</item>
-        <item>Chile</item>
-        <item>Colombia</item>
-        <item>Costa Rica</item>
-        <item>Cuba</item>
-        <item>Dominica</item>
-        <item>Ecuador</item>
-        <item>El Salvador</item>
-        <item>Estados Unidos</item>
-        <item>Granada</item>
-        <item>Guatemala</item>
-        <item>Guyana</item>
-        <item>Haití</item>
-        <item>Honduras</item>
-        <item>Jamaica</item>
-        <item>México</item>
-        <item>Nicaragua</item>
-        <item>Panamá</item>
-        <item>Paraguay</item>
-        <item>Perú</item>
-        <item>República Dominicana</item>
-        <item>San Cristóbal y Nieves</item>
-        <item>San Vicente y las Granadinas</item>
-        <item>Santa Lucía</item>
-        <item>Surinam</item>
-        <item>Trinidad y Tobago</item>
-        <item>Uruguay</item>
-        <item>Venezuela</item>
-        <item>Otro país</item>
+        <item>1.Antigua y Barbuda</item>
+        <item>2.Argentina</item>
+        <item>3.Bahamas</item>
+        <item>4.Barbados</item>
+        <item>5.Belice</item>
+        <item>6.Bolivia</item>
+        <item>7.Brasil</item>
+        <item>8.Canadá</item>
+        <item>9.Chile</item>
+        <item>10.Colombia</item>
+        <item>11.Costa Rica</item>
+        <item>12.Cuba</item>
+        <item>13.Dominica</item>
+        <item>14.Ecuador</item>
+        <item>15.El Salvador</item>
+        <item>16.Estados Unidos</item>
+        <item>17.Granada</item>
+        <item>18.Guatemala</item>
+        <item>19.Guyana</item>
+        <item>20.Haití</item>
+        <item>21.Honduras</item>
+        <item>22.Jamaica</item>
+        <item>23.México</item>
+        <item>24.Nicaragua</item>
+        <item>25.Panamá</item>
+        <item>26.Paraguay</item>
+        <item>27.Perú</item>
+        <item>28.República Dominicana</item>
+        <item>29.San Cristóbal y Nieves</item>
+        <item>30.San Vicente y las Granadinas</item>
+        <item>31.Santa Lucía</item>
+        <item>32.Surinam</item>
+        <item>33.Trinidad y Tobago</item>
+        <item>34.Uruguay</item>
+        <item>35.Venezuela</item>
+        <item>99.Otro país</item>
     </string-array>
 
     <string-array name="rutas_paises">
-        <item>Seleccione país</item>
-        <item>VENEZUELA</item>
-        <item>COLOMBIA</item>
-        <item>ECUADOR </item>
-        <item>BRASIL</item>
-        <item>Otro país</item>
+        <item>SELECCIONE PAÍS</item>
+        <item>1.VENEZUELA</item>
+        <item>2.COLOMBIA</item>
+        <item>3.ECUADOR </item>
+        <item>4.BRASIL</item>
+        <item>9999.OTRO PAÍS</item>
     </string-array>
 
     <string-array name="numeros_meses">
@@ -1535,903 +1535,901 @@
     </string-array>
     
     <string-array name="array_carreras_tecnicas">
-        <item>Seleccione carrera técnica</item>
-        <item>111015-Educación Inicial</item>
-        <item>111025-Educación Inicial (Intercultural y Bilingüe)</item>
-        <item>112015-Educación Primaria</item>
-        <item>112025-Educación Primaria (Intercultural y Bilingüe)</item>
-        <item>121015-Educación en Computación  e Informática</item>
-        <item>121025-Educación en Idiomas - Inglés</item>
-        <item>121035-Educación para el Trabajo</item>
-        <item>121045-Educación Religiosa</item>
-        <item>121055-Educación Secundaria  - Ciencia, Tecnología y Ambiente</item>
-        <item>121065-Educación Secundaria  - Ciencias Sociales</item>
-        <item>121075-Educación Secundaria  - Comunicación</item>
-        <item>121085-Educación Secundaria  - Matemática</item>
-        <item>121095-Educación Secundaria  Técnica</item>
-        <item>131015-Educación Física</item>
-        <item>141015-Educación Especial Audición</item>
-        <item>141025-Educación Especial Retardo</item>
-        <item>151015-Educación Artística</item>
-        <item>151025-Educación Danza</item>
-        <item>151035-Educación en Danza Clásica</item>
-        <item>151045-Educación Musical</item>
-        <item>151055-Pedagogía  de la Interpretación Musical</item>
-        <item>199015-Educación Básica Alternativa</item>
-        <item>199025-Otras Carreras  de Educación</item>
-        <item>214015-Interpretación de Idiomas</item>
-        <item>214025-Traducción de Idiomas</item>
-        <item>214035-Traducción e Interpretación</item>
-        <item>215015-Archivos</item>
-        <item>216015-Religión y Educación para el Trabajo</item>
-        <item>216025-Teología - Católica</item>
-        <item>216035-Teología - Evangélica</item>
-        <item>216045-Teología - Formación Religiosa</item>
-        <item>221015-Artes Plásticas y Visuales</item>
-        <item>221025-Construcción de Arte en Madera</item>
-        <item>221035-Restauración y Conservación  de Obras  de Arte</item>
-        <item>222015-Animación Digital</item>
-        <item>222025-Artes Gráficas</item>
-        <item>222035-Artes Gráficas y Publicitarias</item>
-        <item>222045-Artes y Ciencias Publicitarias</item>
-        <item>222055-Ciencias Publicitarias</item>
-        <item>222065-Dirección de Artes Gráficos y Publicitarias</item>
-        <item>222075-Dirección y Diseño Gráfico</item>
-        <item>222085-Dirección y Diseño Publicitario</item>
-        <item>222095-Diseño de Interiores</item>
-        <item>222105-Diseño de Producto</item>
-        <item>222115-Diseño Escenográfico</item>
-        <item>222125-Diseño Gráfico</item>
-        <item>222135-Diseño Gráfico y Publicidad Digital</item>
-        <item>222145-Diseño Gráfico y Publicitario</item>
-        <item>222155-Diseño Industrial</item>
-        <item>222165-Diseño Publicitario</item>
-        <item>222175-Diseño Técnico</item>
-        <item>222185-Diseño Web y Multimedia</item>
-        <item>222195-Producción de Impresos</item>
-        <item>222205-Publicidad</item>
-        <item>223015-Danza</item>
-        <item>223025-Interprete en Danza Clásica</item>
-        <item>224015-Composición</item>
-        <item>224025-Dirección Musical</item>
-        <item>224035-Interpretación Musical</item>
-        <item>224045-Música</item>
-        <item>224055-Música y Tecnología de Sonido</item>
-        <item>224065-Musicología</item>
-        <item>224075-Producción Musical</item>
-        <item>225015-Actuación</item>
-        <item>225025-Arte Dramático</item>
-        <item>225035-Teatro y Televisión</item>
-        <item>311015-Promoción Comunal</item>
-        <item>311025-Relaciones Institucionales</item>
-        <item>311035-Relaciones Públicas</item>
-        <item>311045-Tecnología Penitenciaria</item>
-        <item>313015-Terapia Psicoanalítica</item>
-        <item>321015-Ciencias de la Comunicación</item>
-        <item>321025-Comunicación  Audiovisual</item>
-        <item>321035-Comunicación  Audiovisual Multimedia</item>
-        <item>321045-Comunicación  Escénica</item>
-        <item>321055-Comunicación  Integral</item>
-        <item>321065-Comunicación  Social</item>
-        <item>321075-Dirección y Guionización</item>
-        <item>321085-Dirección y Producción en Radio</item>
-        <item>321095-Dirección, Realización de Cine y TV</item>
-        <item>321105-Producción de Espectáculos</item>
-        <item>321115-Producción de Programas de Televisión</item>
-        <item>321125-Producción de Radio y Televisión</item>
-        <item>322015-Locución,  Comunicación  Radial y Televisiva</item>
-        <item>322025-Operaciones de Comunicaciones</item>
-        <item>322035-Periodismo</item>
-        <item>322045-Periodismo Audiovisual</item>
-        <item>322055-Periodismo Deportivo</item>
-        <item>322065-Periodismo Radial y Televisivo</item>
-        <item>322075-Reporterismo</item>
-        <item>323015-Audiovisual Multimedia</item>
-        <item>323025-Cámara y Edición Creativa</item>
-        <item>323035-Fotografía</item>
-        <item>331015-Abastecimiento</item>
-        <item>331025-Administración</item>
-        <item>331035-Administración Bancaria</item>
-        <item>331045-Administración Bancaria por Competencias</item>
-        <item>331055-Administración Bancaria y Financiera</item>
-        <item>331065-Administración de Aeropuertos</item>
-        <item>331075-Administración de Agencia de Viajes</item>
-        <item>331085-Administración de Banca y Finanzas</item>
-        <item>331095-Administración de Empresas</item>
-        <item>331105-Administración de Empresas de Transportes</item>
-        <item>331115-Administración de Negocios</item>
-        <item>331125-Administración de Negocios y Ventas</item>
-        <item>331135-Administración de Seguros</item>
-        <item>331145-Administración Ejecutiva</item>
-        <item>331155-Administración Industrial</item>
-        <item>331165-Administración Logística</item>
-        <item>331175-Administración Municipal</item>
-        <item>331185-Administración y Gestión Comercial</item>
-        <item>331195-Administración y Gestión Empresarial</item>
-        <item>331205-Administración y Finanzas</item>
-        <item>331215-Dirección de Empresas</item>
-        <item>331225-Dirección de Empresas y Finanzas</item>
-        <item>331235-Gerencia</item>
-        <item>331245-Gestión Comercial</item>
-        <item>331255-Gestión del Emprendimiento</item>
-        <item>331265-Gestión y Administración de Negocios</item>
-        <item>331275-Organización y Administración de Empresas</item>
-        <item>332015-Administración de Empresas Turísticas</item>
-        <item>332025-Administración de Empresas Turísticas  y Hoteleras</item>
-        <item>332035-Administración de Hostelería</item>
-        <item>332045-Administración de Hoteles y Restaurantes</item>
-        <item>332055-Administración de Hoteles, Restaurantes y Afines</item>
-        <item>332065-Administración de Servicios de Hostelería</item>
-        <item>332075-Administración de Negocios Internacionales de Turismo</item>
-        <item>332085-Administración Hotelera</item>
-        <item>332095-Administración y Gerencia  en Hotelería Internacional</item>
-        <item>332105-Cocina</item>
-        <item>332115-Ecoturismo y Gestión Ambiental</item>
-        <item>332125-Gastronomía y Arte Culinario</item>
-        <item>332135-Hostelería</item>
-        <item>332145-Hoteles y Restaurantes</item>
-        <item>332155-Pastelería</item>
-        <item>332165-Servicios Hoteleros y Cocina</item>
-        <item>332175-Turismo  y Hotelería</item>
-        <item>333015-Marketing</item>
-        <item>333025-Marketing Empresarial</item>
-        <item>333035-Marketing Integral</item>
-        <item>333045-Marketing Visual</item>
-        <item>333055-Marketing y Publicidad</item>
-        <item>333065-Marketing y Ventas</item>
-        <item>333075-Mercadotecnia</item>
-        <item>333085-Ventas</item>
-        <item>335015-Administración de Negocios Internacionales</item>
-        <item>335025-Comercio Exterior</item>
-        <item>335035-Comercio Exterior Área Artesanía del Vestir</item>
-        <item>335045-Comercio Exterior Área Finanzas</item>
-        <item>335055-Comercio Exterior Área Marketing</item>
-        <item>335065-Logística del Comercio Internacional</item>
-        <item>337015-Asistente Ejecutivo</item>
-        <item>337025-Secretariado Ejecutivo</item>
-        <item>337035-Secretariado Ejecutivo Bilingüe</item>
-        <item>337045-Secretariado Ejecutivo Computarizado</item>
-        <item>337055-Secretariado Ejecutivo  y Gerencial</item>
-        <item>337065-Secretariado Internacional Ejecutivo</item>
-        <item>339015-Administración de Recursos Humanos</item>
-        <item>339025-Administración de Servicios de Postales</item>
-        <item>339035-Administrativo</item>
-        <item>339045-Agencia de Desarrollo Integral</item>
-        <item>339055-Comercio</item>
-        <item>339065-Moneda Extranjera</item>
-        <item>339075-Planificación Empresarial</item>
-        <item>339085-Planificación y Gestión de Desarrollo</item>
-        <item>339095-Supervisión de Operaciones</item>
-        <item>341015-Análisis Económico</item>
-        <item>341025-Economía Empresarial</item>
-        <item>341035-Elaboración y Evaluación de Proyecto</item>
-        <item>342015-Banca y Finanzas</item>
-        <item>342025-Contabilidad</item>
-        <item>342035-Contabilidad  Computarizada</item>
-        <item>342045-Contabilidad  y Finanzas</item>
-        <item>342055-Crédito Sectorial</item>
-        <item>342065-Créditos</item>
-        <item>342075-Finanzas</item>
-        <item>342085-Operaciones Bancarias y Financieras</item>
-        <item>352015-Análisis Político</item>
-        <item>412015-Zootecnia</item>
-        <item>413015-Hidrografía y Navegación</item>
-        <item>414015-Meteorología</item>
-        <item>422015-Análisis Químico</item>
-        <item>422025-Química Industrial</item>
-        <item>422035-Tecnología de Análisis Químico</item>
-        <item>441015-Administración de Centro de Cómputo</item>
-        <item>441025-Administración Informática de Empresas</item>
-        <item>441035-Administración y Sistemas</item>
-        <item>441045-Análisis de Sistemas</item>
-        <item>441055-Análisis de Sistemas y Modelación de Base de Datos</item>
-        <item>441065-Analista</item>
-        <item>441075-Analista Programador</item>
-        <item>441085-Computación</item>
-        <item>441095-Computación  e Informática</item>
-        <item>441105-Computación  y Administración de Sistemas</item>
-        <item>441115-Computación  y Sistemas</item>
-        <item>441125-Informática</item>
-        <item>441135-Microcomputación e Informática</item>
-        <item>441145-Procesamiento de Datos</item>
-        <item>441155-Programación</item>
-        <item>441165-Redes y Comunicación  de Datos</item>
-        <item>441175-Redes y Comunicaciones</item>
-        <item>441185-Redes y Seguridad Informática</item>
-        <item>441195-Reparación de Computadoras</item>
-        <item>441205-Reparación de Computadoras y Redes</item>
-        <item>441215-Seguridad Informática</item>
-        <item>441225-Sistemas de Información</item>
-        <item>441235-Sistemas Informáticos para la Productividad</item>
-        <item>441245-Software y Sistemas</item>
-        <item>441255-Soporte de Sistemas y Redes</item>
-        <item>512015-Control de Tránsito Aéreo</item>
-        <item>512025-Sistemas de Telecomunicaciones</item>
-        <item>512035-Técnica en Ingeniería de Sonidos</item>
-        <item>512045-Técnica en Ingeniería de Telecomunicaciones</item>
-        <item>512055-Técnica en Ingeniería de Telemática</item>
-        <item>512065-Telecomunicaciones</item>
-        <item>512075-Telemática</item>
-        <item>521015-Procesos Industriales y de Sistemas</item>
-        <item>521025-Salud y Seguridad Ocupacional</item>
-        <item>521035-Tecnología de la Producción</item>
-        <item>522015-Gastronomía Industrial</item>
-        <item>522025-Industrias Alimentarias</item>
-        <item>522035-Industrias Alimentarias lácteas</item>
-        <item>523015-Agroindustrias</item>
-        <item>523025-Olivicultura y Elaiotecnia</item>
-        <item>523035-Viticultura  y Enología</item>
-        <item>524015-Electricidad</item>
-        <item>524025-Electricidad Industrial</item>
-        <item>524035-Electrotécnia Industrial</item>
-        <item>524045-Técnicas de Ingeniería Eléctrica</item>
-        <item>525015-Electrónica</item>
-        <item>525025-Electrónica Aeronáutica</item>
-        <item>525035-Electrónica de Microcomputadoras</item>
-        <item>525045-Electrónica de Sistemas Industriales</item>
-        <item>525055-Electrónica Digital</item>
-        <item>525065-Electrónica Industrial</item>
-        <item>525075-Electrónica y Automatización Industrial</item>
-        <item>525085-Electrónica de Sistemas Computarizados</item>
-        <item>525095-Sistemas Automáticos Programables</item>
-        <item>525105-Técnicas de Ingeniería Electrónica</item>
-        <item>526015-Aeronáutica</item>
-        <item>526025-Autotrónica</item>
-        <item>526035-Aviónica</item>
-        <item>526045-Mantenimiento de Aeronaves</item>
-        <item>526055-Mantenimiento de Estructuras</item>
-        <item>526065-Mantenimiento de Maquinaria</item>
-        <item>526075-Mantenimiento de Maquinaria de Planta</item>
-        <item>526085-Mantenimiento de Maquinaria Pesada</item>
-        <item>526095-Mantenimiento de Motores, Hélices y Unidad de Potencia Auxiliar</item>
-        <item>526105-Mantenimiento de Vehículos Motorizados y Equipos Contra    Incendio</item>
-        <item>526115-Mantenimiento y Operación de Armamento y Equipos Auxiliares</item>
-        <item>526125-Maquinas Navales</item>
-        <item>526135-Mecánica Aeronáutica</item>
-        <item>526145-Mecánica Aeronaval</item>
-        <item>526155-Mecánica Agrícola</item>
-        <item>526165-Mecánica Automotriz</item>
-        <item>526175-Mecánica de Mantenimiento</item>
-        <item>526185-Mecánica de Producción</item>
-        <item>526195-Mecánica Hidráulica</item>
-        <item>526205-Motores</item>
-        <item>526215-Operación de Máquinas, Herramientas y Control Numérico</item>
-        <item>526225-Técnica en Ingeniería Mecánica de Mantenimiento</item>
-        <item>526235-Técnica en Ingeniería Mecánica de Producción</item>
-        <item>526245-Tecnología Mecánica Eléctrica</item>
-        <item>527015-Concentración  de Minerales</item>
-        <item>527025-Explotación Minera</item>
-        <item>527035-Geología  de Minas</item>
-        <item>527045-Laboratorio Químico y Metalúrgico</item>
-        <item>527055-Metalurgia</item>
-        <item>527065-Modelería y Fundición</item>
-        <item>527075-Procesos Químicos y Metalúrgicos</item>
-        <item>528015-Diseño de Modas</item>
-        <item>528025-Diseño de Modas y Modistería Industrial</item>
-        <item>528035-Diseño Textil</item>
-        <item>528045-Diseño y Producción de Textiles</item>
-        <item>528055-Gestión de Modas y Confecciones</item>
-        <item>528065-Gestión de la Producción en la Industria de las Confecciones</item>
-        <item>528075-Gestión Textil</item>
-        <item>528085-Industria del Cuero</item>
-        <item>528095-Industria del Vestido</item>
-        <item>528105-Producción Textil</item>
-        <item>531015-Aerofotografía</item>
-        <item>531025-Construcción Civil</item>
-        <item>531035-Dibujo en Construcción Civil</item>
-        <item>531045-Edificaciones</item>
-        <item>531055-Geomática</item>
-        <item>531065-Gestión de la Producción en la Industria de la Construcción</item>
-        <item>531075-Laboratorio de Suelos, Concreto y Asfalto</item>
-        <item>531085-Suelos, Concreto y Asfalto</item>
-        <item>531095-Topografía</item>
-        <item>531105-Topografía Superficial y Minera</item>
-        <item>533015-Arquitectura de Interiores</item>
-        <item>534015-Conservación  de Bienes Arqueológicos</item>
-        <item>534025-Conservación  y Restauración</item>
-        <item>534035-Restauración de Monumentos Históricos y Bienes inmuebles</item>
-        <item>591015-Conducción  de Embarcaciones de Pesca</item>
-        <item>591025-Producción en Pesquería</item>
-        <item>591035-Tecnología Pesquera</item>
-        <item>594015-Manejo de Cuencas  y Gestión Ambiental</item>
-        <item>594025-Medio Ambiente</item>
-        <item>594035-Medio Ambiente y Recursos Naturales</item>
-        <item>611015-Administración de Negocios Agropecuarios</item>
-        <item>611025-Administración Rural</item>
-        <item>611035-Agropecuaria</item>
-        <item>611045-Fruticultura</item>
-        <item>611055-Fruticultura y Olivicultura</item>
-        <item>611065-Gestión de Recursos Hídricos</item>
-        <item>611075-Horticultura</item>
-        <item>611085-Jardinería y Paisajismo</item>
-        <item>611095-Producción Agraria</item>
-        <item>611105-Producción Agrícola</item>
-        <item>611115-Producción Agropecuaria</item>
-        <item>611125-Producción Pecuaria</item>
-        <item>611135-Producción y Gestión Pecuaria</item>
-        <item>611145-Riego Drenaje</item>
-        <item>611155-Tecnología Agrícola</item>
-        <item>612015-Administración de Recursos Forestales</item>
-        <item>612025-Forestal</item>
-        <item>612035-Forestal (para zona de selva)</item>
-        <item>613015-Acuicultura</item>
-        <item>711015-Anestesiología</item>
-        <item>711025-Paramédico</item>
-        <item>712015-Nutrición y Dietética</item>
-        <item>712025-Nutrición y Tecnología de los Alimentos</item>
-        <item>713015-Prótesis Dental</item>
-        <item>714015-Auxiliar de Enfermería</item>
-        <item>714025-Cuidados  Auxiliares de Enfermería</item>
-        <item>714035-Enfermería Técnica</item>
-        <item>714045-Inyectables y Primeros Auxilios</item>
-        <item>715015-Fisioterapia y Rehabilitación</item>
-        <item>715025-Laboratorio Clínico</item>
-        <item>715035-Mantenimiento de Establecimientos de Salud</item>
-        <item>715045-Óptica</item>
-        <item>715055-Optometría</item>
-        <item>715065-Ortopedia</item>
-        <item>715075-Radiología</item>
-        <item>716015-Farmacia</item>
-        <item>717015-Obstetricia</item>
-        <item>811015-Conducción  en Turismo</item>
-        <item>811025-Ecología Turística</item>
-        <item>811035-Guía Oficial de Caminata</item>
-        <item>811045-Guía Oficial de Montaña</item>
-        <item>811055-Guía Oficial de Turismo</item>
-        <item>811065-Información Turística</item>
-        <item>811075-Operaciones de Viajes</item>
-        <item>811085-Operaciones Hoteleras</item>
-        <item>811095-Promoción de Turismo </item>
-        <item>811105-Turismo</item>
-        <item>811115-Viajes y Turismo</item>
-        <item>812015-Cosmética Dermatológica</item>
-        <item>11015-Armas Submarinas (Marina)</item>
-        <item>11025-Artillería (Ejercito)</item>
-        <item>11035-Capitanía  y Guardacostas (Marina)</item>
-        <item>11045-Defensa Aérea (FAP)</item>
-        <item>11055-Fuerzas Especiales (Ejercito)</item>
-        <item>11065-Infantería de Marina (Marina)</item>
-        <item>11075-Inteligencia (FAP)</item>
-        <item>11085-Maniobras (Ejercito)</item>
-        <item>11095-Operaciones Especiales (Ejercito)</item>
-        <item>11105-Policía Naval (Marina)</item>
-        <item>11115-Seguridad e Instrucción Militar (FAP)</item>
-        <item>11125-Sensores (Marina)</item>
-        <item>21015-Administración y Ciencias Policiales (PNP)</item>
-        <item>99999-Otra carrera técnica</item>
+        <item>111015- EDUCACION INICIAL</item>
+        <item>111025- EDUCACION INICIAL (INTERCULTURAL Y BILINGÜE)</item>
+        <item>112015- EDUCACION PRIMARIA</item>
+        <item>112025- EDUCACION PRIMARIA (INTERCULTURAL Y BILINGÜE)</item>
+        <item>121015- EDUCACION EN COMPUTACION  E INFORMATICA</item>
+        <item>121025- EDUCACION EN IDIOMAS - INGLES</item>
+        <item>121035- EDUCACION PARA EL TRABAJO</item>
+        <item>121045- EDUCACION RELIGIOSA</item>
+        <item>121055- EDUCACION SECUNDARIA  - CIENCIA, TECNOLOGIA Y AMBIENTE</item>
+        <item>121065- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES</item>
+        <item>121075- EDUCACION SECUNDARIA  - COMUNICACION</item>
+        <item>121085- EDUCACION SECUNDARIA  - MATEMATICA</item>
+        <item>121095- EDUCACION SECUNDARIA  TECNICA</item>
+        <item>131015- EDUCACION FISICA</item>
+        <item>141015- EDUCACION ESPECIAL AUDICION</item>
+        <item>141025- EDUCACION ESPECIAL RETARDO</item>
+        <item>151015- EDUCACION ARTISTICA</item>
+        <item>151025- EDUCACION DANZA</item>
+        <item>151035- EDUCACION EN DANZA CLASICA</item>
+        <item>151045- EDUCACION MUSICAL</item>
+        <item>151055- PEDAGOGIA  DE LA INTERPRETACION MUSICAL</item>
+        <item>199015- EDUCACION BASICA ALTERNATIVA</item>
+        <item>199025- OTRAS CARRERAS  DE EDUCACION</item>
+        <item>214015- INTERPRETACION DE IDIOMAS</item>
+        <item>214025- TRADUCCION DE IDIOMAS</item>
+        <item>214035- TRADUCCION E INTERPRETACION</item>
+        <item>215015- ARCHIVOS</item>
+        <item>216015- RELIGION Y EDUCACION PARA EL TRABAJO</item>
+        <item>216025- TEOLOGIA - CATOLICA</item>
+        <item>216035- TEOLOGIA - EVANGELICA</item>
+        <item>216045- TEOLOGIA - FORMACION RELIGIOSA</item>
+        <item>221015- ARTES PLASTICAS Y VISUALES</item>
+        <item>221025- CONSTRUCCION DE ARTE EN MADERA</item>
+        <item>221035- RESTAURACION Y CONSERVACION  DE OBRAS  DE ARTE</item>
+        <item>222015- ANIMACION DIGITAL</item>
+        <item>222025- ARTES GRAFICAS</item>
+        <item>222035- ARTES GRAFICAS Y PUBLICITARIAS</item>
+        <item>222045- ARTES Y CIENCIAS PUBLICITARIAS</item>
+        <item>222055- CIENCIAS PUBLICITARIAS</item>
+        <item>222065- DIRECCION DE ARTES GRAFICOS Y PUBLICITARIAS</item>
+        <item>222075- DIRECCION Y DISEÑO GRAFICO</item>
+        <item>222085- DIRECCION Y DISEÑO PUBLICITARIO</item>
+        <item>222095- DISEÑO DE INTERIORES</item>
+        <item>222105- DISEÑO DE PRODUCTO</item>
+        <item>222115- DISEÑO ESCENOGRAFICO</item>
+        <item>222125- DISEÑO GRAFICO</item>
+        <item>222135- DISEÑO GRAFICO Y PUBLICIDAD DIGITAL</item>
+        <item>222145- DISEÑO GRAFICO Y PUBLICITARIO</item>
+        <item>222155- DISEÑO INDUSTRIAL</item>
+        <item>222165- DISEÑO PUBLICITARIO</item>
+        <item>222175- DISEÑO TECNICO</item>
+        <item>222185- DISEÑO WEB Y MULTIMEDIA</item>
+        <item>222195- PRODUCCION DE IMPRESOS</item>
+        <item>222205- PUBLICIDAD</item>
+        <item>223015- DANZA</item>
+        <item>223025- INTERPRETE EN DANZA CLASICA</item>
+        <item>224015- COMPOSICION</item>
+        <item>224025- DIRECCION MUSICAL</item>
+        <item>224035- INTERPRETACION MUSICAL</item>
+        <item>224045- MUSICA</item>
+        <item>224055- MUSICA Y TECNOLOGIA DE SONIDO</item>
+        <item>224065- MUSICOLOGIA</item>
+        <item>224075- PRODUCCION MUSICAL</item>
+        <item>225015- ACTUACION</item>
+        <item>225025- ARTE DRAMATICO</item>
+        <item>225035- TEATRO Y TELEVISION</item>
+        <item>311015- PROMOCION COMUNAL</item>
+        <item>311025- RELACIONES INSTITUCIONALES</item>
+        <item>311035- RELACIONES PUBLICAS</item>
+        <item>311045- TECNOLOGIA PENITENCIARIA</item>
+        <item>313015- TERAPIA PSICOANALITICA</item>
+        <item>321015- CIENCIAS DE LA COMUNICACION</item>
+        <item>321025- COMUNICACION  AUDIOVISUAL</item>
+        <item>321035- COMUNICACION  AUDIOVISUAL MULTIMEDIA</item>
+        <item>321045- COMUNICACION  ESCENICA</item>
+        <item>321055- COMUNICACION  INTEGRAL</item>
+        <item>321065- COMUNICACION  SOCIAL</item>
+        <item>321075- DIRECCION Y GUIONIZACION</item>
+        <item>321085- DIRECCION Y PRODUCCION EN RADIO</item>
+        <item>321095- DIRECCION, REALIZACION DE CINE Y TV</item>
+        <item>321105- PRODUCCION DE ESPECTACULOS</item>
+        <item>321115- PRODUCCION DE PROGRAMAS DE TELEVISION</item>
+        <item>321125- PRODUCCION DE RADIO Y TELEVISION</item>
+        <item>322015- LOCUCION,  COMUNICACION  RADIAL Y TELEVISIVA</item>
+        <item>322025- OPERACIONES DE COMUNICACIONES</item>
+        <item>322035- PERIODISMO</item>
+        <item>322045- PERIODISMO AUDIOVISUAL</item>
+        <item>322055- PERIODISMO DEPORTIVO</item>
+        <item>322065- PERIODISMO RADIAL Y TELEVISIVO</item>
+        <item>322075- REPORTERISMO</item>
+        <item>323015- AUDIOVISUAL MULTIMEDIA</item>
+        <item>323025- CAMARA Y EDICION CREATIVA</item>
+        <item>323035- FOTOGRAFIA</item>
+        <item>331015- ABASTECIMIENTO</item>
+        <item>331025- ADMINISTRACION</item>
+        <item>331035- ADMINISTRACION BANCARIA</item>
+        <item>331045- ADMINISTRACION BANCARIA POR COMPETENCIAS</item>
+        <item>331055- ADMINISTRACION BANCARIA Y FINANCIERA</item>
+        <item>331065- ADMINISTRACION DE AEROPUERTOS</item>
+        <item>331075- ADMINISTRACION DE AGENCIA DE VIAJES</item>
+        <item>331085- ADMINISTRACION DE BANCA Y FINANZAS</item>
+        <item>331095- ADMINISTRACION DE EMPRESAS</item>
+        <item>331105- ADMINISTRACION DE EMPRESAS DE TRANSPORTES</item>
+        <item>331115- ADMINISTRACION DE NEGOCIOS</item>
+        <item>331125- ADMINISTRACION DE NEGOCIOS Y VENTAS</item>
+        <item>331135- ADMINISTRACION DE SEGUROS</item>
+        <item>331145- ADMINISTRACION EJECUTIVA</item>
+        <item>331155- ADMINISTRACION INDUSTRIAL</item>
+        <item>331165- ADMINISTRACION LOGISTICA</item>
+        <item>331175- ADMINISTRACION MUNICIPAL</item>
+        <item>331185- ADMINISTRACION Y GESTION COMERCIAL</item>
+        <item>331195- ADMINISTRACION Y GESTION EMPRESARIAL</item>
+        <item>331205- ADMINISTRACION Y FINANZAS</item>
+        <item>331215- DIRECCION DE EMPRESAS</item>
+        <item>331225- DIRECCION DE EMPRESAS Y FINANZAS</item>
+        <item>331235- GERENCIA</item>
+        <item>331245- GESTION COMERCIAL</item>
+        <item>331255- GESTION DEL EMPRENDIMIENTO</item>
+        <item>331265- GESTION Y ADMINISTRACION DE NEGOCIOS</item>
+        <item>331275- ORGANIZACION Y ADMINISTRACION DE EMPRESAS</item>
+        <item>332015- ADMINISTRACION DE EMPRESAS TURISTICAS</item>
+        <item>332025- ADMINISTRACION DE EMPRESAS TURISTICAS  Y HOTELERAS</item>
+        <item>332035- ADMINISTRACION DE HOSTELERIA</item>
+        <item>332045- ADMINISTRACION DE HOTELES Y RESTAURANTES</item>
+        <item>332055- ADMINISTRACION DE HOTELES, RESTAURANTES Y AFINES</item>
+        <item>332065- ADMINISTRACION DE SERVICIOS DE HOSTELERIA</item>
+        <item>332075- ADMINISTRACION DE NEGOCIOS INTERNACIONALES DE TURISMO</item>
+        <item>332085- ADMINISTRACION HOTELERA</item>
+        <item>332095- ADMINISTRACION Y GERENCIA  EN HOTELERIA INTERNACIONAL</item>
+        <item>332105- COCINA</item>
+        <item>332115- ECOTURISMO Y GESTION AMBIENTAL</item>
+        <item>332125- GASTRONOMIA Y ARTE CULINARIO</item>
+        <item>332135- HOSTELERIA</item>
+        <item>332145- HOTELES Y RESTAURANTES</item>
+        <item>332155- PASTELERIA</item>
+        <item>332165- SERVICIOS HOTELEROS Y COCINA</item>
+        <item>332175- TURISMO  Y HOTELERIA</item>
+        <item>333015- MARKETING</item>
+        <item>333025- MARKETING EMPRESARIAL</item>
+        <item>333035- MARKETING INTEGRAL</item>
+        <item>333045- MARKETING VISUAL</item>
+        <item>333055- MARKETING Y PUBLICIDAD</item>
+        <item>333065- MARKETING Y VENTAS</item>
+        <item>333075- MERCADOTECNIA</item>
+        <item>333085- VENTAS</item>
+        <item>335015- ADMINISTRACION DE NEGOCIOS INTERNACIONALES</item>
+        <item>335025- COMERCIO EXTERIOR</item>
+        <item>335035- COMERCIO EXTERIOR AREA ARTESANIA DEL VESTIR</item>
+        <item>335045- COMERCIO EXTERIOR AREA FINANZAS</item>
+        <item>335055- COMERCIO EXTERIOR AREA MARKETING</item>
+        <item>335065- LOGISTICA DEL COMERCIO INTERNACIONAL</item>
+        <item>337015- ASISTENTE EJECUTIVO</item>
+        <item>337025- SECRETARIADO EJECUTIVO</item>
+        <item>337035- SECRETARIADO EJECUTIVO BILINGÜE</item>
+        <item>337045- SECRETARIADO EJECUTIVO COMPUTARIZADO</item>
+        <item>337055- SECRETARIADO EJECUTIVO  Y GERENCIAL</item>
+        <item>337065- SECRETARIADO INTERNACIONAL EJECUTIVO</item>
+        <item>339015- ADMINISTRACION DE RECURSOS HUMANOS</item>
+        <item>339025- ADMINISTRACION DE SERVICIOS DE POSTALES</item>
+        <item>339035- ADMINISTRATIVO</item>
+        <item>339045- AGENCIA DE DESARROLLO INTEGRAL</item>
+        <item>339055- COMERCIO</item>
+        <item>339065- MONEDA EXTRANJERA</item>
+        <item>339075- PLANIFICACION EMPRESARIAL</item>
+        <item>339085- PLANIFICACION Y GESTION DE DESARROLLO</item>
+        <item>339095- SUPERVISION DE OPERACIONES</item>
+        <item>341015- ANALISIS ECONOMICO</item>
+        <item>341025- ECONOMIA EMPRESARIAL</item>
+        <item>341035- ELABORACION Y EVALUACION DE PROYECTO</item>
+        <item>342015- BANCA Y FINANZAS</item>
+        <item>342025- CONTABILIDAD</item>
+        <item>342035- CONTABILIDAD  COMPUTARIZADA</item>
+        <item>342045- CONTABILIDAD  Y FINANZAS</item>
+        <item>342055- CREDITO SECTORIAL</item>
+        <item>342065- CREDITOS</item>
+        <item>342075- FINANZAS</item>
+        <item>342085- OPERACIONES BANCARIAS Y FINANCIERAS</item>
+        <item>352015- ANALISIS POLITICO</item>
+        <item>412015- ZOOTECNIA</item>
+        <item>413015- HIDROGRAFIA Y NAVEGACION</item>
+        <item>414015- METEOROLOGIA</item>
+        <item>422015- ANALISIS QUIMICO</item>
+        <item>422025- QUIMICA INDUSTRIAL</item>
+        <item>422035- TECNOLOGIA DE ANALISIS QUIMICO</item>
+        <item>441015- ADMINISTRACION DE CENTRO DE COMPUTO</item>
+        <item>441025- ADMINISTRACION INFORMATICA DE EMPRESAS</item>
+        <item>441035- ADMINISTRACION Y SISTEMAS</item>
+        <item>441045- ANALISIS DE SISTEMAS</item>
+        <item>441055- ANALISIS DE SISTEMAS Y MODELACION DE BASE DE DATOS</item>
+        <item>441065- ANALISTA</item>
+        <item>441075- ANALISTA PROGRAMADOR</item>
+        <item>441085- COMPUTACION</item>
+        <item>441095- COMPUTACION  E INFORMATICA</item>
+        <item>441105- COMPUTACION  Y ADMINISTRACION DE SISTEMAS</item>
+        <item>441115- COMPUTACION  Y SISTEMAS</item>
+        <item>441125- INFORMATICA</item>
+        <item>441135- MICROCOMPUTACION E INFORMATICA</item>
+        <item>441145- PROCESAMIENTO DE DATOS</item>
+        <item>441155- PROGRAMACION</item>
+        <item>441165- REDES Y COMUNICACION  DE DATOS</item>
+        <item>441175- REDES Y COMUNICACIONES</item>
+        <item>441185- REDES Y SEGURIDAD INFORMATICA</item>
+        <item>441195- REPARACION DE COMPUTADORAS</item>
+        <item>441205- REPARACION DE COMPUTADORAS Y REDES</item>
+        <item>441215- SEGURIDAD INFORMATICA</item>
+        <item>441225- SISTEMAS DE INFORMACION</item>
+        <item>441235- SISTEMAS INFORMATICOS PARA LA PRODUCTIVIDAD</item>
+        <item>441245- SOFTWARE Y SISTEMAS</item>
+        <item>441255- SOPORTE DE SISTEMAS Y REDES</item>
+        <item>512015- CONTROL DE TRANSITO AEREO</item>
+        <item>512025- SISTEMAS DE TELECOMUNICACIONES</item>
+        <item>512035- TECNICA EN INGENIERIA DE SONIDOS</item>
+        <item>512045- TECNICA EN INGENIERIA DE TELECOMUNICACIONES</item>
+        <item>512055- TECNICA EN INGENIERIA DE TELEMATICA</item>
+        <item>512065- TELECOMUNICACIONES</item>
+        <item>512075- TELEMATICA</item>
+        <item>521015- PROCESOS INDUSTRIALES Y DE SISTEMAS</item>
+        <item>521025- SALUD Y SEGURIDAD OCUPACIONAL</item>
+        <item>521035- TECNOLOGIA DE LA PRODUCCION</item>
+        <item>522015- GASTRONOMIA INDUSTRIAL</item>
+        <item>522025- INDUSTRIAS ALIMENTARIAS</item>
+        <item>522035- INDUSTRIAS ALIMENTARIAS LACTEAS</item>
+        <item>523015- AGROINDUSTRIAS</item>
+        <item>523025- OLIVICULTURA Y ELAIOTECNIA</item>
+        <item>523035- VITICULTURA  Y ENOLOGIA</item>
+        <item>524015- ELECTRICIDAD</item>
+        <item>524025- ELECTRICIDAD INDUSTRIAL</item>
+        <item>524035- ELECTROTECNIA INDUSTRIAL</item>
+        <item>524045- TECNICAS DE INGENIERIA ELECTRICA</item>
+        <item>525015- ELECTRONICA</item>
+        <item>525025- ELECTRONICA AERONAUTICA</item>
+        <item>525035- ELECTRONICA DE MICROCOMPUTADORAS</item>
+        <item>525045- ELECTRONICA DE SISTEMAS INDUSTRIALES</item>
+        <item>525055- ELECTRONICA DIGITAL</item>
+        <item>525065- ELECTRONICA INDUSTRIAL</item>
+        <item>525075- ELECTRONICA Y AUTOMATIZACION INDUSTRIAL</item>
+        <item>525085- ELECTRONICA DE SISTEMAS COMPUTARIZADOS</item>
+        <item>525095- SISTEMAS AUTOMATICOS PROGRAMABLES</item>
+        <item>525105- TECNICAS DE INGENIERIA ELECTRONICA</item>
+        <item>526015- AERONAUTICA</item>
+        <item>526025- AUTOTRONICA</item>
+        <item>526035- AVIONICA</item>
+        <item>526045- MANTENIMIENTO DE AERONAVES</item>
+        <item>526055- MANTENIMIENTO DE ESTRUCTURAS</item>
+        <item>526065- MANTENIMIENTO DE MAQUINARIA</item>
+        <item>526075- MANTENIMIENTO DE MAQUINARIA DE PLANTA</item>
+        <item>526085- MANTENIMIENTO DE MAQUINARIA PESADA</item>
+        <item>526095- MANTENIMIENTO DE MOTORES, HELICES Y UNIDAD DE POTENCIA AUXILIAR</item>
+        <item>526105- MANTENIMIENTO DE VEHICULOS MOTORIZADOS Y EQUIPOS CONTRA    INCENDIO</item>
+        <item>526115- MANTENIMIENTO Y OPERACION DE ARMAMENTO Y EQUIPOS AUXILIARES</item>
+        <item>526125- MAQUINAS NAVALES</item>
+        <item>526135- MECANICA AERONAUTICA</item>
+        <item>526145- MECANICA AERONAVAL</item>
+        <item>526155- MECANICA AGRICOLA</item>
+        <item>526165- MECANICA AUTOMOTRIZ</item>
+        <item>526175- MECANICA DE MANTENIMIENTO</item>
+        <item>526185- MECANICA DE PRODUCCION</item>
+        <item>526195- MECANICA HIDRAULICA</item>
+        <item>526205- MOTORES</item>
+        <item>526215- OPERACION DE MAQUINAS, HERRAMIENTAS Y CONTROL NUMERICO</item>
+        <item>526225- TECNICA EN INGENIERIA MECANICA DE MANTENIMIENTO</item>
+        <item>526235- TECNICA EN INGENIERIA MECANICA DE PRODUCCION</item>
+        <item>526245- TECNOLOGIA MECANICA ELECTRICA</item>
+        <item>527015- CONCENTRACION  DE MINERALES</item>
+        <item>527025- EXPLOTACION MINERA</item>
+        <item>527035- GEOLOGIA  DE MINAS</item>
+        <item>527045- LABORATORIO QUIMICO Y METALURGICO</item>
+        <item>527055- METALURGIA</item>
+        <item>527065- MODELERIA Y FUNDICION</item>
+        <item>527075- PROCESOS QUIMICOS Y METALURGICOS</item>
+        <item>528015- DISEÑO DE MODAS</item>
+        <item>528025- DISEÑO DE MODAS Y MODISTERIA INDUSTRIAL</item>
+        <item>528035- DISEÑO TEXTIL</item>
+        <item>528045- DISEÑO Y PRODUCCION DE TEXTILES</item>
+        <item>528055- GESTION DE MODAS Y CONFECCIONES</item>
+        <item>528065- GESTION DE LA PRODUCCION EN LA INDUSTRIA DE LAS CONFECCIONES</item>
+        <item>528075- GESTION TEXTIL</item>
+        <item>528085- INDUSTRIA DEL CUERO</item>
+        <item>528095- INDUSTRIA DEL VESTIDO</item>
+        <item>528105- PRODUCCION TEXTIL</item>
+        <item>531015- AEROFOTOGRAFIA</item>
+        <item>531025- CONSTRUCCION CIVIL</item>
+        <item>531035- DIBUJO EN CONSTRUCCION CIVIL</item>
+        <item>531045- EDIFICACIONES</item>
+        <item>531055- GEOMATICA</item>
+        <item>531065- GESTION DE LA PRODUCCION EN LA INDUSTRIA DE LA CONSTRUCCION</item>
+        <item>531075- LABORATORIO DE SUELOS, CONCRETO Y ASFALTO</item>
+        <item>531085- SUELOS, CONCRETO Y ASFALTO</item>
+        <item>531095- TOPOGRAFIA</item>
+        <item>531105- TOPOGRAFIA SUPERFICIAL Y MINERA</item>
+        <item>533015- ARQUITECTURA DE INTERIORES</item>
+        <item>534015- CONSERVACION  DE BIENES ARQUEOLOGICOS</item>
+        <item>534025- CONSERVACION  Y RESTAURACION</item>
+        <item>534035- RESTAURACION DE MONUMENTOS HISTORICOS Y BIENES INMUEBLES</item>
+        <item>591015- CONDUCCION  DE EMBARCACIONES DE PESCA</item>
+        <item>591025- PRODUCCION EN PESQUERIA</item>
+        <item>591035- TECNOLOGIA PESQUERA</item>
+        <item>594015- MANEJO DE CUENCAS  Y GESTION AMBIENTAL</item>
+        <item>594025- MEDIO AMBIENTE</item>
+        <item>594035- MEDIO AMBIENTE Y RECURSOS NATURALES</item>
+        <item>611015- ADMINISTRACION DE NEGOCIOS AGROPECUARIOS</item>
+        <item>611025- ADMINISTRACION RURAL</item>
+        <item>611035- AGROPECUARIA</item>
+        <item>611045- FRUTICULTURA</item>
+        <item>611055- FRUTICULTURA Y OLIVICULTURA</item>
+        <item>611065- GESTION DE RECURSOS HIDRICOS</item>
+        <item>611075- HORTICULTURA</item>
+        <item>611085- JARDINERIA Y PAISAJISMO</item>
+        <item>611095- PRODUCCION AGRARIA</item>
+        <item>611105- PRODUCCION AGRICOLA</item>
+        <item>611115- PRODUCCION AGROPECUARIA</item>
+        <item>611125- PRODUCCION PECUARIA</item>
+        <item>611135- PRODUCCION Y GESTION PECUARIA</item>
+        <item>611145- RIEGO DRENAJE</item>
+        <item>611155- TECNOLOGIA AGRICOLA</item>
+        <item>612015- ADMINISTRACION DE RECURSOS FORESTALES</item>
+        <item>612025- FORESTAL</item>
+        <item>612035- FORESTAL (PARA ZONA DE SELVA)</item>
+        <item>613015- ACUICULTURA</item>
+        <item>711015- ANESTESIOLOGIA</item>
+        <item>711025- PARAMEDICO</item>
+        <item>712015- NUTRICION Y DIETETICA</item>
+        <item>712025- NUTRICION Y TECNOLOGIA DE LOS ALIMENTOS</item>
+        <item>713015- PROTESIS DENTAL</item>
+        <item>714015- AUXILIAR DE ENFERMERIA</item>
+        <item>714025- CUIDADOS  AUXILIARES DE ENFERMERIA</item>
+        <item>714035- ENFERMERIA TECNICA</item>
+        <item>714045- INYECTABLES Y PRIMEROS AUXILIOS</item>
+        <item>715015- FISIOTERAPIA Y REHABILITACION</item>
+        <item>715025- LABORATORIO CLINICO</item>
+        <item>715035- MANTENIMIENTO DE ESTABLECIMIENTOS DE SALUD</item>
+        <item>715045- OPTICA</item>
+        <item>715055- OPTOMETRIA</item>
+        <item>715065- ORTOPEDIA</item>
+        <item>715075- RADIOLOGIA</item>
+        <item>716015- FARMACIA</item>
+        <item>717015- OBSTETRICIA</item>
+        <item>811015- CONDUCCION  EN TURISMO</item>
+        <item>811025- ECOLOGIA TURISTICA</item>
+        <item>811035- GUIA OFICIAL DE CAMINATA</item>
+        <item>811045- GUIA OFICIAL DE MONTAÑA</item>
+        <item>811055- GUIA OFICIAL DE TURISMO</item>
+        <item>811065- INFORMACION TURISTICA</item>
+        <item>811075- OPERACIONES DE VIAJES</item>
+        <item>811085- OPERACIONES HOTELERAS</item>
+        <item>811095- PROMOCION DE TURISMO </item>
+        <item>811105- TURISMO</item>
+        <item>811115- VIAJES Y TURISMO</item>
+        <item>812015- COSMETICA DERMATOLOGICA</item>
+        <item>11015- ARMAS SUBMARINAS (MARINA)</item>
+        <item>11025- ARTILLERIA (EJERCITO)</item>
+        <item>11035- CAPITANIA  Y GUARDACOSTAS (MARINA)</item>
+        <item>11045- DEFENSA AEREA (FAP)</item>
+        <item>11055- FUERZAS ESPECIALES (EJERCITO)</item>
+        <item>11065- INFANTERIA DE MARINA (MARINA)</item>
+        <item>11075- INTELIGENCIA (FAP)</item>
+        <item>11085- MANIOBRAS (EJERCITO)</item>
+        <item>11095- OPERACIONES ESPECIALES (EJERCITO)</item>
+        <item>11105- POLICIA NAVAL (MARINA)</item>
+        <item>11115- SEGURIDAD E INSTRUCCION MILITAR (FAP)</item>
+        <item>11125- SENSORES (MARINA)</item>
+        <item>21015- ADMINISTRACION Y CIENCIAS POLICIALES (PNP)</item>
+        <item>99999- OTRA CARRERA TECNICA</item>
     </string-array>
 
     <string-array name="array_carreras_universitarias">
-        <item>Seleccione carrera universitaria</item>
-        <item>111016-Educación Básica, Inicial y Primaria</item>
-        <item>111026-Educación Inicial</item>
-        <item>111036-Educación Inicial -  Niñez Temprana</item>
-        <item>111046-Educación Inicial -  Retardo Mental</item>
-        <item>111056-Educación Inicial Bilingüe</item>
-        <item>111066-Educación Inicial y Arte</item>
-        <item>111076-Educación Intercultural Bilingüe: Nivel Inicial y Nivel Primaria</item>
-        <item>112016-Educación Primaria</item>
-        <item>112026-Educación Primaria -  Educación Básica Alternativa</item>
-        <item>112036-Educación Primaria - Inglés</item>
-        <item>112046-Educación Primaria Intercultural</item>
-        <item>112056-Educación Primaria y Bilingüe</item>
-        <item>112066-Educación Primaria y Bilingüe Intercultural</item>
-        <item>112076-Educación Primaria y Problemas de Aprendizaje</item>
-        <item>121016-Educación Secundaria</item>
-        <item>121026-Educación Secundaria  - Antropología Social</item>
-        <item>121036-Educación Secundaria  - Arte</item>
-        <item>121046-Educación Secundaria  Bilingüe</item>
-        <item>121056-Educación Secundaria  - Biología, Química y Tecnología de los Alimentos</item>
-        <item>121066-Educación Secundaria  - Biología y Química</item>
-        <item>121076-Educación Secundaria  - Ciencia Tecnología y Ambiente</item>
-        <item>121086-Educación Secundaria  - Ciencia Tecnología de la Comunicación</item>
-        <item>121096-Educación Secundaria  - Ciencias Biológicas y Química</item>
-        <item>121106-Educación Secundaria  - Ciencias Histórico Sociales</item>
-        <item>121116-Educación Secundaria  - Ciencias Matemáticas,  Físicas e Informática</item>
-        <item>121126-Educación Secundaria  - Ciencias Naturales</item>
-        <item>121136-Educación Secundaria  - Ciencias Naturales Tecnología y Ambiente</item>
-        <item>121146-Educación Secundaria  - Ciencias Naturales y Ecología</item>
-        <item>121156-Educación Secundaria  - Ciencias Sociales</item>
-        <item>121166-Educación Secundaria  - Ciencias Sociales - Filosofía</item>
-        <item>121176-Educación Secundaria  - Ciencias Sociales - Geografía</item>
-        <item>121186-Educación Secundaria  - Ciencias Sociales - Historia</item>
-        <item>121196-Educación Secundaria  - Ciencias Sociales - Psicología</item>
-        <item>121206-Educación Secundaria  - Ciencias Sociales y Bioética</item>
-        <item>121216-Educación Secundaria  - Ciencias Sociales y Desarrollo Rural</item>
-        <item>121226-Educación Secundaria  - Ciencias Sociales y Promoción Socio Cultural</item>
-        <item>121236-Educación Secundaria  - Ciencias Sociales y Turismo</item>
-        <item>121246-Educación Secundaria  - Computación  e Informática</item>
-        <item>121256-Educación Secundaria  - Comunicación</item>
-        <item>121266-Educación Secundaria  - Filosofía, Psicología y Ciencias Sociales</item>
-        <item>121276-Educación Secundaria  - Filosofía y Ciencias Sociales</item>
-        <item>121286-Educación Secundaria  - Filosofía y Psicopedagogía</item>
-        <item>121296-Educación Secundaria  - Filosofía y Religión</item>
-        <item>121306-Educación Secundaria  - Historia, Geografía  y Ecología</item>
-        <item>121316-Educación Secundaria  - Historia, Geografía  y Ciencias Sociales</item>
-        <item>121326-Educación Secundaria  - Historia y Ciencias Sociales</item>
-        <item>121336-Educación Secundaria  - Historia y Geografía</item>
-        <item>121346-Educación Secundaria  - Idioma Extranjero Traducción e Interpretación</item>
-        <item>121356-Educación Secundaria  - Idioma Extranjero/Originario</item>
-        <item>121366-Educación Secundaria  - Inglés</item>
-        <item>121376-Educación Secundaria  - Inglés e Italiano</item>
-        <item>121386-Educación Secundaria  - Inglés y Alemán</item>
-        <item>121396-Educación Secundaria  - Inglés y Francés</item>
-        <item>121406-Educación Secundaria  - Lengua, Comunicación  e Idioma Inglés</item>
-        <item>121416-Educación Secundaria  - Lengua Literatura y Gestión Educativa</item>
-        <item>121426-Educación Secundaria  - Lengua y Literatura</item>
-        <item>121436-Educación Secundaria  - Lenguaje, Literatura e Idiomas</item>
-        <item>121446-Educación Secundaria  - Lingüística  y Literatura</item>
-        <item>121456-Educación Secundaria  - Matemática</item>
-        <item>121466-Educación Secundaria  - Matemática,  Computación  e Informática</item>
-        <item>121476-Educación Secundaria  - Matemática,  Computación  y Física</item>
-        <item>121486-Educación Secundaria  - Matemática e Informática</item>
-        <item>121496-Educación Secundaria  - Matemática,  Física e Informática</item>
-        <item>121506-Educación Secundaria  - Matemática y Física</item>
-        <item>121516-Educación Secundaria  - Para el trabajo</item>
-        <item>121526-Educación Secundaria  - Persona, Familia y Relaciones Humanas</item>
-        <item>121536-Educación Secundaria  - Química,  Física y Biología</item>
-        <item>121546-Educación Secundaria  - Religión</item>
-        <item>121556-Educación Secundaria  - Religiosa y Ciencias Sociales</item>
-        <item>121996-Otras Carreras  de Educación Secundaria</item>
-        <item>131016-Educación Física</item>
-        <item>131026-Educación Física en Edades Tempranas</item>
-        <item>131036-Educación Física en Poblaciones Especiales</item>
-        <item>131046-Educación Física y Danzas</item>
-        <item>131056-Educación Física y Deportes</item>
-        <item>141016-Audición, Lenguaje y Aprendizaje</item>
-        <item>141026-Discapacidad  Intelectual y Multidiscapacidad</item>
-        <item>151016-Educación Artística</item>
-        <item>151026-Educación Artística - Arte Dramático</item>
-        <item>151036-Educación Artística - Artes Plásticas</item>
-        <item>151046-Educación Artística - Danza Folklórica</item>
-        <item>151056-Educación Artística - Música</item>
-        <item>151996-Otras Carreras  de Educación Artísticas</item>
-        <item>161016-Artes Industriales</item>
-        <item>161026-Automatización Industrial</item>
-        <item>161036-Construcción Civil</item>
-        <item>161046-Construcciones Metálicas - Soldadura Industrial</item>
-        <item>161056-Diseño Industrial y Arquitectónico</item>
-        <item>161066-Ebanistería y Decoración</item>
-        <item>161076-Electricidad</item>
-        <item>161086-Electrónica</item>
-        <item>161096-Electrónica e Informática</item>
-        <item>161106-Fuerza Motriz</item>
-        <item>161116-Mecánica Automotriz</item>
-        <item>161126-Mecánica de Producción</item>
-        <item>161136-Metalurgia y Joyería</item>
-        <item>161146-Tecnología Textil</item>
-        <item>161156-Tecnología del Vestido</item>
-        <item>161166-Telecomunicaciones e Informática</item>
-        <item>161996-Otras Carreras  de Educación Tecnológica</item>
-        <item>199016-Educación </item>
-        <item>199996-Otras Carreras  de Educación</item>
-        <item>211016-Antropología</item>
-        <item>211026-Antropología Social</item>
-        <item>211036-Arqueología</item>
-        <item>211046-Arqueología e Historia</item>
-        <item>212016-Historia</item>
-        <item>212026-Historia y Gestión Cultural</item>
-        <item>213016-Comunicación  Lingüística  y Literatura</item>
-        <item>213026-Lingüística</item>
-        <item>213036-Literatura</item>
-        <item>213046-Literatura y Lingüística  </item>
-        <item>214016-Idiomas</item>
-        <item>214026-Lengua, Traducción e Interpretación</item>
-        <item>214036-Traducción e Interpretación</item>
-        <item>215016-Archivo y Gestión Documental  </item>
-        <item>215026-Bibliotecología y Ciencias de la Información</item>
-        <item>216016-Filosofía</item>
-        <item>216026-Teología</item>
-        <item>217016-Estudios Latinoamericanos</item>
-        <item>217026-Estudios de Lenguaje y Cultura</item>
-        <item>217036-Estudios Peruanos</item>
-        <item>217046-Estudios Teóricos y Críticos</item>
-        <item>221016-Artes </item>
-        <item>221026-Arte y Humanidades</item>
-        <item>221036-Artes Escénicas</item>
-        <item>221046-Artes Escénicas y Literatura</item>
-        <item>221056-Conservación  y Restauración</item>
-        <item>221066-Escultura</item>
-        <item>221076-Grabado</item>
-        <item>221086-Pintura</item>
-        <item>221996-Otras Carreras  de Arte</item>
-        <item>222016-Arte y Diseño Gráfico Empresarial </item>
-        <item>222026-Arte y Diseño Empresarial</item>
-        <item>222036-Dirección de Artes Gráficas y Publicitarias</item>
-        <item>222046-Diseño Digital Publicitario</item>
-        <item>222056-Diseño Gráfico</item>
-        <item>222066-Diseño Gráfico Publicitario</item>
-        <item>222076-Diseño Industrial</item>
-        <item>222086-Diseño Industrial y Arquitectónico</item>
-        <item>222096-Diseño Profesional de Interiores</item>
-        <item>222106-Diseño Profesional Gráfico</item>
-        <item>222116-Diseño y Gestión en Moda</item>
-        <item>222996-Otras Carreras  de Diseño</item>
-        <item>223016-Danza</item>
-        <item>224016-Artista Músico</item>
-        <item>224026-Interpretación Musical</item>
-        <item>224036-Música</item>
-        <item>224046-Música con Mención en Canto</item>
-        <item>224056-Música con Mención en Composición Musical</item>
-        <item>224066-Música con Mención en Composición y Etnomusicólogo</item>
-        <item>224076-Música con Mención en Intérprete, Productor y Director</item>
-        <item>224086-Música con Mención en Musicología</item>
-        <item>224096-Música y Tecnología de Sonido</item>
-        <item>224106-Producción Musical</item>
-        <item>225016-Teatro con Mención en Actuación</item>
-        <item>225026-Teatro con Mención en Diseño Escenográfico</item>
-        <item>311016-Sociología</item>
-        <item>312016-Gerontología Social</item>
-        <item>312026-Servicio Social</item>
-        <item>312036-Trabajo Social</item>
-        <item>313016-Psicología</item>
-        <item>313026-Psicología del Consumidor</item>
-        <item>313036-Psicología Humana</item>
-        <item>313046-Psicología Organizacional</item>
-        <item>321016-Ciencia y Tecnología de la Comunicación    </item>
-        <item>321026-Ciencias de la Comunicación</item>
-        <item>321036-Ciencias de la Comunicación  Social   </item>
-        <item>321046-Ciencias de la Comunicación  y Publicidad</item>
-        <item>321056-Comunicación  Audiovisual</item>
-        <item>321066-Comunicación  Audiovisual y Medios Interactivos</item>
-        <item>321076-Comunicación  e Idioma Inglés</item>
-        <item>321086-Comunicación  e Imagen Empresarial</item>
-        <item>321096-Comunicación  Para el Desarrollo</item>
-        <item>321106-Comunicación  y Marketing</item>
-        <item>321116-Comunicación  y Periodismo</item>
-        <item>321126-Comunicación  y Publicidad</item>
-        <item>321136-Comunicaciones     </item>
-        <item>322016-Multimedia y Fotografía Publicitaria</item>
-        <item>322026-Periodismo</item>
-        <item>322036-Periodismo Escrito</item>
-        <item>322046-Periodismo Radial</item>
-        <item>322056-Periodismo Televisivo</item>
-        <item>322066-Producción de Radio, Cine y Televisión</item>
-        <item>322076-Publicidad</item>
-        <item>322086-Publicidad y Multimedia</item>
-        <item>331016-Administración</item>
-        <item>331026-Administración de Banca y Finanzas</item>
-        <item>331036-Administración de Empresas</item>
-        <item>331046-Administración de Negocios</item>
-        <item>331056-Administración de Negocios Turísticos</item>
-        <item>331066-Administración de Servicios</item>
-        <item>331076-Administración en Salud</item>
-        <item>331086-Administración y Emprendimiento</item>
-        <item>331096-Administración y Finanzas</item>
-        <item>331106-Administración y Gerencia</item>
-        <item>331116-Administración y Gestión Empresarial</item>
-        <item>331126-Administración y Recursos Humanos</item>
-        <item>331136-Administración y Sistemas</item>
-        <item>331146-Ciencias Administrativas  </item>
-        <item>331156-Ciencias Empresariales</item>
-        <item>331166-Ingeniería Administrativa</item>
-        <item>331176-Ingeniería Comercial</item>
-        <item>331186-Ingeniería Comercial y Financiera</item>
-        <item>331195-Ingeniería de Negocios</item>
-        <item>331206-Ingeniería Empresarial</item>
-        <item>331216-Ingeniería Empresarial y de Sistemas</item>
-        <item>331226-Ingeniería en Gestión Empresarial   </item>
-        <item>332016-Administración de Empresas Turísticas</item>
-        <item>332026-Administración de Negocios Turísticos</item>
-        <item>332036-Administración de Negocios Turísticos  y Hoteleros</item>
-        <item>332046-Administración de Servicios Turísticos    </item>
-        <item>332056-Administración de Turismo Sostenible y Hotelería</item>
-        <item>332066-Administración en Turismo</item>
-        <item>332076-Administración en Turismo  y Hotelería    </item>
-        <item>332086-Administración en Turismo  y Negocios</item>
-        <item>332096-Administración en Turismo, Hotelería y Gastronomía</item>
-        <item>332106-Administración Hotelera</item>
-        <item>332116-Administración Hotelera y de Servicios</item>
-        <item>332126-Administración Hotelera y Ecoturismo</item>
-        <item>332136-Administración Turística</item>
-        <item>332146-Administración Turística Hotelera     </item>
-        <item>332156-Administración Turística, Hotelera y Gastronómica   </item>
-        <item>332166-Arte Culinario</item>
-        <item>332176-Ecoturismo</item>
-        <item>332186-Gastronomía</item>
-        <item>332196-Gastronomía y Arte Culinario</item>
-        <item>332206-Gastronomía y Gestión de Restaurantes</item>
-        <item>332216-Gastronomía, Arte Culinario y Gestión de Restaurantes</item>
-        <item>332226-Gerencia  en Hotelería, Turismo  y Gastronomía </item>
-        <item>332236-Gerencia  en Servicios  Turísticos  y Hoteleros</item>
-        <item>332246-Gestión en Hotelería y Turismo</item>
-        <item>332256-Hotelería y Administración</item>
-        <item>332266-Ingeniería Ecoturismo</item>
-        <item>332276-Turismo</item>
-        <item>332286-Turismo - Conducción  de Grupos</item>
-        <item>332296-Turismo - Gestión Turística  y Medio Ambiente</item>
-        <item>332306-Turismo Sostenible</item>
-        <item>332316-Turismo Sostenible y Hotelería</item>
-        <item>332326-Turismo  y Administración</item>
-        <item>332336-Turismo  y Hotelería</item>
-        <item>332346-Turismo  y Negocios</item>
-        <item>332356-Turismo, Hotelería y Gastronomía</item>
-        <item>332366-Turismo, Hotelería y Gestión Cultural</item>
-        <item>333016-Administración y Marketing</item>
-        <item>333026-Administración y Marketing Estratégico</item>
-        <item>333036-Marketing</item>
-        <item>333046-Marketing Empresarial</item>
-        <item>333056-Marketing y Administración</item>
-        <item>333066-Marketing y Dirección de Empresas</item>
-        <item>333076-Marketing y Gestión Comercial</item>
-        <item>333086-Marketing y Negocios Globales</item>
-        <item>333096-Marketing y Negocios Internacionales</item>
-        <item>333106-Marketing y Publicidad</item>
-        <item>334016-Administración y Agronegocios</item>
-        <item>334026-Ingeniería de Negocios Agroforestales </item>
-        <item>334036-Ingeniería en Agronegocios</item>
-        <item>335016-Administración de Negocios Globales</item>
-        <item>335026-Administración de Negocios Internacionales    </item>
-        <item>335036-Comercio Exterior</item>
-        <item>335046-Comercio Exterior  y Marketing Internacional</item>
-        <item>335056-Comercio y Negocios Internacionales</item>
-        <item>335066-Gestión</item>
-        <item>335076-Gestión de Puertos y Aduanas</item>
-        <item>335086-Ingeniería Comercial y Negocios Internacionales</item>
-        <item>335096-Logística Internacional</item>
-        <item>335106-Negocios Globales</item>
-        <item>335116-Negocios Internacionales    </item>
-        <item>335126-Negocios Internacionales y Turismo</item>
-        <item>335136-Relaciones Internacionales</item>
-        <item>335146-Relaciones Internacionales y Negociaciones</item>
-        <item>336016-Administración Pública</item>
-        <item>336026-Administración Pública y Gestión Social</item>
-        <item>336036-Gestión de Negocios</item>
-        <item>336046-Gestión Pública y Desarrollo Social</item>
-        <item>339016-Administración y Gestión Deportiva</item>
-        <item>339026-Administración y Negocios del Deporte</item>
-        <item>339036-Cooperativismo</item>
-        <item>339046-Gestión de Negocios</item>
-        <item>339056-Gestión de Recursos Humanos</item>
-        <item>339066-Gestión y Alta Dirección</item>
-        <item>339076-Relaciones Industriales</item>
-        <item>339996-Otras Carreras  de Administración</item>
-        <item>341016-Ciencias Económicas</item>
-        <item>341026-Economía</item>
-        <item>341036-Economía Agraria</item>
-        <item>341046-Economía Gerencial</item>
-        <item>341056-Economía Internacional</item>
-        <item>341066-Economía Pública</item>
-        <item>341076-Economía y Finanzas</item>
-        <item>341086-Economía y Gestión Ambiental</item>
-        <item>341096-Economía y Microfinanzas</item>
-        <item>341106-Economía y Negocios Internacionales</item>
-        <item>341116-Ingeniería Económica</item>
-        <item>341126-Ingeniería Económica y de Negocios</item>
-        <item>342016-Auditoria Empresarial y del Sector Público</item>
-        <item>342026-Banca y Seguros</item>
-        <item>342036-Ciencias Contables</item>
-        <item>342046-Ciencias Contables y Financieras</item>
-        <item>342056-Contabilidad</item>
-        <item>342066-Contabilidad  Administrativa  y Auditoria</item>
-        <item>342076-Contabilidad  Auditoría y Finanzas </item>
-        <item>342086-Contabilidad  y Administración</item>
-        <item>342096-Contabilidad  y Auditoria</item>
-        <item>342106-Contabilidad  y Finanzas</item>
-        <item>342116-Contabilidad  y Tributación</item>
-        <item>342126-Finanzas</item>
-        <item>342136-Gestión Tributaria</item>
-        <item>351016-Derecho</item>
-        <item>351026-Derecho Corporativo</item>
-        <item>351036-Derecho Empresarial</item>
-        <item>351046-Derecho del Mar y Servicios  Aduaneros</item>
-        <item>351056-Derecho y Ciencias Políticas   </item>
-        <item>352016-Ciencia Política</item>
-        <item>352026-Ciencia Política y Gobierno</item>
-        <item>411016-Biología</item>
-        <item>411026-Biología en Acuicultura</item>
-        <item>411036-Biología Marina y Econegocios</item>
-        <item>411046-Biología y Microbiología</item>
-        <item>411056-Biotecnología</item>
-        <item>411066-Botánica</item>
-        <item>411076-Ciencias Biológicas</item>
-        <item>411086-Genética  y Biotecnología</item>
-        <item>411096-Ingeniería Biotecnológica</item>
-        <item>411106-Microbiología</item>
-        <item>411116-Microbiología y Parasitología</item>
-        <item>412016-Ingeniería Zootecnia    </item>
-        <item>412026-Zootecnia</item>
-        <item>421016-Ciencias Físico Matemática    </item>
-        <item>421026-Física</item>
-        <item>421036-Física Aplicada</item>
-        <item>421046-Ingeniería Física</item>
-        <item>422016-Ingeniería de Procesos Químicos y Metalúrgicos</item>
-        <item>422026-Ingeniería Química</item>
-        <item>422036-Química</item>
-        <item>423016-Geología</item>
-        <item>423026-Geología  Geotecnia</item>
-        <item>423036-Ingeniería de Geología  - Geotecnia</item>
-        <item>423046-Ingeniería Geofísica</item>
-        <item>423056-Ingeniería Geológica</item>
-        <item>431016-Matemática    </item>
-        <item>431026-Matemática Aplicada</item>
-        <item>431036-Matemática e Informática</item>
-        <item>432016-Estadística</item>
-        <item>432026-Estadística e Informática</item>
-        <item>432036-Ingeniería Estadística</item>
-        <item>432046-Ingeniería Estadística e Informática</item>
-        <item>433016-Investigación Operativa</item>
-        <item>441016-Ciencias de la Computación</item>
-        <item>441026-Ciencias de la Información</item>
-        <item>441036-Computación  Científica</item>
-        <item>441046-Computación  e Informática</item>
-        <item>441056-Informática</item>
-        <item>511016-Ingeniería de Seguridad y Auditoría Informática</item>
-        <item>511026-Ingeniería de Sistemas</item>
-        <item>511036-Ingeniería de Sistemas de Información</item>
-        <item>511046-Ingeniería de Sistemas de Información y Gestión</item>
-        <item>511056-Ingeniería de Sistemas e Informática   </item>
-        <item>511066-Ingeniería de Sistemas Empresariales</item>
-        <item>511076-Ingeniería de Sistemas y Computación   </item>
-        <item>511086-Ingeniería de Sistemas y Gestión de Tecnologías de la Información</item>
-        <item>511096-Ingeniería de Sistemas y Seguridad Informática</item>
-        <item>511106-Ingeniería de Sistemas y Telemática</item>
-        <item>511116-Ingeniería de Sistemas y Tecnológicas</item>
-        <item>511126-Ingeniería de Software</item>
-        <item>511136-Ingeniería de Tecnologías de la Información y Sistemas</item>
-        <item>511146-Ingeniería en Tecnologías y Sistemas de Información</item>
-        <item>511156-Ingeniería Informática</item>
-        <item>511166-Ingeniería Informática y Estadística  </item>
-        <item>512016-Ingeniería de Redes y Comunicaciones</item>
-        <item>512026-Ingeniería de Tecnologías de Información y Comunicación</item>
-        <item>512036-Ingeniería de Tecnologías de Información y Sistemas</item>
-        <item>512046-Ingeniería de Telecomunicaciones     </item>
-        <item>512056-Ingeniería en Telecomunicaciones y Redes     </item>
-        <item>512066-Ingeniería en Telecomunicaciones y Telemática     </item>
-        <item>512076-Ingeniería en Teleinformática     </item>
-        <item>521016-Ingeniería Ambiental y de Prevención de Riesgos</item>
-        <item>521026-Ingeniería de Higiene y Seguridad Industrial</item>
-        <item>521036-Ingeniería de la Producción y Administración</item>
-        <item>521046-Ingeniería Industrial</item>
-        <item>521056-Ingeniería Industrial y Comercial</item>
-        <item>521066-Ingeniería Industrial y de Gestión Empresarial</item>
-        <item>521076-Ingeniería Industrial y Sistemas</item>
-        <item>522016-Industrias Alimentarias</item>
-        <item>522026-Ingeniería Alimentaria    </item>
-        <item>522036-Ingeniería de Industrias Alimentarias   </item>
-        <item>523016-Agroindustrias</item>
-        <item>523026-Ingeniería Agroindustrial</item>
-        <item>523036-Ingeniería Agroindustrial y Agronegocios</item>
-        <item>523046-Ingeniería Agroindustrial y Comercio Exterior</item>
-        <item>523056-Ingeniería Agroindustrial y de Biocomercio</item>
-        <item>524016-Ingeniería de Sistemas de Energía   </item>
-        <item>524026-Ingeniería Eléctrica</item>
-        <item>524036-Ingeniería Eléctrica y de Potencia</item>
-        <item>524046-Ingeniería Eléctrica y Electrónica</item>
-        <item>524056-Ingeniería en Energía</item>
-        <item>524066-Ingeniería en Energía Renovable y Gestión Ambiental</item>
-        <item>524076-Ingeniería Energética</item>
-        <item>525016-Ingeniería Electrónica</item>
-        <item>525026-Ingeniería Electrónica - Biomédica</item>
-        <item>525036-Ingeniería Electrónica - Mecatrónica</item>
-        <item>525046-Ingeniería Electrónica - Telecomunicaciones</item>
-        <item>525056-Ingeniería Electrónica y Automatización   </item>
-        <item>525066-Ingeniería Electrónica y Telecomunicaciones</item>
-        <item>526016-Ingeniería de Materiales</item>
-        <item>526026-Ingeniería Electromecánica</item>
-        <item>526036-Ingeniería Mecánica</item>
-        <item>526046-Ingeniería Mecánica de Fluidos</item>
-        <item>526056-Ingeniería Mecánica Eléctrica </item>
-        <item>526066-Ingeniería Mecánica Eléctrica y Mecatrónica</item>
-        <item>526076-Ingeniería Mecatrónica</item>
-        <item>527016-Ingeniería de Minas</item>
-        <item>527026-Ingeniería de Minas y Maquinaria Pesada</item>
-        <item>527036-Ingeniería de Petróleo</item>
-        <item>527046-Ingeniería de Petróleo y Gas Natural</item>
-        <item>527056-Ingeniería Metalúrgica    </item>
-        <item>527066-Ingeniería Metalúrgica y de Materiales   </item>
-        <item>527076-Ingeniería Petroquímica</item>
-        <item>528016-Ingeniería Textil</item>
-        <item>528026-Ingeniería Textil y Confecciones     </item>
-        <item>531016-Ingeniería Civil</item>
-        <item>531026-Ingeniería Civil y Ambiental</item>
-        <item>531036-Ingeniería Civil y Desarrollo Inmobiliario</item>
-        <item>531046-Ingeniería Civil y Diseño Arquitectónico</item>
-        <item>531056-Ingeniería Topográfica y Agrimensura</item>
-        <item>532016-Ingeniería Sanitaria</item>
-        <item>532026-Ingeniería Sanitaria y Ambiental</item>
-        <item>533016-Arqueoarquitectura  y Gestión Turística</item>
-        <item>533026-Arquitectura</item>
-        <item>533036-Arquitectura de Interiores</item>
-        <item>533046-Arquitectura del Paisaje</item>
-        <item>533056-Arquitectura y Diseño de Interiores</item>
-        <item>533066-Arquitectura y Gestión de Proyectos</item>
-        <item>533076-Arquitectura y Gestión de Territorios</item>
-        <item>533086-Arquitectura y Territorio</item>
-        <item>533096-Arquitectura y Urbanismo</item>
-        <item>533106-Arquitectura y Urbanismo Ambiental</item>
-        <item>533116-Arquitectura, Urbanismo y Artes</item>
-        <item>533126-Arquitectura, Urbanismo y Territorio</item>
-        <item>533136-Urbanismo</item>
-        <item>591016-Ingeniería de la Producción e Industrialización de Recursos Hidrobiológicos</item>
-        <item>591026-Ingeniería Pesquera</item>
-        <item>591036-Pesquería</item>
-        <item>592016-Ciencias Aeronáuticas</item>
-        <item>592026-Ciencias Navales</item>
-        <item>592036-Ingeniería Aeronáutica</item>
-        <item>592046-Ingeniería de Navegación  y Marina Mercante</item>
-        <item>592056-Ingeniería del Transporte Marítimo y Gestión Logística Portuaria</item>
-        <item>592066-Ingeniería Hidráulica</item>
-        <item>592076-Ingeniería Marítima</item>
-        <item>592086-Ingeniería Naval</item>
-        <item>593016-Geografía</item>
-        <item>593026-Geografía  y Medio Ambiente</item>
-        <item>593036-Ingeniería Geográfica</item>
-        <item>593046-Ingeniería Geográfica y Ecológica</item>
-        <item>594016-Ciencia Tecnología y Ambiente</item>
-        <item>594026-Desarrollo Ambiental</item>
-        <item>594036-Ecología</item>
-        <item>594046-Gestión Ambiental Empresarial</item>
-        <item>594056-Ingeniería Ambiental</item>
-        <item>594066-Ingeniería Ambiental y Recursos Naturales</item>
-        <item>594076-Ingeniería de Recursos Naturales y Energías Renovables</item>
-        <item>594086-Ingeniería de Medio Ambiente   </item>
-        <item>594096-Ingeniería en Ecología de Bosques Tropicales</item>
-        <item>594106-Ingeniería en Ecoturismo</item>
-        <item>594116-Ingeniería en Gestión Ambiental    </item>
-        <item>594126-Meteorología</item>
-        <item>599016-Ingeniería Automotriz</item>
-        <item>599026-Ingeniería Biomédica</item>
-        <item>599036-Ingeniería de Diseño Gráfico</item>
-        <item>599046-Ingeniería de Transportes</item>
-        <item>611016-Agronomía</item>
-        <item>611026-Agronomía Tropical</item>
-        <item>611036-Ciencias Agrarias</item>
-        <item>611046-Ciencias Pecuarias</item>
-        <item>611056-Conservación  de Suelos y Agua</item>
-        <item>611066-Ingeniería Agraria</item>
-        <item>611076-Ingeniería Agrícola</item>
-        <item>611086-Ingeniería Agrícola y Forestal</item>
-        <item>611096-Ingeniería Agroecológica y Desarrollo Rural</item>
-        <item>611106-Ingeniería Agrónoma</item>
-        <item>611116-Ingeniería Agronómica</item>
-        <item>611126-Ingeniería Agronómica Tropical</item>
-        <item>611136-Ingeniería Agropecuaria</item>
-        <item>611146-Ingeniería de Negocios Agronómicos y Forestales</item>
-        <item>611156-Ingeniería en Ciencias Agrarias</item>
-        <item>612016-Ciencias Forestales</item>
-        <item>612026-Ciencias Forestales y del Ambiente</item>
-        <item>612036-Ingeniería Agroforestal</item>
-        <item>612046-Ingeniería Agroforestal Acuícola</item>
-        <item>612056-Ingeniería Forestal</item>
-        <item>612066-Ingeniería Forestal y del Medio Ambiente    </item>
-        <item>613016-Acuicultura</item>
-        <item>613026-Ingeniería en Acuicultura</item>
-        <item>621016-Medicina Veterinaria</item>
-        <item>621026-Veterinaria y Zootecnia</item>
-        <item>621036-Medicina Veterinaria y Zootecnia</item>
-        <item>711016-Medicina</item>
-        <item>711026-Medicina Humana</item>
-        <item>712016-Bromatología y Nutrición</item>
-        <item>712026-Ciencias de la Nutrición</item>
-        <item>712036-Ciencias de los Alimentos    </item>
-        <item>712046-Nutrición</item>
-        <item>712056-Nutrición Humana</item>
-        <item>712066-Nutrición, Salud y Técnicas Alimentarias</item>
-        <item>712076-Nutrición y Dietética</item>
-        <item>713016-Estomatología</item>
-        <item>713026-Odontología</item>
-        <item>714016-Enfermería</item>
-        <item>715016-Laboratorio Clínico</item>
-        <item>715026-Laboratorio y Anatomía Patológica</item>
-        <item>715036-Optometría</item>
-        <item>715046-Radiología</item>
-        <item>715056-Tecnología Médica</item>
-        <item>715066-Terapia de Lenguaje</item>
-        <item>715076-Terapia Física</item>
-        <item>715086-Terapia Física y Rehabilitación</item>
-        <item>715096-Terapia Ocupacional</item>
-        <item>716016-Ciencias Farmacéuticas y Bioquímica</item>
-        <item>716026-Farmacia y Bioquímica</item>
-        <item>716036-Toxicología</item>
-        <item>717016-Obstetricia</item>
-        <item>717026-Obstetricia y Puericultura</item>
-        <item>719016-Ciencias del Deporte</item>
-        <item>11016-Ciencias de la Administración Aeroespacial (Aviación)</item>
-        <item>11026-Ciencias Militares (Ejército)</item>
-        <item>11036-Ciencias Administrativas Marítimas (Marina)</item>
-        <item>21016-Administración y Ciencias Policiales (oficiales)</item>
-        <item>99999-Otra carrera universitaria</item>
+        <item>111016- EDUCACION BASICA, INICIAL Y PRIMARIA</item>
+        <item>111026- EDUCACION INICIAL</item>
+        <item>111036- EDUCACION INICIAL -  NIÑEZ TEMPRANA</item>
+        <item>111046- EDUCACION INICIAL -  RETARDO MENTAL</item>
+        <item>111056- EDUCACION INICIAL BILINGÜE</item>
+        <item>111066- EDUCACION INICIAL Y ARTE</item>
+        <item>111076- EDUCACION INTERCULTURAL BILINGÜE: NIVEL INICIAL Y NIVEL PRIMARIA</item>
+        <item>112016- EDUCACION PRIMARIA</item>
+        <item>112026- EDUCACION PRIMARIA -  EDUCACION BASICA ALTERNATIVA</item>
+        <item>112036- EDUCACION PRIMARIA - INGLES</item>
+        <item>112046- EDUCACION PRIMARIA INTERCULTURAL</item>
+        <item>112056- EDUCACION PRIMARIA Y BILINGÜE</item>
+        <item>112066- EDUCACION PRIMARIA Y BILINGÜE INTERCULTURAL</item>
+        <item>112076- EDUCACION PRIMARIA Y PROBLEMAS DE APRENDIZAJE</item>
+        <item>121016- EDUCACION SECUNDARIA</item>
+        <item>121026- EDUCACION SECUNDARIA  - ANTROPOLOGIA SOCIAL</item>
+        <item>121036- EDUCACION SECUNDARIA  - ARTE</item>
+        <item>121046- EDUCACION SECUNDARIA  BILINGÜE</item>
+        <item>121056- EDUCACION SECUNDARIA  - BIOLOGIA, QUIMICA Y TECNOLOGIA DE LOS ALIMENTOS</item>
+        <item>121066- EDUCACION SECUNDARIA  - BIOLOGIA Y QUIMICA</item>
+        <item>121076- EDUCACION SECUNDARIA  - CIENCIA TECNOLOGIA Y AMBIENTE</item>
+        <item>121086- EDUCACION SECUNDARIA  - CIENCIA TECNOLOGIA DE LA COMUNICACION</item>
+        <item>121096- EDUCACION SECUNDARIA  - CIENCIAS BIOLOGICAS Y QUIMICA</item>
+        <item>121106- EDUCACION SECUNDARIA  - CIENCIAS HISTORICO SOCIALES</item>
+        <item>121116- EDUCACION SECUNDARIA  - CIENCIAS MATEMATICAS,  FISICAS E INFORMATICA</item>
+        <item>121126- EDUCACION SECUNDARIA  - CIENCIAS NATURALES</item>
+        <item>121136- EDUCACION SECUNDARIA  - CIENCIAS NATURALES TECNOLOGIA Y AMBIENTE</item>
+        <item>121146- EDUCACION SECUNDARIA  - CIENCIAS NATURALES Y ECOLOGIA</item>
+        <item>121156- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES</item>
+        <item>121166- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES - FILOSOFIA</item>
+        <item>121176- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES - GEOGRAFIA</item>
+        <item>121186- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES - HISTORIA</item>
+        <item>121196- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES - PSICOLOGIA</item>
+        <item>121206- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES Y BIOETICA</item>
+        <item>121216- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES Y DESARROLLO RURAL</item>
+        <item>121226- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES Y PROMOCION SOCIO CULTURAL</item>
+        <item>121236- EDUCACION SECUNDARIA  - CIENCIAS SOCIALES Y TURISMO</item>
+        <item>121246- EDUCACION SECUNDARIA  - COMPUTACION  E INFORMATICA</item>
+        <item>121256- EDUCACION SECUNDARIA  - COMUNICACION</item>
+        <item>121266- EDUCACION SECUNDARIA  - FILOSOFIA, PSICOLOGIA Y CIENCIAS SOCIALES</item>
+        <item>121276- EDUCACION SECUNDARIA  - FILOSOFIA Y CIENCIAS SOCIALES</item>
+        <item>121286- EDUCACION SECUNDARIA  - FILOSOFIA Y PSICOPEDAGOGIA</item>
+        <item>121296- EDUCACION SECUNDARIA  - FILOSOFIA Y RELIGION</item>
+        <item>121306- EDUCACION SECUNDARIA  - HISTORIA, GEOGRAFIA  Y ECOLOGIA</item>
+        <item>121316- EDUCACION SECUNDARIA  - HISTORIA, GEOGRAFIA  Y CIENCIAS SOCIALES</item>
+        <item>121326- EDUCACION SECUNDARIA  - HISTORIA Y CIENCIAS SOCIALES</item>
+        <item>121336- EDUCACION SECUNDARIA  - HISTORIA Y GEOGRAFIA</item>
+        <item>121346- EDUCACION SECUNDARIA  - IDIOMA EXTRANJERO TRADUCCION E INTERPRETACION</item>
+        <item>121356- EDUCACION SECUNDARIA  - IDIOMA EXTRANJERO/ORIGINARIO</item>
+        <item>121366- EDUCACION SECUNDARIA  - INGLES</item>
+        <item>121376- EDUCACION SECUNDARIA  - INGLES E ITALIANO</item>
+        <item>121386- EDUCACION SECUNDARIA  - INGLES Y ALEMAN</item>
+        <item>121396- EDUCACION SECUNDARIA  - INGLES Y FRANCES</item>
+        <item>121406- EDUCACION SECUNDARIA  - LENGUA, COMUNICACION  E IDIOMA INGLES</item>
+        <item>121416- EDUCACION SECUNDARIA  - LENGUA LITERATURA Y GESTION EDUCATIVA</item>
+        <item>121426- EDUCACION SECUNDARIA  - LENGUA Y LITERATURA</item>
+        <item>121436- EDUCACION SECUNDARIA  - LENGUAJE, LITERATURA E IDIOMAS</item>
+        <item>121446- EDUCACION SECUNDARIA  - LINGÜISTICA  Y LITERATURA</item>
+        <item>121456- EDUCACION SECUNDARIA  - MATEMATICA</item>
+        <item>121466- EDUCACION SECUNDARIA  - MATEMATICA,  COMPUTACION  E INFORMATICA</item>
+        <item>121476- EDUCACION SECUNDARIA  - MATEMATICA,  COMPUTACION  Y FISICA</item>
+        <item>121486- EDUCACION SECUNDARIA  - MATEMATICA E INFORMATICA</item>
+        <item>121496- EDUCACION SECUNDARIA  - MATEMATICA,  FISICA E INFORMATICA</item>
+        <item>121506- EDUCACION SECUNDARIA  - MATEMATICA Y FISICA</item>
+        <item>121516- EDUCACION SECUNDARIA  - PARA EL TRABAJO</item>
+        <item>121526- EDUCACION SECUNDARIA  - PERSONA, FAMILIA Y RELACIONES HUMANAS</item>
+        <item>121536- EDUCACION SECUNDARIA  - QUIMICA,  FISICA Y BIOLOGIA</item>
+        <item>121546- EDUCACION SECUNDARIA  - RELIGION</item>
+        <item>121556- EDUCACION SECUNDARIA  - RELIGIOSA Y CIENCIAS SOCIALES</item>
+        <item>121996- OTRAS CARRERAS  DE EDUCACION SECUNDARIA</item>
+        <item>131016- EDUCACION FISICA</item>
+        <item>131026- EDUCACION FISICA EN EDADES TEMPRANAS</item>
+        <item>131036- EDUCACION FISICA EN POBLACIONES ESPECIALES</item>
+        <item>131046- EDUCACION FISICA Y DANZAS</item>
+        <item>131056- EDUCACION FISICA Y DEPORTES</item>
+        <item>141016- AUDICION, LENGUAJE Y APRENDIZAJE</item>
+        <item>141026- DISCAPACIDAD  INTELECTUAL Y MULTIDISCAPACIDAD</item>
+        <item>151016- EDUCACION ARTISTICA</item>
+        <item>151026- EDUCACION ARTISTICA - ARTE DRAMATICO</item>
+        <item>151036- EDUCACION ARTISTICA - ARTES PLASTICAS</item>
+        <item>151046- EDUCACION ARTISTICA - DANZA FOLKLORICA</item>
+        <item>151056- EDUCACION ARTISTICA - MUSICA</item>
+        <item>151996- OTRAS CARRERAS  DE EDUCACION ARTISTICAS</item>
+        <item>161016- ARTES INDUSTRIALES</item>
+        <item>161026- AUTOMATIZACION INDUSTRIAL</item>
+        <item>161036- CONSTRUCCION CIVIL</item>
+        <item>161046- CONSTRUCCIONES METALICAS - SOLDADURA INDUSTRIAL</item>
+        <item>161056- DISEÑO INDUSTRIAL Y ARQUITECTONICO</item>
+        <item>161066- EBANISTERIA Y DECORACION</item>
+        <item>161076- ELECTRICIDAD</item>
+        <item>161086- ELECTRONICA</item>
+        <item>161096- ELECTRONICA E INFORMATICA</item>
+        <item>161106- FUERZA MOTRIZ</item>
+        <item>161116- MECANICA AUTOMOTRIZ</item>
+        <item>161126- MECANICA DE PRODUCCION</item>
+        <item>161136- METALURGIA Y JOYERIA</item>
+        <item>161146- TECNOLOGIA TEXTIL</item>
+        <item>161156- TECNOLOGIA DEL VESTIDO</item>
+        <item>161166- TELECOMUNICACIONES E INFORMATICA</item>
+        <item>161996- OTRAS CARRERAS  DE EDUCACION TECNOLOGICA</item>
+        <item>199016- EDUCACION </item>
+        <item>199996- OTRAS CARRERAS  DE EDUCACION</item>
+        <item>211016- ANTROPOLOGIA</item>
+        <item>211026- ANTROPOLOGIA SOCIAL</item>
+        <item>211036- ARQUEOLOGIA</item>
+        <item>211046- ARQUEOLOGIA E HISTORIA</item>
+        <item>212016- HISTORIA</item>
+        <item>212026- HISTORIA Y GESTION CULTURAL</item>
+        <item>213016- COMUNICACION  LINGÜISTICA  Y LITERATURA</item>
+        <item>213026- LINGÜISTICA</item>
+        <item>213036- LITERATURA</item>
+        <item>213046- LITERATURA Y LINGÜISTICA  </item>
+        <item>214016- IDIOMAS</item>
+        <item>214026- LENGUA, TRADUCCION E INTERPRETACION</item>
+        <item>214036- TRADUCCION E INTERPRETACION</item>
+        <item>215016- ARCHIVO Y GESTION DOCUMENTAL  </item>
+        <item>215026- BIBLIOTECOLOGIA Y CIENCIAS DE LA INFORMACION</item>
+        <item>216016- FILOSOFIA</item>
+        <item>216026- TEOLOGIA</item>
+        <item>217016- ESTUDIOS LATINOAMERICANOS</item>
+        <item>217026- ESTUDIOS DE LENGUAJE Y CULTURA</item>
+        <item>217036- ESTUDIOS PERUANOS</item>
+        <item>217046- ESTUDIOS TEORICOS Y CRITICOS</item>
+        <item>221016- ARTES </item>
+        <item>221026- ARTE Y HUMANIDADES</item>
+        <item>221036- ARTES ESCENICAS</item>
+        <item>221046- ARTES ESCENICAS Y LITERATURA</item>
+        <item>221056- CONSERVACION  Y RESTAURACION</item>
+        <item>221066- ESCULTURA</item>
+        <item>221076- GRABADO</item>
+        <item>221086- PINTURA</item>
+        <item>221996- OTRAS CARRERAS  DE ARTE</item>
+        <item>222016- ARTE Y DISEÑO GRAFICO EMPRESARIAL </item>
+        <item>222026- ARTE Y DISEÑO EMPRESARIAL</item>
+        <item>222036- DIRECCION DE ARTES GRAFICAS Y PUBLICITARIAS</item>
+        <item>222046- DISEÑO DIGITAL PUBLICITARIO</item>
+        <item>222056- DISEÑO GRAFICO</item>
+        <item>222066- DISEÑO GRAFICO PUBLICITARIO</item>
+        <item>222076- DISEÑO INDUSTRIAL</item>
+        <item>222086- DISEÑO INDUSTRIAL Y ARQUITECTONICO</item>
+        <item>222096- DISEÑO PROFESIONAL DE INTERIORES</item>
+        <item>222106- DISEÑO PROFESIONAL GRAFICO</item>
+        <item>222116- DISEÑO Y GESTION EN MODA</item>
+        <item>222996- OTRAS CARRERAS  DE DISEÑO</item>
+        <item>223016- DANZA</item>
+        <item>224016- ARTISTA MUSICO</item>
+        <item>224026- INTERPRETACION MUSICAL</item>
+        <item>224036- MUSICA</item>
+        <item>224046- MUSICA CON MENCION EN CANTO</item>
+        <item>224056- MUSICA CON MENCION EN COMPOSICION MUSICAL</item>
+        <item>224066- MUSICA CON MENCION EN COMPOSICION Y ETNOMUSICOLOGO</item>
+        <item>224076- MUSICA CON MENCION EN INTERPRETE, PRODUCTOR Y DIRECTOR</item>
+        <item>224086- MUSICA CON MENCION EN MUSICOLOGIA</item>
+        <item>224096- MUSICA Y TECNOLOGIA DE SONIDO</item>
+        <item>224106- PRODUCCION MUSICAL</item>
+        <item>225016- TEATRO CON MENCION EN ACTUACION</item>
+        <item>225026- TEATRO CON MENCION EN DISEÑO ESCENOGRAFICO</item>
+        <item>311016- SOCIOLOGIA</item>
+        <item>312016- GERONTOLOGIA SOCIAL</item>
+        <item>312026- SERVICIO SOCIAL</item>
+        <item>312036- TRABAJO SOCIAL</item>
+        <item>313016- PSICOLOGIA</item>
+        <item>313026- PSICOLOGIA DEL CONSUMIDOR</item>
+        <item>313036- PSICOLOGIA HUMANA</item>
+        <item>313046- PSICOLOGIA ORGANIZACIONAL</item>
+        <item>321016- CIENCIA Y TECNOLOGIA DE LA COMUNICACION    </item>
+        <item>321026- CIENCIAS DE LA COMUNICACION</item>
+        <item>321036- CIENCIAS DE LA COMUNICACION  SOCIAL   </item>
+        <item>321046- CIENCIAS DE LA COMUNICACION  Y PUBLICIDAD</item>
+        <item>321056- COMUNICACION  AUDIOVISUAL</item>
+        <item>321066- COMUNICACION  AUDIOVISUAL Y MEDIOS INTERACTIVOS</item>
+        <item>321076- COMUNICACION  E IDIOMA INGLES</item>
+        <item>321086- COMUNICACION  E IMAGEN EMPRESARIAL</item>
+        <item>321096- COMUNICACION  PARA EL DESARROLLO</item>
+        <item>321106- COMUNICACION  Y MARKETING</item>
+        <item>321116- COMUNICACION  Y PERIODISMO</item>
+        <item>321126- COMUNICACION  Y PUBLICIDAD</item>
+        <item>321136- COMUNICACIONES     </item>
+        <item>322016- MULTIMEDIA Y FOTOGRAFIA PUBLICITARIA</item>
+        <item>322026- PERIODISMO</item>
+        <item>322036- PERIODISMO ESCRITO</item>
+        <item>322046- PERIODISMO RADIAL</item>
+        <item>322056- PERIODISMO TELEVISIVO</item>
+        <item>322066- PRODUCCION DE RADIO, CINE Y TELEVISION</item>
+        <item>322076- PUBLICIDAD</item>
+        <item>322086- PUBLICIDAD Y MULTIMEDIA</item>
+        <item>331016- ADMINISTRACION</item>
+        <item>331026- ADMINISTRACION DE BANCA Y FINANZAS</item>
+        <item>331036- ADMINISTRACION DE EMPRESAS</item>
+        <item>331046- ADMINISTRACION DE NEGOCIOS</item>
+        <item>331056- ADMINISTRACION DE NEGOCIOS TURISTICOS</item>
+        <item>331066- ADMINISTRACION DE SERVICIOS</item>
+        <item>331076- ADMINISTRACION EN SALUD</item>
+        <item>331086- ADMINISTRACION Y EMPRENDIMIENTO</item>
+        <item>331096- ADMINISTRACION Y FINANZAS</item>
+        <item>331106- ADMINISTRACION Y GERENCIA</item>
+        <item>331116- ADMINISTRACION Y GESTION EMPRESARIAL</item>
+        <item>331126- ADMINISTRACION Y RECURSOS HUMANOS</item>
+        <item>331136- ADMINISTRACION Y SISTEMAS</item>
+        <item>331146- CIENCIAS ADMINISTRATIVAS  </item>
+        <item>331156- CIENCIAS EMPRESARIALES</item>
+        <item>331166- INGENIERIA ADMINISTRATIVA</item>
+        <item>331176- INGENIERIA COMERCIAL</item>
+        <item>331186- INGENIERIA COMERCIAL Y FINANCIERA</item>
+        <item>331195- INGENIERIA DE NEGOCIOS</item>
+        <item>331206- INGENIERIA EMPRESARIAL</item>
+        <item>331216- INGENIERIA EMPRESARIAL Y DE SISTEMAS</item>
+        <item>331226- INGENIERIA EN GESTION EMPRESARIAL   </item>
+        <item>332016- ADMINISTRACION DE EMPRESAS TURISTICAS</item>
+        <item>332026- ADMINISTRACION DE NEGOCIOS TURISTICOS</item>
+        <item>332036- ADMINISTRACION DE NEGOCIOS TURISTICOS  Y HOTELEROS</item>
+        <item>332046- ADMINISTRACION DE SERVICIOS TURISTICOS    </item>
+        <item>332056- ADMINISTRACION DE TURISMO SOSTENIBLE Y HOTELERIA</item>
+        <item>332066- ADMINISTRACION EN TURISMO</item>
+        <item>332076- ADMINISTRACION EN TURISMO  Y HOTELERIA    </item>
+        <item>332086- ADMINISTRACION EN TURISMO  Y NEGOCIOS</item>
+        <item>332096- ADMINISTRACION EN TURISMO, HOTELERIA Y GASTRONOMIA</item>
+        <item>332106- ADMINISTRACION HOTELERA</item>
+        <item>332116- ADMINISTRACION HOTELERA Y DE SERVICIOS</item>
+        <item>332126- ADMINISTRACION HOTELERA Y ECOTURISMO</item>
+        <item>332136- ADMINISTRACION TURISTICA</item>
+        <item>332146- ADMINISTRACION TURISTICA HOTELERA     </item>
+        <item>332156- ADMINISTRACION TURISTICA, HOTELERA Y GASTRONOMICA   </item>
+        <item>332166- ARTE CULINARIO</item>
+        <item>332176- ECOTURISMO</item>
+        <item>332186- GASTRONOMIA</item>
+        <item>332196- GASTRONOMIA Y ARTE CULINARIO</item>
+        <item>332206- GASTRONOMIA Y GESTION DE RESTAURANTES</item>
+        <item>332216- GASTRONOMIA, ARTE CULINARIO Y GESTION DE RESTAURANTES</item>
+        <item>332226- GERENCIA  EN HOTELERIA, TURISMO  Y GASTRONOMIA </item>
+        <item>332236- GERENCIA  EN SERVICIOS  TURISTICOS  Y HOTELEROS</item>
+        <item>332246- GESTION EN HOTELERIA Y TURISMO</item>
+        <item>332256- HOTELERIA Y ADMINISTRACION</item>
+        <item>332266- INGENIERIA ECOTURISMO</item>
+        <item>332276- TURISMO</item>
+        <item>332286- TURISMO - CONDUCCION  DE GRUPOS</item>
+        <item>332296- TURISMO - GESTION TURISTICA  Y MEDIO AMBIENTE</item>
+        <item>332306- TURISMO SOSTENIBLE</item>
+        <item>332316- TURISMO SOSTENIBLE Y HOTELERIA</item>
+        <item>332326- TURISMO  Y ADMINISTRACION</item>
+        <item>332336- TURISMO  Y HOTELERIA</item>
+        <item>332346- TURISMO  Y NEGOCIOS</item>
+        <item>332356- TURISMO, HOTELERIA Y GASTRONOMIA</item>
+        <item>332366- TURISMO, HOTELERIA Y GESTION CULTURAL</item>
+        <item>333016- ADMINISTRACION Y MARKETING</item>
+        <item>333026- ADMINISTRACION Y MARKETING ESTRATEGICO</item>
+        <item>333036- MARKETING</item>
+        <item>333046- MARKETING EMPRESARIAL</item>
+        <item>333056- MARKETING Y ADMINISTRACION</item>
+        <item>333066- MARKETING Y DIRECCION DE EMPRESAS</item>
+        <item>333076- MARKETING Y GESTION COMERCIAL</item>
+        <item>333086- MARKETING Y NEGOCIOS GLOBALES</item>
+        <item>333096- MARKETING Y NEGOCIOS INTERNACIONALES</item>
+        <item>333106- MARKETING Y PUBLICIDAD</item>
+        <item>334016- ADMINISTRACION Y AGRONEGOCIOS</item>
+        <item>334026- INGENIERIA DE NEGOCIOS AGROFORESTALES </item>
+        <item>334036- INGENIERIA EN AGRONEGOCIOS</item>
+        <item>335016- ADMINISTRACION DE NEGOCIOS GLOBALES</item>
+        <item>335026- ADMINISTRACION DE NEGOCIOS INTERNACIONALES    </item>
+        <item>335036- COMERCIO EXTERIOR</item>
+        <item>335046- COMERCIO EXTERIOR  Y MARKETING INTERNACIONAL</item>
+        <item>335056- COMERCIO Y NEGOCIOS INTERNACIONALES</item>
+        <item>335066- GESTION</item>
+        <item>335076- GESTION DE PUERTOS Y ADUANAS</item>
+        <item>335086- INGENIERIA COMERCIAL Y NEGOCIOS INTERNACIONALES</item>
+        <item>335096- LOGISTICA INTERNACIONAL</item>
+        <item>335106- NEGOCIOS GLOBALES</item>
+        <item>335116- NEGOCIOS INTERNACIONALES    </item>
+        <item>335126- NEGOCIOS INTERNACIONALES Y TURISMO</item>
+        <item>335136- RELACIONES INTERNACIONALES</item>
+        <item>335146- RELACIONES INTERNACIONALES Y NEGOCIACIONES</item>
+        <item>336016- ADMINISTRACION PUBLICA</item>
+        <item>336026- ADMINISTRACION PUBLICA Y GESTION SOCIAL</item>
+        <item>336036- GESTION DE NEGOCIOS</item>
+        <item>336046- GESTION PUBLICA Y DESARROLLO SOCIAL</item>
+        <item>339016- ADMINISTRACION Y GESTION DEPORTIVA</item>
+        <item>339026- ADMINISTRACION Y NEGOCIOS DEL DEPORTE</item>
+        <item>339036- COOPERATIVISMO</item>
+        <item>339046- GESTION DE NEGOCIOS</item>
+        <item>339056- GESTION DE RECURSOS HUMANOS</item>
+        <item>339066- GESTION Y ALTA DIRECCION</item>
+        <item>339076- RELACIONES INDUSTRIALES</item>
+        <item>339996- OTRAS CARRERAS  DE ADMINISTRACION</item>
+        <item>341016- CIENCIAS ECONOMICAS</item>
+        <item>341026- ECONOMIA</item>
+        <item>341036- ECONOMIA AGRARIA</item>
+        <item>341046- ECONOMIA GERENCIAL</item>
+        <item>341056- ECONOMIA INTERNACIONAL</item>
+        <item>341066- ECONOMIA PUBLICA</item>
+        <item>341076- ECONOMIA Y FINANZAS</item>
+        <item>341086- ECONOMIA Y GESTION AMBIENTAL</item>
+        <item>341096- ECONOMIA Y MICROFINANZAS</item>
+        <item>341106- ECONOMIA Y NEGOCIOS INTERNACIONALES</item>
+        <item>341116- INGENIERIA ECONOMICA</item>
+        <item>341126- INGENIERIA ECONOMICA Y DE NEGOCIOS</item>
+        <item>342016- AUDITORIA EMPRESARIAL Y DEL SECTOR PUBLICO</item>
+        <item>342026- BANCA Y SEGUROS</item>
+        <item>342036- CIENCIAS CONTABLES</item>
+        <item>342046- CIENCIAS CONTABLES Y FINANCIERAS</item>
+        <item>342056- CONTABILIDAD</item>
+        <item>342066- CONTABILIDAD  ADMINISTRATIVA  Y AUDITORIA</item>
+        <item>342076- CONTABILIDAD  AUDITORIA Y FINANZAS </item>
+        <item>342086- CONTABILIDAD  Y ADMINISTRACION</item>
+        <item>342096- CONTABILIDAD  Y AUDITORIA</item>
+        <item>342106- CONTABILIDAD  Y FINANZAS</item>
+        <item>342116- CONTABILIDAD  Y TRIBUTACION</item>
+        <item>342126- FINANZAS</item>
+        <item>342136- GESTION TRIBUTARIA</item>
+        <item>351016- DERECHO</item>
+        <item>351026- DERECHO CORPORATIVO</item>
+        <item>351036- DERECHO EMPRESARIAL</item>
+        <item>351046- DERECHO DEL MAR Y SERVICIOS  ADUANEROS</item>
+        <item>351056- DERECHO Y CIENCIAS POLITICAS   </item>
+        <item>352016- CIENCIA POLITICA</item>
+        <item>352026- CIENCIA POLITICA Y GOBIERNO</item>
+        <item>411016- BIOLOGIA</item>
+        <item>411026- BIOLOGIA EN ACUICULTURA</item>
+        <item>411036- BIOLOGIA MARINA Y ECONEGOCIOS</item>
+        <item>411046- BIOLOGIA Y MICROBIOLOGIA</item>
+        <item>411056- BIOTECNOLOGIA</item>
+        <item>411066- BOTANICA</item>
+        <item>411076- CIENCIAS BIOLOGICAS</item>
+        <item>411086- GENETICA  Y BIOTECNOLOGIA</item>
+        <item>411096- INGENIERIA BIOTECNOLOGICA</item>
+        <item>411106- MICROBIOLOGIA</item>
+        <item>411116- MICROBIOLOGIA Y PARASITOLOGIA</item>
+        <item>412016- INGENIERIA ZOOTECNIA    </item>
+        <item>412026- ZOOTECNIA</item>
+        <item>421016- CIENCIAS FISICO MATEMATICA    </item>
+        <item>421026- FISICA</item>
+        <item>421036- FISICA APLICADA</item>
+        <item>421046- INGENIERIA FISICA</item>
+        <item>422016- INGENIERIA DE PROCESOS QUIMICOS Y METALURGICOS</item>
+        <item>422026- INGENIERIA QUIMICA</item>
+        <item>422036- QUIMICA</item>
+        <item>423016- GEOLOGIA</item>
+        <item>423026- GEOLOGIA  GEOTECNIA</item>
+        <item>423036- INGENIERIA DE GEOLOGIA  - GEOTECNIA</item>
+        <item>423046- INGENIERIA GEOFISICA</item>
+        <item>423056- INGENIERIA GEOLOGICA</item>
+        <item>431016- MATEMATICA    </item>
+        <item>431026- MATEMATICA APLICADA</item>
+        <item>431036- MATEMATICA E INFORMATICA</item>
+        <item>432016- ESTADISTICA</item>
+        <item>432026- ESTADISTICA E INFORMATICA</item>
+        <item>432036- INGENIERIA ESTADISTICA</item>
+        <item>432046- INGENIERIA ESTADISTICA E INFORMATICA</item>
+        <item>433016- INVESTIGACION OPERATIVA</item>
+        <item>441016- CIENCIAS DE LA COMPUTACION</item>
+        <item>441026- CIENCIAS DE LA INFORMACION</item>
+        <item>441036- COMPUTACION  CIENTIFICA</item>
+        <item>441046- COMPUTACION  E INFORMATICA</item>
+        <item>441056- INFORMATICA</item>
+        <item>511016- INGENIERIA DE SEGURIDAD Y AUDITORIA INFORMATICA</item>
+        <item>511026- INGENIERIA DE SISTEMAS</item>
+        <item>511036- INGENIERIA DE SISTEMAS DE INFORMACION</item>
+        <item>511046- INGENIERIA DE SISTEMAS DE INFORMACION Y GESTION</item>
+        <item>511056- INGENIERIA DE SISTEMAS E INFORMATICA   </item>
+        <item>511066- INGENIERIA DE SISTEMAS EMPRESARIALES</item>
+        <item>511076- INGENIERIA DE SISTEMAS Y COMPUTACION   </item>
+        <item>511086- INGENIERIA DE SISTEMAS Y GESTION DE TECNOLOGIAS DE LA INFORMACION</item>
+        <item>511096- INGENIERIA DE SISTEMAS Y SEGURIDAD INFORMATICA</item>
+        <item>511106- INGENIERIA DE SISTEMAS Y TELEMATICA</item>
+        <item>511116- INGENIERIA DE SISTEMAS Y TECNOLOGICAS</item>
+        <item>511126- INGENIERIA DE SOFTWARE</item>
+        <item>511136- INGENIERIA DE TECNOLOGIAS DE LA INFORMACION Y SISTEMAS</item>
+        <item>511146- INGENIERIA EN TECNOLOGIAS Y SISTEMAS DE INFORMACION</item>
+        <item>511156- INGENIERIA INFORMATICA</item>
+        <item>511166- INGENIERIA INFORMATICA Y ESTADISTICA  </item>
+        <item>512016- INGENIERIA DE REDES Y COMUNICACIONES</item>
+        <item>512026- INGENIERIA DE TECNOLOGIAS DE INFORMACION Y COMUNICACION</item>
+        <item>512036- INGENIERIA DE TECNOLOGIAS DE INFORMACION Y SISTEMAS</item>
+        <item>512046- INGENIERIA DE TELECOMUNICACIONES     </item>
+        <item>512056- INGENIERIA EN TELECOMUNICACIONES Y REDES     </item>
+        <item>512066- INGENIERIA EN TELECOMUNICACIONES Y TELEMATICA     </item>
+        <item>512076- INGENIERIA EN TELEINFORMATICA     </item>
+        <item>521016- INGENIERIA AMBIENTAL Y DE PREVENCION DE RIESGOS</item>
+        <item>521026- INGENIERIA DE HIGIENE Y SEGURIDAD INDUSTRIAL</item>
+        <item>521036- INGENIERIA DE LA PRODUCCION Y ADMINISTRACION</item>
+        <item>521046- INGENIERIA INDUSTRIAL</item>
+        <item>521056- INGENIERIA INDUSTRIAL Y COMERCIAL</item>
+        <item>521066- INGENIERIA INDUSTRIAL Y DE GESTION EMPRESARIAL</item>
+        <item>521076- INGENIERIA INDUSTRIAL Y SISTEMAS</item>
+        <item>522016- INDUSTRIAS ALIMENTARIAS</item>
+        <item>522026- INGENIERIA ALIMENTARIA    </item>
+        <item>522036- INGENIERIA DE INDUSTRIAS ALIMENTARIAS   </item>
+        <item>523016- AGROINDUSTRIAS</item>
+        <item>523026- INGENIERIA AGROINDUSTRIAL</item>
+        <item>523036- INGENIERIA AGROINDUSTRIAL Y AGRONEGOCIOS</item>
+        <item>523046- INGENIERIA AGROINDUSTRIAL Y COMERCIO EXTERIOR</item>
+        <item>523056- INGENIERIA AGROINDUSTRIAL Y DE BIOCOMERCIO</item>
+        <item>524016- INGENIERIA DE SISTEMAS DE ENERGIA   </item>
+        <item>524026- INGENIERIA ELECTRICA</item>
+        <item>524036- INGENIERIA ELECTRICA Y DE POTENCIA</item>
+        <item>524046- INGENIERIA ELECTRICA Y ELECTRONICA</item>
+        <item>524056- INGENIERIA EN ENERGIA</item>
+        <item>524066- INGENIERIA EN ENERGIA RENOVABLE Y GESTION AMBIENTAL</item>
+        <item>524076- INGENIERIA ENERGETICA</item>
+        <item>525016- INGENIERIA ELECTRONICA</item>
+        <item>525026- INGENIERIA ELECTRONICA - BIOMEDICA</item>
+        <item>525036- INGENIERIA ELECTRONICA - MECATRONICA</item>
+        <item>525046- INGENIERIA ELECTRONICA - TELECOMUNICACIONES</item>
+        <item>525056- INGENIERIA ELECTRONICA Y AUTOMATIZACION   </item>
+        <item>525066- INGENIERIA ELECTRONICA Y TELECOMUNICACIONES</item>
+        <item>526016- INGENIERIA DE MATERIALES</item>
+        <item>526026- INGENIERIA ELECTROMECANICA</item>
+        <item>526036- INGENIERIA MECANICA</item>
+        <item>526046- INGENIERIA MECANICA DE FLUIDOS</item>
+        <item>526056- INGENIERIA MECANICA ELECTRICA </item>
+        <item>526066- INGENIERIA MECANICA ELECTRICA Y MECATRONICA</item>
+        <item>526076- INGENIERIA MECATRONICA</item>
+        <item>527016- INGENIERIA DE MINAS</item>
+        <item>527026- INGENIERIA DE MINAS Y MAQUINARIA PESADA</item>
+        <item>527036- INGENIERIA DE PETROLEO</item>
+        <item>527046- INGENIERIA DE PETROLEO Y GAS NATURAL</item>
+        <item>527056- INGENIERIA METALURGICA    </item>
+        <item>527066- INGENIERIA METALURGICA Y DE MATERIALES   </item>
+        <item>527076- INGENIERIA PETROQUIMICA</item>
+        <item>528016- INGENIERIA TEXTIL</item>
+        <item>528026- INGENIERIA TEXTIL Y CONFECCIONES     </item>
+        <item>531016- INGENIERIA CIVIL</item>
+        <item>531026- INGENIERIA CIVIL Y AMBIENTAL</item>
+        <item>531036- INGENIERIA CIVIL Y DESARROLLO INMOBILIARIO</item>
+        <item>531046- INGENIERIA CIVIL Y DISEÑO ARQUITECTONICO</item>
+        <item>531056- INGENIERIA TOPOGRAFICA Y AGRIMENSURA</item>
+        <item>532016- INGENIERIA SANITARIA</item>
+        <item>532026- INGENIERIA SANITARIA Y AMBIENTAL</item>
+        <item>533016- ARQUEOARQUITECTURA  Y GESTION TURISTICA</item>
+        <item>533026- ARQUITECTURA</item>
+        <item>533036- ARQUITECTURA DE INTERIORES</item>
+        <item>533046- ARQUITECTURA DEL PAISAJE</item>
+        <item>533056- ARQUITECTURA Y DISEÑO DE INTERIORES</item>
+        <item>533066- ARQUITECTURA Y GESTION DE PROYECTOS</item>
+        <item>533076- ARQUITECTURA Y GESTION DE TERRITORIOS</item>
+        <item>533086- ARQUITECTURA Y TERRITORIO</item>
+        <item>533096- ARQUITECTURA Y URBANISMO</item>
+        <item>533106- ARQUITECTURA Y URBANISMO AMBIENTAL</item>
+        <item>533116- ARQUITECTURA, URBANISMO Y ARTES</item>
+        <item>533126- ARQUITECTURA, URBANISMO Y TERRITORIO</item>
+        <item>533136- URBANISMO</item>
+        <item>591016- INGENIERIA DE LA PRODUCCION E INDUSTRIALIZACION DE RECURSOS HIDROBIOLOGICOS</item>
+        <item>591026- INGENIERIA PESQUERA</item>
+        <item>591036- PESQUERIA</item>
+        <item>592016- CIENCIAS AERONAUTICAS</item>
+        <item>592026- CIENCIAS NAVALES</item>
+        <item>592036- INGENIERIA AERONAUTICA</item>
+        <item>592046- INGENIERIA DE NAVEGACION  Y MARINA MERCANTE</item>
+        <item>592056- INGENIERIA DEL TRANSPORTE MARITIMO Y GESTION LOGISTICA PORTUARIA</item>
+        <item>592066- INGENIERIA HIDRAULICA</item>
+        <item>592076- INGENIERIA MARITIMA</item>
+        <item>592086- INGENIERIA NAVAL</item>
+        <item>593016- GEOGRAFIA</item>
+        <item>593026- GEOGRAFIA  Y MEDIO AMBIENTE</item>
+        <item>593036- INGENIERIA GEOGRAFICA</item>
+        <item>593046- INGENIERIA GEOGRAFICA Y ECOLOGICA</item>
+        <item>594016- CIENCIA TECNOLOGIA Y AMBIENTE</item>
+        <item>594026- DESARROLLO AMBIENTAL</item>
+        <item>594036- ECOLOGIA</item>
+        <item>594046- GESTION AMBIENTAL EMPRESARIAL</item>
+        <item>594056- INGENIERIA AMBIENTAL</item>
+        <item>594066- INGENIERIA AMBIENTAL Y RECURSOS NATURALES</item>
+        <item>594076- INGENIERIA DE RECURSOS NATURALES Y ENERGIAS RENOVABLES</item>
+        <item>594086- INGENIERIA DE MEDIO AMBIENTE   </item>
+        <item>594096- INGENIERIA EN ECOLOGIA DE BOSQUES TROPICALES</item>
+        <item>594106- INGENIERIA EN ECOTURISMO</item>
+        <item>594116- INGENIERIA EN GESTION AMBIENTAL    </item>
+        <item>594126- METEOROLOGIA</item>
+        <item>599016- INGENIERIA AUTOMOTRIZ</item>
+        <item>599026- INGENIERIA BIOMEDICA</item>
+        <item>599036- INGENIERIA DE DISEÑO GRAFICO</item>
+        <item>599046- INGENIERIA DE TRANSPORTES</item>
+        <item>611016- AGRONOMIA</item>
+        <item>611026- AGRONOMIA TROPICAL</item>
+        <item>611036- CIENCIAS AGRARIAS</item>
+        <item>611046- CIENCIAS PECUARIAS</item>
+        <item>611056- CONSERVACION  DE SUELOS Y AGUA</item>
+        <item>611066- INGENIERIA AGRARIA</item>
+        <item>611076- INGENIERIA AGRICOLA</item>
+        <item>611086- INGENIERIA AGRICOLA Y FORESTAL</item>
+        <item>611096- INGENIERIA AGROECOLOGICA Y DESARROLLO RURAL</item>
+        <item>611106- INGENIERIA AGRONOMA</item>
+        <item>611116- INGENIERIA AGRONOMICA</item>
+        <item>611126- INGENIERIA AGRONOMICA TROPICAL</item>
+        <item>611136- INGENIERIA AGROPECUARIA</item>
+        <item>611146- INGENIERIA DE NEGOCIOS AGRONOMICOS Y FORESTALES</item>
+        <item>611156- INGENIERIA EN CIENCIAS AGRARIAS</item>
+        <item>612016- CIENCIAS FORESTALES</item>
+        <item>612026- CIENCIAS FORESTALES Y DEL AMBIENTE</item>
+        <item>612036- INGENIERIA AGROFORESTAL</item>
+        <item>612046- INGENIERIA AGROFORESTAL ACUICOLA</item>
+        <item>612056- INGENIERIA FORESTAL</item>
+        <item>612066- INGENIERIA FORESTAL Y DEL MEDIO AMBIENTE    </item>
+        <item>613016- ACUICULTURA</item>
+        <item>613026- INGENIERIA EN ACUICULTURA</item>
+        <item>621016- MEDICINA VETERINARIA</item>
+        <item>621026- VETERINARIA Y ZOOTECNIA</item>
+        <item>621036- MEDICINA VETERINARIA Y ZOOTECNIA</item>
+        <item>711016- MEDICINA</item>
+        <item>711026- MEDICINA HUMANA</item>
+        <item>712016- BROMATOLOGIA Y NUTRICION</item>
+        <item>712026- CIENCIAS DE LA NUTRICION</item>
+        <item>712036- CIENCIAS DE LOS ALIMENTOS    </item>
+        <item>712046- NUTRICION</item>
+        <item>712056- NUTRICION HUMANA</item>
+        <item>712066- NUTRICION, SALUD Y TECNICAS ALIMENTARIAS</item>
+        <item>712076- NUTRICION Y DIETETICA</item>
+        <item>713016- ESTOMATOLOGIA</item>
+        <item>713026- ODONTOLOGIA</item>
+        <item>714016- ENFERMERIA</item>
+        <item>715016- LABORATORIO CLINICO</item>
+        <item>715026- LABORATORIO Y ANATOMIA PATOLOGICA</item>
+        <item>715036- OPTOMETRIA</item>
+        <item>715046- RADIOLOGIA</item>
+        <item>715056- TECNOLOGIA MEDICA</item>
+        <item>715066- TERAPIA DE LENGUAJE</item>
+        <item>715076- TERAPIA FISICA</item>
+        <item>715086- TERAPIA FISICA Y REHABILITACION</item>
+        <item>715096- TERAPIA OCUPACIONAL</item>
+        <item>716016- CIENCIAS FARMACEUTICAS Y BIOQUIMICA</item>
+        <item>716026- FARMACIA Y BIOQUIMICA</item>
+        <item>716036- TOXICOLOGIA</item>
+        <item>717016- OBSTETRICIA</item>
+        <item>717026- OBSTETRICIA Y PUERICULTURA</item>
+        <item>719016- CIENCIAS DEL DEPORTE</item>
+        <item>11016- CIENCIAS DE LA ADMINISTRACION AEROESPACIAL (AVIACION)</item>
+        <item>11026- CIENCIAS MILITARES (EJERCITO)</item>
+        <item>11036- CIENCIAS ADMINISTRATIVAS MARITIMAS (MARINA)</item>
+        <item>21016- ADMINISTRACION Y CIENCIAS POLICIALES (OFICIALES)</item>
+        <item>99999- OTRA CARRERA UNIVERSITARIA</item>
     </string-array>
 </resources>
 

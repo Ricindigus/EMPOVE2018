@@ -249,7 +249,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="2"
-                                        android:text="HORA FINAL"
+                                        android:text="FECHA FINAL"
                                         android:textStyle="bold"
                                         android:padding="5dp"
                                         android:textColor="@color/greyBluePrimary"

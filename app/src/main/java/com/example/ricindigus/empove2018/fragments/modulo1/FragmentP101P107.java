@@ -283,7 +283,7 @@ public class FragmentP101P107 extends FragmentPagina {
         if(Integer.parseInt(c1_p105)==0){mostrarMensaje("PREGUNTA 105: NO PUEDE SER CERO");return false;}
         if (c1_p106.trim().equals("")){mostrarMensaje("PREGUNTA 106: FALTA COMPLETAR LA PREGUNTA");return false;}
         if(Integer.parseInt(c1_p105)<Integer.parseInt(c1_p106)){
-            mostrarMensaje("PREGUNTA 106: DEBE SER MENOR QUE LA PREGUNTA 105");return false;
+            mostrarMensaje("PREGUNTA 106: DEBE SER MENOR O IGUAL QUE LA PREGUNTA 105");return false;
         }
         if (c1_p107.trim().equals("")){mostrarMensaje("PREGUNTA 107: FALTA COMPLETAR LA PREGUNTA");return false;}
         if(Integer.parseInt(c1_p107)==0){mostrarMensaje("PREGUNTA 107: NO PUEDE SER CERO");return false;}

@@ -45,7 +45,7 @@
             android:layout_weight="2"
             android:textColor="@color/colorPrimary"/>
         <TextView
-            android:id="@+id/marco_item_txtConglomerado"
+            android:id="@+id/marco_item_txtZona"
             android:layout_width="0dp"
             android:gravity="center"
             android:textSize="12sp"

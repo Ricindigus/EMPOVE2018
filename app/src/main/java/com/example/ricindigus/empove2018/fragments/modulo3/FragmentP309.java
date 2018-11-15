@@ -168,14 +168,14 @@ public class FragmentP309 extends FragmentPagina {
                         @Override
                         public boolean onMenuItemClick(MenuItem item) {
                             switch(item.getItemId()){
-                                case R.id.opcion_editar:
-                                    Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
-                                    intent.putExtra("idEncuestado",idEncuestado);
-                                    intent.putExtra("idVivienda",idVivienda);
-                                    intent.putExtra("numero",m3Pregunta309s.get(position).getNumero());
-                                    intent.putExtra("idRuta",m3Pregunta309s.get(position).get_id());
-                                    startActivity(intent);
-                                    break;
+//                                case R.id.opcion_editar:
+//                                    Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
+//                                    intent.putExtra("idEncuestado",idEncuestado);
+//                                    intent.putExtra("idVivienda",idVivienda);
+//                                    intent.putExtra("numero",m3Pregunta309s.get(position).getNumero());
+//                                    intent.putExtra("idRuta",m3Pregunta309s.get(position).get_id());
+//                                    startActivity(intent);
+//                                    break;
                                 case R.id.opcion_eliminar:
                                     eliminarRuta(position);
                                     break;
@@ -184,27 +184,28 @@ public class FragmentP309 extends FragmentPagina {
                         }
                     });
                     popupMenu.show();
-                }else{
-                    popupMenu.getMenuInflater().inflate(R.menu.menu_rutas_2,popupMenu.getMenu());
-                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                        @Override
-                        public boolean onMenuItemClick(MenuItem item) {
-                            switch(item.getItemId()){
-                                case R.id.opcion_editar:
-                                    Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
-                                    intent.putExtra("idEncuestado",idEncuestado);
-                                    intent.putExtra("idVivienda",idVivienda);
-                                    intent.putExtra("numero",m3Pregunta309s.get(position).getNumero());
-                                    intent.putExtra("idRuta",m3Pregunta309s.get(position).get_id());
-                                    startActivity(intent);
-                                    break;
-                            }
-
-                            return true;
-                        }
-                    });
-                    popupMenu.show();
                 }
+//                else{
+//                    popupMenu.getMenuInflater().inflate(R.menu.menu_rutas_2,popupMenu.getMenu());
+//                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//                        @Override
+//                        public boolean onMenuItemClick(MenuItem item) {
+//                            switch(item.getItemId()){
+//                                case R.id.opcion_editar:
+//                                    Intent intent =  new Intent(contexto, AgregarRutaActivity.class);
+//                                    intent.putExtra("idEncuestado",idEncuestado);
+//                                    intent.putExtra("idVivienda",idVivienda);
+//                                    intent.putExtra("numero",m3Pregunta309s.get(position).getNumero());
+//                                    intent.putExtra("idRuta",m3Pregunta309s.get(position).get_id());
+//                                    startActivity(intent);
+//                                    break;
+//                            }
+//
+//                            return true;
+//                        }
+//                    });
+//                    popupMenu.show();
+//                }
             }
         });
         recyclerView.setAdapter(m3Pregunta309Adapter);

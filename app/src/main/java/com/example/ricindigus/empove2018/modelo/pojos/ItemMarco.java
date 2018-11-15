@@ -5,7 +5,7 @@ public class ItemMarco {
     private String anio;
     private String mes;
     private String periodo;
-    private String conglomerado;
+    private String zona;
     private String norden;
 
     public ItemMarco() {
@@ -44,12 +44,12 @@ public class ItemMarco {
         this.periodo = periodo;
     }
 
-    public String getConglomerado() {
-        return conglomerado;
+    public String getZona() {
+        return zona;
     }
 
-    public void setConglomerado(String conglomerado) {
-        this.conglomerado = conglomerado;
+    public void setZona(String zona) {
+        this.zona = zona;
     }
 
     public String getNorden() {

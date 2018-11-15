@@ -27,6 +27,8 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
+import java.util.ArrayList;
+
 public class AgregarRutaActivity extends AppCompatActivity {
 
     TextInputEditText edtCiudad;
@@ -96,21 +98,19 @@ public class AgregarRutaActivity extends AppCompatActivity {
     public void cargarDatos(){
         Data data = new Data(this);
         data.open();
-        if(data.existeElemento(getNombreTabla(),_id)){
-            M3Pregunta309 m3Pregunta309 = data.getM3Pregunta309(_id);
-            spPais.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_p()));
-            edtCiudad.setText(m3Pregunta309.getC3_p309_c());
-            spModo.setSelection(data.getNumeroRutaPais(m3Pregunta309.getC3_p309_mod()));
-            spMes.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_m_cod()));
-            spAnio.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_a_cod()));
-        }
+//        if(data.existeElemento(getNombreTabla(),_id)){
+//            M3Pregunta309 m3Pregunta309 = data.getM3Pregunta309(_id);
+//            spPais.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_p()));
+//            edtCiudad.setText(m3Pregunta309.getC3_p309_c());
+//            spModo.setSelection(data.getNumeroRutaPais(m3Pregunta309.getC3_p309_mod()));
+//            spMes.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_m_cod()));
+//            spAnio.setSelection(Integer.parseInt(m3Pregunta309.getC3_p309_a_cod()));
+//        }
         Modulo3 modulo3 = data.getModulo3(idEncuestado);
         c3_p307_d  = modulo3.getC3_p307_d();
         c3_p307_m  = modulo3.getC3_p307_m();
         c3_p307_a  = modulo3.getC3_p307_a();
-        Log.e("c3_p307_d", "cargarDatos: "+c3_p307_d);
-        Log.e("c3_p307_m", "cargarDatos: "+c3_p307_m);
-        Log.e("c3_p307_a", "cargarDatos: "+c3_p307_a);
+        data.close();
     }
 
     public void llenarVariables(){
@@ -153,16 +153,31 @@ public class AgregarRutaActivity extends AppCompatActivity {
 
     public boolean validarDatos(){
         llenarVariables();
-        if(pais == 0){mostrarMensaje("DEBE INDICAR EL PAIS");return false;}
-        if(ciudad.trim().equals("")){mostrarMensaje("DEBE INDICAR EL CIUDAD");return false;}
-        if(modo == 0){mostrarMensaje("DEBE SELECCIONAR EL MODO DE TRANSPORTE");return false;}
-        if(mes == 0){mostrarMensaje("DEBE INDICAR EL MES");return false;}
-        if(anio == 0){mostrarMensaje("DEBE INDICAR EL AÑO");return false;}
+        if(pais == 0){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL PAIS");return false;}
+        if(ciudad.trim().equals("")){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL CIUDAD");return false;}
+        if(modo == 0){mostrarMensaje("AGREGAR RUTA: DEBE SELECCIONAR EL MODO DE TRANSPORTE");return false;}
+        if(mes == 0){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL MES");return false;}
+        if(anio == 0){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL AÑO");return false;}
         if(Integer.parseInt(c3_p307_a)>Integer.parseInt(c3_p309_a)){
-            mostrarMensaje("PREGUNTA 309: AÑO DEBE SER MAYOR O IGUAL QUE EL AÑO DE INICIO DE VIAJE("+c3_p307_a+")");return false;
+            mostrarMensaje("AGREGAR RUTA - FECHA: AÑO DEBE SER MAYOR O IGUAL QUE EL AÑO DE INICIO DE VIAJE("+c3_p307_a+")");return false;
         }else if(Integer.parseInt(c3_p307_a)==Integer.parseInt(c3_p309_a)){
             if(Integer.parseInt(c3_p307_m)>mes){
-                mostrarMensaje("PREGUNTA 309: MES DEBE SER MAYOR O IGUAL QUE EL MES DE NACIMENTO("+c3_p307_m+")");return false;
+                mostrarMensaje("AGREGAR RUTA - FECHA: MES DEBE SER MAYOR O IGUAL QUE EL MES DE INICIO DE VIAJE("+c3_p307_m+")");return false;
+            }else{
+                if (Integer.parseInt(numero) > 1){
+                    int idAnterior = Integer.parseInt(numero)-2;
+                    Data data = new Data(this);
+                    data.open();
+                    ArrayList<M3Pregunta309> m3Pregunta309s = data.getAllM3Pregunta309(idEncuestado);
+                    data.close();
+                    int mesesActual = Integer.parseInt(getResources().getStringArray(R.array.numeros_meses)[mes])
+                            + Integer.parseInt(getResources().getStringArray(R.array.numeros_anios)[anio]) * 12;
+                    int mesesAnterior = Integer.parseInt(m3Pregunta309s.get(idAnterior).getC3_p309_m())
+                            + Integer.parseInt(m3Pregunta309s.get(idAnterior).getC3_p309_a()) * 12;
+                    if (mesesActual < mesesAnterior){
+                        mostrarMensaje("AGREGAR RUTA: LA FECHA DEBE SER MAYOR AL DE LA RUTAS ANTERIORMENTE REGISTRADAS");return false;
+                    }
+                }
             }
         }
         return true;

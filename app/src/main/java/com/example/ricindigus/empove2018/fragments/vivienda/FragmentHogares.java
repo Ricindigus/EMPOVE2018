@@ -121,7 +121,7 @@ public class FragmentHogares extends FragmentPagina {
                                     editarHogar(hogares.get(position));
                                     break;
                                 case R.id.opcion_hogar_eliminar:
-                                    eliminarhogar(position);
+                                    deseaEliminarDatos(position);
                                     break;
                             }
                             return true;
@@ -290,7 +290,24 @@ public class FragmentHogares extends FragmentPagina {
     public void eliminarhogar(int position){
         Data data = new Data(context);
         data.open();
-        data.eliminarDato(getNombreTabla(),hogares.get(position).get_id());
+        String idDelHogar = hogares.get(position).get_id();
+        ArrayList<Residente> residentes = data.getAllResidentesHogar(idDelHogar);
+        for (Residente residente: residentes){
+            String idDelEncuestado = residente.get_id();
+            data.eliminarDato(SQLConstantes.tablaresidentes,idDelEncuestado);
+            data.eliminarDato(SQLConstantes.tablamodulo3,idDelEncuestado);
+            data.eliminarDatos(SQLConstantes.tablam3p309rutas,SQLConstantes.modulo3_p309_idEncuestado,idDelEncuestado);
+            data.eliminarDatos(SQLConstantes.tablam3p318personas,SQLConstantes.modulo3_p318_idEncuestado,idDelEncuestado);
+            data.eliminarDato(SQLConstantes.tablamodulo4,idDelEncuestado);
+            data.eliminarDato(SQLConstantes.tablamodulo5,idDelEncuestado);
+            data.eliminarDato(SQLConstantes.tablamodulo6,idDelEncuestado);
+            data.eliminarDato(SQLConstantes.tablamodulo7,idDelEncuestado);
+            data.eliminarDato(SQLConstantes.tablamodulo8,idDelEncuestado);
+        }
+        data.eliminarDato(getNombreTabla(),idDelHogar);
+        data.eliminarDato(SQLConstantes.tablamodulo1h,idDelHogar);
+        data.eliminarDatos(SQLConstantes.tablavisitasencuestador,SQLConstantes.visita_encuestador_id_hogar,idDelHogar);
+        data.eliminarDato(SQLConstantes.tablaresultadoencuestador,idDelHogar);
         inicializarDatos();
         setearAdapter();
         data.close();
@@ -305,6 +322,27 @@ public class FragmentHogares extends FragmentPagina {
         data.actualizarElemento(SQLConstantes.tablacaratula,contentValues,idVivienda);
         data.close();
         numeroHogaresTextView.setText(hogares.size()+"");
+    }
+
+    public void deseaEliminarDatos(final int position){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("¿Está seguro que desea eliminar el hogar?, se perderán todos los datos asociados al hogar y sus residentes")
+                .setTitle("Aviso")
+                .setCancelable(false)
+                .setNegativeButton("No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+                .setPositiveButton("Sí",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                eliminarhogar(position);
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 //    @Override

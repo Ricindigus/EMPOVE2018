@@ -332,7 +332,7 @@ public class Data {
                 itemMarco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
                 itemMarco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
                 itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
-                itemMarco.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
+                itemMarco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
                 itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
                 itemMarcos.add(itemMarco);
             }
@@ -342,23 +342,23 @@ public class Data {
         return itemMarcos;
     }
 
-    public ArrayList<ItemMarco> getListMarcoFiltrado(int anio, int mes, int periodo, int conglomerado){
+    public ArrayList<ItemMarco> getListMarcoFiltrado(int anio, int mes, int periodo, int zona){
         ArrayList<ItemMarco> itemMarcos = new ArrayList<>();
-        String[] whereArgs = new String[]{String.valueOf(anio), String.valueOf(mes),String.valueOf(periodo),String.valueOf(conglomerado)};
+        String[] whereArgs = new String[]{String.valueOf(anio), String.valueOf(mes),String.valueOf(periodo),String.valueOf(zona)};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamarco,
                     null,SQLConstantes.WHERE_CLAUSE_ANIO + " AND " +
                             SQLConstantes.WHERE_CLAUSE_MES + " AND " +
                             SQLConstantes.WHERE_CLAUSE_PERIODO + " AND " +
-                            SQLConstantes.WHERE_CLAUSE_CONGLOMERADO,whereArgs,null,null,null);
+                            SQLConstantes.WHERE_CLAUSE_ZONA,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 ItemMarco itemMarco = new ItemMarco();
                 itemMarco.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
                 itemMarco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
                 itemMarco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
                 itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
-                itemMarco.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
+                itemMarco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
                 itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
                 itemMarcos.add(itemMarco);
             }
@@ -883,6 +883,11 @@ public class Data {
         sqLiteDatabase.delete(tabla,SQLConstantes.WHERE_CLAUSE_ID,whereArgs);
     }
 
+    public void eliminarDatos(String tabla, String idColumna, String valorColumna){
+        String[] whereArgs = new String[]{valorColumna};
+        sqLiteDatabase.delete(tabla,idColumna+"=?",whereArgs);
+    }
+
     /**
      * retornar pojo caratula
      * */
@@ -919,6 +924,9 @@ public class Data {
                 caratula.setKm(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_km)));
                 caratula.setTelefono(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_telefono)));
                 caratula.setT_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_t_hogar)));
+                caratula.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_usuario)));
+                caratula.setObservaciones(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_observaciones)));
+
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -961,6 +969,8 @@ public class Data {
                 caratula.setKm(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_km)));
                 caratula.setTelefono(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_telefono)));
                 caratula.setT_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_t_hogar)));
+                caratula.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_usuario)));
+                caratula.setObservaciones(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_observaciones)));
                 caratulas.add(caratula);
             }
         }finally{

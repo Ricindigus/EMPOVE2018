@@ -3,12 +3,14 @@ package com.example.ricindigus.empove2018.fragments.modulo2;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -88,6 +90,7 @@ public class FragmentP201P206 extends FragmentPagina {
                 intent.putExtra("numero", num + "");
                 intent.putExtra("idHogar", idHogar);
                 intent.putExtra("idVivienda", idVivienda);
+                intent.putExtra("idJefeHogar", residentes.get(0).get_id());
                 startActivity(intent);
             }
         });
@@ -175,9 +178,13 @@ public class FragmentP201P206 extends FragmentPagina {
                                         intent2.putExtra("numero", residentes.get(position).getNumero() + "");
                                         intent2.putExtra("idHogar", idHogar);
                                         intent2.putExtra("idVivienda", idVivienda);
+                                        intent2.putExtra("idJefeHogar", residentes.get(0).get_id());
                                         startActivity(intent2);
                                         break;
                                     case R.id.opcion_eliminar:
+                                        if (position > 0) deseaEliminarDatos(position);
+                                        else
+                                            Toast.makeText(context, "NO PUEDE ELIMINAR AL JEFE DE HOGAR", Toast.LENGTH_SHORT).show();
                                         break;
                                 }
 
@@ -215,6 +222,7 @@ public class FragmentP201P206 extends FragmentPagina {
                                         intent2.putExtra("numero", residentes.get(position).getNumero() + "");
                                         intent2.putExtra("idHogar", idHogar);
                                         intent2.putExtra("idVivienda", idVivienda);
+                                        intent2.putExtra("idJefeHogar", residentes.get(0).get_id());
                                         startActivity(intent2);
                                         break;
                                 }
@@ -227,6 +235,45 @@ public class FragmentP201P206 extends FragmentPagina {
                 }
         });
         recyclerView.setAdapter(residenteAdapter);
+    }
+
+    public void eliminarEncuestado(int position){
+        Data data = new Data(context);
+        data.open();
+        String idDelEncuestado = residentes.get(position).get_id();
+        data.eliminarDato(SQLConstantes.tablaresidentes,idDelEncuestado);
+        data.eliminarDato(SQLConstantes.tablamodulo3,idDelEncuestado);
+        data.eliminarDatos(SQLConstantes.tablam3p309rutas,SQLConstantes.modulo3_p309_idEncuestado,idDelEncuestado);
+        data.eliminarDatos(SQLConstantes.tablam3p318personas,SQLConstantes.modulo3_p318_idEncuestado,idDelEncuestado);
+        data.eliminarDato(SQLConstantes.tablamodulo4,idDelEncuestado);
+        data.eliminarDato(SQLConstantes.tablamodulo5,idDelEncuestado);
+        data.eliminarDato(SQLConstantes.tablamodulo6,idDelEncuestado);
+        data.eliminarDato(SQLConstantes.tablamodulo7,idDelEncuestado);
+        data.eliminarDato(SQLConstantes.tablamodulo8,idDelEncuestado);
+        inicializarDatos();
+        setearAdapter();
+        data.close();
+    }
+
+    public void deseaEliminarDatos(final int position){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("¿Está seguro que desea eliminar el residente?, se perderán todos los datos asociados al encuestado/a")
+                .setTitle("Aviso")
+                .setCancelable(false)
+                .setNegativeButton("No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+                .setPositiveButton("Sí",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                eliminarEncuestado(position);
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override

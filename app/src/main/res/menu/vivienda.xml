@@ -8,4 +8,9 @@
         android:title="Volver al Marco"
         app:showAsAction="always"
         tools:context=".activities.ViviendaActivity"/>
+    <item
+        android:id="@+id/action_registrar_observacion"
+        android:orderInCategory="100"
+        android:title="Registrar Observación"
+        app:showAsAction="never" />
 </menu>

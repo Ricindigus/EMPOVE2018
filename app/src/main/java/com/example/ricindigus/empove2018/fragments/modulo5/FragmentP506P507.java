@@ -166,9 +166,9 @@ public class FragmentP506P507 extends FragmentPagina {
                 data1.open();
                 Ubigeo ubigeo = data1.getUbigeo(autoCompleteTextView.getText().toString());
                 data1.close();
-                txtDepartamento.setText(ubigeo.getNom_departamento());
-                txtProvincia.setText(ubigeo.getNom_provincia());
-                txtDistrito.setText(ubigeo.getNom_distrito());
+                txtDepartamento.setText(ubigeo.getCod_departamento()+"."+ubigeo.getNom_departamento());
+                txtProvincia.setText(ubigeo.getCod_provincia()+"."+ubigeo.getNom_provincia());
+                txtDistrito.setText(ubigeo.getCod_distrito()+"."+ubigeo.getNom_distrito());
                 c5_p507_dep = ubigeo.getCod_departamento();
                 c5_p507_prov = ubigeo.getCod_provincia();
                 c5_p507_dist = ubigeo.getCod_distrito();
@@ -293,7 +293,6 @@ public class FragmentP506P507 extends FragmentPagina {
                     return false;
                 }
             }
-
         }
 
         return true;
@@ -338,7 +337,7 @@ public class FragmentP506P507 extends FragmentPagina {
         }
     }
 
-    private void configurarEditText(final EditText editText, final View view, int tipo,int longitud){
+    private void configurarEditText(final EditText editText, final View layoutView, int tipo,int longitud){
         if (tipo == 1) editText.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(longitud)});
 
         editText.setOnKeyListener(new View.OnKeyListener() {
@@ -346,7 +345,7 @@ public class FragmentP506P507 extends FragmentPagina {
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     ocultarTeclado(editText);
-                    view.requestFocus();
+                    layoutView.requestFocus();
                     return true;
                 }
                 return false;

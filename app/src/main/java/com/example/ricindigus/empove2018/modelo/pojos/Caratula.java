@@ -32,6 +32,8 @@ public class Caratula {
     private String telefono;
     private String t_hogar;
     private String usuario;
+    private String observaciones;
+
 
 
     public Caratula() {
@@ -61,7 +63,9 @@ public class Caratula {
         km="";
         telefono="";
         t_hogar="0";
-        t_hogar="usuario";
+        usuario="";
+        observaciones="";
+
     }
 
     public String getUsuario() {
@@ -280,6 +284,14 @@ public class Caratula {
         this.longitud = longitud;
     }
 
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.caratula_id,_id);
@@ -309,6 +321,8 @@ public class Caratula {
         contentValues.put(SQLConstantes.caratula_telefono,telefono);
         contentValues.put(SQLConstantes.caratula_t_hogar,t_hogar);
         contentValues.put(SQLConstantes.caratula_usuario,usuario);
+        contentValues.put(SQLConstantes.caratula_observaciones,observaciones);
         return contentValues;
     }
+
 }

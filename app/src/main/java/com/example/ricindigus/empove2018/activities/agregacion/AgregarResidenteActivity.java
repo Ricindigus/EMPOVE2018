@@ -51,14 +51,15 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     private String id_hogar;
     private String id_vivienda;
     private String numero;
+    private String idJefeHogar;
     private String id_informante = "";
     private String c2_p202;
     private int c2_p203;
     private int c2_p204;
     private String c2_p205_a;
     private String c2_p205_m;
-
-    private int c2_p206;
+    private String edadJefeHogar;
+    private String c2_p206;
     private int c2_p207;
 
 
@@ -73,6 +74,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         id_hogar = getIntent().getExtras().getString("idHogar");
         id_vivienda = getIntent().getExtras().getString("idVivienda");
         numero = getIntent().getExtras().getString("numero");
+        idJefeHogar = getIntent().getExtras().getString("idJefeHogar");
+
 
         linearLayout202 = (LinearLayout) findViewById(R.id.layout_m2_p202);
         linearLayout203 = (LinearLayout) findViewById(R.id.layout_m2_p203);
@@ -112,7 +115,15 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             public void afterTextChanged(Editable editable) {
                 if (editable.toString().equals("")){
                     c2_p205_m_TextInputET.setEnabled(true);
-                }else c2_p205_m_TextInputET.setEnabled(false);
+                }else{
+                    c2_p205_m_TextInputET.setEnabled(false);
+                    if (Integer.parseInt(editable.toString()) <= 12){
+                        c2_p206_Spinner.setSelection(0);
+                        linearLayout206.setVisibility(View.GONE);
+                    }else{
+                        linearLayout206.setVisibility(View.VISIBLE);
+                    }
+                }
             }
         });
 
@@ -125,7 +136,11 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             public void afterTextChanged(Editable editable) {
                 if (editable.toString().equals("")){
                     c2_p205_a_TextInputET.setEnabled(true);
-                }else c2_p205_a_TextInputET.setEnabled(false);
+                    linearLayout206.setVisibility(View.VISIBLE);
+                }else {
+                    linearLayout206.setVisibility(View.GONE);
+                    c2_p205_a_TextInputET.setEnabled(false);
+                }
             }
         });
 
@@ -167,45 +182,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         }
     }
 
-    public boolean validarDatos(){
-        if(c2_p202.trim().equals("")){mostrarMensaje("PREGUNTA 202: DEBE INDICAR EL NOMBRE"); return false;}
-        if(c2_p203 == 0) {mostrarMensaje("PREGUNTA 203: DEBE INDICAR EL PARENTESCO"); return false;}
-        if(c2_p204 == -1) {mostrarMensaje("PREGUNTA 204: DEBE INDICAR EL SEXO"); return false;}
-        if(c2_p205_a.trim().equals("") && c2_p205_m.trim().equals("")) {mostrarMensaje("PREGUNTA 205: DEBE INDICAR LA EDAD EN AÑOS O MESES"); return false;}
-        if(!c2_p205_a.trim().equals("")) {
-            if(Integer.parseInt(c2_p205_a)<1 || Integer.parseInt(c2_p205_a)>99){
-                mostrarMensaje("PREGUNTA 205: AÑOS DEBE SER MAYOR QUE CERO");
-                return false;
-            }
-        }
-        if(!c2_p205_m.trim().equals("")) {
-            if(Integer.parseInt(c2_p205_m)<1 || Integer.parseInt(c2_p205_m)>11){
-                mostrarMensaje("PREGUNTA 205: MESES DEBE ESTAR EN EL INTERVALO DE 1 A 11");
-                return false;
-            }
-        }
-        if(c2_p206 == 0) {mostrarMensaje("PREGUNTA 206: DEBE INDICAR EL ESTADO CIVIL"); return false;}
-        if(!c2_p205_a.trim().equals("")){
-            if(Integer.parseInt(c2_p205_a)<12){
-                if(c2_p203==1 || c2_p203==2 || c2_p203==4 || c2_p203==6 || c2_p203==10){
-                    mostrarMensaje("PREGUNTA 203: NO SE DEBE SELECCIONAR LAS OPCIONES (Jefe/a del hogar, Esposo/a o compañero/a, Yerno/Nuera, Padres/Suegros, Pensionista)"); return false;
-                }
-                if(c2_p206!=6){
-                    mostrarMensaje("PREGUNTA 206: DEBE SELECCIONAR ESTADO CIVIL (SOLTERO/A)"); return false;
-                }
-            }
-        }
-        if(!c2_p205_m.trim().equals("")){
-            if(c2_p203==1 || c2_p203==2 || c2_p203==4 || c2_p203==6 || c2_p203==10){
-                mostrarMensaje("PREGUNTA 203: NO SE DEBE SELECCIONAR LAS OPCIONES (Jefe/a del hogar, Esposo/a o compañero/a, Yerno/Nuera, Padres/Suegros, Pensionista)"); return false;
-            }
-            if(c2_p206!=6){
-                mostrarMensaje("PREGUNTA 206: DEBE SELECCIONAR ESTADO CIVIL (SOLTERO/A)"); return false;
-            }
-        }
-        if(c2_p207 == -1) {mostrarMensaje("PREGUNTA 207: DEBE INDICAR SI LLEGÓ DE VENEZUELA"); return false;}
-        return true;
-    }
+
 
     @Override
     public String getNombreTabla() {
@@ -221,8 +198,60 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         c2_p204 = c2_p204_RadioGroup.indexOfChild(c2_p204_RadioGroup.findViewById(c2_p204_RadioGroup.getCheckedRadioButtonId()));
         c2_p205_a = c2_p205_a_TextInputET.getText().toString();
         c2_p205_m = c2_p205_m_TextInputET.getText().toString();
-        c2_p206 = c2_p206_Spinner.getSelectedItemPosition();
+        c2_p206 = c2_p206_Spinner.getSelectedItemPosition() + "";
         c2_p207 = c2_p207_RadioGroup.indexOfChild(c2_p207_RadioGroup.findViewById(c2_p207_RadioGroup.getCheckedRadioButtonId()));
+    }
+
+    public boolean validarDatos(){
+        llenarVariables();
+        if(c2_p202.trim().equals("")){mostrarMensaje("PREGUNTA 202: DEBE INDICAR EL NOMBRE"); return false;}
+        if(c2_p203 == 0) {mostrarMensaje("PREGUNTA 203: DEBE INDICAR EL PARENTESCO"); return false;}
+        else{
+            if (c2_p203 == 3 || c2_p203 == 5){
+                int edad = 0;
+                if (!c2_p205_a.equals("")) edad = Integer.parseInt(c2_p205_a);
+                if (edad > Integer.parseInt(edadJefeHogar)){mostrarMensaje("PREGUNTA 205: SI ES HIJO/A O NIETO/A, LA EDAD DEBE SER MENOR A LA EDAD DEL JEFE DEL HOGAR ("+edadJefeHogar+")"); return false;}
+            }
+        }
+        if(c2_p204 == -1) {mostrarMensaje("PREGUNTA 204: DEBE INDICAR EL SEXO"); return false;}
+        if(c2_p205_a.trim().equals("") && c2_p205_m.trim().equals("")) {mostrarMensaje("PREGUNTA 205: DEBE INDICAR LA EDAD EN AÑOS O MESES"); return false;}
+        if(!c2_p205_a.trim().equals("")) {
+            if(Integer.parseInt(c2_p205_a)<1 || Integer.parseInt(c2_p205_a)>99){
+                mostrarMensaje("PREGUNTA 205: AÑOS DEBE SER MAYOR QUE CERO");
+                return false;
+            }
+        }
+        if(!c2_p205_m.trim().equals("")) {
+            if(Integer.parseInt(c2_p205_m)<1 || Integer.parseInt(c2_p205_m)>11){
+                mostrarMensaje("PREGUNTA 205: MESES DEBE ESTAR EN EL INTERVALO DE 1 A 11");
+                return false;
+            }
+        }
+
+        if(!c2_p205_a.trim().equals("")){
+            if(Integer.parseInt(c2_p205_a)<12){
+                if(c2_p203==1 || c2_p203==2 || c2_p203==4 || c2_p203==6 || c2_p203==10){
+                    mostrarMensaje("PREGUNTA 203: NO SE DEBE SELECCIONAR LAS OPCIONES (Jefe/a del hogar, Esposo/a o compañero/a, Yerno/Nuera, Padres/Suegros, Pensionista)"); return false;
+                }
+            }
+        }
+        if(!c2_p205_m.trim().equals("")){
+            if(c2_p203==1 || c2_p203==2 || c2_p203==4 || c2_p203==6 || c2_p203==10){
+                mostrarMensaje("PREGUNTA 203: NO SE DEBE SELECCIONAR LAS OPCIONES (Jefe/a del hogar, Esposo/a o compañero/a, Yerno/Nuera, Padres/Suegros, Pensionista)"); return false;
+            }
+        }
+        if (linearLayout206.getVisibility()==View.VISIBLE){
+            if(c2_p206.equals("0")) {mostrarMensaje("PREGUNTA 206: DEBE INDICAR EL ESTADO CIVIL"); return false;}
+        }else{
+            c2_p206 = "";
+        }
+        if(c2_p207 == -1) {mostrarMensaje("PREGUNTA 207: DEBE INDICAR SI LLEGÓ DE VENEZUELA"); return false;}
+
+        if (Integer.parseInt(numero) > 1) {
+            if (c2_p203 == 1) {mostrarMensaje("PREGUNTA 203: SOLO PUEDE HABER UN JEFE DE HOGAR"); return false;}
+        }
+
+        return true;
     }
 
     @Override
@@ -242,8 +271,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             c2_p205_m_TextInputET.setText(residente.getC2_p205_m());
             if(!residente.getC2_p206().equals(""))c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
             if (!residente.getC2_p207().equals(""))((RadioButton)c2_p207_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p207()))).setChecked(true);
-
         }
+        edadJefeHogar = data.getResidente(idJefeHogar).getC2_p205_a();
         data.close();
     }
 

@@ -170,6 +170,8 @@ public class SQLConstantes {
     public static final String caratula_telefono = "telefono";
     public static final String caratula_t_hogar = "t_hogar";
     public static final String caratula_usuario = "usuario";
+    public static final String caratula_observaciones = "observaciones";
+
 
     public static final String SQL_CREATE_TABLA_CARATULA =
             "CREATE TABLE " + tablacaratula + "(" +
@@ -199,7 +201,8 @@ public class SQLConstantes {
                     caratula_km  + " TEXT," +
                     caratula_telefono  + " TEXT," +
                     caratula_t_hogar  + " TEXT," +
-                    caratula_usuario + " TEXT" + ");"
+                    caratula_usuario  + " TEXT," +
+                    caratula_observaciones + " TEXT" + ");"
             ;
 
     /**
@@ -1920,7 +1923,7 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_ANIO = "anio=?";
     public static final String WHERE_CLAUSE_MES = "mes=?";
     public static final String WHERE_CLAUSE_PERIODO = "periodo=?";
-    public static final String WHERE_CLAUSE_CONGLOMERADO = "conglomerado=?";
+    public static final String WHERE_CLAUSE_ZONA = "zona=?";
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
     public static final String WHERE_CLAUSE_USUARIO = "usuario=?";
     public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";

@@ -121,9 +121,9 @@ public class FragmentP310P312 extends FragmentPagina {
                 data1.open();
                 Ubigeo ubigeo = data1.getUbigeo(autoCompleteTextView.getText().toString());
                 data1.close();
-                txtDepartamento.setText(ubigeo.getNom_departamento());
-                txtProvincia.setText(ubigeo.getNom_provincia());
-                txtDistrito.setText(ubigeo.getNom_distrito());
+                txtDepartamento.setText(ubigeo.getCod_departamento() + "." + ubigeo.getNom_departamento());
+                txtProvincia.setText(ubigeo.getCod_provincia() + "." + ubigeo.getNom_provincia());
+                txtDistrito.setText(ubigeo.getCod_distrito() + "." + ubigeo.getNom_distrito());
                 c3_p312_dep = ubigeo.getCod_departamento();
                 c3_p312_prov = ubigeo.getCod_provincia();
                 c3_p312_dist = ubigeo.getCod_distrito();
@@ -237,9 +237,9 @@ public class FragmentP310P312 extends FragmentPagina {
                 c3_p312_dep = ubigeo.getCod_departamento();
                 c3_p312_prov = ubigeo.getCod_provincia();
                 c3_p312_dist = ubigeo.getCod_distrito();
-                txtDepartamento.setText(ubigeo.getNom_departamento());
-                txtProvincia.setText(ubigeo.getNom_provincia());
-                txtDistrito.setText(ubigeo.getNom_distrito());
+                txtDepartamento.setText(ubigeo.getCod_departamento() + "." + ubigeo.getNom_departamento());
+                txtProvincia.setText(ubigeo.getCod_provincia() + "." + ubigeo.getNom_provincia());
+                txtDistrito.setText(ubigeo.getCod_distrito() + "." + ubigeo.getNom_distrito());
             }
         }
         data.close();

@@ -44,7 +44,7 @@ public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
         holder.txtAnio.setText(String.valueOf(itemMarcos.get(position).getAnio()));
         holder.txtMes.setText(String.valueOf(itemMarcos.get(position).getMes()));
         holder.txtPeriodo.setText(String.valueOf(itemMarcos.get(position).getPeriodo()));
-        holder.txtConglomerado.setText(String.valueOf(itemMarcos.get(position).getConglomerado()));
+        holder.txtZona.setText(String.valueOf(itemMarcos.get(position).getZona()));
         holder.txtNroOrden.setText(String.valueOf(itemMarcos.get(position).getNorden()));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +65,7 @@ public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
         TextView txtAnio;
         TextView txtMes;
         TextView txtPeriodo;
-        TextView txtConglomerado;
+        TextView txtZona;
         TextView txtNroOrden;
 
         public ViewHolder(View itemView) {
@@ -75,9 +75,8 @@ public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
             txtAnio = itemView.findViewById(R.id.marco_item_txtAnio);
             txtMes = itemView.findViewById(R.id.marco_item_txtMes);
             txtPeriodo = itemView.findViewById(R.id.marco_item_txtPeriodo);
-            txtConglomerado = itemView.findViewById(R.id.marco_item_txtConglomerado);
+            txtZona = itemView.findViewById(R.id.marco_item_txtZona);
             txtNroOrden = itemView.findViewById(R.id.marco_item_txtNroOrden);
-
         }
     }
 }

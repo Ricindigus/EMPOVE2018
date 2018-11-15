@@ -74,7 +74,7 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
     String idVivienda;
     String idMes;
     String idAnio;
-    String idConglomerado;
+    String idZona;
     String idPeriodo;
     String idUsuario;
     Context context;
@@ -111,11 +111,11 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
 
 
     @SuppressLint("ValidFragment")
-    public FragmentCaratula(String idVivienda, String idMes, String idAnio, String idConglomerado, String idPeriodo, String idUsuario, Context context) {
+    public FragmentCaratula(String idVivienda, String idMes, String idAnio, String idZona, String idPeriodo, String idUsuario, Context context) {
         this.idVivienda = idVivienda;
         this.idMes = idMes;
         this.idAnio = idAnio;
-        this.idConglomerado = idConglomerado;
+        this.idZona = idZona;
         this.idPeriodo = idPeriodo;
         this.idUsuario = idUsuario;
         this.context = context;
@@ -186,7 +186,7 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
         mza_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
         lote_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
         km_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(5)});
-        telefono_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(10)});
+        telefono_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(9)});
 //        t_hogar_EditText.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(2)});
 
         km_EditText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -241,12 +241,11 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             contentValues.put(SQLConstantes.caratula_anio,idAnio);
             contentValues.put(SQLConstantes.caratula_periodo,idPeriodo);
             contentValues.put(SQLConstantes.caratula_usuario,idUsuario);
-            contentValues.put(SQLConstantes.caratula_conglomerado,idConglomerado);
+            contentValues.put(SQLConstantes.caratula_zona, idZona);
             contentValues.put(SQLConstantes.caratula_nom_dep,nom_dep);
             contentValues.put(SQLConstantes.caratula_nom_prov,nom_prov);
             contentValues.put(SQLConstantes.caratula_nom_dist,nom_dist);
             contentValues.put(SQLConstantes.caratula_nom_ccpp,nom_ccpp);
-            contentValues.put(SQLConstantes.caratula_zona,zona);
             contentValues.put(SQLConstantes.caratula_manzana_id,manzana_id);
             contentValues.put(SQLConstantes.caratula_vivienda,vivienda);
             contentValues.put(SQLConstantes.caratula_t_hogar,"0");

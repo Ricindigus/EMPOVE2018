@@ -34,13 +34,13 @@ public class MarcoActivity extends AppCompatActivity {
     private ArrayList<String> anios;
     private ArrayList<String> meses;
     private ArrayList<String> periodos;
-    private ArrayList<String> conglomerados;
+    private ArrayList<String> zonas;
     private String nombreUsuario;
     private String idUsuario;
     private Spinner spAnio;
     private Spinner spMeses;
     private Spinner spPeriodos;
-    private Spinner spConglomerados;
+    private Spinner spZonas;
     private Button btnFiltrar;
     private Button btnMostrarTodo;
     private LinearLayoutManager linearLayoutManager;
@@ -57,7 +57,7 @@ public class MarcoActivity extends AppCompatActivity {
         spAnio = (Spinner) findViewById(R.id.marco_sp_anio);
         spMeses = (Spinner) findViewById(R.id.marco_sp_mes);
         spPeriodos = (Spinner) findViewById(R.id.marco_sp_periodo);
-        spConglomerados = (Spinner) findViewById(R.id.marco_sp_conglomerado);
+        spZonas = (Spinner) findViewById(R.id.marco_sp_zona);
         btnFiltrar = (Button) findViewById(R.id.marco_btnFiltrar);
         btnMostrarTodo = (Button) findViewById(R.id.marco_btnMotrarTodo);
 
@@ -98,7 +98,7 @@ public class MarcoActivity extends AppCompatActivity {
         cargarSpinerAnios(anios);
         cargarSpinerMeses(meses);
         cargarSpinerPeriodos(periodos);
-        cargarSpinerConglomerados(conglomerados);
+        cargarSpinerZonas(zonas);
         setearAdapter();
 
         spAnio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -109,8 +109,8 @@ public class MarcoActivity extends AppCompatActivity {
                 cargarSpinerMeses(meses);
                 periodos = new ArrayList<String>();
                 cargarSpinerPeriodos(periodos);
-                conglomerados = new ArrayList<String>();
-                cargarSpinerConglomerados(conglomerados);
+                zonas = new ArrayList<String>();
+                cargarSpinerZonas(zonas);
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {}
@@ -122,8 +122,8 @@ public class MarcoActivity extends AppCompatActivity {
                 if(i > 0) obtenerPeriodos(Integer.parseInt(spMeses.getSelectedItem().toString()));
                 if(i == 0) periodos = new ArrayList<String>();
                 cargarSpinerPeriodos(periodos);
-                conglomerados = new ArrayList<String>();
-                cargarSpinerConglomerados(conglomerados);
+                zonas = new ArrayList<String>();
+                cargarSpinerZonas(zonas);
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {}
@@ -132,9 +132,9 @@ public class MarcoActivity extends AppCompatActivity {
         spPeriodos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i > 0) obtenerConglomerados(Integer.parseInt(spPeriodos.getSelectedItem().toString()));
-                if(i == 0) conglomerados = new ArrayList<String>();
-                cargarSpinerConglomerados(conglomerados);
+                if(i > 0) obtenerZonas(Integer.parseInt(spPeriodos.getSelectedItem().toString()));
+                if(i == 0) zonas = new ArrayList<String>();
+                cargarSpinerZonas(zonas);
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {}
@@ -143,11 +143,11 @@ public class MarcoActivity extends AppCompatActivity {
         btnFiltrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(conglomerados.size() > 1 && spConglomerados.getSelectedItemPosition() != 0){
+                if(zonas.size() > 1 && spZonas.getSelectedItemPosition() != 0){
                     obtenerMarcoFiltrado(spAnio.getSelectedItem().toString(),
                             spMeses.getSelectedItem().toString(),
                             spPeriodos.getSelectedItem().toString(),
-                            spConglomerados.getSelectedItem().toString());
+                            spZonas.getSelectedItem().toString());
                 }else{
                     Toast.makeText(MarcoActivity.this, "DEBE SELECCIONAR TODOS LOS CAMPOS ANTES DE FILTRAR", Toast.LENGTH_SHORT).show();
                 }
@@ -176,7 +176,7 @@ public class MarcoActivity extends AppCompatActivity {
         cargarSpinerAnios(anios);
         cargarSpinerMeses(meses);
         cargarSpinerPeriodos(periodos);
-        cargarSpinerConglomerados(conglomerados);
+        cargarSpinerZonas(zonas);
         setearAdapter();
     }
 
@@ -185,7 +185,7 @@ public class MarcoActivity extends AppCompatActivity {
         meses.add("Seleccione");
         for(ItemMarco itemMarco : itemMarcos){
             if(Integer.parseInt(itemMarco.getAnio())== anio){
-                if(!meses.contains(String.valueOf(itemMarco.getMes()))){
+                if(!meses.contains(itemMarco.getMes())){
                     meses.add(String.valueOf(itemMarco.getMes()));
                 }
             }
@@ -196,19 +196,19 @@ public class MarcoActivity extends AppCompatActivity {
         periodos.add("Seleccione");
         for(ItemMarco itemMarco : itemMarcos){
             if(Integer.parseInt(itemMarco.getMes())== mes){
-                if(!periodos.contains(String.valueOf(itemMarco.getPeriodo()))){
+                if(!periodos.contains(itemMarco.getPeriodo())){
                     periodos.add(String.valueOf(itemMarco.getPeriodo()));
                 }
             }
         }
     }
-    public void obtenerConglomerados(int periodo){
-        conglomerados = new ArrayList<String>();
-        conglomerados.add("Seleccione");
+    public void obtenerZonas(int periodo){
+        zonas = new ArrayList<String>();
+        zonas.add("Seleccione");
         for(ItemMarco itemMarco : itemMarcos){
             if(Integer.parseInt(itemMarco.getPeriodo())== periodo){
-                if(!conglomerados.contains(String.valueOf(itemMarco.getConglomerado()))){
-                    conglomerados.add(String.valueOf(itemMarco.getConglomerado()));
+                if(!zonas.contains(itemMarco.getZona())){
+                    zonas.add(String.valueOf(itemMarco.getZona()));
                 }
             }
         }
@@ -231,10 +231,10 @@ public class MarcoActivity extends AppCompatActivity {
         spPeriodos.setAdapter(adapter);
     }
 
-    public void cargarSpinerConglomerados(ArrayList<String> datos){
+    public void cargarSpinerZonas(ArrayList<String> datos){
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,datos);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spConglomerados.setAdapter(adapter);
+        spZonas.setAdapter(adapter);
     }
 
     @Override
@@ -289,7 +289,7 @@ public class MarcoActivity extends AppCompatActivity {
         anios = new ArrayList<String>();
         meses = new ArrayList<String>();
         periodos = new ArrayList<String>();
-        conglomerados = new ArrayList<String>();
+        zonas = new ArrayList<String>();
         data = new Data(this);
         data.open();
         itemMarcos = data.getListMarco(idUsuario);
@@ -305,7 +305,7 @@ public class MarcoActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
                 intent.putExtra("nombreUsuario", nombreUsuario);
                 intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
-                intent.putExtra("vivienda_conglomerado", itemMarcos.get(position).getConglomerado()+"");
+                intent.putExtra("vivienda_zona", itemMarcos.get(position).getZona()+"");
                 intent.putExtra("vivienda_mes", itemMarcos.get(position).getMes()+"");
                 intent.putExtra("vivienda_anio", itemMarcos.get(position).getAnio()+"");
                 intent.putExtra("vivienda_periodo", itemMarcos.get(position).getPeriodo()+"");

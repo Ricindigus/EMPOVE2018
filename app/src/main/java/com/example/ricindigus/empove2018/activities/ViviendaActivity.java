@@ -1,13 +1,12 @@
 package com.example.ricindigus.empove2018.activities;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
-import android.view.KeyEvent;
+import android.text.InputFilter;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,11 +17,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.fragments.vivienda.FragmentCaratula;
 import com.example.ricindigus.empove2018.fragments.vivienda.FragmentHogares;
+import com.example.ricindigus.empove2018.modelo.Data;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
 
@@ -31,7 +35,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
     public static String vivienda_anio;
     public static String vivienda_mes;
     public static String vivienda_periodo;
-    public static String vivienda_conglomerado;
+    public static String vivienda_zona;
     private String nombreUsuario;
     private String idUsuario;
 
@@ -56,11 +60,11 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         vivienda_anio = getIntent().getExtras().getString("vivienda_anio");
         vivienda_mes = getIntent().getExtras().getString("vivienda_mes");
         vivienda_periodo = getIntent().getExtras().getString("vivienda_periodo");
-        vivienda_conglomerado = getIntent().getExtras().getString("vivienda_conglomerado");
+        vivienda_zona = getIntent().getExtras().getString("vivienda_zona");
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("VIVIENDA N° " + idVivienda);
-        getSupportActionBar().setSubtitle("CONGLOMERADO N° " + vivienda_conglomerado);
+        getSupportActionBar().setSubtitle("ZONA N° " + vivienda_zona);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -134,7 +138,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         switch (tipoFragment){
             case TipoFragmentVivienda.CARATULA:
                 btnAtras.setVisibility(View.GONE);
-                FragmentCaratula fragmentCaratula = new FragmentCaratula(idVivienda,vivienda_mes,vivienda_anio,vivienda_conglomerado,vivienda_periodo,idUsuario,ViviendaActivity.this);
+                FragmentCaratula fragmentCaratula = new FragmentCaratula(idVivienda,vivienda_mes,vivienda_anio, vivienda_zona,vivienda_periodo,idUsuario,ViviendaActivity.this);
                 fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula);
                 fragmentActual = fragmentCaratula;
                 tFragment = TipoFragmentVivienda.CARATULA;
@@ -161,18 +165,55 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+//        int id = item.getItemId();
+//        if (id == R.id.action_volver_marco) {
+//            salirActivityVivienda();
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+
+        final int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_volver_marco) {
             salirActivityVivienda();
             return true;
+        }else if (id == R.id.action_registrar_observacion) {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            final View dialogView = this.getLayoutInflater().inflate(R.layout.dialog_observaciones, null);
+            LinearLayout lytObservaciones = dialogView.findViewById(R.id.dialog_lytObservaciones);
+            final EditText edtObservaciones = dialogView.findViewById(R.id.dialog_edtObservaciones);
+            edtObservaciones.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+            dialog.setView(dialogView);
+            dialog.setTitle("OBSERVACIONES CARÁTULA");
+            dialog.setPositiveButton("Guardar", null);
+            dialog.setNegativeButton("Cancelar", null);
+            final AlertDialog alertDialog = dialog.create();
+            alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface dialogInterface) {
+                    Data data = new Data(ViviendaActivity.this);
+                    data.open();
+                    edtObservaciones.setText(data.getValor(SQLConstantes.tablacaratula,SQLConstantes.caratula_observaciones,idVivienda));
+                    data.close();
+                    Button b = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    b.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Data data = new Data(ViviendaActivity.this);
+                            data.open();
+                            data.actualizarValor(SQLConstantes.tablacaratula,SQLConstantes.caratula_observaciones,edtObservaciones.getText().toString(),idVivienda);
+                            data.close();
+                            alertDialog.dismiss();
+                        }
+                    });
+                }
+            });
+            alertDialog.show();
+            return true;
         }
-
         return super.onOptionsItemSelected(item);
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
