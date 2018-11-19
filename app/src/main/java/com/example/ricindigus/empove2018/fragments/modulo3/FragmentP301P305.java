@@ -105,7 +105,7 @@ public class FragmentP301P305 extends FragmentPagina {
         idHogar = residente.getId_hogar();
         idVivienda = residente.getId_vivienda();
         idInformante = "";
-        if(residente.getC2_p205_a()=="") edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         data.close();
     }
 
