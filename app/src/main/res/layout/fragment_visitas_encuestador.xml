@@ -208,7 +208,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="2"
-                                        android:text="RESULTADO FINAL"
+                                        android:text="FECHA"
                                         android:textStyle="bold"
                                         android:padding="5dp"
                                         android:textColor="@color/greyBluePrimary"
@@ -225,7 +225,7 @@
                                         android:layout_height="30dp"
                                         android:layout_weight="2">
                                         <TextView
-                                            android:id="@+id/visitas_resultado_final"
+                                            android:id="@+id/visitas_fecha_final"
                                             android:paddingLeft="10dp"
                                             android:gravity="center"
                                             android:layout_width="match_parent"
@@ -249,7 +249,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="2"
-                                        android:text="FECHA FINAL"
+                                        android:text="RESULTADO"
                                         android:textStyle="bold"
                                         android:padding="5dp"
                                         android:textColor="@color/greyBluePrimary"
@@ -266,7 +266,7 @@
                                         android:layout_height="30dp"
                                         android:layout_weight="2">
                                         <TextView
-                                            android:id="@+id/visitas_fecha_final"
+                                            android:id="@+id/visitas_resultado_final"
                                             android:paddingLeft="10dp"
                                             android:gravity="center"
                                             android:layout_width="match_parent"
