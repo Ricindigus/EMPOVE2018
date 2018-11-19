@@ -23,6 +23,7 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ricindigus.empove2018.adapters.ExpandListAdapter;
 import java.util.ArrayList;
@@ -128,19 +129,22 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
                     tFragment++;
-                    if(tFragment == 30) btnSiguiente.setText("Finalizar");
-                    else btnSiguiente.setText("Siguiente");
+//                    if(tFragment == 30) btnSiguiente.setText("Finalizar");
+//                    else btnSiguiente.setText("Siguiente");
                     if(tFragment == 31) salirEncuestaFinalizada();//tFragment = 1;
-                    habilitarFragment(tFragment);
-//                    setFragment(tFragment,1);
-                    while(!setFragment(tFragment,1)){
-                        tFragment++;
-                        if(tFragment == 31)
-//                            tFragment = 1;
-                            salirEncuestaFinalizada();
-
+                    else{
                         habilitarFragment(tFragment);
+//                    setFragment(tFragment,1);
+                        while(!setFragment(tFragment,1)){
+                            tFragment++;
+                            if(tFragment == 31)
+//                            tFragment = 1;
+                                salirEncuestaFinalizada();
+
+                            habilitarFragment(tFragment);
+                        }
                     }
+
                 }
             }
         });
@@ -317,6 +321,8 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
             }
             btnAtras.setVisibility(View.VISIBLE);
             btnSiguiente.setVisibility(View.VISIBLE);
+            if(tipoFragment == TipoFragmentEncuestado.P821P823) btnSiguiente.setText("Finalizar");
+            else btnSiguiente.setText("Siguiente");
             switch (tipoFragment){
                 case TipoFragmentEncuestado.P301P305:
                     btnAtras.setVisibility(View.GONE);
