@@ -624,8 +624,11 @@ public class Data {
             while (cursor.moveToNext()){
                 String numero = cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_numero));
                 String nombre = cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p202));
+                String edad_s = cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_a));
                 String residente = numero + "-" + nombre;
-                residentes.add(residente);
+                int edad=0;
+                if(!edad_s.equals("")) edad = Integer.parseInt(edad_s);
+                if(edad>11) residentes.add(residente);
             }
         }finally{
             if(cursor != null) cursor.close();

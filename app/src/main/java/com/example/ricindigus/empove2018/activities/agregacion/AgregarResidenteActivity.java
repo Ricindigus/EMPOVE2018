@@ -402,14 +402,14 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
 
         if (iEdad >= 3 && iEdad <=25){
             mostrarLayoutPregunta(SQLConstantes.layouts_p508);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p509);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p510);
-            mostrarLayoutPregunta(SQLConstantes.layouts_p511);
-            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,_id).equals("-1"))
-                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"1",_id);
+            //mostrarLayoutPregunta(SQLConstantes.layouts_p509);
+            //mostrarLayoutPregunta(SQLConstantes.layouts_p510);
+            //mostrarLayoutPregunta(SQLConstantes.layouts_p511);
+            //if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,_id).equals("-1"))
+            //    data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"1",_id);
         } else {
-            ocultarP508();ocultarP509();ocultarP510();ocultarP511();
-            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"-1",_id);
+            ocultarP508();//ocultarP509();ocultarP510();ocultarP511();
+            //data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"-1",_id);
         }
 
         if (iEdad >= 14){

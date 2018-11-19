@@ -290,7 +290,7 @@
     <string name="modulo_2_p202_boton_guardar">guardar persona</string>
 
 
-    <string name="modulo_2_p202">202.¿CUÁL ES EL PRIMER NOMBRE DE LA PERSONA?</string>
+    <string name="modulo_2_p202">202.¿CUÁL ES EL PRIMER NOMBRE DE CADA UNA DE LAS PERSONAS QUE VIVEN PERMANENTEMENTE EN ESTE HOGAR Y DE LAS QUE ESTÁN ALOJADAS AQUÍ?</string>
     <string name="modulo_2_p203">203.¿CUÁL ES LA RELACIÓN DE PARENTESCO CON EL (LA) JEFE/A DEL HOGAR?</string>
 
     <string-array name="modulo_2_p203_parentescos">
@@ -506,7 +506,7 @@
     <string name="modulo_4_submenu_3">Preguntas 408 - 410</string>
     <string name="modulo_4_submenu_4">Preguntas 411 - 416</string>
 
-    <string name="modulo_4_p401">401.¿EL SISTEMA DE SEGURO DE SALUD AL CUAL UD. ESTÁ AFILIADO ACTUALMENTE, ES:</string>
+    <string name="modulo_4_p401">401. ¿EL SISTEMA DE SEGURO DE SALUD AL CUAL USTED ESTA AFILIADO ACTUALNMENTE, ES:</string>
     <string name="modulo_4_p401_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_4_p401_sp1">1.ESSALUD?</string>
     <string name="modulo_4_p401_sp2">2.Seguro de Privado de Salud?</string>
@@ -550,7 +550,7 @@
     <string name="modulo_4_p405_sp2">2.Enfermedad (gripe, colitis, etc.)?</string>
     <string name="modulo_4_p405_sp3">3.Recaída de enfermedad crónica?</string>
     <string name="modulo_4_p405_sp4">4.Accidente?</string>
-    <string name="modulo_4_p405_sp5">5.Síntomas mentales, como depresión, miedo, enojo, ansiedad, estrés, etc.?</string>
+    <string name="modulo_4_p405_sp5">5.Molestia o problema como: depresión, enojo, ansiedad, estrés,  etc.?</string>
     <string name="modulo_4_p405_sp6">6.Embarazo?</string>
     <string name="modulo_4_p405_sp7">7.No tuvo enfermedad, síntoma, recaída, accidente</string>
 
@@ -597,18 +597,18 @@
     <string name="modulo_4_p408_sp5">5.Entender o aprender (concentrarse y recordar)?</string>
     <string name="modulo_4_p408_sp6">6.Relacionarse con los demás, por sus pensamientos, sentimientos, emociones o conductas?</string>
 
-    <string name="modulo_4_p409">409.EN EL ÚLTIMO MES, ¿ALGUNO DE SUS HIJOS FUE CASTIGADO POR SU MAL COMPORTAMIENTO?</string>
+    <string name="modulo_4_p409">409.EN EL ULTIMO MES, ¿ALGUNO DE LOS MENORES QUE VIVEN EN EL HOGAR FUE CASTIGADO POR SU MAL COMPORTAMIENTO?</string>
     <string name="modulo_4_p409_sp1">1.Sí</string>
     <string name="modulo_4_p409_sp2">2.No</string>
 
-    <string name="modulo_4_p410">410.¿ESTAS SITUACIONES DE MAL COMPORTAMIENTO DE SUS HIJOS, SON:</string>
+    <string name="modulo_4_p410">410.¿ESTAS SITUACIONES DE MAL COMPORTAMIENTO SON:</string>
     <string name="modulo_4_p410_ind">(Lea cada una de las alternativas y seleccione un código)</string>
     <string name="modulo_4_p410_sp1">1.Más frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_4_p410_sp2">2.Menos frecuentes que cuando vivía en Venezuela?</string>
     <string name="modulo_4_p410_sp3">3.Igual de frecuentes que cuando vivía en Venezuela?</string>
-    <string name="modulo_4_p410_sp4">4.NO APLICA /NACIÓ EN PERÚ</string>
+    <string name="modulo_4_p410_sp4">4.NACIO EN PERU.</string>
 
-    <string name="modulo_4_p411">411.EN EL ÚLTIMO MES, ¿HA MOSTRADO CAMBIOS FUERTES EN SU HUMOR O ACTITUDES, TALES COMO:</string>
+    <string name="modulo_4_p411">411.EN EL ULTIMO MES, ¿HA MOSTRADO CAMBIOS FUERTES EN SU COMPORTAMIENTO  O ACTITUDES, TALES COMO:</string>
     <string name="modulo_4_p411_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_4_p411_sp1">1.Alejamiento de la familia y amigos?</string>
     <string name="modulo_4_p411_sp2">2.Estallidos agresivos o de enojo?</string>
@@ -618,12 +618,12 @@
     <string name="modulo_4_p411_sp6">6.Pesadillas o alteraciones del sueño?</string>
     <string name="modulo_4_p411_sp7">7.Malestar estomacal o dolor de estómago?</string>
     <string name="modulo_4_p411_sp8">8.Miedos nuevos o recurrentes (a la oscuridad, a estar solo, a personas extrañas)?</string>
-    <string name="modulo_4_p411_sp9">9.Aferrado, no quiere perderle de vista a usted u otros miembros de la familia?</string>
+    <string name="modulo_4_p411_sp9">9.Aferrado (no quiere perderle de vista a usted u otros miembros de la familia)?</string>
     <string name="modulo_4_p411_sp10">10.Llanto excesivo?</string>
     <string name="modulo_4_p411_sp11">11.Regreso a conductas presentes en una edad más temprana?</string>
     <string name="modulo_4_p411_sp12">12.Se asusta fácilmente?</string>
     <string name="modulo_4_p411_sp13">13.Otro</string>
-    <string name="modulo_4_p411_sp14">14.NO HA MOSTRADO CAMBIOS DE ACTITUD</string>
+    <string name="modulo_4_p411_sp14">14.NO HA MOSTRADO CAMBIOS DE COMPORTAMIENTO O ACTITUDES.</string>
     <string name="modulo_4_p411_especifique">Especifique</string>
 
     <string name="modulo_4_p412">412.¿ESTÁ USTED, ACTUALMENTE EMBARAZADA?</string>
@@ -635,7 +635,7 @@
     <string name="modulo_4_p413_sp1">1.Sí</string>
     <string name="modulo_4_p413_sp2">2.No</string>
 
-    <string name="modulo_4_p414">414.USTED, ¿TIENE NIÑOS MEÑORES DE 2 AÑOS QUE SE ENCUENTREN LACTANDO?</string>
+    <string name="modulo_4_p414">414.¿USTED TIENE NIÑOS MENORES DE 2 AÑOS QUE SE ENCUENTREN LACTANDO?</string>
     <string name="modulo_4_p414_sp1">1.Sí</string>
     <string name="modulo_4_p414_sp2">2.No</string>
 
@@ -703,7 +703,7 @@
     <string name="modulo_5_p505_sp1">1.Sí</string>
     <string name="modulo_5_p505_sp2">2.No</string>
 
-    <string name="modulo_5_p506">506.¿CUÁL ES EL AÑO O GRADO DE ESTUDIOS EN EL QUE ESTÁ INSCRITO / MATRICULADO Y ASISTIENDO?</string>
+    <string name="modulo_5_p506">506.Cuál ES EL AÑO O GRADO DE ESTUDIOS EN EL QUE ESTA INSCRITO/MATRICULADO O ESTUDIANDO?</string>
     <string name="modulo_5_p506_ind">(Espere la respuesta y seleccione solo un código)</string>
     <string name="modulo_5_p506_sp1">1.Educación Inicial</string>
     <string name="modulo_5_p506_sp2">2.Primaria</string>
@@ -852,9 +852,9 @@
     <string name="modulo_6_p609_sp1">1.Sí</string>
     <string name="modulo_6_p609_sp2">2.No</string>
 
-    <string name="modulo_6_p610">610.¿LA SEMANA PASADA, DEL FECHAINI AL FECHAFIN ¿CUÁNTAS HORAS TRABAJÓ EN SU OCUPACIÓN PRINCIPAL Y OCUPACIÓN(ES)  SECUNDARIA(S)?</string>
+    <string name="modulo_6_p610">610.¿LA SEMANA PASADA, DEL FECHAINI AL FECHAFIN ¿CUANTAS HORAS TRABAJÓ EN SU OCUPACION PRINCIPAL Y OCUPACION/ES SECUNDARIA/S?</string>
     <string name="modulo_6_p610_sp1">Ocupación Principal</string>
-    <string name="modulo_6_p610_sp2">Ocupación(es) Secundaria(s)</string>
+    <string name="modulo_6_p610_sp2">Ocupación/es Secundaria/s.</string>
     <string name="modulo_6_p610_dom">Dom</string>
     <string name="modulo_6_p610_lun">Lun</string>
     <string name="modulo_6_p610_mar">Mar</string>
@@ -981,7 +981,7 @@
 
     <string name="sub_modulo_6_5">TRABAJO EN PERÚ</string>
 
-    <string name="modulo_6_p626">626.USTED, ¿HA TRABAJADO O HA DESEMPEÑADO ALGUNA ACTIVIDAD SIN RECIBIR EL PAGO ACORDADO?</string>
+    <string name="modulo_6_p626">626.USTED, ¿HA TRABAJADO EN PERU O HA DESEMPEÑADO ALGUNA ACTIVIDAD SIN RECIBIR EL PAGO ACORDADO?</string>
     <string name="modulo_6_p626_ind"><i><b>(Espere la respuesta y seleccione solo un código)</b></i></string>
     <string name="modulo_6_p626_sp1">1.Sí, recibió menos de lo establecido</string>
     <string name="modulo_6_p626_sp2">2.Sí, no recibió pago alguno</string>
