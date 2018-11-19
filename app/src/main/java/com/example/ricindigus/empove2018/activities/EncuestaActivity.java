@@ -64,6 +64,7 @@ import com.example.ricindigus.empove2018.fragments.modulo8.FragmentP821P823;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InterfazEncuesta;
@@ -910,10 +911,16 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
 
     public void salirEncuestaFinalizada(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Se finalizó la encuesta para este residente")
+        builder.setMessage("Se terminó la encuesta para este residente. ¿Desea continuar revisando los datos o finalizar la encuesta del residente?")
                 .setTitle("Aviso")
                 .setCancelable(false)
-                .setPositiveButton("OK",
+                .setNegativeButton("CONTINUAR",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+                .setPositiveButton("FINALIZAR",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 finish();
@@ -923,6 +930,50 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         alert.show();
     }
 
+    public boolean verificarCobertura(){
+        return true;
+    }
+
+    /*
+    * Universo: Todas las personas que llegaron de Venezuela P205_A>=0 & P207=1
+    * Si todos (P300_C,  P301_D, P301_M, P301_A, P302, P304, P306, P307_D, P307_M,
+    * P307_A, P308_E, P308_M,  P309_P(i), P309_C(i), P309_MOD(i), P309_M(i), P309_A(i),
+     * P311, P312_DIST, P312_PROV, P312_DEP, P313, P316, P317, P318, P318_F(i), P318_S(i),
+     * P318_E(i), P318_P(i)) son diferentes de vacío y
+     * Algún (P303_M, P303_A, P303) es diferente de vacío y
+     * Algún (P310_1, P310_2, P310_3 P310_5) es diferente de vacío y
+     * Algún (P315_1, P315_2, P315_3, P315_4, P315_5, P315_6, P315_7, P315_9, P315_10, P315_11) es diferente de vacío
+     * Entonces: COB300=1 “Las preguntas del capítulo 300 están coberturadas”
+     * Si al menos uno (P300_C,  P301_D, P301_M, P301_A, P302, P304, P306, P307_D,
+     * P307_M, P307_A, P308_E, P308_M,  P309_P(i), P309_C(i), P309_MOD(i), P309_M(i), P309_A(i),
+     * P311, P312_DIST, P312_PROV, P312_DEP, P313, P316, P317, P318, P318_F(i), P318_S(i), P318_E(i), P318_P(i), es igual a vacío
+     * Entonces: COB300=2 “Falta coberturar las preguntas del capítulo 200”
+    * */
+    public boolean verificarCobertura300(){
+        Data data =  new Data(EncuestaActivity.this);
+        data.open();
+        Modulo3 modulo3 =  data.getModulo3(idEncuestado);
+        if (modulo3 != null){
+
+        }
+        data.close();
+        return true;
+    }
+    public boolean verificarCobertura400(){
+        return true;
+    }
+    public boolean verificarCobertura500(){
+        return true;
+    }
+    public boolean verificarCobertura600(){
+        return true;
+    }
+    public boolean verificarCobertura700(){
+        return true;
+    }
+    public boolean verificarCobertura800(){
+        return true;
+    }
 
     /*
 

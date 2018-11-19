@@ -26,9 +26,13 @@ public class Marco {
     private String nropta;
     private String lote;
     private String piso;
+    private String mza;
     private String block;
     private String interior;
     private String usuario_id;
+    private String usuario;
+    private String nombre;
+    private String dni;
     private String usuario_sup_id;
 
     public Marco() {
@@ -202,6 +206,14 @@ public class Marco {
         this.piso = piso;
     }
 
+    public String getMza() {
+        return mza;
+    }
+
+    public void setMza(String mza) {
+        this.mza = mza;
+    }
+
     public String getBlock() {
         return block;
     }
@@ -224,6 +236,30 @@ public class Marco {
 
     public void setUsuario_id(String usuario_id) {
         this.usuario_id = usuario_id;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getUsuario_sup_id() {
@@ -257,6 +293,7 @@ public class Marco {
         contentValues.put(SQLConstantes.marco_nropta,nropta);
         contentValues.put(SQLConstantes.marco_lote,lote);
         contentValues.put(SQLConstantes.marco_piso,piso);
+        contentValues.put(SQLConstantes.marco_mza,mza);
         contentValues.put(SQLConstantes.marco_block,block);
         contentValues.put(SQLConstantes.marco_interior,interior);
         contentValues.put(SQLConstantes.marco_usuario_id,usuario_id);

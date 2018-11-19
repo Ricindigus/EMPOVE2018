@@ -36,18 +36,21 @@ public class MarcoPullParser {
     private static final String CODCCPP = "CODCCPP";
     private static final String NOMCCPP = "NOMCCPP";
     private static final String CONGLOMERADO = "CONGLOMERADO";
-    private static final String NORDEN = "NORDEN";
+    private static final String NORDEN = "NROORDEN";
     private static final String MANZANA_ID = "MANZANA_ID";
     private static final String TIPVIA = "TIPVIA";
     private static final String NOMVIA = "NOMVIA";
     private static final String NROPTA = "NROPTA";
     private static final String LOTE = "LOTE";
     private static final String PISO = "PISO";
+    private static final String MANZANA = "MANZANA";
     private static final String BLOCK = "BLOCK";
     private static final String INTERIOR = "INTERIOR";
     private static final String USUARIO_ID = "USUARIO_ID";
+    private static final String USUARIO = "USUARIO";
+    private static final String DNI = "DNI";
+    private static final String NOMBRE = "NOMBRE";
     private static final String USUARIO_SUP_ID = "USUARIO_SUP_ID";
-
 
 
     private Marco currentMarco = null;
@@ -139,6 +142,7 @@ public class MarcoPullParser {
                 case CONGLOMERADO : currentMarco.setConglomerado(xmlText);break;
                 case NORDEN : currentMarco.setNorden(xmlText);break;
                 case MANZANA_ID : currentMarco.setManzana_id(xmlText);break;
+                case MANZANA : currentMarco.setMza(xmlText);break;
                 case TIPVIA : currentMarco.setTipvia(xmlText);break;
                 case NOMVIA : currentMarco.setNomvia(xmlText);break;
                 case NROPTA : currentMarco.setNropta(xmlText);break;
@@ -147,6 +151,9 @@ public class MarcoPullParser {
                 case BLOCK : currentMarco.setBlock(xmlText);break;
                 case INTERIOR : currentMarco.setInterior(xmlText);break;
                 case USUARIO_ID : currentMarco.setUsuario_id(xmlText);break;
+                case USUARIO : currentMarco.setUsuario(xmlText);break;
+                case DNI : currentMarco.setDni(xmlText);break;
+                case NOMBRE : currentMarco.setNombre(xmlText);break;
                 case USUARIO_SUP_ID : currentMarco.setUsuario_sup_id(xmlText);break;
             }
         }
