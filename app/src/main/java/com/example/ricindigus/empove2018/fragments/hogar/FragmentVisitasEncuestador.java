@@ -44,6 +44,12 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.adapters.VisitaEncuestadorAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo4;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
+import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
 import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
@@ -84,14 +90,6 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
     int horaProx;
     int minutoProx;
 
-    private String RESFIN_ID;
-    private String RESFIN_DIA;
-    private String RESFIN_MES;
-    private String RESFIN_ANIO;
-    private String RESFIN_MIN;
-    private String RESFIN_HORA;
-    private int RESFIN;
-    private String RESFIN_O;
 
     public FragmentVisitasEncuestador() {
         // Required empty public constructor
@@ -512,26 +510,6 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
 
         edtEspecifique.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(100), new InputFilterSoloLetras()});
 
-//        txtHoraF.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                final Calendar calendario = Calendar.getInstance();
-//                int hh = calendario.get(Calendar.HOUR_OF_DAY);
-//                int mm = calendario.get(Calendar.MINUTE);
-//
-//                TimePickerDialog timePicker = new TimePickerDialog(context, new TimePickerDialog.OnTimeSetListener() {
-//                    @Override
-//                    public void onTimeSet(TimePicker timePicker, int hourofDay, int minute) {
-//                        String hora = checkDigito(hourofDay) +":"+checkDigito(minute);
-//                        txtHoraF.setText(hora);
-//                        horaFin = hourofDay;
-//                        minutoFin = minute;
-//                    }
-//                }, hh, mm,true);
-//                timePicker.show();
-//            }
-//        });
-
         spResultado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
@@ -696,77 +674,68 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
 
                         valido = vHoraFin && vResultado && vEspecifique && vFechaProxima;
 
+
+
                         if(valido){
-                            //actualizo visita con datos de finalizar
-                            ContentValues contentValues = new ContentValues();
-                            contentValues.put(SQLConstantes.visita_encuestador_vis_resu,String.valueOf(spResultado.getSelectedItemPosition()));
-                            contentValues.put(SQLConstantes.visita_encuestador_vis_hor_fin,horaFin);
-                            contentValues.put(SQLConstantes.visita_encuestador_vis_min_fin,minutoFin);
-                            //falta guardar el especifique del resultado otro
-                            if(ckProxVisita.isChecked()){
-                                contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_dd,checkDigito(diaProx));
-                                contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_mm,checkDigito(mesProx));
-                                contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_aa,checkDigito(anioProx));
-                                contentValues.put(SQLConstantes.visita_encuestador_prox_vis_hor,checkDigito(horaProx));
-                                contentValues.put(SQLConstantes.visita_encuestador_prox_vis_min,checkDigito(minutoProx));
+                            boolean finalizacion = true;
+                            if (spResultado.getSelectedItemPosition() == 1) {
+                                if(!coberturaCorrecta()) finalizacion = false;
                             }
-                            try{
-                                dataTablas = new Data(context);
-                                dataTablas.open();
-                                cursor.moveToPosition(posicion);
-                                //actualiza la visita con los datos de finalizacion
-                                dataTablas.actualizarElemento(getIdTablaParte1(),contentValues,cursor.getString(cursor.getColumnIndex("_id")));
-                                //recupero un cursor con informacion d ela ultima visita guardada
-                                cursor = dataTablas.getCursorVisitas(getIdTablaParte1(), idHogar);
-                                dataTablas.close();
-                                if(cursor != null){
-                                    //seteo adapter
-                                    visitaEncuestadorAdapter = new VisitaEncuestadorAdapter(visita, context, cursor, onItemClickListener);
-                                    recyclerView.setAdapter(visitaEncuestadorAdapter);
+                            if (finalizacion){
+                                //actualizo visita con datos de finalizar
+                                ContentValues contentValues = new ContentValues();
+                                contentValues.put(SQLConstantes.visita_encuestador_vis_resu,String.valueOf(spResultado.getSelectedItemPosition()));
+                                contentValues.put(SQLConstantes.visita_encuestador_vis_hor_fin,horaFin);
+                                contentValues.put(SQLConstantes.visita_encuestador_vis_min_fin,minutoFin);
+                                //falta guardar el especifique del resultado otro
+                                if(ckProxVisita.isChecked()){
+                                    contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_dd,checkDigito(diaProx));
+                                    contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_mm,checkDigito(mesProx));
+                                    contentValues.put(SQLConstantes.visita_encuestador_prox_vis_fecha_aa,checkDigito(anioProx));
+                                    contentValues.put(SQLConstantes.visita_encuestador_prox_vis_hor,checkDigito(horaProx));
+                                    contentValues.put(SQLConstantes.visita_encuestador_prox_vis_min,checkDigito(minutoProx));
                                 }
-                            }catch (SQLException e){}
+                                try{
+                                    dataTablas = new Data(context);
+                                    dataTablas.open();
+                                    cursor.moveToPosition(posicion);
+                                    //actualiza la visita con los datos de finalizacion
+                                    dataTablas.actualizarElemento(getIdTablaParte1(),contentValues,cursor.getString(cursor.getColumnIndex("_id")));
+                                    //recupero un cursor con informacion d ela ultima visita guardada
+                                    cursor = dataTablas.getCursorVisitas(getIdTablaParte1(), idHogar);
+                                    dataTablas.close();
+                                    if(cursor != null){
+                                        //seteo adapter
+                                        visitaEncuestadorAdapter = new VisitaEncuestadorAdapter(visita, context, cursor, onItemClickListener);
+                                        recyclerView.setAdapter(visitaEncuestadorAdapter);
+                                    }
+                                }catch (SQLException e){}
 
 //                            //MUESTRO Y GUARDO DATOS DE RESULTADO FINAL
-                            final Calendar cal = Calendar.getInstance();
-                            cursor.moveToPosition(posicion);
-                            //obtengo la fecha de la ultima visita
-                            int yy = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_aa)));
-                            int mm = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_mm)));
-                            int dd = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_dd)));
+                                final Calendar cal = Calendar.getInstance();
+                                cursor.moveToPosition(posicion);
+                                //obtengo la fecha de la ultima visita
+                                int yy = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_aa)));
+                                int mm = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_mm)));
+                                int dd = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_dd)));
 
 
-                            //----nuevo content values final
-                            ContentValues contentValuesFinal = new ContentValues();
-                            cursor.moveToPosition(posicion);
-                            contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_resultado_final,cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu)));
-                            //FALTA GUARDAR RWESULTADO ESPECIFIQUE DE OTRO
-                            contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_dd,dd);
-                            contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_mm,mm);
-                            contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_aa,yy);
-//                            contentValuesFinal.put(visita.getVARRESHORA(),horaFin);
-//                            contentValuesFinal.put(visita.getVARRESMIN(),minutoFin);
-                            dataTablas = new Data(context);
-                            dataTablas.open();
-                            if(!dataTablas.existeElemento(getIdTablaParte2(), idHogar)){
-                                contentValuesFinal.put(SQLConstantes.resultado_encuestador_id, idHogar);
-                                contentValuesFinal.put(SQLConstantes.resultado_encuestador_id_vivienda, idHogar);
-                                //si no hay registro de resultado final, inserto un resultado
-                                dataTablas.insertarElemento(getIdTablaParte2(),contentValuesFinal);
-                                //muestro el resultado final
-                                txtResultadoFinal.setText(getResources().getStringArray(R.array.visita_array_resultados)[spResultado.getSelectedItemPosition()]);
-                                txtFechaFinal.setText(checkDigito(dd) + "/" + checkDigito(mm) + "/" + checkDigito(yy));
-                                //actualizo valor del estado del hogar
-                                dataTablas.actualizarValor(
-                                        SQLConstantes.tablahogares,
-                                        SQLConstantes.hogar_estado,
-                                        spResultado.getSelectedItemPosition()+"",
-                                        idHogar);
-                            }else{
-                                int res = Integer.parseInt(dataTablas.getValor(getIdTablaParte2(),SQLConstantes.resultado_encuestador_vis_resultado_final,idHogar));
-                                if(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu))) <= res){
-                                    //si existe , actualizo, solo si el nuevo resultado es de mayor prioridad que el anterior.
-                                    dataTablas.actualizarElemento(getIdTablaParte2(),contentValuesFinal, idHogar);
-                                    //muestro el nuevo resultado
+                                //----nuevo content values final
+                                ContentValues contentValuesFinal = new ContentValues();
+                                cursor.moveToPosition(posicion);
+                                contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_resultado_final,cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu)));
+                                //FALTA GUARDAR RWESULTADO ESPECIFIQUE DE OTRO
+                                contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_dd,dd);
+                                contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_mm,mm);
+                                contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_aa,yy);
+                                dataTablas = new Data(context);
+                                dataTablas.open();
+                                if(!dataTablas.existeElemento(getIdTablaParte2(), idHogar)){
+                                    contentValuesFinal.put(SQLConstantes.resultado_encuestador_id, idHogar);
+                                    contentValuesFinal.put(SQLConstantes.resultado_encuestador_id_vivienda, idHogar);
+                                    //si no hay registro de resultado final, inserto un resultado
+                                    dataTablas.insertarElemento(getIdTablaParte2(),contentValuesFinal);
+                                    //muestro el resultado final
                                     txtResultadoFinal.setText(getResources().getStringArray(R.array.visita_array_resultados)[spResultado.getSelectedItemPosition()]);
                                     txtFechaFinal.setText(checkDigito(dd) + "/" + checkDigito(mm) + "/" + checkDigito(yy));
                                     //actualizo valor del estado del hogar
@@ -775,16 +744,31 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                                             SQLConstantes.hogar_estado,
                                             spResultado.getSelectedItemPosition()+"",
                                             idHogar);
+                                }else{
+                                    int res = Integer.parseInt(dataTablas.getValor(getIdTablaParte2(),SQLConstantes.resultado_encuestador_vis_resultado_final,idHogar));
+                                    if(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu))) <= res){
+                                        //si existe , actualizo, solo si el nuevo resultado es de mayor prioridad que el anterior.
+                                        dataTablas.actualizarElemento(getIdTablaParte2(),contentValuesFinal, idHogar);
+                                        //muestro el nuevo resultado
+                                        txtResultadoFinal.setText(getResources().getStringArray(R.array.visita_array_resultados)[spResultado.getSelectedItemPosition()]);
+                                        txtFechaFinal.setText(checkDigito(dd) + "/" + checkDigito(mm) + "/" + checkDigito(yy));
+                                        //actualizo valor del estado del hogar
+                                        dataTablas.actualizarValor(
+                                                SQLConstantes.tablahogares,
+                                                SQLConstantes.hogar_estado,
+                                                spResultado.getSelectedItemPosition()+"",
+                                                idHogar);
+                                    }
                                 }
-                            }
-                            dataTablas.actualizarValor(
-                                    SQLConstantes.tablahogares,
-                                    SQLConstantes.hogar_estado,
-                                    dataTablas.getValor(getIdTablaParte2(), SQLConstantes.resultado_supervisor_vis_resultado_final,idHogar),
-                                    idHogar);
-                            dataTablas.close();
+                                dataTablas.actualizarValor(
+                                        SQLConstantes.tablahogares,
+                                        SQLConstantes.hogar_estado,
+                                        dataTablas.getValor(getIdTablaParte2(), SQLConstantes.resultado_supervisor_vis_resultado_final,idHogar),
+                                        idHogar);
+                                dataTablas.close();
 
-                            alertDialog.dismiss();
+                                alertDialog.dismiss();
+                            }
                         }else Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -794,8 +778,51 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
     }
 
     public boolean coberturaCorrecta(){
-        boolean correcto = true;
-        return correcto;
+
+//        Data data = new Data(context);
+//        data.open();
+//        if (data.existeElemento(SQLConstantes.tablamodulo1v,idVivienda)){
+//            if (coberturadoModul1V())
+//        }
+//        data.close();
+//        return true;
+//        if (c1_p101 == -1){mostrarMensaje("PREGUNTA 101: DEBE MARCAR UNA OPCIÓN"); return false;}
+//        else{
+//            if (c1_p101 == 8){
+//                if (c1_p101_o.trim().equals("")){mostrarMensaje("PREGUNTA 101: DEBE ESPECIFICAR");return false;}
+//            }
+//        }
+//
+//        if (c1_p102 == -1){mostrarMensaje("PREGUNTA 102: DEBE MARCAR UNA OPCIÓN"); return false;}
+//        else{
+//            if (c1_p102 == 9){
+//                if (c1_p102_o.trim().equals("")){mostrarMensaje("PREGUNTA 102: DEBE ESPECIFICAR");return false;}
+//            }
+//        }
+//
+//        if (c1_p103 == -1){mostrarMensaje("PREGUNTA 103: DEBE MARCAR UNA OPCIÓN"); return false;}
+//        else{
+//            if (c1_p103 == 8){
+//                if (c1_p103_o.trim().equals("")){mostrarMensaje("PREGUNTA 103: DEBE ESPECIFICAR");return false;}
+//            }
+//        }
+//
+//        if (c1_p104 == -1){mostrarMensaje("PREGUNTA 104: DEBE MARCAR UNA OPCIÓN"); return false;}
+//        else{
+//            if (c1_p104 == 7){
+//                if (c1_p104_o.trim().equals("")){mostrarMensaje("PREGUNTA 104: DEBE ESPECIFICAR");return false;}
+//            }
+//        }
+//
+//        if (c1_p105.trim().equals("")){mostrarMensaje("PREGUNTA 105: FALTA COMPLETAR LA PREGUNTA");return false;}
+//        if(Integer.parseInt(c1_p105)==0){mostrarMensaje("PREGUNTA 105: NO PUEDE SER CERO");return false;}
+//        if (c1_p106.trim().equals("")){mostrarMensaje("PREGUNTA 106: FALTA COMPLETAR LA PREGUNTA");return false;}
+//        if(Integer.parseInt(c1_p105)<Integer.parseInt(c1_p106)){
+//            mostrarMensaje("PREGUNTA 106: DEBE SER MENOR O IGUAL QUE LA PREGUNTA 105");return false;
+//        }
+//        if (c1_p107.trim().equals("")){mostrarMensaje("PREGUNTA 107: FALTA COMPLETAR LA PREGUNTA");return false;}
+//        if(Integer.parseInt(c1_p107)==0){mostrarMensaje("PREGUNTA 107: NO PUEDE SER CERO");return false;}
+        return true;
     }
 
 //    public boolean tieneVisitas(){
@@ -818,9 +845,6 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                     checkDigito(Integer.parseInt(dataTablas.getValor(getIdTablaParte2(),SQLConstantes.resultado_encuestador_vis_fecha_final_dd, idHogar))) +
                             "/" + checkDigito(Integer.parseInt(dataTablas.getValor(getIdTablaParte2(),SQLConstantes.resultado_encuestador_vis_fecha_final_mm, idHogar))) +
                             "/" + checkDigito(Integer.parseInt(dataTablas.getValor(getIdTablaParte2(),SQLConstantes.resultado_encuestador_vis_fecha_final_aa, idHogar))));
-//            txtHorafinal.setText(
-//                    checkDigito(Integer.parseInt(dataTablas.getValor(getIdTablaParte2(),visita.getVARRESHORA(),idHogar))) +
-//                            ":" + checkDigito(Integer.parseInt(dataTablas.getValor(getIdTablaParte2(),visita.getVARRESMIN(),idHogar))));
         }
 
         dataTablas.close();

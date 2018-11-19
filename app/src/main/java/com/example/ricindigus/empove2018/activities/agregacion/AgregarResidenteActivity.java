@@ -706,6 +706,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,"-1",_id);
+        data.eliminarDato(SQLConstantes.tablamodulo5,_id);
         data.close();
     }
     public void mostrarCapitulo5(){
@@ -719,6 +720,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,"1",_id);
+        Modulo5 modulo5 = new Modulo5(_id,id_hogar,id_vivienda);
+        if (!data.existeElemento(SQLConstantes.tablamodulo5,_id)) data.insertarElemento(SQLConstantes.tablamodulo5,modulo5.toValues());
         data.close();
     }
     public void ocultarCapitulo6(){
@@ -732,6 +735,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,"-1",_id);
+        data.eliminarDato(SQLConstantes.tablamodulo6,_id);
+
         data.close();
     }
     public void mostrarCapitulo6(){
@@ -753,6 +758,9 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,"1",_id);
+
+        Modulo6 modulo6 = new Modulo6(_id,id_hogar,id_vivienda);
+        if (!data.existeElemento(SQLConstantes.tablamodulo6,_id)) data.insertarElemento(SQLConstantes.tablamodulo6,modulo6.toValues());
         data.close();
     }
     public void ocultarCapitulo7(){
@@ -760,6 +768,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.open();
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p701p705,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,"-1",_id);
+        data.eliminarDato(SQLConstantes.tablamodulo7,_id);
         data.close();
     }
     public void mostrarCapitulo7(){
@@ -769,6 +778,9 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p701p705,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,"1",_id);
+
+        Modulo7 modulo7 = new Modulo7(_id,id_hogar,id_vivienda);
+        if (!data.existeElemento(SQLConstantes.tablamodulo7,_id)) data.insertarElemento(SQLConstantes.tablamodulo7,modulo7.toValues());
         data.close();
     }
     public void ocultarCapitulo8(){
@@ -780,6 +792,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p813p816,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,"-1",_id);
+        data.eliminarDato(SQLConstantes.tablamodulo8,_id);
         data.close();
     }
     public void mostrarCapitulo8(){
@@ -797,6 +810,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,"1",_id);
+        Modulo8 modulo8 = new Modulo8(_id,id_hogar,id_vivienda);
+        if (!data.existeElemento(SQLConstantes.tablamodulo8,_id)) data.insertarElemento(SQLConstantes.tablamodulo8,modulo8.toValues());
         data.close();
     }
 }
