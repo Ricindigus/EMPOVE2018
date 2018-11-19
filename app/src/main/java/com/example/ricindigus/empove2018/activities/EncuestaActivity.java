@@ -128,6 +128,8 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
                     tFragment++;
+                    if(tFragment == 30) btnSiguiente.setText("Finalizar");
+                    else btnSiguiente.setText("Siguiente");
                     if(tFragment == 31) salirEncuestaFinalizada();//tFragment = 1;
                     habilitarFragment(tFragment);
 //                    setFragment(tFragment,1);
