@@ -59,6 +59,8 @@ public class FragmentP613P617 extends FragmentPagina {
     LinearLayout m6_p613_linearlayout, m6_p614_linearlayout, m6_p615_linearlayout, m6_p616_linearlayout,
             m6_p617_linearlayout,m6_p617_linearlayout_subpregunta;
 
+    private int c6_p610_tot_sec=0;
+
     private String c6_p613;
     private String c6_p614_mon;
     private String c6_p614_esp;
@@ -273,6 +275,7 @@ public class FragmentP613P617 extends FragmentPagina {
             c6_p614_esp_EditText.setText(modulo6.getC6_p614_esp());
             c6_p615_mon_EditText.setText(modulo6.getC6_p615_mon());
             c6_p615_esp_EditText.setText(modulo6.getC6_p615_esp());
+            c6_p610_tot_sec = modulo6.getC6_p610_total_horas_secundarias();
             c6_p616_mon_EditText.setText(modulo6.getC6_p616_mon());
             c6_p616_esp_EditText.setText(modulo6.getC6_p616_esp());
             if(modulo6.getC6_p616_nas().equals("1")) c6_p616_nas_Checkbox.setChecked(true);
@@ -336,6 +339,8 @@ public class FragmentP613P617 extends FragmentPagina {
             if(c6_p616_nas.equals("0")){
                 if(c6_p616_mon.trim().equals("")){ mostrarMensaje("PREGUNTA 616 - DINERO: DEBE ESPECIFICAR");return false; }
 //                if(c6_p616_esp.trim().equals("")){ mostrarMensaje("PREGUNTA 616 - ESPECIE: DEBE ESPECIFICAR");return false; }
+            }else{
+                if(c6_p610_tot_sec>0){ mostrarMensaje("PREGUNTA 616: VERIFICAR PREGUNTA 610 HORAS TRABAJADAS ACTIVIDAD SECUNDARIA");return false; }
             }
         }else{ c6_p616_nas=""; c6_p616_mon = ""; c6_p616_esp ="";}
 

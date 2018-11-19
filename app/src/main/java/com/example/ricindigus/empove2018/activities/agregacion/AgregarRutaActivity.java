@@ -37,7 +37,8 @@ public class AgregarRutaActivity extends AppCompatActivity {
     Spinner spModo;
     TextView btnCancelar, btnGuardar;
     String _id, idEncuestado, idVivienda;
-    int pais,anio,mes;
+    int pais,anio,mes,anio_real;
+    int ruta_ant_mes=0,ruta_ant_anio=0;
     String ciudad;
     int modo;
     String numero;
@@ -49,6 +50,8 @@ public class AgregarRutaActivity extends AppCompatActivity {
     String c3_p309_a="";
 
     LinearLayout layoutCiudad;
+
+    ArrayList<M3Pregunta309> m3Pregunta309s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +113,18 @@ public class AgregarRutaActivity extends AppCompatActivity {
         c3_p307_d  = modulo3.getC3_p307_d();
         c3_p307_m  = modulo3.getC3_p307_m();
         c3_p307_a  = modulo3.getC3_p307_a();
+
+        m3Pregunta309s = new ArrayList<>();
+
+        m3Pregunta309s = data.getAllM3Pregunta309(idEncuestado);
+
+        if(m3Pregunta309s.size()==0) {
+            spPais.setSelection(1);spPais.setEnabled(false);
+        }else {
+            spPais.setEnabled(true);
+            c3_p307_m  = m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_m();
+            c3_p307_a  = m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_a();
+        }
         data.close();
     }
 
@@ -119,6 +134,7 @@ public class AgregarRutaActivity extends AppCompatActivity {
         ciudad = edtCiudad.getText().toString();
         mes = spMes.getSelectedItemPosition();
         anio = spAnio.getSelectedItemPosition();
+        anio_real = 2019 - anio;
         modo = spModo.getSelectedItemPosition();
         c3_p309_a = spAnio.getSelectedItem().toString();
     }
@@ -159,10 +175,10 @@ public class AgregarRutaActivity extends AppCompatActivity {
         if(mes == 0){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL MES");return false;}
         if(anio == 0){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL AÑO");return false;}
         if(Integer.parseInt(c3_p307_a)>Integer.parseInt(c3_p309_a)){
-            mostrarMensaje("AGREGAR RUTA - FECHA: AÑO DEBE SER MAYOR O IGUAL QUE EL AÑO DE INICIO DE VIAJE("+c3_p307_a+")");return false;
+            mostrarMensaje("AGREGAR RUTA - FECHA: AÑO DEBE SER MAYOR O IGUAL QUE EL AÑO("+c3_p307_a+")");return false;
         }else if(Integer.parseInt(c3_p307_a)==Integer.parseInt(c3_p309_a)){
             if(Integer.parseInt(c3_p307_m)>mes){
-                mostrarMensaje("AGREGAR RUTA - FECHA: MES DEBE SER MAYOR O IGUAL QUE EL MES DE INICIO DE VIAJE("+c3_p307_m+")");return false;
+                mostrarMensaje("AGREGAR RUTA - FECHA: MES DEBE SER MAYOR O IGUAL QUE EL MES("+c3_p307_m+")");return false;
             }else{
                 if (Integer.parseInt(numero) > 1){
                     int idAnterior = Integer.parseInt(numero)-2;

@@ -580,6 +580,22 @@ public class Modulo6 {
         this.c6_p610_t = c6_p610_t;
     }
 
+    public int getC6_p610_total_horas_secundarias(){
+        return valor_numero(c6_p610_sd) + valor_numero(c6_p610_sl) +
+                valor_numero(c6_p610_sm) + valor_numero(c6_p610_smi) +
+                valor_numero(c6_p610_sj)+valor_numero(c6_p610_sv) + valor_numero(c6_p610_ss);
+    }
+
+    public int valor_numero(String num){
+        if(num==null){
+            return 0;
+        }else if(num.equals("")){
+            return 0;
+        }else{
+            return Integer.parseInt(num);
+        }
+    }
+
     public String getC6_p611() {
         return c6_p611;
     }

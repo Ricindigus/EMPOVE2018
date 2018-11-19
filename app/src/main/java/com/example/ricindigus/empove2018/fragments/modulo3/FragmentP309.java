@@ -15,6 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -141,6 +142,14 @@ public class FragmentP309 extends FragmentPagina {
     public boolean validarDatos() {
         if(informanteSpinner.getSelectedItemPosition() == 0) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if(m3Pregunta309s.size() == 0){ mostrarMensaje("DEBE AGREGAR RUTAS");return false;}
+        if(!m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_p_nom().equals("5.PERÚ")) {
+            mostrarMensaje("EL PAIS DE LA ULTIMA RUTA DEBE SER PERÚ");return false;
+        }
+        if(!(m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_mod().equals(m3Pregunta309s.get(m3Pregunta309s.size()-2).getC3_p309_mod()) &&
+            m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_m().equals(m3Pregunta309s.get(m3Pregunta309s.size()-2).getC3_p309_m()) &&
+            m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_a().equals(m3Pregunta309s.get(m3Pregunta309s.size()-2).getC3_p309_a()))){
+            mostrarMensaje("EL MODO DE TRÁNSITO Y FECHA DE LAS ULTIMAS DOS RUTAS DEBEN SER IGUALES");return false;
+        }
         return true;
     }
 
@@ -155,6 +164,12 @@ public class FragmentP309 extends FragmentPagina {
         data.open();
         m3Pregunta309s = data.getAllM3Pregunta309(idEncuestado);
         data.close();
+        if(m3Pregunta309s.size()>0){
+            Log.e("p309_p_nom()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_p_nom());
+            Log.e("p309_mod()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_mod());
+            Log.e("p309_m()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_m());
+            Log.e("p309_a()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_a());
+        }
     }
 
     public void setearAdapter(){
