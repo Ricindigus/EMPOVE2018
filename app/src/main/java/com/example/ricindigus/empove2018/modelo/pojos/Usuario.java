@@ -1,24 +1,28 @@
 package com.example.ricindigus.empove2018.modelo.pojos;
 
 public class Usuario {
-    private int _id;
+    private String _id;
     private String nombre;
-    private String password;
+    private String clave;
+    private String cargo_id;
+
 
     public Usuario() {
     }
 
-    public Usuario(int _id, String nombre, String password) {
-        this._id = _id;
-        this.nombre = nombre;
-        this.password = password;
+    public String getCargo_id() {
+        return cargo_id;
     }
 
-    public int get_id() {
+    public void setCargo_id(String cargo_id) {
+        this.cargo_id = cargo_id;
+    }
+
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 
@@ -30,11 +34,11 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getPassword() {
-        return password;
+    public String getClave() {
+        return clave;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 }

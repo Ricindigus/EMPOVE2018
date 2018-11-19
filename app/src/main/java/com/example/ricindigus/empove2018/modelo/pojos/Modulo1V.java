@@ -17,6 +17,7 @@ public class Modulo1V {
     private String c1_p105;
     private String c1_p106;
     private String c1_p107;
+    private String COB100A;
 
     public Modulo1V() {
         _id="";
@@ -31,8 +32,16 @@ public class Modulo1V {
         c1_p105="";
         c1_p106="";
         c1_p107="";
+        COB100A = "2";
     }
 
+    public String getCOB100A() {
+        return COB100A;
+    }
+
+    public void setCOB100A(String COB100A) {
+        this.COB100A = COB100A;
+    }
 
     public String get_id() {
         return _id;
@@ -144,6 +153,7 @@ public class Modulo1V {
         contentValues.put(SQLConstantes.modulo1_v_c1_p105,c1_p105);
         contentValues.put(SQLConstantes.modulo1_v_c1_p106,c1_p106);
         contentValues.put(SQLConstantes.modulo1_v_c1_p107,c1_p107);
+        contentValues.put(SQLConstantes.modulo1_v_COB100A,COB100A);
         return contentValues;
     }
 }

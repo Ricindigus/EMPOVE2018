@@ -278,22 +278,16 @@ public class Data {
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 marco = new Marco();
-                marco.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
+                marco.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_id)));
                 marco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
                 marco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
                 marco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
                 marco.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
-                marco.setTselv(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_tselv)));
-                marco.setNselv(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nselv)));
+                marco.setCodccpp(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_codccpp)));
+                marco.setNomccpp(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nomccpp)));
                 marco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
-                marco.setVivrem(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_vivrem)));
-                marco.setMostrar(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mostrar)));
-                marco.setOdei(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_odei)));
                 marco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
                 marco.setManzana_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_manzana_id)));
-                marco.setManzana_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_manzana_a)));
-                marco.setAerini(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_aerini)));
-                marco.setAerfin(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_aerfin)));
                 marco.setTipvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_tipvia)));
                 marco.setNomvia(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nomvia)));
                 marco.setNropta(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nropta)));
@@ -307,10 +301,9 @@ public class Data {
                 marco.setProvincia(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_provincia)));
                 marco.setCcdi(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_ccdi)));
                 marco.setDistrito(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_distrito)));
-                marco.setEquipo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_equipo)));
-                marco.setRuta(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_ruta)));
                 marco.setUsuario_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_id)));
-                marco.setCargo_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_cargo_id)));
+                marco.setUsuario_sup_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_sup_id)));
+
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -328,7 +321,7 @@ public class Data {
                     null,SQLConstantes.WHERE_CLAUSE_USUARIO_ID,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 ItemMarco itemMarco = new ItemMarco();
-                itemMarco.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
+                itemMarco.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_id)));
                 itemMarco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
                 itemMarco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
                 itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
@@ -354,7 +347,7 @@ public class Data {
                             SQLConstantes.WHERE_CLAUSE_ZONA,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 ItemMarco itemMarco = new ItemMarco();
-                itemMarco.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.marco_id)));
+                itemMarco.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_id)));
                 itemMarco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
                 itemMarco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
                 itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
@@ -581,6 +574,7 @@ public class Data {
                 residente.setC2_p205_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_m)));
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
                 residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
+                residente.setCOB200(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_COB200)));
                 residentes.add(residente);
             }
         }finally{
@@ -610,6 +604,7 @@ public class Data {
                 residente.setC2_p205_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_m)));
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
                 residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
+                residente.setCOB200(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_COB200)));
                 residentes.add(residente);
             }
         }finally{
@@ -660,6 +655,7 @@ public class Data {
                 residente.setC2_p205_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p205_m)));
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
                 residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
+                residente.setCOB200(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_COB200)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -669,19 +665,20 @@ public class Data {
 
 
 
-    public Usuario getUsuario(String nombre){
+    public Usuario getUsuario(String id){
         Usuario usuario = null;
-        String[] whereArgs = new String[]{nombre};
+        String[] whereArgs = new String[]{id};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablausuario,
-                    null,SQLConstantes.WHERE_CLAUSE_USUARIO_NOMBRE,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 usuario = new Usuario();
-                usuario.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.usuario_id)));
+                usuario.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_id)));
                 usuario.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_nombre)));
-                usuario.setPassword(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_password)));
+                usuario.setClave(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_clave)));
+                usuario.setCargo_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_cargo_id)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1006,6 +1003,7 @@ public class Data {
                 modulo1V.setC1_p105(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_v_c1_p105)));
                 modulo1V.setC1_p106(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_v_c1_p106)));
                 modulo1V.setC1_p107(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_v_c1_p107)));
+                modulo1V.setCOB100A(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_v_COB100A)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1047,6 +1045,7 @@ public class Data {
                 modulo1H.setC1_p113_7_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_7_o)));
                 modulo1H.setC1_p113_8_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_8_o)));
                 modulo1H.setC1_p113_9_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_9_o)));
+                modulo1H.setCOB100B(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_COB100B)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1060,7 +1059,7 @@ public class Data {
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo1h,
-                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
             while(cursor.moveToNext()){
                 Modulo1H modulo1H = new Modulo1H();
                 modulo1H.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_id)));
@@ -1087,6 +1086,7 @@ public class Data {
                 modulo1H.setC1_p113_7_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_7_o)));
                 modulo1H.setC1_p113_8_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_8_o)));
                 modulo1H.setC1_p113_9_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_c1_p113_9_o)));
+                modulo1H.setCOB100B(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo1_h_COB100B)));
                 modulo1Hs.add(modulo1H);
             }
         }finally{
@@ -1156,6 +1156,7 @@ public class Data {
                 modulo3.setC3_p316_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p316_o )));
                 modulo3.setC3_p317(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p317 )));
                 modulo3.setC3_p318(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318)));
+                modulo3.setCOB300(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_COB300)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1169,7 +1170,7 @@ public class Data {
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo3,
-                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 Modulo3 modulo3 = new Modulo3();
                 modulo3.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id)));
@@ -1182,7 +1183,6 @@ public class Data {
                 modulo3.setC3_p302(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p302 )));
                 modulo3.setC3_p303_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_m)));
                 modulo3.setC3_p303_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_a)));
-
                 modulo3.setC3_p303_no_nacio(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p303_no_nacio)));
                 modulo3.setC3_p304(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p304 )));
                 modulo3.setC3_p305(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p305 )));
@@ -1222,6 +1222,7 @@ public class Data {
                 modulo3.setC3_p316_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p316_o )));
                 modulo3.setC3_p317(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p317 )));
                 modulo3.setC3_p318(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318)));
+                modulo3.setCOB300(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_COB300)));
                 modulo3s.add(modulo3);
             }
         }finally{
@@ -1494,7 +1495,7 @@ public class Data {
                 modulo4.setC4_p416_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_8)));
                 modulo4.setC4_p416_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_o)));
                 modulo4.setObs_cap4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_obs_cap4)));
-                modulo4.setC4_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_estado)));
+                modulo4.setCOB400(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_COB400)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1508,7 +1509,7 @@ public class Data {
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo4,
-                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 Modulo4 modulo4 = new Modulo4();
                 modulo4.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id)));
@@ -1605,7 +1606,7 @@ public class Data {
                 modulo4.setC4_p416_8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_8)));
                 modulo4.setC4_p416_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p416_o)));
                 modulo4.setObs_cap4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_obs_cap4)));
-                modulo4.setC4_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_estado)));
+                modulo4.setCOB400(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_COB400)));
                 modulo4s.add(modulo4);
             }
         }finally{
@@ -1665,7 +1666,7 @@ public class Data {
                 modulo5.setC5_p513(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513)));
                 modulo5.setC5_p513_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513_o)));
                 modulo5.setObs_cap5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_obs_cap5)));
-                modulo5.setC5_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_estado)));
+                modulo5.setCOB500(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_COB500)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1679,7 +1680,7 @@ public class Data {
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo5,
-                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 Modulo5 modulo5 = new Modulo5();
                 modulo5.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id)));
@@ -1723,7 +1724,7 @@ public class Data {
                 modulo5.setC5_p513(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513)));
                 modulo5.setC5_p513_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p513_o)));
                 modulo5.setObs_cap5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_obs_cap5)));
-                modulo5.setC5_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_estado)));
+                modulo5.setCOB500(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_COB500)));
                 modulo5s.add(modulo5);
             }
         }finally{
@@ -1853,7 +1854,7 @@ public class Data {
                 modulo6.setC6_p630_2frec_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2frec_o)));
                 modulo6.setC6_p630_2mont(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2mont)));
                 modulo6.setObs_cap6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_obs_cap6)));
-                modulo6.setC6_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_estado)));
+                modulo6.setCOB600(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_COB600)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1867,7 +1868,7 @@ public class Data {
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo6,
-                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 Modulo6 modulo6 = new Modulo6();
                 modulo6.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id)));
@@ -1979,7 +1980,7 @@ public class Data {
                 modulo6.setC6_p630_2frec(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2frec)));
                 modulo6.setC6_p630_2mont(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p630_2mont)));
                 modulo6.setObs_cap6(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_obs_cap6)));
-                modulo6.setC6_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_estado)));
+                modulo6.setCOB600(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_COB600)));
                 modulo6s.add(modulo6);
             }
         }finally{
@@ -2073,7 +2074,7 @@ public class Data {
                 modulo7.setC7_p709_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_10)));
                 modulo7.setC7_p709_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_o)));
                 modulo7.setObs_cap7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_obs_cap7)));
-                modulo7.setC7_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_estado)));
+                modulo7.setCOB700(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_COB700)));
 
             }
         }finally{
@@ -2088,7 +2089,7 @@ public class Data {
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo7,
-                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
             while (cursor.moveToNext()){
                 Modulo7 modulo7 = new Modulo7();
                 modulo7.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id)));
@@ -2151,7 +2152,7 @@ public class Data {
                 modulo7.setC7_p709_10(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_10)));
                 modulo7.setC7_p709_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p709_o)));
                 modulo7.setObs_cap7(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_obs_cap7)));
-                modulo7.setC7_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_estado)));
+                modulo7.setCOB700(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_COB700)));
                 modulo7s.add(modulo7);
             }
         }finally{
@@ -2304,7 +2305,7 @@ public class Data {
                 modulo8.setC8_p823_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_5)));
                 modulo8.setC8_p823_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_o)));
                 modulo8.setObs_cap8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_obs_cap8)));
-                modulo8.setC8_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_estado)));
+                modulo8.setCOB800(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_COB800)));
             }
         }finally {
             if (cursor!=null) cursor.close();
@@ -2318,7 +2319,7 @@ public class Data {
         Cursor cursor = null;
         try {
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo8,
-                    null,SQLConstantes.WHERE_CLAUSE_IDVIVIENDA, whereArgs, null,null, null);
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID, whereArgs, null,null, null);
             if(cursor.moveToNext()){
                 Modulo8 modulo8 = new Modulo8();
                 modulo8.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id)));
@@ -2454,7 +2455,7 @@ public class Data {
                 modulo8.setC8_p823_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_4)));
                 modulo8.setC8_p823_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_5)));
                 modulo8.setObs_cap8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_obs_cap8)));
-                modulo8.setC8_estado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_estado)));
+                modulo8.setCOB800(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_COB800)));
                 modulo8s.add(modulo8);
             }
         }finally {

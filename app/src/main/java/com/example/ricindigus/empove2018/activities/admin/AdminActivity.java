@@ -32,6 +32,30 @@ public class AdminActivity extends AppCompatActivity {
         btnHorarioAsistencia = (Button) findViewById(R.id.btnHorarioAsistencia);
         btnSalir = (Button) findViewById(R.id.btnSalir);
 
+//        btnCargarMarco.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FileChooser fileChooser = new FileChooser(AdminActivity.this);
+//                fileChooser.setFileListener(new FileChooser.FileSelectedListener() {
+//                    @Override
+//                    public void fileSelected(File file) {
+//                        String filename = file.getAbsolutePath();
+//                        if(filename.substring(filename.length()-7,filename.length()).toLowerCase().equals(".sqlite")){
+//                            Intent intent = new Intent(AdminActivity.this, AdmMarcoActivity.class);
+//                            intent.putExtra("filename",filename);
+//                            intent.putExtra("tipo_carga",1);
+//                            startActivity(intent);
+//                            finish();
+//                        }else{
+//                            Toast.makeText(AdminActivity.this, "archivo de tipo incorrecto", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
+//                fileChooser.showDialog();
+//
+//            }
+//        });
+
         btnCargarMarco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +64,7 @@ public class AdminActivity extends AppCompatActivity {
                     @Override
                     public void fileSelected(File file) {
                         String filename = file.getAbsolutePath();
-                        if(filename.substring(filename.length()-7,filename.length()).toLowerCase().equals(".sqlite")){
+                        if(filename.substring(filename.length()-4,filename.length()).toLowerCase().equals(".xml")){
                             Intent intent = new Intent(AdminActivity.this, AdmMarcoActivity.class);
                             intent.putExtra("filename",filename);
                             intent.putExtra("tipo_carga",1);

@@ -123,8 +123,11 @@ public class ImportarActivity extends AppCompatActivity {
             XmlPullParser xpp = factory.newPullParser();
             File nuevaCarpeta = new File(getExternalStorageDirectory(), "ENPOVE2018");
             File file = new File(nuevaCarpeta, nombreArchivo);
+
             FileInputStream fileInputStream = new FileInputStream(file);
             fis = new FileInputStream(file);
+
+
             xpp.setInput(fis, null);
             int eventType = xpp.getEventType();
 

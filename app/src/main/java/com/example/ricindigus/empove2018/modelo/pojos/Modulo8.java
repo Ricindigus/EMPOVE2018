@@ -139,7 +139,7 @@ public class Modulo8 {
     private String c8_p823_5;
     private String c8_p823_o;
     private String obs_cap8;
-    private String c8_estado;
+    private String COB800;
 
     public Modulo8() {
     }
@@ -279,7 +279,7 @@ public class Modulo8 {
         c8_p823_5= "";
         c8_p823_o= "";
         obs_cap8= "";
-        c8_estado= "";
+        COB800= "2";
     }
 
     public String get_id() {
@@ -1354,16 +1354,13 @@ public class Modulo8 {
         this.obs_cap8 = obs_cap8;
     }
 
-    public String getC8_estado() {
-        return c8_estado;
+    public String getCOB800() {
+        return COB800;
     }
 
-    public void setC8_estado(String c8_estado) {
-        this.c8_estado = c8_estado;
+    public void setCOB800(String COB800) {
+        this.COB800 = COB800;
     }
-
-
-
 
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
@@ -1501,7 +1498,7 @@ public class Modulo8 {
         contentValues.put(SQLConstantes.modulo8_c8_p823_5,c8_p823_5);
         contentValues.put(SQLConstantes.modulo8_c8_p823_o,c8_p823_o);
         contentValues.put(SQLConstantes.modulo8_obs_cap8,obs_cap8);
-        contentValues.put(SQLConstantes.modulo8_c8_estado,c8_estado);
+        contentValues.put(SQLConstantes.modulo8_COB800,COB800);
         return contentValues;
     }
 }

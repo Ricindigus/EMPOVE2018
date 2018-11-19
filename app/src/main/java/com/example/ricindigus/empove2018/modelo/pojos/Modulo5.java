@@ -46,7 +46,7 @@ public class Modulo5 {
     private String c5_p513;
     private String c5_p513_o;
     private String obs_cap5;
-    private String c5_estado;
+    private String COB500;
 
     public Modulo5(String _id, String idHogar, String idVivienda) {
         idInformante= "";
@@ -90,7 +90,7 @@ public class Modulo5 {
         c5_p513= "";
         c5_p513_o= "";
         obs_cap5= "";
-        c5_estado= "";
+        COB500= "2";
     }
 
     public Modulo5() {
@@ -424,12 +424,12 @@ public class Modulo5 {
         this.obs_cap5 = obs_cap5;
     }
 
-    public String getC5_estado() {
-        return c5_estado;
+    public String getCOB500() {
+        return COB500;
     }
 
-    public void setC5_estado(String c5_estado) {
-        this.c5_estado = c5_estado;
+    public void setCOB500(String COB500) {
+        this.COB500 = COB500;
     }
 
     public ContentValues toValues(){
@@ -475,7 +475,7 @@ public class Modulo5 {
         contentValues.put(SQLConstantes.modulo5_c5_p513,c5_p513);
         contentValues.put(SQLConstantes.modulo5_c5_p513_o,c5_p513_o);
         contentValues.put(SQLConstantes.modulo5_obs_cap5,obs_cap5);
-        contentValues.put(SQLConstantes.modulo5_c5_estado,c5_estado);
+        contentValues.put(SQLConstantes.modulo5_COB500,COB500);
         return contentValues;
     }
 }

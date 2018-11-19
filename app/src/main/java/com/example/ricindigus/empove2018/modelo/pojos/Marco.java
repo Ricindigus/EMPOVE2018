@@ -5,22 +5,22 @@ import android.content.ContentValues;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class Marco {
-    private int _id;
+    private String _id;
     private String anio;
     private String mes;
     private String periodo;
-    private String conglomerado;
-    private String tselv;
-    private String nselv;
-    private String norden;
-    private String vivrem;
-    private String mostrar;
-    private String odei;
     private String zona;
+    private String ccdd;
+    private String departamento;
+    private String ccpp;
+    private String provincia;
+    private String ccdi;
+    private String distrito;
+    private String codccpp;
+    private String nomccpp;
+    private String conglomerado;
+    private String norden;
     private String manzana_id;
-    private String manzana_a;
-    private String aerini;
-    private String aerfin;
     private String tipvia;
     private String nomvia;
     private String nropta;
@@ -28,25 +28,17 @@ public class Marco {
     private String piso;
     private String block;
     private String interior;
-    private String ccdd;
-    private String departamento;
-    private String ccpp;
-    private String provincia;
-    private String ccdi;
-    private String distrito;
-    private String equipo;
-    private String ruta;
     private String usuario_id;
-    private String cargo_id;
+    private String usuario_sup_id;
 
     public Marco() {
     }
 
-    public int get_id() {
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 
@@ -74,28 +66,84 @@ public class Marco {
         this.periodo = periodo;
     }
 
+    public String getZona() {
+        return zona;
+    }
+
+    public void setZona(String zona) {
+        this.zona = zona;
+    }
+
+    public String getCcdd() {
+        return ccdd;
+    }
+
+    public void setCcdd(String ccdd) {
+        this.ccdd = ccdd;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getCcpp() {
+        return ccpp;
+    }
+
+    public void setCcpp(String ccpp) {
+        this.ccpp = ccpp;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getCcdi() {
+        return ccdi;
+    }
+
+    public void setCcdi(String ccdi) {
+        this.ccdi = ccdi;
+    }
+
+    public String getDistrito() {
+        return distrito;
+    }
+
+    public void setDistrito(String distrito) {
+        this.distrito = distrito;
+    }
+
+    public String getCodccpp() {
+        return codccpp;
+    }
+
+    public void setCodccpp(String codccpp) {
+        this.codccpp = codccpp;
+    }
+
+    public String getNomccpp() {
+        return nomccpp;
+    }
+
+    public void setNomccpp(String nomccpp) {
+        this.nomccpp = nomccpp;
+    }
+
     public String getConglomerado() {
         return conglomerado;
     }
 
     public void setConglomerado(String conglomerado) {
         this.conglomerado = conglomerado;
-    }
-
-    public String getTselv() {
-        return tselv;
-    }
-
-    public void setTselv(String tselv) {
-        this.tselv = tselv;
-    }
-
-    public String getNselv() {
-        return nselv;
-    }
-
-    public void setNselv(String nselv) {
-        this.nselv = nselv;
     }
 
     public String getNorden() {
@@ -106,68 +154,12 @@ public class Marco {
         this.norden = norden;
     }
 
-    public String getVivrem() {
-        return vivrem;
-    }
-
-    public void setVivrem(String vivrem) {
-        this.vivrem = vivrem;
-    }
-
-    public String getMostrar() {
-        return mostrar;
-    }
-
-    public void setMostrar(String mostrar) {
-        this.mostrar = mostrar;
-    }
-
-    public String getOdei() {
-        return odei;
-    }
-
-    public void setOdei(String odei) {
-        this.odei = odei;
-    }
-
-    public String getZona() {
-        return zona;
-    }
-
-    public void setZona(String zona) {
-        this.zona = zona;
-    }
-
     public String getManzana_id() {
         return manzana_id;
     }
 
     public void setManzana_id(String manzana_id) {
         this.manzana_id = manzana_id;
-    }
-
-    public String getManzana_a() {
-        return manzana_a;
-    }
-
-    public void setManzana_a(String manzana_a) {
-        this.manzana_a = manzana_a;
-    }
-
-    public String getAerini() {
-        return aerini;
-    }
-
-    public void setAerini(String aerini) {
-        this.aerini = aerini;
-    }
-
-    public String getAerfin() {
-        return aerfin;
-    }
-
-    public void setAerfin(String aerfin) {
-        this.aerfin = aerfin;
     }
 
     public String getTipvia() {
@@ -226,70 +218,6 @@ public class Marco {
         this.interior = interior;
     }
 
-    public String getCcdd() {
-        return ccdd;
-    }
-
-    public void setCcdd(String ccdd) {
-        this.ccdd = ccdd;
-    }
-
-    public String getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(String departamento) {
-        this.departamento = departamento;
-    }
-
-    public String getCcpp() {
-        return ccpp;
-    }
-
-    public void setCcpp(String ccpp) {
-        this.ccpp = ccpp;
-    }
-
-    public String getProvincia() {
-        return provincia;
-    }
-
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
-    }
-
-    public String getCcdi() {
-        return ccdi;
-    }
-
-    public void setCcdi(String ccdi) {
-        this.ccdi = ccdi;
-    }
-
-    public String getDistrito() {
-        return distrito;
-    }
-
-    public void setDistrito(String distrito) {
-        this.distrito = distrito;
-    }
-
-    public String getEquipo() {
-        return equipo;
-    }
-
-    public void setEquipo(String equipo) {
-        this.equipo = equipo;
-    }
-
-    public String getRuta() {
-        return ruta;
-    }
-
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
-    }
-
     public String getUsuario_id() {
         return usuario_id;
     }
@@ -298,13 +226,41 @@ public class Marco {
         this.usuario_id = usuario_id;
     }
 
-    public String getCargo_id() {
-        return cargo_id;
+    public String getUsuario_sup_id() {
+        return usuario_sup_id;
     }
 
-    public void setCargo_id(String cargo_id) {
-        this.cargo_id = cargo_id;
+    public void setUsuario_sup_id(String usuario_sup_id) {
+        this.usuario_sup_id = usuario_sup_id;
     }
 
-
+    public ContentValues toValues(){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.marco_id,_id);
+        contentValues.put(SQLConstantes.marco_anio,anio);
+        contentValues.put(SQLConstantes.marco_mes,mes);
+        contentValues.put(SQLConstantes.marco_periodo,periodo);
+        contentValues.put(SQLConstantes.marco_zona,zona);
+        contentValues.put(SQLConstantes.marco_ccdd,ccdd);
+        contentValues.put(SQLConstantes.marco_departamento,departamento);
+        contentValues.put(SQLConstantes.marco_ccpp,ccpp);
+        contentValues.put(SQLConstantes.marco_provincia,provincia);
+        contentValues.put(SQLConstantes.marco_ccdi,ccdi);
+        contentValues.put(SQLConstantes.marco_distrito,distrito);
+        contentValues.put(SQLConstantes.marco_codccpp,codccpp);
+        contentValues.put(SQLConstantes.marco_nomccpp,nomccpp);
+        contentValues.put(SQLConstantes.marco_conglomerado,conglomerado);
+        contentValues.put(SQLConstantes.marco_norden,norden);
+        contentValues.put(SQLConstantes.marco_manzana_id,manzana_id);
+        contentValues.put(SQLConstantes.marco_tipvia,tipvia);
+        contentValues.put(SQLConstantes.marco_nomvia,nomvia);
+        contentValues.put(SQLConstantes.marco_nropta,nropta);
+        contentValues.put(SQLConstantes.marco_lote,lote);
+        contentValues.put(SQLConstantes.marco_piso,piso);
+        contentValues.put(SQLConstantes.marco_block,block);
+        contentValues.put(SQLConstantes.marco_interior,interior);
+        contentValues.put(SQLConstantes.marco_usuario_id,usuario_id);
+        contentValues.put(SQLConstantes.marco_usuario_sup_id,usuario_sup_id);
+        return contentValues;
+    }
 }

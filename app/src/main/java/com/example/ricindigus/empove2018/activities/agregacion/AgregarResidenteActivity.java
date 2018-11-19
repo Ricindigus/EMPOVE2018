@@ -293,6 +293,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         contentValues.put(SQLConstantes.residentes_c2_p205_m,c2_p205_m);
         contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
         contentValues.put(SQLConstantes.residentes_c2_p207,c2_p207);
+        contentValues.put(SQLConstantes.residentes_COB200,"1");
+
 
         if(!data.existeElemento(getNombreTabla(),_id)){
             contentValues.put(SQLConstantes.residentes_id,_id);

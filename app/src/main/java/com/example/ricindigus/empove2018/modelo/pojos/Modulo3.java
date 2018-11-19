@@ -55,7 +55,7 @@ public class Modulo3 {
     private String c3_p317;
     private String c3_p318;
     private String obs_cap3;
-    private String c3_estado;
+    private String COB300;
 
     public Modulo3(String _id, String idHogar, String idVivienda) {
         this._id = _id;
@@ -108,7 +108,7 @@ public class Modulo3 {
         c3_p317= "";
         c3_p318= "";
         obs_cap3= "";
-        c3_estado= "";
+        COB300= "2";
     }
 
     public Modulo3() { }
@@ -513,12 +513,12 @@ public class Modulo3 {
         this.obs_cap3 = obs_cap3;
     }
 
-    public String getC3_estado() {
-        return c3_estado;
+    public String getCOB300() {
+        return COB300;
     }
 
-    public void setC3_estado(String c3_estado) {
-        this.c3_estado = c3_estado;
+    public void setCOB300(String COB300) {
+        this.COB300 = COB300;
     }
 
     public ContentValues toValues(){
@@ -573,7 +573,7 @@ public class Modulo3 {
         contentValues.put(SQLConstantes.modulo3_c3_p317,c3_p317);
         contentValues.put(SQLConstantes.modulo3_c3_p318,c3_p318);
         contentValues.put(SQLConstantes.modulo3_obs_cap3,obs_cap3);
-        contentValues.put(SQLConstantes.modulo3_c3_estado,c3_estado);
+        contentValues.put(SQLConstantes.modulo3_COB300,COB300);
         return contentValues;
     }
 }

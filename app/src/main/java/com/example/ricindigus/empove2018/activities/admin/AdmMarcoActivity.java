@@ -14,12 +14,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.activities.SplashActivity;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Marco;
+import com.example.ricindigus.empove2018.util.MarcoPullParser;
 
 
 public class AdmMarcoActivity extends AppCompatActivity {
@@ -62,7 +65,50 @@ public class AdmMarcoActivity extends AppCompatActivity {
         myOutput.close();
     }
 
-    public class MyAsyncTaskCargarMarco extends AsyncTask<Integer,Integer,String> {
+//    public class MyAsyncTaskCargarMarco extends AsyncTask<Integer,Integer,String> {
+//
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//            progressBar.setVisibility(View.VISIBLE);
+//            txtMensaje.setText("CARGANDO MARCO...");
+//        }
+//
+//        @Override
+//        protected String doInBackground(Integer... integers) {
+//            try {
+//                Data data = new Data(AdmMarcoActivity.this,filename);
+//                data.open();
+//                data.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return "LISTO";
+//        }
+//
+//        @Override
+//        protected void onProgressUpdate(Integer... values) {
+//            super.onProgressUpdate(values);
+//        }
+//
+//        @Override
+//        protected void onPostExecute(String mensaje) {
+//            super.onPostExecute(mensaje);
+//            txtMensaje.setText(mensaje);
+//            progressBar.setVisibility(View.GONE);
+//            TimerTask timerTask = new TimerTask() {
+//                @Override
+//                public void run() {
+//                    Intent intent = new Intent(AdmMarcoActivity.this, SplashActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            };
+//            Timer timer = new Timer();
+//            timer.schedule(timerTask, 1000);
+//        }
+//    }
+        public class MyAsyncTaskCargarMarco extends AsyncTask<Integer,Integer,String> {
 
         @Override
         protected void onPreExecute() {
@@ -73,13 +119,17 @@ public class AdmMarcoActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Integer... integers) {
-            try {
-                Data data = new Data(AdmMarcoActivity.this,filename);
-                data.open();
-                data.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+            Data data = new Data(AdmMarcoActivity.this);
+            data.open();
+            MarcoPullParser marcoPullParser = new MarcoPullParser();
+            ArrayList<Marco> marcos = marcoPullParser.parseXML(AdmMarcoActivity.this,filename);
+            for(Marco marco:marcos){
+                if (!data.existeElemento(SQLConstantes.tablamarco,marco.get_id()+"")){
+                    data.insertarElemento(SQLConstantes.tablamarco,marco.toValues());
+                }
+
             }
+            data.close();
             return "LISTO";
         }
 

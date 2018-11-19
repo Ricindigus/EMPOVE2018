@@ -50,18 +50,18 @@ public class SQLConstantes {
     public static String marco_anio = "anio";
     public static String marco_mes = "mes";
     public static String marco_periodo = "periodo";
-    public static String marco_conglomerado = "conglomerado";
-    public static String marco_tselv = "tselv";
-    public static String marco_nselv = "nselv";
-    public static String marco_norden = "norden";
-    public static String marco_vivrem = "vivrem";
-    public static String marco_mostrar = "mostrar";
-    public static String marco_odei = "odei";
     public static String marco_zona = "zona";
+    public static String marco_ccdd = "ccdd";
+    public static String marco_departamento = "departamento";
+    public static String marco_ccpp = "ccpp";
+    public static String marco_provincia = "provincia";
+    public static String marco_ccdi = "ccdi";
+    public static String marco_distrito = "distrito";
+    public static String marco_codccpp = "codccpp";
+    public static String marco_nomccpp = "nomccpp";
+    public static String marco_conglomerado = "conglomerado";
+    public static String marco_norden = "norden";
     public static String marco_manzana_id = "manzana_id";
-    public static String marco_manzana_a = "manzana_a";
-    public static String marco_aerini = "aerini";
-    public static String marco_aerfin = "aerfin";
     public static String marco_tipvia = "tipvia";
     public static String marco_nomvia = "nomvia";
     public static String marco_nropta = "nropta";
@@ -69,16 +69,8 @@ public class SQLConstantes {
     public static String marco_piso = "piso";
     public static String marco_block = "block";
     public static String marco_interior = "interior";
-    public static String marco_ccdd = "ccdd";
-    public static String marco_departamento = "departamento";
-    public static String marco_ccpp = "ccpp";
-    public static String marco_provincia = "provincia";
-    public static String marco_ccdi = "ccdi";
-    public static String marco_distrito = "distrito";
-    public static String marco_equipo = "equipo";
-    public static String marco_ruta = "ruta";
     public static String marco_usuario_id = "usuario_id";
-    public static String marco_cargo_id = "cargo_id";
+    public static String marco_usuario_sup_id = "usuario_sup_id";
 
 
     /**
@@ -121,7 +113,9 @@ public class SQLConstantes {
 
     public static String usuario_id = "_id";
     public static String usuario_nombre = "nombre";
-    public static String usuario_password= "password";
+    public static String usuario_clave= "clave";
+    public static String usuario_cargo_id= "cargo_id";
+
 
     /**
      * TABLA PAISES
@@ -472,13 +466,14 @@ public class SQLConstantes {
     public static final String modulo1_v_c1_p105 = "c1_p105";
     public static final String modulo1_v_c1_p106 = "c1_p106";
     public static final String modulo1_v_c1_p107 = "c1_p107";
+    public static final String modulo1_v_COB100A = "COB100A";
 
 
     /**
      * TABLA MODULO 1 HOGAR
      * */
     public static String modulo1_h_id = "_id";
-    public static String modulo1_h_idVivienda = "idVivienda";
+    public static String modulo1_h_idVivienda = "id_vivienda";
     public static String modulo1_h_c1_p108 = "c1_p108";
     public static String modulo1_h_c1_p108_o = "c1_p108_o";
     public static String modulo1_h_c1_p109 = "c1_p109";
@@ -501,6 +496,7 @@ public class SQLConstantes {
     public static String modulo1_h_c1_p113_7_o = "c1_p113_7_o";
     public static String modulo1_h_c1_p113_8_o = "c1_p113_8_o";
     public static String modulo1_h_c1_p113_9_o = "c1_p113_9_o";
+    public static final String modulo1_h_COB100B = "COB100B";
 
     public static final String SQL_CREATE_TABLA_MODULO1V =
             "CREATE TABLE " + tablamodulo1v + "(" +
@@ -515,7 +511,8 @@ public class SQLConstantes {
                     modulo1_v_c1_p104_o + " TEXT," +
                     modulo1_v_c1_p105 + " TEXT," +
                     modulo1_v_c1_p106 + " TEXT," +
-                    modulo1_v_c1_p107 + " TEXT" + ");"
+                    modulo1_v_c1_p107 + " TEXT," +
+                    modulo1_v_COB100A + " TEXT" + ");"
             ;
 
     public static final String SQL_CREATE_TABLA_MODULO1H =
@@ -543,7 +540,8 @@ public class SQLConstantes {
                     modulo1_h_c1_p113_8 + " TEXT," +
                     modulo1_h_c1_p113_8_o + " TEXT," +
                     modulo1_h_c1_p113_9 + " TEXT," +
-                    modulo1_h_c1_p113_9_o + " TEXT" + ");"
+                    modulo1_h_c1_p113_9_o + " TEXT," +
+                    modulo1_h_COB100B + " TEXT" + ");"
             ;
 
 
@@ -562,6 +560,8 @@ public class SQLConstantes {
     public static String residentes_c2_p205_m = "c2_p205_m";
     public static String residentes_c2_p206 = "c2_p206";
     public static String residentes_c2_p207 = "c2_p207";
+    public static String residentes_COB200 = "COB200";
+
 
 
     public static final String SQL_CREATE_TABLA_MODULO2 =
@@ -577,7 +577,8 @@ public class SQLConstantes {
                     residentes_c2_p205_a + " TEXT," +
                     residentes_c2_p205_m + " TEXT," +
                     residentes_c2_p206 + " TEXT," +
-                    residentes_c2_p207 + " TEXT" + ");"
+                    residentes_c2_p207 + " TEXT," +
+                    residentes_COB200 + " TEXT" + ");"
             ;
 
     /**
@@ -585,8 +586,8 @@ public class SQLConstantes {
      * */
     public static String modulo3_id = "_id";
     public static String modulo3_idInformante = "idInformante";
-    public static String modulo3_idHogar = "idHogar";
-    public static String modulo3_idVivienda = "idVivienda";
+    public static String modulo3_idHogar = "id_hogar";
+    public static String modulo3_idVivienda = "id_vivienda";
     public static String modulo3_c3_p301_d = "c3_p301_d";
     public static String modulo3_c3_p301_m = "c3_p301_m";
     public static String modulo3_c3_p301_a = "c3_p301_a";
@@ -633,7 +634,9 @@ public class SQLConstantes {
     public static String modulo3_c3_p317 = "c3_p317";
     public static String modulo3_c3_p318 = "c3_p318";
     public static String modulo3_obs_cap3 = "obs_cap3";
-    public static String modulo3_c3_estado = "c3_estado";
+    public static String modulo3_COB300 = "COB300";
+
+
 
 
 
@@ -689,7 +692,7 @@ public class SQLConstantes {
                     modulo3_c3_p317  + " TEXT," +
                     modulo3_c3_p318  + " TEXT," +
                     modulo3_obs_cap3  + " TEXT," +
-                    modulo3_c3_estado + " TEXT" + ");"
+                    modulo3_COB300 + " TEXT" + ");"
             ;
 
     /**
@@ -752,9 +755,9 @@ public class SQLConstantes {
      * TABLA MODULO 4
      * */
     public static String modulo4_id = "_id";
-    public static String modulo4_idInformante = "idInformante";
-    public static String modulo4_idHogar = "idHogar";
-    public static String modulo4_idVivienda = "idVivienda";
+    public static String modulo4_idInformante = "id_informante";
+    public static String modulo4_idHogar = "id_hogar";
+    public static String modulo4_idVivienda = "id_vivienda";
     public static String modulo4_c4_p401_1 = "c4_p401_1";
     public static String modulo4_c4_p401_2 = "c4_p401_2";
     public static String modulo4_c4_p401_3 = "c4_p401_3";
@@ -845,7 +848,7 @@ public class SQLConstantes {
     public static String modulo4_c4_p416_8 = "c4_p416_8";
     public static String modulo4_c4_p416_o = "c4_p416_o";
     public static String modulo4_obs_cap4 = "obs_cap4";
-    public static String modulo4_c4_estado = "c4_estado";
+    public static String modulo4_COB400 = "COB400";
 
 
 
@@ -945,16 +948,16 @@ public class SQLConstantes {
                     modulo4_c4_p416_8  +  " TEXT," +
                     modulo4_c4_p416_o  +  " TEXT," +
                     modulo4_obs_cap4  +  " TEXT," +
-                    modulo4_c4_estado  +  " TEXT" + ");"
+                    modulo4_COB400  +  " TEXT" + ");"
             ;
 
     /**
      * TABLA MODULO 5
      * */
     public static String modulo5_id = "_id";
-    public static String modulo5_idInformante = "idInformante";
-    public static String modulo5_idHogar = "idHogar";
-    public static String modulo5_idVivienda = "idVivienda";
+    public static String modulo5_idInformante = "id_informante";
+    public static String modulo5_idHogar = "id_hogar";
+    public static String modulo5_idVivienda = "id_vivienda";
     public static String modulo5_c5_p501 = "c5_p501";
     public static String modulo5_c5_p502_c = "c5_p502_c";
     public static String modulo5_c5_p502_eleccion = "c5_p502_eleccion";
@@ -992,7 +995,7 @@ public class SQLConstantes {
     public static String modulo5_c5_p513 = "c5_p513";
     public static String modulo5_c5_p513_o = "c5_p513_o";
     public static String modulo5_obs_cap5 = "obs_cap5";
-    public static String modulo5_c5_estado = "c5_estado";
+    public static String modulo5_COB500 = "COB500";
 
 
 
@@ -1040,16 +1043,16 @@ public class SQLConstantes {
                     modulo5_c5_p513  +  " TEXT," +
                     modulo5_c5_p513_o  +  " TEXT," +
                     modulo5_obs_cap5  +  " TEXT," +
-                    modulo5_c5_estado  +  " TEXT" + ");"
+                    modulo5_COB500  +  " TEXT" + ");"
             ;
 
     /**
      * TABLA MODULO 6
      * */
     public static String modulo6_id = "_id";
-    public static String modulo6_idInformante = "idInformante";
-    public static String modulo6_idHogar = "idHogar";
-    public static String modulo6_idVivienda = "idVivienda";
+    public static String modulo6_idInformante = "id_informante";
+    public static String modulo6_idHogar = "id_hogar";
+    public static String modulo6_idVivienda = "id_vivienda";
     public static String modulo6_c6_p601 = "c6_p601";
     public static String modulo6_c6_p602 = "c6_p602";
     public static String modulo6_c6_p603 = "c6_p603";
@@ -1157,7 +1160,7 @@ public class SQLConstantes {
     public static String modulo6_c6_p630_2frec_o = "c6_p630_2frec_o";
     public static String modulo6_c6_p630_2mont = "c6_p630_2mont";
     public static String modulo6_obs_cap6 = "obs_cap6";
-    public static String modulo6_c6_estado = "c6_estado";
+    public static String modulo6_COB600 = "COB600";
 
     public static final String SQL_CREATE_TABLA_MODULO6 =
             "CREATE TABLE " + tablamodulo6 + "(" +
@@ -1272,16 +1275,16 @@ public class SQLConstantes {
                     modulo6_c6_p630_2frec_o  +  " TEXT," +
                     modulo6_c6_p630_2mont  +  " TEXT," +
                     modulo6_obs_cap6  +  " TEXT," +
-                    modulo6_c6_estado  +  " TEXT" + ");"
+                    modulo6_COB600  +  " TEXT" + ");"
             ;
 
     /**
      * TABLA MODULO 7
      * */
     public static String modulo7_id = "_id";
-    public static String modulo7_idInformante = "idInformante";
-    public static String modulo7_idHogar = "idHogar";
-    public static String modulo7_idVivienda = "idVivienda";
+    public static String modulo7_idInformante = "id_informante";
+    public static String modulo7_idHogar = "id_hogar";
+    public static String modulo7_idVivienda = "id_vivienda";
     public static String modulo7_c7_p701 = "c7_p701";
     public static String modulo7_c7_p702_1 = "c7_p702_1";
     public static String modulo7_c7_p702_2 = "c7_p702_2";
@@ -1338,7 +1341,7 @@ public class SQLConstantes {
     public static String modulo7_c7_p709_10 = "c7_p709_10";
     public static String modulo7_c7_p709_o = "c7_p709_o";
     public static String modulo7_obs_cap7 = "obs_cap7";
-    public static String modulo7_c7_estado = "c7_estado";
+    public static String modulo7_COB700 = "COB700";
 
 
     public static final String SQL_CREATE_TABLA_MODULO7 =
@@ -1403,16 +1406,16 @@ public class SQLConstantes {
                     modulo7_c7_p709_10  +  " TEXT," +
                     modulo7_c7_p709_o  +  " TEXT," +
                     modulo7_obs_cap7  +  " TEXT," +
-                    modulo7_c7_estado  +  " TEXT" + ");"
+                    modulo7_COB700  +  " TEXT" + ");"
             ;
 
     /**
      * TABLA MODULO 8
      * */
     public static String modulo8_id = "_id";
-    public static String modulo8_idInformante = "idInformante";
-    public static String modulo8_idHogar = "idHogar";
-    public static String modulo8_idVivienda = "idVivienda";
+    public static String modulo8_idInformante = "id_informante";
+    public static String modulo8_idHogar = "id_hogar";
+    public static String modulo8_idVivienda = "id_vivienda";
     public static String modulo8_c8_p801 = "c8_p801";
     public static String modulo8_c8_p802 = "c8_p802";
     public static String modulo8_c8_p803 = "c8_p803";
@@ -1543,7 +1546,7 @@ public class SQLConstantes {
     public static String modulo8_c8_p823_5 = "c8_p823_5";
     public static String modulo8_c8_p823_o = "c8_p823_o";
     public static String modulo8_obs_cap8 = "obs_cap8";
-    public static String modulo8_c8_estado = "c8_estado";
+    public static String modulo8_COB800 = "COB800";
 
 
     public static final String SQL_CREATE_TABLA_MODULO8 =
@@ -1682,7 +1685,7 @@ public class SQLConstantes {
                     modulo8_c8_p823_5  +  " TEXT," +
                     modulo8_c8_p823_o  +  " TEXT," +
                     modulo8_obs_cap8  +  " TEXT," +
-                    modulo8_c8_estado  +  " TEXT" + ");"
+                    modulo8_COB800  +  " TEXT" + ");"
             ;
 
 
@@ -1920,20 +1923,16 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_ID = "_id=?";
     public static final String WHERE_CLAUSE_NUMERO = "numero=?";
     public static final String WHERE_CLAUSE_ID_ENCUESTADO = "id_encuestado=?";
+    public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";
+    public static final String WHERE_CLAUSE_HOGAR_ID = "id_hogar=?";
     public static final String WHERE_CLAUSE_ANIO = "anio=?";
     public static final String WHERE_CLAUSE_MES = "mes=?";
     public static final String WHERE_CLAUSE_PERIODO = "periodo=?";
     public static final String WHERE_CLAUSE_ZONA = "zona=?";
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
     public static final String WHERE_CLAUSE_USUARIO = "usuario=?";
-    public static final String WHERE_CLAUSE_VIVIENDA_ID = "id_vivienda=?";
-    public static final String WHERE_CLAUSE_IDVIVIENDA = "idVivienda=?";
     public static final String WHERE_CLAUSE_ESTADO_COD = municipios_cod_estado+"=?";
-    public static final String WHERE_CLAUSE_HOGAR_ID = "id_hogar=?";
-    public static final String WHERE_CLAUSE_USUARIO_NOMBRE = "nombre=?";
     public static final String WHERE_CLAUSE_DESCRIPCION = ubigeo_descripcion+"=?";
-
-
     public static final String WHERE_CLAUSE_EXISTE_MENOR = "id_hogar=? and c2_p205_a<18";
 
 

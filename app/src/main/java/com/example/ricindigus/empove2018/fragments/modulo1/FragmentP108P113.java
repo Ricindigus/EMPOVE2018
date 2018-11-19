@@ -212,6 +212,7 @@ public class FragmentP108P113 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo1_h_c1_p113_7_o,c1_p113_7_o);
         contentValues.put(SQLConstantes.modulo1_h_c1_p113_8_o,c1_p113_8_o);
         contentValues.put(SQLConstantes.modulo1_h_c1_p113_9_o,c1_p113_9_o);
+        contentValues.put(SQLConstantes.modulo1_h_COB100B,"1");
         if(!data.existeElemento(getNombreTabla(),idHogar)){
             Modulo1H modulo1H = new Modulo1H();
             modulo1H.set_id(idHogar);

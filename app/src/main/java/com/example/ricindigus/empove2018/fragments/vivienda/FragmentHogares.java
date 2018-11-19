@@ -224,6 +224,7 @@ public class FragmentHogares extends FragmentPagina {
                             Residente residente = new Residente();
                             residente.set_id(id + "_1");
                             residente.setId_hogar(id);
+                            residente.setId_vivienda(idVivienda);
                             residente.setNumero("1");
                             residente.setC2_p202(jefeEditText.getText().toString());
                             residente.setC2_p203("1");

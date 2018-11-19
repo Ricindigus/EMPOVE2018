@@ -301,4 +301,13 @@ public class FragmentP318 extends FragmentPagina {
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
+    public boolean coberturaCompleta(){
+        boolean cobertura=false;
+        Data data = new Data(contexto);
+        data.open();
+        Modulo3 modulo3 = data.getModulo3(idEncuestado);
+        data.close();
+        return cobertura;
+    }
 }

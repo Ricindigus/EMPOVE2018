@@ -58,6 +58,7 @@ public class FragmentP101P107 extends FragmentPagina {
     private String c1_p107;
 
 
+
     public FragmentP101P107() {
         // Required empty public constructor
     }
@@ -194,6 +195,8 @@ public class FragmentP101P107 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo1_v_c1_p105,c1_p105);
         contentValues.put(SQLConstantes.modulo1_v_c1_p106,c1_p106);
         contentValues.put(SQLConstantes.modulo1_v_c1_p107,c1_p107);
+        contentValues.put(SQLConstantes.modulo1_v_COB100A,"1");
+
         if(!data.existeElemento(getNombreTabla(),idVivienda)){
             Modulo1V modulo1V = new Modulo1V();
             modulo1V.set_id(idVivienda);
@@ -312,4 +315,5 @@ public class FragmentP101P107 extends FragmentPagina {
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
 }

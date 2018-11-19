@@ -99,7 +99,7 @@ public class Modulo4 {
     private String c4_p416_8;
     private String c4_p416_o;
     private String obs_cap4;
-    private String c4_estado;
+    private String COB400;
 
     public Modulo4(String _id, String idHogar, String idVivienda) {
         this._id = _id;
@@ -196,7 +196,7 @@ public class Modulo4 {
         c4_p416_8 = "";
         c4_p416_o = "";
         obs_cap4 = "";
-        c4_estado = "";
+        COB400 = "2";
     }
 
     public Modulo4() {
@@ -954,12 +954,12 @@ public class Modulo4 {
         this.obs_cap4 = obs_cap4;
     }
 
-    public String getC4_estado() {
-        return c4_estado;
+    public String getCOB400() {
+        return COB400;
     }
 
-    public void setC4_estado(String c4_estado) {
-        this.c4_estado = c4_estado;
+    public void setCOB400(String COB400) {
+        this.COB400 = COB400;
     }
 
     public ContentValues toValues(){
@@ -1058,7 +1058,7 @@ public class Modulo4 {
         contentValues.put(SQLConstantes.modulo4_c4_p416_8,c4_p416_8);
         contentValues.put(SQLConstantes.modulo4_c4_p416_o,c4_p416_o);
         contentValues.put(SQLConstantes.modulo4_obs_cap4,obs_cap4);
-        contentValues.put(SQLConstantes.modulo4_c4_estado,c4_estado);
+        contentValues.put(SQLConstantes.modulo4_COB400,COB400);
         return contentValues;
     }
 }

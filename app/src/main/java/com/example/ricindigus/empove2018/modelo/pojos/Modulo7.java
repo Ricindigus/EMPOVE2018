@@ -65,7 +65,7 @@ public class Modulo7 {
     private String c7_p709_10;
     private String c7_p709_o;
     private String obs_cap7;
-    private String c7_estado;
+    private String COB700;
 
     public Modulo7(String _id, String idHogar, String idVivienda) {
         this._id = _id;
@@ -128,7 +128,7 @@ public class Modulo7 {
         c7_p709_10= "";
         c7_p709_o= "";
         obs_cap7= "";
-        c7_estado= "";
+        COB700= "2";
     }
 
     public Modulo7() {
@@ -614,12 +614,12 @@ public class Modulo7 {
         this.obs_cap7 = obs_cap7;
     }
 
-    public String getC7_estado() {
-        return c7_estado;
+    public String getCOB700() {
+        return COB700;
     }
 
-    public void setC7_estado(String c7_estado) {
-        this.c7_estado = c7_estado;
+    public void setCOB700(String COB700) {
+        this.COB700 = COB700;
     }
 
     public ContentValues toValues(){
@@ -684,7 +684,7 @@ public class Modulo7 {
         contentValues.put(SQLConstantes.modulo7_c7_p709_10,c7_p709_10);
         contentValues.put(SQLConstantes.modulo7_c7_p709_o,c7_p709_o);
         contentValues.put(SQLConstantes.modulo7_obs_cap7,obs_cap7);
-        contentValues.put(SQLConstantes.modulo7_c7_estado,c7_estado);
+        contentValues.put(SQLConstantes.modulo7_COB700,COB700);
 
         return contentValues;
     }

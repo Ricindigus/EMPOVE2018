@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button ingresarButton;
     private TextInputEditText usuarioEditText;
     private TextInputEditText passwordEditText;
-    String nombreUsuario;
+    String idUsuario;
     String passwordUsuario;
 
 
@@ -38,27 +38,27 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                nombreUsuario = usuarioEditText.getText().toString();
+                idUsuario = usuarioEditText.getText().toString();
                 passwordUsuario = passwordEditText.getText().toString();
 
                 if (validarCampos()){
-                    if(nombreUsuario.equals("ADMIN")){
+                    if(idUsuario.equals("ADMIN")){
                         Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
                         startActivity(intent);
                         finish();
                     }else{
                         Data data =  new Data(LoginActivity.this);
                         data.open();
-                        Usuario user = data.getUsuario(nombreUsuario);
+                        Usuario user = data.getUsuario(idUsuario);
                         data.close();
                         if(user == null){
                             usuarioEditText.setText("");
                             passwordEditText.setText("");
                             Toast.makeText(LoginActivity.this, "USUARIO NO EXISTE", Toast.LENGTH_SHORT).show();
                         }else{
-                            if(passwordUsuario.equals(user.getPassword())){
+                            if(passwordUsuario.equals(user.getClave())){
                                 Intent intent = new Intent(LoginActivity.this, MarcoActivity.class);
-                                intent.putExtra("nombreUsuario",nombreUsuario);
+                                intent.putExtra("nombreUsuario",user.getNombre());
                                 intent.putExtra("idUsuario",user.get_id()+"");
                                 startActivity(intent);
                                 finish();

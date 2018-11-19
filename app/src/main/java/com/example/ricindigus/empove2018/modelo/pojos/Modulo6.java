@@ -116,7 +116,7 @@ public class Modulo6 {
     private String c6_p630_2frec;
     private String c6_p630_2frec_o;
     private String obs_cap6;
-    private String c6_estado;
+    private String COB600;
 
     public Modulo6(String _id, String idHogar, String idVivienda) {
         this._id = _id;
@@ -230,7 +230,7 @@ public class Modulo6 {
         c6_p630_2frec= "";
         c6_p630_2frec_o= "";
         obs_cap6= "";
-        c6_estado= "";
+        COB600= "2";
     }
 
     public Modulo6() {
@@ -1124,56 +1124,12 @@ public class Modulo6 {
         this.obs_cap6 = obs_cap6;
     }
 
-    public String getC6_estado() {
-        return c6_estado;
+    public String getCOB600() {
+        return COB600;
     }
 
-    public void setC6_estado(String c6_estado) {
-        this.c6_estado = c6_estado;
-    }
-
-    public boolean getC6_p604_trabajo(){
-        if(this.c6_p604_1==null || this.c6_p604_2==null || this.c6_p604_3==null ||
-            this.c6_p604_4==null || this.c6_p604_5==null || this.c6_p604_6==null ||
-            this.c6_p604_7==null || this.c6_p604_8==null || this.c6_p604_9==null ||
-            this.c6_p604_10==null || this.c6_p604_11==null){
-            return true;
-        }else{
-            if(this.c6_p604_1.equals("1") || this.c6_p604_2.equals("1") || this.c6_p604_3.equals("1") ||
-                this.c6_p604_4.equals("1") || this.c6_p604_5.equals("1") || this.c6_p604_6.equals("1") ||
-                this.c6_p604_7.equals("1") || this.c6_p604_8.equals("1") || this.c6_p604_9.equals("1") ||
-                this.c6_p604_10.equals("1") || this.c6_p604_11.equals("1")){
-                return false;
-            }else{
-                return true;
-            }
-        }
-    }
-
-    public boolean pasar_a_p623(){
-        if(this.c6_p618==null){
-            return false;
-        }else if(this.c6_p618.equals("0")){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public boolean pasar_a_p625(){
-        if(this.c6_p620==null){
-            return false;
-        }else{
-            if(this.c6_p620.equals("1")){
-                return  true;
-            }else{
-                if(this.c6_p621==null){
-                    return false;
-                }else if(this.c6_p621.equals("1")){
-                    return  true;
-                }else return false;
-            }
-        }
+    public void setCOB600(String COB600) {
+        this.COB600 = COB600;
     }
 
     public ContentValues toValues(){
@@ -1289,7 +1245,7 @@ public class Modulo6 {
         contentValues.put(SQLConstantes.modulo6_c6_p630_2frec_o,c6_p630_2frec_o);
         contentValues.put(SQLConstantes.modulo6_c6_p630_2mont,c6_p630_2mont);
         contentValues.put(SQLConstantes.modulo6_obs_cap6,obs_cap6);
-        contentValues.put(SQLConstantes.modulo6_c6_estado,c6_estado);
+        contentValues.put(SQLConstantes.modulo6_COB600,COB600);
         return contentValues;
     }
 }
