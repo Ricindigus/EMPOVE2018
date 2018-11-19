@@ -281,7 +281,7 @@ public class Data {
                 marco.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_id)));
                 marco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
                 marco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
-                marco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
+                marco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
                 marco.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_conglomerado)));
                 marco.setCodccpp(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_codccpp)));
                 marco.setNomccpp(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nomccpp)));
@@ -293,6 +293,7 @@ public class Data {
                 marco.setNropta(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nropta)));
                 marco.setLote(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_lote)));
                 marco.setPiso(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_piso)));
+                marco.setMza(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mza)));
                 marco.setBlock(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_block)));
                 marco.setInterior(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_interior)));
                 marco.setCcdd(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_ccdd)));
@@ -303,7 +304,6 @@ public class Data {
                 marco.setDistrito(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_distrito)));
                 marco.setUsuario_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_id)));
                 marco.setUsuario_sup_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_sup_id)));
-
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -407,6 +407,7 @@ public class Data {
                 hogar.setNroviven(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nroviven)));
                 hogar.setVive(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_vive)));
                 hogar.setNropersonas(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nropersonas)));
+                hogar.setPrincipal(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_principal)));
                 hogars.add(hogar);
             }
         }finally{
@@ -433,6 +434,7 @@ public class Data {
                 hogar.setNroviven(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nroviven)));
                 hogar.setNropersonas(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nropersonas)));
                 hogar.setVive(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_vive)));
+                hogar.setPrincipal(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_principal)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -668,19 +670,21 @@ public class Data {
 
 
 
-    public Usuario getUsuario(String id){
+    public Usuario getUsuario(String user){
         Usuario usuario = null;
-        String[] whereArgs = new String[]{id};
+        String[] whereArgs = new String[]{user};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablausuario,
-                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_USUARIO,whereArgs,null,null,null);
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 usuario = new Usuario();
                 usuario.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_id)));
-                usuario.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_nombre)));
+                usuario.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_usuario)));
                 usuario.setClave(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_clave)));
+                usuario.setDni(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_dni)));
+                usuario.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_nombre)));
                 usuario.setCargo_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_cargo_id)));
             }
         }finally{

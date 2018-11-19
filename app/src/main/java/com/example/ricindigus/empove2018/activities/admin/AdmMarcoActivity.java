@@ -123,11 +123,14 @@ public class AdmMarcoActivity extends AppCompatActivity {
             data.open();
             MarcoPullParser marcoPullParser = new MarcoPullParser();
             ArrayList<Marco> marcos = marcoPullParser.parseXML(AdmMarcoActivity.this,filename);
+            String nombreUsuario = marcos.get(0).getNombre();
+            String dniUsuario = marcos.get(0).getDni();
+            data.actualizarValor(SQLConstantes.tablausuario,SQLConstantes.usuario_nombre,nombreUsuario,marcos.get(0).get_id());
+            data.actualizarValor(SQLConstantes.tablausuario,SQLConstantes.usuario_dni,dniUsuario,marcos.get(0).get_id());
             for(Marco marco:marcos){
-                if (!data.existeElemento(SQLConstantes.tablamarco,marco.get_id()+"")){
+                if (!data.existeElemento(SQLConstantes.tablamarco,marco.get_id())){
                     data.insertarElemento(SQLConstantes.tablamarco,marco.toValues());
                 }
-
             }
             data.close();
             return "LISTO";

@@ -46,31 +46,35 @@ public class SQLConstantes {
     /**
      * TABLA MARCO
      * */
-    public static String marco_id = "_id";
-    public static String marco_anio = "anio";
-    public static String marco_mes = "mes";
-    public static String marco_periodo = "periodo";
-    public static String marco_zona = "zona";
-    public static String marco_ccdd = "ccdd";
-    public static String marco_departamento = "departamento";
-    public static String marco_ccpp = "ccpp";
-    public static String marco_provincia = "provincia";
-    public static String marco_ccdi = "ccdi";
-    public static String marco_distrito = "distrito";
-    public static String marco_codccpp = "codccpp";
-    public static String marco_nomccpp = "nomccpp";
-    public static String marco_conglomerado = "conglomerado";
-    public static String marco_norden = "norden";
-    public static String marco_manzana_id = "manzana_id";
-    public static String marco_tipvia = "tipvia";
-    public static String marco_nomvia = "nomvia";
-    public static String marco_nropta = "nropta";
-    public static String marco_lote = "lote";
-    public static String marco_piso = "piso";
-    public static String marco_block = "block";
-    public static String marco_interior = "interior";
-    public static String marco_usuario_id = "usuario_id";
-    public static String marco_usuario_sup_id = "usuario_sup_id";
+    public static final String marco_id = "_id";
+    public static final String marco_anio = "anio";
+    public static final String marco_mes = "mes";
+    public static final String marco_periodo = "periodo";
+    public static final String marco_zona = "zona";
+    public static final String marco_ccdd = "ccdd";
+    public static final String marco_departamento = "departamento";
+    public static final String marco_ccpp = "ccpp";
+    public static final String marco_provincia = "provincia";
+    public static final String marco_ccdi = "ccdi";
+    public static final String marco_distrito = "distrito";
+    public static final String marco_codccpp = "codccpp";
+    public static final String marco_nomccpp = "nomccpp";
+    public static final String marco_conglomerado = "conglomerado";
+    public static final String marco_norden = "norden";
+    public static final String marco_manzana_id = "manzana_id";
+    public static final String marco_tipvia = "tipvia";
+    public static final String marco_nomvia = "nomvia";
+    public static final String marco_nropta = "nropta";
+    public static final String marco_lote = "lote";
+    public static final String marco_piso = "piso";
+    public static final String marco_mza = "mza";
+    public static final String marco_block = "block";
+    public static final String marco_interior = "interior";
+    public static final String marco_usuario_id = "usuario_id";
+    public static final String marco_usuario = "usuario";
+    public static final String marco_nombre = "nombre";
+    public static final String marco_dni = "dni";
+    public static final String marco_usuario_sup_id = "usuario_sup_id";
 
 
     /**
@@ -112,8 +116,10 @@ public class SQLConstantes {
      * */
 
     public static String usuario_id = "_id";
+    public static String usuario_usuario = "usuario";
+    public static String usuario_clave = "clave";
+    public static String usuario_dni = "dni";
     public static String usuario_nombre = "nombre";
-    public static String usuario_clave= "clave";
     public static String usuario_cargo_id= "cargo_id";
 
 
@@ -211,6 +217,7 @@ public class SQLConstantes {
     public static final String hogar_nroviven = "nroviven";
     public static final String hogar_nropersonas = "nropersonas";
     public static final String hogar_vive = "vive";
+    public static final String hogar_principal = "principal";
 
 
 
@@ -223,6 +230,7 @@ public class SQLConstantes {
                     hogar_vive + " TEXT," +
                     hogar_nroviven + " TEXT," +
                     hogar_nropersonas + " TEXT," +
+                    hogar_principal + " TEXT," +
                     hogar_estado + " TEXT" + ");"
             ;
 

@@ -292,9 +292,12 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             zona_TextView.setText(caratula.getZona());
             manzana_id_TextView.setText(caratula.getManzana_id());
             vivienda_TextView.setText(caratula.getVivienda());
-            Log.e("getTipvia_o", "cargarDatos: "+caratula.getTipvia_o() );
+            txtLatitud.setText(caratula.getLatitud());
+            txtLongitud.setText(caratula.getLongitud());
+
+            if(!caratula.getTipvia().equals("") || !caratula.getTipvia().equals("0"))
+                tipvia_Spinner.setSelection(Integer.parseInt(caratula.getTipvia()));
             tipvia_o_EditText.setText(caratula.getTipvia_o());
-            if(!caratula.getTipvia().equals("") || !caratula.getTipvia().equals("0"))tipvia_Spinner.setSelection(Integer.parseInt(caratula.getTipvia()));
             nomvia_EditText.setText(caratula.getNomvia());
             nropta_EditText.setText(caratula.getNropta());
             block_EditText.setText(caratula.getBlock());
@@ -304,8 +307,7 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             lote_EditText.setText(caratula.getLote());
             km_EditText.setText(caratula.getKm());
             telefono_EditText.setText(caratula.getTelefono());
-            txtLatitud.setText(caratula.getLatitud());
-            txtLongitud.setText(caratula.getLongitud());
+
 //            t_hogar_EditText.setText(caratula.getT_hogar());
         }else{
             Marco marco = data.getMarco(idVivienda);
@@ -318,7 +320,14 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             manzana_id_TextView.setText(marco.getManzana_id());
             vivienda_TextView.setText(marco.get_id()+"");
 
-
+            if(!marco.getTipvia().equals("")) tipvia_Spinner.setSelection(Integer.parseInt(marco.getTipvia()));
+            nomvia_EditText.setText(marco.getNomvia());
+            nropta_EditText.setText(marco.getNropta());
+            block_EditText.setText(marco.getBlock());
+            interior_EditText.setText(marco.getInterior());
+            piso_EditText.setText(marco.getPiso());
+            mza_EditText.setText(marco.getMza());
+            lote_EditText.setText(marco.getLote());
         }
 
         String script_tablas_bd_hasta3 = "\n"+ SQLConstantes.SQL_CREATE_TABLA_CARATULA + "\n" + SQLConstantes.SQL_CREATE_TABLA_FUNCIONARIOS +

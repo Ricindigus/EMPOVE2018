@@ -13,6 +13,7 @@ public class Hogar {
     private String nropersonas;
     private String vive;
     private String nroviven;
+    private String principal;
 
 
 
@@ -26,6 +27,7 @@ public class Hogar {
         nropersonas = "";
         vive = "";
         nroviven = "0";
+        principal = "";
     }
 
 
@@ -93,6 +95,14 @@ public class Hogar {
         this.nroviven = nroviven;
     }
 
+    public String getPrincipal() {
+        return principal;
+    }
+
+    public void setPrincipal(String principal) {
+        this.principal = principal;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.hogar_id,_id);
@@ -103,6 +113,7 @@ public class Hogar {
         contentValues.put(SQLConstantes.hogar_nropersonas,nropersonas);
         contentValues.put(SQLConstantes.hogar_vive,vive);
         contentValues.put(SQLConstantes.hogar_nroviven,nroviven);
+        contentValues.put(SQLConstantes.hogar_principal,principal);
         return  contentValues;
     }
 }

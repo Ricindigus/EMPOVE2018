@@ -51,6 +51,11 @@ public class HogarAdapter extends RecyclerView.Adapter<HogarAdapter.ViewHolder>{
         }else{
             holder.txtEstado.setText("Sin estado");
         }
+        if(hogars.get(position).getPrincipal().equals("1")){
+            holder.txtPrincipal.setText("SI");
+        }else{
+            holder.txtPrincipal.setText("NO");
+        }
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +74,7 @@ public class HogarAdapter extends RecyclerView.Adapter<HogarAdapter.ViewHolder>{
         TextView txtNumeroViven;
         TextView txtJefe;
         TextView txtEstado;
+        TextView txtPrincipal;
         CardView cardView;
 
         public ViewHolder(View itemView) {
@@ -78,6 +84,7 @@ public class HogarAdapter extends RecyclerView.Adapter<HogarAdapter.ViewHolder>{
             txtNumeroViven = itemView.findViewById(R.id.item_hogar_textview_numero_viven);
             txtJefe = itemView.findViewById(R.id.item_hogar_textview_jefe);
             txtEstado = itemView.findViewById(R.id.item_hogar_textview_estado);
+            txtPrincipal = itemView.findViewById(R.id.item_hogar_textview_principal);
         }
     }
 }

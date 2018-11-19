@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button ingresarButton;
     private TextInputEditText usuarioEditText;
     private TextInputEditText passwordEditText;
-    String idUsuario;
+    String userUsuario;
     String passwordUsuario;
 
 
@@ -38,18 +38,18 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                idUsuario = usuarioEditText.getText().toString();
+                userUsuario = usuarioEditText.getText().toString();
                 passwordUsuario = passwordEditText.getText().toString();
 
                 if (validarCampos()){
-                    if(idUsuario.equals("ADMIN")){
+                    if(userUsuario.equals("ADMIN") && passwordUsuario.equals("12345")){
                         Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
                         startActivity(intent);
                         finish();
                     }else{
                         Data data =  new Data(LoginActivity.this);
                         data.open();
-                        Usuario user = data.getUsuario(idUsuario);
+                        Usuario user = data.getUsuario(userUsuario);
                         data.close();
                         if(user == null){
                             usuarioEditText.setText("");
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                         }else{
                             if(passwordUsuario.equals(user.getClave())){
                                 Intent intent = new Intent(LoginActivity.this, MarcoActivity.class);
-                                intent.putExtra("nombreUsuario",user.getNombre());
+                                intent.putExtra("nombreUsuario",user.getUsuario());
                                 intent.putExtra("idUsuario",user.get_id()+"");
                                 startActivity(intent);
                                 finish();

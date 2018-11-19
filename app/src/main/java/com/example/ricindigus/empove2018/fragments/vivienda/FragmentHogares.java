@@ -212,12 +212,15 @@ public class FragmentHogares extends FragmentPagina {
                         // TODO Do something
                         if(!jefeEditText.getText().toString().trim().equals("")){
                             Hogar hogar = new Hogar();
-                            String id = idVivienda+"_"+(hogares.size()+1);
+                            int numero = hogares.size()+1;
+                            String id = idVivienda+"_"+numero;
                             hogar.set_id(id);
                             hogar.setId_vivienda(idVivienda);
                             hogar.setNumero((hogares.size()+1)+"");
                             hogar.setNom_ape(jefeEditText.getText().toString());
                             hogar.setEstado("0");
+                            if (numero == 1) hogar.setPrincipal("1");
+                            else hogar.setPrincipal("0");
                             Data data = new Data(context);
                             data.open();
                             data.insertarElemento(getNombreTabla(),hogar.toValues());
