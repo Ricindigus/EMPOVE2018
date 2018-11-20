@@ -342,6 +342,7 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
         llenarVariables();
         int sumaValida = 0;
         String mensaje = "";
+        if (latitud.equals("")) { mostrarMensaje("FALTA CAPTURAR EL GPS"); return false; }
         if(tipvia == 0){ mostrarMensaje("Debe indicar el tipo de via"); return false; }
         if(tipvia == 7){
             Log.e("tipvia_o", "validarDatos: "+tipvia_o );
@@ -351,6 +352,7 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
         }
         if(nomvia.equals("")){ mostrarMensaje("Debe completar el NOMBRE DE LA VÍA"); return false; }
         if(nropta.equals("")){ mostrarMensaje("Debe completar NÚMERO DE LA PUERTA"); return false; }
+        if(nropta.equals("SN") && (mza.equals("") || lote.equals(""))){ mostrarMensaje("Vía sin número, debe indicar Manzana y Lote");}
         if(es_cero(nropta)){ mostrarMensaje("NO PUEDE SER CERO, NÚMERO DE LA PUERTA"); return false; }
 //        if(block.equals("")){ mostrarMensaje("Debe completar BLOCK"); return false; }
 //        if(interior.equals("")){ mostrarMensaje("Debe completar INTERIOR"); return false; }
@@ -358,10 +360,9 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
         if(es_cero(piso)){ mostrarMensaje("NO PUEDE SER CERO, PISO"); return false; }
 //        if(mza.equals("")){ mostrarMensaje("Debe completar la MANZANA"); return false; }
 //        if(lote.equals("")){ mostrarMensaje("Debe completar el LOTE"); return false; }
-//        if(km.equals("")){ mostrarMensaje("Debe completar el KM"); return false; }
+        if(tipvia == 5 && km.equals("")) {mostrarMensaje("Tipo de vía es Carretera, debe indicar el Km.");return false;}
 //        if(telefono.equals("")){ mostrarMensaje("Debe completar el TELÉFONO"); return false; }
 //        if(t_hogar.equals("")){ mostrarMensaje("Debe indicar la CANTIDAD DE HOGARES"); return false; }
-        if (latitud.equals("")) { mostrarMensaje("FALTA CAPTURAR EL GPS"); return false; }
         return true;
     }
 

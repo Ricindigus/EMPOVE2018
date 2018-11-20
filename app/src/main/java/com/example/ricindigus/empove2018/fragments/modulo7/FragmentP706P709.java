@@ -156,7 +156,6 @@ public class FragmentP706P709 extends FragmentPagina {
                     c7_p707_6_Checkbox.setChecked(false);
                     c7_p707_7_Checkbox.setChecked(false);
                     c7_p707_8_Checkbox.setChecked(false);
-                    c7_p707_9_Checkbox.setChecked(false);
                     c7_p707_o_EditText.setText("");
                     c7_p707_1_Checkbox.setEnabled(false);
                     c7_p707_2_Checkbox.setEnabled(false);

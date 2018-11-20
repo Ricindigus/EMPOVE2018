@@ -62,6 +62,9 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     private String c2_p206;
     private int c2_p207;
 
+    boolean jefe_hogar=false,existe_conyuge=false;
+    int cant_padres_suegros=0,edad_jefe_hogar=0;
+
 
     private LinearLayout linearLayout202,linearLayout203,linearLayout204,linearLayout205,linearLayout206;
 
@@ -117,7 +120,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                     c2_p205_m_TextInputET.setEnabled(true);
                 }else{
                     c2_p205_m_TextInputET.setEnabled(false);
-                    if (Integer.parseInt(editable.toString()) <= 12){
+                    if (Integer.parseInt(editable.toString()) < 12){
                         c2_p206_Spinner.setSelection(0);
                         linearLayout206.setVisibility(View.GONE);
                     }else{
@@ -211,8 +214,21 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 int edad = 0;
                 if (!c2_p205_a.equals("")) edad = Integer.parseInt(c2_p205_a);
                 if (edad > Integer.parseInt(edadJefeHogar)){mostrarMensaje("PREGUNTA 205: SI ES HIJO/A O NIETO/A, LA EDAD DEBE SER MENOR A LA EDAD DEL JEFE DEL HOGAR ("+edadJefeHogar+")"); return false;}
+                if (c2_p203 == 3 && (Integer.parseInt(edadJefeHogar) - edad)<12){mostrarMensaje("PREGUNTA 205: La diferencia de edades del jefe del hogar("+edadJefeHogar+") y el hijo no corresponde"); return false;}
+                if (c2_p203 == 5 && (Integer.parseInt(edadJefeHogar) - edad)<30){mostrarMensaje("PREGUNTA 205: La diferencia de edades del jefe del hogar("+edadJefeHogar+") y el nieto  no corresponde"); return false;}
             }
         }
+        if(!jefe_hogar && c2_p203 == 1){mostrarMensaje("PREGUNTA 203: Existe más de un jefe de hogar"); return false;}
+
+        if(cant_padres_suegros>=4 && c2_p203 == 6){mostrarMensaje("PREGUNTA 203: Existe más de cuatro padres/suegros en el hogar"); return false;}
+        if(existe_conyuge && c2_p203 == 2){mostrarMensaje("PREGUNTA 203: Existe más de un cónyuge en el hogar"); return false;}
+        int edadd = 0;
+        if (!c2_p205_a.equals("")) edadd = Integer.parseInt(c2_p205_a);
+        if(c2_p203==1 && edadd<12) {mostrarMensaje("PREGUNTA 205: La edad del Jefe del hogar debe ser mayor o igual a 12 años"); return false;}
+        if(c2_p203==2 && edadd<12) {mostrarMensaje("PREGUNTA 205: El cónyuge debe ser mayor o igual a 12 años"); return false;}
+        if(c2_p203==6 && edadd<33) {mostrarMensaje("PREGUNTA 205: Los padres o suegros deben ser mayor o igual a 33 años"); return false;}
+        if(c2_p203==9 && edadd<5) {mostrarMensaje("PREGUNTA 205: La trabajadora del hogar debe ser mayor o igual a 5 años"); return false;}
+        if(c2_p203==4 && (edadd<12 || edadd>80)) {mostrarMensaje("PREGUNTA 205: Verificar la edad del yerno o nuera"); return false;}
         if(c2_p204 == -1) {mostrarMensaje("PREGUNTA 204: DEBE INDICAR EL SEXO"); return false;}
         if(c2_p205_a.trim().equals("") && c2_p205_m.trim().equals("")) {mostrarMensaje("PREGUNTA 205: DEBE INDICAR LA EDAD EN AÑOS O MESES"); return false;}
         if(!c2_p205_a.trim().equals("")) {
@@ -242,6 +258,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         }
         if (linearLayout206.getVisibility()==View.VISIBLE){
             if(c2_p206.equals("0")) {mostrarMensaje("PREGUNTA 206: DEBE INDICAR EL ESTADO CIVIL"); return false;}
+            if(!jefe_hogar && c2_p203 == 4 && c2_p206.equals("6")){mostrarMensaje("PREGUNTA 206: Estado civil de yerno/nuera no corresponde"); return false;}
         }else{
             c2_p206 = "";
         }
@@ -258,11 +275,15 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     public void cargarDatos() {
         Data data = new Data(this);
         data.open();
+        jefe_hogar = false; existe_conyuge = false; cant_padres_suegros = 0; edad_jefe_hogar = 0;
         if(data.existeElemento(getNombreTabla(),_id)){
             Residente residente = data.getResidente(_id);
             if (residente.getNumero().equals("1")){
                 c2_p202_TextInputET.setEnabled(false);
                 c2_p203_Spinner.setEnabled(false);
+                jefe_hogar = true;
+            }else {
+                jefe_hogar = false;
             }
             c2_p202_TextInputET.setText(residente.getC2_p202());
             c2_p203_Spinner.setSelection(Integer.parseInt(residente.getC2_p203()));
@@ -273,6 +294,26 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             if (!residente.getC2_p207().equals(""))((RadioButton)c2_p207_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p207()))).setChecked(true);
         }
         edadJefeHogar = data.getResidente(idJefeHogar).getC2_p205_a();
+        ArrayList<Residente> residentes;
+
+        residentes = new ArrayList<>();
+
+        residentes = data.getAllResidentesHogar(id_hogar);
+        if(residentes.size()>0){
+            for(Residente r: residentes){
+                if(r.getC2_p203().equals("1")){
+                    if(r.getC2_p205_a().equals("")){r.setC2_p205_a("0");}
+                    edad_jefe_hogar = Integer.parseInt(r.getC2_p205_a());
+                }
+                if(r.getC2_p203().equals("2")){
+                    existe_conyuge = true;
+                }
+                if(r.getC2_p203().equals("6")){
+                    cant_padres_suegros++;
+                }
+            }
+        }
+
         data.close();
     }
 

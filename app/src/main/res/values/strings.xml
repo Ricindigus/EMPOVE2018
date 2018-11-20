@@ -295,17 +295,17 @@
 
     <string-array name="modulo_2_p203_parentescos">
         <item>Seleccione Parentesco</item>
-        <item>Jefe/a del hogar</item>
-        <item>Esposo/a o compañero/a</item>
-        <item>Hijo/a o hijastro/a</item>
-        <item>Yerno/Nuera</item>
-        <item>Nieto/a</item>
-        <item>Padres/Suegros</item>
-        <item>Hermano/a</item>
-        <item>Otro pariente</item>
-        <item>Trabajador/a del hogar</item>
-        <item>Pensionista</item>
-        <item>Otro No Pariente</item>
+        <item>1.Jefe/a del hogar</item>
+        <item>2.Esposo/a o compañero/a</item>
+        <item>3.Hijo/a o hijastro/a</item>
+        <item>4.Yerno/Nuera</item>
+        <item>5.Nieto/a</item>
+        <item>6.Padres/Suegros</item>
+        <item>7.Hermano/a</item>
+        <item>8.Otro pariente</item>
+        <item>9.Trabajador/a del hogar</item>
+        <item>10.Pensionista</item>
+        <item>11.Otro No Pariente</item>
     </string-array>
 
     <string name="modulo_2_p204">204.SEXO</string>
