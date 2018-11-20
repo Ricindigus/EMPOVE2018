@@ -37,6 +37,9 @@ public class SQLConstantes {
     public static String tablaubigeo = "ubigeo";
     public static String tablalayouts = "layouts";
     public static String tablafragments= "fragments";
+    public static String tablafragmentsvivienda= "fragments_vivienda";
+    public static String tablafragmentshogar= "fragments_hogar";
+
 
 
 
@@ -235,7 +238,47 @@ public class SQLConstantes {
             ;
 
     /**
-     * TABLA FRAGMENTS
+     * TABLA FRAGMENTS VIVIENDA
+     * */
+
+    public static String fragments_vivienda_id = "_id";
+    public static String fragments_vivienda_caratula = "caratula";
+    public static String fragments_vivienda_hogares = "hogares";
+
+
+    public static final String SQL_CREATE_TABLA_FRAGMENTS_VIVIENDA =
+            "CREATE TABLE " + tablafragmentsvivienda + "(" +
+                    fragments_vivienda_id  + " TEXT PRIMARY KEY," +
+                    fragments_vivienda_caratula  + " TEXT," +
+                    fragments_vivienda_hogares + " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA FRAGMENTS HOGARES
+     * */
+
+    public static String fragments_hogar_id = "_id";
+    public static String fragments_hogar_visitas_encuestador = "visitas_encuestador";
+    public static String fragments_hogar_visitas_supervisor = "visitas_supervisor";
+    public static String fragments_hogar_funcionarios = "funcionarios";
+    public static String fragments_hogar_p101p107= "p101p107";
+    public static String fragments_hogar_p108p113 = "p108p113";
+    public static String fragments_hogar_p201p207 = "p201p207";
+
+
+    public static final String SQL_CREATE_TABLA_FRAGMENTS_HOGAR =
+            "CREATE TABLE " + tablafragmentshogar + "(" +
+                    fragments_hogar_id  + " TEXT PRIMARY KEY," +
+                    fragments_hogar_visitas_encuestador  + " TEXT," +
+                    fragments_hogar_visitas_supervisor  + " TEXT," +
+                    fragments_hogar_funcionarios  + " TEXT," +
+                    fragments_hogar_p101p107  + " TEXT," +
+                    fragments_hogar_p108p113  + " TEXT," +
+                    fragments_hogar_p201p207 + " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA FRAGMENTS ENCUESTADO
      * */
 
     public static String fragments_id = "_id";

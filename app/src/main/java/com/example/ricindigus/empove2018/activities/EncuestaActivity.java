@@ -141,7 +141,6 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                             if(tFragment == 31)
 //                            tFragment = 1;
                                 salirEncuestaFinalizada();
-
                             habilitarFragment(tFragment);
                         }
                     }

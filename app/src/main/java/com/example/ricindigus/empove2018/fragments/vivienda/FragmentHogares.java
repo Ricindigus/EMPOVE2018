@@ -34,6 +34,7 @@ import com.example.ricindigus.empove2018.adapters.HogarAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentHogar;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
@@ -211,19 +212,28 @@ public class FragmentHogares extends FragmentPagina {
                     public void onClick(View view) {
                         // TODO Do something
                         if(!jefeEditText.getText().toString().trim().equals("")){
-                            Hogar hogar = new Hogar();
+
+
                             int numero = hogares.size()+1;
                             String id = idVivienda+"_"+numero;
+                            Hogar hogar = new Hogar();
                             hogar.set_id(id);
                             hogar.setId_vivienda(idVivienda);
                             hogar.setNumero((hogares.size()+1)+"");
                             hogar.setNom_ape(jefeEditText.getText().toString());
                             hogar.setEstado("0");
-                            if (numero == 1) hogar.setPrincipal("1");
-                            else hogar.setPrincipal("0");
+                            POJOFragmentHogar pojoFragmentHogar = new POJOFragmentHogar(id);
+                            if (numero == 1) {
+                                hogar.setPrincipal("1");
+                            }
+                            else {
+                                hogar.setPrincipal("0");
+                                pojoFragmentHogar.setP101p107("-1");
+                            }
                             Data data = new Data(context);
                             data.open();
                             data.insertarElemento(getNombreTabla(),hogar.toValues());
+                            data.insertarElemento(SQLConstantes.tablafragmentshogar,pojoFragmentHogar.toValues());
                             Residente residente = new Residente();
                             residente.set_id(id + "_1");
                             residente.setId_hogar(id);
@@ -312,6 +322,7 @@ public class FragmentHogares extends FragmentPagina {
         data.eliminarDato(SQLConstantes.tablamodulo1h,idDelHogar);
         data.eliminarDatos(SQLConstantes.tablavisitasencuestador,SQLConstantes.visita_encuestador_id_hogar,idDelHogar);
         data.eliminarDato(SQLConstantes.tablaresultadoencuestador,idDelHogar);
+        data.eliminarDato(SQLConstantes.tablafragmentshogar,idDelHogar);
         inicializarDatos();
         setearAdapter();
         data.close();

@@ -28,6 +28,7 @@ import com.example.ricindigus.empove2018.fragments.vivienda.FragmentHogares;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
+import com.example.ricindigus.empove2018.util.TipoFragmentEncuestado;
 import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
 
 public class ViviendaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,6 +43,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
     private TextView btnAtras;
     private TextView btnSiguiente;
     int tFragment = 1;
+    int tFragmentAnterior = 1;
     FragmentPagina fragmentActual;
     NavigationView navigationView;
 
@@ -87,7 +89,11 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
                     tFragment++;
-                    setFragment(tFragment,1);
+                    habilitarFragment(tFragment);
+                    while(!setFragment(tFragment,1)){
+                        tFragment++;
+                        habilitarFragment(tFragment);
+                    }
                 }
             }
         });
@@ -118,42 +124,76 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         }
     }
 
+    public void habilitarFragment(int tipoFragment){
+        Data data =  new Data(this);
+        data.open();
+        switch (tipoFragment){
+            case TipoFragmentVivienda.CARATULA:
+                if (data.getValor(SQLConstantes.tablafragmentsvivienda,SQLConstantes.fragments_vivienda_caratula,idVivienda).equals("0"))
+                    data.actualizarValor(SQLConstantes.tablafragmentsvivienda,SQLConstantes.fragments_vivienda_caratula,"1",idVivienda);
+                break;
+            case TipoFragmentVivienda.HOGARES:
+                if (data.getValor(SQLConstantes.tablafragmentsvivienda,SQLConstantes.fragments_vivienda_hogares,idVivienda).equals("0"))
+                    data.actualizarValor(SQLConstantes.tablafragmentsvivienda,SQLConstantes.fragments_vivienda_hogares,"1",idVivienda);
+                break;
+        }
+    }
+
     public void ocultarTeclado(View view){
         InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public void setFragment(int tipoFragment, int direccion){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if(direccion != 0){
-            if(direccion > 0){
-                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
-            }else{
-                fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
-            }
-        }
-        btnAtras.setVisibility(View.VISIBLE);
-        btnSiguiente.setVisibility(View.VISIBLE);
+    public boolean seteoValido(int tipoFragment){
+        boolean valido = true;
+        Data data =  new Data(this);
+        data.open();
         switch (tipoFragment){
             case TipoFragmentVivienda.CARATULA:
-                btnAtras.setVisibility(View.GONE);
-                FragmentCaratula fragmentCaratula = new FragmentCaratula(idVivienda,vivienda_mes,vivienda_anio, vivienda_zona,vivienda_periodo,idUsuario,ViviendaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula);
-                fragmentActual = fragmentCaratula;
-                tFragment = TipoFragmentVivienda.CARATULA;
-                navigationView.setCheckedItem(R.id.nav_caratula);
+                if (data.getValor(SQLConstantes.tablafragmentsvivienda,SQLConstantes.fragments_vivienda_caratula,idVivienda).equals("0")) valido = false;
                 break;
             case TipoFragmentVivienda.HOGARES:
-                btnSiguiente.setVisibility(View.GONE);
-                FragmentHogares fragmentHogares = new FragmentHogares(idVivienda,ViviendaActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentHogares);
-                fragmentActual = fragmentHogares;
-                tFragment = TipoFragmentVivienda.HOGARES;
-                navigationView.setCheckedItem(R.id.nav_hogares);
+                if (data.getValor(SQLConstantes.tablafragmentsvivienda,SQLConstantes.fragments_vivienda_hogares,idVivienda).equals("0")) valido = false;
                 break;
         }
-        fragmentTransaction.commit();
+        return valido;
+    }
+
+    public boolean setFragment(int tipoFragment, int direccion){
+        if (seteoValido(tipoFragment)){
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            if(direccion != 0){
+                if(direccion > 0){
+                    fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+                }else{
+                    fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+                }
+            }
+            btnAtras.setVisibility(View.VISIBLE);
+            btnSiguiente.setVisibility(View.VISIBLE);
+            switch (tipoFragment){
+                case TipoFragmentVivienda.CARATULA:
+                    btnAtras.setVisibility(View.GONE);
+                    FragmentCaratula fragmentCaratula = new FragmentCaratula(idVivienda,vivienda_mes,vivienda_anio, vivienda_zona,vivienda_periodo,idUsuario,ViviendaActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentCaratula);
+                    fragmentActual = fragmentCaratula;
+                    tFragment = TipoFragmentVivienda.CARATULA;
+                    navigationView.setCheckedItem(R.id.nav_caratula);
+                    break;
+                case TipoFragmentVivienda.HOGARES:
+                    btnSiguiente.setVisibility(View.GONE);
+                    FragmentHogares fragmentHogares = new FragmentHogares(idVivienda,ViviendaActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentHogares);
+                    fragmentActual = fragmentHogares;
+                    tFragment = TipoFragmentVivienda.HOGARES;
+                    navigationView.setCheckedItem(R.id.nav_hogares);
+                    break;
+            }
+            fragmentTransaction.commit();
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -221,19 +261,19 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        boolean correcto = true;
         switch (id){
             case R.id.nav_caratula:
-                setFragment(TipoFragmentVivienda.CARATULA,0);
+                if (!setFragment(TipoFragmentVivienda.CARATULA,0))correcto=false;
                 break;
             case R.id.nav_hogares:
-                setFragment(TipoFragmentVivienda.HOGARES,0);
+                if (!setFragment(TipoFragmentVivienda.HOGARES,0))correcto=false;
                 break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return correcto;
     }
 
 

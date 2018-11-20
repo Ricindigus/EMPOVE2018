@@ -24,6 +24,8 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentHogar;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentVivienda;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.modelo.pojos.Ubigeo;
@@ -89,6 +91,8 @@ public class Data {
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO8);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_LAYOUTS);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS);
+                sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS_HOGAR);
+                sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS_VIVIENDA);
                 sqLiteDatabase.close();
             }catch (IOException e){
                 throw new Error("Error: copiando base de datos");
@@ -118,7 +122,6 @@ public class Data {
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_RESULTADO_SUPERVISOR);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO1H);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO1V);
-            sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO2);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO3);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO3_P309_RUTAS);
@@ -130,8 +133,8 @@ public class Data {
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO8);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_LAYOUTS);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS);
-
-
+            sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS_HOGAR);
+            sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS_VIVIENDA);
             sqLiteDatabase.close();
         }catch (IOException e){
             throw new Error("Error: copiando base de datos");
@@ -2646,6 +2649,50 @@ public class Data {
             if(cursor != null) cursor.close();
         }
         return pojoFragment;
+    }
+
+    public POJOFragmentVivienda getFragmentsVivienda(String idEncuestado){
+        POJOFragmentVivienda pojoFragmentVivienda = null;
+        String[] whereArgs = new String[]{idEncuestado};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablafragmentsvivienda,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                pojoFragmentVivienda = new POJOFragmentVivienda();
+                pojoFragmentVivienda.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_vivienda_id)));
+                pojoFragmentVivienda.setCaratula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_vivienda_caratula)));
+                pojoFragmentVivienda.setHogares(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_vivienda_hogares)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return pojoFragmentVivienda;
+    }
+
+    public POJOFragmentHogar getFragmentsHogar(String idEncuestado){
+        POJOFragmentHogar pojoFragmentHogar = null;
+        String[] whereArgs = new String[]{idEncuestado};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablafragmentshogar,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                pojoFragmentHogar = new POJOFragmentHogar();
+                pojoFragmentHogar.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_id)));
+                pojoFragmentHogar.setVisitas_encuestador(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_visitas_encuestador)));
+                pojoFragmentHogar.setVisitas_supervisor(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_visitas_supervisor)));
+                pojoFragmentHogar.setFuncionarios(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_funcionarios)));
+                pojoFragmentHogar.setP101p107(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_p101p107)));
+                pojoFragmentHogar.setP108p113(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_p108p113)));
+                pojoFragmentHogar.setP201p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_p201p207)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return pojoFragmentHogar;
     }
 
     public void borrarAllData(String tabla){

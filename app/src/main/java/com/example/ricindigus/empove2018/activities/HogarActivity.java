@@ -26,6 +26,7 @@ import com.example.ricindigus.empove2018.fragments.modulo1.FragmentP101P107;
 import com.example.ricindigus.empove2018.fragments.modulo1.FragmentP108P113;
 import com.example.ricindigus.empove2018.fragments.modulo2.FragmentP201P206;
 import com.example.ricindigus.empove2018.modelo.Data;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.TipoFragmentHogar;
@@ -87,7 +88,11 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
                     tFragment++;
-                    setFragment(tFragment,1);
+                    habilitarFragment(tFragment);
+                    while(!setFragment(tFragment,1)){
+                        tFragment++;
+                        habilitarFragment(tFragment);
+                    }
                 }
             }
         });
@@ -97,8 +102,10 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
             public void onClick(View v) {
                 ocultarTeclado(btnAtras);
                 tFragment--;
-                setFragment(tFragment,-1);
-
+//                setFragment(tFragment,-1);
+                while(!setFragment(tFragment,-1)){
+                    tFragment--;
+                }
             }
         });
 
@@ -111,7 +118,38 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            salirActivityVivienda();
+            salirActivityHogar();
+        }
+    }
+
+    public void habilitarFragment(int tipoFragment){
+        Data data =  new Data(this);
+        data.open();
+        switch (tipoFragment){
+            case TipoFragmentHogar.VISITAS_ENCUESTADOR:
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_encuestador,idHogar).equals("0"))
+                    data.actualizarValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_encuestador,"1",idHogar);
+                break;
+            case TipoFragmentHogar.VISITAS_SUPERVISOR:
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_supervisor,idHogar).equals("0"))
+                    data.actualizarValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_supervisor,"1",idHogar);
+                break;
+            case TipoFragmentHogar.FUNCIONARIOS:
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_funcionarios,idHogar).equals("0"))
+                    data.actualizarValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_funcionarios,"1",idHogar);
+                break;
+            case TipoFragmentHogar.P101P107:
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p101p107,idHogar).equals("0"))
+                    data.actualizarValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p101p107,"1",idHogar);
+                break;
+            case TipoFragmentHogar.P108P113:
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p108p113,idHogar).equals("0"))
+                    data.actualizarValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p108p113,"1",idHogar);
+                break;
+            case TipoFragmentHogar.P201P206:
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p201p207,idHogar).equals("0"))
+                    data.actualizarValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p201p207,"1",idHogar);
+                break;
         }
     }
 
@@ -120,54 +158,87 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public void setFragment(int tipoFragment, int direccion){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if(direccion != 0){
-            if(direccion > 0){
-                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
-            }else{
-                fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
-            }
-        }
-        btnAtras.setVisibility(View.VISIBLE);
-        btnSiguiente.setVisibility(View.VISIBLE);
+    public boolean seteoValido(int tipoFragment){
+        boolean valido = true;
+        Data data =  new Data(this);
+        data.open();
         switch (tipoFragment){
             case TipoFragmentHogar.VISITAS_ENCUESTADOR:
-                btnAtras.setVisibility(View.GONE);
-                btnSiguiente.setVisibility(View.VISIBLE);
-                FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idHogar,idVivienda,HogarActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
-                fragmentActual = fragmentVisitasEncuestador; tFragment = TipoFragmentHogar.VISITAS_ENCUESTADOR;
-                navigationView.setCheckedItem(R.id.nav_visita_encuestador);break;
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_encuestador,idHogar).equals("0")) valido = false;
+                break;
             case TipoFragmentHogar.VISITAS_SUPERVISOR:
-                FragmentVisitasSupervisor fragmentVisitasSupervisor = new FragmentVisitasSupervisor(idHogar,idVivienda,HogarActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasSupervisor);
-                fragmentActual = fragmentVisitasSupervisor;tFragment = TipoFragmentHogar.VISITAS_SUPERVISOR;
-                navigationView.setCheckedItem(R.id.nav_visita_supervisor);break;
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_supervisor,idHogar).equals("0")
+                        || data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_supervisor,idHogar).equals("-1")) valido = false;
+                break;
             case TipoFragmentHogar.FUNCIONARIOS:
-                FragmentFuncionarios fragmentFuncionarios = new FragmentFuncionarios(idHogar,idVivienda,HogarActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentFuncionarios);
-                fragmentActual = fragmentFuncionarios;tFragment = TipoFragmentHogar.FUNCIONARIOS;
-                navigationView.setCheckedItem(R.id.nav_funcionario);break;
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_funcionarios,idHogar).equals("0")) valido = false;
+                break;
             case TipoFragmentHogar.P101P107:
-                FragmentP101P107 fragmentP101P107 = new FragmentP101P107(idHogar,idVivienda,HogarActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP101P107);
-                fragmentActual = fragmentP101P107;tFragment = TipoFragmentHogar.P101P107;
-                navigationView.setCheckedItem(R.id.nav_p101_p107);break;
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p101p107,idHogar).equals("0")
+                        || data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p101p107,idHogar).equals("-1")) valido = false;
+                break;
             case TipoFragmentHogar.P108P113:
-                FragmentP108P113 fragmentP108P113 = new FragmentP108P113(idHogar,idVivienda,HogarActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP108P113);
-                fragmentActual = fragmentP108P113;tFragment = TipoFragmentHogar.P108P113;
-                navigationView.setCheckedItem(R.id.nav_p108_p113);break;
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p108p113,idHogar).equals("0")) valido = false;
+                break;
             case TipoFragmentHogar.P201P206:
-                btnSiguiente.setVisibility(View.GONE);
-                FragmentP201P206 fragmentP201P206 = new FragmentP201P206(idHogar,idVivienda,HogarActivity.this);
-                fragmentTransaction.replace(R.id.fragment_layout, fragmentP201P206);
-                fragmentActual = fragmentP201P206;tFragment = TipoFragmentHogar.P201P206;
-                navigationView.setCheckedItem(R.id.nav_p201_p206);break;
+                if (data.getValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_p201p207,idHogar).equals("0")) valido = false;
+                break;
         }
-        fragmentTransaction.commit();
+        return valido;
+    }
+
+    public boolean setFragment(int tipoFragment, int direccion){
+        if (seteoValido(tipoFragment)){
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            if(direccion != 0){
+                if(direccion > 0){
+                    fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+                }else{
+                    fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+                }
+            }
+            btnAtras.setVisibility(View.VISIBLE);
+            btnSiguiente.setVisibility(View.VISIBLE);
+            switch (tipoFragment){
+                case TipoFragmentHogar.VISITAS_ENCUESTADOR:
+                    btnAtras.setVisibility(View.GONE);
+                    btnSiguiente.setVisibility(View.VISIBLE);
+                    FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idHogar,idVivienda,HogarActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
+                    fragmentActual = fragmentVisitasEncuestador; tFragment = TipoFragmentHogar.VISITAS_ENCUESTADOR;
+                    navigationView.setCheckedItem(R.id.nav_visita_encuestador);break;
+                case TipoFragmentHogar.VISITAS_SUPERVISOR:
+                    FragmentVisitasSupervisor fragmentVisitasSupervisor = new FragmentVisitasSupervisor(idHogar,idVivienda,HogarActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasSupervisor);
+                    fragmentActual = fragmentVisitasSupervisor;tFragment = TipoFragmentHogar.VISITAS_SUPERVISOR;
+                    navigationView.setCheckedItem(R.id.nav_visita_supervisor);break;
+                case TipoFragmentHogar.FUNCIONARIOS:
+                    FragmentFuncionarios fragmentFuncionarios = new FragmentFuncionarios(idHogar,idVivienda,HogarActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentFuncionarios);
+                    fragmentActual = fragmentFuncionarios;tFragment = TipoFragmentHogar.FUNCIONARIOS;
+                    navigationView.setCheckedItem(R.id.nav_funcionario);break;
+                case TipoFragmentHogar.P101P107:
+                    FragmentP101P107 fragmentP101P107 = new FragmentP101P107(idHogar,idVivienda,HogarActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP101P107);
+                    fragmentActual = fragmentP101P107;tFragment = TipoFragmentHogar.P101P107;
+                    navigationView.setCheckedItem(R.id.nav_p101_p107);break;
+                case TipoFragmentHogar.P108P113:
+                    FragmentP108P113 fragmentP108P113 = new FragmentP108P113(idHogar,idVivienda,HogarActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP108P113);
+                    fragmentActual = fragmentP108P113;tFragment = TipoFragmentHogar.P108P113;
+                    navigationView.setCheckedItem(R.id.nav_p108_p113);break;
+                case TipoFragmentHogar.P201P206:
+                    btnSiguiente.setVisibility(View.GONE);
+                    FragmentP201P206 fragmentP201P206 = new FragmentP201P206(idHogar,idVivienda,HogarActivity.this);
+                    fragmentTransaction.replace(R.id.fragment_layout, fragmentP201P206);
+                    fragmentActual = fragmentP201P206;tFragment = TipoFragmentHogar.P201P206;
+                    navigationView.setCheckedItem(R.id.nav_p201_p206);break;
+            }
+            fragmentTransaction.commit();
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -186,7 +257,7 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_volver_hogares) {
-            salirActivityVivienda();
+            salirActivityHogar();
             return true;
         }
 
@@ -198,34 +269,34 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        boolean correcto = true;
         switch (id){
             case R.id.nav_visita_encuestador:
-                setFragment(TipoFragmentHogar.VISITAS_ENCUESTADOR,0);
+                if (!setFragment(TipoFragmentHogar.VISITAS_ENCUESTADOR,0))correcto=false;
                 break;
             case R.id.nav_visita_supervisor:
-                setFragment(TipoFragmentHogar.VISITAS_SUPERVISOR,0);
+                if (!setFragment(TipoFragmentHogar.VISITAS_SUPERVISOR,0))correcto=false;
                 break;
             case R.id.nav_funcionario:
-                setFragment(TipoFragmentHogar.FUNCIONARIOS,0);
+                if (!setFragment(TipoFragmentHogar.FUNCIONARIOS,0))correcto=false;
                 break;
             case R.id.nav_p101_p107:
-                setFragment(TipoFragmentHogar.P101P107,0);
+                if (!setFragment(TipoFragmentHogar.P101P107,0))correcto=false;
                 break;
             case R.id.nav_p108_p113:
-                setFragment(TipoFragmentHogar.P108P113,0);
+                if (!setFragment(TipoFragmentHogar.P108P113,0))correcto=false;
                 break;
             case R.id.nav_p201_p206:
-                setFragment(TipoFragmentHogar.P201P206,0);
+                if (!setFragment(TipoFragmentHogar.P201P206,0))correcto=false;
                 break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return correcto;
     }
 
-    public void salirActivityVivienda(){
+    public void salirActivityHogar(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("¿Está seguro que desea volver a la lista de hogares?")
                 .setTitle("Aviso")

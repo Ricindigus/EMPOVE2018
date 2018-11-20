@@ -22,7 +22,9 @@ import android.widget.Toast;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.adapters.MarcoAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
+import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.ItemMarco;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentVivienda;
 
 import java.util.ArrayList;
 
@@ -310,6 +312,11 @@ public class MarcoActivity extends AppCompatActivity {
                 intent.putExtra("vivienda_anio", itemMarcos.get(position).getAnio()+"");
                 intent.putExtra("vivienda_periodo", itemMarcos.get(position).getPeriodo()+"");
                 intent.putExtra("idUsuario", idUsuario);
+                Data data = new Data(MarcoActivity.this);
+                POJOFragmentVivienda pojoFragmentVivienda = new POJOFragmentVivienda(itemMarcos.get(position).get_id()+"");
+                data.open();
+                data.insertarElemento(SQLConstantes.tablafragmentsvivienda,pojoFragmentVivienda.toValues());
+                data.close();
                 startActivity(intent);
             }
         });
