@@ -73,6 +73,8 @@ public class FragmentP601P604 extends FragmentPagina {
     private String c6_p604_11;
     private String c6_p604_o;
 
+    boolean corresponde=false;
+
     @SuppressLint("ValidFragment")
     public FragmentP601P604(String idEncuestado, Context context) {
         this.idEncuestado = idEncuestado;
@@ -281,6 +283,7 @@ public class FragmentP601P604 extends FragmentPagina {
     @Override
     public boolean validarDatos() {
         llenarVariables();
+        if(!corresponde)  {mostrarMensaje("PERIODO DE REFERENCIA NO CORRESPONDE A FECHA DE LA ENCUESTA");return false;}
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
 
         if(c6_p601.equals("-1")){
@@ -395,22 +398,115 @@ public class FragmentP601P604 extends FragmentPagina {
     }
 
     public void fecha(){
+        corresponde=false;
         Calendar calendario;
-        int mm=0, dd=0;
+        int aa=0, mm=0, dd=0, hora=0, min=0,mes_ini=0,dia_ini=0,mes_fin=0,dia_fin=0;
         String fecha_inicial="", fecha_final="";
         calendario = Calendar.getInstance();
+        aa = calendario.get(Calendar.YEAR);
         mm = calendario.get(Calendar.MONTH);
         dd = calendario.get(Calendar.DAY_OF_MONTH);
-        fecha_final = "" + dd + " DE " + NombreMes(mm);
-        calendario.add(Calendar.DAY_OF_MONTH,-7);
-        mm = calendario.get(Calendar.MONTH);
-        dd = calendario.get(Calendar.DAY_OF_MONTH);
-        fecha_inicial = "" + dd + " DE " + NombreMes(mm);
-        String enunciado_p601 = c6_p601_TextView.getText()+"";
-        enunciado_p601 = enunciado_p601.replace("FECHAINI", fecha_inicial);
-        enunciado_p601 = enunciado_p601.replace("FECHAFIN", fecha_final);
-        c6_p601_TextView.setText(enunciado_p601);
+        hora = calendario.get(Calendar.HOUR_OF_DAY);
+
+        Log.e("aa", "fecha: "+aa );
+        Log.e("mm", "fecha: "+mm );
+        Log.e("dd", "fecha: "+dd );
+        Log.e("hora", "fecha: "+hora );
+
+        if(aa==2018){
+            if(mm==10){
+                if(dd>=20 && dd<=23){
+                    mes_ini = 10; dia_ini = 11; mes_fin = 10; dia_fin = 17;
+                    corresponde = true;
+                }else if(dd==24){
+                    if(hora<12){
+                        mes_ini = 10; dia_ini = 11; mes_fin = 10; dia_fin = 17;
+                        corresponde = true;
+                    }else{
+                        mes_ini = 10; dia_ini = 18; mes_fin = 10; dia_fin = 24;
+                        corresponde = true;
+                    }
+                }else if(dd>=25 && dd<=30){
+                    mes_ini = 10; dia_ini = 18; mes_fin = 10; dia_fin = 24;
+                    corresponde = true;
+                }
+            }else if(mm==11){
+                if(dd==1){
+                    if(hora<12){
+                        mes_ini = 10; dia_ini = 18; mes_fin = 10; dia_fin = 24;
+                        corresponde = true;
+                    }else{
+                        mes_ini = 10; dia_ini = 25; mes_fin = 11; dia_fin = 1;
+                        corresponde = true;
+                    }
+                }else if(dd>=2 && dd<=7){
+                    mes_ini = 10; dia_ini = 25; mes_fin = 11; dia_fin = 1;
+                    corresponde = true;
+                }else if(dd==8){
+                    if(hora<12){
+                        mes_ini = 10; dia_ini = 25; mes_fin = 11; dia_fin = 1;
+                        corresponde = true;
+                    }else{
+                        mes_ini = 11; dia_ini = 2; mes_fin = 11; dia_fin = 8;
+                        corresponde = true;
+                    }
+                }else if(dd>=9 && dd<=14){
+                    mes_ini = 11; dia_ini = 2; mes_fin = 11; dia_fin = 8;
+                    corresponde = true;
+                }else if(dd==15){
+                    if(hora<12){
+                        mes_ini = 11; dia_ini = 2; mes_fin = 11; dia_fin = 8;
+                        corresponde = true;
+                    }else{
+                        mes_ini = 11; dia_ini = 9; mes_fin = 11; dia_fin = 15;
+                        corresponde = true;
+                    }
+                }else if(dd>=16 && dd<=21){
+                    mes_ini = 11; dia_ini = 9; mes_fin = 11; dia_fin = 15;
+                    corresponde = true;
+                }else if(dd==22){
+                    if(hora<12){
+                        mes_ini = 11; dia_ini = 9; mes_fin = 11; dia_fin = 15;
+                        corresponde = true;
+                    }else{
+                        mes_ini = 11; dia_ini = 16; mes_fin = 11; dia_fin = 22;
+                        corresponde = true;
+                    }
+                }else if(dd>=23 && dd<=28){
+                    mes_ini = 11; dia_ini = 16; mes_fin = 11; dia_fin = 22;
+                    corresponde = true;
+                }else if(dd==29){
+                    if(hora<12){
+                        mes_ini = 11; dia_ini = 16; mes_fin = 11; dia_fin = 22;
+                        corresponde = true;
+                    }
+                }
+            }
+        }
+
+        if(corresponde){
+            fecha_final = "" + dia_fin + " DE " + NombreMes(mes_fin);
+            fecha_inicial = "" + dia_ini + " DE " + NombreMes(mes_ini);
+            String enunciado_p601 = c6_p601_TextView.getText()+"";
+            enunciado_p601 = enunciado_p601.replace("FECHAINI", fecha_inicial);
+            enunciado_p601 = enunciado_p601.replace("FECHAFIN", fecha_final);
+            c6_p601_TextView.setText(enunciado_p601);
+        }else{
+            fecha_final = "" + dd + " DE " + NombreMes(mm);
+            calendario.add(Calendar.DAY_OF_MONTH,-7);
+            mm = calendario.get(Calendar.MONTH);
+            dd = calendario.get(Calendar.DAY_OF_MONTH);
+            fecha_inicial = "" + dd + " DE " + NombreMes(mm);
+            String enunciado_p601 = c6_p601_TextView.getText()+"";
+            enunciado_p601 = enunciado_p601.replace("FECHAINI", fecha_inicial);
+            enunciado_p601 = enunciado_p601.replace("FECHAFIN", fecha_final);
+            c6_p601_TextView.setText(enunciado_p601);
+        }
+
+
     }
+
+
 
     public void inicio(){
         fecha();
