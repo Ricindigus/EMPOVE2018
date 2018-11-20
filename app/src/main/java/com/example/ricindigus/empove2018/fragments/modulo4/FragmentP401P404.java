@@ -149,6 +149,28 @@ public class FragmentP401P404 extends FragmentPagina {
         controlarChecked(c4_p403_14_CheckBox,c4_p403_o_EditText);
         configurarEditText(c4_p403_o_EditText,m4_p403_linearlayout,0,30);
 
+        c4_p401_5_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    c4_p401_1_CheckBox.setChecked(false);
+                    c4_p401_2_CheckBox.setChecked(false);
+                    c4_p401_3_CheckBox.setChecked(false);
+                    c4_p401_4_CheckBox.setChecked(false);
+                    c4_p401_o_EditText.setText("");
+                    c4_p401_1_CheckBox.setEnabled(false);
+                    c4_p401_2_CheckBox.setEnabled(false);
+                    c4_p401_3_CheckBox.setEnabled(false);
+                    c4_p401_4_CheckBox.setEnabled(false);
+                    c4_p401_o_EditText.setEnabled(false);
+                }else{
+                    c4_p401_1_CheckBox.setEnabled(true);
+                    c4_p401_2_CheckBox.setEnabled(true);
+                    c4_p401_3_CheckBox.setEnabled(true);
+                    c4_p401_4_CheckBox.setEnabled(true);
+                }
+            }
+        });
 
         c4_p402_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -322,7 +344,7 @@ public class FragmentP401P404 extends FragmentPagina {
         llenarVariables();
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
 
-        if (c4_p401_1.equals("0") && c4_p401_2.equals("0") && c4_p401_3.equals("0") && c4_p401_4.equals("0")) {
+        if (c4_p401_1.equals("0") && c4_p401_2.equals("0") && c4_p401_3.equals("0") && c4_p401_4.equals("0") && c4_p401_5.equals("0")) {
             mostrarMensaje("PREGUNTA 401: DEBE SELECCIONAR ALGUNA OPCION");return false;
         }
         if (c4_p401_1.equals("1") && c4_p401_3.equals("1")) {

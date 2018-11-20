@@ -1106,7 +1106,7 @@
     <string name="modulo_7_p706_no">2.No</string>
 
     <string name="modulo_7_p707">707.EN LA COMUNIDAD O BARRIO, DONDE VIVE, ¿PARTICIPA USTED EN ASOCIACIONES/ESPACIOS DE REUNIÓN COMUNITARIOS, COMO:</string>
-    <string name="modulo_7_p707_ind">(Lea cada una de las alternativas y seleccione solo un código)</string>
+    <string name="modulo_7_p707_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_7_p707_sp1">1.Iglesia?</string>
     <string name="modulo_7_p707_sp2">2.Junta de vecinos?</string>
     <string name="modulo_7_p707_sp3">3.Asociaciones de padres?</string>

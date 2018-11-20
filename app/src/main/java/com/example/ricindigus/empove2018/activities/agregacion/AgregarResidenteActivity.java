@@ -222,8 +222,8 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             }
         }
         if(!c2_p205_m.trim().equals("")) {
-            if(Integer.parseInt(c2_p205_m)<1 || Integer.parseInt(c2_p205_m)>11){
-                mostrarMensaje("PREGUNTA 205: MESES DEBE ESTAR EN EL INTERVALO DE 1 A 11");
+            if(Integer.parseInt(c2_p205_m)<0 || Integer.parseInt(c2_p205_m)>11){
+                mostrarMensaje("PREGUNTA 205: MESES DEBE ESTAR EN EL INTERVALO DE 0 A 11");
                 return false;
             }
         }
