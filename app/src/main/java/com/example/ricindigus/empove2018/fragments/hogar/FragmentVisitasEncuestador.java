@@ -67,6 +67,8 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
 
     private String idHogar;
     private String idVivienda;
+    private String idCargo;
+
     private Context context;
     private VisitaEncuestador visita;
     private Data dataTablas;
@@ -96,10 +98,11 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
     }
 
     @SuppressLint("ValidFragment")
-    public FragmentVisitasEncuestador(String idHogar, String idVivienda, Context context) {
+    public FragmentVisitasEncuestador(String idHogar, String idVivienda, Context context, String idCargo) {
         this.idHogar = idHogar;
         this.idVivienda = idVivienda;
         this.context = context;
+        this.idCargo = idCargo;
     }
 
     @Override
@@ -117,6 +120,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        if (idCargo.equals("2")) btnAgregar.setVisibility(View.GONE);
         cargarDatos();
         recyclerView.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
@@ -131,7 +135,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                 dTablas.open();
                 String resultadoVisita = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu));
                 dTablas.close();
-                if(resultadoVisita == null){
+                if(resultadoVisita == null  && idCargo.equals("1")){
                     PopupMenu popupMenu = new PopupMenu(context,view);
                     popupMenu.getMenuInflater().inflate(R.menu.menu_visita,popupMenu.getMenu());
                     popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -779,49 +783,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
 
     public boolean coberturaCorrecta(){
 
-//        Data data = new Data(context);
-//        data.open();
-//        if (data.existeElemento(SQLConstantes.tablamodulo1v,idVivienda)){
-//            if (coberturadoModul1V())
-//        }
-//        data.close();
-//        return true;
-//        if (c1_p101 == -1){mostrarMensaje("PREGUNTA 101: DEBE MARCAR UNA OPCIÓN"); return false;}
-//        else{
-//            if (c1_p101 == 8){
-//                if (c1_p101_o.trim().equals("")){mostrarMensaje("PREGUNTA 101: DEBE ESPECIFICAR");return false;}
-//            }
-//        }
-//
-//        if (c1_p102 == -1){mostrarMensaje("PREGUNTA 102: DEBE MARCAR UNA OPCIÓN"); return false;}
-//        else{
-//            if (c1_p102 == 9){
-//                if (c1_p102_o.trim().equals("")){mostrarMensaje("PREGUNTA 102: DEBE ESPECIFICAR");return false;}
-//            }
-//        }
-//
-//        if (c1_p103 == -1){mostrarMensaje("PREGUNTA 103: DEBE MARCAR UNA OPCIÓN"); return false;}
-//        else{
-//            if (c1_p103 == 8){
-//                if (c1_p103_o.trim().equals("")){mostrarMensaje("PREGUNTA 103: DEBE ESPECIFICAR");return false;}
-//            }
-//        }
-//
-//        if (c1_p104 == -1){mostrarMensaje("PREGUNTA 104: DEBE MARCAR UNA OPCIÓN"); return false;}
-//        else{
-//            if (c1_p104 == 7){
-//                if (c1_p104_o.trim().equals("")){mostrarMensaje("PREGUNTA 104: DEBE ESPECIFICAR");return false;}
-//            }
-//        }
-//
-//        if (c1_p105.trim().equals("")){mostrarMensaje("PREGUNTA 105: FALTA COMPLETAR LA PREGUNTA");return false;}
-//        if(Integer.parseInt(c1_p105)==0){mostrarMensaje("PREGUNTA 105: NO PUEDE SER CERO");return false;}
-//        if (c1_p106.trim().equals("")){mostrarMensaje("PREGUNTA 106: FALTA COMPLETAR LA PREGUNTA");return false;}
-//        if(Integer.parseInt(c1_p105)<Integer.parseInt(c1_p106)){
-//            mostrarMensaje("PREGUNTA 106: DEBE SER MENOR O IGUAL QUE LA PREGUNTA 105");return false;
-//        }
-//        if (c1_p107.trim().equals("")){mostrarMensaje("PREGUNTA 107: FALTA COMPLETAR LA PREGUNTA");return false;}
-//        if(Integer.parseInt(c1_p107)==0){mostrarMensaje("PREGUNTA 107: NO PUEDE SER CERO");return false;}
+
         return true;
     }
 
@@ -870,9 +832,12 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
         String mensaje = "";
         if(cursor.getCount() > 0){
             cursor.moveToPosition(cursor.getCount()-1);
-            if(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu)) != null){
-                valido =  false;
-                mensaje = "DEBE INICIAR UNA VISITA ANTES DE CONTINUAR";
+            String resultado = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu));
+            if(resultado != null){
+                if (Integer.parseInt(resultado) > 1){
+                    valido =  false;
+                    mensaje = "DEBE INICIAR UNA VISITA ANTES DE CONTINUAR";
+                }
             }
         }else{
             valido =  false;

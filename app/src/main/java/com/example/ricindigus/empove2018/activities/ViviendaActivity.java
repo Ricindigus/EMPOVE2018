@@ -28,7 +28,6 @@ import com.example.ricindigus.empove2018.fragments.vivienda.FragmentHogares;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
-import com.example.ricindigus.empove2018.util.TipoFragmentEncuestado;
 import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
 
 public class ViviendaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,7 +36,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
     public static String vivienda_mes;
     public static String vivienda_periodo;
     public static String vivienda_zona;
-    private String nombreUsuario;
+    private String nickUsuario;
     private String idUsuario;
 
     private TextView btnAtras;
@@ -57,7 +56,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         setSupportActionBar(toolbar);
 
         idVivienda = getIntent().getExtras().getString("idVivienda");
-        nombreUsuario = getIntent().getExtras().getString("nombreUsuario");
+        nickUsuario = getIntent().getExtras().getString("nickUsuario");
         idUsuario = getIntent().getExtras().getString("idUsuario");
         vivienda_anio = getIntent().getExtras().getString("vivienda_anio");
         vivienda_mes = getIntent().getExtras().getString("vivienda_mes");
@@ -79,7 +78,7 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         TextView txtHeaderVivienda = (TextView) headerView.findViewById(R.id.txtTituloVivienda);
         TextView txtHeaderUsuario = (TextView) headerView.findViewById(R.id.txtTituloUsuario);
         txtHeaderVivienda.setText("VIVIENDA N° " + idVivienda);
-        txtHeaderUsuario.setText(nombreUsuario);
+        txtHeaderUsuario.setText(nickUsuario);
         navigationView.setNavigationItemSelectedListener(this);
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
@@ -110,8 +109,8 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
         setFragment(TipoFragmentVivienda.CARATULA,1);
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getNickUsuario() {
+        return nickUsuario;
     }
 
     @Override

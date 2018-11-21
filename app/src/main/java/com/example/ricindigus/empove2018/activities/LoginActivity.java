@@ -58,8 +58,9 @@ public class LoginActivity extends AppCompatActivity {
                         }else{
                             if(passwordUsuario.equals(user.getClave())){
                                 Intent intent = new Intent(LoginActivity.this, MarcoActivity.class);
-                                intent.putExtra("nombreUsuario",user.getUsuario());
+                                intent.putExtra("nickUsuario",user.getUsuario());
                                 intent.putExtra("idUsuario",user.get_id()+"");
+                                intent.putExtra("idCargo",user.getCargo_id()+"");
                                 startActivity(intent);
                                 finish();
                             }else{

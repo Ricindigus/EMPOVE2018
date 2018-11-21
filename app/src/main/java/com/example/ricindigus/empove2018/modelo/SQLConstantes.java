@@ -1981,6 +1981,7 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_PERIODO = "periodo=?";
     public static final String WHERE_CLAUSE_ZONA = "zona=?";
     public static final String WHERE_CLAUSE_USUARIO_ID = "usuario_id=?";
+    public static final String WHERE_CLAUSE_USUARIO_SUP_ID = "usuario_sup_id=?";
     public static final String WHERE_CLAUSE_USUARIO = "usuario=?";
     public static final String WHERE_CLAUSE_ESTADO_COD = municipios_cod_estado+"=?";
     public static final String WHERE_CLAUSE_DESCRIPCION = ubigeo_descripcion+"=?";

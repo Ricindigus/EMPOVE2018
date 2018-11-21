@@ -338,6 +338,29 @@ public class Data {
         return itemMarcos;
     }
 
+    public ArrayList<ItemMarco> getListMarcoSupervisor(String idUsuario){
+        ArrayList<ItemMarco> itemMarcos = new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(idUsuario)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamarco,
+                    null,SQLConstantes.WHERE_CLAUSE_USUARIO_SUP_ID,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                ItemMarco itemMarco = new ItemMarco();
+                itemMarco.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_id)));
+                itemMarco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
+                itemMarco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
+                itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
+                itemMarco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
+                itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                itemMarcos.add(itemMarco);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return itemMarcos;
+    }
+
     public ArrayList<ItemMarco> getListMarcoFiltrado(int anio, int mes, int periodo, int zona){
         ArrayList<ItemMarco> itemMarcos = new ArrayList<>();
         String[] whereArgs = new String[]{String.valueOf(anio), String.valueOf(mes),String.valueOf(periodo),String.valueOf(zona)};

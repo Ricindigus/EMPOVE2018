@@ -37,8 +37,9 @@ public class MarcoActivity extends AppCompatActivity {
     private ArrayList<String> meses;
     private ArrayList<String> periodos;
     private ArrayList<String> zonas;
-    private String nombreUsuario;
+    private String nickUsuario;
     private String idUsuario;
+    private String idCargo;
     private Spinner spAnio;
     private Spinner spMeses;
     private Spinner spPeriodos;
@@ -53,8 +54,10 @@ public class MarcoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marco);
-        nombreUsuario = getIntent().getExtras().getString("nombreUsuario");
+        nickUsuario = getIntent().getExtras().getString("nickUsuario");
         idUsuario = getIntent().getExtras().getString("idUsuario");
+        idCargo = getIntent().getExtras().getString("idCargo");
+
 
         spAnio = (Spinner) findViewById(R.id.marco_sp_anio);
         spMeses = (Spinner) findViewById(R.id.marco_sp_mes);
@@ -294,7 +297,8 @@ public class MarcoActivity extends AppCompatActivity {
         zonas = new ArrayList<String>();
         data = new Data(this);
         data.open();
-        itemMarcos = data.getListMarco(idUsuario);
+        if (idCargo.equals("1")) itemMarcos = data.getListMarco(idUsuario);
+        else itemMarcos = data.getListMarcoSupervisor(idUsuario);
         data.close();
         anios.add("Seleccione");
         if (itemMarcos.size()>0) anios.add(String.valueOf(itemMarcos.get(0).getAnio()));
@@ -305,13 +309,14 @@ public class MarcoActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent = new Intent(getApplicationContext(), ViviendaActivity.class);
-                intent.putExtra("nombreUsuario", nombreUsuario);
+                intent.putExtra("nickUsuario", nickUsuario);
                 intent.putExtra("idVivienda", itemMarcos.get(position).get_id()+"");
                 intent.putExtra("vivienda_zona", itemMarcos.get(position).getZona()+"");
                 intent.putExtra("vivienda_mes", itemMarcos.get(position).getMes()+"");
                 intent.putExtra("vivienda_anio", itemMarcos.get(position).getAnio()+"");
                 intent.putExtra("vivienda_periodo", itemMarcos.get(position).getPeriodo()+"");
                 intent.putExtra("idUsuario", idUsuario);
+
                 Data data = new Data(MarcoActivity.this);
                 POJOFragmentVivienda pojoFragmentVivienda = new POJOFragmentVivienda(itemMarcos.get(position).get_id()+"");
                 data.open();

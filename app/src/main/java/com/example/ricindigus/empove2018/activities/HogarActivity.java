@@ -28,6 +28,7 @@ import com.example.ricindigus.empove2018.fragments.modulo2.FragmentP201P206;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.Usuario;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.TipoFragmentHogar;
 import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
@@ -35,7 +36,9 @@ import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
 public class HogarActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private String idHogar;
     private String idVivienda;
-    private String nombreUsuario;
+    private String nickUsuario;
+    private String idCargo;
+
     private Hogar hogar;
     private TextView btnAtras;
     private TextView btnSiguiente;
@@ -52,12 +55,17 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         idHogar = getIntent().getExtras().getString("idHogar");
-        nombreUsuario = getIntent().getExtras().getString("nombreUsuario");
+        nickUsuario = getIntent().getExtras().getString("nickUsuario");
+
 
 
         Data data = new Data(this);
         data.open();
         hogar = data.getHogar(idHogar);
+        Usuario usuario = data.getUsuario(nickUsuario);
+        idCargo = usuario.getCargo_id();
+        if (idCargo.equals("1"))data.actualizarValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_supervisor,"-1",idHogar);
+        else data.actualizarValor(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_visitas_supervisor,"1",idHogar);
         data.close();
 
         idVivienda = hogar.getId_vivienda();
@@ -77,7 +85,7 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         TextView txtHeaderVivienda = (TextView) headerView.findViewById(R.id.txtTituloHogar);
         TextView txtHeaderUsuario = (TextView) headerView.findViewById(R.id.txtTituloUsuario);
         txtHeaderVivienda.setText("VIVIENDA N° " + idVivienda);
-        txtHeaderUsuario.setText(nombreUsuario);
+        txtHeaderUsuario.setText(nickUsuario);
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -204,7 +212,7 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
                 case TipoFragmentHogar.VISITAS_ENCUESTADOR:
                     btnAtras.setVisibility(View.GONE);
                     btnSiguiente.setVisibility(View.VISIBLE);
-                    FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idHogar,idVivienda,HogarActivity.this);
+                    FragmentVisitasEncuestador fragmentVisitasEncuestador = new FragmentVisitasEncuestador(idHogar,idVivienda,HogarActivity.this, idCargo);
                     fragmentTransaction.replace(R.id.fragment_layout, fragmentVisitasEncuestador);
                     fragmentActual = fragmentVisitasEncuestador; tFragment = TipoFragmentHogar.VISITAS_ENCUESTADOR;
                     navigationView.setCheckedItem(R.id.nav_visita_encuestador);break;

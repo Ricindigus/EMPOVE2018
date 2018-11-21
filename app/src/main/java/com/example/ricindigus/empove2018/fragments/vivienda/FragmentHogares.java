@@ -16,8 +16,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputFilter;
-import android.text.Spanned;
-import android.text.method.DigitsKeyListener;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -223,6 +221,7 @@ public class FragmentHogares extends FragmentPagina {
                             hogar.setNom_ape(jefeEditText.getText().toString());
                             hogar.setEstado("0");
                             POJOFragmentHogar pojoFragmentHogar = new POJOFragmentHogar(id);
+
                             if (numero == 1) {
                                 hogar.setPrincipal("1");
                             }
@@ -297,7 +296,7 @@ public class FragmentHogares extends FragmentPagina {
         Intent intent = new Intent(context, HogarActivity.class);
         intent.putExtra("idHogar",hogares.get(position).get_id());
         ViviendaActivity viviendaActivity = (ViviendaActivity)getActivity();
-        intent.putExtra("nombreUsuario", viviendaActivity.getNombreUsuario());
+        intent.putExtra("nickUsuario", viviendaActivity.getNickUsuario());
         startActivity(intent);
     }
 
@@ -323,6 +322,7 @@ public class FragmentHogares extends FragmentPagina {
         data.eliminarDatos(SQLConstantes.tablavisitasencuestador,SQLConstantes.visita_encuestador_id_hogar,idDelHogar);
         data.eliminarDato(SQLConstantes.tablaresultadoencuestador,idDelHogar);
         data.eliminarDato(SQLConstantes.tablafragmentshogar,idDelHogar);
+        data.eliminarDato(SQLConstantes.tablafragmentshogar,idDelHogar+"_sup");
         inicializarDatos();
         setearAdapter();
         data.close();
