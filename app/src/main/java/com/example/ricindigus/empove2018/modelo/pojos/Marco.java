@@ -310,6 +310,8 @@ public class Marco {
         contentValues.put(SQLConstantes.marco_usuario_id,usuario_id);
         contentValues.put(SQLConstantes.marco_usuario_sup_id,usuario_sup_id);
         contentValues.put(SQLConstantes.marco_estado,estado);
+//        contentValues.put(SQLConstantes.marco_nombre,nombre);
+//        contentValues.put(SQLConstantes.marco_dni,dni);
         return contentValues;
     }
 }

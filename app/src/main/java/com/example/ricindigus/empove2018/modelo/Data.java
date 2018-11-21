@@ -308,6 +308,8 @@ public class Data {
                 marco.setUsuario_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_id)));
                 marco.setUsuario_sup_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_sup_id)));
                 marco.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_estado)));
+//                marco.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nombre)));
+//                marco.setDni(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_dni)));
             }
         }finally{
             if(cursor != null) cursor.close();

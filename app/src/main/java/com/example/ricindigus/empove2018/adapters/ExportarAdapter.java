@@ -58,7 +58,7 @@ public class ExportarAdapter extends RecyclerView.Adapter<ExportarAdapter.ViewHo
         holder.txtAnio.setText(exportarItems.get(position).getAnio().toString());
         holder.txtMes.setText(exportarItems.get(position).getMes().toString());
         holder.txtPeriodo.setText(exportarItems.get(position).getPeriodo().toString());
-        holder.txtConglomerado.setText(exportarItems.get(position).getConglomerado().toString());
+       // holder.txtConglomerado.setText(exportarItems.get(position).getConglomerado().toString());
     }
 
     @Override
