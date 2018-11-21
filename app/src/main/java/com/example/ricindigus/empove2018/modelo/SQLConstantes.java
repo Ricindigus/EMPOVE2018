@@ -78,6 +78,8 @@ public class SQLConstantes {
     public static final String marco_nombre = "nombre";
     public static final String marco_dni = "dni";
     public static final String marco_usuario_sup_id = "usuario_sup_id";
+    public static final String marco_estado = "estado";
+
 
 
     /**
@@ -221,6 +223,8 @@ public class SQLConstantes {
     public static final String hogar_nropersonas = "nropersonas";
     public static final String hogar_vive = "vive";
     public static final String hogar_principal = "principal";
+    public static final String hogar_cobertura = "cobertura";
+
 
 
 
@@ -234,6 +238,7 @@ public class SQLConstantes {
                     hogar_nroviven + " TEXT," +
                     hogar_nropersonas + " TEXT," +
                     hogar_principal + " TEXT," +
+                    hogar_cobertura + " TEXT," +
                     hogar_estado + " TEXT" + ");"
             ;
 
@@ -612,6 +617,8 @@ public class SQLConstantes {
     public static String residentes_c2_p206 = "c2_p206";
     public static String residentes_c2_p207 = "c2_p207";
     public static String residentes_COB200 = "COB200";
+    public static String residentes_encuestado_cobertura = "encuestado_cobertura";
+
 
 
 
@@ -629,6 +636,7 @@ public class SQLConstantes {
                     residentes_c2_p205_m + " TEXT," +
                     residentes_c2_p206 + " TEXT," +
                     residentes_c2_p207 + " TEXT," +
+                    residentes_encuestado_cobertura + " TEXT," +
                     residentes_COB200 + " TEXT" + ");"
             ;
 

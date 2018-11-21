@@ -215,6 +215,16 @@
                     android:textAllCaps="true"
                     android:layout_height="match_parent"
                     android:layout_weight="2"/>
+                <TextView
+                    android:text="ESTADO"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorIcons"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
             </LinearLayout>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_encuestado"

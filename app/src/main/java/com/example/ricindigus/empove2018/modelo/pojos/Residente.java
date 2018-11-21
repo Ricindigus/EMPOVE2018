@@ -18,6 +18,7 @@ public class Residente {
     private String c2_p206;
     private String c2_p207;
     private String COB200;
+    private String encuestado_cobertura;
 
     public Residente() {
         _id = "";
@@ -32,6 +33,7 @@ public class Residente {
         c2_p206 = "";
         c2_p207 = "";
         COB200 = "2";
+        encuestado_cobertura = "0";
     }
 
     public String get_id() {
@@ -138,6 +140,14 @@ public class Residente {
         this.COB200 = COB200;
     }
 
+    public String getEncuestado_cobertura() {
+        return encuestado_cobertura;
+    }
+
+    public void setEncuestado_cobertura(String encuestado_cobertura) {
+        this.encuestado_cobertura = encuestado_cobertura;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.residentes_id,_id);
@@ -153,7 +163,7 @@ public class Residente {
         contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
         contentValues.put(SQLConstantes.residentes_c2_p207,c2_p207);
         contentValues.put(SQLConstantes.residentes_COB200,COB200);
-
+        contentValues.put(SQLConstantes.residentes_encuestado_cobertura,encuestado_cobertura);
         return contentValues;
     }
 }

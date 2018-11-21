@@ -46,6 +46,8 @@ public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
         holder.txtPeriodo.setText(String.valueOf(itemMarcos.get(position).getPeriodo()));
         holder.txtZona.setText(String.valueOf(itemMarcos.get(position).getZona()));
         holder.txtNroOrden.setText(String.valueOf(itemMarcos.get(position).getNorden()));
+        if(itemMarcos.get(position).getEstado().equals("1")) holder.txtEstado.setText("1");
+        else holder.txtEstado.setText("0");
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +69,8 @@ public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
         TextView txtPeriodo;
         TextView txtZona;
         TextView txtNroOrden;
+        TextView txtEstado;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -77,6 +81,7 @@ public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
             txtPeriodo = itemView.findViewById(R.id.marco_item_txtPeriodo);
             txtZona = itemView.findViewById(R.id.marco_item_txtZona);
             txtNroOrden = itemView.findViewById(R.id.marco_item_txtNroOrden);
+            txtEstado = itemView.findViewById(R.id.marco_item_txtEstado);
         }
     }
 }

@@ -307,6 +307,7 @@ public class Data {
                 marco.setDistrito(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_distrito)));
                 marco.setUsuario_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_id)));
                 marco.setUsuario_sup_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_sup_id)));
+                marco.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_estado)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -330,6 +331,8 @@ public class Data {
                 itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
                 itemMarco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
                 itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                itemMarco.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_estado)));
+
                 itemMarcos.add(itemMarco);
             }
         }finally{
@@ -353,6 +356,7 @@ public class Data {
                 itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
                 itemMarco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
                 itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                itemMarco.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_estado)));
                 itemMarcos.add(itemMarco);
             }
         }finally{
@@ -379,6 +383,7 @@ public class Data {
                 itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
                 itemMarco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
                 itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                itemMarco.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_estado)));
                 itemMarcos.add(itemMarco);
             }
         }finally{
@@ -434,6 +439,7 @@ public class Data {
                 hogar.setVive(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_vive)));
                 hogar.setNropersonas(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nropersonas)));
                 hogar.setPrincipal(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_principal)));
+                hogar.setCobertura(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_cobertura)));
                 hogars.add(hogar);
             }
         }finally{
@@ -461,6 +467,7 @@ public class Data {
                 hogar.setNropersonas(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_nropersonas)));
                 hogar.setVive(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_vive)));
                 hogar.setPrincipal(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_principal)));
+                hogar.setCobertura(cursor.getString(cursor.getColumnIndex(SQLConstantes.hogar_cobertura)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -603,6 +610,7 @@ public class Data {
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
                 residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
                 residente.setCOB200(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_COB200)));
+                residente.setEncuestado_cobertura(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_encuestado_cobertura)));
                 residentes.add(residente);
             }
         }finally{
@@ -633,6 +641,7 @@ public class Data {
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
                 residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
                 residente.setCOB200(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_COB200)));
+                residente.setEncuestado_cobertura(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_encuestado_cobertura)));
                 residentes.add(residente);
             }
         }finally{
@@ -687,6 +696,7 @@ public class Data {
                 residente.setC2_p206(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p206)));
                 residente.setC2_p207(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p207)));
                 residente.setCOB200(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_COB200)));
+                residente.setEncuestado_cobertura(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_encuestado_cobertura)));
             }
         }finally{
             if(cursor != null) cursor.close();

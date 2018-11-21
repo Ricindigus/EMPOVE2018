@@ -34,8 +34,11 @@ public class Marco {
     private String nombre;
     private String dni;
     private String usuario_sup_id;
+    private String estado;
+
 
     public Marco() {
+        estado = "0";
     }
 
     public String get_id() {
@@ -266,6 +269,14 @@ public class Marco {
         return usuario_sup_id;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public void setUsuario_sup_id(String usuario_sup_id) {
         this.usuario_sup_id = usuario_sup_id;
     }
@@ -298,6 +309,7 @@ public class Marco {
         contentValues.put(SQLConstantes.marco_interior,interior);
         contentValues.put(SQLConstantes.marco_usuario_id,usuario_id);
         contentValues.put(SQLConstantes.marco_usuario_sup_id,usuario_sup_id);
+        contentValues.put(SQLConstantes.marco_estado,estado);
         return contentValues;
     }
 }

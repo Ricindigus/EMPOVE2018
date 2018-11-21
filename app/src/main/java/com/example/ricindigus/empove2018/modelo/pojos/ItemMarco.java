@@ -7,6 +7,8 @@ public class ItemMarco {
     private String periodo;
     private String zona;
     private String norden;
+    private String estado;
+
 
     public ItemMarco() {
     }
@@ -58,5 +60,13 @@ public class ItemMarco {
 
     public void setNorden(String norden) {
         this.norden = norden;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
