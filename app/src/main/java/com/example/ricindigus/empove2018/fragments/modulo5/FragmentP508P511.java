@@ -297,7 +297,7 @@ public class FragmentP508P511 extends FragmentPagina {
             if(c5_p511.equals("-1")){ mostrarMensaje("PREGUNTA 511: DEBE SELECCIONAR UNA OPCION");return false; }
 
             if(c5_p511.equals("4")){
-                if (c5_p511_o.equals("")) mostrarMensaje("PREGUNTA 511: DEBE ESPECIFICAR");return false;
+                if (c5_p511_o.equals("")){ mostrarMensaje("PREGUNTA 511: DEBE ESPECIFICAR");return false;}
             }
 
         }else {
