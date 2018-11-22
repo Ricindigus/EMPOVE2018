@@ -41,8 +41,8 @@ import java.util.ArrayList;
 public class FragmentP805P808 extends FragmentPagina {
 
     Context context;
-    String idInformante, idEncuestado;
-
+    String idEncuestado;
+    String idVivienda, idHogar, idInformante;
     Spinner informanteSpinner;
     RadioGroup c8_p805_1_RadioGroup, c8_p805_2_RadioGroup, c8_p805_3_RadioGroup, c8_p805_4_RadioGroup,
             c8_p805_5_RadioGroup;
@@ -88,6 +88,13 @@ public class FragmentP805P808 extends FragmentPagina {
     public FragmentP805P808(String idEncuestado, Context context) {
         this.context = context;
         this.idEncuestado = idEncuestado;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idVivienda = residente.getId_vivienda();
+        idHogar = residente.getId_hogar();
+        idInformante = "";
+        data.close();
     }
 
     public FragmentP805P808() {
@@ -212,7 +219,17 @@ public class FragmentP805P808 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo8_c8_p808_12,c8_p808_12);
         contentValues.put(SQLConstantes.modulo8_c8_p808_13,c8_p808_13);
         contentValues.put(SQLConstantes.modulo8_c8_p808_o,c8_p808_o);
-        data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+        if(!data.existeElemento(getNombreTabla(),idEncuestado)){
+            Modulo8 modulo8 = new Modulo8(idEncuestado,idHogar,idVivienda);
+            data.insertarElemento(getNombreTabla(), modulo8.toValues());
+        }
+        data.actualizarElemento(getNombreTabla(), contentValues, idEncuestado);
+        //Ya valido y guardo correctamente el fragment, ahora actualizamos el valor de la cobertura del fragment a correcto(1)
+        data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp805p808,"1",idEncuestado);
+        //verificamos la cobertura del capitulo y actualizamos su valor de cobertura.
+        if (verificarCoberturaCapitulo()) data.actualizarValor(getNombreTabla(),SQLConstantes.modulo8_COB800,"1",idEncuestado);
+        else data.actualizarValor(getNombreTabla(),SQLConstantes.modulo8_COB800,"0",idEncuestado);
+        data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"0",idEncuestado);
         data.close();
     }
 
@@ -406,5 +423,23 @@ public class FragmentP805P808 extends FragmentPagina {
                 }
             }
         });
+    }
+    public boolean verificarCoberturaCapitulo(){
+        Data data = new Data(context);
+        data.open();
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p801p804,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp801p804,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p805p808,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp805p808,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p809p812,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp809p812,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p813p816,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp813p816,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp817p820,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp821p823,idEncuestado).equals("0")) return false;
+        data.close();
+        return true;
     }
 }

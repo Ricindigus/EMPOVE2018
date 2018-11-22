@@ -11,4 +11,9 @@
         android:orderInCategory="100"
         android:title="Registrar Observación"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_finalizar_encuestado"
+        android:orderInCategory="100"
+        android:title="Finalizar Encuestado"
+        app:showAsAction="never" />
 </menu>

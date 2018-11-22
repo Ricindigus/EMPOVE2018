@@ -265,6 +265,12 @@ public class FragmentP701P705 extends FragmentPagina {
             data.insertarElemento(getNombreTabla(), modulo7.toValues());
         }
         data.actualizarElemento(getNombreTabla(), contentValues, idEncuestado);
+        //Ya valido y guardo correctamente el fragment, ahora actualizamos el valor de la cobertura del fragment a correcto(1)
+        data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp701p705,"1",idEncuestado);
+        //verificamos la cobertura del capitulo y actualizamos su valor de cobertura.
+        if (verificarCoberturaCapitulo()) data.actualizarValor(getNombreTabla(),SQLConstantes.modulo7_COB700,"1",idEncuestado);
+        else data.actualizarValor(getNombreTabla(),SQLConstantes.modulo7_COB700,"0",idEncuestado);
+        data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"0",idEncuestado);
         data.close();
     }
 
@@ -504,5 +510,16 @@ public class FragmentP701P705 extends FragmentPagina {
                 }
             }
         });
+    }
+
+    public boolean verificarCoberturaCapitulo(){
+        Data data = new Data(context);
+        data.open();
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p701p705,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp701p705,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp706p709,idEncuestado).equals("0")) return false;
+        data.close();
+        return true;
     }
 }

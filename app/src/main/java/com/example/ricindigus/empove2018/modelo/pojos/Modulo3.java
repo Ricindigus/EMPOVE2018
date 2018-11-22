@@ -108,7 +108,7 @@ public class Modulo3 {
         c3_p317= "";
         c3_p318= "";
         obs_cap3= "";
-        COB300= "2";
+        COB300= "0";
     }
 
     public Modulo3() { }

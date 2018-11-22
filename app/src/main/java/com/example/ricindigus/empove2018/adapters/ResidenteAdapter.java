@@ -76,6 +76,11 @@ public class ResidenteAdapter extends RecyclerView.Adapter<ResidenteAdapter.View
         if(residentes.get(position).getC2_p207().equals("1")) holder.txtLlegoVenezuela.setText("SI");
         else if (residentes.get(position).getC2_p207().equals("2"))holder.txtLlegoVenezuela.setText("NO");
 
+        if(residentes.get(position).getEncuestado_cobertura().equals("0"))
+            holder.txtCobertura.setText("NO");
+        else if (residentes.get(position).getEncuestado_cobertura().equals("1"))
+            holder.txtCobertura.setText("SI");
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,6 +102,7 @@ public class ResidenteAdapter extends RecyclerView.Adapter<ResidenteAdapter.View
         TextView txtEdad;
         TextView txtEstadoCivil;
         TextView txtLlegoVenezuela;
+        TextView txtCobertura;
         CardView cardView;
 
         public ViewHolder(View itemView) {
@@ -109,6 +115,7 @@ public class ResidenteAdapter extends RecyclerView.Adapter<ResidenteAdapter.View
             txtEdad = itemView.findViewById(R.id.item_residente_edad);
             txtEstadoCivil = itemView.findViewById(R.id.item_residente_estado_civil);
             txtLlegoVenezuela = itemView.findViewById(R.id.item_residente_llego_venezuela);
+            txtCobertura = itemView.findViewById(R.id.item_residente_cobertura);
         }
     }
 }

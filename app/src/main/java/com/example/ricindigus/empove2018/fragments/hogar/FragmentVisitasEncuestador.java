@@ -50,6 +50,7 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
@@ -782,8 +783,29 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
     }
 
     public boolean coberturaCorrecta(){
-
-
+        Data data = new Data(context);
+        data.open();
+        if (data.getValor(SQLConstantes.tablamodulo1v,SQLConstantes.modulo1_v_COB100A,idVivienda).equals("0")){
+            mostrarMensaje("Falta coberturar modulo 1 vivienda"
+                    + "\nNO PUEDE FINALIZAR COMPLETA AUN");return false;
+        }
+        if (data.getValor(SQLConstantes.tablamodulo1h,SQLConstantes.modulo1_h_COB100B,idHogar).equals("0")){
+            mostrarMensaje("Falta coberturar modulo 1 hogar"
+                    + "\nNO PUEDE FINALIZAR COMPLETA AUN");return false;
+        }
+        for (Residente residente: data.getAllResidentesHogar(idHogar)){
+            if (!residente.getCOB200().equals("1")){
+                mostrarMensaje("Falta coberturar modulo 2 - residente: " + residente.getNumero() + "." + residente.getC2_p202()
+                        + "\nNO PUEDE FINALIZAR COMPLETA AUN");return false;
+            }
+            else if (residente.getC2_p207().equals("1")){
+                if (residente.getEncuestado_cobertura().equals("0")){
+                    mostrarMensaje("Falta coberturar la encuesta del residente: " + residente.getNumero() + "." + residente.getC2_p202()
+                            + "\nNO PUEDE FINALIZAR COMPLETA AUN");return false;
+                }
+            }
+        }
+        data.close();
         return true;
     }
 

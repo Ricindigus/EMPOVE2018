@@ -91,6 +91,7 @@ public class Data {
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO8);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_LAYOUTS);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS);
+                sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_COBERTURA_FRAGMENTS);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS_HOGAR);
                 sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS_VIVIENDA);
                 sqLiteDatabase.close();
@@ -133,6 +134,7 @@ public class Data {
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_MODULO8);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_LAYOUTS);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS);
+            sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_COBERTURA_FRAGMENTS);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS_HOGAR);
             sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS_VIVIENDA);
             sqLiteDatabase.close();
@@ -2647,8 +2649,7 @@ public class Data {
                     null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
-                pojoFragment = new POJOFragment();
-                pojoFragment.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_id)));
+                pojoFragment = new POJOFragment(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_id)));
                 pojoFragment.setP301p305(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p301p305)));
                 pojoFragment.setP306p308(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p306p308)));
                 pojoFragment.setP309(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p309)));
@@ -2666,9 +2667,9 @@ public class Data {
                 pojoFragment.setP601p604(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p601p604)));
                 pojoFragment.setP605p608(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p605p608)));
                 pojoFragment.setP609p612(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p609p612)));
-                pojoFragment.setP613p618(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p613p618)));
-                pojoFragment.setP619p622(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p619p622)));
-                pojoFragment.setP623p625(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p623p625)));
+                pojoFragment.setP613p617(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p613p617)));
+                pojoFragment.setP618p621(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p618p621)));
+                pojoFragment.setP622p625(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p622p625)));
                 pojoFragment.setP626p629(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p626p629)));
                 pojoFragment.setP630(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p630)));
                 pojoFragment.setP701p705(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p701p705)));

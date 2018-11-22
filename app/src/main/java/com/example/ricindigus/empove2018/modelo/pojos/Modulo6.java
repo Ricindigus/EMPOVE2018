@@ -230,7 +230,7 @@ public class Modulo6 {
         c6_p630_2frec= "";
         c6_p630_2frec_o= "";
         obs_cap6= "";
-        COB600= "2";
+        COB600= "0";
     }
 
     public Modulo6() {

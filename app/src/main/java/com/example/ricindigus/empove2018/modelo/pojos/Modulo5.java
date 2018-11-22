@@ -90,7 +90,7 @@ public class Modulo5 {
         c5_p513= "";
         c5_p513_o= "";
         obs_cap5= "";
-        COB500= "2";
+        COB500= "0";
     }
 
     public Modulo5() {
