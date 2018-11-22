@@ -238,7 +238,11 @@ public class FragmentHogares extends FragmentPagina {
                             residente.setId_hogar(id);
                             residente.setId_vivienda(idVivienda);
                             residente.setNumero("1");
-                            residente.setC2_p202(jefeEditText.getText().toString());
+                            String nombre = jefeEditText.getText().toString();
+                            if(nombre.indexOf(" ") > -1){
+                                nombre = nombre.substring(0,nombre.indexOf(" "));
+                            }
+                            residente.setC2_p202(nombre);
                             residente.setC2_p203("1");
                             data.insertarElemento(SQLConstantes.tablaresidentes,residente.toValues());
                             data.close();
@@ -278,7 +282,11 @@ public class FragmentHogares extends FragmentPagina {
                             hogar.setNom_ape(jefeEditText.getText().toString());
                             Data data = new Data(context);
                             data.open();
-                            data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_c2_p202,jefeEditText.getText().toString(),hogar.get_id()+ "_1");
+                            String nombre = jefeEditText.getText().toString();
+                            if(nombre.indexOf(" ") > -1){
+                                nombre = nombre.substring(0,nombre.indexOf(" "));
+                            }
+                            data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_c2_p202,nombre,hogar.get_id()+ "_1");
                             data.actualizarValor(getNombreTabla(),SQLConstantes.hogar_nom_ape,jefeEditText.getText().toString(),hogar.get_id());
                             data.close();
                             inicializarDatos();
@@ -316,6 +324,8 @@ public class FragmentHogares extends FragmentPagina {
             data.eliminarDato(SQLConstantes.tablamodulo6,idDelEncuestado);
             data.eliminarDato(SQLConstantes.tablamodulo7,idDelEncuestado);
             data.eliminarDato(SQLConstantes.tablamodulo8,idDelEncuestado);
+            data.eliminarDato(SQLConstantes.tablafragments,idDelEncuestado);
+            data.eliminarDato(SQLConstantes.tablacoberturafragments,idDelEncuestado);
         }
         data.eliminarDato(getNombreTabla(),idDelHogar);
         data.eliminarDato(SQLConstantes.tablamodulo1h,idDelHogar);

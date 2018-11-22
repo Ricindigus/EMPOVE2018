@@ -1,6 +1,5 @@
 package com.example.ricindigus.empove2018.activities;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -23,7 +22,6 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ricindigus.empove2018.adapters.ExpandListAdapter;
 import java.util.ArrayList;
@@ -130,17 +128,12 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
                     tFragment++;
-//                    if(tFragment == 30) btnSiguiente.setText("Finalizar");
-//                    else btnSiguiente.setText("Siguiente");
-                    if(tFragment == 31) salirEncuestaFinalizada();//tFragment = 1;
+                    if(tFragment == 31) salirEncuestaFinalizada();
                     else{
                         habilitarFragment(tFragment);
-//                    setFragment(tFragment,1);
                         while(!setFragment(tFragment,1)){
                             tFragment++;
-                            if(tFragment == 31)
-//                            tFragment = 1;
-                                salirEncuestaFinalizada();
+                            if(tFragment == 31) salirEncuestaFinalizada();
                             habilitarFragment(tFragment);
                         }
                     }
@@ -154,7 +147,6 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
             public void onClick(View v) {
                 ocultarTeclado(btnAtras);
                 tFragment--;
-//                setFragment(tFragment,-1);
                 while(!setFragment(tFragment,-1)){
                     tFragment--;
                 }
@@ -249,16 +241,16 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"1",idEncuestado);
                 break;
             case TipoFragmentEncuestado.P613P618:
-                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,idEncuestado).equals("0"))
-                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,"1",idEncuestado);
+                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,idEncuestado).equals("0"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,"1",idEncuestado);
                 break;
             case TipoFragmentEncuestado.P619P622:
-                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,idEncuestado).equals("0"))
-                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,"1",idEncuestado);
+                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,idEncuestado).equals("0"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,"1",idEncuestado);
                 break;
             case TipoFragmentEncuestado.P623P625:
-                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,idEncuestado).equals("0"))
-                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,"1",idEncuestado);
+                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,idEncuestado).equals("0"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"1",idEncuestado);
                 break;
             case TipoFragmentEncuestado.P626P629:
                 if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,idEncuestado).equals("0"))
@@ -617,16 +609,16 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                         data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,idEncuestado).equals("-1")) valido = false;
                 break;
             case TipoFragmentEncuestado.P613P618:
-                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,idEncuestado).equals("0") ||
-                        data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,idEncuestado).equals("-1")) valido = false;
+                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,idEncuestado).equals("0") ||
+                        data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,idEncuestado).equals("-1")) valido = false;
                 break;
             case TipoFragmentEncuestado.P619P622:
-                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,idEncuestado).equals("0") ||
-                        data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,idEncuestado).equals("-1")) valido = false;
+                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,idEncuestado).equals("0") ||
+                        data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,idEncuestado).equals("-1")) valido = false;
                 break;
             case TipoFragmentEncuestado.P623P625:
-                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,idEncuestado).equals("0") ||
-                        data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,idEncuestado).equals("-1")) valido = false;
+                if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,idEncuestado).equals("0") ||
+                        data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,idEncuestado).equals("-1")) valido = false;
                 break;
             case TipoFragmentEncuestado.P626P629:
                 if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,idEncuestado).equals("0") ||
@@ -883,6 +875,14 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
             });
             alertDialog.show();
             return true;
+        }else if(id == R.id.action_finalizar_encuestado){
+            if (verificarCobertura()){
+                Data data = new Data(EncuestaActivity.this);
+                data.open();
+                data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"1",idEncuestado);
+                data.close();
+                finish();
+            }
         }
         return super.onOptionsItemSelected(item);
     }
@@ -901,6 +901,11 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 .setPositiveButton("Sí",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Data data = new Data(EncuestaActivity.this);
+                                data.open();
+                                if (verificarCoberturaSinMensaje())
+                                    data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"1",idEncuestado);
+                                data.close();
                                 finish();
                             }
                         });
@@ -916,13 +921,24 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                 .setNegativeButton("CONTINUAR",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                tFragment = 1;
+                                setFragment(tFragment,1);
                                 dialog.cancel();
                             }
                         })
                 .setPositiveButton("FINALIZAR",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                finish();
+                                if (verificarCobertura()){
+                                    Data data = new Data(EncuestaActivity.this);
+                                    data.open();
+                                    data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"1",idEncuestado);
+                                    data.close();
+                                    finish();
+                                }
+                                else {
+                                    dialog.dismiss();
+                                }
                             }
                         });
         AlertDialog alert = builder.create();
@@ -930,78 +946,72 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
     }
 
     public boolean verificarCobertura(){
-        return true;
-    }
-
-    /*
-    * Universo: Todas las personas que llegaron de Venezuela P205_A>=0 & P207=1
-    * Si todos (P300_C,  P301_D, P301_M, P301_A, P302, P304, P306, P307_D, P307_M,
-    * P307_A, P308_E, P308_M,  P309_P(i), P309_C(i), P309_MOD(i), P309_M(i), P309_A(i),
-     * P311, P312_DIST, P312_PROV, P312_DEP, P313, P316, P317, P318, P318_F(i), P318_S(i),
-     * P318_E(i), P318_P(i)) son diferentes de vacío y
-     * Algún (P303_M, P303_A, P303) es diferente de vacío y
-     * Algún (P310_1, P310_2, P310_3 P310_5) es diferente de vacío y
-     * Algún (P315_1, P315_2, P315_3, P315_4, P315_5, P315_6, P315_7, P315_9, P315_10, P315_11) es diferente de vacío
-     * Entonces: COB300=1 “Las preguntas del capítulo 300 están coberturadas”
-     * Si al menos uno (P300_C,  P301_D, P301_M, P301_A, P302, P304, P306, P307_D,
-     * P307_M, P307_A, P308_E, P308_M,  P309_P(i), P309_C(i), P309_MOD(i), P309_M(i), P309_A(i),
-     * P311, P312_DIST, P312_PROV, P312_DEP, P313, P316, P317, P318, P318_F(i), P318_S(i), P318_E(i), P318_P(i), es igual a vacío
-     * Entonces: COB300=2 “Falta coberturar las preguntas del capítulo 200”
-    * */
-    public boolean verificarCobertura300(){
-        Data data =  new Data(EncuestaActivity.this);
+        Data data = new Data(EncuestaActivity.this);
         data.open();
-        Modulo3 modulo3 =  data.getModulo3(idEncuestado);
-        if (modulo3 != null){
-
+        if (data.getValor(SQLConstantes.tablamodulo3,SQLConstantes.modulo3_COB300,idEncuestado).equals("0")){
+            mostrarMensaje("Falta coberturar el modulo 3 para poder finalizar");
+            tFragment = TipoFragmentEncuestado.P301P305;
+            setFragment(tFragment,1);
+            return false;
+        }
+        if (data.getValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_COB400,idEncuestado).equals("0")){
+            mostrarMensaje("Falta coberturar el modulo 4 para poder finalizar");
+            tFragment = TipoFragmentEncuestado.P401P404;
+            setFragment(tFragment,1);
+            return false;
+        }
+        if (data.getValor(SQLConstantes.tablamodulo5,SQLConstantes.modulo5_COB500,idEncuestado).equals("0")){
+            mostrarMensaje("Falta coberturar el modulo 5 para poder finalizar");
+            tFragment = TipoFragmentEncuestado.P501P505;
+            setFragment(tFragment,1);
+            return false;
+        }
+        if (data.getValor(SQLConstantes.tablamodulo6,SQLConstantes.modulo6_COB600,idEncuestado).equals("0")){
+            mostrarMensaje("Falta coberturar el modulo 6 para poder finalizar");
+            tFragment = TipoFragmentEncuestado.P601P604;
+            setFragment(tFragment,1);
+            return false;
+        }
+        if (data.getValor(SQLConstantes.tablamodulo7,SQLConstantes.modulo7_COB700,idEncuestado).equals("0")){
+            mostrarMensaje("Falta coberturar el modulo 7 para poder finalizar");
+            tFragment = TipoFragmentEncuestado.P701P705;
+            setFragment(tFragment,1);
+            return false;
+        }
+        if (data.getValor(SQLConstantes.tablamodulo8,SQLConstantes.modulo8_COB800,idEncuestado).equals("0")){
+            mostrarMensaje("Falta coberturar el modulo 8 para poder finalizar");
+            tFragment = TipoFragmentEncuestado.P801P804;
+            setFragment(tFragment,1);
+            return false;
         }
         data.close();
         return true;
     }
-    public boolean verificarCobertura400(){
+
+    public boolean verificarCoberturaSinMensaje(){
+        Data data = new Data(EncuestaActivity.this);
+        data.open();
+        if((data.getValor(SQLConstantes.tablamodulo3,SQLConstantes.modulo3_COB300,idEncuestado).equals("0")) ||
+        (data.getValor(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_COB400,idEncuestado).equals("0"))||
+         (data.getValor(SQLConstantes.tablamodulo5,SQLConstantes.modulo5_COB500,idEncuestado).equals("0"))||
+        (data.getValor(SQLConstantes.tablamodulo6,SQLConstantes.modulo6_COB600,idEncuestado).equals("0"))||
+        (data.getValor(SQLConstantes.tablamodulo7,SQLConstantes.modulo7_COB700,idEncuestado).equals("0"))||
+        (data.getValor(SQLConstantes.tablamodulo8,SQLConstantes.modulo8_COB800,idEncuestado).equals("0")))
+            return false;
+        data.close();
         return true;
     }
-    public boolean verificarCobertura500(){
-        return true;
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(EncuestaActivity.this);
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
-    public boolean verificarCobertura600(){
-        return true;
-    }
-    public boolean verificarCobertura700(){
-        return true;
-    }
-    public boolean verificarCobertura800(){
-        return true;
-    }
-
-    /*
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }*/
-
-
 
 
 }

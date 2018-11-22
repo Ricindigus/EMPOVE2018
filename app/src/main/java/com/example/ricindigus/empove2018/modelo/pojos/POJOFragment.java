@@ -23,9 +23,9 @@ public class POJOFragment {
     private String p601p604;
     private String p605p608;
     private String p609p612;
-    private String p613p618;
-    private String p619p622;
-    private String p623p625;
+    private String p613p617;
+    private String p618p621;
+    private String p622p625;
     private String p626p629;
     private String p630;
     private String p701p705;
@@ -37,8 +37,8 @@ public class POJOFragment {
     private String p817p820;
     private String p821p823;
 
-    public POJOFragment() {
-        _id= "";
+    public POJOFragment(String _id) {
+        this._id= _id;
         p301p305= "1";
         p306p308= "0";
         p309= "0";
@@ -56,9 +56,9 @@ public class POJOFragment {
         p601p604= "0";
         p605p608= "0";
         p609p612= "0";
-        p613p618= "0";
-        p619p622= "0";
-        p623p625= "0";
+        p613p617 = "0";
+        p618p621 = "0";
+        p622p625 = "0";
         p626p629= "0";
         p630= "0";
         p701p705= "0";
@@ -215,28 +215,28 @@ public class POJOFragment {
         this.p609p612 = p609p612;
     }
 
-    public String getP613p618() {
-        return p613p618;
+    public String getP613p617() {
+        return p613p617;
     }
 
-    public void setP613p618(String p613p618) {
-        this.p613p618 = p613p618;
+    public void setP613p617(String p613p617) {
+        this.p613p617 = p613p617;
     }
 
-    public String getP619p622() {
-        return p619p622;
+    public String getP618p621() {
+        return p618p621;
     }
 
-    public void setP619p622(String p619p622) {
-        this.p619p622 = p619p622;
+    public void setP618p621(String p618p621) {
+        this.p618p621 = p618p621;
     }
 
-    public String getP623p625() {
-        return p623p625;
+    public String getP622p625() {
+        return p622p625;
     }
 
-    public void setP623p625(String p623p625) {
-        this.p623p625 = p623p625;
+    public void setP622p625(String p622p625) {
+        this.p622p625 = p622p625;
     }
 
     public String getP626p629() {
@@ -339,9 +339,9 @@ public class POJOFragment {
         contentValues.put(SQLConstantes.fragments_p601p604 ,p601p604);
         contentValues.put(SQLConstantes.fragments_p605p608 ,p605p608);
         contentValues.put(SQLConstantes.fragments_p609p612 ,p609p612);
-        contentValues.put(SQLConstantes.fragments_p613p618 ,p613p618);
-        contentValues.put(SQLConstantes.fragments_p619p622 ,p619p622);
-        contentValues.put(SQLConstantes.fragments_p623p625 ,p623p625);
+        contentValues.put(SQLConstantes.fragments_p613p617, p613p617);
+        contentValues.put(SQLConstantes.fragments_p618p621, p618p621);
+        contentValues.put(SQLConstantes.fragments_p622p625, p622p625);
         contentValues.put(SQLConstantes.fragments_p626p629 ,p626p629);
         contentValues.put(SQLConstantes.fragments_p630 ,p630);
         contentValues.put(SQLConstantes.fragments_p701p705 ,p701p705);

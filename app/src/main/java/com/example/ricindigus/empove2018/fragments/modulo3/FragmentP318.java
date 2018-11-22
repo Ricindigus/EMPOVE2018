@@ -240,6 +240,12 @@ public class FragmentP318 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
         contentValues.put(SQLConstantes.modulo3_c3_p318,c3_p318+"");
         data.actualizarElemento(SQLConstantes.tablamodulo3,contentValues,idEncuestado);
+        //Ya valido y guardo correctamente el fragment, ahora actualizamos el valor de la cobertura del fragment a correcto(1)
+        data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp318,"1",idEncuestado);
+        //verificamos la cobertura del capitulo y actualizamos su valor de cobertura.
+        if (verificarCoberturaCapitulo()) data.actualizarValor(getNombreTabla(),SQLConstantes.modulo3_COB300,"1",idEncuestado);
+        else data.actualizarValor(getNombreTabla(),SQLConstantes.modulo3_COB300,"0",idEncuestado);
+        data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"0",idEncuestado);
         data.close();
     }
 
@@ -287,7 +293,7 @@ public class FragmentP318 extends FragmentPagina {
     }
     @Override
     public String getNombreTabla() {
-        return null;
+        return SQLConstantes.tablamodulo3;
     }
 
     public void mostrarMensaje(String m){
@@ -309,5 +315,36 @@ public class FragmentP318 extends FragmentPagina {
         Modulo3 modulo3 = data.getModulo3(idEncuestado);
         data.close();
         return cobertura;
+    }
+
+    public boolean verificarCoberturaCapitulo(){
+        Data data = new Data(contexto);
+        data.open();
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p301p305,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp301p305,idEncuestado).equals("0")){
+            mostrarMensaje("Falta coberturar p301 - p305");return false;
+        }
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p306p308,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp306p308,idEncuestado).equals("0")){
+//            mostrarMensaje("Falta coberturar p306 - p308");return false;
+        }
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p309,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp309,idEncuestado).equals("0")){
+//            mostrarMensaje("Falta coberturar p309");return false;
+        }
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p310p312,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp310p312,idEncuestado).equals("0")){
+//            mostrarMensaje("Falta coberturar p310 - p312");return false;
+        }
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p313p317,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp313p317,idEncuestado).equals("0")){
+//            mostrarMensaje("Falta coberturar p313 - p317");return false;
+        }
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p318,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp318,idEncuestado).equals("0")){
+//            mostrarMensaje("Falta coberturar p318");return false;
+        }
+        data.close();
+        return true;
     }
 }

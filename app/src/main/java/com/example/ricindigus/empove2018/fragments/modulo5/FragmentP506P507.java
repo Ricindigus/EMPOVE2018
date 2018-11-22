@@ -199,8 +199,15 @@ public class FragmentP506P507 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo5_c5_p507_prov,c5_p507_prov);
         contentValues.put(SQLConstantes.modulo5_c5_p507_dep,c5_p507_dep);
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
-        data.close();
+        //Ya valido y guardo correctamente el fragment, ahora actualizamos el valor de la cobertura del fragment a correcto(1)
+        data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp506p507,"1",idEncuestado);
+        //ocultamos o mostramos preguntas o fragments
         ocultarOtrosLayouts();
+        //verificamos la cobertura del capitulo y actualizamos su valor de cobertura.
+        if (verificarCoberturaCapitulo()) data.actualizarValor(getNombreTabla(),SQLConstantes.modulo5_COB500,"1",idEncuestado);
+        else data.actualizarValor(getNombreTabla(),SQLConstantes.modulo5_COB500,"0",idEncuestado);
+        data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"0",idEncuestado);
+        data.close();
     }
 
     @Override
@@ -421,32 +428,21 @@ public class FragmentP506P507 extends FragmentPagina {
                 data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p511,idEncuestado).equals("0"))
                 data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"-1",idEncuestado);
 
-//        if (data.getValor(SQLConstantes.tablamodulo5, SQLConstantes.modulo5_c5_p501, idEncuestado).equals("10") ||
-//                data.getValor(SQLConstantes.tablamodulo5, SQLConstantes.modulo5_c5_p501, idEncuestado).equals("11")) {
-//            contentValues = new ContentValues();
-//            contentValues.put(SQLConstantes.layouts_p509, "1");
-//            contentValues.put(SQLConstantes.layouts_p510, "1");
-//            contentValues.put(SQLConstantes.layouts_p511, "1");
-//            data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
-//            if (data.getValor(SQLConstantes.tablafragments, SQLConstantes.fragments_p508p511, idEncuestado).equals("-1"))
-//                data.actualizarValor(SQLConstantes.tablafragments, SQLConstantes.fragments_p508p511, "1", idEncuestado);
-//        }else{
-//            contentValues = new ContentValues();
-//            contentValues.put(SQLConstantes.modulo5_c5_p509,"");
-//            contentValues.put(SQLConstantes.modulo5_c5_p510,"");
-//            contentValues.put(SQLConstantes.modulo5_c5_p511,"");
-//            contentValues.put(SQLConstantes.modulo5_c5_p511_o,"");
-//            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
-//
-//            contentValues = new ContentValues();
-//            contentValues.put(SQLConstantes.layouts_p509,"0");
-//            contentValues.put(SQLConstantes.layouts_p510,"0");
-//            contentValues.put(SQLConstantes.layouts_p511,"0");
-//            data.actualizarElemento(SQLConstantes.tablalayouts,contentValues,idEncuestado);
-//
-//            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p508,idEncuestado).equals("0"))
-//                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"-1",idEncuestado);
-//        }
         data.close();
+    }
+
+    public boolean verificarCoberturaCapitulo(){
+        Data data = new Data(context);
+        data.open();
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p501p505,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp501p505,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp506p507,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp508p511,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp512p513,idEncuestado).equals("0")) return false;
+        data.close();
+        return true;
     }
 }

@@ -37,6 +37,7 @@ public class SQLConstantes {
     public static String tablaubigeo = "ubigeo";
     public static String tablalayouts = "layouts";
     public static String tablafragments= "fragments";
+    public static String tablacoberturafragments= "cobertura_fragments";
     public static String tablafragmentsvivienda= "fragments_vivienda";
     public static String tablafragmentshogar= "fragments_hogar";
 
@@ -304,9 +305,9 @@ public class SQLConstantes {
     public static String fragments_p601p604 = "p601p604";
     public static String fragments_p605p608 = "p605p608";
     public static String fragments_p609p612 = "p609p612";
-    public static String fragments_p613p618 = "p613p618";
-    public static String fragments_p619p622 = "p619p622";
-    public static String fragments_p623p625 = "p623p625";
+    public static String fragments_p613p617 = "p613p617";
+    public static String fragments_p618p621 = "p618p621";
+    public static String fragments_p622p625 = "p622p625";
     public static String fragments_p626p629 = "p626p629";
     public static String fragments_p630 = "p630";
     public static String fragments_p701p705 = "p701p705";
@@ -339,9 +340,9 @@ public class SQLConstantes {
                     fragments_p601p604  + " TEXT," +
                     fragments_p605p608  + " TEXT," +
                     fragments_p609p612  + " TEXT," +
-                    fragments_p613p618  + " TEXT," +
-                    fragments_p619p622  + " TEXT," +
-                    fragments_p623p625  + " TEXT," +
+                    fragments_p613p617 + " TEXT," +
+                    fragments_p618p621 + " TEXT," +
+                    fragments_p622p625 + " TEXT," +
                     fragments_p626p629  + " TEXT," +
                     fragments_p630  + " TEXT," +
                     fragments_p701p705  + " TEXT," +
@@ -352,6 +353,77 @@ public class SQLConstantes {
                     fragments_p813p816  + " TEXT," +
                     fragments_p817p820  + " TEXT," +
                     fragments_p821p823 + " TEXT" + ");"
+            ;
+
+    /**
+     * TABLA FRAGMENTS COBERTURA
+     * */
+
+    public static String cobertura_fragments_id = "_id";
+    public static String cobertura_fragments_cp301p305 = "cp301p305";
+    public static String cobertura_fragments_cp306p308 = "cp306p308";
+    public static String cobertura_fragments_cp309 = "cp309";
+    public static String cobertura_fragments_cp310p312 = "cp310p312";
+    public static String cobertura_fragments_cp313p317 = "cp313p317";
+    public static String cobertura_fragments_cp318 = "cp318";
+    public static String cobertura_fragments_cp401p404 = "cp401p404";
+    public static String cobertura_fragments_cp405p407 = "cp405p407";
+    public static String cobertura_fragments_cp408p410 = "cp408p410";
+    public static String cobertura_fragments_cp411p416 = "cp411p416";
+    public static String cobertura_fragments_cp501p505 = "cp501p505";
+    public static String cobertura_fragments_cp506p507 = "cp506p507";
+    public static String cobertura_fragments_cp508p511 = "cp508p511";
+    public static String cobertura_fragments_cp512p513 = "cp512p513";
+    public static String cobertura_fragments_cp601p604 = "cp601p604";
+    public static String cobertura_fragments_cp605p608 = "cp605p608";
+    public static String cobertura_fragments_cp609p612 = "cp609p612";
+    public static String cobertura_fragments_cp613p617 = "cp613p617";
+    public static String cobertura_fragments_cp618p621 = "cp618p621";
+    public static String cobertura_fragments_cp622p625 = "cp622p625";
+    public static String cobertura_fragments_cp626p629 = "cp626p629";
+    public static String cobertura_fragments_cp630 = "cp630";
+    public static String cobertura_fragments_cp701p705 = "cp701p705";
+    public static String cobertura_fragments_cp706p709 = "cp706p709";
+    public static String cobertura_fragments_cp801p804 = "cp801p804";
+    public static String cobertura_fragments_cp805p808 = "cp805p808";
+    public static String cobertura_fragments_cp809p812 = "cp809p812";
+    public static String cobertura_fragments_cp813p816 = "cp813p816";
+    public static String cobertura_fragments_cp817p820 = "cp817p820";
+    public static String cobertura_fragments_cp821p823 = "cp821p823";
+
+    public static final String SQL_CREATE_TABLA_COBERTURA_FRAGMENTS =
+            "CREATE TABLE " + tablacoberturafragments + "(" +
+                    cobertura_fragments_id  + " TEXT PRIMARY KEY," +
+                    cobertura_fragments_cp301p305  + " TEXT," +
+                    cobertura_fragments_cp306p308  + " TEXT," +
+                    cobertura_fragments_cp309  + " TEXT," +
+                    cobertura_fragments_cp310p312  + " TEXT," +
+                    cobertura_fragments_cp313p317  + " TEXT," +
+                    cobertura_fragments_cp318  + " TEXT," +
+                    cobertura_fragments_cp401p404  + " TEXT," +
+                    cobertura_fragments_cp405p407  + " TEXT," +
+                    cobertura_fragments_cp408p410  + " TEXT," +
+                    cobertura_fragments_cp411p416  + " TEXT," +
+                    cobertura_fragments_cp501p505  + " TEXT," +
+                    cobertura_fragments_cp506p507  + " TEXT," +
+                    cobertura_fragments_cp508p511  + " TEXT," +
+                    cobertura_fragments_cp512p513  + " TEXT," +
+                    cobertura_fragments_cp601p604  + " TEXT," +
+                    cobertura_fragments_cp605p608  + " TEXT," +
+                    cobertura_fragments_cp609p612  + " TEXT," +
+                    cobertura_fragments_cp613p617 + " TEXT," +
+                    cobertura_fragments_cp618p621 + " TEXT," +
+                    cobertura_fragments_cp622p625 + " TEXT," +
+                    cobertura_fragments_cp626p629  + " TEXT," +
+                    cobertura_fragments_cp630  + " TEXT," +
+                    cobertura_fragments_cp701p705  + " TEXT," +
+                    cobertura_fragments_cp706p709  + " TEXT," +
+                    cobertura_fragments_cp801p804  + " TEXT," +
+                    cobertura_fragments_cp805p808  + " TEXT," +
+                    cobertura_fragments_cp809p812  + " TEXT," +
+                    cobertura_fragments_cp813p816  + " TEXT," +
+                    cobertura_fragments_cp817p820  + " TEXT," +
+                    cobertura_fragments_cp821p823 + " TEXT" + ");"
             ;
 
     /**

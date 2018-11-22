@@ -128,7 +128,7 @@ public class Modulo7 {
         c7_p709_10= "";
         c7_p709_o= "";
         obs_cap7= "";
-        COB700= "2";
+        COB700= "0";
     }
 
     public Modulo7() {

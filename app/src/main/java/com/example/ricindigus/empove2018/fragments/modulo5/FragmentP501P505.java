@@ -233,8 +233,15 @@ public class FragmentP501P505 extends FragmentPagina {
             data.insertarElemento(getNombreTabla(),modulo5.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
-        data.close();
+        //Ya valido y guardo correctamente el fragment, ahora actualizamos el valor de la cobertura del fragment a correcto(1)
+        data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp501p505,"1",idEncuestado);
+        //ocultamos o mostramos preguntas o fragments
         ocultarOtrosLayouts();
+        //verificamos la cobertura del capitulo y actualizamos su valor de cobertura.
+        if (verificarCoberturaCapitulo()) data.actualizarValor(getNombreTabla(),SQLConstantes.modulo5_COB500,"1",idEncuestado);
+        else data.actualizarValor(getNombreTabla(),SQLConstantes.modulo5_COB500,"0",idEncuestado);
+        data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"0",idEncuestado);
+        data.close();
     }
 
     @Override
@@ -414,7 +421,6 @@ public class FragmentP501P505 extends FragmentPagina {
             contentValues.put(SQLConstantes.layouts_p511,"0");
             data.actualizarElemento(SQLConstantes.tablalayouts,contentValues,idEncuestado);
 
-            POJOLayout pojoLayout = data.getLayouts(idEncuestado);
             if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p508,idEncuestado).equals("0"))
                 data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"-1",idEncuestado);
             data.close();
@@ -427,7 +433,9 @@ public class FragmentP501P505 extends FragmentPagina {
             contentValues.put(SQLConstantes.layouts_p511,"1");
             data.actualizarElemento(SQLConstantes.tablalayouts,contentValues,idEncuestado);
             if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,idEncuestado).equals("-1"))
-                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p306p308,"1",idEncuestado);
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"1",idEncuestado);
+
+            data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp508p511,"0",idEncuestado);
             data.close();
         }
 
@@ -445,6 +453,7 @@ public class FragmentP501P505 extends FragmentPagina {
             contentValues.put(SQLConstantes.modulo5_c5_p507_dep,"");
             data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,"-1",idEncuestado);
+            data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp506p507,"0",idEncuestado);
 
             Residente residente = data.getResidente(idEncuestado);
             int edad = 0;
@@ -455,21 +464,31 @@ public class FragmentP501P505 extends FragmentPagina {
                 data.actualizarElemento(SQLConstantes.tablalayouts,contentValues,idEncuestado);
                 if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,idEncuestado).equals("-1"))
                     data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"1",idEncuestado);
+                data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp508p511,"0",idEncuestado);
             }
-            POJOLayout pojoLayout = data.getLayouts(idEncuestado);
             data.close();
         }else{
             Data data = new Data(context);
             data.open();
             if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,idEncuestado).equals("-1"))
                 data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,"1",idEncuestado);
-            POJOLayout pojoLayout = data.getLayouts(idEncuestado);
+            data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp506p507,"0",idEncuestado);
             data.close();
         }
-
-
-
     }
 
-
+    public boolean verificarCoberturaCapitulo(){
+        Data data = new Data(context);
+        data.open();
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p501p505,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp501p505,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp506p507,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp508p511,idEncuestado).equals("0")) return false;
+        if (data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,idEncuestado).equals("1") &&
+                data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp512p513,idEncuestado).equals("0")) return false;
+        data.close();
+        return true;
+    }
 }

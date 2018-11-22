@@ -196,7 +196,7 @@ public class Modulo4 {
         c4_p416_8 = "";
         c4_p416_o = "";
         obs_cap4 = "";
-        COB400 = "2";
+        COB400 = "0";
     }
 
     public Modulo4() {

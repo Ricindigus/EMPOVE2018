@@ -279,7 +279,7 @@ public class Modulo8 {
         c8_p823_5= "";
         c8_p823_o= "";
         obs_cap8= "";
-        COB800= "2";
+        COB800= "0";
     }
 
     public String get_id() {

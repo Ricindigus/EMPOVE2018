@@ -26,6 +26,7 @@ import android.widget.Spinner;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.CoberturaFragment;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo4;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
@@ -351,7 +352,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
         contentValues.put(SQLConstantes.residentes_c2_p207,c2_p207);
         contentValues.put(SQLConstantes.residentes_COB200,"1");
-
+        contentValues.put(SQLConstantes.residentes_encuestado_cobertura,"0");
 
         if(!data.existeElemento(getNombreTabla(),_id)){
             contentValues.put(SQLConstantes.residentes_id,_id);
@@ -367,9 +368,10 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             POJOLayout pojoLayout = new POJOLayout();
             pojoLayout.set_id(_id);
             data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
-            POJOFragment pojoFragment = new POJOFragment();
-            pojoFragment.set_id(_id);
+            POJOFragment pojoFragment = new POJOFragment(_id);
+            CoberturaFragment coberturaFragment = new CoberturaFragment(_id);
             data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
+            data.insertarElemento(SQLConstantes.tablacoberturafragments,coberturaFragment.toValues());
         }
         data.close();
         crearModulos();
@@ -787,9 +789,9 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p601p604,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p605p608,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"-1",_id);
-        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,"-1",_id);
-        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,"-1",_id);
-        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,"-1",_id);
+        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,"-1",_id);
         data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,"-1",_id);
         data.eliminarDato(SQLConstantes.tablamodulo6,_id);
@@ -805,12 +807,12 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p605p608,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p609p612,"1",_id);
-        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,_id).equals("-1"))
-            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p618,"1",_id);
-        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,_id).equals("-1"))
-            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p619p622,"1",_id);
-        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,_id).equals("-1"))
-            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p623p625,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,"1",_id);
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,_id).equals("-1"))
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p626p629,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,_id).equals("-1"))
