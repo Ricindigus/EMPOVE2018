@@ -67,6 +67,7 @@ public class FragmentP501P505 extends FragmentPagina {
     private String c5_p503;
     private String c5_p504;
     private String c5_p505;
+    int edad=0;
 
     @SuppressLint("ValidFragment")
     public FragmentP501P505(String idEncuestado, Context context) {
@@ -77,6 +78,7 @@ public class FragmentP501P505 extends FragmentPagina {
         Residente residente = data.getResidente(idEncuestado);
         idHogar = residente.getId_hogar();
         idVivienda = residente.getId_vivienda();
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         idInformante = "";
         data.close();
     }
@@ -282,7 +284,12 @@ public class FragmentP501P505 extends FragmentPagina {
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
 
         if(c5_p501.equals("-1")){ mostrarMensaje("PREGUNTA 501: DEBE SELECCIONAR UNA OPCION");return false; }
-
+        if((Integer.parseInt(c5_p501)>=3 && edad<5) || (Integer.parseInt(c5_p501)>=4 && edad<14) ||
+            (Integer.parseInt(c5_p501)>=5 && edad<14) || (Integer.parseInt(c5_p501)>=6 && edad<15) ||
+            (Integer.parseInt(c5_p501)>=7 && edad<16) || (Integer.parseInt(c5_p501)>=8 && edad<16) ||
+            (Integer.parseInt(c5_p501)>=9 && edad<16) || (Integer.parseInt(c5_p501)>=10 && edad<21)){
+            mostrarMensaje("PREGUNTA 501: EDAD NO CONCUERDA CON NIVEL DE ESTUDIO ALCANZADO");
+        }
         if (m5_p502_linearlayout.getVisibility()==View.VISIBLE){
             if(c5_p502_c.equals("0")){
                 if(c5_p502.equals("")){ mostrarMensaje("PREGUNTA 502: DEBE INDICAR LA CARRERA");return false; }

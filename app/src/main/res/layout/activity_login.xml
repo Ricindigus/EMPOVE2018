@@ -90,8 +90,20 @@
                     android:layout_margin="@dimen/margen_small"
                     android:text="@string/login_texto_boton"
                     android:theme="@style/RaisedButtonDark" />
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/icons"
+                    android:gravity="center"
+                    android:padding="@dimen/margen_small"
+                    android:text="@string/app_version"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/texto_medium"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
-
     </android.support.constraint.ConstraintLayout>
+
 </LinearLayout>

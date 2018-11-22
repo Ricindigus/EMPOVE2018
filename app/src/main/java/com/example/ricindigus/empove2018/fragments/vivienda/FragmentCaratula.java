@@ -329,6 +329,11 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             mza_EditText.setText(marco.getMza());
             lote_EditText.setText(marco.getLote());
 
+
+            Log.e("cod_dep", "cargarDatos: "+ marco.getCcdd());
+            Log.e("cod_prov", "cargarDatos: "+ marco.getCcpp());
+            Log.e("cod_dist", "cargarDatos: "+ marco.getCcdd());
+
 //            Log.e("Nombre", "cargarDatos: "+marco.getNombre() );
 //            Log.e("DNI", "cargarDatos: "+marco.getDni() );
         }

@@ -35,6 +35,7 @@ import android.widget.Toast;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Marco;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.modelo.pojos.Ubigeo;
@@ -60,7 +61,7 @@ public class FragmentP506P507 extends FragmentPagina {
     TextView txtDistrito, txtProvincia, txtDepartamento;
     LinearLayout m5_p506_linearlayout,m5_p506_subpregunta_linearlayout, m5_p507_linearlayout, m5_p507_subpregunta_linearlayout;
 
-
+    int c5_p501=0;
     private String c5_p506_1;
     private String c5_p506_2;
     private String c5_p506_3;
@@ -69,6 +70,9 @@ public class FragmentP506P507 extends FragmentPagina {
     private String c5_p507_dist;
     private String c5_p507_prov;
     private String c5_p507_dep;
+    private String marco_dist;
+    private String marco_prov;
+    private String marco_dep;
 
     private int edad, sexo;
 
@@ -231,6 +235,7 @@ public class FragmentP506P507 extends FragmentPagina {
             informanteSpinner.setAdapter(adapter);
             informanteSpinner.setSelection(Integer.parseInt(modulo5.getIdInformante()));
 
+            if (!modulo5.getC5_p501().equals("")) c5_p501 = Integer.parseInt(modulo5.getC5_p501());
             if(!modulo5.getC5_p506_1().equals("-1") && !modulo5.getC5_p506_1().equals(""))((RadioButton)c5_p506_1_RadioGroup.getChildAt(Integer.parseInt(modulo5.getC5_p506_1()))).setChecked(true);
             if (!modulo5.getC5_p506_2().equals("")) c5_p506_2o3_EditText.setText(modulo5.getC5_p506_2());
             if (!modulo5.getC5_p506_3().equals("")) c5_p506_2o3_EditText.setText(modulo5.getC5_p506_3());
@@ -249,7 +254,15 @@ public class FragmentP506P507 extends FragmentPagina {
                 txtProvincia.setText(ubigeo.getNom_provincia());
                 txtDistrito.setText(ubigeo.getNom_distrito());
             }
+            idVivienda = modulo5.getIdVivienda();
         }
+        Marco marco = data.getMarco(idVivienda);
+        marco_dep = marco.getCcdd();
+        marco_prov = marco.getCcpp();
+        marco_dist = marco.getCcdi();
+        Log.e("cod_dep", "cargarDatos: "+ marco.getCcdd());
+        Log.e("cod_prov", "cargarDatos: "+ marco.getCcpp());
+        Log.e("cod_dist", "cargarDatos: "+ marco.getCcdi());
         data.close();
     }
 
@@ -278,6 +291,13 @@ public class FragmentP506P507 extends FragmentPagina {
             }
         }
 
+        if((c5_p506_1.equals("1") && c5_p501>2) || (c5_p506_1.equals("2") && c5_p501>4) ||
+            (c5_p506_1.equals("3") && c5_p501>6) || (c5_p506_1.equals("4") && c5_p501>8) ||
+            (c5_p506_1.equals("5") && c5_p501>10) || (c5_p506_1.equals("6") && c5_p501>11)){
+            mostrarMensaje("GRADO DE ESTUDIOS EN PERÚ NO CONCUERDA CON GRADO DE ESTUDIOS ALCANZADO EN VENEZUELA");
+
+        }
+
         if (c5_p506_4.equals("-1")){
             mostrarMensaje("PREGUNTA 506 - CENTRO ESTUDIOS: DEBE SELECCIONAR UNA OPCION");
             return false;
@@ -291,6 +311,9 @@ public class FragmentP506P507 extends FragmentPagina {
                 if(txtDepartamento.getText().equals("")){
                     mostrarMensaje("PREGUNTA 507: DEBE INDICAR EL DISTRITO");
                     return false;
+                }
+                if(c5_p507_dep.equals(marco_dep) && c5_p507_prov.equals(marco_prov) && c5_p507_dist.equals(marco_dist)){
+                    mostrarMensaje("PREGUNTA 507: INDICÓ OPCIÓN (OTRO DISTRITO), LOS UBIGEOS NO PUEDEN SER IGUALES");
                 }
             }
         }

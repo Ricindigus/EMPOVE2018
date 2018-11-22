@@ -58,7 +58,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     private int c2_p204;
     private String c2_p205_a;
     private String c2_p205_m;
-    private String edadJefeHogar;
+    private String edadJefeHogar="0";
     private String c2_p206;
     private int c2_p207;
 
@@ -213,6 +213,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             if (c2_p203 == 3 || c2_p203 == 5){
                 int edad = 0;
                 if (!c2_p205_a.equals("")) edad = Integer.parseInt(c2_p205_a);
+                if(edadJefeHogar.equals("0")){mostrarMensaje("PREGUNTA 205: FALTA INGRESAR EDAD DE JEFE DE HOGAR, DEBE COMPLETAR PRIMERO LA INFORMACIÓN DEL JEFE DE HOGAR"); return false;}
                 if (edad > Integer.parseInt(edadJefeHogar)){mostrarMensaje("PREGUNTA 205: SI ES HIJO/A O NIETO/A, LA EDAD DEBE SER MENOR A LA EDAD DEL JEFE DEL HOGAR ("+edadJefeHogar+")"); return false;}
                 if (c2_p203 == 3 && (Integer.parseInt(edadJefeHogar) - edad)<12){mostrarMensaje("PREGUNTA 205: La diferencia de edades del jefe del hogar("+edadJefeHogar+") y el hijo no corresponde"); return false;}
                 if (c2_p203 == 5 && (Integer.parseInt(edadJefeHogar) - edad)<30){mostrarMensaje("PREGUNTA 205: La diferencia de edades del jefe del hogar("+edadJefeHogar+") y el nieto  no corresponde"); return false;}
@@ -273,6 +274,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
 
     @Override
     public void cargarDatos() {
+        int edad_p=0;
         Data data = new Data(this);
         data.open();
         jefe_hogar = false; existe_conyuge = false; cant_padres_suegros = 0; edad_jefe_hogar = 0;
@@ -292,8 +294,21 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             c2_p205_m_TextInputET.setText(residente.getC2_p205_m());
             if(!residente.getC2_p206().equals(""))c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
             if (!residente.getC2_p207().equals(""))((RadioButton)c2_p207_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p207()))).setChecked(true);
+            if(!residente.getC2_p206().equals("")) edad_p = Integer.parseInt(residente.getC2_p206());
+            if(edad_p<12){
+                c2_p206_Spinner.setSelection(0);
+                linearLayout206.setVisibility(View.GONE);
+            }else{
+                linearLayout206.setVisibility(View.VISIBLE);
+            }
         }
-        edadJefeHogar = data.getResidente(idJefeHogar).getC2_p205_a();
+        if(data.getResidente(idJefeHogar).getC2_p205_a()==null) {
+            edadJefeHogar = "0";
+        }else if(data.getResidente(idJefeHogar).getC2_p205_a().equals("")){
+            edadJefeHogar = "0";
+        }else {
+            edadJefeHogar = data.getResidente(idJefeHogar).getC2_p205_a();
+        }
         ArrayList<Residente> residentes;
 
         residentes = new ArrayList<>();
@@ -315,6 +330,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         }
 
         data.close();
+        if(edadJefeHogar.equals("0")) mostrarMensaje("ANTES DE INGRESAR ALGUN MIEMBRO DEL HOGAR, DEBE COMPLETAR LA INFORMACION DEL JEFE DEL HOGAR");
     }
 
     @Override

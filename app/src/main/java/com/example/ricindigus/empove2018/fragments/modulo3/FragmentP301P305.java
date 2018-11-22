@@ -35,6 +35,7 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
+import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -88,6 +89,8 @@ public class FragmentP301P305 extends FragmentPagina {
     String c3_p304;
     String c3_p305;
     String c3_p305_o;
+    Calendar calendario;
+    int aa=0, mm=0, dd=0;
 
     int edad=0, edad_ingresada=0;
 
@@ -106,6 +109,12 @@ public class FragmentP301P305 extends FragmentPagina {
         idVivienda = residente.getId_vivienda();
         idInformante = "";
         if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        VisitaEncuestador visita = data.getUltimaVisitasHogar(idHogar);
+        if(visita!=null){
+            if(!visita.getVis_fecha_aa().equals("")) aa = Integer.parseInt(visita.getVis_fecha_aa());
+            if(!visita.getVis_fecha_mm().equals("")) mm = Integer.parseInt(visita.getVis_fecha_mm());
+            if(!visita.getVis_fecha_dd().equals("")) dd = Integer.parseInt(visita.getVis_fecha_dd());
+        }
         data.close();
     }
 
@@ -290,6 +299,11 @@ public class FragmentP301P305 extends FragmentPagina {
             c3_p305_o_EditText.setText(modulo3.getC3_p305_o());
         }
         data.close();
+
+        Log.e("aa", "fecha: "+aa );
+        Log.e("mm", "fecha: "+mm );
+
+
     }
 
     @Override
@@ -309,6 +323,12 @@ public class FragmentP301P305 extends FragmentPagina {
         llenarVariables();
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p301_d.trim().equals("")){mostrarMensaje("PREGUNTA 301: DEBE AGREGAR FECHA");return false;}
+        if(((edad!=(aa-Integer.parseInt(c3_p301_a))) && (mm>Integer.parseInt(c3_p301_m))) ||
+            ((edad!=(aa-Integer.parseInt(c3_p301_a)-1)) && (mm<Integer.parseInt(c3_p301_m))) ||
+            ((edad!=(aa-Integer.parseInt(c3_p301_a))) && (mm==Integer.parseInt(c3_p301_m)) && (dd>Integer.parseInt(c3_p301_d))) ||
+            ((edad!=(aa-Integer.parseInt(c3_p301_a)-1)) && (mm==Integer.parseInt(c3_p301_m)) && (dd<=Integer.parseInt(c3_p301_d)))){
+            mostrarMensaje("PREGUNTA 301: DIFERENTE A EDAD CALCULADA ENTRE FECHA DE NACIMIENTO Y FECHA DE ENTREVISTA");return false;
+        }
         if (edad!=edad_ingresada){mostrarMensaje("PREGUNTA 301: NO COINCIDE CON EDAD INGRESADA CAPITULO 200("+edad+")");return false;}
         if (c3_p302.equals("0")) {mostrarMensaje("PREGUNTA 302: DEBE INDICAR PAIS DE NACIMIENTO");return false;}
         if (!c3_p303_CheckBox.isChecked()){
