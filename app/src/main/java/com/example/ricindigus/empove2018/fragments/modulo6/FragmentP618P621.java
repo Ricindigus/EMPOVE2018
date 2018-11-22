@@ -432,6 +432,15 @@ public class FragmentP618P621 extends FragmentPagina {
             data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp622p625,"0",idEncuestado);
         }
         POJOLayout pojoLayout1 = data.getLayouts(idEncuestado);
+        if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p622,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p623,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p624,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,idEncuestado).equals("0")){
+            data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"-1",idEncuestado);
+        }else{
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,idEncuestado).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"1",idEncuestado);
+        }
         data.close();
     }
     public boolean verificarCoberturaCapitulo(){

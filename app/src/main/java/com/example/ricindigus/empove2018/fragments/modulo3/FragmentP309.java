@@ -107,7 +107,7 @@ public class FragmentP309 extends FragmentPagina {
         //Ya valido y guardo correctamente el fragment, ahora actualizamos el valor de la cobertura del fragment a correcto(1)
         data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp309,"1",idEncuestado);
         //verificamos la cobertura del capitulo y actualizamos su valor de cobertura.
-        if (verificarCoberturaCapitulo()) data.actualizarValor(getNombreTabla(),SQLConstantes.modulo3_COB300,"1",idEncuestado);
+        if (verificarCoberturaCapitulo()) data.actualizarValor(getNombreTabla_(),SQLConstantes.modulo3_COB300,"1",idEncuestado);
         else data.actualizarValor(getNombreTabla(),SQLConstantes.modulo3_COB300,"0",idEncuestado);
         data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"0",idEncuestado);
         data.close();
@@ -162,6 +162,10 @@ public class FragmentP309 extends FragmentPagina {
     @Override
     public String getNombreTabla() {
         return SQLConstantes.tablam3p309rutas;
+    }
+
+    public String getNombreTabla_() {
+        return SQLConstantes.tablamodulo3;
     }
 
     public void inicializarDatos(){

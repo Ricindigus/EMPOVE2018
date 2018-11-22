@@ -345,34 +345,71 @@ public class FragmentP626P629 extends FragmentPagina {
         if (m6_p628_linearlayout.getVisibility()==View.VISIBLE){
             if(c6_p628.trim().equals("")){ mostrarMensaje("PREGUNTA 628: DEBE INGRESAR NRO DE SEMANAS");return false; }
         }else{c6_p628="";}
-        if(c6_p629_1.equals("-1")){
-            mostrarMensaje("PREGUNTA 629-A: DEBE SELECCIONAR UNA OPCION");
-            return false;
-        }
-        if(c6_p629_1.equals("1")){
-            if(c6_p629_1_f.equals("0")){ mostrarMensaje("PREGUNTA 629-A: DEBE SELECCIONAR FRECUENCIA");return false; }
-            if(c6_p629_1_m.trim().equals("")){ mostrarMensaje("PREGUNTA 629-A: DEBE INGRESAR MONTO");return false; }
-        }
+        if (m6_p629_linearlayout.getVisibility()==View.VISIBLE) {
+            if (c6_p629_1.equals("-1")) {
+                mostrarMensaje("PREGUNTA 629-A: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if (c6_p629_1.equals("1")) {
+                if (c6_p629_1_f.equals("0")) {
+                    mostrarMensaje("PREGUNTA 629-A: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if (c6_p629_1_m.trim().equals("")) {
+                    mostrarMensaje("PREGUNTA 629-A: DEBE INGRESAR MONTO");
+                    return false;
+                }
+            }
 
-        if(c6_p629_2.equals("-1")){ mostrarMensaje("PREGUNTA 629-B: DEBE SELECCIONAR UNA OPCION");return false; }
-        if(c6_p629_2.equals("1")){
-            if(c6_p629_2_f.equals("0")){ mostrarMensaje("PREGUNTA 629-B: DEBE SELECCIONAR FRECUENCIA");return false; }
-            if(c6_p629_2_m.trim().equals("")){ mostrarMensaje("PREGUNTA 629-B: DEBE INGRESAR MONTO");return false; }
-        }
+            if (c6_p629_2.equals("-1")) {
+                mostrarMensaje("PREGUNTA 629-B: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if (c6_p629_2.equals("1")) {
+                if (c6_p629_2_f.equals("0")) {
+                    mostrarMensaje("PREGUNTA 629-B: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if (c6_p629_2_m.trim().equals("")) {
+                    mostrarMensaje("PREGUNTA 629-B: DEBE INGRESAR MONTO");
+                    return false;
+                }
+            }
 
-        if(c6_p629_3.equals("-1")){ mostrarMensaje("PREGUNTA 629-C: DEBE SELECCIONAR UNA OPCION");return false; }
-        if(c6_p629_3.equals("1")){
-            if(c6_p629_3_f.equals("0")){ mostrarMensaje("PREGUNTA 629-C: DEBE SELECCIONAR FRECUENCIA");return false; }
-            if(c6_p629_3_m.trim().equals("")){ mostrarMensaje("PREGUNTA 629-C: DEBE INGRESAR MONTO");return false; }
-        }
-        if(c6_p629_4.equals("-1")){ mostrarMensaje("PREGUNTA 629-D: DEBE SELECCIONAR UNA OPCION");return false; }
+            if (c6_p629_3.equals("-1")) {
+                mostrarMensaje("PREGUNTA 629-C: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
+            if (c6_p629_3.equals("1")) {
+                if (c6_p629_3_f.equals("0")) {
+                    mostrarMensaje("PREGUNTA 629-C: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if (c6_p629_3_m.trim().equals("")) {
+                    mostrarMensaje("PREGUNTA 629-C: DEBE INGRESAR MONTO");
+                    return false;
+                }
+            }
+            if (c6_p629_4.equals("-1")) {
+                mostrarMensaje("PREGUNTA 629-D: DEBE SELECCIONAR UNA OPCION");
+                return false;
+            }
 
-        if(c6_p629_4.equals("1")){
-            if(c6_p629_o.trim().equals("")){ mostrarMensaje("PREGUNTA 629-D: DEBE ESPECIFICAR OTRO");return false; }
-            if(c6_p629_4_f.equals("0")){ mostrarMensaje("PREGUNTA 629-D: DEBE SELECCIONAR FRECUENCIA");return false; }
-            if(c6_p629_4_m.trim().equals("")){ mostrarMensaje("PREGUNTA 629-D: DEBE INGRESAR MONTO");return false; }
+            if (c6_p629_4.equals("1")) {
+                if (c6_p629_o.trim().equals("")) {
+                    mostrarMensaje("PREGUNTA 629-D: DEBE ESPECIFICAR OTRO");
+                    return false;
+                }
+                if (c6_p629_4_f.equals("0")) {
+                    mostrarMensaje("PREGUNTA 629-D: DEBE SELECCIONAR FRECUENCIA");
+                    return false;
+                }
+                if (c6_p629_4_m.trim().equals("")) {
+                    mostrarMensaje("PREGUNTA 629-D: DEBE INGRESAR MONTO");
+                    return false;
+                }
+            }
         }
-
         return true;
     }
 

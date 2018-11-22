@@ -483,6 +483,20 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,"-1",_id);
             ocultarP629();ocultarP630(); }
 
+        if (iEdad >= 12){
+            mostrarLayoutPregunta(SQLConstantes.layouts_p625);
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,_id).equals("-1"))
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"1",_id);
+        } else {
+            ocultarP625();
+            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p622,_id).equals("0") &&
+                    data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p623,_id).equals("0") &&
+                    data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p624,_id).equals("0") &&
+                    data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,_id).equals("0")){
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"-1",_id);
+            }
+        }
+
 
         if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p411,_id).equals("0") &&
                 data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p412,_id).equals("0") &&
@@ -701,6 +715,22 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         contentValues.put(SQLConstantes.modulo5_c5_p513_o,"");
         data.actualizarElemento(SQLConstantes.tablamodulo5,contentValues,_id);
         data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p513,"0",_id);
+        data.close();
+    }
+
+    public void ocultarP625(){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo6_c6_p625_1,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_2,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_3,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_4,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_5,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_6,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_o,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo6,contentValues,_id);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,"0",_id);
         data.close();
     }
 
