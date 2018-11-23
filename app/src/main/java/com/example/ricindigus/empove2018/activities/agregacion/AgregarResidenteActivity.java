@@ -295,7 +295,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             c2_p205_m_TextInputET.setText(residente.getC2_p205_m());
             if(!residente.getC2_p206().equals(""))c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
             if (!residente.getC2_p207().equals(""))((RadioButton)c2_p207_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p207()))).setChecked(true);
-            if(!residente.getC2_p206().equals("")) edad_p = Integer.parseInt(residente.getC2_p206());
+            if(!residente.getC2_p205_a().equals("")) edad_p = Integer.parseInt(residente.getC2_p205_a());
             if(edad_p<12){
                 c2_p206_Spinner.setSelection(0);
                 linearLayout206.setVisibility(View.GONE);
