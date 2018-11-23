@@ -868,6 +868,14 @@
     <string name="modulo_6_p611">611.NORMALMENTE, ¿CUÁNTAS HORAS TRABAJA A LA SEMANA EN TODAS SUS OCUPACIONES?</string>
     <string name="modulo_6_p611_sp1">Nº DE HORAS</string>
 
+    <string name="modulo_6_p611a">611A.LA SEMANA PASADA, CUMPLIENDO CON SUS OBLIGACIONES ACTUALES DE TRABAJO, ¿TUVO LA VOLUNTAD DE TRABAJAR MAS HORAS Y ADEMÁS ESTUVO DISPONIBLE PARA HACERLO?</string>
+    <string name="modulo_6_p611a_sp1">1.Sí</string>
+    <string name="modulo_6_p611a_sp2">2.No</string>
+
+    <string name="modulo_6_p611b">611B.LA SEMANA PASADA, ¿ESTUVO UD. BUSCANDO OTRO TRABAJO?</string>
+    <string name="modulo_6_p611b_sp1">1.Sí</string>
+    <string name="modulo_6_p611b_sp2">2.No</string>
+
     <string name="modulo_6_p612">612.EN SU OCUPACIÓN PRINCIPAL, NEGOCIO O EMPRESA INCLUYENDOSE USTED, LABORARON:</string>
     <string name="modulo_6_p612_sp1">1.¿Menos de 100 personas? </string>
     <string name="modulo_6_p612_sp2">2.¿De 100 personas a más? </string>
@@ -927,16 +935,16 @@
     <string name="modulo_6_p619_sp2">2.No</string>
 
     <string name="modulo_6_p620">619.¿QUÉ ESTUVO HACIENDO LA SEMANA PASADA:</string>
-    <string name="modulo_6_p620_ind"><i><b>(Lea cada una de las alternativas y seleccione un código para cada una de ellas)</b></i></string>
-    <string name="modulo_6_p620_sp1">1.Hizo trámites, busco local, gestionó préstamos para establecer su propio negocio?</string>
-    <string name="modulo_6_p620_sp2">2.Reparando sus activos (local, máquina, equipo)?</string>
-    <string name="modulo_6_p620_sp3">3.Esperando el inicio de un trabajo dependiente, (obrero, empleado o trabajador del hogar)?</string>
-    <string name="modulo_6_p620_sp4">4.Estudiando? (Solo enseñanza regular)</string>
-    <string name="modulo_6_p620_sp5">5.Quehaceres del hogar?</string>
-    <string name="modulo_6_p620_sp6">6.Cuidado de hijos menores, adultos mayores o personas menores?</string>
-    <string name="modulo_6_p620_sp7">7.Vivía de su pensión o jubilación u otras rentas?</string>
-    <string name="modulo_6_p620_sp8">8.Enfermo o incapacitado?</string>
-    <string name="modulo_6_p620_sp9">9.Otro?</string>
+    <string name="modulo_6_p620_ind"><i><b>(Lea la alternativa y seleccione solo un código)</b></i></string>
+    <string name="modulo_6_p620_sp1">1.¿Hizo trámites, busco local, gestionó préstamos para establecer su propio negocio?</string>
+    <string name="modulo_6_p620_sp2">2.¿Reparando sus activos (local, máquina, equipo)?</string>
+    <string name="modulo_6_p620_sp3">3.¿Esperando el inicio de un trabajo dependiente, (obrero, empleado o trabajador del hogar)?</string>
+    <string name="modulo_6_p620_sp4">4.¿Estudiando? (Solo enseñanza regular)</string>
+    <string name="modulo_6_p620_sp5">5.¿Quehaceres del hogar?</string>
+    <string name="modulo_6_p620_sp6">6.¿Cuidado de hijos menores, adultos mayores o personas menores?</string>
+    <string name="modulo_6_p620_sp7">7.¿Vivía de su pensión o jubilación u otras rentas?</string>
+    <string name="modulo_6_p620_sp8">8.¿Enfermo o incapacitado?</string>
+    <string name="modulo_6_p620_sp9">9.¿Otro?</string>
     <string name="modulo_6_p620_si">Sí</string>
     <string name="modulo_6_p620_no">No</string>
     <string name="modulo_6_p620_especifique">Especifique</string>

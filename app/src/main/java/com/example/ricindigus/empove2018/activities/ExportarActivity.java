@@ -612,6 +612,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p610_st, modulo6.getC6_p610_st());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p610_t, modulo6.getC6_p610_t());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p611, modulo6.getC6_p611());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p611a, modulo6.getC6_p611a());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p611b, modulo6.getC6_p611b());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p612, modulo6.getC6_p612());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p612_nro, modulo6.getC6_p612_nro());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p613, modulo6.getC6_p613());
@@ -627,15 +629,7 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p617_prov, modulo6.getC6_p617_prov());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p617_dep, modulo6.getC6_p617_dep());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p618, modulo6.getC6_p618());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_1, modulo6.getC6_p619_1());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_2, modulo6.getC6_p619_2());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_3, modulo6.getC6_p619_3());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_4, modulo6.getC6_p619_4());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_5, modulo6.getC6_p619_5());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_6, modulo6.getC6_p619_6());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_7, modulo6.getC6_p619_7());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_8, modulo6.getC6_p619_8());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_9, modulo6.getC6_p619_9());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619, modulo6.getC6_p619());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p619_o, modulo6.getC6_p619_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p620, modulo6.getC6_p620());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p621, modulo6.getC6_p621());

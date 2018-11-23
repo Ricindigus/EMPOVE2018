@@ -59,9 +59,12 @@ public class FragmentP609P612 extends FragmentPagina {
             c6_p610_sj_EditText, c6_p610_sv_EditText, c6_p610_ss_EditText;
     TextView c6_p610_t_TextView;
     EditText c6_p611_EditText;
+    RadioGroup c6_p611a_RadioGroup;
+    RadioGroup c6_p611b_RadioGroup;
     RadioGroup c6_p612_RadioGroup;
     EditText c6_p612_nro_EditText;
-    LinearLayout m6_p609_linearlayout, m6_p610_linearlayout, m6_p611_linearlayout, m6_p612_linearlayout;
+    LinearLayout m6_p609_linearlayout, m6_p610_linearlayout, m6_p611_linearlayout, m6_p611a_linearlayout,
+            m6_p611b_linearlayout, m6_p612_linearlayout;
 
     private String c6_p609;
     private String c6_p610_pd;
@@ -82,6 +85,9 @@ public class FragmentP609P612 extends FragmentPagina {
     private String c6_p610_st;
     private String c6_p610_t;
     private String c6_p611;
+    private String c6_p611a;
+    private String c6_p611b;
+
     private String c6_p612;
     private String c6_p612_nro;
 
@@ -145,6 +151,9 @@ public class FragmentP609P612 extends FragmentPagina {
 
         c6_p611_EditText = (EditText) rootView.findViewById(R.id.mod6_611_edittext_C6_P611);
 
+        c6_p611a_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_611a_radiogroup_C6_P611a);
+        c6_p611b_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_611b_radiogroup_C6_P611b);
+
         c6_p612_RadioGroup = (RadioGroup) rootView.findViewById(R.id.mod6_612_radiogroup_C6_P612);
 
         c6_p612_nro_EditText = (EditText) rootView.findViewById(R.id.mod6_612_edittext_C6_P612_NRO);
@@ -152,6 +161,8 @@ public class FragmentP609P612 extends FragmentPagina {
         m6_p609_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p609);
         m6_p610_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p610);
         m6_p611_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p611);
+        m6_p611a_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p611a);
+        m6_p611b_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p611b);
         m6_p612_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m6_p612);
 
         return rootView;
@@ -233,6 +244,8 @@ public class FragmentP609P612 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo6_c6_p610_st,c6_p610_st);
         contentValues.put(SQLConstantes.modulo6_c6_p610_t,c6_p610_t);
         contentValues.put(SQLConstantes.modulo6_c6_p611,c6_p611);
+        contentValues.put(SQLConstantes.modulo6_c6_p611a,c6_p611a);
+        contentValues.put(SQLConstantes.modulo6_c6_p611b,c6_p611b);
         contentValues.put(SQLConstantes.modulo6_c6_p612,c6_p612);
         contentValues.put(SQLConstantes.modulo6_c6_p612_nro,c6_p612_nro);
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
@@ -265,6 +278,8 @@ public class FragmentP609P612 extends FragmentPagina {
         c6_p610_ss = c6_p610_ss_EditText.getText().toString();
         c6_p610_t = c6_p610_t_TextView.getText().toString();
         c6_p611 = c6_p611_EditText.getText().toString();
+        c6_p611a = c6_p611a_RadioGroup.indexOfChild(c6_p611a_RadioGroup.findViewById(c6_p611a_RadioGroup.getCheckedRadioButtonId()))+"";
+        c6_p611b = c6_p611b_RadioGroup.indexOfChild(c6_p611b_RadioGroup.findViewById(c6_p611b_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p612 = c6_p612_RadioGroup.indexOfChild(c6_p612_RadioGroup.findViewById(c6_p612_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p612_nro = c6_p612_nro_EditText.getText().toString();
     }
@@ -296,6 +311,8 @@ public class FragmentP609P612 extends FragmentPagina {
             c6_p610_sv_EditText.setText(modulo6.getC6_p610_sv());
             c6_p610_ss_EditText.setText(modulo6.getC6_p610_ss());
             c6_p611_EditText.setText(modulo6.getC6_p611());
+            if(!modulo6.getC6_p611a().equals("-1") && !modulo6.getC6_p611a().equals(""))((RadioButton)c6_p611a_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p611a()))).setChecked(true);
+            if(!modulo6.getC6_p611b().equals("-1") && !modulo6.getC6_p611b().equals(""))((RadioButton)c6_p611b_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p611b()))).setChecked(true);
             if(!modulo6.getC6_p612().equals("-1") && !modulo6.getC6_p612().equals(""))((RadioButton)c6_p612_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p612()))).setChecked(true);
             c6_p612_nro_EditText.setText(modulo6.getC6_p612_nro());
         }
@@ -309,6 +326,8 @@ public class FragmentP609P612 extends FragmentPagina {
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p609,idEncuestado)) m6_p609_linearlayout.setVisibility(View.GONE);
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p610,idEncuestado)) m6_p610_linearlayout.setVisibility(View.GONE);
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p611,idEncuestado)) m6_p611_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p611a,idEncuestado)) m6_p611a_linearlayout.setVisibility(View.GONE);
+        if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p611b,idEncuestado)) m6_p611b_linearlayout.setVisibility(View.GONE);
         if(data.ocultarLayoutPregunta(SQLConstantes.layouts_p612,idEncuestado)) m6_p612_linearlayout.setVisibility(View.GONE);
         data.close();
     }
@@ -339,6 +358,15 @@ public class FragmentP609P612 extends FragmentPagina {
         if(c6_p610_ss.trim().equals("")){ mostrarMensaje("PREGUNTA 610 SECUNDARIA - SABADO: DEBE INGRESAR HORAS TRABAJADAS");return false; }
 
         if(c6_p611.trim().equals("")){ mostrarMensaje("PREGUNTA 611: Nº DE HORAS");return false;}
+
+        if (m6_p611a_linearlayout.getVisibility() == View.VISIBLE){
+            if(c6_p611a.equals("-1")){ mostrarMensaje("PREGUNTA 611A: DEBE SELECCIONAR UNA OPCION");return false; }
+        }
+
+        if (m6_p611b_linearlayout.getVisibility() == View.VISIBLE){
+            if(c6_p611b.equals("-1")){ mostrarMensaje("PREGUNTA 611B: DEBE SELECCIONAR UNA OPCION");return false; }
+        }
+
         if(c6_p612.equals("-1")){ mostrarMensaje("PREGUNTA 612: DEBE SELECCIONAR UNA OPCION");return false; }
         if(c6_p612.equals("1")){
             if(c6_p612_nro.trim().equals("")){ mostrarMensaje("PREGUNTA 612 - OPCION 1: NRO DE PERSONAS");return false;}

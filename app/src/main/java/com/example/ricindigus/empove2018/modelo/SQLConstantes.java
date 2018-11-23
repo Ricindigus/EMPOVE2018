@@ -1223,6 +1223,8 @@ public class SQLConstantes {
     public static String modulo6_c6_p610_st = "c6_p610_st";
     public static String modulo6_c6_p610_t = "c6_p610_t";
     public static String modulo6_c6_p611 = "c6_p611";
+    public static String modulo6_c6_p611a = "c6_p611a";
+    public static String modulo6_c6_p611b = "c6_p611b";
     public static String modulo6_c6_p612 = "c6_p612";
     public static String modulo6_c6_p612_nro = "c6_p612_nro";
     public static String modulo6_c6_p613 = "c6_p613";
@@ -1245,15 +1247,7 @@ public class SQLConstantes {
     public static String modulo6_c6_p625_6 = "c6_p625_6";
     public static String modulo6_c6_p625_o = "c6_p625_o";
     public static String modulo6_c6_p618 = "c6_p618";
-    public static String modulo6_c6_p619_1 = "c6_p619_1";
-    public static String modulo6_c6_p619_2 = "c6_p619_2";
-    public static String modulo6_c6_p619_3 = "c6_p619_3";
-    public static String modulo6_c6_p619_4 = "c6_p619_4";
-    public static String modulo6_c6_p619_5 = "c6_p619_5";
-    public static String modulo6_c6_p619_6 = "c6_p619_6";
-    public static String modulo6_c6_p619_7 = "c6_p619_7";
-    public static String modulo6_c6_p619_8 = "c6_p619_8";
-    public static String modulo6_c6_p619_9 = "c6_p619_9";
+    public static String modulo6_c6_p619 = "c6_p619";
     public static String modulo6_c6_p619_o = "c6_p619_o";
     public static String modulo6_c6_p620 = "c6_p620";
     public static String modulo6_c6_p621 = "c6_p621";
@@ -1338,6 +1332,8 @@ public class SQLConstantes {
                     modulo6_c6_p610_st  +  " TEXT," +
                     modulo6_c6_p610_t  +  " TEXT," +
                     modulo6_c6_p611  +  " TEXT," +
+                    modulo6_c6_p611a  +  " TEXT," +
+                    modulo6_c6_p611b  +  " TEXT," +
                     modulo6_c6_p612  +  " TEXT," +
                     modulo6_c6_p612_nro  +  " TEXT," +
                     modulo6_c6_p613  +  " TEXT," +
@@ -1360,15 +1356,7 @@ public class SQLConstantes {
                     modulo6_c6_p625_6  +  " TEXT," +
                     modulo6_c6_p625_o  +  " TEXT," +
                     modulo6_c6_p618  +  " TEXT," +
-                    modulo6_c6_p619_1  +  " TEXT," +
-                    modulo6_c6_p619_2  +  " TEXT," +
-                    modulo6_c6_p619_3  +  " TEXT," +
-                    modulo6_c6_p619_4  +  " TEXT," +
-                    modulo6_c6_p619_5  +  " TEXT," +
-                    modulo6_c6_p619_6  +  " TEXT," +
-                    modulo6_c6_p619_7  +  " TEXT," +
-                    modulo6_c6_p619_8  +  " TEXT," +
-                    modulo6_c6_p619_9  +  " TEXT," +
+                    modulo6_c6_p619  +  " TEXT," +
                     modulo6_c6_p619_o  +  " TEXT," +
                     modulo6_c6_p620  +  " TEXT," +
                     modulo6_c6_p621  +  " TEXT," +
@@ -1882,6 +1870,8 @@ public class SQLConstantes {
     public static String layouts_p609 = "p609";
     public static String layouts_p610 = "p610";
     public static String layouts_p611 = "p611";
+    public static String layouts_p611a = "p611a";
+    public static String layouts_p611b = "p611b";
     public static String layouts_p612 = "p612";
     public static String layouts_p613 = "p613";
     public static String layouts_p614 = "p614";
@@ -1995,6 +1985,8 @@ public class SQLConstantes {
                     layouts_p609 + " TEXT," +
                     layouts_p610 + " TEXT," +
                     layouts_p611 + " TEXT," +
+                    layouts_p611a + " TEXT," +
+                    layouts_p611b + " TEXT," +
                     layouts_p612 + " TEXT," +
                     layouts_p613 + " TEXT," +
                     layouts_p614 + " TEXT," +

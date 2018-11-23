@@ -525,15 +525,7 @@ public class FragmentP601P604 extends FragmentPagina {
         if(c6_p601.equals("1") || c6_p602.equals("1") || c6_p603.equals("1")){
             ContentValues contentValues = new ContentValues();
             contentValues.put(SQLConstantes.modulo6_c6_p618,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_1,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_2,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_3,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_4,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_5,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_6,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_7,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_8,"");
-            contentValues.put(SQLConstantes.modulo6_c6_p619_9,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p619,"");
             contentValues.put(SQLConstantes.modulo6_c6_p619_o,"");
             contentValues.put(SQLConstantes.modulo6_c6_p620,"");
             contentValues.put(SQLConstantes.modulo6_c6_p621,"");
@@ -600,6 +592,8 @@ public class FragmentP601P604 extends FragmentPagina {
             contentValues.put(SQLConstantes.modulo6_c6_p610_st,"");
             contentValues.put(SQLConstantes.modulo6_c6_p610_t,"");
             contentValues.put(SQLConstantes.modulo6_c6_p611,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p611a,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p611b,"");
             contentValues.put(SQLConstantes.modulo6_c6_p612,"");
             contentValues.put(SQLConstantes.modulo6_c6_p612_nro,"");
             contentValues.put(SQLConstantes.modulo6_c6_p613,"");

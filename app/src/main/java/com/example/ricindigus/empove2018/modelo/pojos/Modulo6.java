@@ -48,6 +48,8 @@ public class Modulo6 {
     private String c6_p610_st;
     private String c6_p610_t;
     private String c6_p611;
+    private String c6_p611a;
+    private String c6_p611b;
     private String c6_p612;
     private String c6_p612_nro;
     private String c6_p613;
@@ -63,15 +65,7 @@ public class Modulo6 {
     private String c6_p617_prov;
     private String c6_p617_dep;
     private String c6_p618;
-    private String c6_p619_1;
-    private String c6_p619_2;
-    private String c6_p619_3;
-    private String c6_p619_4;
-    private String c6_p619_5;
-    private String c6_p619_6;
-    private String c6_p619_7;
-    private String c6_p619_8;
-    private String c6_p619_9;
+    private String c6_p619;
     private String c6_p619_o;
     private String c6_p620;
     private String c6_p621;
@@ -162,6 +156,8 @@ public class Modulo6 {
         c6_p610_st= "";
         c6_p610_t= "";
         c6_p611= "";
+        c6_p611a= "";
+        c6_p611b= "";
         c6_p612= "";
         c6_p612_nro= "";
         c6_p613= "";
@@ -184,15 +180,7 @@ public class Modulo6 {
         c6_p625_6= "";
         c6_p625_o= "";
         c6_p618= "";
-        c6_p619_1= "";
-        c6_p619_2= "";
-        c6_p619_3= "";
-        c6_p619_4= "";
-        c6_p619_5= "";
-        c6_p619_6= "";
-        c6_p619_7= "";
-        c6_p619_8= "";
-        c6_p619_9= "";
+        c6_p619= "";
         c6_p619_o= "";
         c6_p620= "";
         c6_p621= "";
@@ -604,6 +592,22 @@ public class Modulo6 {
         this.c6_p611 = c6_p611;
     }
 
+    public String getC6_p611a() {
+        return c6_p611a;
+    }
+
+    public void setC6_p611a(String c6_p611a) {
+        this.c6_p611a = c6_p611a;
+    }
+
+    public String getC6_p611b() {
+        return c6_p611b;
+    }
+
+    public void setC6_p611b(String c6_p611b) {
+        this.c6_p611b = c6_p611b;
+    }
+
     public String getC6_p612() {
         return c6_p612;
     }
@@ -780,78 +784,14 @@ public class Modulo6 {
         this.c6_p618 = c6_p618;
     }
 
-    public String getC6_p619_1() {
-        return c6_p619_1;
+    public String getC6_p619() {
+        return c6_p619;
     }
 
-    public void setC6_p619_1(String c6_p619_1) {
-        this.c6_p619_1 = c6_p619_1;
+    public void setC6_p619(String c6_p619) {
+        this.c6_p619 = c6_p619;
     }
-
-    public String getC6_p619_2() {
-        return c6_p619_2;
-    }
-
-    public void setC6_p619_2(String c6_p619_2) {
-        this.c6_p619_2 = c6_p619_2;
-    }
-
-    public String getC6_p619_3() {
-        return c6_p619_3;
-    }
-
-    public void setC6_p619_3(String c6_p619_3) {
-        this.c6_p619_3 = c6_p619_3;
-    }
-
-    public String getC6_p619_4() {
-        return c6_p619_4;
-    }
-
-    public void setC6_p619_4(String c6_p619_4) {
-        this.c6_p619_4 = c6_p619_4;
-    }
-
-    public String getC6_p619_5() {
-        return c6_p619_5;
-    }
-
-    public void setC6_p619_5(String c6_p619_5) {
-        this.c6_p619_5 = c6_p619_5;
-    }
-
-    public String getC6_p619_6() {
-        return c6_p619_6;
-    }
-
-    public void setC6_p619_6(String c6_p619_6) {
-        this.c6_p619_6 = c6_p619_6;
-    }
-
-    public String getC6_p619_7() {
-        return c6_p619_7;
-    }
-
-    public void setC6_p619_7(String c6_p619_7) {
-        this.c6_p619_7 = c6_p619_7;
-    }
-
-    public String getC6_p619_8() {
-        return c6_p619_8;
-    }
-
-    public void setC6_p619_8(String c6_p619_8) {
-        this.c6_p619_8 = c6_p619_8;
-    }
-
-    public String getC6_p619_9() {
-        return c6_p619_9;
-    }
-
-    public void setC6_p619_9(String c6_p619_9) {
-        this.c6_p619_9 = c6_p619_9;
-    }
-
+    
     public String getC6_p619_o() {
         return c6_p619_o;
     }
@@ -1193,6 +1133,8 @@ public class Modulo6 {
         contentValues.put(SQLConstantes.modulo6_c6_p610_st,c6_p610_st);
         contentValues.put(SQLConstantes.modulo6_c6_p610_t,c6_p610_t);
         contentValues.put(SQLConstantes.modulo6_c6_p611,c6_p611);
+        contentValues.put(SQLConstantes.modulo6_c6_p611a,c6_p611a);
+        contentValues.put(SQLConstantes.modulo6_c6_p611b,c6_p611b);
         contentValues.put(SQLConstantes.modulo6_c6_p612,c6_p612);
         contentValues.put(SQLConstantes.modulo6_c6_p612_nro,c6_p612_nro);
         contentValues.put(SQLConstantes.modulo6_c6_p613,c6_p613);
@@ -1208,15 +1150,7 @@ public class Modulo6 {
         contentValues.put(SQLConstantes.modulo6_c6_p617_prov,c6_p617_prov);
         contentValues.put(SQLConstantes.modulo6_c6_p617_dep,c6_p617_dep);
         contentValues.put(SQLConstantes.modulo6_c6_p618,c6_p618);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_1,c6_p619_1);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_2,c6_p619_2);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_3,c6_p619_3);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_4,c6_p619_4);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_5,c6_p619_5);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_6,c6_p619_6);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_7,c6_p619_7);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_8,c6_p619_8);
-        contentValues.put(SQLConstantes.modulo6_c6_p619_9,c6_p619_9);
+        contentValues.put(SQLConstantes.modulo6_c6_p619,c6_p619);
         contentValues.put(SQLConstantes.modulo6_c6_p619_o,c6_p619_o);
         contentValues.put(SQLConstantes.modulo6_c6_p620,c6_p620);
         contentValues.put(SQLConstantes.modulo6_c6_p621,c6_p621);
