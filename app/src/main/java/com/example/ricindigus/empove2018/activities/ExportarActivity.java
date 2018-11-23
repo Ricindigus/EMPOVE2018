@@ -307,6 +307,7 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.residentes_c2_p205_a, residente.getC2_p205_a());
                     escribirCampoXml(serializer, SQLConstantes.residentes_c2_p205_m, residente.getC2_p205_m());
                     escribirCampoXml(serializer, SQLConstantes.residentes_c2_p206, residente.getC2_p206());
+                    escribirCampoXml(serializer, SQLConstantes.residentes_c2_p207, residente.getC2_p207());
                     serializer.endTag("", "MODULO2_RESIDENTE");
                 }
                 serializer.endTag("", "MODULO2_RESIDENTES");
