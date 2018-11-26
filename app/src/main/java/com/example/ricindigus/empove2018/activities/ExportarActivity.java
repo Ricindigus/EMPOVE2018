@@ -23,7 +23,6 @@ import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
 import com.example.ricindigus.empove2018.modelo.pojos.ExportarItem;
 import com.example.ricindigus.empove2018.modelo.pojos.Funcionario;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
-import com.example.ricindigus.empove2018.modelo.pojos.ItemMarco;
 import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta309;
 import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta318;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo1H;
@@ -310,9 +309,9 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Residente residente : residentes) {
                     serializer.startTag("", "MODULO2_RESIDENTE");
                     escribirCampoXml(serializer, SQLConstantes.residentes_id, residente.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.residentes_idInformante, residente.getId_informante());
-                    escribirCampoXml(serializer, SQLConstantes.residentes_idHogar, residente.getId_hogar());
-                    escribirCampoXml(serializer, SQLConstantes.residentes_idVivienda, residente.getId_vivienda());
+                    escribirCampoXml(serializer, SQLConstantes.residentes_id_informante, residente.getId_informante());
+                    escribirCampoXml(serializer, SQLConstantes.residentes_id_hogar, residente.getId_hogar());
+                    escribirCampoXml(serializer, SQLConstantes.residentes_id_vivienda, residente.getId_vivienda());
                     escribirCampoXml(serializer, SQLConstantes.residentes_numero, residente.getNumero());
                     escribirCampoXml(serializer, SQLConstantes.residentes_c2_p202, residente.getC2_p202());
                     escribirCampoXml(serializer, SQLConstantes.residentes_c2_p203, residente.getC2_p203());
@@ -333,9 +332,9 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Modulo3 modulo3 : modulo3s) {
                     serializer.startTag("", "MODULO3");
                     escribirCampoXml(serializer, SQLConstantes.modulo3_id, modulo3.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_idInformante, modulo3.getIdInformante());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_idHogar, modulo3.getIdHogar());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_idVivienda, modulo3.getIdVivienda());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_id_informante, modulo3.getIdInformante());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_id_hogar, modulo3.getIdHogar());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_id_vivienda, modulo3.getIdVivienda());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p301_d, modulo3.getC3_p301_d());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p301_m, modulo3.getC3_p301_m());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p301_a, modulo3.getC3_p301_a());
@@ -433,9 +432,9 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Modulo4 modulo4 : modulo4s) {
                     serializer.startTag("", "MODULO4");
                     escribirCampoXml(serializer, SQLConstantes.modulo4_id, modulo4.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo4_idInformante, modulo4.getIdInformante());
-                    escribirCampoXml(serializer, SQLConstantes.modulo4_idHogar, modulo4.getIdHogar());
-                    escribirCampoXml(serializer, SQLConstantes.modulo4_idVivienda, modulo4.getIdVivienda());
+                    escribirCampoXml(serializer, SQLConstantes.modulo4_id_informante, modulo4.getIdInformante());
+                    escribirCampoXml(serializer, SQLConstantes.modulo4_id_hogar, modulo4.getIdHogar());
+                    escribirCampoXml(serializer, SQLConstantes.modulo4_id_vivienda, modulo4.getIdVivienda());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p401_1, modulo4.getC4_p401_1());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p401_2, modulo4.getC4_p401_2());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p401_3, modulo4.getC4_p401_3());
@@ -542,9 +541,9 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Modulo5 modulo5 : modulo5s) {
                     serializer.startTag("", "MODULO5");
                     escribirCampoXml(serializer, SQLConstantes.modulo5_id, modulo5.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo5_idInformante, modulo5.getIdInformante());
-                    escribirCampoXml(serializer, SQLConstantes.modulo5_idHogar, modulo5.getIdHogar());
-                    escribirCampoXml(serializer, SQLConstantes.modulo5_idVivienda, modulo5.getIdVivienda());
+                    escribirCampoXml(serializer, SQLConstantes.modulo5_id_informante, modulo5.getIdInformante());
+                    escribirCampoXml(serializer, SQLConstantes.modulo5_id_hogar, modulo5.getIdHogar());
+                    escribirCampoXml(serializer, SQLConstantes.modulo5_id_vivienda, modulo5.getIdVivienda());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p501, modulo5.getC5_p501());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p502_c, modulo5.getC5_p502_c());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p502, modulo5.getC5_p502());
@@ -594,9 +593,9 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Modulo6 modulo6 : modulo6s) {
                     serializer.startTag("", "MODULO6");
                     escribirCampoXml(serializer, SQLConstantes.modulo6_id, modulo6.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_idInformante, modulo6.getIdInformante());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_idHogar, modulo6.getIdHogar());
-                    escribirCampoXml(serializer, SQLConstantes.modulo6_idVivienda, modulo6.getIdVivienda());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_id_informante, modulo6.getIdInformante());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_id_hogar, modulo6.getIdHogar());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_id_vivienda, modulo6.getIdVivienda());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p601, modulo6.getC6_p601());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p602, modulo6.getC6_p602());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p603, modulo6.getC6_p603());
@@ -709,9 +708,9 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Modulo7 modulo7 : modulo7s) {
                     serializer.startTag("", "MODULO7");
                     escribirCampoXml(serializer, SQLConstantes.modulo7_id, modulo7.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo7_idInformante, modulo7.getIdInformante());
-                    escribirCampoXml(serializer, SQLConstantes.modulo7_idHogar, modulo7.getIdHogar());
-                    escribirCampoXml(serializer, SQLConstantes.modulo7_idVivienda, modulo7.getIdVivienda());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_id_informante, modulo7.getIdInformante());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_id_hogar, modulo7.getIdHogar());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_id_vivienda, modulo7.getIdVivienda());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p701, modulo7.getC7_p701());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p702_1, modulo7.getC7_p702_1());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p702_2, modulo7.getC7_p702_2());
@@ -779,9 +778,9 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Modulo8 modulo8 : modulo8s) {
                     serializer.startTag("", "MODULO8");
                     escribirCampoXml(serializer, SQLConstantes.modulo8_id, modulo8.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo8_idInformante, modulo8.getIdInformante());
-                    escribirCampoXml(serializer, SQLConstantes.modulo8_idHogar, modulo8.getIdHogar());
-                    escribirCampoXml(serializer, SQLConstantes.modulo8_idVivienda, modulo8.getIdVivienda());
+                    escribirCampoXml(serializer, SQLConstantes.modulo8_id_informante, modulo8.getIdInformante());
+                    escribirCampoXml(serializer, SQLConstantes.modulo8_id_hogar, modulo8.getIdHogar());
+                    escribirCampoXml(serializer, SQLConstantes.modulo8_id_vivienda, modulo8.getIdVivienda());
                     escribirCampoXml(serializer, SQLConstantes.modulo8_c8_p801, modulo8.getC8_p801());
                     escribirCampoXml(serializer, SQLConstantes.modulo8_c8_p802, modulo8.getC8_p802());
                     escribirCampoXml(serializer, SQLConstantes.modulo8_c8_p803, modulo8.getC8_p803());

@@ -29,7 +29,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
@@ -226,7 +225,7 @@ public class FragmentP301P305 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo3_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo3_c3_p301_d,c3_p301_d);
         contentValues.put(SQLConstantes.modulo3_c3_p301_m,c3_p301_m);
         contentValues.put(SQLConstantes.modulo3_c3_p301_a,c3_p301_a);

@@ -27,9 +27,7 @@ import android.widget.Spinner;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
-import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
-import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -328,7 +326,7 @@ public class FragmentP706P709 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo7_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo7_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo7_c7_p706, c7_p706 + "");
         contentValues.put(SQLConstantes.modulo7_c7_p707_1,c7_p707_1 + "");
         contentValues.put(SQLConstantes.modulo7_c7_p707_2,c7_p707_2 + "");

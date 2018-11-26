@@ -33,7 +33,6 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
-import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -180,7 +179,7 @@ public class FragmentP306P308 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo3_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo3_c3_p306,c3_p306);
         contentValues.put(SQLConstantes.modulo3_c3_p306_o,c3_p306_o);
         contentValues.put(SQLConstantes.modulo3_c3_p307_d,c3_p307_d);

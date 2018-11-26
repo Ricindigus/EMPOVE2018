@@ -22,12 +22,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
-import com.example.ricindigus.empove2018.activities.EncuestaActivity;
-import com.example.ricindigus.empove2018.activities.agregacion.AgregarResidenteActivity;
 import com.example.ricindigus.empove2018.activities.agregacion.AgregarRutaActivity;
 import com.example.ricindigus.empove2018.adapters.M3Pregunta309Adapter;
 import com.example.ricindigus.empove2018.modelo.Data;
@@ -102,7 +99,7 @@ public class FragmentP309 extends FragmentPagina {
         Data data = new Data(contexto);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo3_id_informante,idInformante);
         data.actualizarElemento(SQLConstantes.tablamodulo3,contentValues,idEncuestado);
         //Ya valido y guardo correctamente el fragment, ahora actualizamos el valor de la cobertura del fragment a correcto(1)
         data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp309,"1",idEncuestado);

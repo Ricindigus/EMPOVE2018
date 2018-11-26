@@ -20,7 +20,6 @@ import android.widget.Spinner;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
-import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
@@ -98,7 +97,7 @@ public class FragmentP801P804 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo8_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo8_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo8_c8_p801,c8_p801);
         contentValues.put(SQLConstantes.modulo8_c8_p802,c8_p802);
         contentValues.put(SQLConstantes.modulo8_c8_p803,c8_p803);

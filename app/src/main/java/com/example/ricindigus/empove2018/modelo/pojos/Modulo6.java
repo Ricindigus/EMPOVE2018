@@ -1091,9 +1091,9 @@ public class Modulo6 {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo6_id,_id);
-        contentValues.put(SQLConstantes.modulo6_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo6_idHogar,idHogar);
-        contentValues.put(SQLConstantes.modulo6_idVivienda,idVivienda);
+        contentValues.put(SQLConstantes.modulo6_id_informante,idInformante);
+        contentValues.put(SQLConstantes.modulo6_id_hogar,idHogar);
+        contentValues.put(SQLConstantes.modulo6_id_vivienda,idVivienda);
         contentValues.put(SQLConstantes.modulo6_c6_p601,c6_p601);
         contentValues.put(SQLConstantes.modulo6_c6_p602,c6_p602);
         contentValues.put(SQLConstantes.modulo6_c6_p603,c6_p603);

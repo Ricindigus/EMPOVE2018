@@ -524,9 +524,9 @@ public class Modulo3 {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_id,_id);
-        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo3_idHogar,idHogar);
-        contentValues.put(SQLConstantes.modulo3_idVivienda,idVivienda);
+        contentValues.put(SQLConstantes.modulo3_id_informante,idInformante);
+        contentValues.put(SQLConstantes.modulo3_id_hogar,idHogar);
+        contentValues.put(SQLConstantes.modulo3_id_vivienda,idVivienda);
         contentValues.put(SQLConstantes.modulo3_c3_p301_d,c3_p301_d);
         contentValues.put(SQLConstantes.modulo3_c3_p301_m,c3_p301_m);
         contentValues.put(SQLConstantes.modulo3_c3_p301_a,c3_p301_a);

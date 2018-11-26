@@ -152,9 +152,9 @@ public class Residente {
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.residentes_id,_id);
         contentValues.put(SQLConstantes.residentes_numero,numero);
-        contentValues.put(SQLConstantes.residentes_idInformante, id_informante);
-        contentValues.put(SQLConstantes.residentes_idHogar, id_hogar);
-        contentValues.put(SQLConstantes.residentes_idVivienda, id_vivienda);
+        contentValues.put(SQLConstantes.residentes_id_informante, id_informante);
+        contentValues.put(SQLConstantes.residentes_id_hogar, id_hogar);
+        contentValues.put(SQLConstantes.residentes_id_vivienda, id_vivienda);
         contentValues.put(SQLConstantes.residentes_c2_p202,c2_p202);
         contentValues.put(SQLConstantes.residentes_c2_p203,c2_p203);
         contentValues.put(SQLConstantes.residentes_c2_p204,c2_p204);

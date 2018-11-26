@@ -356,9 +356,9 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
 
         if(!data.existeElemento(getNombreTabla(),_id)){
             contentValues.put(SQLConstantes.residentes_id,_id);
-            contentValues.put(SQLConstantes.residentes_idHogar, id_hogar);
-            contentValues.put(SQLConstantes.residentes_idInformante, id_informante);
-            contentValues.put(SQLConstantes.residentes_idVivienda, id_vivienda);
+            contentValues.put(SQLConstantes.residentes_id_hogar, id_hogar);
+            contentValues.put(SQLConstantes.residentes_id_informante, id_informante);
+            contentValues.put(SQLConstantes.residentes_id_vivienda, id_vivienda);
             contentValues.put(SQLConstantes.residentes_numero,numero);
             data.insertarElemento(getNombreTabla(),contentValues);
         }

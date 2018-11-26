@@ -27,7 +27,6 @@ import android.widget.Spinner;
 
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.activities.agregacion.AgregarPersonaActivity;
-import com.example.ricindigus.empove2018.activities.agregacion.AgregarRutaActivity;
 import com.example.ricindigus.empove2018.adapters.M3Pregunta318Adapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
@@ -237,7 +236,7 @@ public class FragmentP318 extends FragmentPagina {
         Data data = new Data(contexto);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo3_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo3_c3_p318,c3_p318+"");
         data.actualizarElemento(SQLConstantes.tablamodulo3,contentValues,idEncuestado);
         //Ya valido y guardo correctamente el fragment, ahora actualizamos el valor de la cobertura del fragment a correcto(1)

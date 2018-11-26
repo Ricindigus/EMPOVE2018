@@ -27,7 +27,6 @@ import android.widget.Spinner;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
-import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
@@ -230,7 +229,7 @@ public class FragmentP701P705 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo7_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo7_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo7_c7_p701, c7_p701);
         contentValues.put(SQLConstantes.modulo7_c7_p702_1, c7_p702_1);
         contentValues.put(SQLConstantes.modulo7_c7_p702_2, c7_p702_2);

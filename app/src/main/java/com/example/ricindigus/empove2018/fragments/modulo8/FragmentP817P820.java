@@ -213,7 +213,7 @@ public class FragmentP817P820 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo8_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo8_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo8_c8_p817,c8_p817);
         contentValues.put(SQLConstantes.modulo8_c8_p818,c8_p818);
 

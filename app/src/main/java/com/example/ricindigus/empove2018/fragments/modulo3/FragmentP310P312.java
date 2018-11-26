@@ -191,7 +191,7 @@ public class FragmentP310P312 extends FragmentPagina {
         Data data = new Data(contexto);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo3_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo3_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo3_c3_p310_1,c3_p310_1);
         contentValues.put(SQLConstantes.modulo3_c3_p310_2,c3_p310_2);
         contentValues.put(SQLConstantes.modulo3_c3_p310_3,c3_p310_3);

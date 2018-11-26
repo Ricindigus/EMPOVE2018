@@ -62,7 +62,7 @@ public class ImportarActivity extends AppCompatActivity {
     private Funcionario funcionario;
     private Modulo1V modulo1V;
     private ArrayList<Modulo1H> modulo1HS;
-    private Modulo1H currentModulo1V;
+    private Modulo1H currentModulo1H;
     private ArrayList<Residente> residentes;
     private Residente currentResidente;
     private ArrayList<Modulo3> modulo3s;
@@ -427,6 +427,280 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.modulo1_v_c1_p106:modulo1V.setC1_p106(valor);break;
             case SQLConstantes.modulo1_v_c1_p107:modulo1V.setC1_p107(valor);break;
             case SQLConstantes.modulo1_v_COB100A:modulo1V.setCOB100A(valor);break;
+        }
+    }
+
+    public void agregarVariableModulo1H(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.modulo1_h_id:currentModulo1H.set_id(valor);break;
+            case SQLConstantes.modulo1_h_idVivienda:currentModulo1H.setIdVivienda(valor);
+            case SQLConstantes.modulo1_h_c1_p108:currentModulo1H.setC1_p108(valor);
+            case SQLConstantes.modulo1_h_c1_p108_o:currentModulo1H.setC1_p108_o(valor);
+            case SQLConstantes.modulo1_h_c1_p109:currentModulo1H.setC1_p109(valor);
+            case SQLConstantes.modulo1_h_c1_p109_o:currentModulo1H.setC1_p109_o(valor);
+            case SQLConstantes.modulo1_h_c1_p110:currentModulo1H.setC1_p110(valor);
+            case SQLConstantes.modulo1_h_c1_p110_o:currentModulo1H.setC1_p110_o(valor);
+            case SQLConstantes.modulo1_h_c1_p111:currentModulo1H.setC1_p111(valor);
+            case SQLConstantes.modulo1_h_c1_p111_o:currentModulo1H.setC1_p111_o(valor);
+            case SQLConstantes.modulo1_h_c1_p112:currentModulo1H.setC1_p112(valor);
+            case SQLConstantes.modulo1_h_c1_p112_o:currentModulo1H.setC1_p112_o(valor);
+            case SQLConstantes.modulo1_h_c1_p113_1:currentModulo1H.setC1_p113_1(valor);
+            case SQLConstantes.modulo1_h_c1_p113_2:currentModulo1H.setC1_p113_2(valor);
+            case SQLConstantes.modulo1_h_c1_p113_3:currentModulo1H.setC1_p113_3(valor);
+            case SQLConstantes.modulo1_h_c1_p113_4:currentModulo1H.setC1_p113_4(valor);
+            case SQLConstantes.modulo1_h_c1_p113_5:currentModulo1H.setC1_p113_5(valor);
+            case SQLConstantes.modulo1_h_c1_p113_6:currentModulo1H.setC1_p113_6(valor);
+            case SQLConstantes.modulo1_h_c1_p113_7:currentModulo1H.setC1_p113_7(valor);
+            case SQLConstantes.modulo1_h_c1_p113_8:currentModulo1H.setC1_p113_7_o(valor);
+            case SQLConstantes.modulo1_h_c1_p113_9:currentModulo1H.setC1_p113_8(valor);
+            case SQLConstantes.modulo1_h_c1_p113_7_o:currentModulo1H.setC1_p113_8_o(valor);
+            case SQLConstantes.modulo1_h_c1_p113_8_o:currentModulo1H.setC1_p113_9(valor);
+            case SQLConstantes.modulo1_h_c1_p113_9_o:currentModulo1H.setC1_p113_9_o(valor);
+            case SQLConstantes.modulo1_h_COB100B:currentModulo1H.setCOB100B(valor);
+        }
+    }
+
+    public void agregarVariableResidente(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.residentes_id:currentResidente.set_id(valor);break;
+            case SQLConstantes.residentes_id_informante:currentResidente.setId_informante(valor);
+            case SQLConstantes.residentes_id_hogar:currentResidente.setId_hogar(valor);
+            case SQLConstantes.residentes_id_vivienda:currentResidente.setId_vivienda(valor);
+            case SQLConstantes.residentes_numero:currentResidente.setNumero(valor);
+            case SQLConstantes.residentes_c2_p202:currentResidente.setC2_p202(valor);
+            case SQLConstantes.residentes_c2_p203:currentResidente.setC2_p203(valor);
+            case SQLConstantes.residentes_c2_p204:currentResidente.setC2_p204(valor);
+            case SQLConstantes.residentes_c2_p205_a:currentResidente.setC2_p205_a(valor);
+            case SQLConstantes.residentes_c2_p205_m:currentResidente.setC2_p205_m(valor);
+            case SQLConstantes.residentes_c2_p206:currentResidente.setC2_p206(valor);
+            case SQLConstantes.residentes_c2_p207:currentResidente.setC2_p207(valor);
+            case SQLConstantes.residentes_COB200:currentResidente.setCOB200(valor);
+            case SQLConstantes.residentes_encuestado_cobertura:currentResidente.setEncuestado_cobertura(valor);
+        }
+    }
+
+    public void agregarVariableModulo3(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.modulo3_id:currentModulo3.set_id(valor);break;
+            case SQLConstantes.modulo3_id_informante:currentModulo3.setIdInformante(valor);
+            case SQLConstantes.modulo3_id_hogar:currentModulo3.setIdHogar(valor);
+            case SQLConstantes.modulo3_id_vivienda:currentModulo3.setIdVivienda(valor);
+            case SQLConstantes.modulo3_c3_p301_d:currentModulo3.setC3_p301_d(valor);
+            case SQLConstantes.modulo3_c3_p301_m:currentModulo3.setC3_p301_m(valor);
+            case SQLConstantes.modulo3_c3_p301_a:currentModulo3.setC3_p301_a(valor);
+            case SQLConstantes.modulo3_c3_p302:currentModulo3.setC3_p302(valor);
+            case SQLConstantes.modulo3_c3_p303_m:currentModulo3.setC3_p303_m(valor);
+            case SQLConstantes.modulo3_c3_p303_a:currentModulo3.setC3_p303_a(valor);
+            case SQLConstantes.modulo3_c3_p303_no_nacio:currentModulo3.setC3_p303_no_nacio(valor);
+            case SQLConstantes.modulo3_c3_p304:currentModulo3.setC3_p304(valor);
+            case SQLConstantes.modulo3_c3_p305:currentModulo3.setC3_p305(valor);
+            case SQLConstantes.modulo3_c3_p305_o:currentModulo3.setC3_p305_o(valor);
+            case SQLConstantes.modulo3_c3_p306:currentModulo3.setC3_p306(valor);
+            case SQLConstantes.modulo3_c3_p306_o:currentModulo3.setC3_p306_o(valor);
+            case SQLConstantes.modulo3_c3_p307_d:currentModulo3.setC3_p307_d(valor);
+            case SQLConstantes.modulo3_c3_p307_m:currentModulo3.setC3_p307_m(valor);
+            case SQLConstantes.modulo3_c3_p307_a:currentModulo3.setC3_p307_a(valor);
+            case SQLConstantes.modulo3_c3_p308_e:currentModulo3.setC3_p308_e(valor);
+            case SQLConstantes.modulo3_c3_p308_m:currentModulo3.setC3_p308_m(valor);
+            case SQLConstantes.modulo3_c3_p308_e_seleccion:currentModulo3.setC3_p308_e_seleccion(valor);
+            case SQLConstantes.modulo3_c3_p308_m_seleccion:currentModulo3.setC3_p308_m_seleccion(valor);
+            case SQLConstantes.modulo3_c3_p310_1:currentModulo3.setC3_p310_1(valor);
+            case SQLConstantes.modulo3_c3_p310_2:currentModulo3.setC3_p310_2(valor);
+            case SQLConstantes.modulo3_c3_p310_3:currentModulo3.setC3_p310_3(valor);
+            case SQLConstantes.modulo3_c3_p310_4:currentModulo3.setC3_p310_4(valor);
+            case SQLConstantes.modulo3_c3_p311:currentModulo3.setC3_p311(valor);
+            case SQLConstantes.modulo3_c3_p312_dist:currentModulo3.setC3_p312_dist(valor);
+            case SQLConstantes.modulo3_c3_p312_prov:currentModulo3.setC3_p312_prov(valor);
+            case SQLConstantes.modulo3_c3_p312_dep:currentModulo3.setC3_p312_dep(valor);
+            case SQLConstantes.modulo3_c3_p313:currentModulo3.setC3_p313(valor);
+            case SQLConstantes.modulo3_c3_p314:currentModulo3.setC3_p314(valor);
+            case SQLConstantes.modulo3_c3_p314_o:currentModulo3.setC3_p314_o(valor);
+            case SQLConstantes.modulo3_c3_p315_1:currentModulo3.setC3_p315_1(valor);
+            case SQLConstantes.modulo3_c3_p315_2:currentModulo3.setC3_p315_2(valor);
+            case SQLConstantes.modulo3_c3_p315_3:currentModulo3.setC3_p315_3(valor);
+            case SQLConstantes.modulo3_c3_p315_4:currentModulo3.setC3_p315_4(valor);
+            case SQLConstantes.modulo3_c3_p315_5:currentModulo3.setC3_p315_5(valor);
+            case SQLConstantes.modulo3_c3_p315_6:currentModulo3.setC3_p315_6(valor);
+            case SQLConstantes.modulo3_c3_p315_7:currentModulo3.setC3_p315_7(valor);
+            case SQLConstantes.modulo3_c3_p315_8:currentModulo3.setC3_p315_8(valor);
+            case SQLConstantes.modulo3_c3_p315_9:currentModulo3.setC3_p315_9(valor);
+            case SQLConstantes.modulo3_c3_p315_10:currentModulo3.setC3_p315_10(valor);
+            case SQLConstantes.modulo3_c3_p315_10_o:currentModulo3.setC3_p315_10_o(valor);
+            case SQLConstantes.modulo3_c3_p316:currentModulo3.setC3_p316(valor);
+            case SQLConstantes.modulo3_c3_p316_o:currentModulo3.setC3_p316_o(valor);
+            case SQLConstantes.modulo3_c3_p317:currentModulo3.setC3_p317(valor);
+            case SQLConstantes.modulo3_c3_p318:currentModulo3.setC3_p318(valor);
+            case SQLConstantes.modulo3_obs_cap3:currentModulo3.setObs_cap3(valor);
+            case SQLConstantes.modulo3_COB300:currentModulo3.setCOB300(valor);
+        }
+    }
+
+    public void agregarVariableModulo4(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.modulo4_id:currentModulo4.set_id(valor);break;
+            case SQLConstantes.modulo4_id_informante:currentModulo4.setIdInformante(valor);
+            case SQLConstantes.modulo4_id_hogar:currentModulo4.setIdHogar(valor);
+            case SQLConstantes.modulo4_id_vivienda:currentModulo4.setIdVivienda(valor);
+            case SQLConstantes.modulo4_c4_p401_1:currentModulo4.setC4_p401_1(valor);
+            case SQLConstantes.modulo4_c4_p401_2:currentModulo4.setC4_p401_2(valor);
+            case SQLConstantes.modulo4_c4_p401_3:currentModulo4.setC4_p401_3(valor);
+            case SQLConstantes.modulo4_c4_p401_4:currentModulo4.setC4_p401_4(valor);
+            case SQLConstantes.modulo4_c4_p401_5:currentModulo4.setC4_p401_5(valor);
+            case SQLConstantes.modulo4_c4_p401_o:currentModulo4.setC4_p401_o(valor);
+            case SQLConstantes.modulo4_c4_p402:currentModulo4.setC4_p402(valor);
+            case SQLConstantes.modulo4_c4_p403_1:currentModulo4.setC4_p403_1(valor);
+            case SQLConstantes.modulo4_c4_p403_2:currentModulo4.setC4_p403_2(valor);
+            case SQLConstantes.modulo4_c4_p403_3:currentModulo4.setC4_p403_3(valor);
+            case SQLConstantes.modulo4_c4_p403_4:currentModulo4.setC4_p403_4(valor);
+            case SQLConstantes.modulo4_c4_p403_5:currentModulo4.setC4_p403_5(valor);
+            case SQLConstantes.modulo4_c4_p403_6:currentModulo4.setC4_p403_6(valor);
+            case SQLConstantes.modulo4_c4_p403_7:currentModulo4.setC4_p403_7(valor);
+            case SQLConstantes.modulo4_c4_p403_8:currentModulo4.setC4_p403_8(valor);
+            case SQLConstantes.modulo4_c4_p403_9:currentModulo4.setC4_p403_9(valor);
+            case SQLConstantes.modulo4_c4_p403_10:currentModulo4.setC4_p403_10(valor);
+            case SQLConstantes.modulo4_c4_p403_11:currentModulo4.setC4_p403_11(valor);
+            case SQLConstantes.modulo4_c4_p403_12:currentModulo4.setC4_p403_12(valor);
+            case SQLConstantes.modulo4_c4_p403_13:currentModulo4.setC4_p403_13(valor);
+            case SQLConstantes.modulo4_c4_p403_14:currentModulo4.setC4_p403_14(valor);
+            case SQLConstantes.modulo4_c4_p403_o:currentModulo4.setC4_p403_o(valor);
+            case SQLConstantes.modulo4_c4_p404:currentModulo4.setC4_p404(valor);
+            case SQLConstantes.modulo4_c4_p405_1:currentModulo4.setC4_p405_1(valor);
+            case SQLConstantes.modulo4_c4_p405_2:currentModulo4.setC4_p405_2(valor);
+            case SQLConstantes.modulo4_c4_p405_4:currentModulo4.setC4_p405_4(valor);
+            case SQLConstantes.modulo4_c4_p405_5:currentModulo4.setC4_p405_5(valor);
+            case SQLConstantes.modulo4_c4_p405_3:currentModulo4.setC4_p405_3(valor);
+            case SQLConstantes.modulo4_c4_p405_6:currentModulo4.setC4_p405_6(valor);
+            case SQLConstantes.modulo4_c4_p405_7:currentModulo4.setC4_p405_7(valor);
+            case SQLConstantes.modulo4_c4_p406_1:currentModulo4.setC4_p406_1(valor);
+            case SQLConstantes.modulo4_c4_p406_2:currentModulo4.setC4_p406_2(valor);
+            case SQLConstantes.modulo4_c4_p406_3:currentModulo4.setC4_p406_3(valor);
+            case SQLConstantes.modulo4_c4_p406_4:currentModulo4.setC4_p406_4(valor);
+            case SQLConstantes.modulo4_c4_p406_5:currentModulo4.setC4_p406_5(valor);
+            case SQLConstantes.modulo4_c4_p406_6:currentModulo4.setC4_p406_6(valor);
+            case SQLConstantes.modulo4_c4_p406_7:currentModulo4.setC4_p406_7(valor);
+            case SQLConstantes.modulo4_c4_p406_8:currentModulo4.setC4_p406_8(valor);
+            case SQLConstantes.modulo4_c4_p406_o:currentModulo4.setC4_p406_o(valor);
+            case SQLConstantes.modulo4_c4_p407_1:currentModulo4.setC4_p407_1(valor);
+            case SQLConstantes.modulo4_c4_p407_2:currentModulo4.setC4_p407_2(valor);
+            case SQLConstantes.modulo4_c4_p407_3:currentModulo4.setC4_p407_3(valor);
+            case SQLConstantes.modulo4_c4_p407_4:currentModulo4.setC4_p407_4(valor);
+            case SQLConstantes.modulo4_c4_p407_5:currentModulo4.setC4_p407_5(valor);
+            case SQLConstantes.modulo4_c4_p407_6:currentModulo4.setC4_p407_6(valor);
+            case SQLConstantes.modulo4_c4_p407_7:currentModulo4.setC4_p407_7(valor);
+            case SQLConstantes.modulo4_c4_p407_8:currentModulo4.setC4_p407_8(valor);
+            case SQLConstantes.modulo4_c4_p407_9:currentModulo4.setC4_p407_9(valor);
+            case SQLConstantes.modulo4_c4_p407_10:currentModulo4.setC4_p407_10(valor);
+            case SQLConstantes.modulo4_c4_p407_11:currentModulo4.setC4_p407_11(valor);
+            case SQLConstantes.modulo4_c4_p407_12:currentModulo4.setC4_p407_12(valor);
+            case SQLConstantes.modulo4_c4_p407_13:currentModulo4.setC4_p407_13(valor);
+            case SQLConstantes.modulo4_c4_p407_o:currentModulo4.setC4_p407_o(valor);
+            case SQLConstantes.modulo4_c4_p408_1:currentModulo4.setC4_p408_1(valor);
+            case SQLConstantes.modulo4_c4_p408_2:currentModulo4.setC4_p408_2(valor);
+            case SQLConstantes.modulo4_c4_p408_3:currentModulo4.setC4_p408_3(valor);
+            case SQLConstantes.modulo4_c4_p408_4:currentModulo4.setC4_p408_4(valor);
+            case SQLConstantes.modulo4_c4_p408_5:currentModulo4.setC4_p408_5(valor);
+            case SQLConstantes.modulo4_c4_p408_6:currentModulo4.setC4_p408_6(valor);
+            case SQLConstantes.modulo4_c4_p409:currentModulo4.setC4_p409(valor);
+            case SQLConstantes.modulo4_c4_p410:currentModulo4.setC4_p410(valor);
+            case SQLConstantes.modulo4_c4_p411_1:currentModulo4.setC4_p411_1(valor);
+            case SQLConstantes.modulo4_c4_p411_2:currentModulo4.setC4_p411_2(valor);
+            case SQLConstantes.modulo4_c4_p411_3:currentModulo4.setC4_p411_3(valor);
+            case SQLConstantes.modulo4_c4_p411_4:currentModulo4.setC4_p411_4(valor);
+            case SQLConstantes.modulo4_c4_p411_5:currentModulo4.setC4_p411_5(valor);
+            case SQLConstantes.modulo4_c4_p411_6:currentModulo4.setC4_p411_6(valor);
+            case SQLConstantes.modulo4_c4_p411_7:currentModulo4.setC4_p411_7(valor);
+            case SQLConstantes.modulo4_c4_p411_8:currentModulo4.setC4_p411_8(valor);
+            case SQLConstantes.modulo4_c4_p411_9:currentModulo4.setC4_p411_9(valor);
+            case SQLConstantes.modulo4_c4_p411_10:currentModulo4.setC4_p411_10(valor);
+            case SQLConstantes.modulo4_c4_p411_11:currentModulo4.setC4_p411_11(valor);
+            case SQLConstantes.modulo4_c4_p411_12:currentModulo4.setC4_p411_12(valor);
+            case SQLConstantes.modulo4_c4_p411_13:currentModulo4.setC4_p411_13(valor);
+            case SQLConstantes.modulo4_c4_p411_14:currentModulo4.setC4_p411_14(valor);
+            case SQLConstantes.modulo4_c4_p411_o:currentModulo4.setC4_p411_o(valor);
+            case SQLConstantes.modulo4_c4_p412:currentModulo4.setC4_p412(valor);
+            case SQLConstantes.modulo4_c4_p413:currentModulo4.setC4_p413(valor);
+            case SQLConstantes.modulo4_c4_p414:currentModulo4.setC4_p414(valor);
+            case SQLConstantes.modulo4_c4_p415:currentModulo4.setC4_p415(valor);
+            case SQLConstantes.modulo4_c4_p416_1:currentModulo4.setC4_p416_1(valor);
+            case SQLConstantes.modulo4_c4_p416_2:currentModulo4.setC4_p416_2(valor);
+            case SQLConstantes.modulo4_c4_p416_3:currentModulo4.setC4_p416_3(valor);
+            case SQLConstantes.modulo4_c4_p416_4:currentModulo4.setC4_p416_4(valor);
+            case SQLConstantes.modulo4_c4_p416_5:currentModulo4.setC4_p416_5(valor);
+            case SQLConstantes.modulo4_c4_p416_6:currentModulo4.setC4_p416_6(valor);
+            case SQLConstantes.modulo4_c4_p416_7:currentModulo4.setC4_p416_7(valor);
+            case SQLConstantes.modulo4_c4_p416_8:currentModulo4.setC4_p416_8(valor);
+            case SQLConstantes.modulo4_c4_p416_o:currentModulo4.setC4_p416_o(valor);
+            case SQLConstantes.modulo4_obs_cap4:currentModulo4.setObs_cap4(valor);
+            case SQLConstantes.modulo4_COB400:currentModulo4.setCOB400(valor);
+        }
+    }
+
+    public void agregarVariableModulo5(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.modulo5_id:currentModulo5.set_id(valor);break;
+
+            case SQLConstantes.modulo5_id_informante:currentModulo5.setIdInformante(valor);break;
+            case SQLConstantes.modulo5_id_hogar:currentModulo5.setIdHogar(valor);break;
+            case SQLConstantes.modulo5_id_vivienda:currentModulo5.setIdVivienda(valor);break;
+            case SQLConstantes.modulo5_c5_p501:currentModulo5.setC5_p501(valor);break;
+            case SQLConstantes.modulo5_c5_p502_c:currentModulo5.setC5_p502_c(valor);break;
+            case SQLConstantes.modulo5_c5_p502:currentModulo5.setC5_p502(valor);break;
+            case SQLConstantes.modulo5_c5_p502_eleccion:currentModulo5.setC5_p502_eleccion(valor);break;
+            case SQLConstantes.modulo5_c5_p502_o:currentModulo5.setC5_p502_o(valor);break;
+            case SQLConstantes.modulo5_c5_p503:currentModulo5.setC5_p503(valor);break;
+            case SQLConstantes.modulo5_c5_p504:currentModulo5.setC5_p504(valor);break;
+            case SQLConstantes.modulo5_c5_p505:currentModulo5.setC5_p505(valor);break;
+            case SQLConstantes.modulo5_c5_p506_1:currentModulo5.setC5_p506_1(valor);break;
+            case SQLConstantes.modulo5_c5_p506_2:currentModulo5.setC5_p506_2(valor);break;
+            case SQLConstantes.modulo5_c5_p506_3:currentModulo5.setC5_p506_3(valor);break;
+            case SQLConstantes.modulo5_c5_p506_4:currentModulo5.setC5_p506_4(valor);break;
+            case SQLConstantes.modulo5_c5_p507:currentModulo5.setC5_p507(valor);break;
+            case SQLConstantes.modulo5_c5_p507_dist:currentModulo5.setC5_p507_dist(valor);break;
+            case SQLConstantes.modulo5_c5_p507_prov:currentModulo5.setC5_p507_prov(valor);break;
+            case SQLConstantes.modulo5_c5_p507_dep:currentModulo5.setC5_p507_dep(valor);break;
+            case SQLConstantes.modulo5_c5_p508_1:currentModulo5.setC5_p508_1(valor);break;
+            case SQLConstantes.modulo5_c5_p508_2:currentModulo5.setC5_p508_2(valor);break;
+            case SQLConstantes.modulo5_c5_p508_3:currentModulo5.setC5_p508_3(valor);break;
+            case SQLConstantes.modulo5_c5_p508_4:currentModulo5.setC5_p508_4(valor);break;
+            case SQLConstantes.modulo5_c5_p508_5:currentModulo5.setC5_p508_5(valor);break;
+            case SQLConstantes.modulo5_c5_p508_6:currentModulo5.setC5_p508_6(valor);break;
+            case SQLConstantes.modulo5_c5_p508_7:currentModulo5.setC5_p508_7(valor);break;
+            case SQLConstantes.modulo5_c5_p508_8:currentModulo5.setC5_p508_8(valor);break;
+            case SQLConstantes.modulo5_c5_p508_9:currentModulo5.setC5_p508_9(valor);break;
+            case SQLConstantes.modulo5_c5_p508_10:currentModulo5.setC5_p508_10(valor);break;
+            case SQLConstantes.modulo5_c5_p508_11:currentModulo5.setC5_p508_11(valor);break;
+            case SQLConstantes.modulo5_c5_p508_o:currentModulo5.setC5_p508_o(valor);break;
+            case SQLConstantes.modulo5_c5_p509:currentModulo5.setC5_p509(valor);break;
+            case SQLConstantes.modulo5_c5_p510:currentModulo5.setC5_p510(valor);break;
+            case SQLConstantes.modulo5_c5_p511:currentModulo5.setC5_p511(valor);break;
+            case SQLConstantes.modulo5_c5_p511_o:currentModulo5.setC5_p511_o(valor);break;
+            case SQLConstantes.modulo5_c5_p512:currentModulo5.setC5_p512(valor);break;
+            case SQLConstantes.modulo5_c5_p512_o:currentModulo5.setC5_p512_o(valor);break;
+            case SQLConstantes.modulo5_c5_p513:currentModulo5.setC5_p513(valor);break;
+            case SQLConstantes.modulo5_c5_p513_o:currentModulo5.setC5_p513_o(valor);break;
+            case SQLConstantes.modulo5_obs_cap5:currentModulo5.setObs_cap5(valor);break;
+            case SQLConstantes.modulo5_COB500:currentModulo5.setCOB500(valor);break;
+        }
+    }
+
+    public void agregarVariableModulo6(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.modulo4_id:currentModulo4.set_id(valor);break;
+
+        }
+    }
+
+    public void agregarVariableModulo7(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.modulo4_id:currentModulo4.set_id(valor);break;
+
+        }
+    }
+
+    public void agregarVariableModulo8(String campo, String valor){
+        switch (campo){
+            case SQLConstantes.modulo4_id:currentModulo4.set_id(valor);break;
+
         }
     }
 }

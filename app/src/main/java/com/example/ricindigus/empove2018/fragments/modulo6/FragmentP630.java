@@ -11,7 +11,6 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +30,6 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
-import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -231,7 +229,7 @@ public class FragmentP630 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLConstantes.modulo6_idInformante,idInformante);
+        contentValues.put(SQLConstantes.modulo6_id_informante,idInformante);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1,c6_p630_1);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1med,c6_p630_1med);
         contentValues.put(SQLConstantes.modulo6_c6_p630_1o,c6_p630_1o);

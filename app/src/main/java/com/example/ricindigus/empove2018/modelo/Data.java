@@ -636,9 +636,9 @@ public class Data {
             while (cursor.moveToNext()){
                 Residente residente = new Residente();
                 residente.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id)));
-                residente.setId_informante(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idInformante)));
-                residente.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idHogar)));
-                residente.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idVivienda)));
+                residente.setId_informante(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_informante)));
+                residente.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_hogar)));
+                residente.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_vivienda)));
                 residente.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_numero)));
                 residente.setC2_p202(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p202)));
                 residente.setC2_p203(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p203)));
@@ -667,9 +667,9 @@ public class Data {
             while (cursor.moveToNext()){
                 Residente residente = new Residente();
                 residente.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id)));
-                residente.setId_informante(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idInformante)));
-                residente.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idHogar)));
-                residente.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idVivienda)));
+                residente.setId_informante(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_informante)));
+                residente.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_hogar)));
+                residente.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_vivienda)));
                 residente.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_numero)));
                 residente.setC2_p202(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p202)));
                 residente.setC2_p203(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p203)));
@@ -722,9 +722,9 @@ public class Data {
                 cursor.moveToFirst();
                 residente = new Residente();
                 residente.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id)));
-                residente.setId_informante(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idInformante)));
-                residente.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idHogar)));
-                residente.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_idVivienda)));
+                residente.setId_informante(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_informante)));
+                residente.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_hogar)));
+                residente.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_id_vivienda)));
                 residente.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_numero)));
                 residente.setC2_p202(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p202)));
                 residente.setC2_p203(cursor.getString(cursor.getColumnIndex(SQLConstantes.residentes_c2_p203)));
@@ -1187,9 +1187,9 @@ public class Data {
                 cursor.moveToFirst();
                 modulo3 = new Modulo3();
                 modulo3.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id)));
-                modulo3.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idInformante)));
-                modulo3.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idHogar)));
-                modulo3.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idVivienda)));
+                modulo3.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id_informante)));
+                modulo3.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id_hogar)));
+                modulo3.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id_vivienda)));
                 modulo3.setC3_p301_d(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_d)));
                 modulo3.setC3_p301_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_m)));
                 modulo3.setC3_p301_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_a )));
@@ -1255,9 +1255,9 @@ public class Data {
             while (cursor.moveToNext()){
                 Modulo3 modulo3 = new Modulo3();
                 modulo3.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id)));
-                modulo3.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idInformante)));
-                modulo3.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idHogar)));
-                modulo3.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_idVivienda)));
+                modulo3.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id_informante)));
+                modulo3.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id_hogar)));
+                modulo3.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_id_vivienda)));
                 modulo3.setC3_p301_d(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_d)));
                 modulo3.setC3_p301_m(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_m)));
                 modulo3.setC3_p301_a(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p301_a )));
@@ -1483,9 +1483,9 @@ public class Data {
                 cursor.moveToFirst();
                 modulo4 = new Modulo4();
                 modulo4.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id)));
-                modulo4.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idInformante)));
-                modulo4.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idHogar)));
-                modulo4.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idVivienda)));
+                modulo4.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id_informante)));
+                modulo4.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id_hogar)));
+                modulo4.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id_vivienda)));
                 modulo4.setC4_p401_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_1)));
                 modulo4.setC4_p401_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_2)));
                 modulo4.setC4_p401_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_3)));
@@ -1594,9 +1594,9 @@ public class Data {
             while (cursor.moveToNext()){
                 Modulo4 modulo4 = new Modulo4();
                 modulo4.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id)));
-                modulo4.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idInformante)));
-                modulo4.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idHogar)));
-                modulo4.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_idVivienda)));
+                modulo4.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id_informante)));
+                modulo4.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id_hogar)));
+                modulo4.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_id_vivienda)));
                 modulo4.setC4_p401_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_1)));
                 modulo4.setC4_p401_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_2)));
                 modulo4.setC4_p401_3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo4_c4_p401_3)));
@@ -1707,9 +1707,9 @@ public class Data {
                 cursor.moveToFirst();
                 modulo5 = new Modulo5();
                 modulo5.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id)));
-                modulo5.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idInformante)));
-                modulo5.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idHogar)));
-                modulo5.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idVivienda)));
+                modulo5.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id_informante)));
+                modulo5.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id_hogar)));
+                modulo5.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id_vivienda)));
                 modulo5.setC5_p501(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p501)));
                 modulo5.setC5_p502_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_c)));
                 modulo5.setC5_p502(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502)));
@@ -1765,9 +1765,9 @@ public class Data {
             while (cursor.moveToNext()){
                 Modulo5 modulo5 = new Modulo5();
                 modulo5.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id)));
-                modulo5.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idInformante)));
-                modulo5.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idHogar)));
-                modulo5.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_idVivienda)));
+                modulo5.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id_informante)));
+                modulo5.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id_hogar)));
+                modulo5.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_id_vivienda)));
                 modulo5.setC5_p501(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p501)));
                 modulo5.setC5_p502_c(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502_c)));
                 modulo5.setC5_p502(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo5_c5_p502)));
@@ -1825,9 +1825,9 @@ public class Data {
                 cursor.moveToFirst();
                 modulo6 = new Modulo6();
                 modulo6.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id)));
-                modulo6.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idInformante)));
-                modulo6.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idHogar)));
-                modulo6.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idVivienda)));
+                modulo6.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id_informante)));
+                modulo6.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id_hogar)));
+                modulo6.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id_vivienda)));
                 modulo6.setC6_p601(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p601)));
                 modulo6.setC6_p602(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p602)));
                 modulo6.setC6_p603(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p603)));
@@ -1947,9 +1947,9 @@ public class Data {
             while (cursor.moveToNext()){
                 Modulo6 modulo6 = new Modulo6();
                 modulo6.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id)));
-                modulo6.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idInformante)));
-                modulo6.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idHogar)));
-                modulo6.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_idVivienda)));
+                modulo6.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id_informante)));
+                modulo6.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id_hogar)));
+                modulo6.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_id_vivienda)));
                 modulo6.setC6_p601(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p601)));
                 modulo6.setC6_p602(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p602)));
                 modulo6.setC6_p603(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo6_c6_p603)));
@@ -2084,9 +2084,9 @@ public class Data {
                 cursor.moveToFirst();
                 modulo7 = new Modulo7();
                 modulo7.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id)));
-                modulo7.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idInformante)));
-                modulo7.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idHogar)));
-                modulo7.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idVivienda)));
+                modulo7.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id_informante)));
+                modulo7.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id_hogar)));
+                modulo7.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id_vivienda)));
                 modulo7.setC7_p701(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p701)));
                 modulo7.setC7_p702_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_1)));
                 modulo7.setC7_p702_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_2)));
@@ -2162,9 +2162,9 @@ public class Data {
             while (cursor.moveToNext()){
                 Modulo7 modulo7 = new Modulo7();
                 modulo7.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id)));
-                modulo7.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idInformante)));
-                modulo7.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idHogar)));
-                modulo7.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_idVivienda)));
+                modulo7.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id_informante)));
+                modulo7.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id_hogar)));
+                modulo7.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_id_vivienda)));
                 modulo7.setC7_p701(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p701)));
                 modulo7.setC7_p702_1(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_1)));
                 modulo7.setC7_p702_2(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo7_c7_p702_2)));
@@ -2241,9 +2241,9 @@ public class Data {
                 cursor.moveToFirst();
                 modulo8 = new Modulo8();
                 modulo8.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id)));
-                modulo8.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idInformante)));
-                modulo8.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idHogar)));
-                modulo8.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idVivienda)));
+                modulo8.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id_informante)));
+                modulo8.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id_hogar)));
+                modulo8.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id_vivienda)));
                 modulo8.setC8_p801(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p801)));
                 modulo8.setC8_p802(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p802)));
                 modulo8.setC8_p803(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p803)));
@@ -2392,9 +2392,9 @@ public class Data {
             while(cursor.moveToNext()){
                 Modulo8 modulo8 = new Modulo8();
                 modulo8.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id)));
-                modulo8.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idInformante)));
-                modulo8.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idHogar)));
-                modulo8.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idVivienda)));
+                modulo8.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id_informante)));
+                modulo8.setIdHogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id_hogar)));
+                modulo8.setIdVivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id_vivienda)));
                 modulo8.setC8_p801(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p801)));
                 modulo8.setC8_p802(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p802)));
                 modulo8.setC8_p803(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p803)));

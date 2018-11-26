@@ -965,9 +965,9 @@ public class Modulo4 {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo4_id,_id);
-        contentValues.put(SQLConstantes.modulo4_idInformante,idInformante);
-        contentValues.put(SQLConstantes.modulo4_idHogar,idHogar);
-        contentValues.put(SQLConstantes.modulo4_idVivienda,idVivienda);
+        contentValues.put(SQLConstantes.modulo4_id_informante,idInformante);
+        contentValues.put(SQLConstantes.modulo4_id_hogar,idHogar);
+        contentValues.put(SQLConstantes.modulo4_id_vivienda,idVivienda);
         contentValues.put(SQLConstantes.modulo4_c4_p401_1,c4_p401_1);
         contentValues.put(SQLConstantes.modulo4_c4_p401_2,c4_p401_2);
         contentValues.put(SQLConstantes.modulo4_c4_p401_3,c4_p401_3);
