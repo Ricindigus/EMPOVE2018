@@ -2389,7 +2389,7 @@ public class Data {
         try {
             cursor = sqLiteDatabase.query(SQLConstantes.tablamodulo8,
                     null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID, whereArgs, null,null, null);
-            if(cursor.moveToNext()){
+            while(cursor.moveToNext()){
                 Modulo8 modulo8 = new Modulo8();
                 modulo8.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_id)));
                 modulo8.setIdInformante(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_idInformante)));

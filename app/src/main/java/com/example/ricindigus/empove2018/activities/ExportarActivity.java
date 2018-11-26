@@ -168,10 +168,17 @@ public class ExportarActivity extends AppCompatActivity {
                 escribirCampoXml(serializer, SQLConstantes.caratula_nom_prov,caratula.getNom_prov()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_nom_dist ,caratula.getNom_dist()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_nom_ccpp,caratula.getNom_ccpp()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_anio,caratula.getAnio()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_mes,caratula.getMes()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_periodo,caratula.getPeriodo()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_conglomerado,caratula.getConglomerado()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_zona ,caratula.getZona()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_manzana_id ,caratula.getManzana_id()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_vivienda ,caratula.getVivienda()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_latitud,caratula.getLatitud()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_longitud ,caratula.getLongitud()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_tipvia ,caratula.getTipvia()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_tipvia_o ,caratula.getTipvia_o()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_nomvia ,caratula.getNomvia()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_nropta ,caratula.getNropta()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_block ,caratula.getBlock()+"");
@@ -182,6 +189,8 @@ public class ExportarActivity extends AppCompatActivity {
                 escribirCampoXml(serializer, SQLConstantes.caratula_km ,caratula.getKm()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_telefono ,caratula.getTelefono()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_t_hogar ,caratula.getT_hogar()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_usuario ,caratula.getUsuario()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_observaciones ,caratula.getObservaciones()+"");
                 serializer.endTag("", "CARATULA");
             }
 
@@ -197,6 +206,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.hogar_nropersonas,hogar.getNropersonas());
                     escribirCampoXml(serializer, SQLConstantes.hogar_vive,hogar.getVive());
                     escribirCampoXml(serializer, SQLConstantes.hogar_nroviven,hogar.getNroviven());
+                    escribirCampoXml(serializer, SQLConstantes.hogar_principal,hogar.getPrincipal());
+                    escribirCampoXml(serializer, SQLConstantes.hogar_cobertura,hogar.getCobertura());
                     serializer.endTag("", "HOGAR");
                 }
                 serializer.endTag("", "HOGARES");
@@ -256,6 +267,7 @@ public class ExportarActivity extends AppCompatActivity {
                 escribirCampoXml(serializer, SQLConstantes.modulo1_v_c1_p105, modulo1V.getC1_p105());
                 escribirCampoXml(serializer, SQLConstantes.modulo1_v_c1_p106, modulo1V.getC1_p106());
                 escribirCampoXml(serializer, SQLConstantes.modulo1_v_c1_p107, modulo1V.getC1_p107());
+                escribirCampoXml(serializer, SQLConstantes.modulo1_v_COB100A, modulo1V.getCOB100A());
                 serializer.endTag("", "MODULO1V");
             }
 
@@ -287,6 +299,7 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo1_h_c1_p113_7_o, modulo1H.getC1_p113_7_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo1_h_c1_p113_8_o, modulo1H.getC1_p113_8_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo1_h_c1_p113_9_o, modulo1H.getC1_p113_9_o());
+                    escribirCampoXml(serializer, SQLConstantes.modulo1_h_COB100B, modulo1H.getCOB100B());
                     serializer.endTag("", "MODULO1_HOGAR");
                 }
                 serializer.endTag("", "MODULO1_HOGARES");
@@ -308,6 +321,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.residentes_c2_p205_m, residente.getC2_p205_m());
                     escribirCampoXml(serializer, SQLConstantes.residentes_c2_p206, residente.getC2_p206());
                     escribirCampoXml(serializer, SQLConstantes.residentes_c2_p207, residente.getC2_p207());
+                    escribirCampoXml(serializer, SQLConstantes.residentes_COB200, residente.getCOB200());
+                    escribirCampoXml(serializer, SQLConstantes.residentes_encuestado_cobertura, residente.getEncuestado_cobertura());
                     serializer.endTag("", "MODULO2_RESIDENTE");
                 }
                 serializer.endTag("", "MODULO2_RESIDENTES");
@@ -366,54 +381,51 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p316_o, modulo3.getC3_p316_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p317, modulo3.getC3_p317());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318, modulo3.getC3_p318());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_obs_cap3, modulo3.getObs_cap3());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_COB300, modulo3.getCOB300());
                     serializer.endTag("", "MODULO3");
                 }
                 serializer.endTag("", "MODULO3S");
-                for (Modulo3 modulo3 : modulo3s) {
-                    m3Pregunta309s = data.getAllM3Pregunta309(modulo3.get_id());
-                    if(m3Pregunta309s.size()>0) {
-                        serializer.startTag("", "M3P309RUTAS");
-                        for (M3Pregunta309 m3Pregunta309 : m3Pregunta309s) {
-                            serializer.startTag("", "M3P309RUTA");
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id, m3Pregunta309.get_id());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_p309_idEncuestado, m3Pregunta309.getId_encuestado());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id_vivienda, m3Pregunta309.getId_vivienda());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_p309_numero, m3Pregunta309.getNumero());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p, m3Pregunta309.getC3_p309_p());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p_nom, m3Pregunta309.getC3_p309_p_nom());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_c, m3Pregunta309.getC3_p309_c());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_mod, m3Pregunta309.getC3_p309_mod());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_m, m3Pregunta309.getC3_p309_m());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_a, m3Pregunta309.getC3_p309_a());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_m_cod, m3Pregunta309.getC3_p309_m_cod());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_a_cod, m3Pregunta309.getC3_p309_a_cod());
-                            serializer.endTag("", "M3P309RUTA");
-                        }
-                        serializer.endTag("", "M3P309RUTAS");
-                    }
-                }
-                for (Modulo3 modulo3 : modulo3s) {
-                    m3Pregunta318s = data.getAllM3Pregunta318(modulo3.get_id());
-                    if(m3Pregunta318s.size()>0) {
-                        serializer.startTag("", "M3P318PERSONAS");
-                        for (M3Pregunta318 m3Pregunta318 : m3Pregunta318s) {
-                            serializer.startTag("", "M3P318PERSONA");
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id, m3Pregunta318.get_id());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_p318_idEncuestado, m3Pregunta318.getIdEncuestado());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id_vivienda, m3Pregunta318.getId_vivienda());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_p318_numero, m3Pregunta318.getNumero());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_f, m3Pregunta318.getC3_p318_f());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_s, m3Pregunta318.getC3_p318_s());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_e, m3Pregunta318.getC3_p318_e());
-                            escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_p, m3Pregunta318.getC3_p318_p());
-                            serializer.endTag("", "M3P318PERSONA");
-                        }
-                        serializer.endTag("", "M3P318PERSONAS");
-                    }
-                }
-
             }
 
+            if(m3Pregunta309s.size()>0) {
+                serializer.startTag("", "M3P309RUTAS");
+                for (M3Pregunta309 m3Pregunta309 : m3Pregunta309s) {
+                    serializer.startTag("", "M3P309RUTA");
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id, m3Pregunta309.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_idEncuestado, m3Pregunta309.getId_encuestado());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id_vivienda, m3Pregunta309.getId_vivienda());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_numero, m3Pregunta309.getNumero());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p, m3Pregunta309.getC3_p309_p());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p_nom, m3Pregunta309.getC3_p309_p_nom());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_c, m3Pregunta309.getC3_p309_c());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_mod, m3Pregunta309.getC3_p309_mod());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_m, m3Pregunta309.getC3_p309_m());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_a, m3Pregunta309.getC3_p309_a());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_m_cod, m3Pregunta309.getC3_p309_m_cod());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_a_cod, m3Pregunta309.getC3_p309_a_cod());
+                    serializer.endTag("", "M3P309RUTA");
+                }
+                serializer.endTag("", "M3P309RUTAS");
+            }
+
+
+            if(m3Pregunta318s.size()>0) {
+                serializer.startTag("", "M3P318PERSONAS");
+                for (M3Pregunta318 m3Pregunta318 : m3Pregunta318s) {
+                    serializer.startTag("", "M3P318PERSONA");
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id, m3Pregunta318.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p318_idEncuestado, m3Pregunta318.getIdEncuestado());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id_vivienda, m3Pregunta318.getId_vivienda());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p318_numero, m3Pregunta318.getNumero());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_f, m3Pregunta318.getC3_p318_f());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_s, m3Pregunta318.getC3_p318_s());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_e, m3Pregunta318.getC3_p318_e());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p318_p, m3Pregunta318.getC3_p318_p());
+                    serializer.endTag("", "M3P318PERSONA");
+                }
+                serializer.endTag("", "M3P318PERSONAS");
+            }
 
 
             if(modulo4s.size()>0) {
@@ -421,7 +433,6 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Modulo4 modulo4 : modulo4s) {
                     serializer.startTag("", "MODULO4");
                     escribirCampoXml(serializer, SQLConstantes.modulo4_id, modulo4.get_id());
-
                     escribirCampoXml(serializer, SQLConstantes.modulo4_idInformante, modulo4.getIdInformante());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_idHogar, modulo4.getIdHogar());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_idVivienda, modulo4.getIdVivienda());
@@ -464,6 +475,11 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p406_7, modulo4.getC4_p406_7());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p406_8, modulo4.getC4_p406_8());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p406_o, modulo4.getC4_p406_o());
+
+
+
+
+
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p407_1, modulo4.getC4_p407_1());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p407_2, modulo4.getC4_p407_2());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p407_3, modulo4.getC4_p407_3());
@@ -514,6 +530,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p416_7, modulo4.getC4_p416_7());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p416_8, modulo4.getC4_p416_8());
                     escribirCampoXml(serializer, SQLConstantes.modulo4_c4_p416_o, modulo4.getC4_p416_o());
+                    escribirCampoXml(serializer, SQLConstantes.modulo4_obs_cap4, modulo4.getObs_cap4());
+                    escribirCampoXml(serializer, SQLConstantes.modulo4_COB400, modulo4.getCOB400());
                     serializer.endTag("", "MODULO4");
                 }
                 serializer.endTag("", "MODULO4S");
@@ -530,6 +548,9 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p501, modulo5.getC5_p501());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p502_c, modulo5.getC5_p502_c());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p502, modulo5.getC5_p502());
+                    escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p502_eleccion, modulo5.getC5_p502_eleccion());
+                    escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p502_o, modulo5.getC5_p502_o());
+
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p503, modulo5.getC5_p503());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p504, modulo5.getC5_p504());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p505, modulo5.getC5_p505());
@@ -561,6 +582,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p512_o, modulo5.getC5_p512_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p513, modulo5.getC5_p513());
                     escribirCampoXml(serializer, SQLConstantes.modulo5_c5_p513_o, modulo5.getC5_p513_o());
+                    escribirCampoXml(serializer, SQLConstantes.modulo5_obs_cap5, modulo5.getObs_cap5());
+                    escribirCampoXml(serializer, SQLConstantes.modulo5_COB500, modulo5.getCOB500());
                     serializer.endTag("", "MODULO5");
                 }
                 serializer.endTag("", "MODULO5S");
@@ -666,12 +689,16 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_1med, modulo6.getC6_p630_1med());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_1o, modulo6.getC6_p630_1o());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_1frec, modulo6.getC6_p630_1frec());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_1frec, modulo6.getC6_p630_1frec_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_1mont, modulo6.getC6_p630_1mont());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_2, modulo6.getC6_p630_2());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_2med, modulo6.getC6_p630_2med());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_2o, modulo6.getC6_p630_2o());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_2mont, modulo6.getC6_p630_2mont());
                     escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_2frec, modulo6.getC6_p630_2frec());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_c6_p630_2frec_o, modulo6.getC6_p630_2frec_o());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_obs_cap6, modulo6.getObs_cap6());
+                    escribirCampoXml(serializer, SQLConstantes.modulo6_COB600, modulo6.getCOB600());
                     serializer.endTag("", "MODULO6");
                 }
                 serializer.endTag("", "MODULO6S");
@@ -740,6 +767,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p709_9, modulo7.getC7_p709_9());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p709_10, modulo7.getC7_p709_10());
                     escribirCampoXml(serializer, SQLConstantes.modulo7_c7_p709_o, modulo7.getC7_p709_o());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_obs_cap7, modulo7.getObs_cap7());
+                    escribirCampoXml(serializer, SQLConstantes.modulo7_COB700, modulo7.getCOB700());
                     serializer.endTag("", "MODULO7");
                 }
                 serializer.endTag("", "MODULO7S");
@@ -882,6 +911,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo8_c8_p823_4, modulo8.getC8_p823_4());
                     escribirCampoXml(serializer, SQLConstantes.modulo8_c8_p823_5, modulo8.getC8_p823_5());
                     escribirCampoXml(serializer, SQLConstantes.modulo8_c8_p823_o, modulo8.getC8_p823_o());
+                    escribirCampoXml(serializer, SQLConstantes.modulo8_obs_cap8, modulo8.getObs_cap8());
+                    escribirCampoXml(serializer, SQLConstantes.modulo8_COB800, modulo8.getCOB800());
                     serializer.endTag("", "MODULO8");
                 }
                 serializer.endTag("", "MODULO8S");

@@ -107,7 +107,6 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
     private String lote = "";
     private String km = "";
     private String telefono = "";
-//    private String t_hogar = "";
 
 
     @SuppressLint("ValidFragment")

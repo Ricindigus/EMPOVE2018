@@ -23,8 +23,6 @@ public class VisitaEncuestador {
     private String prox_vis_min;
     private String vis_resu;
     private String vis_resu_esp;
-    private String vis_resultado_final;
-    private String vis_fecha_final;
 
     public VisitaEncuestador() {
         _id = "";
@@ -45,8 +43,6 @@ public class VisitaEncuestador {
         prox_vis_min = "";
         vis_resu = "";
         vis_resu_esp = "";
-        vis_resultado_final = "";
-        vis_fecha_final = "";
     }
 
     public String get_id() {
@@ -193,21 +189,6 @@ public class VisitaEncuestador {
         this.vis_resu_esp = vis_resu_esp;
     }
 
-    public String getVis_resultado_final() {
-        return vis_resultado_final;
-    }
-
-    public void setVis_resultado_final(String vis_resultado_final) {
-        this.vis_resultado_final = vis_resultado_final;
-    }
-
-    public String getVis_fecha_final() {
-        return vis_fecha_final;
-    }
-
-    public void setVis_fecha_final(String vis_fecha_final) {
-        this.vis_fecha_final = vis_fecha_final;
-    }
 
 
     public ContentValues toValues(){

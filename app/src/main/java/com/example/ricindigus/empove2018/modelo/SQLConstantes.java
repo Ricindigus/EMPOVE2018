@@ -30,7 +30,7 @@ public class SQLConstantes {
     public static String tablamodulo6 = "modulo6";
     public static String tablamodulo7 = "modulo7";
     public static String tablamodulo8 = "modulo8";
-    public static String tablamodulo9 = "modulo9";
+
 
     public static String tablamunicipios = "municipios";
     public static String tablaestados = "estados";
@@ -478,12 +478,12 @@ public class SQLConstantes {
      * TABLA RESULTADO ENCUESTADOR
      * */
 
-    public static String resultado_encuestador_id = "_id";
-    public static String resultado_encuestador_id_vivienda = "id_vivienda";
-    public static String resultado_encuestador_vis_resultado_final = "vis_resultado_final";
-    public static String resultado_encuestador_vis_fecha_final_dd = "vis_fecha_final_dd";
-    public static String resultado_encuestador_vis_fecha_final_mm = "vis_fecha_final_mm";
-    public static String resultado_encuestador_vis_fecha_final_aa = "vis_fecha_final_aa";
+    public static final String resultado_encuestador_id = "_id";
+    public static final String resultado_encuestador_id_vivienda = "id_vivienda";
+    public static final String resultado_encuestador_vis_resultado_final = "vis_resultado_final";
+    public static final String resultado_encuestador_vis_fecha_final_dd = "vis_fecha_final_dd";
+    public static final String resultado_encuestador_vis_fecha_final_mm = "vis_fecha_final_mm";
+    public static final String resultado_encuestador_vis_fecha_final_aa = "vis_fecha_final_aa";
 
 
 
@@ -534,13 +534,17 @@ public class SQLConstantes {
                     visita_supervisor_vis_resu_esp + " TEXT" + ");"
             ;
 
-    public static String resultado_supervisor_id = "_id";
-    public static String resultado_supervisor_id_hogar = "id_hogar";
-    public static String resultado_supervisor_id_vivienda = "id_vivienda";
-    public static String resultado_supervisor_vis_resultado_final = "vis_resultado_final";
-    public static String resultado_supervisor_vis_fecha_final_dd = "vis_fecha_final_dd";
-    public static String resultado_supervisor_vis_fecha_final_mm = "vis_fecha_final_mm";
-    public static String resultado_supervisor_vis_fecha_final_aa = "vis_fecha_final_aa";
+    /**
+     * TABLA RESULTADO SUPERVISOR
+     * */
+
+    public static final String resultado_supervisor_id = "_id";
+    public static final String resultado_supervisor_id_hogar = "id_hogar";
+    public static final String resultado_supervisor_id_vivienda = "id_vivienda";
+    public static final String resultado_supervisor_vis_resultado_final = "vis_resultado_final";
+    public static final String resultado_supervisor_vis_fecha_final_dd = "vis_fecha_final_dd";
+    public static final String resultado_supervisor_vis_fecha_final_mm = "vis_fecha_final_mm";
+    public static final String resultado_supervisor_vis_fecha_final_aa = "vis_fecha_final_aa";
 
 
     public static final String SQL_CREATE_TABLA_RESULTADO_SUPERVISOR =

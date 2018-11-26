@@ -202,48 +202,6 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
         final TextView txtFechaI = (TextView) dialogView.findViewById(R.id.dialog_agregar_visita_txtFI);
         final TextView txtHoraI = (TextView) dialogView.findViewById(R.id.dialog_agregar_visita_txtHI);
 
-//        txtFechaI.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                final Calendar calendario = Calendar.getInstance();
-//                int yy = calendario.get(Calendar.YEAR);
-//                int mm = calendario.get(Calendar.MONTH);
-//                int dd = calendario.get(Calendar.DAY_OF_MONTH);
-//
-//                DatePickerDialog datePicker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
-//                    @Override
-//                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-//                        diaInicio = dayOfMonth;
-//                        mesInicio = monthOfYear + 1;
-//                        anioInicio = year;
-//                        String fecha = checkDigito(diaInicio) +"/"+checkDigito(mesInicio) +"/"+checkDigito(anioInicio);
-//                        txtFechaI.setText(fecha);
-//                    }
-//                }, yy, mm, dd);
-//                datePicker.show();
-//            }
-//        });
-//
-//        txtHoraI.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                final Calendar calendario = Calendar.getInstance();
-//                int hh = calendario.get(Calendar.HOUR_OF_DAY);
-//                int mm = calendario.get(Calendar.MINUTE);
-//
-//                TimePickerDialog timePicker = new TimePickerDialog(context, new TimePickerDialog.OnTimeSetListener() {
-//                    @Override
-//                    public void onTimeSet(TimePicker timePicker, int hourofDay, int minute) {
-//                        String hora = checkDigito(hourofDay) +":"+checkDigito(minute);
-//                        txtHoraI.setText(hora);
-//                        horaInicio = hourofDay;
-//                        minutoInicio = minute;
-//                    }
-//                }, hh, mm,true);
-//                timePicker.show();
-//            }
-//        });
-
         alert.setTitle("AGREGAR VISITA");
         alert.setView(dialogView);
         alert.setPositiveButton("Agregar",null);
@@ -336,49 +294,6 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
         final TextView txtNumero = (TextView) dialogView.findViewById(R.id.dialog_agregar_visita_txtNumero);
         final TextView txtFechaI = (TextView) dialogView.findViewById(R.id.dialog_agregar_visita_txtFI);
         final TextView txtHoraI = (TextView) dialogView.findViewById(R.id.dialog_agregar_visita_txtHI);
-
-//        txtFechaI.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int dd = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_dd)));
-//                int mm = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_mm)));
-//                int yy = Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_aa)));
-//
-//                DatePickerDialog datePicker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
-//                    @Override
-//                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-//                        diaInicio = dayOfMonth;
-//                        mesInicio = monthOfYear + 1;
-//                        anioInicio = year;
-//                        String fecha = checkDigito(diaInicio) +"/"+checkDigito(mesInicio)
-//                                +"/"+checkDigito(anioInicio);
-//                        txtFechaI.setText(fecha);
-//
-//                    }
-//                }, yy, mm-1, dd);
-//                datePicker.show();
-//            }
-//        });
-
-//        txtHoraI.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                final Calendar calendario = Calendar.getInstance();
-//                int hh = calendario.get(Calendar.HOUR_OF_DAY);
-//                int mm = calendario.get(Calendar.MINUTE);
-//
-//                TimePickerDialog timePicker = new TimePickerDialog(context, new TimePickerDialog.OnTimeSetListener() {
-//                    @Override
-//                    public void onTimeSet(TimePicker timePicker, int hourofDay, int minute) {
-//                        String hora = checkDigito(hourofDay) +":"+checkDigito(minute);
-//                        txtHoraI.setText(hora);
-//                        horaInicio= hourofDay;
-//                        minutoInicio = minute;
-//                    }
-//                }, hh, mm,true);
-//                timePicker.show();
-//            }
-//        });
 
         alert.setTitle("EDITAR VISITA");
         alert.setView(dialogView);
@@ -737,7 +652,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                                 dataTablas.open();
                                 if(!dataTablas.existeElemento(getIdTablaParte2(), idHogar)){
                                     contentValuesFinal.put(SQLConstantes.resultado_encuestador_id, idHogar);
-                                    contentValuesFinal.put(SQLConstantes.resultado_encuestador_id_vivienda, idHogar);
+                                    contentValuesFinal.put(SQLConstantes.resultado_encuestador_id_vivienda, idVivienda);
                                     //si no hay registro de resultado final, inserto un resultado
                                     dataTablas.insertarElemento(getIdTablaParte2(),contentValuesFinal);
                                     //muestro el resultado final
