@@ -69,7 +69,6 @@ public class ResVisitaEncuestador {
         this.vis_fecha_final_aa = vis_fecha_final_aa;
     }
 
-
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.resultado_encuestador_id ,_id);

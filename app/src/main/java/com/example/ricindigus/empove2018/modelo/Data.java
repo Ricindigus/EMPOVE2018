@@ -27,10 +27,13 @@ import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentHogar;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentVivienda;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
+import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaEncuestador;
+import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaSupervisor;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.modelo.pojos.Ubigeo;
 import com.example.ricindigus.empove2018.modelo.pojos.Usuario;
 import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
+import com.example.ricindigus.empove2018.modelo.pojos.VisitaSupervisor;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -583,7 +586,7 @@ public class Data {
         sqLiteDatabase.delete(SQLConstantes.tablahogares,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs);
     }
 
-    public ArrayList<VisitaEncuestador> getAllVisitasVivienda(String idVivienda){
+    public ArrayList<VisitaEncuestador> getAllVisitasEncuestadorVivienda(String idVivienda){
         ArrayList<VisitaEncuestador> visitaEncuestadors = new ArrayList<>();
         String[] whereArgs = new String[]{String.valueOf(idVivienda)};
         Cursor cursor = null;
@@ -616,6 +619,82 @@ public class Data {
             if(cursor != null) cursor.close();
         }
         return visitaEncuestadors;
+    }
+
+    public ArrayList<VisitaSupervisor> getAllVisitasSupervisorVivienda(String idVivienda){
+        ArrayList<VisitaSupervisor> visitaSupervisors = new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(idVivienda)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablavisitassupervisor,
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                VisitaSupervisor visitaSupervisor = new VisitaSupervisor();
+                visitaSupervisor.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id)));
+                visitaSupervisor.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id_vivienda)));
+                visitaSupervisor.setId_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_id_hogar)));
+                visitaSupervisor.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_numero)));
+                visitaSupervisor.setVis_fecha_dd(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_dd)));
+                visitaSupervisor.setVis_fecha_mm(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_mm)));
+                visitaSupervisor.setVis_fecha_aa(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_fecha_aa)));
+                visitaSupervisor.setVis_hor_ini(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_hor_ini)));
+                visitaSupervisor.setVis_min_ini(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_min_ini)));
+                visitaSupervisor.setVis_hor_fin(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_hor_fin)));
+                visitaSupervisor.setVis_min_fin(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_min_fin)));
+                visitaSupervisor.setVis_resu(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu)));
+                visitaSupervisor.setVis_resu_esp(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu_esp)));
+                visitaSupervisors.add(visitaSupervisor);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return visitaSupervisors;
+    }
+
+    public ArrayList<ResVisitaEncuestador> getAllResultadoVisitaEncuestador(String idVivienda){
+        ArrayList<ResVisitaEncuestador> resVisitaEncuestadors= new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(idVivienda)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaresultadoencuestador,
+                    null,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                ResVisitaEncuestador resVisitaEncuestador = new ResVisitaEncuestador();
+                resVisitaEncuestador.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_encuestador_id)));
+                resVisitaEncuestador.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_encuestador_id_vivienda)));
+                resVisitaEncuestador.setVis_resultado_final(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_encuestador_vis_resultado_final)));
+                resVisitaEncuestador.setVis_fecha_final_dd(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_encuestador_vis_fecha_final_dd)));
+                resVisitaEncuestador.setVis_fecha_final_mm(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_encuestador_vis_fecha_final_mm)));
+                resVisitaEncuestador.setVis_fecha_final_aa(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_encuestador_vis_fecha_final_aa)));
+                resVisitaEncuestadors.add(resVisitaEncuestador);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return resVisitaEncuestadors;
+    }
+
+    public ArrayList<ResVisitaSupervisor> getAllResultadoVisitaSupervisor(String id){
+        ArrayList<ResVisitaSupervisor> resVisitaSupervisors = new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(id)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaresultadosupervisor,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                ResVisitaSupervisor resVisitaSupervisor = new ResVisitaSupervisor();
+                resVisitaSupervisor.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_supervisor_id)));
+                resVisitaSupervisor.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_supervisor_id_vivienda)));
+                resVisitaSupervisor.setVis_resultado_final(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_supervisor_vis_resultado_final)));
+                resVisitaSupervisor.setVis_fecha_final_dd(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_supervisor_vis_fecha_final_dd)));
+                resVisitaSupervisor.setVis_fecha_final_mm(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_supervisor_vis_fecha_final_mm)));
+                resVisitaSupervisor.setVis_fecha_final_aa(cursor.getString(cursor.getColumnIndex(SQLConstantes.resultado_supervisor_vis_fecha_final_aa)));
+                resVisitaSupervisors.add(resVisitaSupervisor);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return resVisitaSupervisors;
     }
 
     public Cursor getCursorVisitas(String tablaVisitas, String idHogar){

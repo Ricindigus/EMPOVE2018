@@ -6,7 +6,6 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class ResVisitaSupervisor {
     private String _id;
-    private String id_hogar;
     private String id_vivienda;
     private String vis_resultado_final;
     private String vis_fecha_final_dd;
@@ -14,6 +13,12 @@ public class ResVisitaSupervisor {
     private String vis_fecha_final_aa;
 
     public ResVisitaSupervisor() {
+        _id ="";
+        id_vivienda="";
+        vis_resultado_final="";
+        vis_fecha_final_dd="";
+        vis_fecha_final_mm="";
+        vis_fecha_final_aa="";
     }
 
     public String get_id() {
@@ -24,13 +29,6 @@ public class ResVisitaSupervisor {
         this._id = _id;
     }
 
-    public String getId_hogar() {
-        return id_hogar;
-    }
-
-    public void setId_hogar(String id_hogar) {
-        this.id_hogar = id_hogar;
-    }
 
     public String getId_vivienda() {
         return id_vivienda;
@@ -75,7 +73,6 @@ public class ResVisitaSupervisor {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.resultado_supervisor_id ,_id);
-        contentValues.put(SQLConstantes.resultado_supervisor_id_hogar ,id_hogar);
         contentValues.put(SQLConstantes.resultado_supervisor_id_vivienda ,id_vivienda);
         contentValues.put(SQLConstantes.resultado_supervisor_vis_resultado_final ,vis_resultado_final);
         contentValues.put(SQLConstantes.resultado_supervisor_vis_fecha_final_dd ,vis_fecha_final_dd);

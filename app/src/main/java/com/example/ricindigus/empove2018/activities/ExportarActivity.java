@@ -33,8 +33,11 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
+import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaEncuestador;
+import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaSupervisor;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
+import com.example.ricindigus.empove2018.modelo.pojos.VisitaSupervisor;
 
 import org.xmlpull.v1.XmlSerializer;
 
@@ -137,10 +140,12 @@ public class ExportarActivity extends AppCompatActivity {
         String nombreArchivo = idVivienda + ".xml";
         Caratula caratula = data.getCaratula(idVivienda);
         ArrayList<Hogar> hogares = data.getAllHogaresVivienda(idVivienda);
-        ArrayList<VisitaEncuestador> visitas = data.getAllVisitasVivienda(idVivienda);
+        ArrayList<VisitaEncuestador> visitaEncuestadors = data.getAllVisitasEncuestadorVivienda(idVivienda);
+        ArrayList<VisitaSupervisor> visitaSupervisors = data.getAllVisitasSupervisorVivienda(idVivienda);
+        ArrayList<ResVisitaEncuestador> resVisitaEncuestadors = data.getAllResultadoVisitaEncuestador(idVivienda);
+        ArrayList<ResVisitaSupervisor> resVisitaSupervisors = data.getAllResultadoVisitaSupervisor(idVivienda);
         Funcionario funcionario = data.getFuncionario(idVivienda);
         Modulo1V modulo1V = data.getModulo1V(idVivienda);
-
         ArrayList<Modulo1H> modulo1HS = data.getAllModulo1H(idVivienda);
         ArrayList<Residente> residentes = data.getAllResidentesVivienda(idVivienda);
         ArrayList<Modulo3> modulo3s = data.getAllModulo3(idVivienda);
@@ -212,9 +217,9 @@ public class ExportarActivity extends AppCompatActivity {
                 serializer.endTag("", "HOGARES");
             }
 
-            if(visitas.size()>0) {
+            if(visitaEncuestadors.size()>0) {
                 serializer.startTag("", "VISITAS_ENCUESTADOR");
-                for (VisitaEncuestador visita : visitas) {
+                for (VisitaEncuestador visita : visitaEncuestadors) {
                     serializer.startTag("", "VISITA_ENCUESTADOR");
                     escribirCampoXml(serializer, SQLConstantes.visita_encuestador_id, visita.get_id());
                     escribirCampoXml(serializer, SQLConstantes.visita_encuestador_id_vivienda, visita.getId_vivienda());
@@ -237,6 +242,58 @@ public class ExportarActivity extends AppCompatActivity {
                     serializer.endTag("", "VISITA_ENCUESTADOR");
                 }
                 serializer.endTag("", "VISITAS_ENCUESTADOR");
+            }
+
+            if(visitaEncuestadors.size()>0) {
+                serializer.startTag("", "RESULTADOS_VISITA_ENCUESTADOR");
+                for (ResVisitaEncuestador resVisitaEncuestador : resVisitaEncuestadors) {
+                    serializer.startTag("", "RESULTADO_VISITA_ENCUESTADOR");
+                    escribirCampoXml(serializer, SQLConstantes.resultado_encuestador_id, resVisitaEncuestador.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_encuestador_id_vivienda, resVisitaEncuestador.getId_vivienda());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_encuestador_vis_resultado_final, resVisitaEncuestador.getVis_resultado_final());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_encuestador_vis_fecha_final_dd, resVisitaEncuestador.getVis_fecha_final_dd());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_encuestador_vis_fecha_final_mm, resVisitaEncuestador.getVis_fecha_final_mm());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_encuestador_vis_fecha_final_aa, resVisitaEncuestador.getVis_fecha_final_aa());
+                    serializer.endTag("", "RESULTADO_VISITA_ENCUESTADOR");
+                }
+                serializer.endTag("", "RESULTADOS_VISITA_ENCUESTADOR");
+            }
+
+            if(visitaEncuestadors.size()>0) {
+                serializer.startTag("", "VISITAS_SUPERVISOR");
+                for (VisitaSupervisor visitaSupervisor : visitaSupervisors) {
+                    serializer.startTag("", "VISITA_SUPERVISOR");
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_id, visitaSupervisor.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_id_vivienda, visitaSupervisor.getId_vivienda());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_id_hogar , visitaSupervisor.getId_hogar());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_numero , visitaSupervisor.getNumero());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_fecha_dd , visitaSupervisor.getVis_fecha_dd());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_fecha_mm , visitaSupervisor.getVis_fecha_mm());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_fecha_aa , visitaSupervisor.getVis_fecha_aa());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_hor_ini , visitaSupervisor.getVis_hor_ini());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_min_ini , visitaSupervisor.getVis_min_ini());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_hor_fin , visitaSupervisor.getVis_hor_fin());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_min_fin , visitaSupervisor.getVis_min_fin());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_resu , visitaSupervisor.getVis_resu());
+                    escribirCampoXml(serializer, SQLConstantes.visita_supervisor_vis_resu_esp , visitaSupervisor.getVis_resu_esp());
+                    serializer.endTag("", "VISITA_SUPERVISOR");
+                }
+                serializer.endTag("", "VISITAS_SUPERVISOR");
+            }
+
+            if(visitaEncuestadors.size()>0) {
+                serializer.startTag("", "RESULTADOS_VISITA_SUPERVISOR");
+                for (ResVisitaSupervisor resVisitaSupervisor : resVisitaSupervisors) {
+                    serializer.startTag("", "RESULTADO_VISITA_SUPERVISOR");
+                    escribirCampoXml(serializer, SQLConstantes.resultado_supervisor_id, resVisitaSupervisor.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_supervisor_id_vivienda, resVisitaSupervisor.getId_vivienda());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_supervisor_vis_resultado_final, resVisitaSupervisor.getVis_resultado_final());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_supervisor_vis_fecha_final_dd, resVisitaSupervisor.getVis_fecha_final_dd());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_supervisor_vis_fecha_final_mm, resVisitaSupervisor.getVis_fecha_final_mm());
+                    escribirCampoXml(serializer, SQLConstantes.resultado_supervisor_vis_fecha_final_aa, resVisitaSupervisor.getVis_fecha_final_aa());
+                    serializer.endTag("", "RESULTADO_VISITA_SUPERVISOR");
+                }
+                serializer.endTag("", "RESULTADOS_VISITA_SUPERVISOR");
             }
 
 

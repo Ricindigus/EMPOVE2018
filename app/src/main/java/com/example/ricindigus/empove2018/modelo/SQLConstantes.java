@@ -539,7 +539,6 @@ public class SQLConstantes {
      * */
 
     public static final String resultado_supervisor_id = "_id";
-    public static final String resultado_supervisor_id_hogar = "id_hogar";
     public static final String resultado_supervisor_id_vivienda = "id_vivienda";
     public static final String resultado_supervisor_vis_resultado_final = "vis_resultado_final";
     public static final String resultado_supervisor_vis_fecha_final_dd = "vis_fecha_final_dd";
@@ -550,7 +549,6 @@ public class SQLConstantes {
     public static final String SQL_CREATE_TABLA_RESULTADO_SUPERVISOR =
             "CREATE TABLE " + tablaresultadosupervisor + "(" +
                     resultado_supervisor_id  + " TEXT PRIMARY KEY," +
-                    resultado_supervisor_id_hogar + " TEXT," +
                     resultado_supervisor_id_vivienda + " TEXT," +
                     resultado_supervisor_vis_resultado_final + " TEXT," +
                     resultado_supervisor_vis_fecha_final_dd + " TEXT," +
