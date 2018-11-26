@@ -163,16 +163,80 @@ public class ImportarActivity extends AppCompatActivity {
             Data data = new Data(this);
             data.open();
             String idVivienda = edtArchivo.getText().toString();
-            if(caratula.get_id()!=0){
-                data.eliminarDato(SQLConstantes.tablacaratula,idVivienda);
-                data.insertarElemento(SQLConstantes.tablacaratula,caratula.toValues());
-            }
+            //insertar la caratula
+            if(caratula.get_id()!=0){ data.eliminarDato(SQLConstantes.tablacaratula,idVivienda);data.insertarElemento(SQLConstantes.tablacaratula,caratula.toValues()); }
+            //insertar datos hogares
             if(hogares.size()>0){data.deleteAllHogares(idVivienda);data.insertarHogares(hogares);}
+            //insertar datos visitas encuestador
             if(visitaEncuestadors.size()>0){data.deleteAllVisitasEncuestador(idVivienda);data.insertarVisitasEncuestador(visitaEncuestadors);}
+            //insertar datos resultados encuestador
+            if(resVisitaEncuestadors.size()>0){
+                data.eliminarDatos(SQLConstantes.tablaresultadoencuestador,SQLConstantes.resultado_supervisor_id_vivienda,idVivienda);
+                for (ResVisitaEncuestador resVisitaEncuestador : resVisitaEncuestadors)
+                    data.insertarElemento(SQLConstantes.tablaresultadoencuestador,resVisitaEncuestador.toValues());
+            }
+            //insertar datos visitas supervisor
             if(visitaSupervisors.size()>0){data.deleteAllVisitasSupervisor(idVivienda);data.insertarVisitasSupervisor(visitaSupervisors);}
+            //insertar datos resultados encuestador
+            if(resVisitaSupervisors.size()>0){
+                data.eliminarDatos(SQLConstantes.tablaresultadosupervisor,SQLConstantes.resultado_supervisor_id_vivienda,idVivienda);
+                for (ResVisitaSupervisor resVisitaSupervisor : resVisitaSupervisors)
+                    data.insertarElemento(SQLConstantes.tablaresultadosupervisor,resVisitaSupervisor.toValues());
+            }
+            //insertar el funcionario
             if(!funcionario.get_id().equals("")){ data.eliminarDato(SQLConstantes.tablafuncionarios,idVivienda);data.insertarElemento(SQLConstantes.tablafuncionarios,funcionario.toValues()); }
+            //insertar el modulo 1 Vivienda
+            if(!modulo1V.get_id().equals("")){ data.eliminarDato(SQLConstantes.tablamodulo1v,idVivienda);data.insertarElemento(SQLConstantes.tablamodulo1v,modulo1V.toValues()); }
+            //insertar datos modulo1 Hogares
+            if(modulo1HS.size()>0){
+                data.eliminarDatos(SQLConstantes.tablamodulo1h,SQLConstantes.modulo1_h_idVivienda,idVivienda);
+                for (Modulo1H modulo1H : modulo1HS)
+                    data.insertarElemento(SQLConstantes.tablamodulo1h,modulo1H.toValues());
+            }
+            //insertar datos residentes
+            if(residentes.size()>0){
+                data.eliminarDatos(SQLConstantes.tablaresidentes,SQLConstantes.residentes_id_vivienda,idVivienda);
+                for (Residente residente : residentes)
+                    data.insertarElemento(SQLConstantes.tablaresidentes,residente.toValues());
+            }
 
+            //insertar modulos 3
+            if(modulo3s.size()>0){
+                data.eliminarDatos(SQLConstantes.tablamodulo3,SQLConstantes.modulo3_id_vivienda,idVivienda);
+                for (Modulo3 modulo3 : modulo3s)
+                    data.insertarElemento(SQLConstantes.tablamodulo3,modulo3.toValues());
+            }
 
+            //insertar modulos 4
+            if(modulo4s.size()>0){
+                data.eliminarDatos(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_id_vivienda,idVivienda);
+                for (Modulo4 modulo4 : modulo4s)
+                    data.insertarElemento(SQLConstantes.tablamodulo4,modulo4.toValues());
+            }
+            //insertar modulos 5
+            if(modulo5s.size()>0){
+                data.eliminarDatos(SQLConstantes.tablamodulo5,SQLConstantes.modulo5_id_vivienda,idVivienda);
+                for (Modulo5 modulo5 : modulo5s)
+                    data.insertarElemento(SQLConstantes.tablamodulo5,modulo5.toValues());
+            }
+            //insertar modulos 6
+            if(modulo4s.size()>0){
+                data.eliminarDatos(SQLConstantes.tablamodulo6,SQLConstantes.modulo6_id_vivienda,idVivienda);
+                for (Modulo6 modulo6 : modulo6s)
+                    data.insertarElemento(SQLConstantes.tablamodulo6,modulo6.toValues());
+            }
+            //insertar modulos 7
+            if(modulo7s.size()>0){
+                data.eliminarDatos(SQLConstantes.tablamodulo7,SQLConstantes.modulo7_id_vivienda,idVivienda);
+                for (Modulo7 modulo7 : modulo7s)
+                    data.insertarElemento(SQLConstantes.tablamodulo7,modulo7.toValues());
+            }
+            //insertar modulos 8
+            if(modulo8s.size()>0){
+                data.eliminarDatos(SQLConstantes.tablamodulo8,SQLConstantes.modulo8_id_vivienda,idVivienda);
+                for (Modulo8 modulo8 : modulo8s)
+                    data.insertarElemento(SQLConstantes.tablamodulo8,modulo8.toValues());
+            }
             data.close();
 //            txtImportar.setText(sb.toString());
         } catch (XmlPullParserException e) {

@@ -2855,6 +2855,7 @@ public class Data {
         return pojoFragmentHogar;
     }
 
+
     public void borrarAllData(String tabla){
         sqLiteDatabase.execSQL("delete from "+ tabla);
     }
