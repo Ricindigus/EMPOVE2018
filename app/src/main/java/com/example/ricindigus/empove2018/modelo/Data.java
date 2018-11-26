@@ -399,20 +399,36 @@ public class Data {
         return itemMarcos;
     }
 
-    public void insertarVisita(VisitaEncuestador visita){
+    public void insertarVisitaEncuestador(VisitaEncuestador visita){
         ContentValues contentValues = visita.toValues();
         sqLiteDatabase.insert(SQLConstantes.tablavisitasencuestador,null,contentValues);
     }
 
-    public void insertarVisitas(ArrayList<VisitaEncuestador> visitas){
+    public void insertarVisitasEncuestador(ArrayList<VisitaEncuestador> visitas){
         for (VisitaEncuestador visita : visitas) {
             try {
-                insertarVisita(visita);
+                insertarVisitaEncuestador(visita);
             }catch (SQLiteException e){
                 e.printStackTrace();
             }
         }
     }
+
+    public void insertarVisitaSupervisor(VisitaSupervisor visitaSupervisor){
+        ContentValues contentValues = visitaSupervisor.toValues();
+        sqLiteDatabase.insert(SQLConstantes.tablavisitassupervisor,null,contentValues);
+    }
+
+    public void insertarVisitasSupervisor(ArrayList<VisitaSupervisor> visitaSupervisors){
+        for (VisitaSupervisor visitaSupervisor : visitaSupervisors) {
+            try {
+                insertarVisitaSupervisor(visitaSupervisor);
+            }catch (SQLiteException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void insertarHogar(Hogar hogar){
         ContentValues contentValues = hogar.toValues();
         sqLiteDatabase.insert(SQLConstantes.tablahogares,null,contentValues);
@@ -576,9 +592,14 @@ public class Data {
         return visitaEncuestador;
     }
 
-    public void deleteAllVisitas(String idVivienda){
+    public void deleteAllVisitasEncuestador(String idVivienda){
         String[] whereArgs = new String[]{idVivienda};
         sqLiteDatabase.delete(SQLConstantes.tablavisitasencuestador,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs);
+    }
+
+    public void deleteAllVisitasSupervisor(String idVivienda){
+        String[] whereArgs = new String[]{idVivienda};
+        sqLiteDatabase.delete(SQLConstantes.tablavisitassupervisor,SQLConstantes.WHERE_CLAUSE_VIVIENDA_ID,whereArgs);
     }
 
     public void deleteAllHogares(String idVivienda){

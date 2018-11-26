@@ -147,6 +147,7 @@ public class ImportarActivity extends AppCompatActivity {
             xpp.setInput(fis, null);
             int eventType = xpp.getEventType();
 
+            //LEE DOCUMENTO XML Y PARSEA LOS DATOS , Y LLENA LAS VARIABLES
             while(eventType != XmlPullParser.END_DOCUMENT){
                 if(eventType == XmlPullParser.START_TAG){
                     handleStarTag(xpp.getName());
@@ -157,36 +158,21 @@ public class ImportarActivity extends AppCompatActivity {
                 }
                 eventType = xpp.next();
             }
+            //VARIABLES LLENAS
+            //GUARDAR VARIABLES LLENADAS EN EL PARSEO
             Data data = new Data(this);
             data.open();
-
             String idVivienda = edtArchivo.getText().toString();
             if(caratula.get_id()!=0){
                 data.eliminarDato(SQLConstantes.tablacaratula,idVivienda);
                 data.insertarElemento(SQLConstantes.tablacaratula,caratula.toValues());
             }
-            if(visitaEncuestadors.size()>0){data.deleteAllVisitas(idVivienda);data.insertarVisitas(visitaEncuestadors);}
             if(hogares.size()>0){data.deleteAllHogares(idVivienda);data.insertarHogares(hogares);}
+            if(visitaEncuestadors.size()>0){data.deleteAllVisitasEncuestador(idVivienda);data.insertarVisitasEncuestador(visitaEncuestadors);}
+            if(visitaSupervisors.size()>0){data.deleteAllVisitasSupervisor(idVivienda);data.insertarVisitasSupervisor(visitaSupervisors);}
+            if(!funcionario.get_id().equals("")){ data.eliminarDato(SQLConstantes.tablafuncionarios,idVivienda);data.insertarElemento(SQLConstantes.tablafuncionarios,funcionario.toValues()); }
 
-            if(!funcionario.get_id().equals("")){
-                data.eliminarDato(SQLConstantes.tablafuncionarios,idVivienda);
-                data.insertarElemento(SQLConstantes.tablafuncionarios,funcionario.toValues());
-            }
 
-//            if(!datosEntrevista.getID().equals("")){data.deleteDatosEntrevista(idEmpresa);data.insertarDatosEntrevista(datosEntrevista);}
-
-//
-//            if(!modulo1.getMODULO1_ID().equals("")){data.deleteModulo1(idEmpresa);data.insertarModulo1(modulo1);}
-//            if(!modulo2.getMODULO2_ID().equals("")){data.deleteModulo2(idEmpresa);data.insertarModulo2(modulo2);}
-//            if(!modulo3.getMODULO3_ID().equals("")){data.deleteModulo3(idEmpresa);data.insertarModulo3(modulo3);}
-//            if(!modulo4.getMODULO4_ID().equals("")){data.deleteModulo4(idEmpresa);data.insertarModulo4(modulo4);}
-//            if(!modulo5.getMODULO5_ID().equals("")){data.deleteModulo5(idEmpresa);data.insertarModulo5(modulo5);}
-//            if(modulo5Dinamicos.size()>0){data.deleteAllModulo5Dinamico(idEmpresa);data.insertarModulos5Dinamico(modulo5Dinamicos);}
-//            if(!modulo6.getMODULO6_ID().equals("")){data.deleteModulo6(idEmpresa);data.insertarModulo6(modulo6);}
-//            if(!modulo7.getMODULO7_ID().equals("")){data.deleteModulo7(idEmpresa);data.insertarModulo7(modulo7);}
-//            if(!modulo8.getMODULO8_ID().equals("")){data.deleteModulo8(idEmpresa);data.insertarModulo8(modulo8);}
-//            if(!modulo9.getMODULO9_ID().equals("")){data.deleteModulo9(idEmpresa);data.insertarModulo9(modulo9);}
-//            if(!modulo10.getMODULO10_ID().equals("")){data.deleteModulo10(idEmpresa);data.insertarModulo10(modulo10);}
             data.close();
 //            txtImportar.setText(sb.toString());
         } catch (XmlPullParserException e) {
@@ -211,20 +197,20 @@ public class ImportarActivity extends AppCompatActivity {
 
             case "CARATULA":agregarVariableCaratula(currentVariable,text);break;
             case "HOGAR":agregarVariableHogar(currentVariable,text);break;
-            case "VISITA_ENCUESTADOR":
-                agregarVariableVisitaEncuestador(currentVariable,text);break;
+            case "VISITA_ENCUESTADOR": agregarVariableVisitaEncuestador(currentVariable,text);break;
+            case "VISITA_SUPERVISOR": agregarVariableVisitaSupervisor(currentVariable,text);break;
+            case "RESULTADO_VISITA_ENCUESTADOR": agregarVariableVisitaEncuestador(currentVariable,text);break;
+            case "RESULTADO_VISITA_SUPERVISOR": agregarVariableVisitaSupervisor(currentVariable,text);break;
             case "FUNCIONARIO":agregarVariableFuncionario(currentVariable,text);break;
             case "MODULO1V":agregarVariableModulo1V(currentVariable,text);break;
-//            case "MODULO2":agregarVariableModulo2(currentVariable,text);break;
-//            case "MODULO3":agregarVariableModulo3(currentVariable,text);break;
-//            case "MODULO4":agregarVariableModulo4(currentVariable,text);break;
-//            case "MODULO5_I":agregarVariableModulo5(currentVariable,text);break;
-//            case "MODULO5_II":agregarVariableModulo5Dinamico(currentVariable,text);break;
-//            case "MODULO6":agregarVariableModulo6(currentVariable,text);break;
-//            case "MODULO7":agregarVariableModulo7(currentVariable,text);break;
-//            case "MODULO8":agregarVariableModulo8(currentVariable,text);break;
-//            case "MODULO9":agregarVariableModulo9(currentVariable,text);break;
-//            case "MODULO10": agregarVariableModulo10(currentVariable,text);break;
+            case "MODULO1H":agregarVariableModulo1H(currentVariable,text);break;
+            case "RESIDENTE":agregarVariableResidente(currentVariable,text);break;
+            case "MODULO3":agregarVariableModulo3(currentVariable,text);break;
+            case "MODULO4":agregarVariableModulo4(currentVariable,text);break;
+            case "MODULO5":agregarVariableModulo5(currentVariable,text);break;
+            case "MODULO6":agregarVariableModulo6(currentVariable,text);break;
+            case "MODULO7":agregarVariableModulo7(currentVariable,text);break;
+            case "MODULO8":agregarVariableModulo8(currentVariable,text);break;
         }
     }
 
@@ -234,8 +220,8 @@ public class ImportarActivity extends AppCompatActivity {
             case "HOGAR":currentTag = "HOGARES";currentHogar = new Hogar();break;
             case "VISITA_ENCUESTADOR":currentTag = "VISITA_ENCUESTADOR";currentVisitaEncuestador = new VisitaEncuestador();break;
             case "VISITA_SUPERVISOR":currentTag = "VISITA_SUPERVISOR";currentVisitaSupervisor = new VisitaSupervisor();break;
-            case "RESULTADOS_VISITA_ENCUESTADOR":currentTag = "RESULTADOS_VISITA_ENCUESTADOR";break;
-            case "RES_VISITA_SUPERVISOR":currentTag = "VISITA_SUPERVISOR";break;
+            case "RESULTADO_VISITA_ENCUESTADOR":currentTag = "RESULTADO_VISITA_ENCUESTADOR";currentResVisitaEncuestador = new ResVisitaEncuestador();break;
+            case "RESULTADO_VISITA_SUPERVISOR":currentTag = "RESULTADO_VISITA_SUPERVISOR";currentResVisitaSupervisor= new ResVisitaSupervisor();break;
             case "FUNCIONARIO":currentTag = "FUNCIONARIO";break;
             case "MODULO1V":currentTag = "MODULO1V";break;
             case "MODULO1H":currentTag = "MODULO1H";currentModulo1H = new Modulo1H();break;
@@ -246,20 +232,6 @@ public class ImportarActivity extends AppCompatActivity {
             case "MODULO6":currentTag = "MODULO6";currentModulo6 = new Modulo6();break;
             case "MODULO7":currentTag = "MODULO7";currentModulo7 = new Modulo7();break;
             case "MODULO8":currentTag = "MODULO8";currentModulo8 = new Modulo8();break;
-
-
-
-//            case "MODULO1":currentTag = "MODULO1";break;
-//            case "MODULO2":currentTag = "MODULO2";break;
-//            case "MODULO3":currentTag = "MODULO3";break;
-//            case "MODULO4":currentTag = "MODULO4";break;
-//            case "MODULO5_I":currentTag = "MODULO5_I";break;
-//            case "MODULO5_II":currentTag = "MODULO5_II";currentModulo5Dinamico = new Modulo5Dinamico();break;
-//            case "MODULO6": currentTag = "MODULO6";break;
-//            case "MODULO7":currentTag = "MODULO7";break;
-//            case "MODULO8":currentTag = "MODULO8";break;
-//            case "MODULO9":currentTag = "MODULO9";break;
-//            case "MODULO10": currentTag = "MODULO10";break;
             default: currentVariable = name;break;
         }
     }
@@ -267,7 +239,17 @@ public class ImportarActivity extends AppCompatActivity {
         switch (name){
             case "HOGAR": hogares.add(currentHogar);break;
             case "VISITA_ENCUESTADOR": visitaEncuestadors.add(currentVisitaEncuestador);break;
-//            case "MODULO5_II":modulo5Dinamicos.add(currentModulo5Dinamico);break;
+            case "VISITA_SUPERISOR": visitaSupervisors.add(currentVisitaSupervisor);break;
+            case "RESULTADO_VISITA_ENCUESTADOR": resVisitaEncuestadors.add(currentResVisitaEncuestador);break;
+            case "RESULTADO_VISITA_SUPERVISOR": resVisitaSupervisors.add(currentResVisitaSupervisor);break;
+            case "MODULO1H": modulo1HS.add(currentModulo1H);break;
+            case "RESIDENTE": residentes.add(currentResidente);break;
+            case "MODULO3": modulo3s.add(currentModulo3);break;
+            case "MODULO4": modulo4s.add(currentModulo4);break;
+            case "MODULO5": modulo5s.add(currentModulo5);break;
+            case "MODULO6": modulo6s.add(currentModulo6);break;
+            case "MODULO7": modulo7s.add(currentModulo7);break;
+            case "MODULO8": modulo8s.add(currentModulo8);break;
         }
     }
 
