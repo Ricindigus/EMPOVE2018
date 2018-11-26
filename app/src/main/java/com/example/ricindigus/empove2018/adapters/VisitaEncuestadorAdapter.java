@@ -56,16 +56,16 @@ public class VisitaEncuestadorAdapter extends RecyclerView.Adapter<VisitaEncuest
                 );
 
                 String horafinal = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_hor_fin));
-                if(horafinal != null) txtHoraFinal.setText(checkDigito(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_hor_fin)))) +
+                if(horafinal != null && !horafinal.equals("")) txtHoraFinal.setText(checkDigito(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_hor_fin)))) +
                                 ":"+ checkDigito(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_min_fin)))));
                 else txtHoraFinal.setText("-:-");
 
                 String resultado = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu));
-                if(resultado != null)txtResultado.setText(context.getResources().getStringArray(R.array.visita_array_resultados)[Integer.parseInt(resultado)]);
+                if(resultado != null && !resultado.equals(""))txtResultado.setText(context.getResources().getStringArray(R.array.visita_array_resultados)[Integer.parseInt(resultado)]);
                 else txtResultado.setText("NO FINALIZADO");
 
                 String diaProxV = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_prox_vis_fecha_dd));
-                if(diaProxV != null) {
+                if(diaProxV != null && !diaProxV.equals("")) {
                     txtFechaProxVisita.setText(
                             checkDigito(Integer.parseInt(diaProxV)) +
                                     "/" + checkDigito(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_prox_vis_fecha_mm)))) +

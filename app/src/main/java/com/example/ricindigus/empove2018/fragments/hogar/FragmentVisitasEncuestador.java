@@ -184,7 +184,8 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                 if (!resultadoFinal.equals("1")){
                     if(cursor.getCount() > 0) {
                         cursor.moveToPosition(cursor.getCount() - 1);
-                        if(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu)) != null) agregarVisita();
+                        String resultadoAnterior = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu));
+                        if( resultadoAnterior != null && !resultadoAnterior.equals("")) agregarVisita();
                         else mostrarMensaje("DEBE FINALIZAR LA VISITA ACTUAL, ANTES DE AGREGAR UNA NUEVA");
                     }else{agregarVisita();}
                 }else Toast.makeText(context, "La encuesta ya finalizó COMPLETA", Toast.LENGTH_SHORT).show();
@@ -770,7 +771,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
         if(cursor.getCount() > 0){
             cursor.moveToPosition(cursor.getCount()-1);
             String resultado = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu));
-            if(resultado != null){
+            if(resultado != null && !resultado.equals("")){
                 if (Integer.parseInt(resultado) > 1){
                     valido =  false;
                     mensaje = "DEBE INICIAR UNA VISITA ANTES DE CONTINUAR";

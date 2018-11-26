@@ -164,7 +164,6 @@ public class ExportarActivity extends AppCompatActivity {
             serializer.startDocument("utf-8", true);
             serializer.startTag("", "ENPOVE");
             serializer.attribute("", "id",idVivienda);
-
             if(caratula != null) {
                 serializer.startTag("", "CARATULA");
                 escribirCampoXml(serializer, SQLConstantes.caratula_id,caratula.get_id()+"");
@@ -244,7 +243,7 @@ public class ExportarActivity extends AppCompatActivity {
                 serializer.endTag("", "VISITAS_ENCUESTADOR");
             }
 
-            if(visitaEncuestadors.size()>0) {
+            if(resVisitaEncuestadors.size()>0) {
                 serializer.startTag("", "RESULTADOS_VISITA_ENCUESTADOR");
                 for (ResVisitaEncuestador resVisitaEncuestador : resVisitaEncuestadors) {
                     serializer.startTag("", "RESULTADO_VISITA_ENCUESTADOR");
@@ -259,7 +258,7 @@ public class ExportarActivity extends AppCompatActivity {
                 serializer.endTag("", "RESULTADOS_VISITA_ENCUESTADOR");
             }
 
-            if(visitaEncuestadors.size()>0) {
+            if(visitaSupervisors.size()>0) {
                 serializer.startTag("", "VISITAS_SUPERVISOR");
                 for (VisitaSupervisor visitaSupervisor : visitaSupervisors) {
                     serializer.startTag("", "VISITA_SUPERVISOR");
@@ -281,7 +280,7 @@ public class ExportarActivity extends AppCompatActivity {
                 serializer.endTag("", "VISITAS_SUPERVISOR");
             }
 
-            if(visitaEncuestadors.size()>0) {
+            if(resVisitaSupervisors.size()>0) {
                 serializer.startTag("", "RESULTADOS_VISITA_SUPERVISOR");
                 for (ResVisitaSupervisor resVisitaSupervisor : resVisitaSupervisors) {
                     serializer.startTag("", "RESULTADO_VISITA_SUPERVISOR");

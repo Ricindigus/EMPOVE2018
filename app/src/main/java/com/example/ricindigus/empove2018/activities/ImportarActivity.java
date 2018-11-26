@@ -117,6 +117,9 @@ public class ImportarActivity extends AppCompatActivity {
         caratula = new Caratula();
         hogares = new ArrayList<>();
         visitaEncuestadors = new ArrayList<>();
+        visitaSupervisors = new ArrayList<>();
+        resVisitaEncuestadors = new ArrayList<>();
+        resVisitaSupervisors = new ArrayList<>();
         funcionario = new Funcionario();
         modulo1V = new Modulo1V();
         modulo1HS = new ArrayList<>();
@@ -267,8 +270,8 @@ public class ImportarActivity extends AppCompatActivity {
             case "RESULTADO_VISITA_SUPERVISOR": agregarVariableVisitaSupervisor(currentVariable,text);break;
             case "FUNCIONARIO":agregarVariableFuncionario(currentVariable,text);break;
             case "MODULO1V":agregarVariableModulo1V(currentVariable,text);break;
-            case "MODULO1H":agregarVariableModulo1H(currentVariable,text);break;
-            case "RESIDENTE":agregarVariableResidente(currentVariable,text);break;
+            case "MODULO1_HOGAR":agregarVariableModulo1H(currentVariable,text);break;
+            case "MODULO2_RESIDENTE":agregarVariableResidente(currentVariable,text);break;
             case "MODULO3":agregarVariableModulo3(currentVariable,text);break;
             case "MODULO4":agregarVariableModulo4(currentVariable,text);break;
             case "MODULO5":agregarVariableModulo5(currentVariable,text);break;
@@ -281,15 +284,15 @@ public class ImportarActivity extends AppCompatActivity {
     private void handleStarTag(String name) {
         switch (name){
             case "CARATULA":currentTag = "CARATULA";break;
-            case "HOGAR":currentTag = "HOGARES";currentHogar = new Hogar();break;
+            case "HOGAR":currentTag = "HOGAR";currentHogar = new Hogar();break;
             case "VISITA_ENCUESTADOR":currentTag = "VISITA_ENCUESTADOR";currentVisitaEncuestador = new VisitaEncuestador();break;
             case "VISITA_SUPERVISOR":currentTag = "VISITA_SUPERVISOR";currentVisitaSupervisor = new VisitaSupervisor();break;
             case "RESULTADO_VISITA_ENCUESTADOR":currentTag = "RESULTADO_VISITA_ENCUESTADOR";currentResVisitaEncuestador = new ResVisitaEncuestador();break;
             case "RESULTADO_VISITA_SUPERVISOR":currentTag = "RESULTADO_VISITA_SUPERVISOR";currentResVisitaSupervisor= new ResVisitaSupervisor();break;
             case "FUNCIONARIO":currentTag = "FUNCIONARIO";break;
             case "MODULO1V":currentTag = "MODULO1V";break;
-            case "MODULO1H":currentTag = "MODULO1H";currentModulo1H = new Modulo1H();break;
-            case "RESIDENTE":currentTag = "RESIDENTE";currentResidente = new Residente();break;
+            case "MODULO1_HOGAR":currentTag = "MODULO1_HOGAR";currentModulo1H = new Modulo1H();break;
+            case "MODULO2_RESIDENTE":currentTag = "MODULO2_RESIDENTE";currentResidente = new Residente();break;
             case "MODULO3":currentTag = "MODULO3";currentModulo3 = new Modulo3();break;
             case "MODULO4":currentTag = "MODULO4";currentModulo4 = new Modulo4();break;
             case "MODULO5":currentTag = "MODULO5";currentModulo5 = new Modulo5();break;
@@ -306,8 +309,8 @@ public class ImportarActivity extends AppCompatActivity {
             case "VISITA_SUPERISOR": visitaSupervisors.add(currentVisitaSupervisor);break;
             case "RESULTADO_VISITA_ENCUESTADOR": resVisitaEncuestadors.add(currentResVisitaEncuestador);break;
             case "RESULTADO_VISITA_SUPERVISOR": resVisitaSupervisors.add(currentResVisitaSupervisor);break;
-            case "MODULO1H": modulo1HS.add(currentModulo1H);break;
-            case "RESIDENTE": residentes.add(currentResidente);break;
+            case "MODULO1_HOGAR": modulo1HS.add(currentModulo1H);break;
+            case "MODULO2_RESIDENTE": residentes.add(currentResidente);break;
             case "MODULO3": modulo3s.add(currentModulo3);break;
             case "MODULO4": modulo4s.add(currentModulo4);break;
             case "MODULO5": modulo5s.add(currentModulo5);break;
@@ -510,10 +513,10 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.modulo1_h_c1_p113_5:currentModulo1H.setC1_p113_5(valor);break;
             case SQLConstantes.modulo1_h_c1_p113_6:currentModulo1H.setC1_p113_6(valor);break;
             case SQLConstantes.modulo1_h_c1_p113_7:currentModulo1H.setC1_p113_7(valor);break;
-            case SQLConstantes.modulo1_h_c1_p113_8:currentModulo1H.setC1_p113_7_o(valor);break;
-            case SQLConstantes.modulo1_h_c1_p113_9:currentModulo1H.setC1_p113_8(valor);break;
-            case SQLConstantes.modulo1_h_c1_p113_7_o:currentModulo1H.setC1_p113_8_o(valor);break;
-            case SQLConstantes.modulo1_h_c1_p113_8_o:currentModulo1H.setC1_p113_9(valor);break;
+            case SQLConstantes.modulo1_h_c1_p113_8:currentModulo1H.setC1_p113_8(valor);break;
+            case SQLConstantes.modulo1_h_c1_p113_9:currentModulo1H.setC1_p113_9(valor);break;
+            case SQLConstantes.modulo1_h_c1_p113_7_o:currentModulo1H.setC1_p113_7_o(valor);break;
+            case SQLConstantes.modulo1_h_c1_p113_8_o:currentModulo1H.setC1_p113_8_o(valor);break;
             case SQLConstantes.modulo1_h_c1_p113_9_o:currentModulo1H.setC1_p113_9_o(valor);break;
             case SQLConstantes.modulo1_h_COB100B:currentModulo1H.setCOB100B(valor);break;
         }
