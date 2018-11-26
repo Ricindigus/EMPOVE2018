@@ -48,33 +48,41 @@ public class ImportarActivity extends AppCompatActivity {
     private Button btnImportar;
     private Button btnVolver;
     private EditText edtArchivo;
-    private VisitaEncuestador currentVisita;
-    private Hogar currentHogar;
-
 
 
     private Caratula caratula;
     private ArrayList<Hogar> hogares;
+    private Hogar currentHogar;
     private ArrayList<VisitaEncuestador> visitaEncuestadors;
+    private VisitaEncuestador currentVisitaEncuestador;
     private ArrayList<VisitaSupervisor> visitaSupervisors;
+    private VisitaEncuestador currentVisitaSupervisor;
     private ResVisitaEncuestador resVisitaEncuestador;
     private ResVisitaSupervisor resVisitaSupervisor;
     private Funcionario funcionario;
     private Modulo1V modulo1V;
     private ArrayList<Modulo1H> modulo1HS;
+    private Modulo1H currentModulo1V;
     private ArrayList<Residente> residentes;
+    private Residente currentResidente;
     private ArrayList<Modulo3> modulo3s;
+    private Modulo3 currentModulo3;
     private ArrayList<M3Pregunta309> m3Pregunta309s;
+    private M3Pregunta309 currentM3Pregunta309;
     private ArrayList<M3Pregunta318> m3Pregunta318s;
+    private M3Pregunta318 currentM3Pregunta318;
     private ArrayList<Modulo4> modulo4s;
+    private Modulo4 currentModulo4;
     private ArrayList<Modulo5> modulo5s;
+    private Modulo5 currentModulo5;
     private ArrayList<Modulo6> modulo6s;
+    private Modulo6 currentModulo6;
     private ArrayList<Modulo7> modulo7s;
+    private Modulo7 currentModulo7;
     private ArrayList<Modulo8> modulo8s;
+    private Modulo8 currentModulo8;
     private String currentTag = null;
     private String currentVariable = null;
-
-
 
 
     @Override
@@ -222,7 +230,8 @@ public class ImportarActivity extends AppCompatActivity {
         switch (name){
             case "CARATULA":currentTag = "CARATULA";break;
             case "HOGAR":currentTag = "HOGARES";currentHogar = new Hogar();break;
-            case "VISITA_ENCUESTADOR":currentTag = "VISITA_ENCUESTADOR";currentVisita = new VisitaEncuestador();break;
+            case "VISITA_ENCUESTADOR":currentTag = "VISITA_ENCUESTADOR";
+                currentVisitaEncuestador = new VisitaEncuestador();break;
             case "FUNCIONARIO":currentTag = "FUNCIONARIO";break;
             case "MODULO1V":currentTag = "MODULO1V";break;
 
@@ -243,7 +252,7 @@ public class ImportarActivity extends AppCompatActivity {
     public void handleEndTag(String name){
         switch (name){
             case "HOGAR": hogares.add(currentHogar);break;
-            case "VISITA_ENCUESTADOR": visitaEncuestadors.add(currentVisita);break;
+            case "VISITA_ENCUESTADOR": visitaEncuestadors.add(currentVisitaEncuestador);break;
 //            case "MODULO5_II":modulo5Dinamicos.add(currentModulo5Dinamico);break;
         }
     }
@@ -295,24 +304,42 @@ public class ImportarActivity extends AppCompatActivity {
 
     public void agregarVariableVisitaEncuestador(String campo, String valor){
         switch (campo){
-            case SQLConstantes.visita_encuestador_id:currentVisita.set_id(valor);break;
-            case SQLConstantes.visita_encuestador_id_vivienda:currentVisita.setId_vivienda(valor);break;
-            case SQLConstantes.visita_encuestador_id_hogar:currentVisita.setId_hogar(valor);break;
-            case SQLConstantes.visita_encuestador_numero:currentVisita.setNumero(valor);break;
-            case SQLConstantes.visita_encuestador_vis_fecha_dd:currentVisita.setVis_fecha_dd(valor);break;
-            case SQLConstantes.visita_encuestador_vis_fecha_mm:currentVisita.setVis_fecha_mm(valor);break;
-            case SQLConstantes.visita_encuestador_vis_fecha_aa:currentVisita.setVis_fecha_aa(valor);break;
-            case SQLConstantes.visita_encuestador_vis_hor_ini:currentVisita.setVis_hor_ini(valor);break;
-            case SQLConstantes.visita_encuestador_vis_min_ini:currentVisita.setVis_min_ini(valor);break;
-            case SQLConstantes.visita_encuestador_vis_hor_fin:currentVisita.setVis_hor_fin(valor);break;
-            case SQLConstantes.visita_encuestador_vis_min_fin:currentVisita.setVis_min_fin(valor);break;
-            case SQLConstantes.visita_encuestador_prox_vis_fecha_dd:currentVisita.setProx_vis_fecha_dd(valor);break;
-            case SQLConstantes.visita_encuestador_prox_vis_fecha_mm:currentVisita.setProx_vis_fecha_mm(valor);break;
-            case SQLConstantes.visita_encuestador_prox_vis_fecha_aa:currentVisita.setProx_vis_fecha_aa(valor);break;
-            case SQLConstantes.visita_encuestador_prox_vis_hor:currentVisita.setProx_vis_hor(valor);break;
-            case SQLConstantes.visita_encuestador_prox_vis_min:currentVisita.setProx_vis_min(valor);break;
-            case SQLConstantes.visita_encuestador_vis_resu:currentVisita.setVis_resu(valor);break;
-            case SQLConstantes.visita_encuestador_vis_resu_esp:currentVisita.setVis_resu_esp(valor);break;
+            case SQLConstantes.visita_encuestador_id:
+                currentVisitaEncuestador.set_id(valor);break;
+            case SQLConstantes.visita_encuestador_id_vivienda:
+                currentVisitaEncuestador.setId_vivienda(valor);break;
+            case SQLConstantes.visita_encuestador_id_hogar:
+                currentVisitaEncuestador.setId_hogar(valor);break;
+            case SQLConstantes.visita_encuestador_numero:
+                currentVisitaEncuestador.setNumero(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_dd:
+                currentVisitaEncuestador.setVis_fecha_dd(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_mm:
+                currentVisitaEncuestador.setVis_fecha_mm(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_aa:
+                currentVisitaEncuestador.setVis_fecha_aa(valor);break;
+            case SQLConstantes.visita_encuestador_vis_hor_ini:
+                currentVisitaEncuestador.setVis_hor_ini(valor);break;
+            case SQLConstantes.visita_encuestador_vis_min_ini:
+                currentVisitaEncuestador.setVis_min_ini(valor);break;
+            case SQLConstantes.visita_encuestador_vis_hor_fin:
+                currentVisitaEncuestador.setVis_hor_fin(valor);break;
+            case SQLConstantes.visita_encuestador_vis_min_fin:
+                currentVisitaEncuestador.setVis_min_fin(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_fecha_dd:
+                currentVisitaEncuestador.setProx_vis_fecha_dd(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_fecha_mm:
+                currentVisitaEncuestador.setProx_vis_fecha_mm(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_fecha_aa:
+                currentVisitaEncuestador.setProx_vis_fecha_aa(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_hor:
+                currentVisitaEncuestador.setProx_vis_hor(valor);break;
+            case SQLConstantes.visita_encuestador_prox_vis_min:
+                currentVisitaEncuestador.setProx_vis_min(valor);break;
+            case SQLConstantes.visita_encuestador_vis_resu:
+                currentVisitaEncuestador.setVis_resu(valor);break;
+            case SQLConstantes.visita_encuestador_vis_resu_esp:
+                currentVisitaEncuestador.setVis_resu_esp(valor);break;
         }
     }
 
@@ -330,19 +357,32 @@ public class ImportarActivity extends AppCompatActivity {
 
     public void agregarVariableVisitaSupervisor(String campo, String valor){
         switch (campo){
-            case SQLConstantes.visita_encuestador_id:currentVisita.set_id(valor);break;
-            case SQLConstantes.visita_encuestador_id_vivienda:currentVisita.setId_vivienda(valor);break;
-            case SQLConstantes.visita_encuestador_id_hogar:currentVisita.setId_hogar(valor);break;
-            case SQLConstantes.visita_encuestador_numero:currentVisita.setNumero(valor);break;
-            case SQLConstantes.visita_encuestador_vis_fecha_dd:currentVisita.setVis_fecha_dd(valor);break;
-            case SQLConstantes.visita_encuestador_vis_fecha_mm:currentVisita.setVis_fecha_mm(valor);break;
-            case SQLConstantes.visita_encuestador_vis_fecha_aa:currentVisita.setVis_fecha_aa(valor);break;
-            case SQLConstantes.visita_encuestador_vis_hor_ini:currentVisita.setVis_hor_ini(valor);break;
-            case SQLConstantes.visita_encuestador_vis_min_ini:currentVisita.setVis_min_ini(valor);break;
-            case SQLConstantes.visita_encuestador_vis_hor_fin:currentVisita.setVis_hor_fin(valor);break;
-            case SQLConstantes.visita_encuestador_vis_min_fin:currentVisita.setVis_min_fin(valor);break;
-            case SQLConstantes.visita_encuestador_vis_resu:currentVisita.setVis_resu(valor);break;
-            case SQLConstantes.visita_encuestador_vis_resu_esp:currentVisita.setVis_resu_esp(valor);break;
+            case SQLConstantes.visita_encuestador_id:
+                currentVisitaEncuestador.set_id(valor);break;
+            case SQLConstantes.visita_encuestador_id_vivienda:
+                currentVisitaEncuestador.setId_vivienda(valor);break;
+            case SQLConstantes.visita_encuestador_id_hogar:
+                currentVisitaEncuestador.setId_hogar(valor);break;
+            case SQLConstantes.visita_encuestador_numero:
+                currentVisitaEncuestador.setNumero(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_dd:
+                currentVisitaEncuestador.setVis_fecha_dd(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_mm:
+                currentVisitaEncuestador.setVis_fecha_mm(valor);break;
+            case SQLConstantes.visita_encuestador_vis_fecha_aa:
+                currentVisitaEncuestador.setVis_fecha_aa(valor);break;
+            case SQLConstantes.visita_encuestador_vis_hor_ini:
+                currentVisitaEncuestador.setVis_hor_ini(valor);break;
+            case SQLConstantes.visita_encuestador_vis_min_ini:
+                currentVisitaEncuestador.setVis_min_ini(valor);break;
+            case SQLConstantes.visita_encuestador_vis_hor_fin:
+                currentVisitaEncuestador.setVis_hor_fin(valor);break;
+            case SQLConstantes.visita_encuestador_vis_min_fin:
+                currentVisitaEncuestador.setVis_min_fin(valor);break;
+            case SQLConstantes.visita_encuestador_vis_resu:
+                currentVisitaEncuestador.setVis_resu(valor);break;
+            case SQLConstantes.visita_encuestador_vis_resu_esp:
+                currentVisitaEncuestador.setVis_resu_esp(valor);break;
         }
     }
 
