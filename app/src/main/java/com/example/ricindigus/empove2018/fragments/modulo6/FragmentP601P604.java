@@ -715,4 +715,5 @@ public class FragmentP601P604 extends FragmentPagina {
         data.close();
         return true;
     }
+
 }

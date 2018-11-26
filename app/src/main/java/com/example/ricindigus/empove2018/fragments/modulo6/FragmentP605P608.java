@@ -264,7 +264,29 @@ public class FragmentP605P608 extends FragmentPagina {
             data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp613p617,"0",idEncuestado);
         }
         POJOLayout pojoLayout1 = data.getLayouts(idEncuestado);
+
+        if (c6_p608.equals("1") || c6_p608.equals("2")){
+            ContentValues contentValues = new ContentValues();
+            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p615,idEncuestado).equals("0")) {
+                contentValues.put(SQLConstantes.layouts_p615, "1");
+                data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
+                data.actualizarValor(SQLConstantes.tablacoberturafragments, SQLConstantes.cobertura_fragments_cp613p617, "0", idEncuestado);
+            }
+        }else{
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.modulo6_c6_p615_esp,"");
+            contentValues.put(SQLConstantes.modulo6_c6_p615_mon,"");
+            data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+
+            contentValues = new ContentValues();
+            contentValues.put(SQLConstantes.layouts_p615,"0");
+            data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
+
+        }
+        POJOLayout pojoLayoutll = data.getLayouts(idEncuestado);
+
         data.close();
+        ocultar_mostrar_fragments_cp613p617();
     }
 
     private void controlarEspecifiqueRadio(RadioGroup group, int checkedId, int opcionEsp, EditText editTextEspecifique) {
@@ -339,4 +361,22 @@ public class FragmentP605P608 extends FragmentPagina {
         return true;
     }
 
+    public void ocultar_mostrar_fragments_cp613p617(){
+        Data data = new Data(context);
+        data.open();
+        if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p613,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p614,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p615,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p616,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p617,idEncuestado).equals("0")) {
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,idEncuestado).equals("1")){
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,"-1",idEncuestado);
+            }
+        }else{
+            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,idEncuestado).equals("-1")){
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p613p617,"1",idEncuestado);
+            }
+        }
+        data.close();
+    }
 }

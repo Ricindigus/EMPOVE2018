@@ -170,7 +170,7 @@ public class AgregarRutaActivity extends AppCompatActivity {
     public boolean validarDatos(){
         llenarVariables();
         if(pais == 0){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL PAIS");return false;}
-        if(ciudad.trim().equals("")){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL CIUDAD");return false;}
+        if(ciudad.trim().equals("")){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR LA CIUDAD");return false;}
         if(modo == 0){mostrarMensaje("AGREGAR RUTA: DEBE SELECCIONAR EL MODO DE TRANSPORTE");return false;}
         if(mes == 0){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL MES");return false;}
         if(anio == 0){mostrarMensaje("AGREGAR RUTA: DEBE INDICAR EL AÑO");return false;}

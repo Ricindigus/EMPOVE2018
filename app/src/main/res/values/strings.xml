@@ -284,7 +284,7 @@
     <string name="modulo_2_cab_sexo">Sexo</string>
     <string name="modulo_2_cab_edad">Edad</string>
     <string name="modulo_2_cab_estado_civil">Estado Civil</string>
-    <string name="modulo_2_cab_llego_venezuela">Venezolano(a)</string>
+    <string name="modulo_2_cab_llego_venezuela">¿Migro de Venezuela?</string>
 
 
     <string name="modulo_2_p202_nombre">Primer Nombre</string>
@@ -507,7 +507,7 @@
     <string name="modulo_4_submenu_3">Preguntas 408 - 410</string>
     <string name="modulo_4_submenu_4">Preguntas 411 - 416</string>
 
-    <string name="modulo_4_p401">401. ¿EL SISTEMA DE SEGURO DE SALUD AL CUAL USTED ESTA AFILIADO ACTUALNMENTE, ES:</string>
+    <string name="modulo_4_p401">401. ¿EL SISTEMA DE SEGURO DE SALUD AL CUAL USTED ESTA AFILIADO "ACTUALMENTE, ES:</string>
     <string name="modulo_4_p401_ind">(Lea cada una de las alternativas y seleccione uno o más códigos)</string>
     <string name="modulo_4_p401_sp1">1.ESSALUD?</string>
     <string name="modulo_4_p401_sp2">2.Seguro de Privado de Salud?</string>

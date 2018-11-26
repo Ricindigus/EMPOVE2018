@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +32,11 @@ import android.widget.TextView;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Marco;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.modelo.pojos.Ubigeo;
+import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -62,6 +66,10 @@ public class FragmentP310P312 extends FragmentPagina {
     private String c3_p312_prov;
     private String c3_p312_dep;
 
+    String idHogar;
+    String idVivienda;
+    String cod_dd="", cod_pp="", cod_di="",depa="",prov="",dist="";
+
     public FragmentP310P312() {
         // Required empty public constructor
     }
@@ -70,6 +78,20 @@ public class FragmentP310P312 extends FragmentPagina {
     public FragmentP310P312(String idEncuestado, Context contexto) {
         this.idEncuestado = idEncuestado;
         this.contexto = contexto;
+        Data data = new Data(contexto);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        Marco marco = data.getMarco(idVivienda);
+        Log.e("marco.getCcdd", "FragmentP310P312: "+ marco.getDepartamento());
+        Log.e("marco.getCcpp", "FragmentP310P312: "+ marco.getProvincia());
+        Log.e("marco.getCcdi", "FragmentP310P312: "+ marco.getDistrito());
+        cod_dd = marco.getCcdd(); depa = marco.getDepartamento();
+        cod_pp = marco.getCcpp(); prov = marco.getProvincia();
+        cod_di = marco.getCcdi(); dist  = marco.getDistrito();
+        data.close();
     }
 
     @Override
@@ -277,6 +299,9 @@ public class FragmentP310P312 extends FragmentPagina {
         if (c3_p311.equals("-1")){mostrarMensaje("PREGUNTA 311: DEBE MARCAR UNA OPCIÓN"); return false;}
         if(lytp312.getVisibility() == View.VISIBLE){
             if (txtDepartamento.getText().toString().equals("")){mostrarMensaje("PREGUNTA 312: DEBE INDICAR EL UBIGEO"); return false;}
+            if(c3_p312_dep.equals(cod_dd) && c3_p312_prov.equals(cod_pp) && c3_p312_dist.equals(cod_di)){
+                mostrarMensaje("PREGUNTA 312: DEBE SER DIFERENTE A SU UBICACIÓN ACTUAL, DISTRITO/PROVINCIA/DEPARTAMENTO ("+dist+"/"+prov+"/"+depa+")"); return false;
+            }
         }else{
             c3_p312_dist = "";
             c3_p312_prov = "";
