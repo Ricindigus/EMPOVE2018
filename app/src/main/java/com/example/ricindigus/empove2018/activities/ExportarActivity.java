@@ -169,8 +169,8 @@ public class ExportarActivity extends AppCompatActivity {
         for (Residente residente : residentes){
             if (residente.getC2_p207().equals("1")){
                 pojoFragments.add(data.getFragmentsLayouts(residente.get_id()));
-                pojoFragmentViviendas.add(data.getFragmentsVivienda(residente.get_id()));
-                pojoFragmentHogars.add(data.getFragmentsHogar(residente.get_id()));
+                pojoFragmentViviendas.add(data.getFragmentsVivienda(residente.getId_vivienda()));
+                pojoFragmentHogars.add(data.getFragmentsHogar(residente.getId_hogar()));
                 pojoLayouts.add(data.getLayouts(residente.get_id()));
                 coberturaFragments.add(data.getCoberturaFragments(residente.get_id()));
             }
