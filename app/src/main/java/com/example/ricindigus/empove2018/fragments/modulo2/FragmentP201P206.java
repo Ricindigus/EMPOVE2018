@@ -28,8 +28,6 @@ import com.example.ricindigus.empove2018.adapters.ResidenteAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
-import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
-import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 
@@ -85,13 +83,16 @@ public class FragmentP201P206 extends FragmentPagina {
             @Override
             public void onClick(View v) {
                 int num = (residentes.size()+1);
-                Intent intent = new Intent(context, AgregarResidenteActivity.class);
-                intent.putExtra("idEncuestado",idHogar + "_" + num);
-                intent.putExtra("numero", num + "");
-                intent.putExtra("idHogar", idHogar);
-                intent.putExtra("idVivienda", idVivienda);
-                intent.putExtra("idJefeHogar", residentes.get(0).get_id());
-                startActivity(intent);
+                if (residentes.get(0).getCOB200().equals("1")){
+                    Intent intent = new Intent(context, AgregarResidenteActivity.class);
+                    intent.putExtra("idEncuestado",idHogar + "_" + num);
+                    intent.putExtra("numero", num + "");
+                    intent.putExtra("idHogar", idHogar);
+                    intent.putExtra("idVivienda", idVivienda);
+                    intent.putExtra("idJefeHogar", residentes.get(0).get_id());
+                    startActivity(intent);
+                }else { mostrarMensaje("ANTES DE INGRESAR ALGÚN MIEMBRO DEL HOGAR, DEBE COMPLETAR LA INFORMACIÓN DEL JEFE DE HOGAR");}
+
             }
         });
         cargarDatos();
@@ -121,6 +122,18 @@ public class FragmentP201P206 extends FragmentPagina {
     @Override
     public void llenarVista() {
 
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override
@@ -243,7 +256,7 @@ public class FragmentP201P206 extends FragmentPagina {
         String idDelEncuestado = residentes.get(position).get_id();
         data.eliminarDato(SQLConstantes.tablaresidentes,idDelEncuestado);
         data.eliminarDato(SQLConstantes.tablamodulo3,idDelEncuestado);
-        data.eliminarDatos(SQLConstantes.tablam3p309rutas,SQLConstantes.modulo3_p309_idEncuestado,idDelEncuestado);
+        data.eliminarDatos(SQLConstantes.tablam3p309rutas,SQLConstantes.modulo3_p309_id_encuestado,idDelEncuestado);
         data.eliminarDatos(SQLConstantes.tablam3p318personas,SQLConstantes.modulo3_p318_idEncuestado,idDelEncuestado);
         data.eliminarDato(SQLConstantes.tablamodulo4,idDelEncuestado);
         data.eliminarDato(SQLConstantes.tablamodulo5,idDelEncuestado);

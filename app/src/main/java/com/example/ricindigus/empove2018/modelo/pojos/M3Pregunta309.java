@@ -134,7 +134,7 @@ public class M3Pregunta309 {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo3_p309_id,_id);
-        contentValues.put(SQLConstantes.modulo3_p309_idEncuestado,id_encuestado);
+        contentValues.put(SQLConstantes.modulo3_p309_id_encuestado,id_encuestado);
         contentValues.put(SQLConstantes.modulo3_p309_id_vivienda,id_vivienda);
         contentValues.put(SQLConstantes.modulo3_p309_numero,numero);
         contentValues.put(SQLConstantes.modulo3_c3_p309_p,c3_p309_p);

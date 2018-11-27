@@ -368,7 +368,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             }
         }
         data.close();
-        if(edadJefeHogar.equals("0")) mostrarMensaje("ANTES DE INGRESAR ALGUN MIEMBRO DEL HOGAR, DEBE COMPLETAR LA INFORMACION DEL JEFE DEL HOGAR");
+
     }
 
     @Override
@@ -407,9 +407,12 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             if(!data.existeElemento(SQLConstantes.tablalayouts,_id)){
                 POJOLayout pojoLayout = new POJOLayout();
                 pojoLayout.set_id(_id);
+                pojoLayout.setId_vivienda(id_vivienda);
                 data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
                 POJOFragment pojoFragment = new POJOFragment(_id);
+                pojoFragment.setId_vivienda(id_vivienda);
                 CoberturaFragment coberturaFragment = new CoberturaFragment(_id);
+                coberturaFragment.setId_vivienda(id_vivienda);
                 data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
                 data.insertarElemento(SQLConstantes.tablacoberturafragments,coberturaFragment.toValues());
             }

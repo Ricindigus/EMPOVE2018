@@ -49,6 +49,15 @@
                     android:gravity="center"
                     android:background="@color/greyBluePrimaryLight"/>
             </LinearLayout>
+            <EditText
+                android:id="@+id/mod8_edittext_email"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/input_text_enabled"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="8dp"
+                android:layout_margin="8dp"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

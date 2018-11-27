@@ -1423,7 +1423,7 @@ public class Data {
             while(cursor.moveToNext()){
                 M3Pregunta309 m3Pregunta309 = new M3Pregunta309();
                 m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
-                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_idEncuestado)));
+                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id_encuestado)));
                 m3Pregunta309.setC3_p309_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p)));
                 m3Pregunta309.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_numero)));
                 m3Pregunta309.setC3_p309_p_nom(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p_nom)));
@@ -1451,7 +1451,7 @@ public class Data {
             while(cursor.moveToNext()){
                 M3Pregunta309 m3Pregunta309 = new M3Pregunta309();
                 m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
-                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_idEncuestado)));
+                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id_encuestado)));
                 m3Pregunta309.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id_vivienda)));
                 m3Pregunta309.setC3_p309_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p)));
                 m3Pregunta309.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_numero)));
@@ -1481,7 +1481,7 @@ public class Data {
                 cursor.moveToFirst();
                 m3Pregunta309 = new M3Pregunta309();
                 m3Pregunta309.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id)));
-                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_idEncuestado)));
+                m3Pregunta309.setId_encuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_id_encuestado)));
                 m3Pregunta309.setC3_p309_p(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p)));
                 m3Pregunta309.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p309_numero)));
                 m3Pregunta309.setC3_p309_p_nom(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p309_p_nom)));
@@ -2475,6 +2475,7 @@ public class Data {
                 modulo8.setC8_p823_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_5)));
                 modulo8.setC8_p823_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_o)));
                 modulo8.setObs_cap8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_obs_cap8)));
+                modulo8.setEmail(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_email)));
                 modulo8.setCOB800(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_COB800)));
             }
         }finally {
@@ -2625,6 +2626,7 @@ public class Data {
                 modulo8.setC8_p823_4(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_4)));
                 modulo8.setC8_p823_5(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_c8_p823_5)));
                 modulo8.setObs_cap8(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_obs_cap8)));
+                modulo8.setEmail(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_email)));
                 modulo8.setCOB800(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo8_COB800)));
                 modulo8s.add(modulo8);
             }
@@ -2646,6 +2648,7 @@ public class Data {
                 cursor.moveToFirst();
                 pojoLayout = new POJOLayout();
                 pojoLayout.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.layouts_id)));
+                pojoLayout.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.layouts_id_vivienda)));
                 pojoLayout.setP301(cursor.getString(cursor.getColumnIndex(SQLConstantes.layouts_p301)));
                 pojoLayout.setP302(cursor.getString(cursor.getColumnIndex(SQLConstantes.layouts_p302)));
                 pojoLayout.setP303(cursor.getString(cursor.getColumnIndex(SQLConstantes.layouts_p303)));
@@ -2775,6 +2778,7 @@ public class Data {
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 coberturaFragment = new CoberturaFragment(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_id)));
+                coberturaFragment.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_id_vivienda)));
                 coberturaFragment.setCp301p305(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp301p305)));
                 coberturaFragment.setCp306p308(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp306p308)));
                 coberturaFragment.setCp309(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp309)));
@@ -2822,6 +2826,7 @@ public class Data {
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 pojoFragment = new POJOFragment(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_id)));
+                pojoFragment.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_id_vivienda)));
                 pojoFragment.setP301p305(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p301p305)));
                 pojoFragment.setP306p308(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p306p308)));
                 pojoFragment.setP309(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_p309)));
@@ -2890,6 +2895,7 @@ public class Data {
                 cursor.moveToFirst();
                 pojoFragmentHogar = new POJOFragmentHogar();
                 pojoFragmentHogar.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_id)));
+                pojoFragmentHogar.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_id_vivienda)));
                 pojoFragmentHogar.setVisitas_encuestador(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_visitas_encuestador)));
                 pojoFragmentHogar.setVisitas_supervisor(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_visitas_supervisor)));
                 pojoFragmentHogar.setFuncionarios(cursor.getString(cursor.getColumnIndex(SQLConstantes.fragments_hogar_funcionarios)));

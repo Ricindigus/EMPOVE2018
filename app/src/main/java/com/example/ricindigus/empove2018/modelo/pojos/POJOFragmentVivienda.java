@@ -16,7 +16,9 @@ public class POJOFragmentVivienda {
     }
 
     public POJOFragmentVivienda() {
-
+        this._id= "";
+        caratula="";
+        hogares = "";
     }
 
     public String get_id() {

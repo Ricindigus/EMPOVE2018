@@ -50,6 +50,7 @@ public class FragmentP821P823 extends FragmentPagina {
     CheckBox c8_p823_1_Checkbox, c8_p823_2_Checkbox, c8_p823_3_Checkbox , c8_p823_4_Checkbox, c8_p823_5_Checkbox;
     EditText c8_p823_o_EditText;
     LinearLayout m8_p821_linearlayout, m8_p822_linearlayout, m8_p823_linearlayout;
+    EditText etEmail;
 
     private String c8_p821_1;
     private String c8_p821_2;
@@ -66,6 +67,8 @@ public class FragmentP821P823 extends FragmentPagina {
     private String c8_p823_4;
     private String c8_p823_5;
     private String c8_p823_o;
+    private String email;
+
 
     @SuppressLint("ValidFragment")
     public FragmentP821P823(String idEncuestado, Context context) {
@@ -112,6 +115,8 @@ public class FragmentP821P823 extends FragmentPagina {
         m8_p821_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p821);
         m8_p822_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p822);
         m8_p823_linearlayout = (LinearLayout) rootView.findViewById(R.id.layout_m8_p823);
+
+        etEmail = (EditText) rootView.findViewById(R.id.mod8_edittext_email);
 
         return rootView;
     }
@@ -166,6 +171,8 @@ public class FragmentP821P823 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo8_c8_p823_4,c8_p823_4);
         contentValues.put(SQLConstantes.modulo8_c8_p823_5,c8_p823_5);
         contentValues.put(SQLConstantes.modulo8_c8_p823_o,c8_p823_o);
+        contentValues.put(SQLConstantes.modulo8_email,email);
+
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
             Modulo8 modulo8 = new Modulo8();
             modulo8.set_id(idEncuestado);
@@ -202,6 +209,9 @@ public class FragmentP821P823 extends FragmentPagina {
         if(c8_p823_4_Checkbox.isChecked()) c8_p823_4 = "1"; else c8_p823_4 = "0";
         if(c8_p823_5_Checkbox.isChecked()) c8_p823_5 = "1"; else c8_p823_5 = "0";
         c8_p823_o = c8_p823_o_EditText.getText().toString();
+        email = etEmail.getText().toString();
+
+
     }
 
     @Override
@@ -230,6 +240,7 @@ public class FragmentP821P823 extends FragmentPagina {
             if(modulo8.getC8_p823_4().equals("1")) c8_p823_4_Checkbox.setChecked(true);
             if(modulo8.getC8_p823_5().equals("1")) c8_p823_5_Checkbox.setChecked(true);
             c8_p823_o_EditText.setText(modulo8.getC8_p823_o());
+            etEmail.setText(modulo8.getEmail());
         }
         data.close();
     }
@@ -271,6 +282,9 @@ public class FragmentP821P823 extends FragmentPagina {
                 }
             }
         }
+
+        if (email.trim().equals("")){mostrarMensaje("PREGUNTA EMAIL: DEBE INDICAR EL EMAIL");
+            return false;}
 
         return true;
     }

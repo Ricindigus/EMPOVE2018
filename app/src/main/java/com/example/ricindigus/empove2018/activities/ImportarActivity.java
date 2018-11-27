@@ -12,6 +12,7 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
+import com.example.ricindigus.empove2018.modelo.pojos.CoberturaFragment;
 import com.example.ricindigus.empove2018.modelo.pojos.Funcionario;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.modelo.pojos.M3Pregunta309;
@@ -24,6 +25,10 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentHogar;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentVivienda;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaEncuestador;
 import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaSupervisor;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
@@ -83,6 +88,16 @@ public class ImportarActivity extends AppCompatActivity {
     private Modulo7 currentModulo7;
     private ArrayList<Modulo8> modulo8s;
     private Modulo8 currentModulo8;
+    private POJOFragmentVivienda pojoFragmentVivienda;
+    private ArrayList<POJOFragmentHogar> pojoFragmentHogars;
+    private POJOFragmentHogar currentPojoFragmentHogar;
+    private ArrayList<POJOFragment> pojoFragments;
+    private POJOFragment currentPojoFragment;
+    private ArrayList<POJOLayout> pojoLayouts;
+    private POJOLayout currentPojoLayout;
+    private ArrayList<CoberturaFragment> coberturaFragments;
+    private CoberturaFragment currentCoberturaFragment;
+
     private String currentTag = null;
     private String currentVariable = null;
 
@@ -132,6 +147,11 @@ public class ImportarActivity extends AppCompatActivity {
         modulo6s = new ArrayList<>();
         modulo7s = new ArrayList<>();
         modulo8s = new ArrayList<>();
+        pojoFragmentVivienda = new POJOFragmentVivienda();
+        pojoFragmentHogars = new ArrayList<>();
+        pojoFragments = new ArrayList<>();
+        pojoLayouts = new ArrayList<>();
+        coberturaFragments = new ArrayList<>();
 
         XmlPullParserFactory factory;
         FileInputStream fis = null;
@@ -210,6 +230,20 @@ public class ImportarActivity extends AppCompatActivity {
                     data.insertarElemento(SQLConstantes.tablamodulo3,modulo3.toValues());
             }
 
+            //insertar modulos 3 pregunta 309 rutas
+            if(m3Pregunta309s.size()>0){
+                data.eliminarDatos(SQLConstantes.tablam3p309rutas,SQLConstantes.modulo3_p309_id_vivienda,idVivienda);
+                for (M3Pregunta309 m3Pregunta309 : m3Pregunta309s)
+                    data.insertarElemento(SQLConstantes.tablam3p309rutas,m3Pregunta309.toValues());
+            }
+
+            //insertar modulos 3 pregunta 309 rutas
+            if(m3Pregunta318s.size()>0){
+                data.eliminarDatos(SQLConstantes.tablam3p318personas,SQLConstantes.modulo3_p318_id_vivienda,idVivienda);
+                for (M3Pregunta318 m3Pregunta318 : m3Pregunta318s)
+                    data.insertarElemento(SQLConstantes.tablam3p318personas,m3Pregunta318.toValues());
+            }
+
             //insertar modulos 4
             if(modulo4s.size()>0){
                 data.eliminarDatos(SQLConstantes.tablamodulo4,SQLConstantes.modulo4_id_vivienda,idVivienda);
@@ -240,6 +274,41 @@ public class ImportarActivity extends AppCompatActivity {
                 for (Modulo8 modulo8 : modulo8s)
                     data.insertarElemento(SQLConstantes.tablamodulo8,modulo8.toValues());
             }
+            //insertar el fragment vivienda
+            if(!pojoFragmentVivienda.get_id().equals("")){ data.eliminarDato(SQLConstantes.tablafragmentsvivienda,idVivienda);data.insertarElemento(SQLConstantes.tablafragmentsvivienda,pojoFragmentVivienda.toValues()); }
+
+            // insertar fragments hogares
+            if(pojoFragmentHogars.size()>0){
+                data.eliminarDatos(SQLConstantes.tablafragmentshogar,SQLConstantes.fragments_hogar_id_vivienda,idVivienda);
+                for (POJOFragmentHogar fragmentHogar : pojoFragmentHogars){
+                    data.insertarElemento(SQLConstantes.tablafragmentshogar,fragmentHogar.toValues());
+                }
+            }
+
+            // insertar fragments
+            if(pojoFragments.size()>0){
+                data.eliminarDatos(SQLConstantes.tablafragments,SQLConstantes.fragments_id_vivienda,idVivienda);
+                for (POJOFragment pojoFragment : pojoFragments){
+                    data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
+                }
+            }
+
+            // insertar fragments
+            if(pojoLayouts.size()>0){
+                data.eliminarDatos(SQLConstantes.tablalayouts,SQLConstantes.layouts_id_vivienda,idVivienda);
+                for (POJOLayout pojoLayout : pojoLayouts){
+                    data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
+                }
+            }
+
+            // insertar cobertura fragments
+            if(coberturaFragments.size()>0){
+                data.eliminarDatos(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_id,idVivienda);
+                for (CoberturaFragment coberturaFragment : coberturaFragments){
+                    data.insertarElemento(SQLConstantes.tablacoberturafragments,coberturaFragment.toValues());
+                }
+            }
+
             data.close();
 //            txtImportar.setText(sb.toString());
         } catch (XmlPullParserException e) {
@@ -259,25 +328,32 @@ public class ImportarActivity extends AppCompatActivity {
     }
 
     private void handleText(String text) {
-        String xmlText = text;
         switch (currentTag){
-
             case "CARATULA":agregarVariableCaratula(currentVariable,text);break;
             case "HOGAR":agregarVariableHogar(currentVariable,text);break;
             case "VISITA_ENCUESTADOR": agregarVariableVisitaEncuestador(currentVariable,text);break;
             case "VISITA_SUPERVISOR": agregarVariableVisitaSupervisor(currentVariable,text);break;
-            case "RESULTADO_VISITA_ENCUESTADOR": agregarVariableVisitaEncuestador(currentVariable,text);break;
-            case "RESULTADO_VISITA_SUPERVISOR": agregarVariableVisitaSupervisor(currentVariable,text);break;
+            case "RESULTADO_VISITA_ENCUESTADOR": agregarVariableResultadoEncuestador(currentVariable,text);break;
+            case "RESULTADO_VISITA_SUPERVISOR": agregarVariableResultadoSupervisor(currentVariable,text);break;
             case "FUNCIONARIO":agregarVariableFuncionario(currentVariable,text);break;
             case "MODULO1V":agregarVariableModulo1V(currentVariable,text);break;
             case "MODULO1_HOGAR":agregarVariableModulo1H(currentVariable,text);break;
             case "MODULO2_RESIDENTE":agregarVariableResidente(currentVariable,text);break;
             case "MODULO3":agregarVariableModulo3(currentVariable,text);break;
+            case "M3P309RUTA":agregarVariableM3P309(currentVariable,text);break;
+            case "M3P318PERSONA":agregarVariableM3P318(currentVariable,text);break;
             case "MODULO4":agregarVariableModulo4(currentVariable,text);break;
             case "MODULO5":agregarVariableModulo5(currentVariable,text);break;
             case "MODULO6":agregarVariableModulo6(currentVariable,text);break;
             case "MODULO7":agregarVariableModulo7(currentVariable,text);break;
             case "MODULO8":agregarVariableModulo8(currentVariable,text);break;
+            case "FRAGMENT_VIVIENDA":agregarVariableFragmentVivienda(currentVariable,text);break;
+            case "FRAGMENT_HOGAR":agregarVariableFragmentHogar(currentVariable,text);break;
+            case "FRAGMENT_ENCUESTADO":agregarVariableFragmentEncuestado(currentVariable,text);break;
+            case "LAYOUT_ENCUESTADO":agregarVariableLayout(currentVariable,text);break;
+            case "COBERTURA_FRAGMENT":agregarVariableCoberturaFragment(currentVariable,text);break;
+
+
         }
     }
 
@@ -294,11 +370,18 @@ public class ImportarActivity extends AppCompatActivity {
             case "MODULO1_HOGAR":currentTag = "MODULO1_HOGAR";currentModulo1H = new Modulo1H();break;
             case "MODULO2_RESIDENTE":currentTag = "MODULO2_RESIDENTE";currentResidente = new Residente();break;
             case "MODULO3":currentTag = "MODULO3";currentModulo3 = new Modulo3();break;
+            case "M3P309RUTA":currentTag = "M3P309RUTA";currentM3Pregunta309 = new M3Pregunta309();break;
+            case "M3P318PERSONA":currentTag = "M3P318PERSONA";currentM3Pregunta318 = new M3Pregunta318();break;
             case "MODULO4":currentTag = "MODULO4";currentModulo4 = new Modulo4();break;
             case "MODULO5":currentTag = "MODULO5";currentModulo5 = new Modulo5();break;
             case "MODULO6":currentTag = "MODULO6";currentModulo6 = new Modulo6();break;
             case "MODULO7":currentTag = "MODULO7";currentModulo7 = new Modulo7();break;
             case "MODULO8":currentTag = "MODULO8";currentModulo8 = new Modulo8();break;
+            case "FRAGMENT_VIVIENDA":currentTag = "FRAGMENT_VIVIENDA";break;
+            case "FRAGMENT_HOGAR":currentTag = "FRAGMENT_HOGAR";currentPojoFragmentHogar = new POJOFragmentHogar();break;
+            case "FRAGMENT_ENCUESTADO":currentTag = "FRAGMENT_ENCUESTADO";currentPojoFragment = new POJOFragment();break;
+            case "LAYOUT_ENCUESTADO":currentTag = "LAYOUT_ENCUESTADO";currentPojoLayout = new POJOLayout();break;
+            case "COBERTURA_FRAGMENT":currentTag = "COBERTURA_FRAGMENT";currentCoberturaFragment = new CoberturaFragment();break;
             default: currentVariable = name;break;
         }
     }
@@ -312,11 +395,17 @@ public class ImportarActivity extends AppCompatActivity {
             case "MODULO1_HOGAR": modulo1HS.add(currentModulo1H);break;
             case "MODULO2_RESIDENTE": residentes.add(currentResidente);break;
             case "MODULO3": modulo3s.add(currentModulo3);break;
+            case "M3P309RUTA": m3Pregunta309s.add(currentM3Pregunta309);break;
+            case "M3P318PERSONA": m3Pregunta318s.add(currentM3Pregunta318);break;
             case "MODULO4": modulo4s.add(currentModulo4);break;
             case "MODULO5": modulo5s.add(currentModulo5);break;
             case "MODULO6": modulo6s.add(currentModulo6);break;
             case "MODULO7": modulo7s.add(currentModulo7);break;
             case "MODULO8": modulo8s.add(currentModulo8);break;
+            case "FRAGMENT_HOGAR": pojoFragmentHogars.add(currentPojoFragmentHogar);break;
+            case "FRAGMENT_ENCUESTADO": pojoFragments.add(currentPojoFragment);break;
+            case "LAYOUT_ENCUESTADO": pojoLayouts.add(currentPojoLayout);break;
+            case "COBERTURA_FRAGMENT": coberturaFragments.add(currentCoberturaFragment);break;
         }
     }
 
@@ -366,6 +455,8 @@ public class ImportarActivity extends AppCompatActivity {
                 case SQLConstantes.hogar_nroviven:currentHogar.setNroviven(valor);break;
                 case SQLConstantes.hogar_nropersonas:currentHogar.setNropersonas(valor);break;
                 case SQLConstantes.hogar_vive:currentHogar.setVive(valor);break;
+                case SQLConstantes.hogar_principal:currentHogar.setPrincipal(valor);break;
+                case SQLConstantes.hogar_cobertura:currentHogar.setCobertura(valor);break;
             }
         }
     }
@@ -587,6 +678,40 @@ public class ImportarActivity extends AppCompatActivity {
                 case SQLConstantes.modulo3_c3_p318:currentModulo3.setC3_p318(valor);break;
                 case SQLConstantes.modulo3_obs_cap3:currentModulo3.setObs_cap3(valor);break;
                 case SQLConstantes.modulo3_COB300:currentModulo3.setCOB300(valor);break;
+            }
+        }
+    }
+
+    public void agregarVariableM3P309(String campo, String valor){
+        if (valor != null){
+            switch (campo){
+                case SQLConstantes.modulo3_p309_id:currentM3Pregunta309.set_id(valor);break;
+                case SQLConstantes.modulo3_p309_id_encuestado:currentM3Pregunta309.setId_encuestado(valor);break;
+                case SQLConstantes.modulo3_p309_id_vivienda:currentM3Pregunta309.setId_vivienda(valor);break;
+                case SQLConstantes.modulo3_p309_numero:currentM3Pregunta309.setNumero(valor);break;
+                case SQLConstantes.modulo3_c3_p309_p:currentM3Pregunta309.setC3_p309_p(valor);break;
+                case SQLConstantes.modulo3_c3_p309_p_nom:currentM3Pregunta309.setC3_p309_p_nom(valor);break;
+                case SQLConstantes.modulo3_c3_p309_c:currentM3Pregunta309.setC3_p309_c(valor);break;
+                case SQLConstantes.modulo3_c3_p309_mod:currentM3Pregunta309.setC3_p309_mod(valor);break;
+                case SQLConstantes.modulo3_c3_p309_m:currentM3Pregunta309.setC3_p309_m(valor);break;
+                case SQLConstantes.modulo3_c3_p309_a:currentM3Pregunta309.setC3_p309_a(valor);break;
+                case SQLConstantes.modulo3_c3_p309_m_cod:currentM3Pregunta309.setC3_p309_m_cod(valor);break;
+                case SQLConstantes.modulo3_c3_p309_a_cod:currentM3Pregunta309.setC3_p309_a_cod(valor);break;
+            }
+        }
+    }
+
+    public void agregarVariableM3P318(String campo, String valor){
+        if (valor != null){
+            switch (campo){
+                case SQLConstantes.modulo3_p318_id:currentM3Pregunta318.set_id(valor);break;
+                case SQLConstantes.modulo3_p318_idEncuestado:currentM3Pregunta318.setIdEncuestado(valor);break;
+                case SQLConstantes.modulo3_p318_id_vivienda:currentM3Pregunta318.setId_vivienda(valor);break;
+                case SQLConstantes.modulo3_p318_numero:currentM3Pregunta318.setNumero(valor);break;
+                case SQLConstantes.modulo3_c3_p318_f:currentM3Pregunta318.setC3_p318_f(valor);break;
+                case SQLConstantes.modulo3_c3_p318_s:currentM3Pregunta318.setC3_p318_s(valor);break;
+                case SQLConstantes.modulo3_c3_p318_e:currentM3Pregunta318.setC3_p318_e(valor);break;
+                case SQLConstantes.modulo3_c3_p318_p:currentM3Pregunta318.setC3_p318_p(valor);break;
             }
         }
     }
@@ -923,6 +1048,8 @@ public class ImportarActivity extends AppCompatActivity {
         }
     }
 
+
+
     public void agregarVariableModulo8(String campo, String valor){
         if (valor != null){
             switch (campo){
@@ -1060,7 +1187,232 @@ public class ImportarActivity extends AppCompatActivity {
                 case SQLConstantes.modulo8_c8_p823_5:currentModulo8.setC8_p823_5(valor);break;
                 case SQLConstantes.modulo8_c8_p823_o:currentModulo8.setC8_p823_o(valor);break;
                 case SQLConstantes.modulo8_obs_cap8:currentModulo8.setObs_cap8(valor);break;
+                case SQLConstantes.modulo8_email:currentModulo8.setEmail(valor);break;
                 case SQLConstantes.modulo8_COB800:currentModulo8.setCOB800(valor);break;
+            }
+        }
+    }
+
+
+    public void agregarVariableFragmentVivienda(String campo, String valor){
+        if (valor != null){
+            switch (campo){
+                case SQLConstantes.fragments_vivienda_id: pojoFragmentVivienda.set_id(valor);break;
+                case SQLConstantes.fragments_vivienda_caratula: pojoFragmentVivienda.setCaratula(valor);break;
+                case SQLConstantes.fragments_vivienda_hogares: pojoFragmentVivienda.setHogares(valor);break;
+            }
+        }
+    }
+
+    public void agregarVariableFragmentHogar(String campo, String valor){
+        if (valor != null){
+            switch (campo){
+                case SQLConstantes.fragments_hogar_id:currentPojoFragmentHogar.set_id(valor);break;
+                case SQLConstantes.fragments_hogar_id_vivienda:currentPojoFragmentHogar.setId_vivienda(valor);break;
+                case SQLConstantes.fragments_hogar_visitas_encuestador:currentPojoFragmentHogar.setVisitas_encuestador(valor);break;
+                case SQLConstantes.fragments_hogar_visitas_supervisor:currentPojoFragmentHogar.setVisitas_supervisor(valor);break;
+                case SQLConstantes.fragments_hogar_funcionarios:currentPojoFragmentHogar.setFuncionarios(valor);break;
+                case SQLConstantes.fragments_hogar_p101p107:currentPojoFragmentHogar.setP101p107(valor);break;
+                case SQLConstantes.fragments_hogar_p108p113:currentPojoFragmentHogar.setP108p113(valor);break;
+                case SQLConstantes.fragments_hogar_p201p207:currentPojoFragmentHogar.setP201p207(valor);break;
+            }
+        }
+    }
+
+    public void agregarVariableFragmentEncuestado(String campo, String valor){
+        if (valor != null){
+            switch (campo){
+                case SQLConstantes.fragments_id:currentPojoFragment.set_id(valor);break;
+                case SQLConstantes.fragments_id_vivienda:currentPojoFragment.setId_vivienda(valor);break;
+                case SQLConstantes.fragments_p301p305:currentPojoFragment.setP301p305(valor);break;
+                case SQLConstantes.fragments_p306p308:currentPojoFragment.setP306p308(valor);break;
+                case SQLConstantes.fragments_p309:currentPojoFragment.setP309(valor);break;
+                case SQLConstantes.fragments_p310p312:currentPojoFragment.setP310p312(valor);break;
+                case SQLConstantes.fragments_p313p317:currentPojoFragment.setP313p317(valor);break;
+                case SQLConstantes.fragments_p318:currentPojoFragment.setP318(valor);break;
+                case SQLConstantes.fragments_p401p404:currentPojoFragment.setP401p404(valor);break;
+                case SQLConstantes.fragments_p405p407:currentPojoFragment.setP405p407(valor);break;
+                case SQLConstantes.fragments_p408p410:currentPojoFragment.setP408p410(valor);break;
+                case SQLConstantes.fragments_p411p416:currentPojoFragment.setP411p416(valor);break;
+                case SQLConstantes.fragments_p501p505:currentPojoFragment.setP501p505(valor);break;
+                case SQLConstantes.fragments_p506p507:currentPojoFragment.setP506p507(valor);break;
+                case SQLConstantes.fragments_p508p511:currentPojoFragment.setP508p511(valor);break;
+                case SQLConstantes.fragments_p512p513:currentPojoFragment.setP512p513(valor);break;
+                case SQLConstantes.fragments_p601p604:currentPojoFragment.setP601p604(valor);break;
+                case SQLConstantes.fragments_p605p608:currentPojoFragment.setP605p608(valor);break;
+                case SQLConstantes.fragments_p609p612:currentPojoFragment.setP609p612(valor);break;
+                case SQLConstantes.fragments_p613p617:currentPojoFragment.setP613p617(valor);break;
+                case SQLConstantes.fragments_p618p621:currentPojoFragment.setP618p621(valor);break;
+                case SQLConstantes.fragments_p622p625:currentPojoFragment.setP622p625(valor);break;
+                case SQLConstantes.fragments_p626p629:currentPojoFragment.setP626p629(valor);break;
+                case SQLConstantes.fragments_p630:currentPojoFragment.setP630(valor);break;
+                case SQLConstantes.fragments_p701p705:currentPojoFragment.setP701p705(valor);break;
+                case SQLConstantes.fragments_p706p709:currentPojoFragment.setP706p709(valor);break;
+                case SQLConstantes.fragments_p801p804:currentPojoFragment.setP801p804(valor);break;
+                case SQLConstantes.fragments_p805p808:currentPojoFragment.setP805p808(valor);break;
+                case SQLConstantes.fragments_p809p812:currentPojoFragment.setP809p812(valor);break;
+                case SQLConstantes.fragments_p813p816:currentPojoFragment.setP813p816(valor);break;
+                case SQLConstantes.fragments_p817p820:currentPojoFragment.setP817p820(valor);break;
+                case SQLConstantes.fragments_p821p823:currentPojoFragment.setP821p823(valor);break;
+            }
+        }
+    }
+
+    public void agregarVariableLayout(String campo, String valor){
+        if (valor != null){
+            switch (campo){
+                case SQLConstantes.layouts_id:currentPojoLayout.set_id(valor);break;
+                case SQLConstantes.layouts_id_vivienda:currentPojoLayout.setId_vivienda(valor);break;
+                case SQLConstantes.layouts_p301:currentPojoLayout.setP301(valor);break;
+                case SQLConstantes.layouts_p302:currentPojoLayout.setP302(valor);break;
+                case SQLConstantes.layouts_p303:currentPojoLayout.setP303(valor);break;
+                case SQLConstantes.layouts_p304:currentPojoLayout.setP304(valor);break;
+                case SQLConstantes.layouts_p305:currentPojoLayout.setP305(valor);break;
+                case SQLConstantes.layouts_p306:currentPojoLayout.setP306(valor);break;
+                case SQLConstantes.layouts_p307:currentPojoLayout.setP307(valor);break;
+                case SQLConstantes.layouts_p308:currentPojoLayout.setP308(valor);break;
+                case SQLConstantes.layouts_p309:currentPojoLayout.setP309(valor);break;
+                case SQLConstantes.layouts_p310:currentPojoLayout.setP310(valor);break;
+                case SQLConstantes.layouts_p311:currentPojoLayout.setP311(valor);break;
+                case SQLConstantes.layouts_p312:currentPojoLayout.setP312(valor);break;
+                case SQLConstantes.layouts_p313:currentPojoLayout.setP313(valor);break;
+                case SQLConstantes.layouts_p314:currentPojoLayout.setP314(valor);break;
+                case SQLConstantes.layouts_p315:currentPojoLayout.setP315(valor);break;
+                case SQLConstantes.layouts_p316:currentPojoLayout.setP316(valor);break;
+                case SQLConstantes.layouts_p317:currentPojoLayout.setP317(valor);break;
+                case SQLConstantes.layouts_p318:currentPojoLayout.setP318(valor);break;
+                case SQLConstantes.layouts_p401:currentPojoLayout.setP401(valor);break;
+                case SQLConstantes.layouts_p402:currentPojoLayout.setP402(valor);break;
+                case SQLConstantes.layouts_p403:currentPojoLayout.setP403(valor);break;
+                case SQLConstantes.layouts_p404:currentPojoLayout.setP404(valor);break;
+                case SQLConstantes.layouts_p405:currentPojoLayout.setP405(valor);break;
+                case SQLConstantes.layouts_p406:currentPojoLayout.setP406(valor);break;
+                case SQLConstantes.layouts_p407:currentPojoLayout.setP407(valor);break;
+                case SQLConstantes.layouts_p408:currentPojoLayout.setP408(valor);break;
+                case SQLConstantes.layouts_p409:currentPojoLayout.setP409(valor);break;
+                case SQLConstantes.layouts_p410:currentPojoLayout.setP410(valor);break;
+                case SQLConstantes.layouts_p411:currentPojoLayout.setP411(valor);break;
+                case SQLConstantes.layouts_p412:currentPojoLayout.setP412(valor);break;
+                case SQLConstantes.layouts_p413:currentPojoLayout.setP413(valor);break;
+                case SQLConstantes.layouts_p414:currentPojoLayout.setP414(valor);break;
+                case SQLConstantes.layouts_p415:currentPojoLayout.setP415(valor);break;
+                case SQLConstantes.layouts_p416:currentPojoLayout.setP416(valor);break;
+                case SQLConstantes.layouts_p501:currentPojoLayout.setP501(valor);break;
+                case SQLConstantes.layouts_p502:currentPojoLayout.setP502(valor);break;
+                case SQLConstantes.layouts_p503:currentPojoLayout.setP503(valor);break;
+                case SQLConstantes.layouts_p504:currentPojoLayout.setP504(valor);break;
+                case SQLConstantes.layouts_p505:currentPojoLayout.setP505(valor);break;
+                case SQLConstantes.layouts_p506:currentPojoLayout.setP506(valor);break;
+                case SQLConstantes.layouts_p507:currentPojoLayout.setP507(valor);break;
+                case SQLConstantes.layouts_p508:currentPojoLayout.setP508(valor);break;
+                case SQLConstantes.layouts_p509:currentPojoLayout.setP509(valor);break;
+                case SQLConstantes.layouts_p510:currentPojoLayout.setP510(valor);break;
+                case SQLConstantes.layouts_p511:currentPojoLayout.setP511(valor);break;
+                case SQLConstantes.layouts_p512:currentPojoLayout.setP512(valor);break;
+                case SQLConstantes.layouts_p513:currentPojoLayout.setP513(valor);break;
+                case SQLConstantes.layouts_p601:currentPojoLayout.setP601(valor);break;
+                case SQLConstantes.layouts_p602:currentPojoLayout.setP602(valor);break;
+                case SQLConstantes.layouts_p603:currentPojoLayout.setP603(valor);break;
+                case SQLConstantes.layouts_p604:currentPojoLayout.setP604(valor);break;
+                case SQLConstantes.layouts_p605:currentPojoLayout.setP605(valor);break;
+                case SQLConstantes.layouts_p606:currentPojoLayout.setP606(valor);break;
+                case SQLConstantes.layouts_p607:currentPojoLayout.setP607(valor);break;
+                case SQLConstantes.layouts_p608:currentPojoLayout.setP608(valor);break;
+                case SQLConstantes.layouts_p609:currentPojoLayout.setP609(valor);break;
+                case SQLConstantes.layouts_p610:currentPojoLayout.setP610(valor);break;
+                case SQLConstantes.layouts_p611:currentPojoLayout.setP611(valor);break;
+                case SQLConstantes.layouts_p611a:currentPojoLayout.setP611a(valor);break;
+                case SQLConstantes.layouts_p611b:currentPojoLayout.setP611b(valor);break;
+                case SQLConstantes.layouts_p612:currentPojoLayout.setP612(valor);break;
+                case SQLConstantes.layouts_p613:currentPojoLayout.setP613(valor);break;
+                case SQLConstantes.layouts_p614:currentPojoLayout.setP614(valor);break;
+                case SQLConstantes.layouts_p615:currentPojoLayout.setP615(valor);break;
+                case SQLConstantes.layouts_p616:currentPojoLayout.setP616(valor);break;
+                case SQLConstantes.layouts_p617:currentPojoLayout.setP617(valor);break;
+                case SQLConstantes.layouts_p618:currentPojoLayout.setP618(valor);break;
+                case SQLConstantes.layouts_p619:currentPojoLayout.setP619(valor);break;
+                case SQLConstantes.layouts_p620:currentPojoLayout.setP620(valor);break;
+                case SQLConstantes.layouts_p621:currentPojoLayout.setP621(valor);break;
+                case SQLConstantes.layouts_p622:currentPojoLayout.setP622(valor);break;
+                case SQLConstantes.layouts_p623:currentPojoLayout.setP623(valor);break;
+                case SQLConstantes.layouts_p624:currentPojoLayout.setP624(valor);break;
+                case SQLConstantes.layouts_p625:currentPojoLayout.setP625(valor);break;
+                case SQLConstantes.layouts_p626:currentPojoLayout.setP626(valor);break;
+                case SQLConstantes.layouts_p627:currentPojoLayout.setP627(valor);break;
+                case SQLConstantes.layouts_p628:currentPojoLayout.setP628(valor);break;
+                case SQLConstantes.layouts_p629:currentPojoLayout.setP629(valor);break;
+                case SQLConstantes.layouts_p630:currentPojoLayout.setP630(valor);break;
+                case SQLConstantes.layouts_p701:currentPojoLayout.setP701(valor);break;
+                case SQLConstantes.layouts_p702:currentPojoLayout.setP702(valor);break;
+                case SQLConstantes.layouts_p703:currentPojoLayout.setP703(valor);break;
+                case SQLConstantes.layouts_p704:currentPojoLayout.setP704(valor);break;
+                case SQLConstantes.layouts_p705:currentPojoLayout.setP705(valor);break;
+                case SQLConstantes.layouts_p706:currentPojoLayout.setP706(valor);break;
+                case SQLConstantes.layouts_p707:currentPojoLayout.setP707(valor);break;
+                case SQLConstantes.layouts_p708:currentPojoLayout.setP708(valor);break;
+                case SQLConstantes.layouts_p709:currentPojoLayout.setP709(valor);break;
+                case SQLConstantes.layouts_p801:currentPojoLayout.setP801(valor);break;
+                case SQLConstantes.layouts_p802:currentPojoLayout.setP802(valor);break;
+                case SQLConstantes.layouts_p803:currentPojoLayout.setP803(valor);break;
+                case SQLConstantes.layouts_p804:currentPojoLayout.setP804(valor);break;
+                case SQLConstantes.layouts_p805:currentPojoLayout.setP805(valor);break;
+                case SQLConstantes.layouts_p806:currentPojoLayout.setP806(valor);break;
+                case SQLConstantes.layouts_p807:currentPojoLayout.setP807(valor);break;
+                case SQLConstantes.layouts_p808:currentPojoLayout.setP808(valor);break;
+                case SQLConstantes.layouts_p809:currentPojoLayout.setP809(valor);break;
+                case SQLConstantes.layouts_p810:currentPojoLayout.setP810(valor);break;
+                case SQLConstantes.layouts_p811:currentPojoLayout.setP811(valor);break;
+                case SQLConstantes.layouts_p812:currentPojoLayout.setP812(valor);break;
+                case SQLConstantes.layouts_p813:currentPojoLayout.setP813(valor);break;
+                case SQLConstantes.layouts_p814:currentPojoLayout.setP814(valor);break;
+                case SQLConstantes.layouts_p815:currentPojoLayout.setP815(valor);break;
+                case SQLConstantes.layouts_p816:currentPojoLayout.setP816(valor);break;
+                case SQLConstantes.layouts_p817:currentPojoLayout.setP817(valor);break;
+                case SQLConstantes.layouts_p818:currentPojoLayout.setP818(valor);break;
+                case SQLConstantes.layouts_p819:currentPojoLayout.setP819(valor);break;
+                case SQLConstantes.layouts_p820:currentPojoLayout.setP820(valor);break;
+                case SQLConstantes.layouts_p821:currentPojoLayout.setP821(valor);break;
+                case SQLConstantes.layouts_p822:currentPojoLayout.setP822(valor);break;
+                case SQLConstantes.layouts_p823:currentPojoLayout.setP823(valor);break;
+            }
+        }
+    }
+
+    public void agregarVariableCoberturaFragment(String campo, String valor){
+        if (valor != null){
+            switch (campo){
+                case SQLConstantes.cobertura_fragments_id:currentCoberturaFragment.set_id(valor);break;
+                case SQLConstantes.cobertura_fragments_id_vivienda:currentCoberturaFragment.setId_vivienda(valor);break;
+                case SQLConstantes.cobertura_fragments_cp301p305:currentCoberturaFragment.setCp301p305(valor);break;
+                case SQLConstantes.cobertura_fragments_cp306p308:currentCoberturaFragment.setCp306p308(valor);break;
+                case SQLConstantes.cobertura_fragments_cp309:currentCoberturaFragment.setCp309(valor);break;
+                case SQLConstantes.cobertura_fragments_cp310p312:currentCoberturaFragment.setCp310p312(valor);break;
+                case SQLConstantes.cobertura_fragments_cp313p317:currentCoberturaFragment.setCp313p317(valor);break;
+                case SQLConstantes.cobertura_fragments_cp318:currentCoberturaFragment.setCp318(valor);break;
+                case SQLConstantes.cobertura_fragments_cp401p404:currentCoberturaFragment.setCp401p404(valor);break;
+                case SQLConstantes.cobertura_fragments_cp405p407:currentCoberturaFragment.setCp405p407(valor);break;
+                case SQLConstantes.cobertura_fragments_cp408p410:currentCoberturaFragment.setCp408p410(valor);break;
+                case SQLConstantes.cobertura_fragments_cp411p416:currentCoberturaFragment.setCp411p416(valor);break;
+                case SQLConstantes.cobertura_fragments_cp501p505:currentCoberturaFragment.setCp501p505(valor);break;
+                case SQLConstantes.cobertura_fragments_cp506p507:currentCoberturaFragment.setCp506p507(valor);break;
+                case SQLConstantes.cobertura_fragments_cp508p511:currentCoberturaFragment.setCp508p511(valor);break;
+                case SQLConstantes.cobertura_fragments_cp512p513:currentCoberturaFragment.setCp512p513(valor);break;
+                case SQLConstantes.cobertura_fragments_cp601p604:currentCoberturaFragment.setCp601p604(valor);break;
+                case SQLConstantes.cobertura_fragments_cp605p608:currentCoberturaFragment.setCp605p608(valor);break;
+                case SQLConstantes.cobertura_fragments_cp609p612:currentCoberturaFragment.setCp609p612(valor);break;
+                case SQLConstantes.cobertura_fragments_cp613p617:currentCoberturaFragment.setCp613p617(valor);break;
+                case SQLConstantes.cobertura_fragments_cp618p621:currentCoberturaFragment.setCp618p621(valor);break;
+                case SQLConstantes.cobertura_fragments_cp622p625:currentCoberturaFragment.setCp622p625(valor);break;
+                case SQLConstantes.cobertura_fragments_cp626p629:currentCoberturaFragment.setCp626p629(valor);break;
+                case SQLConstantes.cobertura_fragments_cp630:currentCoberturaFragment.setCp630(valor);break;
+                case SQLConstantes.cobertura_fragments_cp701p705:currentCoberturaFragment.setCp701p705(valor);break;
+                case SQLConstantes.cobertura_fragments_cp706p709:currentCoberturaFragment.setCp706p709(valor);break;
+                case SQLConstantes.cobertura_fragments_cp801p804:currentCoberturaFragment.setCp801p804(valor);break;
+                case SQLConstantes.cobertura_fragments_cp805p808:currentCoberturaFragment.setCp805p808(valor);break;
+                case SQLConstantes.cobertura_fragments_cp809p812:currentCoberturaFragment.setCp809p812(valor);break;
+                case SQLConstantes.cobertura_fragments_cp813p816:currentCoberturaFragment.setCp813p816(valor);break;
+                case SQLConstantes.cobertura_fragments_cp817p820:currentCoberturaFragment.setCp817p820(valor);break;
+                case SQLConstantes.cobertura_fragments_cp821p823:currentCoberturaFragment.setCp821p823(valor);break;
             }
         }
     }

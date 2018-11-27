@@ -469,7 +469,7 @@ public class ExportarActivity extends AppCompatActivity {
                 for (M3Pregunta309 m3Pregunta309 : m3Pregunta309s) {
                     serializer.startTag("", "M3P309RUTA");
                     escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id, m3Pregunta309.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_idEncuestado, m3Pregunta309.getId_encuestado());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id_encuestado, m3Pregunta309.getId_encuestado());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_p309_id_vivienda, m3Pregunta309.getId_vivienda());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_p309_numero, m3Pregunta309.getNumero());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p309_p, m3Pregunta309.getC3_p309_p());
@@ -989,6 +989,8 @@ public class ExportarActivity extends AppCompatActivity {
                     escribirCampoXml(serializer, SQLConstantes.modulo8_c8_p823_o, modulo8.getC8_p823_o());
                     escribirCampoXml(serializer, SQLConstantes.modulo8_obs_cap8, modulo8.getObs_cap8());
                     escribirCampoXml(serializer, SQLConstantes.modulo8_COB800, modulo8.getCOB800());
+                    escribirCampoXml(serializer, SQLConstantes.modulo8_email, modulo8.getEmail());
+
                     serializer.endTag("", "MODULO8");
                 }
                 serializer.endTag("", "MODULO8S");
@@ -1011,6 +1013,7 @@ public class ExportarActivity extends AppCompatActivity {
                 for (POJOFragmentHogar pojoFragmentHogar : pojoFragmentHogars) {
                     serializer.startTag("", "FRAGMENT_HOGAR");
                     escribirCampoXml(serializer, SQLConstantes.fragments_hogar_id, pojoFragmentHogar.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_hogar_id_vivienda, pojoFragmentHogar.getId_vivienda());
                     escribirCampoXml(serializer, SQLConstantes.fragments_hogar_visitas_encuestador, pojoFragmentHogar.getVisitas_encuestador());
                     escribirCampoXml(serializer, SQLConstantes.fragments_hogar_visitas_supervisor, pojoFragmentHogar.getVisitas_supervisor());
                     escribirCampoXml(serializer, SQLConstantes.fragments_hogar_funcionarios, pojoFragmentHogar.getFuncionarios());
@@ -1027,6 +1030,7 @@ public class ExportarActivity extends AppCompatActivity {
                 for (POJOFragment pojoFragment : pojoFragments) {
                     serializer.startTag("", "FRAGMENT_ENCUESTADO");
                     escribirCampoXml(serializer, SQLConstantes.fragments_id, pojoFragment.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_id_vivienda, pojoFragment.getId_vivienda());
                     escribirCampoXml(serializer, SQLConstantes.fragments_p301p305, pojoFragment.getP301p305());
                     escribirCampoXml(serializer, SQLConstantes.fragments_p306p308, pojoFragment.getP306p308());
                     escribirCampoXml(serializer, SQLConstantes.fragments_p309, pojoFragment.getP309());
@@ -1067,6 +1071,7 @@ public class ExportarActivity extends AppCompatActivity {
                 for (POJOLayout pojoLayout : pojoLayouts) {
                     serializer.startTag("", "LAYOUT_ENCUESTADO");
                     escribirCampoXml(serializer, SQLConstantes.layouts_id, pojoLayout.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_id_vivienda, pojoLayout.getId_vivienda());
                     escribirCampoXml(serializer, SQLConstantes.layouts_p301, pojoLayout.getP301());
                     escribirCampoXml(serializer, SQLConstantes.layouts_p302, pojoLayout.getP302());
                     escribirCampoXml(serializer, SQLConstantes.layouts_p303, pojoLayout.getP303());
@@ -1188,6 +1193,7 @@ public class ExportarActivity extends AppCompatActivity {
                 for (CoberturaFragment coberturaFragment : coberturaFragments) {
                     serializer.startTag("", "COBERTURA_FRAGMENT");
                     escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_id, coberturaFragment.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_id_vivienda, coberturaFragment.getId_vivienda());
                     escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp301p305, coberturaFragment.getCp301p305());
                     escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp306p308, coberturaFragment.getCp306p308());
                     escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp309, coberturaFragment.getCp309());

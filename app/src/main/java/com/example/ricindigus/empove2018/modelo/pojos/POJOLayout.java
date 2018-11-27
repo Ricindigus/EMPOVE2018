@@ -6,6 +6,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class POJOLayout {
     private String _id;
+    private String id_vivienda;
     private String p301;
     private String p302;
     private String p303;
@@ -120,6 +121,7 @@ public class POJOLayout {
 
     public POJOLayout() {
         _id = "";
+        id_vivienda = "";
         p301 = "1";
         p302 = "1";
         p303 = "1";
@@ -239,6 +241,14 @@ public class POJOLayout {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public String getId_vivienda() {
+        return id_vivienda;
+    }
+
+    public void setId_vivienda(String id_vivienda) {
+        this.id_vivienda = id_vivienda;
     }
 
     public String getP301() {
@@ -1132,6 +1142,7 @@ public class POJOLayout {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo8_id,_id);
+        contentValues.put(SQLConstantes.modulo8_id_vivienda,id_vivienda);
         contentValues.put(SQLConstantes.layouts_p301,p301);
         contentValues.put(SQLConstantes.layouts_p302,p302);
         contentValues.put(SQLConstantes.layouts_p303,p303);

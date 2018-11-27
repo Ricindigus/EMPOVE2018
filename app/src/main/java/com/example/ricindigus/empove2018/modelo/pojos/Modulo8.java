@@ -140,6 +140,8 @@ public class Modulo8 {
     private String c8_p823_o;
     private String obs_cap8;
     private String COB800;
+    private String email;
+
 
 
     public Modulo8() {
@@ -278,6 +280,7 @@ public class Modulo8 {
         c8_p823_o= "";
         obs_cap8= "";
         COB800= "0";
+        email= "";
     }
 
     public String get_id() {
@@ -1360,6 +1363,14 @@ public class Modulo8 {
         this.COB800 = COB800;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.modulo8_id,_id);
@@ -1497,6 +1508,7 @@ public class Modulo8 {
         contentValues.put(SQLConstantes.modulo8_c8_p823_o,c8_p823_o);
         contentValues.put(SQLConstantes.modulo8_obs_cap8,obs_cap8);
         contentValues.put(SQLConstantes.modulo8_COB800,COB800);
+        contentValues.put(SQLConstantes.modulo8_email,email);
         return contentValues;
     }
 }

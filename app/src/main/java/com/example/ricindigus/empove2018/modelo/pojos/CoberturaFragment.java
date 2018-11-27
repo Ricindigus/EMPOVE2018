@@ -6,6 +6,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class CoberturaFragment {
     private String _id;
+    private String id_vivienda;
     private String cp301p305;
     private String cp306p308;
     private String cp309;
@@ -39,6 +40,42 @@ public class CoberturaFragment {
 
     public CoberturaFragment(String _id) {
         this._id = _id;
+        this.id_vivienda = "";
+        this.cp301p305 = "0";
+        this.cp306p308 = "0";
+        this.cp309 = "0";
+        this.cp310p312 = "0";
+        this.cp313p317 = "0";
+        this.cp318 = "0";
+        this.cp401p404 = "0";
+        this.cp405p407 = "0";
+        this.cp408p410 = "0";
+        this.cp411p416 = "0";
+        this.cp501p505 = "0";
+        this.cp506p507 = "0";
+        this.cp508p511 = "0";
+        this.cp512p513 = "0";
+        this.cp601p604 = "0";
+        this.cp605p608 = "0";
+        this.cp609p612 = "0";
+        this.cp613p617 = "0";
+        this.cp618p621 = "0";
+        this.cp622p625 = "0";
+        this.cp626p629 = "0";
+        this.cp630 = "0";
+        this.cp701p705 = "0";
+        this.cp706p709 = "0";
+        this.cp801p804 = "0";
+        this.cp805p808 = "0";
+        this.cp809p812 = "0";
+        this.cp813p816 = "0";
+        this.cp817p820 = "0";
+        this.cp821p823 = "0";
+    }
+
+    public CoberturaFragment() {
+        this._id = "";
+        this.id_vivienda = "";
         this.cp301p305 = "0";
         this.cp306p308 = "0";
         this.cp309 = "0";
@@ -77,6 +114,14 @@ public class CoberturaFragment {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public String getId_vivienda() {
+        return id_vivienda;
+    }
+
+    public void setId_vivienda(String id_vivienda) {
+        this.id_vivienda = id_vivienda;
     }
 
     public String getCp301p305() {
@@ -322,6 +367,7 @@ public class CoberturaFragment {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.cobertura_fragments_id ,_id);
+        contentValues.put(SQLConstantes.cobertura_fragments_id_vivienda ,id_vivienda);
         contentValues.put(SQLConstantes.cobertura_fragments_cp301p305 ,cp301p305);
         contentValues.put(SQLConstantes.cobertura_fragments_cp306p308 ,cp306p308);
         contentValues.put(SQLConstantes.cobertura_fragments_cp309 ,cp309);

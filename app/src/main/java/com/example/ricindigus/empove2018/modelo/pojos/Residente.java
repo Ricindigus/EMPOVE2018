@@ -32,7 +32,7 @@ public class Residente {
         c2_p205_m = "";
         c2_p206 = "";
         c2_p207 = "";
-        COB200 = "2";
+        COB200 = "0";
         encuestado_cobertura = "0";
     }
 

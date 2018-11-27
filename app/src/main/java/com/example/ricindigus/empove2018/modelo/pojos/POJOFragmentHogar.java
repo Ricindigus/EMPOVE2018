@@ -6,6 +6,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class POJOFragmentHogar {
     private String _id;
+    private String id_vivienda;
     private String visitas_encuestador;
     private String visitas_supervisor;
     private String funcionarios;
@@ -15,6 +16,7 @@ public class POJOFragmentHogar {
 
     public POJOFragmentHogar(String _id) {
         this._id= _id;
+        id_vivienda = "";
         visitas_encuestador="1";
         visitas_supervisor="-1";
         funcionarios="0";
@@ -24,7 +26,14 @@ public class POJOFragmentHogar {
     }
 
     public POJOFragmentHogar() {
-
+        this._id= "";
+        id_vivienda = "";
+        visitas_encuestador="";
+        visitas_supervisor="";
+        funcionarios="";
+        p101p107="";
+        p108p113="";
+        p201p207="";
     }
 
     public String get_id() {
@@ -33,6 +42,14 @@ public class POJOFragmentHogar {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public String getId_vivienda() {
+        return id_vivienda;
+    }
+
+    public void setId_vivienda(String id_vivienda) {
+        this.id_vivienda = id_vivienda;
     }
 
     public String getVisitas_encuestador() {
@@ -86,6 +103,7 @@ public class POJOFragmentHogar {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.fragments_hogar_id ,_id);
+        contentValues.put(SQLConstantes.fragments_hogar_id_vivienda ,id_vivienda);
         contentValues.put(SQLConstantes.fragments_hogar_visitas_encuestador ,visitas_encuestador);
         contentValues.put(SQLConstantes.fragments_hogar_visitas_supervisor ,visitas_supervisor);
         contentValues.put(SQLConstantes.fragments_hogar_funcionarios ,funcionarios);

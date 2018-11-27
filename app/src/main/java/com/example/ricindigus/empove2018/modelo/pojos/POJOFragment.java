@@ -6,6 +6,7 @@ import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 
 public class POJOFragment {
     private String _id;
+    private String id_vivienda;
     private String p301p305;
     private String p306p308;
     private String p309;
@@ -39,6 +40,42 @@ public class POJOFragment {
 
     public POJOFragment(String _id) {
         this._id= _id;
+        id_vivienda = "";
+        p301p305= "1";
+        p306p308= "0";
+        p309= "0";
+        p310p312= "0";
+        p313p317= "0";
+        p318= "0";
+        p401p404= "0";
+        p405p407= "0";
+        p408p410= "0";
+        p411p416= "0";
+        p501p505= "0";
+        p506p507= "0";
+        p508p511= "0";
+        p512p513= "0";
+        p601p604= "0";
+        p605p608= "0";
+        p609p612= "0";
+        p613p617 = "0";
+        p618p621 = "0";
+        p622p625 = "0";
+        p626p629= "0";
+        p630= "0";
+        p701p705= "0";
+        p706p709= "0";
+        p801p804= "0";
+        p805p808= "0";
+        p809p812= "0";
+        p813p816= "0";
+        p817p820= "0";
+        p821p823= "0";
+    }
+
+    public POJOFragment() {
+        this._id= "";
+        id_vivienda = "";
         p301p305= "1";
         p306p308= "0";
         p309= "0";
@@ -77,6 +114,14 @@ public class POJOFragment {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public String getId_vivienda() {
+        return id_vivienda;
+    }
+
+    public void setId_vivienda(String id_vivienda) {
+        this.id_vivienda = id_vivienda;
     }
 
     public String getP301p305() {
@@ -322,6 +367,7 @@ public class POJOFragment {
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.fragments_id ,_id);
+        contentValues.put(SQLConstantes.fragments_id_vivienda ,id_vivienda);
         contentValues.put(SQLConstantes.fragments_p301p305 ,p301p305);
         contentValues.put(SQLConstantes.fragments_p306p308 ,p306p308);
         contentValues.put(SQLConstantes.fragments_p309 ,p309);

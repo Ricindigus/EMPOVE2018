@@ -247,9 +247,9 @@ public class SQLConstantes {
      * TABLA FRAGMENTS VIVIENDA
      * */
 
-    public static String fragments_vivienda_id = "_id";
-    public static String fragments_vivienda_caratula = "caratula";
-    public static String fragments_vivienda_hogares = "hogares";
+    public static final String fragments_vivienda_id = "_id";
+    public static final String fragments_vivienda_caratula = "caratula";
+    public static final String fragments_vivienda_hogares = "hogares";
 
 
     public static final String SQL_CREATE_TABLA_FRAGMENTS_VIVIENDA =
@@ -263,18 +263,20 @@ public class SQLConstantes {
      * TABLA FRAGMENTS HOGARES
      * */
 
-    public static String fragments_hogar_id = "_id";
-    public static String fragments_hogar_visitas_encuestador = "visitas_encuestador";
-    public static String fragments_hogar_visitas_supervisor = "visitas_supervisor";
-    public static String fragments_hogar_funcionarios = "funcionarios";
-    public static String fragments_hogar_p101p107= "p101p107";
-    public static String fragments_hogar_p108p113 = "p108p113";
-    public static String fragments_hogar_p201p207 = "p201p207";
+    public static final String fragments_hogar_id = "_id";
+    public static final String fragments_hogar_id_vivienda = "id_vivienda";
+    public static final String fragments_hogar_visitas_encuestador = "visitas_encuestador";
+    public static final String fragments_hogar_visitas_supervisor = "visitas_supervisor";
+    public static final String fragments_hogar_funcionarios = "funcionarios";
+    public static final String fragments_hogar_p101p107= "p101p107";
+    public static final String fragments_hogar_p108p113 = "p108p113";
+    public static final String fragments_hogar_p201p207 = "p201p207";
 
 
     public static final String SQL_CREATE_TABLA_FRAGMENTS_HOGAR =
             "CREATE TABLE " + tablafragmentshogar + "(" +
                     fragments_hogar_id  + " TEXT PRIMARY KEY," +
+                    fragments_hogar_id_vivienda  + " TEXT," +
                     fragments_hogar_visitas_encuestador  + " TEXT," +
                     fragments_hogar_visitas_supervisor  + " TEXT," +
                     fragments_hogar_funcionarios  + " TEXT," +
@@ -287,42 +289,44 @@ public class SQLConstantes {
      * TABLA FRAGMENTS ENCUESTADO
      * */
 
-    public static String fragments_id = "_id";
-    public static String fragments_p301p305 = "p301p305";
-    public static String fragments_p306p308 = "p306p308";
-    public static String fragments_p309 = "p309";
-    public static String fragments_p310p312 = "p310p312";
-    public static String fragments_p313p317 = "p313p317";
-    public static String fragments_p318 = "p318";
-    public static String fragments_p401p404 = "p401p404";
-    public static String fragments_p405p407 = "p405p407";
-    public static String fragments_p408p410 = "p408p410";
-    public static String fragments_p411p416 = "p411p416";
-    public static String fragments_p501p505 = "p501p505";
-    public static String fragments_p506p507 = "p506p507";
-    public static String fragments_p508p511 = "p508p511";
-    public static String fragments_p512p513 = "p512p513";
-    public static String fragments_p601p604 = "p601p604";
-    public static String fragments_p605p608 = "p605p608";
-    public static String fragments_p609p612 = "p609p612";
-    public static String fragments_p613p617 = "p613p617";
-    public static String fragments_p618p621 = "p618p621";
-    public static String fragments_p622p625 = "p622p625";
-    public static String fragments_p626p629 = "p626p629";
-    public static String fragments_p630 = "p630";
-    public static String fragments_p701p705 = "p701p705";
-    public static String fragments_p706p709 = "p706p709";
-    public static String fragments_p801p804 = "p801p804";
-    public static String fragments_p805p808 = "p805p808";
-    public static String fragments_p809p812 = "p809p812";
-    public static String fragments_p813p816 = "p813p816";
-    public static String fragments_p817p820 = "p817p820";
-    public static String fragments_p821p823 = "p821p823";
+    public static final String fragments_id = "_id";
+    public static final String fragments_id_vivienda = "id_vivienda";
+    public static final String fragments_p301p305 = "p301p305";
+    public static final String fragments_p306p308 = "p306p308";
+    public static final String fragments_p309 = "p309";
+    public static final String fragments_p310p312 = "p310p312";
+    public static final String fragments_p313p317 = "p313p317";
+    public static final String fragments_p318 = "p318";
+    public static final String fragments_p401p404 = "p401p404";
+    public static final String fragments_p405p407 = "p405p407";
+    public static final String fragments_p408p410 = "p408p410";
+    public static final String fragments_p411p416 = "p411p416";
+    public static final String fragments_p501p505 = "p501p505";
+    public static final String fragments_p506p507 = "p506p507";
+    public static final String fragments_p508p511 = "p508p511";
+    public static final String fragments_p512p513 = "p512p513";
+    public static final String fragments_p601p604 = "p601p604";
+    public static final String fragments_p605p608 = "p605p608";
+    public static final String fragments_p609p612 = "p609p612";
+    public static final String fragments_p613p617 = "p613p617";
+    public static final String fragments_p618p621 = "p618p621";
+    public static final String fragments_p622p625 = "p622p625";
+    public static final String fragments_p626p629 = "p626p629";
+    public static final String fragments_p630 = "p630";
+    public static final String fragments_p701p705 = "p701p705";
+    public static final String fragments_p706p709 = "p706p709";
+    public static final String fragments_p801p804 = "p801p804";
+    public static final String fragments_p805p808 = "p805p808";
+    public static final String fragments_p809p812 = "p809p812";
+    public static final String fragments_p813p816 = "p813p816";
+    public static final String fragments_p817p820 = "p817p820";
+    public static final String fragments_p821p823 = "p821p823";
 
 
     public static final String SQL_CREATE_TABLA_FRAGMENTS =
             "CREATE TABLE " + tablafragments + "(" +
                     fragments_id  + " TEXT PRIMARY KEY," +
+                    fragments_id_vivienda  + " TEXT," +
                     fragments_p301p305  + " TEXT," +
                     fragments_p306p308  + " TEXT," +
                     fragments_p309  + " TEXT," +
@@ -359,41 +363,44 @@ public class SQLConstantes {
      * TABLA FRAGMENTS COBERTURA
      * */
 
-    public static String cobertura_fragments_id = "_id";
-    public static String cobertura_fragments_cp301p305 = "cp301p305";
-    public static String cobertura_fragments_cp306p308 = "cp306p308";
-    public static String cobertura_fragments_cp309 = "cp309";
-    public static String cobertura_fragments_cp310p312 = "cp310p312";
-    public static String cobertura_fragments_cp313p317 = "cp313p317";
-    public static String cobertura_fragments_cp318 = "cp318";
-    public static String cobertura_fragments_cp401p404 = "cp401p404";
-    public static String cobertura_fragments_cp405p407 = "cp405p407";
-    public static String cobertura_fragments_cp408p410 = "cp408p410";
-    public static String cobertura_fragments_cp411p416 = "cp411p416";
-    public static String cobertura_fragments_cp501p505 = "cp501p505";
-    public static String cobertura_fragments_cp506p507 = "cp506p507";
-    public static String cobertura_fragments_cp508p511 = "cp508p511";
-    public static String cobertura_fragments_cp512p513 = "cp512p513";
-    public static String cobertura_fragments_cp601p604 = "cp601p604";
-    public static String cobertura_fragments_cp605p608 = "cp605p608";
-    public static String cobertura_fragments_cp609p612 = "cp609p612";
-    public static String cobertura_fragments_cp613p617 = "cp613p617";
-    public static String cobertura_fragments_cp618p621 = "cp618p621";
-    public static String cobertura_fragments_cp622p625 = "cp622p625";
-    public static String cobertura_fragments_cp626p629 = "cp626p629";
-    public static String cobertura_fragments_cp630 = "cp630";
-    public static String cobertura_fragments_cp701p705 = "cp701p705";
-    public static String cobertura_fragments_cp706p709 = "cp706p709";
-    public static String cobertura_fragments_cp801p804 = "cp801p804";
-    public static String cobertura_fragments_cp805p808 = "cp805p808";
-    public static String cobertura_fragments_cp809p812 = "cp809p812";
-    public static String cobertura_fragments_cp813p816 = "cp813p816";
-    public static String cobertura_fragments_cp817p820 = "cp817p820";
-    public static String cobertura_fragments_cp821p823 = "cp821p823";
+    public static final String cobertura_fragments_id = "_id";
+    public static final String cobertura_fragments_id_vivienda = "id_vivienda";
+    public static final String cobertura_fragments_cp301p305 = "cp301p305";
+    public static final String cobertura_fragments_cp306p308 = "cp306p308";
+    public static final String cobertura_fragments_cp309 = "cp309";
+    public static final String cobertura_fragments_cp310p312 = "cp310p312";
+    public static final String cobertura_fragments_cp313p317 = "cp313p317";
+    public static final String cobertura_fragments_cp318 = "cp318";
+    public static final String cobertura_fragments_cp401p404 = "cp401p404";
+    public static final String cobertura_fragments_cp405p407 = "cp405p407";
+    public static final String cobertura_fragments_cp408p410 = "cp408p410";
+    public static final String cobertura_fragments_cp411p416 = "cp411p416";
+    public static final String cobertura_fragments_cp501p505 = "cp501p505";
+    public static final String cobertura_fragments_cp506p507 = "cp506p507";
+    public static final String cobertura_fragments_cp508p511 = "cp508p511";
+    public static final String cobertura_fragments_cp512p513 = "cp512p513";
+    public static final String cobertura_fragments_cp601p604 = "cp601p604";
+    public static final String cobertura_fragments_cp605p608 = "cp605p608";
+    public static final String cobertura_fragments_cp609p612 = "cp609p612";
+    public static final String cobertura_fragments_cp613p617 = "cp613p617";
+    public static final String cobertura_fragments_cp618p621 = "cp618p621";
+    public static final String cobertura_fragments_cp622p625 = "cp622p625";
+    public static final String cobertura_fragments_cp626p629 = "cp626p629";
+    public static final String cobertura_fragments_cp630 = "cp630";
+    public static final String cobertura_fragments_cp701p705 = "cp701p705";
+    public static final String cobertura_fragments_cp706p709 = "cp706p709";
+    public static final String cobertura_fragments_cp801p804 = "cp801p804";
+    public static final String cobertura_fragments_cp805p808 = "cp805p808";
+    public static final String cobertura_fragments_cp809p812 = "cp809p812";
+    public static final String cobertura_fragments_cp813p816 = "cp813p816";
+    public static final String cobertura_fragments_cp817p820 = "cp817p820";
+    public static final String cobertura_fragments_cp821p823 = "cp821p823";
+
 
     public static final String SQL_CREATE_TABLA_COBERTURA_FRAGMENTS =
             "CREATE TABLE " + tablacoberturafragments + "(" +
                     cobertura_fragments_id  + " TEXT PRIMARY KEY," +
+                    cobertura_fragments_id_vivienda  + " TEXT," +
                     cobertura_fragments_cp301p305  + " TEXT," +
                     cobertura_fragments_cp306p308  + " TEXT," +
                     cobertura_fragments_cp309  + " TEXT," +
@@ -831,23 +838,23 @@ public class SQLConstantes {
     /**
      * TABLA MODULO 3 PREGUNTA 309 - RUTAS
      * */
-    public static String modulo3_p309_id = "_id";
-    public static String modulo3_p309_idEncuestado = "id_encuestado";
-    public static String modulo3_p309_id_vivienda = "id_vivienda";
-    public static String modulo3_p309_numero = "numero";
-    public static String modulo3_c3_p309_p = "c3_p309_p";
-    public static String modulo3_c3_p309_p_nom = "c3_p309_p_nom";
-    public static String modulo3_c3_p309_c = "c3_p309_c";
-    public static String modulo3_c3_p309_mod = "c3_p309_mod";
-    public static String modulo3_c3_p309_m = "c3_p309_m";
-    public static String modulo3_c3_p309_m_cod = "c3_p309_m_cod";
-    public static String modulo3_c3_p309_a = "c3_p309_a";
-    public static String modulo3_c3_p309_a_cod = "c3_p309_a_cod";
+    public static final String modulo3_p309_id = "_id";
+    public static final String modulo3_p309_id_encuestado = "id_encuestado";
+    public static final String modulo3_p309_id_vivienda = "id_vivienda";
+    public static final String modulo3_p309_numero = "numero";
+    public static final String modulo3_c3_p309_p = "c3_p309_p";
+    public static final String modulo3_c3_p309_p_nom = "c3_p309_p_nom";
+    public static final String modulo3_c3_p309_c = "c3_p309_c";
+    public static final String modulo3_c3_p309_mod = "c3_p309_mod";
+    public static final String modulo3_c3_p309_m = "c3_p309_m";
+    public static final String modulo3_c3_p309_m_cod = "c3_p309_m_cod";
+    public static final String modulo3_c3_p309_a = "c3_p309_a";
+    public static final String modulo3_c3_p309_a_cod = "c3_p309_a_cod";
 
     public static final String SQL_CREATE_TABLA_MODULO3_P309_RUTAS =
             "CREATE TABLE " + tablam3p309rutas + "(" +
                     modulo3_p309_id  + " TEXT PRIMARY KEY," +
-                    modulo3_p309_idEncuestado + " TEXT," +
+                    modulo3_p309_id_encuestado + " TEXT," +
                     modulo3_p309_id_vivienda + " TEXT," +
                     modulo3_p309_numero  + " TEXT," +
                     modulo3_c3_p309_p  + " TEXT," +
@@ -863,14 +870,14 @@ public class SQLConstantes {
     /**
      * TABLA MODULO 3 PREGUNTA 318 - PERSONAS
      * */
-    public static String modulo3_p318_id = "_id";
-    public static String modulo3_p318_idEncuestado = "id_encuestado";
-    public static String modulo3_p318_id_vivienda = "id_vivienda";
-    public static String modulo3_p318_numero = "numero";
-    public static String modulo3_c3_p318_f = "c3_p318_f";
-    public static String modulo3_c3_p318_s = "c3_p318_s";
-    public static String modulo3_c3_p318_e = "c3_p318_e";
-    public static String modulo3_c3_p318_p = "c3_p318_p";
+    public static final String modulo3_p318_id = "_id";
+    public static final String modulo3_p318_idEncuestado = "id_encuestado";
+    public static final String modulo3_p318_id_vivienda = "id_vivienda";
+    public static final String modulo3_p318_numero = "numero";
+    public static final String modulo3_c3_p318_f = "c3_p318_f";
+    public static final String modulo3_c3_p318_s = "c3_p318_s";
+    public static final String modulo3_c3_p318_e = "c3_p318_e";
+    public static final String modulo3_c3_p318_p = "c3_p318_p";
 
     public static final String SQL_CREATE_TABLA_MODULO3_P318_PERSONAS =
             "CREATE TABLE " + tablam3p318personas + "(" +
@@ -1667,6 +1674,7 @@ public class SQLConstantes {
     public static final String modulo8_c8_p823_5 = "c8_p823_5";
     public static final String modulo8_c8_p823_o = "c8_p823_o";
     public static final String modulo8_obs_cap8 = "obs_cap8";
+    public static final String modulo8_email = "email";
     public static final String modulo8_COB800 = "COB800";
 
 
@@ -1806,6 +1814,7 @@ public class SQLConstantes {
                     modulo8_c8_p823_5  +  " TEXT," +
                     modulo8_c8_p823_o  +  " TEXT," +
                     modulo8_obs_cap8  +  " TEXT," +
+                    modulo8_email  +  " TEXT," +
                     modulo8_COB800  +  " TEXT" + ");"
             ;
 
@@ -1813,122 +1822,124 @@ public class SQLConstantes {
     /**
      * TABLA LAYOUTS
      * */
-    public static String layouts_id = "_id";
-    public static String layouts_p301 = "p301";
-    public static String layouts_p302 = "p302";
-    public static String layouts_p303 = "p303";
-    public static String layouts_p304 = "p304";
-    public static String layouts_p305 = "p305";
-    public static String layouts_p306 = "p306";
-    public static String layouts_p307 = "p307";
-    public static String layouts_p308 = "p308";
-    public static String layouts_p309 = "p309";
-    public static String layouts_p310 = "p310";
-    public static String layouts_p311 = "p311";
-    public static String layouts_p312 = "p312";
-    public static String layouts_p313 = "p313";
-    public static String layouts_p314 = "p314";
-    public static String layouts_p315 = "p315";
-    public static String layouts_p316 = "p316";
-    public static String layouts_p317 = "p317";
-    public static String layouts_p318 = "p318";
-    public static String layouts_p401 = "p401";
-    public static String layouts_p402 = "p402";
-    public static String layouts_p403 = "p403";
-    public static String layouts_p404 = "p404";
-    public static String layouts_p405 = "p405";
-    public static String layouts_p406 = "p406";
-    public static String layouts_p407 = "p407";
-    public static String layouts_p408 = "p408";
-    public static String layouts_p409 = "p409";
-    public static String layouts_p410 = "p410";
-    public static String layouts_p411 = "p411";
-    public static String layouts_p412 = "p412";
-    public static String layouts_p413 = "p413";
-    public static String layouts_p414 = "p414";
-    public static String layouts_p415 = "p415";
-    public static String layouts_p416 = "p416";
-    public static String layouts_p501 = "p501";
-    public static String layouts_p502 = "p502";
-    public static String layouts_p503 = "p503";
-    public static String layouts_p504 = "p504";
-    public static String layouts_p505 = "p505";
-    public static String layouts_p506 = "p506";
-    public static String layouts_p507 = "p507";
-    public static String layouts_p508 = "p508";
-    public static String layouts_p509 = "p509";
-    public static String layouts_p510 = "p510";
-    public static String layouts_p511 = "p511";
-    public static String layouts_p512 = "p512";
-    public static String layouts_p513 = "p513";
-    public static String layouts_p601 = "p601";
-    public static String layouts_p602 = "p602";
-    public static String layouts_p603 = "p603";
-    public static String layouts_p604 = "p604";
-    public static String layouts_p605 = "p605";
-    public static String layouts_p606 = "p606";
-    public static String layouts_p607 = "p607";
-    public static String layouts_p608 = "p608";
-    public static String layouts_p609 = "p609";
-    public static String layouts_p610 = "p610";
-    public static String layouts_p611 = "p611";
-    public static String layouts_p611a = "p611a";
-    public static String layouts_p611b = "p611b";
-    public static String layouts_p612 = "p612";
-    public static String layouts_p613 = "p613";
-    public static String layouts_p614 = "p614";
-    public static String layouts_p615 = "p615";
-    public static String layouts_p616 = "p616";
-    public static String layouts_p617 = "p617";
-    public static String layouts_p618 = "p618";
-    public static String layouts_p619 = "p619";
-    public static String layouts_p620 = "p620";
-    public static String layouts_p621 = "p621";
-    public static String layouts_p622 = "p622";
-    public static String layouts_p623 = "p623";
-    public static String layouts_p624 = "p624";
-    public static String layouts_p625 = "p625";
-    public static String layouts_p626 = "p626";
-    public static String layouts_p627 = "p627";
-    public static String layouts_p628 = "p628";
-    public static String layouts_p629 = "p629";
-    public static String layouts_p630 = "p630";
-    public static String layouts_p701 = "p701";
-    public static String layouts_p702 = "p702";
-    public static String layouts_p703 = "p703";
-    public static String layouts_p704 = "p704";
-    public static String layouts_p705 = "p705";
-    public static String layouts_p706 = "p706";
-    public static String layouts_p707 = "p707";
-    public static String layouts_p708 = "p708";
-    public static String layouts_p709 = "p709";
-    public static String layouts_p801 = "p801";
-    public static String layouts_p802 = "p802";
-    public static String layouts_p803 = "p803";
-    public static String layouts_p804 = "p804";
-    public static String layouts_p805 = "p805";
-    public static String layouts_p806 = "p806";
-    public static String layouts_p807 = "p807";
-    public static String layouts_p808 = "p808";
-    public static String layouts_p809 = "p809";
-    public static String layouts_p810 = "p810";
-    public static String layouts_p811 = "p811";
-    public static String layouts_p812 = "p812";
-    public static String layouts_p813 = "p813";
-    public static String layouts_p814 = "p814";
-    public static String layouts_p815 = "p815";
-    public static String layouts_p816 = "p816";
-    public static String layouts_p817 = "p817";
-    public static String layouts_p818 = "p818";
-    public static String layouts_p819 = "p819";
-    public static String layouts_p820 = "p820";
-    public static String layouts_p821 = "p821";
-    public static String layouts_p822 = "p822";
-    public static String layouts_p823 = "p823";
+    public static final String layouts_id = "_id";
+    public static final String layouts_id_vivienda = "id_vivienda";
+    public static final String layouts_p301 = "p301";
+    public static final String layouts_p302 = "p302";
+    public static final String layouts_p303 = "p303";
+    public static final String layouts_p304 = "p304";
+    public static final String layouts_p305 = "p305";
+    public static final String layouts_p306 = "p306";
+    public static final String layouts_p307 = "p307";
+    public static final String layouts_p308 = "p308";
+    public static final String layouts_p309 = "p309";
+    public static final String layouts_p310 = "p310";
+    public static final String layouts_p311 = "p311";
+    public static final String layouts_p312 = "p312";
+    public static final String layouts_p313 = "p313";
+    public static final String layouts_p314 = "p314";
+    public static final String layouts_p315 = "p315";
+    public static final String layouts_p316 = "p316";
+    public static final String layouts_p317 = "p317";
+    public static final String layouts_p318 = "p318";
+    public static final String layouts_p401 = "p401";
+    public static final String layouts_p402 = "p402";
+    public static final String layouts_p403 = "p403";
+    public static final String layouts_p404 = "p404";
+    public static final String layouts_p405 = "p405";
+    public static final String layouts_p406 = "p406";
+    public static final String layouts_p407 = "p407";
+    public static final String layouts_p408 = "p408";
+    public static final String layouts_p409 = "p409";
+    public static final String layouts_p410 = "p410";
+    public static final String layouts_p411 = "p411";
+    public static final String layouts_p412 = "p412";
+    public static final String layouts_p413 = "p413";
+    public static final String layouts_p414 = "p414";
+    public static final String layouts_p415 = "p415";
+    public static final String layouts_p416 = "p416";
+    public static final String layouts_p501 = "p501";
+    public static final String layouts_p502 = "p502";
+    public static final String layouts_p503 = "p503";
+    public static final String layouts_p504 = "p504";
+    public static final String layouts_p505 = "p505";
+    public static final String layouts_p506 = "p506";
+    public static final String layouts_p507 = "p507";
+    public static final String layouts_p508 = "p508";
+    public static final String layouts_p509 = "p509";
+    public static final String layouts_p510 = "p510";
+    public static final String layouts_p511 = "p511";
+    public static final String layouts_p512 = "p512";
+    public static final String layouts_p513 = "p513";
+    public static final String layouts_p601 = "p601";
+    public static final String layouts_p602 = "p602";
+    public static final String layouts_p603 = "p603";
+    public static final String layouts_p604 = "p604";
+    public static final String layouts_p605 = "p605";
+    public static final String layouts_p606 = "p606";
+    public static final String layouts_p607 = "p607";
+    public static final String layouts_p608 = "p608";
+    public static final String layouts_p609 = "p609";
+    public static final String layouts_p610 = "p610";
+    public static final String layouts_p611 = "p611";
+    public static final String layouts_p611a = "p611a";
+    public static final String layouts_p611b = "p611b";
+    public static final String layouts_p612 = "p612";
+    public static final String layouts_p613 = "p613";
+    public static final String layouts_p614 = "p614";
+    public static final String layouts_p615 = "p615";
+    public static final String layouts_p616 = "p616";
+    public static final String layouts_p617 = "p617";
+    public static final String layouts_p618 = "p618";
+    public static final String layouts_p619 = "p619";
+    public static final String layouts_p620 = "p620";
+    public static final String layouts_p621 = "p621";
+    public static final String layouts_p622 = "p622";
+    public static final String layouts_p623 = "p623";
+    public static final String layouts_p624 = "p624";
+    public static final String layouts_p625 = "p625";
+    public static final String layouts_p626 = "p626";
+    public static final String layouts_p627 = "p627";
+    public static final String layouts_p628 = "p628";
+    public static final String layouts_p629 = "p629";
+    public static final String layouts_p630 = "p630";
+    public static final String layouts_p701 = "p701";
+    public static final String layouts_p702 = "p702";
+    public static final String layouts_p703 = "p703";
+    public static final String layouts_p704 = "p704";
+    public static final String layouts_p705 = "p705";
+    public static final String layouts_p706 = "p706";
+    public static final String layouts_p707 = "p707";
+    public static final String layouts_p708 = "p708";
+    public static final String layouts_p709 = "p709";
+    public static final String layouts_p801 = "p801";
+    public static final String layouts_p802 = "p802";
+    public static final String layouts_p803 = "p803";
+    public static final String layouts_p804 = "p804";
+    public static final String layouts_p805 = "p805";
+    public static final String layouts_p806 = "p806";
+    public static final String layouts_p807 = "p807";
+    public static final String layouts_p808 = "p808";
+    public static final String layouts_p809 = "p809";
+    public static final String layouts_p810 = "p810";
+    public static final String layouts_p811 = "p811";
+    public static final String layouts_p812 = "p812";
+    public static final String layouts_p813 = "p813";
+    public static final String layouts_p814 = "p814";
+    public static final String layouts_p815 = "p815";
+    public static final String layouts_p816 = "p816";
+    public static final String layouts_p817 = "p817";
+    public static final String layouts_p818 = "p818";
+    public static final String layouts_p819 = "p819";
+    public static final String layouts_p820 = "p820";
+    public static final String layouts_p821 = "p821";
+    public static final String layouts_p822 = "p822";
+    public static final String layouts_p823 = "p823";
 
     public static final String SQL_CREATE_TABLA_LAYOUTS =
             "CREATE TABLE " + tablalayouts + "(" +
                     layouts_id  + " TEXT PRIMARY KEY," +
+                    layouts_id_vivienda + " TEXT," +
                     layouts_p301 + " TEXT," +
                     layouts_p302 + " TEXT," +
                     layouts_p303 + " TEXT," +

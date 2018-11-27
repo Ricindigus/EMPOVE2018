@@ -221,7 +221,7 @@ public class FragmentHogares extends FragmentPagina {
                             hogar.setNom_ape(jefeEditText.getText().toString());
                             hogar.setEstado("0");
                             POJOFragmentHogar pojoFragmentHogar = new POJOFragmentHogar(id);
-
+                            pojoFragmentHogar.setId_vivienda(idVivienda);
                             if (numero == 1) {
                                 hogar.setPrincipal("1");
                             }
@@ -317,7 +317,7 @@ public class FragmentHogares extends FragmentPagina {
             String idDelEncuestado = residente.get_id();
             data.eliminarDato(SQLConstantes.tablaresidentes,idDelEncuestado);
             data.eliminarDato(SQLConstantes.tablamodulo3,idDelEncuestado);
-            data.eliminarDatos(SQLConstantes.tablam3p309rutas,SQLConstantes.modulo3_p309_idEncuestado,idDelEncuestado);
+            data.eliminarDatos(SQLConstantes.tablam3p309rutas,SQLConstantes.modulo3_p309_id_encuestado,idDelEncuestado);
             data.eliminarDatos(SQLConstantes.tablam3p318personas,SQLConstantes.modulo3_p318_idEncuestado,idDelEncuestado);
             data.eliminarDato(SQLConstantes.tablamodulo4,idDelEncuestado);
             data.eliminarDato(SQLConstantes.tablamodulo5,idDelEncuestado);
