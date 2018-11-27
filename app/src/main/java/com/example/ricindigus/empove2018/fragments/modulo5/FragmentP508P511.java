@@ -265,7 +265,7 @@ public class FragmentP508P511 extends FragmentPagina {
                     c5_p508_11.equals("0")){
                 mostrarMensaje("PREGUNTA 508: DEBE SELECCIONAR ALGUNA OPCION");return false;
             }else{
-                if(c5_p508_11.equals("11")){
+                if(c5_p508_11.equals("1")){
                     if(c5_p508_o.trim().equals("")){ mostrarMensaje("PREGUNTA 508 - OPCION 11: DEBE ESPECIFICAR OTRO");return false; }
                 }
             }
@@ -296,7 +296,7 @@ public class FragmentP508P511 extends FragmentPagina {
             if(c5_p511.equals("-1")){ mostrarMensaje("PREGUNTA 511: DEBE SELECCIONAR UNA OPCION");return false; }
 
             if(c5_p511.equals("4")){
-                if (c5_p511_o.equals("")){ mostrarMensaje("PREGUNTA 511: DEBE ESPECIFICAR");return false;}
+                if (c5_p511_o.equals("")){ mostrarMensaje("PREGUNTA 511: DEBE ESPECIFICAR SI MARCÓ OTRA RAZÓN");return false;}
             }
 
         }else {

@@ -1082,6 +1082,9 @@ public class Data {
                 cursor.moveToFirst();
                 caratula = new Caratula();
                 caratula.set_id(cursor.getInt(cursor.getColumnIndex(SQLConstantes.caratula_id)));
+                caratula.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_anio)));
+                caratula.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_mes)));
+                caratula.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_periodo)));
                 caratula.setNom_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_dep)));
                 caratula.setNom_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_prov)));
                 caratula.setNom_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_dist)));

@@ -11,6 +11,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -438,8 +439,9 @@ public class FragmentP501P505 extends FragmentPagina {
             data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp508p511,"0",idEncuestado);
             data.close();
         }
-
         if (c5_p504.equals("2") && c5_p505.equals("2")){
+//            Log.e("c5_p504", "ocultarOtrosLayouts: "+c5_p504 );
+//            Log.e("c5_p505", "ocultarOtrosLayouts: "+c5_p505 );
             Data data = new Data(context);
             data.open();
             ContentValues contentValues = new ContentValues();
@@ -452,6 +454,8 @@ public class FragmentP501P505 extends FragmentPagina {
             contentValues.put(SQLConstantes.modulo5_c5_p507_prov,"");
             contentValues.put(SQLConstantes.modulo5_c5_p507_dep,"");
             data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);
+            data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p506,"0",idEncuestado);
+            data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p507,"0",idEncuestado);
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p506p507,"-1",idEncuestado);
             data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp506p507,"0",idEncuestado);
 

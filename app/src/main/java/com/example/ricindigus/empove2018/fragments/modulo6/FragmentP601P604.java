@@ -418,10 +418,10 @@ public class FragmentP601P604 extends FragmentPagina {
         dd = calendario.get(Calendar.DAY_OF_MONTH);
         hora = calendario.get(Calendar.HOUR_OF_DAY);
 
-        Log.e("aa", "fecha: "+aa );
-        Log.e("mm", "fecha: "+mm );
-        Log.e("dd", "fecha: "+dd );
-        Log.e("hora", "fecha: "+hora );
+//        Log.e("aa", "fecha: "+aa );
+//        Log.e("mm", "fecha: "+mm );
+//        Log.e("dd", "fecha: "+dd );
+//        Log.e("hora", "fecha: "+hora );
 
         if(aa==2018){
             if(mm==10){

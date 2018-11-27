@@ -172,10 +172,10 @@ public class FragmentP309 extends FragmentPagina {
         m3Pregunta309s = data.getAllM3Pregunta309(idEncuestado);
         data.close();
         if(m3Pregunta309s.size()>0){
-            Log.e("p309_p_nom()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_p_nom());
-            Log.e("p309_mod()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_mod());
-            Log.e("p309_m()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_m());
-            Log.e("p309_a()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_a());
+//            Log.e("p309_p_nom()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_p_nom());
+//            Log.e("p309_mod()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_mod());
+//            Log.e("p309_m()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_m());
+//            Log.e("p309_a()", "inicializarDatos: "+ m3Pregunta309s.get(m3Pregunta309s.size()-1).getC3_p309_a());
         }
     }
 

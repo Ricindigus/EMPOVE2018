@@ -280,8 +280,8 @@ public class FragmentP301P305 extends FragmentPagina {
         Calendar cal = Calendar.getInstance();
         Date fechaActual = cal.getTime();
             edad_ingresada = getEdad(fechaNacimiento, fechaActual);
-            Log.e("Edad :", "llenarVariables: "+String.valueOf(edad_ingresada) );
-            Log.e("Edad cap 200 :", "llenarVariables: "+String.valueOf(edad) );
+//            Log.e("Edad :", "llenarVariables: "+String.valueOf(edad_ingresada) );
+//            Log.e("Edad cap 200 :", "llenarVariables: "+String.valueOf(edad) );
             edad_fecha = getEdad(fechaNacimiento, fechaVisita);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -314,8 +314,8 @@ public class FragmentP301P305 extends FragmentPagina {
         }
         data.close();
 
-        Log.e("aa", "fecha: "+aa );
-        Log.e("mm", "fecha: "+mm );
+//        Log.e("aa", "fecha: "+aa );
+//        Log.e("mm", "fecha: "+mm );
 
 
     }

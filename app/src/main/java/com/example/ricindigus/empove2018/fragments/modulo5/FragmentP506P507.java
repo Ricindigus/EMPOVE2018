@@ -263,9 +263,9 @@ public class FragmentP506P507 extends FragmentPagina {
         marco_dep = marco.getCcdd();
         marco_prov = marco.getCcpp();
         marco_dist = marco.getCcdi();
-        Log.e("cod_dep", "cargarDatos: "+ marco.getCcdd());
-        Log.e("cod_prov", "cargarDatos: "+ marco.getCcpp());
-        Log.e("cod_dist", "cargarDatos: "+ marco.getCcdi());
+//        Log.e("cod_dep", "cargarDatos: "+ marco.getCcdd());
+//        Log.e("cod_prov", "cargarDatos: "+ marco.getCcpp());
+//        Log.e("cod_dist", "cargarDatos: "+ marco.getCcdi());
         data.close();
     }
 
