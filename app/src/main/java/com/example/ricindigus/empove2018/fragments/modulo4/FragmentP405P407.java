@@ -26,7 +26,9 @@ import android.widget.Spinner;
 import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Marco;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo4;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -85,10 +87,18 @@ public class FragmentP405P407 extends FragmentPagina {
     private String c4_p407_13;
     private String c4_p407_o;
 
+    int edad=0,sexo=0;
+
     @SuppressLint("ValidFragment")
     public FragmentP405P407(String idEncuestado, Context context) {
         this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        if(residente.getC2_p204().equals("")) sexo = 0; else sexo = Integer.parseInt(residente.getC2_p204());
+        data.close();
     }
 
     public FragmentP405P407() {
@@ -399,6 +409,12 @@ public class FragmentP405P407 extends FragmentPagina {
         if(c4_p405_1.equals("0") && c4_p405_2.equals("0") && c4_p405_3.equals("0") && c4_p405_4.equals("0") && c4_p405_5.equals("0") &&
                 c4_p405_6.equals("0") && c4_p405_7.equals("0")){
             mostrarMensaje("PREGUNTA 405: DEBE SELECCIONAR ALGUNA OPCION");return false;
+        }
+        if(c4_p405_6.equals("1") && sexo==1){
+            mostrarMensaje("PREGUNTA 405: DEBE SELECCIONAR OTRA OPCION - SEXO NO CORRESPONDE");return false;
+        }
+        if(c4_p405_6.equals("1") && sexo==2 && edad<12){
+            mostrarMensaje("PREGUNTA 405: DEBE SELECCIONAR OTRA OPCION - EDAD NO CORRESPONDE (MÍNIMO 12 AÑOS)");return false;
         }
         if(m4_p406_linearlayout.getVisibility() == View.VISIBLE){
             if(c4_p406_1.equals("0") && c4_p406_2.equals("0") && c4_p406_3.equals("0") && c4_p406_4.equals("0") && c4_p406_5.equals("0") &&

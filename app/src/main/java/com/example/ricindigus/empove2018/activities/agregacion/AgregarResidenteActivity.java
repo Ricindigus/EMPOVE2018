@@ -62,10 +62,14 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
     private String edadJefeHogar="0";
     private String c2_p206;
     private int c2_p207;
+    private int cant_p_s_h=0,cant_p_s_m=0;
 
     boolean jefe_hogar=false,existe_conyuge=false;
     int cant_padres_suegros=0,edad_jefe_hogar=0;
 
+    boolean editar=true;
+
+    int sexo_residente=-1;
 
     private LinearLayout linearLayout202,linearLayout203,linearLayout204,linearLayout205,linearLayout206;
 
@@ -232,6 +236,25 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         if(c2_p203==9 && edadd<5) {mostrarMensaje("PREGUNTA 205: La trabajadora del hogar debe ser mayor o igual a 5 años"); return false;}
         if(c2_p203==4 && (edadd<12 || edadd>80)) {mostrarMensaje("PREGUNTA 205: Verificar la edad del yerno o nuera"); return false;}
         if(c2_p204 == -1) {mostrarMensaje("PREGUNTA 204: DEBE INDICAR EL SEXO"); return false;}
+        if(c2_p203==6){
+            if(editar){
+                if(sexo_residente!=c2_p204){
+                    if(cant_p_s_h>=2 && c2_p204==1){
+                        mostrarMensaje("PREGUNTA 204: YA INGRESO DOS PADRES/SUEGOS - HOMBRE"); return false;
+                    }
+                    if(cant_p_s_m>=2 && c2_p204==2){
+                        mostrarMensaje("PREGUNTA 204: YA INGRESO DOS PADRES/SUEGOS - MUJER"); return false;
+                    }
+                }
+            }else{
+                if(cant_p_s_h>=2 && c2_p204==1){
+                    mostrarMensaje("PREGUNTA 204: YA INGRESO DOS PADRES/SUEGOS - HOMBRE"); return false;
+                }
+                if(cant_p_s_m>=2 && c2_p204==2){
+                    mostrarMensaje("PREGUNTA 204: YA INGRESO DOS PADRES/SUEGOS - MUJER"); return false;
+                }
+            }
+        }
         if(c2_p205_a.trim().equals("") && c2_p205_m.trim().equals("")) {mostrarMensaje("PREGUNTA 205: DEBE INDICAR LA EDAD EN AÑOS O MESES"); return false;}
         if(!c2_p205_a.trim().equals("")) {
             if(Integer.parseInt(c2_p205_a)<1 || Integer.parseInt(c2_p205_a)>99){
@@ -275,6 +298,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
 
     @Override
     public void cargarDatos() {
+        editar=false;
         int edad_p=0;
         Data data = new Data(this);
         data.open();
@@ -290,7 +314,10 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             }
             c2_p202_TextInputET.setText(residente.getC2_p202());
             c2_p203_Spinner.setSelection(Integer.parseInt(residente.getC2_p203()));
-            if (!residente.getC2_p204().equals(""))((RadioButton)c2_p204_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p204()))).setChecked(true);
+            if (!residente.getC2_p204().equals("")){
+                ((RadioButton)c2_p204_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p204()))).setChecked(true);
+                sexo_residente = Integer.parseInt(residente.getC2_p204());
+            }
             c2_p205_a_TextInputET.setText(residente.getC2_p205_a());
             c2_p205_m_TextInputET.setText(residente.getC2_p205_m());
             if(!residente.getC2_p206().equals(""))c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
@@ -315,6 +342,11 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         residentes = new ArrayList<>();
 
         residentes = data.getAllResidentesHogar(id_hogar);
+
+        if(Integer.parseInt(numero)<=residentes.size()){
+            editar = true;
+        }
+        cant_p_s_h=0; cant_p_s_m = 0;
         if(residentes.size()>0){
             for(Residente r: residentes){
                 if(r.getC2_p203().equals("1")){
@@ -326,9 +358,16 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 }
                 if(r.getC2_p203().equals("6")){
                     cant_padres_suegros++;
+                    if(r.getC2_p204().equals("1")){
+                        cant_p_s_m++;
+                    }
+                    if(r.getC2_p204().equals("2")){
+                        cant_p_s_m++;
+                    }
                 }
             }
         }
+
 
         data.close();
         if(edadJefeHogar.equals("0")) mostrarMensaje("ANTES DE INGRESAR ALGUN MIEMBRO DEL HOGAR, DEBE COMPLETAR LA INFORMACION DEL JEFE DEL HOGAR");

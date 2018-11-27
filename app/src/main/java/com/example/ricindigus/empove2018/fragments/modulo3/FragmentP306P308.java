@@ -264,8 +264,9 @@ public class FragmentP306P308 extends FragmentPagina {
         llenarVariables();
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
         if (c3_p306.equals("-1")){mostrarMensaje("PREGUNTA 306: DEBE MARCAR UNA OPCIÓN"); return false;}
-        if (c3_p306.equals("6")){
+        if (c3_p306.equals("5")){
             if (c3_p306_o.trim().equals("")){mostrarMensaje("PREGUNTA 306: DEBE ESPECIFICAR");return false;}
+            if (c3_p306_o.trim().equals("CARTA ANDINA")){mostrarMensaje("PREGUNTA 306: EL ESPECIFICAR NO PUEDE SER (CARTA ANDINA)");return false;}
         }
         if (c3_p307_d.trim().equals("")){mostrarMensaje("PREGUNTA 307: DEBE AGREGAR FECHA");return false;}
         if(Integer.parseInt(fecha_307)<Integer.parseInt(fecha_301)){

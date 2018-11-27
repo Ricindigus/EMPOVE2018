@@ -33,6 +33,7 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Marco;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.modelo.pojos.Ubigeo;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -316,6 +317,7 @@ public class FragmentP506P507 extends FragmentPagina {
                 }
                 if(c5_p507_dep.equals(marco_dep) && c5_p507_prov.equals(marco_prov) && c5_p507_dist.equals(marco_dist)){
                     mostrarMensaje("PREGUNTA 507: INDICÓ OPCIÓN (OTRO DISTRITO), LOS UBIGEOS NO PUEDEN SER IGUALES");
+                    return false;
                 }
             }
         }

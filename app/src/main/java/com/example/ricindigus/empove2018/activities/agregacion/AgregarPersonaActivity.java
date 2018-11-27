@@ -172,6 +172,8 @@ public class AgregarPersonaActivity extends AppCompatActivity {
         llenarVariables();
         if (c3_p318_f == 0){mostrarMensaje("FAMILIAR: DEBE SELECCIONAR UNA OPCIÓN"); return false;}
         if (c3_p318_s == -1){mostrarMensaje("SEXO: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c3_p318_f==1 && c3_p318_s!=1){mostrarMensaje("SELECCIONO PAPÁ, SEXO DEBE SER HOMBRE"); return false;}
+        if (c3_p318_f==2 && c3_p318_s!=2){mostrarMensaje("SELECCIONO MAMÁ, SEXO DEBE SER MUJER"); return false;}
         if (c3_p318_p == -1){mostrarMensaje("PIENSA TRER A SU FAMILIAR: DEBE MARCAR UNA OPCIÓN"); return false;}
         if (c3_p318_e.equals("")){mostrarMensaje("EDAD: DEBE INDICAR SU EDAD"); return false;}
         if(c3_p318_f==1 || c3_p318_f==2){

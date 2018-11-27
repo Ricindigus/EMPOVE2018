@@ -69,6 +69,7 @@ public class FragmentP310P312 extends FragmentPagina {
     String idHogar;
     String idVivienda;
     String cod_dd="", cod_pp="", cod_di="",depa="",prov="",dist="";
+    private int edad=0;
 
     public FragmentP310P312() {
         // Required empty public constructor
@@ -84,10 +85,11 @@ public class FragmentP310P312 extends FragmentPagina {
         idHogar = residente.getId_hogar();
         idVivienda = residente.getId_vivienda();
         idInformante = "";
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         Marco marco = data.getMarco(idVivienda);
-        Log.e("marco.getCcdd", "FragmentP310P312: "+ marco.getDepartamento());
-        Log.e("marco.getCcpp", "FragmentP310P312: "+ marco.getProvincia());
-        Log.e("marco.getCcdi", "FragmentP310P312: "+ marco.getDistrito());
+//        Log.e("marco.getCcdd", "FragmentP310P312: "+ marco.getDepartamento());
+//        Log.e("marco.getCcpp", "FragmentP310P312: "+ marco.getProvincia());
+//        Log.e("marco.getCcdi", "FragmentP310P312: "+ marco.getDistrito());
         cod_dd = marco.getCcdd(); depa = marco.getDepartamento();
         cod_pp = marco.getCcpp(); prov = marco.getProvincia();
         cod_di = marco.getCcdi(); dist  = marco.getDistrito();
@@ -290,6 +292,9 @@ public class FragmentP310P312 extends FragmentPagina {
         if (lytp310.getVisibility() == View.VISIBLE){
             if (c3_p310_1.equals("0") && c3_p310_2.equals("0") && c3_p310_3.equals("0")
                     && c3_p310_4.equals("0")) {mostrarMensaje("PREGUNTA 310: DEBE MARCAR AL MENOS UNA OPCION");return false;}
+            if (c3_p310_3.equals("1") && edad<12){
+                mostrarMensaje("PREGUNTA 310: UN MENOR DE 12 AÑOS NO PUEDE VIAJAR SOLO");return false;
+            }
         }else{
             c3_p310_1 = "";
             c3_p310_2 = "";

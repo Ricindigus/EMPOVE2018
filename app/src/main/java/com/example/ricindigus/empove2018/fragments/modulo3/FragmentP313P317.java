@@ -283,6 +283,9 @@ public class FragmentP313P317 extends FragmentPagina {
         if (c3_p315_10.equals("1") && c3_p315_10_o.trim().equals("")){
             mostrarMensaje("PREGUNTA 315: DEBE ESPECIFICAR LA RESPUESTA");return false;
         }
+        if (c3_p315_10.equals("1") && c3_p315_10_o.trim().equals("CARTA ANDINA")){
+            mostrarMensaje("PREGUNTA 315: EL ESPECIFICAR NO PUEDE SER (CARTA ANDINA)");return false;
+        }
         if (c3_p316 == -1){mostrarMensaje("PREGUNTA 316: DEBE MARCAR UNA OPCIÓN"); return false;}
         if (c3_p316 == 5){
             if (c3_p316_o.trim().equals("")){mostrarMensaje("PREGUNTA 316: DEBE ESPECIFICAR");return false;}

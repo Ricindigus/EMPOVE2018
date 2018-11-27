@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ENPOVE2018</string>
-    <string name="app_version">Versión 0.13.0</string>
+    <string name="app_version">Versión 0.14.0</string>
     <string name="title_activity_encuesta">EncuestaActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -481,7 +481,7 @@
     <string name="modulo_3_p318_ind">(Relación de parentesco)</string>
     <string name="modulo_3_p318_cab2">Sexo</string>
     <string name="modulo_3_p318_cab3">Edad</string>
-    <string name="modulo_3_p318_cab4">¿Piensa en traer a sus familiares en los próximos 12 meses?</string>
+    <string name="modulo_3_p318_cab4">¿Piensa traer a sus familiares en los próximos 12 meses?</string>
     <string name="modulo_3_p318_sexo_op1">1.Hombre</string>
     <string name="modulo_3_p318_sexo_op2">2.Mujer</string>
     <string name="modulo_3_p318_12meses_si">1.Sí</string>
