@@ -226,7 +226,10 @@ public class FragmentP501P505 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo5_c5_p505,c5_p505);
 
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo5 modulo5 = new Modulo5(idEncuestado,idHogar,idVivienda);
+            Modulo5 modulo5 = new Modulo5();
+            modulo5.set_id(idEncuestado);
+            modulo5.setIdHogar(idHogar);
+            modulo5.setIdVivienda(idVivienda);
             data.insertarElemento(getNombreTabla(),modulo5.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);

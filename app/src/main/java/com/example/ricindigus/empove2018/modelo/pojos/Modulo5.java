@@ -48,11 +48,11 @@ public class Modulo5 {
     private String obs_cap5;
     private String COB500;
 
-    public Modulo5(String _id, String idHogar, String idVivienda) {
+    public Modulo5() {
+        _id = "";
+        idHogar = "";
+        idVivienda = "";
         idInformante= "";
-        this._id = _id;
-        this.idHogar = idHogar;
-        this.idVivienda = idVivienda;
         c5_p501= "";
         c5_p502_c= "";
         c5_p502= "";
@@ -93,8 +93,6 @@ public class Modulo5 {
         COB500= "0";
     }
 
-    public Modulo5() {
-    }
 
     public String get_id() {
         return _id;

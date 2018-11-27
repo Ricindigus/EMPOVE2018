@@ -320,7 +320,9 @@ public class MarcoActivity extends AppCompatActivity {
                 Data data = new Data(MarcoActivity.this);
                 POJOFragmentVivienda pojoFragmentVivienda = new POJOFragmentVivienda(itemMarcos.get(position).get_id()+"");
                 data.open();
-                data.insertarElemento(SQLConstantes.tablafragmentsvivienda,pojoFragmentVivienda.toValues());
+                if (!data.existeElemento(SQLConstantes.tablafragmentsvivienda,itemMarcos.get(position).get_id()+"")){
+                    data.insertarElemento(SQLConstantes.tablafragmentsvivienda,pojoFragmentVivienda.toValues());
+                }
                 data.close();
                 startActivity(intent);
             }

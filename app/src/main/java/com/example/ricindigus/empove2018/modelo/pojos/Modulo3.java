@@ -57,10 +57,10 @@ public class Modulo3 {
     private String obs_cap3;
     private String COB300;
 
-    public Modulo3(String _id, String idHogar, String idVivienda) {
-        this._id = _id;
-        this.idHogar = idHogar;
-        this.idVivienda = idVivienda;
+    public Modulo3(){
+        _id = "";
+        idHogar = "";
+        idVivienda = "";
         idInformante = "";
         c3_p301_d= "";
         c3_p301_m= "";
@@ -110,8 +110,6 @@ public class Modulo3 {
         obs_cap3= "";
         COB300= "0";
     }
-
-    public Modulo3() { }
 
     public String get_id() {
         return _id;

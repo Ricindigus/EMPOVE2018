@@ -141,13 +141,11 @@ public class Modulo8 {
     private String obs_cap8;
     private String COB800;
 
-    public Modulo8() {
-    }
 
-    public Modulo8(String _id, String idHogar, String idVivienda) {
-        this._id = _id;
-        this.idHogar = idHogar;
-        this.idVivienda = idVivienda;
+    public Modulo8() {
+        _id = "";
+        idHogar = "";
+        idVivienda = "";
         idInformante= "";
         c8_p801= "";
         c8_p802= "";

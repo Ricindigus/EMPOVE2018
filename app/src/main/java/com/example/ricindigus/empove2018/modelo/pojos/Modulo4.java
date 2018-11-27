@@ -101,10 +101,10 @@ public class Modulo4 {
     private String obs_cap4;
     private String COB400;
 
-    public Modulo4(String _id, String idHogar, String idVivienda) {
-        this._id = _id;
-        this.idHogar = idHogar;
-        this.idVivienda = idVivienda;
+    public Modulo4() {
+        _id = "";
+        idHogar = "";
+        idVivienda = "";
         idInformante = "";
         c4_p401_1 = "";
         c4_p401_2 = "";
@@ -197,9 +197,6 @@ public class Modulo4 {
         c4_p416_o = "";
         obs_cap4 = "";
         COB400 = "0";
-    }
-
-    public Modulo4() {
     }
 
     public String get_id() {

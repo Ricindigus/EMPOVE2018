@@ -367,8 +367,6 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 }
             }
         }
-
-
         data.close();
         if(edadJefeHogar.equals("0")) mostrarMensaje("ANTES DE INGRESAR ALGUN MIEMBRO DEL HOGAR, DEBE COMPLETAR LA INFORMACION DEL JEFE DEL HOGAR");
     }
@@ -389,7 +387,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         contentValues.put(SQLConstantes.residentes_c2_p205_a,c2_p205_a);
         contentValues.put(SQLConstantes.residentes_c2_p205_m,c2_p205_m);
         contentValues.put(SQLConstantes.residentes_c2_p206,c2_p206);
-        contentValues.put(SQLConstantes.residentes_c2_p207,c2_p207);
+        contentValues.put(SQLConstantes.residentes_c2_p207,c2_p207 +"");
         contentValues.put(SQLConstantes.residentes_COB200,"1");
         contentValues.put(SQLConstantes.residentes_encuestado_cobertura,"0");
 
@@ -403,30 +401,52 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         }
         data.actualizarElemento(getNombreTabla(),contentValues,_id);
         data.actualizarValor(SQLConstantes.tablahogares,SQLConstantes.hogar_nroviven,numero,id_hogar);
-        if(!data.existeElemento(SQLConstantes.tablalayouts,_id)){
-            POJOLayout pojoLayout = new POJOLayout();
-            pojoLayout.set_id(_id);
-            data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
-            POJOFragment pojoFragment = new POJOFragment(_id);
-            CoberturaFragment coberturaFragment = new CoberturaFragment(_id);
-            data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
-            data.insertarElemento(SQLConstantes.tablacoberturafragments,coberturaFragment.toValues());
+
+        //SI ES MIGRANTE
+        if (c2_p207 == 1){
+            if(!data.existeElemento(SQLConstantes.tablalayouts,_id)){
+                POJOLayout pojoLayout = new POJOLayout();
+                pojoLayout.set_id(_id);
+                data.insertarElemento(SQLConstantes.tablalayouts,pojoLayout.toValues());
+                POJOFragment pojoFragment = new POJOFragment(_id);
+                CoberturaFragment coberturaFragment = new CoberturaFragment(_id);
+                data.insertarElemento(SQLConstantes.tablafragments,pojoFragment.toValues());
+                data.insertarElemento(SQLConstantes.tablacoberturafragments,coberturaFragment.toValues());
+            }
+            crearModulos();
+            ocultarOtrosLayouts(c2_p205_a,c2_p204+"");
         }
         data.close();
-        crearModulos();
-        ocultarOtrosLayouts(c2_p205_a,c2_p204+"");
     }
 
 
     public void crearModulos(){
         Data data = new Data(this);
         data.open();
-        Modulo3 modulo3 = new Modulo3(_id,id_hogar,id_vivienda);
-        Modulo4 modulo4 = new Modulo4(_id,id_hogar,id_vivienda);
-        Modulo5 modulo5 = new Modulo5(_id,id_hogar,id_vivienda);
-        Modulo6 modulo6 = new Modulo6(_id,id_hogar,id_vivienda);
-        Modulo7 modulo7 = new Modulo7(_id,id_hogar,id_vivienda);
-        Modulo8 modulo8 = new Modulo8(_id,id_hogar,id_vivienda);
+        Modulo3 modulo3 = new Modulo3();
+        modulo3.set_id(_id);
+        modulo3.setIdHogar(id_hogar);
+        modulo3.setIdVivienda(id_vivienda);
+        Modulo4 modulo4 = new Modulo4();
+        modulo4.set_id(_id);
+        modulo4.setIdHogar(id_hogar);
+        modulo4.setIdVivienda(id_vivienda);
+        Modulo5 modulo5 = new Modulo5();
+        modulo5.set_id(_id);
+        modulo5.setIdHogar(id_hogar);
+        modulo5.setIdVivienda(id_vivienda);
+        Modulo6 modulo6 = new Modulo6();
+        modulo6.set_id(_id);
+        modulo6.setIdHogar(id_hogar);
+        modulo6.setIdVivienda(id_vivienda);
+        Modulo7 modulo7 = new Modulo7();
+        modulo7.set_id(_id);
+        modulo7.setIdHogar(id_hogar);
+        modulo7.setIdVivienda(id_vivienda);
+        Modulo8 modulo8 = new Modulo8();
+        modulo8.set_id(_id);
+        modulo8.setIdHogar(id_hogar);
+        modulo8.setIdVivienda(id_vivienda);
         if (!data.existeElemento(SQLConstantes.tablamodulo3,_id)) data.insertarElemento(SQLConstantes.tablamodulo3,modulo3.toValues());
         if (!data.existeElemento(SQLConstantes.tablamodulo4,_id)) data.insertarElemento(SQLConstantes.tablamodulo4,modulo4.toValues());
         if (!data.existeElemento(SQLConstantes.tablamodulo5,_id)) data.insertarElemento(SQLConstantes.tablamodulo5,modulo5.toValues());
@@ -848,7 +868,10 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p508p511,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p512p513,"1",_id);
-        Modulo5 modulo5 = new Modulo5(_id,id_hogar,id_vivienda);
+        Modulo5 modulo5 = new Modulo5();
+        modulo5.set_id(_id);
+        modulo5.setIdHogar(id_hogar);
+        modulo5.setIdVivienda(id_vivienda);
         if (!data.existeElemento(SQLConstantes.tablamodulo5,_id)) data.insertarElemento(SQLConstantes.tablamodulo5,modulo5.toValues());
         data.close();
     }
@@ -887,7 +910,10 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p630,"1",_id);
 
-        Modulo6 modulo6 = new Modulo6(_id,id_hogar,id_vivienda);
+        Modulo6 modulo6 = new Modulo6();
+        modulo6.set_id(_id);
+        modulo6.setIdHogar(id_hogar);
+        modulo6.setIdVivienda(id_vivienda);
         if (!data.existeElemento(SQLConstantes.tablamodulo6,_id)) data.insertarElemento(SQLConstantes.tablamodulo6,modulo6.toValues());
         data.close();
     }
@@ -907,7 +933,10 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p706p709,"1",_id);
 
-        Modulo7 modulo7 = new Modulo7(_id,id_hogar,id_vivienda);
+        Modulo7 modulo7 = new Modulo7();
+        modulo7.set_id(_id);
+        modulo7.setIdHogar(id_hogar);
+        modulo7.setIdVivienda(id_vivienda);
         if (!data.existeElemento(SQLConstantes.tablamodulo7,_id)) data.insertarElemento(SQLConstantes.tablamodulo7,modulo7.toValues());
         data.close();
     }
@@ -938,7 +967,10 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p817p820,"1",_id);
         if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,_id).equals("-1"))
             data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p821p823,"1",_id);
-        Modulo8 modulo8 = new Modulo8(_id,id_hogar,id_vivienda);
+        Modulo8 modulo8 = new Modulo8();
+        modulo8.set_id(_id);
+        modulo8.setIdHogar(id_hogar);
+        modulo8.setIdVivienda(id_vivienda);
         if (!data.existeElemento(SQLConstantes.tablamodulo8,_id)) data.insertarElemento(SQLConstantes.tablamodulo8,modulo8.toValues());
         data.close();
     }

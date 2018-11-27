@@ -67,10 +67,10 @@ public class Modulo7 {
     private String obs_cap7;
     private String COB700;
 
-    public Modulo7(String _id, String idHogar, String idVivienda) {
-        this._id = _id;
-        this.idHogar = idHogar;
-        this.idVivienda = idVivienda;
+    public Modulo7() {
+        _id = "";
+        idHogar = "";
+        idVivienda = "";
         idInformante= "";
         c7_p701= "";
         c7_p702_1= "";
@@ -131,8 +131,6 @@ public class Modulo7 {
         COB700= "0";
     }
 
-    public Modulo7() {
-    }
 
     public String get_id() {
         return _id;

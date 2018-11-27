@@ -220,7 +220,10 @@ public class FragmentP805P808 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo8_c8_p808_13,c8_p808_13);
         contentValues.put(SQLConstantes.modulo8_c8_p808_o,c8_p808_o);
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo8 modulo8 = new Modulo8(idEncuestado,idHogar,idVivienda);
+            Modulo8 modulo8 = new Modulo8();
+            modulo8.set_id(idEncuestado);
+            modulo8.setIdHogar(idHogar);
+            modulo8.setIdVivienda(idVivienda);
             data.insertarElemento(getNombreTabla(), modulo8.toValues());
         }
         data.actualizarElemento(getNombreTabla(), contentValues, idEncuestado);

@@ -260,7 +260,10 @@ public class FragmentP701P705 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo7_c7_p705_o,c7_p705_o);
 
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo7 modulo7 = new Modulo7(idEncuestado,idHogar,idVivienda);
+            Modulo7 modulo7 = new Modulo7();
+            modulo7.set_id(idEncuestado);
+            modulo7.setIdHogar(idHogar);
+            modulo7.setIdVivienda(idVivienda);
             data.insertarElemento(getNombreTabla(), modulo7.toValues());
         }
         data.actualizarElemento(getNombreTabla(), contentValues, idEncuestado);

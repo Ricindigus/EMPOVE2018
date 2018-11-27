@@ -215,7 +215,10 @@ public class FragmentP601P604 extends FragmentPagina {
         contentValues.put(SQLConstantes.modulo6_c6_p604_o,c6_p604_o);
 
         if(!data.existeElemento(getNombreTabla(),idEncuestado)){
-            Modulo6 modulo6 = new Modulo6(idEncuestado,idHogar,idVivienda);
+            Modulo6 modulo6 = new Modulo6();
+            modulo6.set_id(idEncuestado);
+            modulo6.setIdHogar(idHogar);
+            modulo6.setIdVivienda(idVivienda);
             data.insertarElemento(getNombreTabla(),modulo6.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,idEncuestado);

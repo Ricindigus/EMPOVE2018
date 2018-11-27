@@ -112,10 +112,10 @@ public class Modulo6 {
     private String obs_cap6;
     private String COB600;
 
-    public Modulo6(String _id, String idHogar, String idVivienda) {
-        this._id = _id;
-        this.idHogar = idHogar;
-        this.idVivienda = idVivienda;
+    public Modulo6() {
+        _id = "";
+        idHogar = "";
+        idVivienda = "";
         idInformante= "";
         c6_p601= "";
         c6_p602= "";
@@ -219,9 +219,6 @@ public class Modulo6 {
         c6_p630_2frec_o= "";
         obs_cap6= "";
         COB600= "0";
-    }
-
-    public Modulo6() {
     }
 
     public String get_id() {

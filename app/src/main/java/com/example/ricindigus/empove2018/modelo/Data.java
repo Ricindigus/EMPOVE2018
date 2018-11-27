@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
+import com.example.ricindigus.empove2018.modelo.pojos.CoberturaFragment;
 import com.example.ricindigus.empove2018.modelo.pojos.Funcionario;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.modelo.pojos.ItemMarco;
@@ -2764,6 +2765,53 @@ public class Data {
         return pojoLayout;
     }
 
+    public CoberturaFragment getCoberturaFragments(String idEncuestado){
+        CoberturaFragment coberturaFragment = null;
+        String[] whereArgs = new String[]{idEncuestado};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablacoberturafragments,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                coberturaFragment = new CoberturaFragment(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_id)));
+                coberturaFragment.setCp301p305(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp301p305)));
+                coberturaFragment.setCp306p308(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp306p308)));
+                coberturaFragment.setCp309(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp309)));
+                coberturaFragment.setCp310p312(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp310p312)));
+                coberturaFragment.setCp313p317(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp313p317)));
+                coberturaFragment.setCp318(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp318)));
+                coberturaFragment.setCp401p404(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp401p404)));
+                coberturaFragment.setCp405p407(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp405p407)));
+                coberturaFragment.setCp408p410(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp408p410)));
+                coberturaFragment.setCp411p416(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp411p416)));
+                coberturaFragment.setCp501p505(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp501p505)));
+                coberturaFragment.setCp506p507(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp506p507)));
+                coberturaFragment.setCp508p511(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp508p511)));
+                coberturaFragment.setCp512p513(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp512p513)));
+                coberturaFragment.setCp601p604(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp601p604)));
+                coberturaFragment.setCp605p608(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp605p608)));
+                coberturaFragment.setCp609p612(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp609p612)));
+                coberturaFragment.setCp613p617(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp613p617)));
+                coberturaFragment.setCp618p621(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp618p621)));
+                coberturaFragment.setCp622p625(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp622p625)));
+                coberturaFragment.setCp626p629(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp626p629)));
+                coberturaFragment.setCp630(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp630)));
+                coberturaFragment.setCp701p705(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp701p705)));
+                coberturaFragment.setCp706p709(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp706p709)));
+                coberturaFragment.setCp801p804(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp801p804)));
+                coberturaFragment.setCp805p808(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp805p808)));
+                coberturaFragment.setCp809p812(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp809p812)));
+                coberturaFragment.setCp813p816(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp813p816)));
+                coberturaFragment.setCp817p820(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp817p820)));
+                coberturaFragment.setCp821p823(cursor.getString(cursor.getColumnIndex(SQLConstantes.cobertura_fragments_cp821p823)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return coberturaFragment;
+    }
+
     public POJOFragment getFragmentsLayouts(String idEncuestado){
         POJOFragment pojoFragment = null;
         String[] whereArgs = new String[]{idEncuestado};
@@ -2854,7 +2902,6 @@ public class Data {
         }
         return pojoFragmentHogar;
     }
-
 
     public void borrarAllData(String tabla){
         sqLiteDatabase.execSQL("delete from "+ tabla);

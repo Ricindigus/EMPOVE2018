@@ -20,6 +20,7 @@ import com.example.ricindigus.empove2018.adapters.ExportarAdapter;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
+import com.example.ricindigus.empove2018.modelo.pojos.CoberturaFragment;
 import com.example.ricindigus.empove2018.modelo.pojos.ExportarItem;
 import com.example.ricindigus.empove2018.modelo.pojos.Funcionario;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
@@ -33,6 +34,10 @@ import com.example.ricindigus.empove2018.modelo.pojos.Modulo5;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo7;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo8;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragment;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentHogar;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOFragmentVivienda;
+import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
 import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaEncuestador;
 import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaSupervisor;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
@@ -156,6 +161,22 @@ public class ExportarActivity extends AppCompatActivity {
         ArrayList<Modulo6> modulo6s = data.getAllModulo6(idVivienda);
         ArrayList<Modulo7> modulo7s = data.getAllModulo7(idVivienda);
         ArrayList<Modulo8> modulo8s = data.getAllModulo8(idVivienda);
+        ArrayList<POJOFragment> pojoFragments = new ArrayList<>();
+        ArrayList<POJOFragmentVivienda> pojoFragmentViviendas = new ArrayList<>();
+        ArrayList<POJOFragmentHogar> pojoFragmentHogars = new ArrayList<>();
+        ArrayList<POJOLayout> pojoLayouts = new ArrayList<>();
+        ArrayList<CoberturaFragment> coberturaFragments = new ArrayList<>();
+        for (Residente residente : residentes){
+            if (residente.getC2_p207().equals("1")){
+                pojoFragments.add(data.getFragmentsLayouts(residente.get_id()));
+                pojoFragmentViviendas.add(data.getFragmentsVivienda(residente.get_id()));
+                pojoFragmentHogars.add(data.getFragmentsHogar(residente.get_id()));
+                pojoLayouts.add(data.getLayouts(residente.get_id()));
+                coberturaFragments.add(data.getCoberturaFragments(residente.get_id()));
+            }
+        }
+
+
 
         XmlSerializer serializer = Xml.newSerializer();
         StringWriter writer = new StringWriter();
@@ -971,6 +992,235 @@ public class ExportarActivity extends AppCompatActivity {
                     serializer.endTag("", "MODULO8");
                 }
                 serializer.endTag("", "MODULO8S");
+            }
+
+            if(pojoFragmentViviendas.size()>0) {
+                serializer.startTag("", "FRAGMENTS_VIVIENDA");
+                for (POJOFragmentVivienda pojoFragmentVivienda : pojoFragmentViviendas) {
+                    serializer.startTag("", "FRAGMENT_VIVIENDA");
+                    escribirCampoXml(serializer, SQLConstantes.fragments_vivienda_id, pojoFragmentVivienda.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_vivienda_caratula, pojoFragmentVivienda.getCaratula());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_vivienda_hogares, pojoFragmentVivienda.getHogares());
+                    serializer.endTag("", "FRAGMENT_VIVIENDA");
+                }
+                serializer.endTag("", "FRAGMENTS_VIVIENDA");
+            }
+
+            if(pojoFragmentHogars.size()>0) {
+                serializer.startTag("", "FRAGMENTS_HOGAR");
+                for (POJOFragmentHogar pojoFragmentHogar : pojoFragmentHogars) {
+                    serializer.startTag("", "FRAGMENT_HOGAR");
+                    escribirCampoXml(serializer, SQLConstantes.fragments_hogar_id, pojoFragmentHogar.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_hogar_visitas_encuestador, pojoFragmentHogar.getVisitas_encuestador());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_hogar_visitas_supervisor, pojoFragmentHogar.getVisitas_supervisor());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_hogar_funcionarios, pojoFragmentHogar.getFuncionarios());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_hogar_p101p107, pojoFragmentHogar.getP101p107());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_hogar_p108p113, pojoFragmentHogar.getP108p113());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_hogar_p201p207, pojoFragmentHogar.getP201p207());
+                    serializer.endTag("", "FRAGMENT_HOGAR");
+                }
+                serializer.endTag("", "FRAGMENTS_HOGAR");
+            }
+
+            if(pojoFragments.size()>0) {
+                serializer.startTag("", "FRAGMENTS_ENCUESTADO");
+                for (POJOFragment pojoFragment : pojoFragments) {
+                    serializer.startTag("", "FRAGMENT_ENCUESTADO");
+                    escribirCampoXml(serializer, SQLConstantes.fragments_id, pojoFragment.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p301p305, pojoFragment.getP301p305());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p306p308, pojoFragment.getP306p308());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p309, pojoFragment.getP309());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p310p312, pojoFragment.getP310p312());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p313p317, pojoFragment.getP313p317());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p318, pojoFragment.getP318());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p401p404, pojoFragment.getP401p404());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p405p407, pojoFragment.getP405p407());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p408p410, pojoFragment.getP408p410());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p411p416, pojoFragment.getP411p416());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p501p505, pojoFragment.getP501p505());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p506p507, pojoFragment.getP506p507());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p508p511, pojoFragment.getP508p511());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p512p513, pojoFragment.getP512p513());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p601p604, pojoFragment.getP601p604());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p605p608, pojoFragment.getP605p608());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p609p612, pojoFragment.getP609p612());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p613p617, pojoFragment.getP613p617());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p618p621, pojoFragment.getP618p621());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p622p625, pojoFragment.getP622p625());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p626p629, pojoFragment.getP626p629());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p630, pojoFragment.getP630());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p701p705, pojoFragment.getP701p705());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p706p709, pojoFragment.getP706p709());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p801p804, pojoFragment.getP801p804());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p805p808, pojoFragment.getP805p808());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p809p812, pojoFragment.getP809p812());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p813p816, pojoFragment.getP813p816());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p817p820, pojoFragment.getP817p820());
+                    escribirCampoXml(serializer, SQLConstantes.fragments_p821p823, pojoFragment.getP821p823());
+                    serializer.endTag("", "FRAGMENT_ENCUESTADO");
+                }
+                serializer.endTag("", "FRAGMENTS_ENCUESTADO");
+            }
+
+            if(pojoLayouts.size()>0) {
+                serializer.startTag("", "LAYOUTS_ENCUESTADO");
+                for (POJOLayout pojoLayout : pojoLayouts) {
+                    serializer.startTag("", "LAYOUT_ENCUESTADO");
+                    escribirCampoXml(serializer, SQLConstantes.layouts_id, pojoLayout.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p301, pojoLayout.getP301());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p302, pojoLayout.getP302());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p303, pojoLayout.getP303());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p304, pojoLayout.getP304());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p305, pojoLayout.getP305());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p306, pojoLayout.getP306());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p307, pojoLayout.getP307());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p308, pojoLayout.getP308());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p309, pojoLayout.getP309());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p310, pojoLayout.getP310());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p311, pojoLayout.getP311());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p312, pojoLayout.getP312());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p313, pojoLayout.getP313());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p314, pojoLayout.getP314());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p315, pojoLayout.getP315());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p316, pojoLayout.getP316());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p317, pojoLayout.getP317());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p318, pojoLayout.getP318());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p401, pojoLayout.getP401());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p402, pojoLayout.getP402());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p403, pojoLayout.getP403());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p404, pojoLayout.getP404());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p405, pojoLayout.getP405());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p406, pojoLayout.getP406());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p407, pojoLayout.getP407());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p408, pojoLayout.getP408());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p409, pojoLayout.getP409());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p410, pojoLayout.getP410());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p411, pojoLayout.getP411());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p412, pojoLayout.getP412());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p413, pojoLayout.getP413());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p414, pojoLayout.getP414());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p415, pojoLayout.getP415());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p416, pojoLayout.getP416());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p501, pojoLayout.getP501());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p502, pojoLayout.getP502());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p503, pojoLayout.getP503());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p504, pojoLayout.getP504());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p505, pojoLayout.getP505());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p506, pojoLayout.getP506());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p507, pojoLayout.getP507());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p508, pojoLayout.getP508());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p509, pojoLayout.getP509());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p510, pojoLayout.getP510());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p511, pojoLayout.getP511());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p512, pojoLayout.getP512());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p513, pojoLayout.getP513());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p601, pojoLayout.getP601());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p602, pojoLayout.getP602());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p603, pojoLayout.getP603());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p604, pojoLayout.getP604());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p605, pojoLayout.getP605());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p606, pojoLayout.getP606());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p607, pojoLayout.getP607());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p608, pojoLayout.getP608());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p609, pojoLayout.getP609());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p610, pojoLayout.getP610());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p611, pojoLayout.getP611());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p611a, pojoLayout.getP611a());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p611b, pojoLayout.getP611b());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p612, pojoLayout.getP612());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p613, pojoLayout.getP613());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p614, pojoLayout.getP614());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p615, pojoLayout.getP615());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p616, pojoLayout.getP616());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p617, pojoLayout.getP617());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p618, pojoLayout.getP618());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p619, pojoLayout.getP619());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p620, pojoLayout.getP620());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p621, pojoLayout.getP621());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p622, pojoLayout.getP622());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p623, pojoLayout.getP623());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p624, pojoLayout.getP624());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p625, pojoLayout.getP625());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p626, pojoLayout.getP626());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p627, pojoLayout.getP627());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p628, pojoLayout.getP628());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p629, pojoLayout.getP629());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p630, pojoLayout.getP630());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p701, pojoLayout.getP701());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p702, pojoLayout.getP702());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p703, pojoLayout.getP703());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p704, pojoLayout.getP704());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p705, pojoLayout.getP705());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p706, pojoLayout.getP706());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p707, pojoLayout.getP707());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p708, pojoLayout.getP708());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p709, pojoLayout.getP709());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p801, pojoLayout.getP801());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p802, pojoLayout.getP802());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p803, pojoLayout.getP803());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p804, pojoLayout.getP804());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p805, pojoLayout.getP805());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p806, pojoLayout.getP806());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p807, pojoLayout.getP807());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p808, pojoLayout.getP808());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p809, pojoLayout.getP809());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p810, pojoLayout.getP810());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p811, pojoLayout.getP811());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p812, pojoLayout.getP812());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p813, pojoLayout.getP813());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p814, pojoLayout.getP814());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p815, pojoLayout.getP815());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p816, pojoLayout.getP816());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p817, pojoLayout.getP817());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p818, pojoLayout.getP818());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p819, pojoLayout.getP819());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p820, pojoLayout.getP820());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p821, pojoLayout.getP821());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p822, pojoLayout.getP822());
+                    escribirCampoXml(serializer, SQLConstantes.layouts_p823, pojoLayout.getP823());
+                    serializer.endTag("", "LAYOUT_ENCUESTADO");
+                }
+                serializer.endTag("", "LAYOUTS_ENCUESTADO");
+            }
+
+            if(coberturaFragments.size()>0) {
+                serializer.startTag("", "COBERTURAS_FRAGMENT");
+                for (CoberturaFragment coberturaFragment : coberturaFragments) {
+                    serializer.startTag("", "COBERTURA_FRAGMENT");
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_id, coberturaFragment.get_id());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp301p305, coberturaFragment.getCp301p305());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp306p308, coberturaFragment.getCp306p308());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp309, coberturaFragment.getCp309());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp310p312, coberturaFragment.getCp310p312());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp313p317, coberturaFragment.getCp313p317());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp318, coberturaFragment.getCp318());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp401p404, coberturaFragment.getCp401p404());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp405p407, coberturaFragment.getCp405p407());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp408p410, coberturaFragment.getCp408p410());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp411p416, coberturaFragment.getCp411p416());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp501p505, coberturaFragment.getCp501p505());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp506p507, coberturaFragment.getCp506p507());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp508p511, coberturaFragment.getCp508p511());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp512p513, coberturaFragment.getCp512p513());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp601p604, coberturaFragment.getCp601p604());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp605p608, coberturaFragment.getCp605p608());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp609p612, coberturaFragment.getCp609p612());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp613p617, coberturaFragment.getCp613p617());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp618p621, coberturaFragment.getCp618p621());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp622p625, coberturaFragment.getCp622p625());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp626p629, coberturaFragment.getCp626p629());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp630, coberturaFragment.getCp630());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp701p705, coberturaFragment.getCp701p705());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp706p709, coberturaFragment.getCp706p709());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp801p804, coberturaFragment.getCp801p804());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp805p808, coberturaFragment.getCp805p808());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp809p812, coberturaFragment.getCp809p812());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp813p816, coberturaFragment.getCp813p816());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp817p820, coberturaFragment.getCp817p820());
+                    escribirCampoXml(serializer, SQLConstantes.cobertura_fragments_cp821p823, coberturaFragment.getCp821p823());
+                    serializer.endTag("", "COBERTURA_FRAGMENT");
+                }
+                serializer.endTag("", "COBERTURAS_FRAGMENT");
             }
 
             serializer.endTag("", "ENPOVE");

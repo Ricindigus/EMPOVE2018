@@ -21,16 +21,16 @@ public class M3Pregunta309 {
 
 
     public M3Pregunta309() {
-       _id = "";
-       id_encuestado = "";
+        _id = "";
+        id_encuestado = "";
         id_vivienda = "";
         numero = "";
-       c3_p309_p = "";
+        c3_p309_p = "";
         c3_p309_p_nom = "";
-       c3_p309_c = "";
-       c3_p309_mod = "";
-       c3_p309_m = "";
-       c3_p309_a = "";
+        c3_p309_c = "";
+        c3_p309_mod = "";
+        c3_p309_m = "";
+        c3_p309_a = "";
         c3_p309_m_cod = "";
         c3_p309_a_cod = "";
     }
