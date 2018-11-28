@@ -1,14 +1,25 @@
 package com.example.ricindigus.empove2018.activities;
 
+import android.Manifest;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ricindigus.empove2018.R;
+import com.example.ricindigus.empove2018.activities.admin.AdmMarcoActivity;
+import com.example.ricindigus.empove2018.activities.admin.AdminActivity;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
@@ -34,6 +45,7 @@ import com.example.ricindigus.empove2018.modelo.pojos.ResVisitaSupervisor;
 import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.modelo.pojos.VisitaEncuestador;
 import com.example.ricindigus.empove2018.modelo.pojos.VisitaSupervisor;
+import com.example.ricindigus.empove2018.util.FileChooser;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -52,7 +64,8 @@ public class ImportarActivity extends AppCompatActivity {
     private TextView txtImportar;
     private Button btnImportar;
     private Button btnVolver;
-    private EditText edtArchivo;
+    private Button btnBuscar;
+    private TextView txtArchivo;
 
 
     private Caratula caratula;
@@ -110,14 +123,33 @@ public class ImportarActivity extends AppCompatActivity {
         txtImportar = (TextView) findViewById(R.id.txtImportar);
         btnImportar = (Button) findViewById(R.id.importacion_btnImportar);
         btnVolver = (Button) findViewById(R.id.importacion_btnVolver);
-        edtArchivo = (EditText) findViewById(R.id.importacion_edtArchivo);
+        btnBuscar = findViewById(R.id.btnBuscarArchivo);
+        txtArchivo = findViewById(R.id.importacion_edtArchivo);
+
 
         btnImportar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombreArchivo = edtArchivo.getText().toString() + ".xml";
-                parseXMLImportar(nombreArchivo);
-                Toast.makeText(ImportarActivity.this, "Empresa importada", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ImportarActivity.this);
+                builder.setMessage("¿Está seguro que desea importar el archivo?")
+                        .setTitle("Aviso")
+                        .setCancelable(false)
+                        .setNegativeButton("No",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                })
+                        .setPositiveButton("Sí",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        String nombreArchivo = txtArchivo.getText().toString();
+                                        parseXMLImportar(nombreArchivo);
+                                        dialog.dismiss();
+                                    }
+                                });
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
         btnVolver.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +159,29 @@ public class ImportarActivity extends AppCompatActivity {
             }
         });
 
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(ImportarActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(ImportarActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                }else{
+                    FileChooser fileChooser = new FileChooser(ImportarActivity.this);
+                    fileChooser.setFileListener(new FileChooser.FileSelectedListener() {
+                        @Override
+                        public void fileSelected(File file) {
+                            String filename = file.getAbsolutePath();
+                            if(filename.substring(filename.length()-4,filename.length()).toLowerCase().equals(".xml")){
+                                txtArchivo.setText(filename);
+                            }else{
+                                Toast.makeText(ImportarActivity.this, "archivo de tipo incorrecto", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                    fileChooser.showDialog();
+                }
+            }
+        });
     }
     public void parseXMLImportar(String nombreArchivo){
         caratula = new Caratula();
@@ -160,9 +215,9 @@ public class ImportarActivity extends AppCompatActivity {
             factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(true);
             XmlPullParser xpp = factory.newPullParser();
-            File nuevaCarpeta = new File(getExternalStorageDirectory(), "ENPOVE2018");
-            File file = new File(nuevaCarpeta, nombreArchivo);
-
+//            File nuevaCarpeta = new File(getExternalStorageDirectory(), "ENPOVE2018");
+//            File file = new File(nuevaCarpeta, nombreArchivo);
+            File file = new File(nombreArchivo);
             FileInputStream fileInputStream = new FileInputStream(file);
             fis = new FileInputStream(file);
 
@@ -185,7 +240,7 @@ public class ImportarActivity extends AppCompatActivity {
             //GUARDAR VARIABLES LLENADAS EN EL PARSEO
             Data data = new Data(this);
             data.open();
-            String idVivienda = edtArchivo.getText().toString();
+            String idVivienda = txtArchivo.getText().toString();
             //insertar la caratula
             if(caratula.get_id()!=0){ data.eliminarDato(SQLConstantes.tablacaratula,idVivienda);data.insertarElemento(SQLConstantes.tablacaratula,caratula.toValues()); }
             //insertar datos hogares
@@ -310,6 +365,7 @@ public class ImportarActivity extends AppCompatActivity {
             }
 
             data.close();
+            Toast.makeText(ImportarActivity.this, "Vivienda importada", Toast.LENGTH_SHORT).show();
 //            txtImportar.setText(sb.toString());
         } catch (XmlPullParserException e) {
             e.printStackTrace();

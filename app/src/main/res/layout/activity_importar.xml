@@ -29,17 +29,24 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:textSize="20sp"
-                android:text="INGRESE EL NOMBRE DEL ARCHIVO DE LA VIVIENDA A IMPORTAR"
+                android:text="ARCHIVO DE LA VIVIENDA A IMPORTAR"
                 android:gravity="center"/>
-            <EditText
-                android:id="@+id/importacion_edtArchivo"
-                android:layout_gravity="center"
-                android:layout_width="200dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:inputType="text"
-                android:maxLength="20"
-                android:background="@drawable/fondo_edit_text"/>
+
+                <TextView
+                    android:id="@+id/importacion_edtArchivo"
+                    android:layout_gravity="center"
+                    android:layout_width="320dp"
+                    android:layout_height="64dp"
+                    android:gravity="center"
+                    android:background="@drawable/fondo_edit_text"/>
+
+                <Button
+                    android:id="@+id/btnBuscarArchivo"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Seleccionar ubicación del archivo"/>
+
             <TextView
                 android:id="@+id/txtImportar"
                 android:layout_width="match_parent"

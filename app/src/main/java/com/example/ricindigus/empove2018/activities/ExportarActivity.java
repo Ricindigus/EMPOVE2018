@@ -155,8 +155,8 @@ public class ExportarActivity extends AppCompatActivity {
         ArrayList<Modulo1H> modulo1HS = data.getAllModulo1H(idVivienda);
         ArrayList<Residente> residentes = data.getAllResidentesVivienda(idVivienda);
         ArrayList<Modulo3> modulo3s = data.getAllModulo3(idVivienda);
-        ArrayList<M3Pregunta309> m3Pregunta309s = data.getAllM3Pregunta309(idVivienda);
-        ArrayList<M3Pregunta318> m3Pregunta318s = data.getAllM3Pregunta318(idVivienda);
+        ArrayList<M3Pregunta309> m3Pregunta309s = data.getAllM3Pregunta309Vivienda(idVivienda);
+        ArrayList<M3Pregunta318> m3Pregunta318s = data.getAllM3Pregunta318Vivienda(idVivienda);
         ArrayList<Modulo4> modulo4s = data.getAllModulo4(idVivienda);
         ArrayList<Modulo5> modulo5s = data.getAllModulo5(idVivienda);
         ArrayList<Modulo6> modulo6s = data.getAllModulo6(idVivienda);

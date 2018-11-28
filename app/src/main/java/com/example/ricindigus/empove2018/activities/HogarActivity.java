@@ -92,6 +92,7 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnSiguiente.setEnabled(false);
                 ocultarTeclado(btnSiguiente);
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
@@ -102,18 +103,21 @@ public class HogarActivity extends AppCompatActivity implements NavigationView.O
                         habilitarFragment(tFragment);
                     }
                 }
+                btnSiguiente.setEnabled(true);
             }
         });
 
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnAtras.setEnabled(false);
                 ocultarTeclado(btnAtras);
                 tFragment--;
 //                setFragment(tFragment,-1);
                 while(!setFragment(tFragment,-1)){
                     tFragment--;
                 }
+                btnAtras.setEnabled(true);
             }
         });
 

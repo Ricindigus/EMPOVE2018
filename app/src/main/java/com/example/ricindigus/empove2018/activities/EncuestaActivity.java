@@ -124,6 +124,7 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnSiguiente.setEnabled(false);
                 ocultarTeclado(btnSiguiente);
                 if(fragmentActual.validarDatos()){
                     fragmentActual.guardarDatos();
@@ -139,17 +140,20 @@ public class EncuestaActivity extends AppCompatActivity implements InterfazEncue
                     }
 
                 }
+                btnSiguiente.setEnabled(true);
             }
         });
 
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnAtras.setEnabled(false);
                 ocultarTeclado(btnAtras);
                 tFragment--;
                 while(!setFragment(tFragment,-1)){
                     tFragment--;
                 }
+                btnAtras.setEnabled(true);
             }
         });
 
