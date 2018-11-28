@@ -177,6 +177,8 @@ public class SQLConstantes {
     public static final String caratula_t_hogar = "t_hogar";
     public static final String caratula_usuario = "usuario";
     public static final String caratula_observaciones = "observaciones";
+    public static final String caratula_cobertura = "cobertura";
+
 
 
     public static final String SQL_CREATE_TABLA_CARATULA =
@@ -208,6 +210,7 @@ public class SQLConstantes {
                     caratula_telefono  + " TEXT," +
                     caratula_t_hogar  + " TEXT," +
                     caratula_usuario  + " TEXT," +
+                    caratula_cobertura  + " TEXT," +
                     caratula_observaciones + " TEXT" + ");"
             ;
 

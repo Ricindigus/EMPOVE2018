@@ -99,12 +99,7 @@ public class MarcoActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        inicializarDatos();
-        cargarSpinerAnios(anios);
-        cargarSpinerMeses(meses);
-        cargarSpinerPeriodos(periodos);
-        cargarSpinerZonas(zonas);
-        setearAdapter();
+
 
         spAnio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -328,5 +323,16 @@ public class MarcoActivity extends AppCompatActivity {
             }
         });
         recyclerView.setAdapter(marcoAdapter);
+    }
+
+    @Override
+    protected void onResume() {
+        inicializarDatos();
+        cargarSpinerAnios(anios);
+        cargarSpinerMeses(meses);
+        cargarSpinerPeriodos(periodos);
+        cargarSpinerZonas(zonas);
+        setearAdapter();
+        super.onResume();
     }
 }

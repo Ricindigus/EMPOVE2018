@@ -440,6 +440,8 @@ public class ImportarActivity extends AppCompatActivity {
                 case SQLConstantes.caratula_telefono:caratula.setTelefono(valor);break;
                 case SQLConstantes.caratula_t_hogar:caratula.setT_hogar(valor);break;
                 case SQLConstantes.caratula_usuario:caratula.setUsuario(valor);break;
+                case SQLConstantes.caratula_observaciones:caratula.setObservaciones(valor);break;
+                case SQLConstantes.caratula_cobertura:caratula.setCobertura(valor);break;
             }
         }
     }

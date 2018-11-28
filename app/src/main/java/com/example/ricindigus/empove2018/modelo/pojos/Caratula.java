@@ -33,6 +33,7 @@ public class Caratula {
     private String t_hogar;
     private String usuario;
     private String observaciones;
+    private String cobertura;
 
 
 
@@ -65,6 +66,7 @@ public class Caratula {
         t_hogar="0";
         usuario="";
         observaciones="";
+        cobertura = "0";
 
     }
 
@@ -292,6 +294,14 @@ public class Caratula {
         this.observaciones = observaciones;
     }
 
+    public String getCobertura() {
+        return cobertura;
+    }
+
+    public void setCobertura(String cobertura) {
+        this.cobertura = cobertura;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.caratula_id,_id);
@@ -322,6 +332,7 @@ public class Caratula {
         contentValues.put(SQLConstantes.caratula_t_hogar,t_hogar);
         contentValues.put(SQLConstantes.caratula_usuario,usuario);
         contentValues.put(SQLConstantes.caratula_observaciones,observaciones);
+        contentValues.put(SQLConstantes.caratula_cobertura,cobertura);
         return contentValues;
     }
 

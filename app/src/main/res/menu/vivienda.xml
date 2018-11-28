@@ -13,4 +13,9 @@
         android:orderInCategory="100"
         android:title="Registrar Observación"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_finalizar_vivienda"
+        android:orderInCategory="100"
+        android:title="Finalizar Encuesta"
+        app:showAsAction="never" />
 </menu>

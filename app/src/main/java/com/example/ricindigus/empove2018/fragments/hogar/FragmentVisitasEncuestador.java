@@ -135,8 +135,9 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                 Data dTablas = new Data(context);
                 dTablas.open();
                 String resultadoVisita = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu));
+                if (resultadoVisita == null) resultadoVisita = "";
                 dTablas.close();
-                if(resultadoVisita == null  && idCargo.equals("1")){
+                if(resultadoVisita.equals("") && idCargo.equals("1")){
                     PopupMenu popupMenu = new PopupMenu(context,view);
                     popupMenu.getMenuInflater().inflate(R.menu.menu_visita,popupMenu.getMenu());
                     popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -144,10 +145,10 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                         public boolean onMenuItemClick(MenuItem item) {
                             switch(item.getItemId()){
                                 case R.id.opcion_editar:
-                                            editarVisita(pos);
+                                    editarVisita(pos);
                                     break;
                                 case R.id.opcion_eliminar:
-                                            eliminarVisita(pos);
+                                    eliminarVisita(pos);
                                     break;
                                 case R.id.opcion_finalizar:
                                     finalizarVisita(pos);
@@ -546,7 +547,6 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                 btnFinalizarVisita.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // TODO Do something
                         boolean valido = false;
                         boolean vHoraFin = true, vResultado = true, vEspecifique = true, vFechaProxima = true, vHoraProxima = true;
                         String mensaje = "";
@@ -595,12 +595,12 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
 
                         valido = vHoraFin && vResultado && vEspecifique && vFechaProxima;
 
-
-
                         if(valido){
+                            String cobertura = "0";
                             boolean finalizacion = true;
                             if (spResultado.getSelectedItemPosition() == 1) {
                                 if(!coberturaCorrecta()) finalizacion = false;
+                                else cobertura = "1";
                             }
                             if (finalizacion){
                                 //actualizo visita con datos de finalizar
@@ -645,7 +645,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                                 ContentValues contentValuesFinal = new ContentValues();
                                 cursor.moveToPosition(posicion);
                                 contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_resultado_final,cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu)));
-                                //FALTA GUARDAR RWESULTADO ESPECIFIQUE DE OTRO
+                                //FALTA GUARDAR RESULTADO ESPECIFIQUE DE OTRO
                                 contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_dd,dd);
                                 contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_mm,mm);
                                 contentValuesFinal.put(SQLConstantes.resultado_encuestador_vis_fecha_final_aa,yy);
@@ -660,11 +660,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                                     txtResultadoFinal.setText(getResources().getStringArray(R.array.visita_array_resultados)[spResultado.getSelectedItemPosition()]);
                                     txtFechaFinal.setText(checkDigito(dd) + "/" + checkDigito(mm) + "/" + checkDigito(yy));
                                     //actualizo valor del estado del hogar
-                                    dataTablas.actualizarValor(
-                                            SQLConstantes.tablahogares,
-                                            SQLConstantes.hogar_estado,
-                                            spResultado.getSelectedItemPosition()+"",
-                                            idHogar);
+                                    dataTablas.actualizarValor(SQLConstantes.tablahogares, SQLConstantes.hogar_estado, spResultado.getSelectedItemPosition()+"", idHogar);
                                 }else{
                                     int res = Integer.parseInt(dataTablas.getValor(getIdTablaParte2(),SQLConstantes.resultado_encuestador_vis_resultado_final,idHogar));
                                     if(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu))) <= res){
@@ -681,13 +677,12 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                                                 idHogar);
                                     }
                                 }
-                                dataTablas.actualizarValor(
-                                        SQLConstantes.tablahogares,
-                                        SQLConstantes.hogar_estado,
-                                        dataTablas.getValor(getIdTablaParte2(), SQLConstantes.resultado_supervisor_vis_resultado_final,idHogar),
-                                        idHogar);
-                                dataTablas.close();
 
+                                //ACTUALIZA EL ESTADO DEL HOGAR
+                                dataTablas.actualizarValor(SQLConstantes.tablahogares, SQLConstantes.hogar_estado, dataTablas.getValor(getIdTablaParte2(), SQLConstantes.resultado_supervisor_vis_resultado_final,idHogar), idHogar);
+                                //ACTUALIZA COBERTURA
+                                dataTablas.actualizarValor(SQLConstantes.tablahogares, SQLConstantes.hogar_cobertura, cobertura, idHogar);
+                                dataTablas.close();
                                 alertDialog.dismiss();
                             }
                         }else Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();

@@ -27,6 +27,7 @@ import com.example.ricindigus.empove2018.fragments.vivienda.FragmentCaratula;
 import com.example.ricindigus.empove2018.fragments.vivienda.FragmentHogares;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
+import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.TipoFragmentVivienda;
 
@@ -250,9 +251,65 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
             });
             alertDialog.show();
             return true;
+        }else if (id == R.id.action_finalizar_vivienda){
+            Data data = new Data(ViviendaActivity.this);
+            data.open();
+            if (coberturaViviendaConMensaje()){
+                data.actualizarValor(SQLConstantes.tablamarco,SQLConstantes.marco_estado,"1",idVivienda);
+                finish();
+            }
+            else data.actualizarValor(SQLConstantes.tablamarco,SQLConstantes.marco_estado,"0'",idVivienda);
+            data.close();
+            return true;
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+    public boolean coberturaViviendaConMensaje(){
+        Data data = new Data(ViviendaActivity.this);
+        data.open();
+        String cobCaratula = data.getValor(SQLConstantes.tablacaratula,SQLConstantes.caratula_cobertura,idVivienda);
+        if (!cobCaratula.equals("1")){
+            mostrarMensaje("FALTA COBERTURAR LA CARÁTULA, NO SE PUEDE FINALIZAR VIVIENDA");return false;
+        }
+        if (data.getAllHogaresVivienda(idVivienda).size() > 0){
+            for (Hogar hogar : data.getAllHogaresVivienda(idVivienda)){
+                if (!hogar.getCobertura().equals("1")) {
+                    mostrarMensaje("FALTA COBERTURAR EL HOHAR " + hogar.getNumero());return false;
+                }
+            }
+        }else {
+            mostrarMensaje("NO REGISTRO HOGARES, NO SE PUEDE COBERTURAR ESTE MODULO");return false;
+        }
+        data.close();
+        return true;
+    }
+
+    public boolean coberturaVivienda(){
+        Data data = new Data(ViviendaActivity.this);
+        data.open();
+        String cobCaratula = data.getValor(SQLConstantes.tablacaratula,SQLConstantes.caratula_cobertura,idVivienda);
+        if (!cobCaratula.equals("1")) return false;
+        if (data.getAllHogaresVivienda(idVivienda).size() > 0){
+            for (Hogar hogar : data.getAllHogaresVivienda(idVivienda)){
+                if (!hogar.getCobertura().equals("1")) return false;
+            }
+        }else return false;
+        data.close();
+        return true;
+    }
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(ViviendaActivity.this);
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -290,6 +347,11 @@ public class ViviendaActivity extends AppCompatActivity implements NavigationVie
                 .setPositiveButton("Sí",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Data data = new Data(ViviendaActivity.this);
+                                data.open();
+                                if (coberturaVivienda()) data.actualizarValor(SQLConstantes.tablamarco,SQLConstantes.marco_estado,"1",idVivienda);
+                                else data.actualizarValor(SQLConstantes.tablamarco,SQLConstantes.marco_estado,"0",idVivienda);
+                                data.close();
                                 finish();
                             }
                         });

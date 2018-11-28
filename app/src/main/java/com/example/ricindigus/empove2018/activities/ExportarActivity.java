@@ -216,6 +216,7 @@ public class ExportarActivity extends AppCompatActivity {
                 escribirCampoXml(serializer, SQLConstantes.caratula_t_hogar ,caratula.getT_hogar()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_usuario ,caratula.getUsuario()+"");
                 escribirCampoXml(serializer, SQLConstantes.caratula_observaciones ,caratula.getObservaciones()+"");
+                escribirCampoXml(serializer, SQLConstantes.caratula_cobertura,caratula.getCobertura()+"");
                 serializer.endTag("", "CARATULA");
             }
 

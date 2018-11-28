@@ -208,10 +208,7 @@ public class FragmentHogares extends FragmentPagina {
                 btnAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // TODO Do something
                         if(!jefeEditText.getText().toString().trim().equals("")){
-
-
                             int numero = hogares.size()+1;
                             String id = idVivienda+"_"+numero;
                             Hogar hogar = new Hogar();
@@ -233,6 +230,7 @@ public class FragmentHogares extends FragmentPagina {
                             data.open();
                             data.insertarElemento(getNombreTabla(),hogar.toValues());
                             data.insertarElemento(SQLConstantes.tablafragmentshogar,pojoFragmentHogar.toValues());
+                            data.actualizarValor(SQLConstantes.tablamarco,SQLConstantes.marco_estado,"0",idVivienda);
                             Residente residente = new Residente();
                             residente.set_id(id + "_1");
                             residente.setId_hogar(id);

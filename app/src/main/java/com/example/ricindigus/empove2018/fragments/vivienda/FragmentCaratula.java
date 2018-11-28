@@ -232,6 +232,7 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
         contentValues.put(SQLConstantes.caratula_lote,lote);
         contentValues.put(SQLConstantes.caratula_km,km);
         contentValues.put(SQLConstantes.caratula_telefono,telefono);
+        contentValues.put(SQLConstantes.caratula_cobertura,"1");
         if(data.existeElemento(getNombreTabla(),idVivienda)){
             data.actualizarElemento(getNombreTabla(),contentValues,idVivienda);
         }else{
@@ -250,6 +251,7 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             contentValues.put(SQLConstantes.caratula_t_hogar,"0");
             data.insertarElemento(getNombreTabla(),contentValues);
         }
+        Caratula caratula = data.getCaratula(idVivienda);
         data.close();
     }
 

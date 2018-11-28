@@ -38,6 +38,35 @@ public class Marco {
 
 
     public Marco() {
+        _id="";
+        anio="";
+        mes="";
+        periodo="";
+        zona="";
+        ccdd="";
+        departamento="";
+        ccpp="";
+        provincia="";
+        ccdi="";
+        distrito="";
+        codccpp="";
+        nomccpp="";
+        conglomerado="";
+        norden="";
+        manzana_id="";
+        tipvia="";
+        nomvia="";
+        nropta="";
+        lote="";
+        piso="";
+        mza="";
+        block="";
+        interior="";
+        usuario_id="";
+        usuario="";
+        nombre="";
+        dni="";
+        usuario_sup_id="";
         estado = "0";
     }
 

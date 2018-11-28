@@ -314,8 +314,6 @@ public class Data {
                 marco.setUsuario_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_id)));
                 marco.setUsuario_sup_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_sup_id)));
                 marco.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_estado)));
-//                marco.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nombre)));
-//                marco.setDni(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_dni)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1085,6 +1083,7 @@ public class Data {
                 caratula.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_anio)));
                 caratula.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_mes)));
                 caratula.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_periodo)));
+                caratula.setConglomerado(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_conglomerado)));
                 caratula.setNom_dep(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_dep)));
                 caratula.setNom_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_prov)));
                 caratula.setNom_dist(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_nom_dist)));
@@ -1108,7 +1107,7 @@ public class Data {
                 caratula.setT_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_t_hogar)));
                 caratula.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_usuario)));
                 caratula.setObservaciones(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_observaciones)));
-
+                caratula.setCobertura(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_cobertura)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -1153,6 +1152,7 @@ public class Data {
                 caratula.setT_hogar(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_t_hogar)));
                 caratula.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_usuario)));
                 caratula.setObservaciones(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_observaciones)));
+                caratula.setCobertura(cursor.getString(cursor.getColumnIndex(SQLConstantes.caratula_cobertura)));
                 caratulas.add(caratula);
             }
         }finally{
