@@ -30,6 +30,7 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
 import com.example.ricindigus.empove2018.modelo.pojos.POJOLayout;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -41,7 +42,7 @@ import java.util.ArrayList;
  */
 public class FragmentP605P608 extends FragmentPagina {
     String idEncuestado;
-    String idInformante;
+    String idVivienda, idHogar, idInformante, id_informante="";
     Context context;
     Spinner informanteSpinner;
 
@@ -50,16 +51,28 @@ public class FragmentP605P608 extends FragmentPagina {
     EditText c6_p608_o_EditText;
     LinearLayout m6_p605_linearlayout, m6_p606_linearlayout, m6_p607_linearlayout, m6_p608_linearlayout;
 
+    private String c2_p203="",c6_p601="",c6_p602="",c6_p603="";
+    private String c6_p604_1="", c6_p604_4="", c6_p604_6="", c6_p604_8="", c6_p604_9="", c6_p604_10="";
     private String c6_p605;
     private String c6_p606;
     private String c6_p607;
     private String c6_p608;
     private String c6_p608_o;
+    int edad=0;
 
     @SuppressLint("ValidFragment")
     public FragmentP605P608(String idEncuestado, Context context) {
         this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        c2_p203 = residente.getC2_p203();
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP605P608() {
@@ -140,6 +153,7 @@ public class FragmentP605P608 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
+        id_informante = idHogar + "_" + idInformante;
         c6_p605 = c6_p605_EditText.getText().toString();
         c6_p606 = c6_p606_EditText.getText().toString();
         c6_p607 = c6_p607_EditText.getText().toString();
@@ -158,6 +172,12 @@ public class FragmentP605P608 extends FragmentPagina {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
             if(!modulo6.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo6.getIdInformante()));
+            c6_p601 = modulo6.getC6_p601();
+            c6_p602 = modulo6.getC6_p602();
+            c6_p603 = modulo6.getC6_p603();
+            c6_p604_1 = modulo6.getC6_p604_1(); c6_p604_4 = modulo6.getC6_p604_4();
+            c6_p604_6 = modulo6.getC6_p604_6(); c6_p604_8 = modulo6.getC6_p604_8();
+            c6_p604_9 = modulo6.getC6_p604_9(); c6_p604_10 = modulo6.getC6_p604_10();
             c6_p605_EditText.setText(modulo6.getC6_p605());
             c6_p606_EditText.setText(modulo6.getC6_p606());
             c6_p607_EditText.setText(modulo6.getC6_p607());
@@ -176,7 +196,7 @@ public class FragmentP605P608 extends FragmentPagina {
     public boolean validarDatos() {
         llenarVariables();
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
-
+        if(!id_informante.equals(idEncuestado) && edad>=12){mostrarMensaje("NÚMERO INFORMANTE: NO ES EL MISMO QUE ESTA SIENDO ENTREVISTADO");return false;}
         if(c6_p605.trim().equals("") && m6_p605_linearlayout.getVisibility()==View.VISIBLE){
             mostrarMensaje("PREGUNTA 605: DEBE ESPECIFICAR");return false;
         }
@@ -188,6 +208,28 @@ public class FragmentP605P608 extends FragmentPagina {
         }
         if(m6_p608_linearlayout.getVisibility()==View.VISIBLE){
             if(c6_p608.equals("-1")){ mostrarMensaje("PREGUNTA 608: DEBE SELECCIONAR UNA OPCION");return false; }
+            int p608=Integer.parseInt(c6_p608);
+            if(c6_p601.equals("2") && c6_p602.equals("1") && p608<3){ mostrarMensaje("PREGUNTA 608: ES EMPLEADOR O INDEPENDIENTE, NO ES DEPENDIENTE PAGADO");return false; }
+            if(c6_p601.equals("2") && c6_p602.equals("2") && c6_p603.equals("1") && (p608==3 || p608==4 || p608==6)){
+                mostrarMensaje("PREGUNTA 608: ES EMPLEADO/ OBRERO/EMPLEADA DEL HOGAR NO TIENE NEGOCIO PROPIO");
+                return false;
+            }
+            if(c6_p601.equals("2") && (c6_p602.equals("1") || c6_p603.equals("1")) && (p608==5 || p608==7)){
+                mostrarMensaje("PREGUNTA 608: ES FAMILIAR NO REMUNERADO DEL HOGAR / ES FAMILIAR NO REMUNERADO DE OTRO HOGAR, ¿TIENE VACACIONES?");
+                return false;
+            }
+            if(c2_p203.equals("9") && (p608!=6)){
+                mostrarMensaje("PREGUNTA 608: P203 =9 PORQUE LA P608 ES DIFERENTE A 6 TRABAJADORA DEL HOGAR");
+            }
+            if(((p608==1 || p608==2) && (c6_p604_1.equals("0") || c6_p604_4.equals("0") || c6_p604_8.equals("0"))) ||
+                    ((p608==3 || p608==4) && (c6_p604_1.equals("0") || c6_p604_6.equals("0") || c6_p604_9.equals("0"))) ||
+                    ((p608==5) && (c6_p604_8.equals("0") || c6_p604_9.equals("0"))) ||
+                    ((p608==6) && (c6_p604_6.equals("0"))) ||
+                    ((p608==7) && (c6_p604_8.equals("0") || c6_p604_10.equals("0")))){
+                mostrarMensaje("PREGUNTA 608: CATEGORÍA OCUPACIONAL NO CORRESPONDE A LA ACTIVIDAD QUE REALIZÓ LA SEMANA PASADA");
+                return false;
+            }
+
             if(c6_p608.equals("7")){
                 if(c6_p608_o.trim().equals("")){ mostrarMensaje("PREGUNTA 608 - OPCION 7: DEBE ESPECIFICAR OTRO");return false;}
             }

@@ -30,6 +30,7 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -40,7 +41,7 @@ import java.util.ArrayList;
  */
 public class FragmentP630 extends FragmentPagina {
     String idEncuestado;
-    String idVivienda, idHogar, idInformante;
+    String idVivienda, idHogar, idInformante, id_informante="";
     Context context;
 
     Spinner informanteSpinner;
@@ -66,11 +67,20 @@ public class FragmentP630 extends FragmentPagina {
     private String c6_p630_2frec;
     private String c6_p630_2frec_o;
 
+    int edad=0;
 
     @SuppressLint("ValidFragment")
     public FragmentP630(String idEncuestado, Context context) {
         this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP630() {
@@ -255,6 +265,7 @@ public class FragmentP630 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition() + "";
+        id_informante = idHogar + "_" + idInformante;
         c6_p630_1 = c6_p630_1_RadioGroup.indexOfChild(c6_p630_1_RadioGroup.findViewById(c6_p630_1_RadioGroup.getCheckedRadioButtonId())) + "";
         c6_p630_1med = c6_p630_1med_RadioGroup.indexOfChild(c6_p630_1med_RadioGroup.findViewById(c6_p630_1med_RadioGroup.getCheckedRadioButtonId()))+ "";
         c6_p630_1o = c6_p630_1o_EditText.getText().toString();
@@ -306,6 +317,8 @@ public class FragmentP630 extends FragmentPagina {
     public boolean validarDatos() {
         llenarVariables();
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+
+        if(!id_informante.equals(idEncuestado) && edad>=12){mostrarMensaje("NÚMERO INFORMANTE: NO ES EL MISMO QUE ESTA SIENDO ENTREVISTADO");return false;}
 
         if (c6_p630_1.equals("-1")) { mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR UNA OPCION");return false;}
         if (c6_p630_1.equals("1")) {

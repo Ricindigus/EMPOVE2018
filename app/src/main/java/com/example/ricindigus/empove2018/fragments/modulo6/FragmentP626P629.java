@@ -30,6 +30,7 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo6;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
 
@@ -41,7 +42,7 @@ import java.util.Calendar;
  */
 public class FragmentP626P629 extends FragmentPagina {
     String idEncuestado;
-    String idInformante;
+    String idVivienda, idHogar, idInformante, id_informante="";
     Context context;
     Spinner informanteSpinner;
 
@@ -78,10 +79,20 @@ public class FragmentP626P629 extends FragmentPagina {
     private String c6_p629_4_f;
     private String c6_p629_4_m;
 
+    int edad=0;
+
     @SuppressLint("ValidFragment")
     public FragmentP626P629(String idEncuestado, Context context) {
         this.idEncuestado = idEncuestado;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        idHogar = residente.getId_hogar();
+        idVivienda = residente.getId_vivienda();
+        idInformante = "";
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     public FragmentP626P629() {
@@ -272,6 +283,7 @@ public class FragmentP626P629 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
+        id_informante = idHogar + "_" + idInformante;
         c6_p626 = c6_p626_RadioGroup.indexOfChild(c6_p626_RadioGroup.findViewById(c6_p626_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p627 = c6_p627_RadioGroup.indexOfChild(c6_p627_RadioGroup.findViewById(c6_p627_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p628 = c6_p628_EditText.getText().toString();
@@ -337,6 +349,8 @@ public class FragmentP626P629 extends FragmentPagina {
     public boolean validarDatos() {
         llenarVariables();
         if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+
+        if(!id_informante.equals(idEncuestado) && edad>=12){mostrarMensaje("NÚMERO INFORMANTE: NO ES EL MISMO QUE ESTA SIENDO ENTREVISTADO");return false;}
 
         if(c6_p626.equals("-1")){ mostrarMensaje("PREGUNTA 626: DEBE SELECCIONAR UNA OPCION");return false; }
         if(c6_p627.equals("-1")){ mostrarMensaje("PREGUNTA 627: DEBE SELECCIONAR UNA OPCION");return false; }

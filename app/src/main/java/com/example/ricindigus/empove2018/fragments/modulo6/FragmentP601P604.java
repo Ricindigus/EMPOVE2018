@@ -45,7 +45,7 @@ import java.util.Calendar;
  */
 public class FragmentP601P604 extends FragmentPagina {
     String idEncuestado;
-    String idVivienda, idHogar, idInformante;
+    String idVivienda, idHogar, idInformante, id_informante="";
     Context context;
 
     Spinner informanteSpinner;
@@ -74,6 +74,7 @@ public class FragmentP601P604 extends FragmentPagina {
     private String c6_p604_o;
 
     boolean corresponde=false;
+    int edad=0;
 
     @SuppressLint("ValidFragment")
     public FragmentP601P604(String idEncuestado, Context context) {
@@ -85,6 +86,7 @@ public class FragmentP601P604 extends FragmentPagina {
         idHogar = residente.getId_hogar();
         idVivienda = residente.getId_vivienda();
         idInformante = "";
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
         data.close();
     }
 
@@ -236,6 +238,7 @@ public class FragmentP601P604 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
+        id_informante = idHogar + "_" + idInformante;
         c6_p601 = c6_p601_RadioGroup.indexOfChild(c6_p601_RadioGroup.findViewById(c6_p601_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p602 = c6_p602_RadioGroup.indexOfChild(c6_p602_RadioGroup.findViewById(c6_p602_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p603 = c6_p603_RadioGroup.indexOfChild(c6_p603_RadioGroup.findViewById(c6_p603_RadioGroup.getCheckedRadioButtonId()))+"";
@@ -294,8 +297,8 @@ public class FragmentP601P604 extends FragmentPagina {
     public boolean validarDatos() {
         llenarVariables();
         if(!corresponde)  {mostrarMensaje("PERIODO DE REFERENCIA NO CORRESPONDE A FECHA DE LA ENCUESTA");return false;}
-        if(idInformante.equals("0")) {mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
-
+        if(idInformante.equals("0")){mostrarMensaje("NÚMERO INFORMANTE: DEBE INDICAR INFORMANTE");return false;}
+        if(!id_informante.equals(idEncuestado) && edad>=12){mostrarMensaje("NÚMERO INFORMANTE: NO ES EL MISMO QUE ESTA SIENDO ENTREVISTADO");return false;}
         if(c6_p601.equals("-1")){
             mostrarMensaje("PREGUNTA 601: DEBE SELECCIONAR UNA OPCION");
             return false;

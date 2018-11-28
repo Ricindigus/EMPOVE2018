@@ -287,7 +287,7 @@ public class Caratula {
     }
 
     public String getObservaciones() {
-        return observaciones;
+        if(observaciones==null) return ""; else return observaciones;
     }
 
     public void setObservaciones(String observaciones) {
