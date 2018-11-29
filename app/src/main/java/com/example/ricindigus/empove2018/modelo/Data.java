@@ -1536,7 +1536,7 @@ public class Data {
                 M3Pregunta318 m3Pregunta318 = new M3Pregunta318();
                 m3Pregunta318.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_id)));
                 m3Pregunta318.setIdEncuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_idEncuestado)));
-                m3Pregunta318.setIdEncuestado(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_id_vivienda)));
+                m3Pregunta318.setId_vivienda(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_id_vivienda)));
                 m3Pregunta318.setNumero(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_p318_numero)));
                 m3Pregunta318.setC3_p318_f(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_f)));
                 m3Pregunta318.setC3_p318_s(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318_s)));

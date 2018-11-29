@@ -369,7 +369,10 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
         if(es_cero(piso)){ mostrarMensaje("NO PUEDE SER CERO, PISO"); return false; }
 //        if(mza.equals("")){ mostrarMensaje("Debe completar la MANZANA"); return false; }
 //        if(lote.equals("")){ mostrarMensaje("Debe completar el LOTE"); return false; }
-        if(tipvia == 5 && km.equals("")) {mostrarMensaje("Tipo de vía es Carretera, debe indicar el Km.");return false;}
+        if(tipvia == 5) {
+            if(km.trim().equals("")){ mostrarMensaje("Tipo de vía es Carretera, debe indicar el Km."); return false;}
+            if(Integer.parseInt(km.trim())==0){ mostrarMensaje("Tipo de vía es Carretera, Kilometros debe ser diferente de cero."); return false;}
+        }
 //        if(telefono.equals("")){ mostrarMensaje("Debe completar el TELÉFONO"); return false; }
 //        if(t_hogar.equals("")){ mostrarMensaje("Debe indicar la CANTIDAD DE HOGARES"); return false; }
         return true;

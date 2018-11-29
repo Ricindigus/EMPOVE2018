@@ -193,9 +193,14 @@ public class AgregarPersonaActivity extends AppCompatActivity {
 
         if(!data.existeElemento(getNombreTabla(),_id)){
             M3Pregunta318 m3Pregunta318 =  new M3Pregunta318();
+//            Log.e("_id", "guardarDatos: "+ _id);
+//            Log.e("idEncuestado", "guardarDatos: "+ idEncuestado);
+//            Log.e("idVivienda", "guardarDatos: "+ idVivienda);
+//            Log.e("numero", "guardarDatos: "+ numero);
             m3Pregunta318.set_id(_id);
             m3Pregunta318.setIdEncuestado(idEncuestado);
             m3Pregunta318.setId_vivienda(idVivienda);
+            m3Pregunta318.setNumero(numero);
             data.insertarElemento(getNombreTabla(),m3Pregunta318.toValues());
         }
         data.actualizarElemento(getNombreTabla(),contentValues,_id);

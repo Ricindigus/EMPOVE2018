@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,6 +65,7 @@ public class FragmentP609P612 extends FragmentPagina {
     LinearLayout m6_p609_linearlayout, m6_p610_linearlayout, m6_p611_linearlayout, m6_p611a_linearlayout,
             m6_p611b_linearlayout, m6_p612_linearlayout;
 
+    private String c6_p608;
     private String c6_p609;
     private String c6_p610_pd;
     private String c6_p610_pl;
@@ -289,6 +291,7 @@ public class FragmentP609P612 extends FragmentPagina {
         c6_p611a = c6_p611a_RadioGroup.indexOfChild(c6_p611a_RadioGroup.findViewById(c6_p611a_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p611b = c6_p611b_RadioGroup.indexOfChild(c6_p611b_RadioGroup.findViewById(c6_p611b_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p612 = c6_p612_RadioGroup.indexOfChild(c6_p612_RadioGroup.findViewById(c6_p612_RadioGroup.getCheckedRadioButtonId()))+"";
+        if(c6_p612.equals("3")){ c6_p612 = "2";}
         c6_p612_nro = c6_p612_nro_EditText.getText().toString();
     }
 
@@ -303,6 +306,7 @@ public class FragmentP609P612 extends FragmentPagina {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
             if(!modulo6.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo6.getIdInformante()));
+            c6_p608 = modulo6.getC6_p608();
             if(!modulo6.getC6_p609().equals("-1") && !modulo6.getC6_p609().equals(""))((RadioButton)c6_p609_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p609()))).setChecked(true);
             c6_p610_pd_EditText.setText(modulo6.getC6_p610_pd());
             c6_p610_pl_EditText.setText(modulo6.getC6_p610_pl());
@@ -321,7 +325,10 @@ public class FragmentP609P612 extends FragmentPagina {
             c6_p611_EditText.setText(modulo6.getC6_p611());
             if(!modulo6.getC6_p611a().equals("-1") && !modulo6.getC6_p611a().equals(""))((RadioButton)c6_p611a_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p611a()))).setChecked(true);
             if(!modulo6.getC6_p611b().equals("-1") && !modulo6.getC6_p611b().equals(""))((RadioButton)c6_p611b_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p611b()))).setChecked(true);
-            if(!modulo6.getC6_p612().equals("-1") && !modulo6.getC6_p612().equals(""))((RadioButton)c6_p612_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p612()))).setChecked(true);
+            if(!modulo6.getC6_p612().equals("-1") && !modulo6.getC6_p612().equals("")){
+                if(modulo6.getC6_p612().equals("2")) ((RadioButton)c6_p612_RadioGroup.getChildAt(3)).setChecked(true);
+                else ((RadioButton)c6_p612_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p612()))).setChecked(true);
+            }
             c6_p612_nro_EditText.setText(modulo6.getC6_p612_nro());
         }
         data.close();
@@ -380,7 +387,37 @@ public class FragmentP609P612 extends FragmentPagina {
         if(c6_p612.equals("-1")){ mostrarMensaje("PREGUNTA 612: DEBE SELECCIONAR UNA OPCION");return false; }
         if(c6_p612.equals("1")){
             if(c6_p612_nro.trim().equals("")){ mostrarMensaje("PREGUNTA 612 - OPCION 1: NRO DE PERSONAS");return false;}
+            if(Integer.parseInt(c6_p612_nro)==99 && Integer.parseInt(idInformante)>0){
+                mostrarMensaje("PREGUNTA 612 - No debe aceptar el valor 99 (no precisa) <>");return false;
+            }
         }
+        if(c6_p612.equals("2") && edad<18){ mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA MÁS DE 100 PERSONAS Y LA PERSONA TIENE MENOS DE 18 AÑOS");}
+        if(c6_p608.equals("1") && c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)<=1){
+            mostrarMensaje("PREGUNTA 612 - EL EMPLEADOR O PATRONO DEBE DE TENER MÁS DE UN EMPLEADO");return false;
+        }
+        if(c6_p608.equals("2") && c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)>7){
+            mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA DEL INDEPENDIENTE, NRO DE PERSONAS DEBE SER MENOR A 7");return false;
+        }
+        if(c6_p608.equals("2") && c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)>7){
+            mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA DEL INDEPENDIENTE, NRO DE PERSONAS DEBE SER MENOR A 7");return false;
+        }
+        Log.e("c6_p608", "validarDatos: "+ c6_p608); Log.e("c6_p612", "validarDatos: "+ c6_p612);
+        if(c6_p608.equals("2") && (c6_p612.equals("2") || (c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)>15))){
+            mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA DEL INDEPENDIENTE, NRO DE PERSONAS MAYOR A 15");return false;
+        }
+        if(c6_p608.equals("6") && (c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)>7)){
+            mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA DE LA TRABAJADORA DEL HOGAR, NRO DE PERSONAS DEBE SER MENOR A 7");
+        }
+        if(c6_p608.equals("6") && (c6_p612.equals("2") || (c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)>20))){
+            mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA DEL TRABAJADOR FAMILIAR NO REMUNERADO DE OTRO DEL HOGAR, NRO DE PERSONAS MAYOR A 20");return false;
+        }
+        if(c6_p608.equals("7") && (c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)>7)){
+            mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA DEL TRABAJADOR FAMILIAR NO REMUNERADO DE OTRO DEL HOGAR, NRO DE PERSONAS DEBE SER MENOR A 7");
+        }
+        if(c6_p608.equals("7") && (c6_p612.equals("1") || (c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)>15))){
+            mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA DEL TRABAJADOR FAMILIAR NO REMUNERADO DE OTRO DEL HOGAR, NRO DE PERSONAS MAYOR A 15");return false;
+        }
+
         return true;
     }
 

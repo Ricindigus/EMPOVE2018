@@ -492,6 +492,10 @@ public class ExportarActivity extends AppCompatActivity {
                 serializer.startTag("", "M3P318PERSONAS");
                 for (M3Pregunta318 m3Pregunta318 : m3Pregunta318s) {
                     serializer.startTag("", "M3P318PERSONA");
+//                    Log.e("id", "exportarVivienda: "+m3Pregunta318.get_id() );
+//                    Log.e("id_encuestado", "exportarVivienda: "+m3Pregunta318.getIdEncuestado() );
+//                    Log.e("id_vicienda", "exportarVivienda: "+m3Pregunta318.getId_vivienda() );
+//                    Log.e("getNumero", "exportarVivienda: "+m3Pregunta318.getNumero() );
                     escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id, m3Pregunta318.get_id());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_p318_idEncuestado, m3Pregunta318.getIdEncuestado());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_p318_id_vivienda, m3Pregunta318.getId_vivienda());

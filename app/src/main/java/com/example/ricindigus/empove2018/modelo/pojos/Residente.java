@@ -101,7 +101,11 @@ public class Residente {
     }
 
     public String getC2_p205_a() {
-        return c2_p205_a;
+        if(c2_p205_a==null){
+            return "0";
+        }else if(c2_p205_a.trim().equals("")){
+            return "0";
+        }else  return c2_p205_a;
     }
 
     public void setC2_p205_a(String c2_p205_a) {
