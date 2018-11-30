@@ -314,6 +314,8 @@ public class Data {
                 marco.setUsuario_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_id)));
                 marco.setUsuario_sup_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_usuario_sup_id)));
                 marco.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_estado)));
+//                marco.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_nombre)));
+//                marco.setDni(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_dni)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -850,6 +852,29 @@ public class Data {
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablausuario,
                     null,SQLConstantes.WHERE_CLAUSE_USUARIO,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                usuario = new Usuario();
+                usuario.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_id)));
+                usuario.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_usuario)));
+                usuario.setClave(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_clave)));
+                usuario.setDni(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_dni)));
+                usuario.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_nombre)));
+                usuario.setCargo_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_cargo_id)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return usuario;
+    }
+
+    public Usuario getUsuario2(String user){
+        Usuario usuario = null;
+        String[] whereArgs = new String[]{user};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablausuario,
+                    null,SQLConstantes.WHERE_CLAUSE_ID,whereArgs,null,null,null);
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 usuario = new Usuario();

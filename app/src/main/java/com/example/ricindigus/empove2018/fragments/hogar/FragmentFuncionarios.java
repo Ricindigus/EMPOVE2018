@@ -28,6 +28,8 @@ import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Funcionario;
 import com.example.ricindigus.empove2018.modelo.pojos.Hogar;
+import com.example.ricindigus.empove2018.modelo.pojos.Marco;
+import com.example.ricindigus.empove2018.modelo.pojos.Usuario;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -210,6 +212,11 @@ public class FragmentFuncionarios extends FragmentPagina {
 //            Hogar hogar = data.getHogar(idHogar);
 //            if(!hogar.getVive().equals("-1") && !hogar.getVive().equals(""))((RadioButton)radiogroupPersonas.getChildAt(Integer.parseInt(hogar.getVive()))).setChecked(true);
 //            numeroPersonas.setText(hogar.getNropersonas());
+        }else{
+            Marco marco = data.getMarco(idVivienda);
+            Usuario user = data.getUsuario2(marco.getUsuario_id());
+            nomEncuestador.setText(user.getNombre());
+            dniEncuestador.setText(user.getDni());
         }
         data.close();
         layoutPersonas.setVisibility(View.GONE);

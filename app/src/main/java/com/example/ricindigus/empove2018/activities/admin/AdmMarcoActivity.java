@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import com.example.ricindigus.empove2018.activities.SplashActivity;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Marco;
+import com.example.ricindigus.empove2018.modelo.pojos.Usuario;
 import com.example.ricindigus.empove2018.util.MarcoPullParser;
 
 
@@ -125,8 +127,9 @@ public class AdmMarcoActivity extends AppCompatActivity {
             ArrayList<Marco> marcos = marcoPullParser.parseXML(AdmMarcoActivity.this,filename);
             String nombreUsuario = marcos.get(0).getNombre();
             String dniUsuario = marcos.get(0).getDni();
-            data.actualizarValor(SQLConstantes.tablausuario,SQLConstantes.usuario_nombre,nombreUsuario,marcos.get(0).get_id());
-            data.actualizarValor(SQLConstantes.tablausuario,SQLConstantes.usuario_dni,dniUsuario,marcos.get(0).get_id());
+            data.actualizarValor(SQLConstantes.tablausuario,SQLConstantes.usuario_nombre,nombreUsuario,marcos.get(0).getUsuario_id());
+            data.actualizarValor(SQLConstantes.tablausuario,SQLConstantes.usuario_dni,dniUsuario,marcos.get(0).getUsuario_id());
+            Usuario user = data.getUsuario2("1");
             for(Marco marco:marcos){
                 if (!data.existeElemento(SQLConstantes.tablamarco,marco.get_id())){
                     data.insertarElemento(SQLConstantes.tablamarco,marco.toValues());

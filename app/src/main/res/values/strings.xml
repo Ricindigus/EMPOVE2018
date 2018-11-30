@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ENPOVE2018</string>
-    <string name="app_version">Versión 0.17.0</string>
+    <string name="app_version">Versión 0.18.0</string>
     <string name="title_activity_encuesta">EncuestaActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
