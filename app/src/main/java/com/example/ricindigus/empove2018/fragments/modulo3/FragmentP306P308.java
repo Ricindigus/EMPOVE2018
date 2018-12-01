@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -62,10 +63,13 @@ public class FragmentP306P308 extends FragmentPagina {
     Spinner c3_p308_estado_Spinner, c3_p308_municipio_Spinner;
     LinearLayout layoutp306, layoutp307, layoutp308;
 
-    String fecha_301="",fecha_307="";
+    String fecha_301="",fecha_303="",fecha_307="";
     String c3_p301_d;
     String c3_p301_m;
     String c3_p301_a;
+    String c3_p303_d;
+    String c3_p303_m;
+    String c3_p303_a;
     String c3_p306;
     String c3_p306_o;
     String c3_p307_d;
@@ -213,6 +217,7 @@ public class FragmentP306P308 extends FragmentPagina {
         c3_p308_m_seleccion = c3_p308_municipio_Spinner.getSelectedItemPosition()+"";
 
         fecha_301 = c3_p301_a + c3_p301_m + c3_p301_d;
+        fecha_303 = c3_p303_a + c3_p303_m + c3_p303_d;
         fecha_307 = c3_p307_a + c3_p307_m + c3_p307_d;
     }
 
@@ -229,6 +234,10 @@ public class FragmentP306P308 extends FragmentPagina {
             c3_p301_d = modulo3.getC3_p301_d();
             c3_p301_m = modulo3.getC3_p301_m();
             c3_p301_a = modulo3.getC3_p301_a();
+            c3_p303_d = "01";
+            c3_p303_m = modulo3.getC3_p303_m();
+            if(c3_p303_m.length()==1) c3_p303_m = "0" + c3_p303_m;
+            c3_p303_a = modulo3.getC3_p303_a();
             ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(modulo3.getIdHogar());
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -271,6 +280,11 @@ public class FragmentP306P308 extends FragmentPagina {
         if (c3_p307_d.trim().equals("")){mostrarMensaje("PREGUNTA 307: DEBE AGREGAR FECHA");return false;}
         if(Integer.parseInt(fecha_307)<Integer.parseInt(fecha_301)){
             mostrarMensaje("PREGUNTA 307: DEBE SER MAYOR O IGUAL A LA FECHA DE NACIMIENTO ("+c3_p301_d+"/"+c3_p301_m+"/"+c3_p301_a+")");return false;
+        }
+        Log.e("fecha_307", "validarDatos: "+ fecha_307);
+        Log.e("fecha_303", "validarDatos: "+ fecha_303);
+        if(Integer.parseInt(fecha_307)<Integer.parseInt(fecha_303)){
+            mostrarMensaje("PREGUNTA 307: DEBE SER MAYOR O IGUAL A LA FECHA DE INGRESO ("+c3_p303_d+"/"+c3_p303_m+"/"+c3_p303_a+")");return false;
         }
         if (c3_p308_estado_Spinner.getSelectedItemPosition() == 0){mostrarMensaje("PREGUNTA 308: DEBE INDICAR ESTADO");return false;}
         if (c3_p308_municipio_Spinner.getSelectedItemPosition() == 0){mostrarMensaje("PREGUNTA 308: DEBE INDICAR MUNICIPIO");return false;}

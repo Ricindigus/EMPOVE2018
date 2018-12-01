@@ -646,6 +646,30 @@ public class FragmentP601P604 extends FragmentPagina {
             data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp613p617,"0",idEncuestado);
         }
         POJOLayout pojoLayout = data.getLayouts(idEncuestado);
+//        ContentValues contentValues = new ContentValues();
+//        if(data.menor_edad_hogar(idHogar)) {
+//            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,idEncuestado).equals("0")){
+//                contentValues = new ContentValues();
+//                contentValues.put(SQLConstantes.layouts_p625,"1");
+//                data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
+//                data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp622p625,"0",idEncuestado);
+//            }
+//        }else{
+//            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,idEncuestado).equals("1")){
+//                contentValues = new ContentValues();
+//                contentValues.put(SQLConstantes.layouts_p625,"0");
+//                data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
+//                contentValues = new ContentValues();
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_1,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_2,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_3,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_4,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_5,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_6,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_o,"");
+//                data.actualizarElemento(SQLConstantes.tablamodulo6,contentValues,idEncuestado);
+//            }
+//        }
         data.close();
 
     }

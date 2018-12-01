@@ -29,6 +29,7 @@ import com.example.ricindigus.empove2018.R;
 import com.example.ricindigus.empove2018.modelo.Data;
 import com.example.ricindigus.empove2018.modelo.SQLConstantes;
 import com.example.ricindigus.empove2018.modelo.pojos.Modulo3;
+import com.example.ricindigus.empove2018.modelo.pojos.Residente;
 import com.example.ricindigus.empove2018.util.FragmentPagina;
 import com.example.ricindigus.empove2018.util.InputFilterSoloLetras;
 import com.example.ricindigus.empove2018.util.NumericKeyBoardTransformationMethod;
@@ -67,6 +68,8 @@ public class FragmentP313P317 extends FragmentPagina {
     private String c3_p316_o;
     private int c3_p317;
 
+    private int edad=0;
+
     public FragmentP313P317() {
         // Required empty public constructor
     }
@@ -75,6 +78,11 @@ public class FragmentP313P317 extends FragmentPagina {
     public FragmentP313P317(String idEncuestado, Context contexto) {
         this.idEncuestado = idEncuestado;
         this.contexto = contexto;
+        Data data = new Data(contexto);
+        data.open();
+        Residente residente = data.getResidente(idEncuestado);
+        if(residente.getC2_p205_a().equals("")) edad = 0; else edad = Integer.parseInt(residente.getC2_p205_a());
+        data.close();
     }
 
     @Override
@@ -287,6 +295,7 @@ public class FragmentP313P317 extends FragmentPagina {
             mostrarMensaje("PREGUNTA 315: EL ESPECIFICAR NO PUEDE SER (CARTA ANDINA)");return false;
         }
         if (c3_p316 == -1){mostrarMensaje("PREGUNTA 316: DEBE MARCAR UNA OPCIÓN"); return false;}
+        if (c3_p316==4 && edad<18){mostrarMensaje("PREGUNTA 316: DEBE MARCAR OTRA OPCIÓN PORQUE ES MENOR DE EDDAD"); return false;}
         if (c3_p316 == 5){
             if (c3_p316_o.trim().equals("")){mostrarMensaje("PREGUNTA 316: DEBE ESPECIFICAR");return false;}
         }

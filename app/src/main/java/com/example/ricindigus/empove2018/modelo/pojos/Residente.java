@@ -108,6 +108,10 @@ public class Residente {
         }else  return c2_p205_a;
     }
 
+    public String getC2_p205_a2() {
+        return c2_p205_a;
+    }
+
     public void setC2_p205_a(String c2_p205_a) {
         this.c2_p205_a = c2_p205_a;
     }

@@ -56,8 +56,8 @@ public class ResidenteAdapter extends RecyclerView.Adapter<ResidenteAdapter.View
         if(residentes.get(position).getC2_p205_a().equals("") && residentes.get(position).getC2_p205_m().equals("")){
             holder.txtEdad.setText("");
         }else{
-            if(!residentes.get(position).getC2_p205_a().equals(""))
-                holder.txtEdad.setText(String.valueOf(residentes.get(position).getC2_p205_a()) + " Años");
+            if(!residentes.get(position).getC2_p205_a2().equals(""))
+                holder.txtEdad.setText(String.valueOf(residentes.get(position).getC2_p205_a2()) + " Años");
             else
                 holder.txtEdad.setText(String.valueOf(residentes.get(position).getC2_p205_m()) + " Meses");
         }

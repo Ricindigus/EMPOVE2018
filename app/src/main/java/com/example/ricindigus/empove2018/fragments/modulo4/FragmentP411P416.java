@@ -172,6 +172,56 @@ public class FragmentP411P416 extends FragmentPagina {
             }
         });
 
+        c4_p411_14_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    c4_p411_1_CheckBox.setChecked(false);
+                    c4_p411_1_CheckBox.setEnabled(false);
+                    c4_p411_2_CheckBox.setChecked(false);
+                    c4_p411_2_CheckBox.setEnabled(false);
+                    c4_p411_3_CheckBox.setChecked(false);
+                    c4_p411_3_CheckBox.setEnabled(false);
+                    c4_p411_4_CheckBox.setChecked(false);
+                    c4_p411_4_CheckBox.setEnabled(false);
+                    c4_p411_5_CheckBox.setChecked(false);
+                    c4_p411_5_CheckBox.setEnabled(false);
+                    c4_p411_6_CheckBox.setChecked(false);
+                    c4_p411_6_CheckBox.setEnabled(false);
+                    c4_p411_7_CheckBox.setChecked(false);
+                    c4_p411_7_CheckBox.setEnabled(false);
+                    c4_p411_8_CheckBox.setChecked(false);
+                    c4_p411_8_CheckBox.setEnabled(false);
+                    c4_p411_9_CheckBox.setChecked(false);
+                    c4_p411_9_CheckBox.setEnabled(false);
+                    c4_p411_10_CheckBox.setChecked(false);
+                    c4_p411_10_CheckBox.setEnabled(false);
+                    c4_p411_11_CheckBox.setChecked(false);
+                    c4_p411_11_CheckBox.setEnabled(false);
+                    c4_p411_12_CheckBox.setChecked(false);
+                    c4_p411_12_CheckBox.setEnabled(false);
+                    c4_p411_13_CheckBox.setChecked(false);
+                    c4_p411_13_CheckBox.setEnabled(false);
+                    c4_p411_o_EditText.setText("");
+                    c4_p411_o_EditText.setBackgroundResource(R.drawable.cajas_de_texto_disabled);
+                }else{
+                    c4_p411_1_CheckBox.setEnabled(true);
+                    c4_p411_2_CheckBox.setEnabled(true);
+                    c4_p411_3_CheckBox.setEnabled(true);
+                    c4_p411_4_CheckBox.setEnabled(true);
+                    c4_p411_5_CheckBox.setEnabled(true);
+                    c4_p411_6_CheckBox.setEnabled(true);
+                    c4_p411_7_CheckBox.setEnabled(true);
+                    c4_p411_8_CheckBox.setEnabled(true);
+                    c4_p411_9_CheckBox.setEnabled(true);
+                    c4_p411_10_CheckBox.setEnabled(true);
+                    c4_p411_11_CheckBox.setEnabled(true);
+                    c4_p411_12_CheckBox.setEnabled(true);
+                    c4_p411_13_CheckBox.setEnabled(true);
+                }
+            }
+        });
+
         c4_p416_7_CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {

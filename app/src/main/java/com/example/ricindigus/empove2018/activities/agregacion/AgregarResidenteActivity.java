@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -318,7 +319,7 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
                 ((RadioButton)c2_p204_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p204()))).setChecked(true);
                 sexo_residente = Integer.parseInt(residente.getC2_p204());
             }
-            c2_p205_a_TextInputET.setText(residente.getC2_p205_a());
+            c2_p205_a_TextInputET.setText(residente.getC2_p205_a2());
             c2_p205_m_TextInputET.setText(residente.getC2_p205_m());
             if(!residente.getC2_p206().equals(""))c2_p206_Spinner.setSelection(Integer.parseInt(residente.getC2_p206()));
             if (!residente.getC2_p207().equals(""))((RadioButton)c2_p207_RadioGroup.getChildAt(Integer.parseInt(residente.getC2_p207()))).setChecked(true);
@@ -462,10 +463,12 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
 
 
     public void ocultarOtrosLayouts(String edad, String sexo){
+        String ids_residentes="";
         Data data = new Data(AgregarResidenteActivity.this);
         data.open();
         int iEdad = 0;
         int iSexo = 0;
+        boolean entro=false;
         if (!edad.equals("")) iEdad = Integer.parseInt(edad);
         iSexo = Integer.parseInt(sexo);
 
@@ -473,6 +476,16 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         boolean todosMayoresEdad = true;
         for (Residente r : residentes){
             int ed = 0;
+            if(!entro){//SOLO ID DE >=12
+                if(Integer.parseInt(r.getC2_p205_a())>=12){
+                    ids_residentes += r.get_id();entro=true;
+                }
+            }else{
+                if(Integer.parseInt(r.getC2_p205_a())>=12){
+                    ids_residentes += "," +r.get_id();
+                }
+            }
+            //ids_residentes += r.get_id();
             if (!r.getC2_p205_a().equals("")) ed = Integer.parseInt(r.getC2_p205_a());
             if (ed < 18) todosMayoresEdad = false;
         }
@@ -546,10 +559,47 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
             ocultarP629();ocultarP630(); }
 
         if (iEdad >= 12){
-            mostrarLayoutPregunta(SQLConstantes.layouts_p625);
-            if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,_id).equals("-1"))
-                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"1",_id);
+            if(!todosMayoresEdad) {
+                Log.e("algun menor de edad", "ocultarOtrosLayouts: " + ids_residentes);
+                String[] residente_id = ids_residentes.split(",");
+                for(String id_residente:residente_id){
+                    Log.e("mostrar", "ocultarOtrosLayouts: "+ id_residente);
+                    mostrarLayoutPregunta(SQLConstantes.layouts_p625,id_residente);
+                    if (data.getValor(SQLConstantes.tablafragments, SQLConstantes.fragments_p622p625, id_residente).equals("-1"))
+                        data.actualizarValor(SQLConstantes.tablafragments, SQLConstantes.fragments_p622p625, "1", id_residente);
+                }
+            }else{
+                Log.e("ningun menor de edad", "ocultarOtrosLayouts: " + ids_residentes);
+                String[] residente_id = ids_residentes.split(",");
+                for(String id_residente:residente_id){
+                    Log.e("ocultar", "ocultarOtrosLayouts: "+ id_residente);
+                    ocultarP625_2(id_residente);
+                    if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p622,id_residente).equals("0") &&
+                            data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p623,id_residente).equals("0") &&
+                            data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p624,id_residente).equals("0") &&
+                            data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,id_residente).equals("0")){
+                        data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"-1",id_residente);
+                    }
+                }
+//                ocultarP625();
+//                if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p622,_id).equals("0") &&
+//                        data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p623,_id).equals("0") &&
+//                        data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p624,_id).equals("0") &&
+//                        data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,_id).equals("0")){
+//                    data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"-1",_id);
+//                }
+            }
         } else {
+//            String[] residente_id = ids_residentes.split(",");
+//            for(String id_residente:residente_id){
+//                ocultarP625_2(id_residente);
+//                if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p622,id_residente).equals("0") &&
+//                        data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p623,id_residente).equals("0") &&
+//                        data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p624,id_residente).equals("0") &&
+//                        data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,id_residente).equals("0")){
+//                    data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"-1",id_residente);
+//                }
+//            }
             ocultarP625();
             if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p622,_id).equals("0") &&
                     data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p623,_id).equals("0") &&
@@ -793,6 +843,22 @@ public class AgregarResidenteActivity extends AppCompatActivity implements Inter
         contentValues.put(SQLConstantes.modulo6_c6_p625_o,"");
         data.actualizarElemento(SQLConstantes.tablamodulo6,contentValues,_id);
         data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,"0",_id);
+        data.close();
+    }
+
+    public void ocultarP625_2(String id_residente){
+        Data data = new Data(this);
+        data.open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SQLConstantes.modulo6_c6_p625_1,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_2,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_3,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_4,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_5,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_6,"");
+        contentValues.put(SQLConstantes.modulo6_c6_p625_o,"");
+        data.actualizarElemento(SQLConstantes.tablamodulo6,contentValues,id_residente);
+        data.actualizarValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,"0",id_residente);
         data.close();
     }
 

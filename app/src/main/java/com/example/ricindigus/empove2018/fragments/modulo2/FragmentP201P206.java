@@ -2,6 +2,7 @@ package com.example.ricindigus.empove2018.fragments.modulo2;
 
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,6 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -176,6 +178,7 @@ public class FragmentP201P206 extends FragmentPagina {
                                                 Toast.makeText(context, "LA ENCUESTA ESta DIRIGIDA SOLO A LA POBLACION VENEZOLANA", Toast.LENGTH_SHORT).show();
                                             }else{
                                                 String idEncuestado = residentes.get(position).get_id()+"";
+                                                //ocultar_mostrar_p625(idEncuestado);
                                                 Intent intent1 = new Intent(context, EncuestaActivity.class);
                                                 intent1.putExtra("idEncuestado",idEncuestado);
                                                 intent1.putExtra("numero", residentes.get(position).getNumero() + "");
@@ -295,4 +298,39 @@ public class FragmentP201P206 extends FragmentPagina {
         inicializarDatos();
         setearAdapter();
     }
+
+//    public void ocultar_mostrar_p625(String idEncuestado){
+//        Data data = new Data(context);
+//        data.open();
+//        ContentValues contentValues = new ContentValues();
+//        Log.e("idEncuestado", "ocultar_mostrar_p625: "+idEncuestado );
+//        if(data.menor_edad_hogar(idHogar)) {
+//            Log.e("menor de edad", "ocultar_mostrar_p625: "+idEncuestado );
+//            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,idEncuestado).equals("0")){
+//                Log.e("menor de edad entro", "ocultar_mostrar_p625: "+idEncuestado );
+//                contentValues = new ContentValues();
+//                contentValues.put(SQLConstantes.layouts_p625,"1");
+//                data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
+//                data.actualizarValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp622p625,"0",idEncuestado);
+//            }
+//        }else{
+//            Log.e("mayor de edad", "ocultar_mostrar_p625: "+idEncuestado );
+//            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,idEncuestado).equals("1")){
+//                Log.e("mayor de edad entro", "ocultar_mostrar_p625: "+idEncuestado );
+//                contentValues = new ContentValues();
+//                contentValues.put(SQLConstantes.layouts_p625,"0");
+//                data.actualizarElemento(SQLConstantes.tablalayouts, contentValues, idEncuestado);
+//                contentValues = new ContentValues();
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_1,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_2,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_3,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_4,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_5,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_6,"");
+//                contentValues.put(SQLConstantes.modulo6_c6_p625_o,"");
+//                data.actualizarElemento(SQLConstantes.tablamodulo6,contentValues,idEncuestado);
+//            }
+//        }
+//        data.close();
+//    }
 }
