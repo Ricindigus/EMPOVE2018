@@ -263,7 +263,8 @@ public class FragmentP613P617 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
-        id_informante = idHogar + "_" + idInformante;
+        String[] infor_id = (informanteSpinner.getItemAtPosition(informanteSpinner.getSelectedItemPosition()).toString()).split("-");
+        id_informante = idHogar + "_" + infor_id[0];
         c6_p613 = c6_p613_RadioGroup.indexOfChild(c6_p613_RadioGroup.findViewById(c6_p613_RadioGroup.getCheckedRadioButtonId())) + "";
         c6_p614_mon = c6_p614_mon_EditText.getText().toString();
         c6_p614_esp = c6_p614_esp_EditText.getText().toString();

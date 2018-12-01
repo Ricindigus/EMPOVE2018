@@ -65,6 +65,7 @@ public class FragmentP609P612 extends FragmentPagina {
     LinearLayout m6_p609_linearlayout, m6_p610_linearlayout, m6_p611_linearlayout, m6_p611a_linearlayout,
             m6_p611b_linearlayout, m6_p612_linearlayout;
 
+    private String c6_p604_1;
     private String c6_p608;
     private String c6_p609;
     private String c6_p610_pd;
@@ -270,7 +271,8 @@ public class FragmentP609P612 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition() + "";
-        id_informante = idHogar + "_" + idInformante;
+        String[] infor_id = (informanteSpinner.getItemAtPosition(informanteSpinner.getSelectedItemPosition()).toString()).split("-");
+        id_informante = idHogar + "_" + infor_id[0];
         c6_p609 = c6_p609_RadioGroup.indexOfChild(c6_p609_RadioGroup.findViewById(c6_p609_RadioGroup.getCheckedRadioButtonId()))+"";
         c6_p610_pd = c6_p610_pd_EditText.getText().toString();
         c6_p610_pl = c6_p610_pl_EditText.getText().toString();
@@ -306,6 +308,7 @@ public class FragmentP609P612 extends FragmentPagina {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             informanteSpinner.setAdapter(adapter);
             if(!modulo6.getIdInformante().equals(""))informanteSpinner.setSelection(Integer.parseInt(modulo6.getIdInformante()));
+            c6_p604_1  = modulo6.getC6_p604_1();
             c6_p608 = modulo6.getC6_p608();
             if(!modulo6.getC6_p609().equals("-1") && !modulo6.getC6_p609().equals(""))((RadioButton)c6_p609_RadioGroup.getChildAt(Integer.parseInt(modulo6.getC6_p609()))).setChecked(true);
             c6_p610_pd_EditText.setText(modulo6.getC6_p610_pd());
@@ -374,6 +377,8 @@ public class FragmentP609P612 extends FragmentPagina {
         if(c6_p610_sv.trim().equals("")){ mostrarMensaje("PREGUNTA 610 SECUNDARIA - VIERNES: DEBE INGRESAR HORAS TRABAJADAS");return false; }
         if(c6_p610_ss.trim().equals("")){ mostrarMensaje("PREGUNTA 610 SECUNDARIA - SABADO: DEBE INGRESAR HORAS TRABAJADAS");return false; }
 
+        if(c6_p604_1.equals("1") && c6_p608.equals("5") && horas_tot_p610()==0){ mostrarMensaje("PREGUNTA 610: DEBE TENER AL MENOS INFORMACIÓN DE UNA HORA");return false; }
+
         if(c6_p611.trim().equals("")){ mostrarMensaje("PREGUNTA 611: Nº DE HORAS");return false;}
 
         if (m6_p611a_linearlayout.getVisibility() == View.VISIBLE){
@@ -416,6 +421,9 @@ public class FragmentP609P612 extends FragmentPagina {
         }
         if(c6_p608.equals("7") && (c6_p612.equals("1") || (c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)>15))){
             mostrarMensaje("PREGUNTA 612 - TAMAÑO DE EMPRESA DEL TRABAJADOR FAMILIAR NO REMUNERADO DE OTRO DEL HOGAR, NRO DE PERSONAS MAYOR A 15");return false;
+        }
+        if(c6_p608.equals("5") && c6_p612.equals("1") && Integer.parseInt(c6_p612_nro)<2){
+            mostrarMensaje("PREGUNTA 612 - NUMERO DE PERSONAS DEBE SER MAYOR A 1");return false;
         }
 
         return true;
@@ -591,5 +599,14 @@ public class FragmentP609P612 extends FragmentPagina {
                 data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp630,idEncuestado).equals("0")) return false;
         data.close();
         return true;
+    }
+
+    public int horas_tot_p610(){
+        return Integer.parseInt(c6_p610_pd.trim())+Integer.parseInt(c6_p610_pl.trim())+Integer.parseInt(c6_p610_pm.trim())+
+                Integer.parseInt(c6_p610_pmi.trim())+Integer.parseInt(c6_p610_pj.trim())+Integer.parseInt(c6_p610_pv.trim())+
+                Integer.parseInt(c6_p610_ps.trim())+
+                Integer.parseInt(c6_p610_sd.trim())+Integer.parseInt(c6_p610_sl.trim())+Integer.parseInt(c6_p610_sm.trim())+
+                Integer.parseInt(c6_p610_smi.trim())+Integer.parseInt(c6_p610_sj.trim())+Integer.parseInt(c6_p610_sv.trim())+
+                Integer.parseInt(c6_p610_ss.trim());
     }
 }

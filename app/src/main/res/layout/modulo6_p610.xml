@@ -21,6 +21,52 @@
         android:text="@string/modulo_6_p610_sp1"/>
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p610_dom"
+            android:theme="@style/TemaBoldCenterMedium"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p610_lun"
+            android:theme="@style/TemaBoldCenterMedium"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p610_mar"
+            android:theme="@style/TemaBoldCenterMedium"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p610_mier"
+            android:theme="@style/TemaBoldCenterMedium"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p610_jue"
+            android:theme="@style/TemaBoldCenterMedium"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p610_vie"
+            android:theme="@style/TemaBoldCenterMedium"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/modulo_6_p610_sab"
+            android:theme="@style/TemaBoldCenterMedium"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <EditText
@@ -80,6 +126,13 @@
             android:inputType="numberPassword"
             android:background="@drawable/input_text_enabled"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/texto_medium"
+        android:layout_marginTop="@dimen/margen_medium"
+        android:text="@string/modulo_6_p610_sp2"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -126,13 +179,6 @@
             android:text="@string/modulo_6_p610_sab"
             android:theme="@style/TemaBoldCenterMedium"/>
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/texto_medium"
-        android:layout_marginTop="@dimen/margen_medium"
-        android:text="@string/modulo_6_p610_sp2"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -193,52 +239,6 @@
             android:gravity="center"
             android:inputType="numberPassword"
             android:background="@drawable/input_text_enabled"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p610_dom"
-            android:theme="@style/TemaBoldCenterMedium"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p610_lun"
-            android:theme="@style/TemaBoldCenterMedium"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p610_mar"
-            android:theme="@style/TemaBoldCenterMedium"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p610_mier"
-            android:theme="@style/TemaBoldCenterMedium"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p610_jue"
-            android:theme="@style/TemaBoldCenterMedium"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p610_vie"
-            android:theme="@style/TemaBoldCenterMedium"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/modulo_6_p610_sab"
-            android:theme="@style/TemaBoldCenterMedium"/>
     </LinearLayout>
 
     <LinearLayout

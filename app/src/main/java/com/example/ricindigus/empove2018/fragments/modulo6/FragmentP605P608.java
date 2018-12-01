@@ -153,7 +153,8 @@ public class FragmentP605P608 extends FragmentPagina {
     @Override
     public void llenarVariables() {
         idInformante = informanteSpinner.getSelectedItemPosition()+"";
-        id_informante = idHogar + "_" + idInformante;
+        String[] infor_id = (informanteSpinner.getItemAtPosition(informanteSpinner.getSelectedItemPosition()).toString()).split("-");
+        id_informante = idHogar + "_" + infor_id[0];
         c6_p605 = c6_p605_EditText.getText().toString();
         c6_p606 = c6_p606_EditText.getText().toString();
         c6_p607 = c6_p607_EditText.getText().toString();

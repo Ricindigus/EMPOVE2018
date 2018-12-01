@@ -253,6 +253,7 @@ public class FragmentP101P107 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
+        boolean verificar_p104_incorrecto=false;
         llenarVariables();
         if (c1_p101 == -1){mostrarMensaje("PREGUNTA 101: DEBE MARCAR UNA OPCIÓN"); return false;}
         else{
@@ -280,6 +281,114 @@ public class FragmentP101P107 extends FragmentPagina {
             if (c1_p104 == 7){
                 if (c1_p104_o.trim().equals("")){mostrarMensaje("PREGUNTA 104: DEBE ESPECIFICAR");return false;}
             }
+        }
+        if((c1_p101==2 || c1_p101==3)){
+            if(c1_p104>5){
+                if((c1_p102<5 && c1_p103==1) ||
+                        ((c1_p102==1 || c1_p102==3 || c1_p102==4 || c1_p102==5|| c1_p102==7) && c1_p103==2) ||
+                        ((c1_p102==1 || c1_p102==3 || c1_p102==4) && c1_p103==3) ||
+                        ((c1_p102==1 || c1_p102==3 || c1_p102==4|| c1_p102==7) && c1_p103==4)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p104<3 || c1_p104>5){
+                if(((c1_p102==1 || c1_p102==3 || c1_p102==4) && c1_p103==5)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p104<4 || c1_p104>5){
+                if((c1_p102==2 && c1_p103==2) ||
+                        ((c1_p102==2 || c1_p102==5) && c1_p103==3) ||
+                        ((c1_p102==2 || c1_p102==5) && c1_p103==4) ||
+                        ((c1_p102==2 || c1_p102==5) && c1_p103==5)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if((c1_p102>4 && c1_p103==1) || ((c1_p102==6 || c1_p102>=8) && c1_p103==2) || (c1_p102>5 && c1_p103==3) ||
+                    ((c1_p102==6 || c1_p102>=8) && c1_p103==4) || (c1_p102>5 && c1_p103==5) || c1_p102>7 || c1_p103>5){
+                verificar_p104_incorrecto = true;
+            }
+        }
+        if((c1_p101==1 || c1_p101==4  || c1_p101==7 || c1_p101==8)){
+            if(c1_p104<4){
+                if(((c1_p102==2 || c1_p102==9) && c1_p103==2) ||
+                        ((c1_p102==2 || c1_p102==5 || c1_p102==6 || c1_p102==7) && c1_p103==3) ||
+                        ((c1_p102==2 || c1_p102==5 || c1_p102==6|| c1_p102>=8) && c1_p103==4) ||
+                        ((c1_p102==2 || c1_p102==5 || c1_p102==7) && c1_p103==5) ||
+                        (c1_p102==7 && c1_p103==6) ||
+                        ((c1_p102==3 || c1_p102==4 || c1_p102==5 || c1_p102>6) && c1_p103==7) ||
+                        (c1_p102==7 && c1_p103==8)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p104<5 || c1_p104>7){
+                if((c1_p102==9 && c1_p103==3) ||
+                        ((c1_p102==6 || c1_p102==8 || c1_p102==9) && c1_p103==5) ||
+                        ((c1_p102<6 || c1_p102>7) && c1_p103==6) ||
+                        (c1_p102<3 && c1_p103==7) ||
+                        ((c1_p102<3 || c1_p102==4 || c1_p102==5 || c1_p102>7) && c1_p103==8)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p104<3 || c1_p104>7){
+                if((c1_p102==1 || c1_p102==3 || c1_p102==4) && c1_p103==5){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p104<6 || c1_p104>7){
+                if((c1_p102==6 && c1_p103==6) ||
+                        (c1_p102==6 && c1_p103==7) ||
+                        (c1_p102==6 && c1_p103==8)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p104==1 || c1_p104==4 || c1_p104==6 || c1_p104>7){
+                if(c1_p102==3 && c1_p103==8){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if((c1_p102>4 && c1_p103==1) || ((c1_p102==6 || c1_p102==8) && c1_p103==2) || (c1_p102==8 && c1_p103==3)){
+                verificar_p104_incorrecto = true;
+            }
+        }
+
+        if((c1_p101==5 || c1_p101==6)){
+            if(c1_p104<4 || c1_p104>7){
+                if(((c1_p102==5 || c1_p102==7 || c1_p102==9) && c1_p103==2) ||
+                        ((c1_p102>2 && c1_p102<8) && c1_p103==3) ||
+                        (c1_p102>1 && c1_p103==4) ||
+                        (((c1_p102>2 && c1_p102<6) || c1_p102==7) && c1_p103==5) ||
+                        (c1_p102==7 && c1_p103==6) ||
+                        (((c1_p102>2 && c1_p102<6) || c1_p102>6) && c1_p103==7) ||
+                        (c1_p102==7 && c1_p103==8)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p104<5 || c1_p104>7){
+                if((c1_p102==9 && c1_p103==3) ||
+                        ((c1_p102==6 || c1_p102>7) && c1_p103==5) ||
+                        (((c1_p102>2 && c1_p102<6) || c1_p102>7) && c1_p103==6) ||
+                        (((c1_p102>2 && c1_p102<6) || c1_p102>7) && c1_p103==8)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p104<6 || c1_p104>7){
+                if((c1_p102==6 && c1_p103==6) ||
+                        (c1_p102==6 && c1_p103==7) ||
+                        (c1_p102==6 && c1_p103==8)){
+                    verificar_p104_incorrecto = true;
+                }
+            }
+            if(c1_p102==1 || c1_p103==1 ||
+                    (((c1_p102>1 && c1_p102<5) || c1_p102==6 || c1_p102==8) && c1_p103==2) ||
+                    ((c1_p102==2 || c1_p102==8) && c1_p103==3) ||
+                    (c1_p102==2 && c1_p103>4)){
+                verificar_p104_incorrecto = true;
+            }
+        }
+
+        if(verificar_p104_incorrecto){
+            mostrarMensaje("PREGUNTA 104: EL MATERIAL EN LOS PISOS NO HAY RELACION CON P101, P102, P103");
         }
 
         if (c1_p105.trim().equals("")){mostrarMensaje("PREGUNTA 105: FALTA COMPLETAR LA PREGUNTA");return false;}
