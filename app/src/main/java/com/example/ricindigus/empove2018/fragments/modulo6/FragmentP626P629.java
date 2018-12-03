@@ -423,6 +423,8 @@ public class FragmentP626P629 extends FragmentPagina {
                     return false;
                 }
             }
+        }else{
+            c6_p629_1 = ""; c6_p629_2 = ""; c6_p629_3 = ""; c6_p629_4 = "";
         }
         return true;
     }

@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -274,6 +275,14 @@ public class FragmentP101P107 extends FragmentPagina {
             if (c1_p103 == 8){
                 if (c1_p103_o.trim().equals("")){mostrarMensaje("PREGUNTA 103: DEBE ESPECIFICAR");return false;}
             }
+        }
+
+        if((((c1_p102<5 && c1_p103<4) || (c1_p102==5 && c1_p103==2) || ((c1_p102==1 || c1_p102==3) && c1_p103==4)) && (c1_p101==5 || c1_p101==6)) ||
+           (((c1_p102==9 && c1_p103==2) || ((c1_p102==6 || c1_p102>7) && c1_p103==4) || (c1_p102>6 && c1_p103==5) || (c1_p102==3 && c1_p103==6) || (c1_p102>4 && c1_p103>5)) && (c1_p101==2 || c1_p101==3 || c1_p101==5)) ||
+           (((c1_p102==5 && c1_p103==3) || (c1_p102<5 && c1_p103==5)) && (c1_p101==2 || c1_p101==5 || c1_p101==6)) ||
+           ((((c1_p102==6 || c1_p102==7) && c1_p103==3) || (c1_p102==6 && c1_p103==5) || ((c1_p102<3 || c1_p102==4) && c1_p103==6) || (c1_p102<4 && c1_p103>6)) && (c1_p101==2 || c1_p101==3 || c1_p101==5 || c1_p101==6)) ||
+                ((c1_p102>4 && c1_p103==1) || ((c1_p102==6 || c1_p102==8) && c1_p103==2) || (c1_p102==8 && c1_p103==3))){
+            mostrarMensaje("PREGUNTA 101: EL TIPO DE VIVIENDA NO HAY RELACION CON P102, P103");
         }
 
         if (c1_p104 == -1){mostrarMensaje("PREGUNTA 104: DEBE MARCAR UNA OPCIÓN"); return false;}

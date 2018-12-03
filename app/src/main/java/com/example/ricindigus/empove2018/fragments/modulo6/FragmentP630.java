@@ -333,7 +333,7 @@ public class FragmentP630 extends FragmentPagina {
                 }
             }
             if (c6_p630_1mont.equals("0")) { mostrarMensaje("PREGUNTA 630-A: DEBE SELECCIONAR MONTO");return false; }
-        }
+        }else c6_p630_1med = "";
 
         if (c6_p630_2.equals("-1")) { mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR UNA OPCION");return false; }
         if (c6_p630_2.equals("1")) {
@@ -348,7 +348,7 @@ public class FragmentP630 extends FragmentPagina {
                 }
             }
             if (c6_p630_2mont.equals("0")) { mostrarMensaje("PREGUNTA 630-B: DEBE SELECCIONAR MONTO");return false; }
-        }
+        }else c6_p630_2med = "";
         return true;
     }
 

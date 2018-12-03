@@ -186,6 +186,7 @@ public class ExportarActivity extends AppCompatActivity {
             serializer.startDocument("utf-8", true);
             serializer.startTag("", "ENPOVE");
             serializer.attribute("", "id",idVivienda);
+            serializer.attribute("", "version",getString(R.string.app_version));
             if(caratula != null) {
                 serializer.startTag("", "CARATULA");
                 escribirCampoXml(serializer, SQLConstantes.caratula_id,caratula.get_id()+"");
@@ -411,7 +412,7 @@ public class ExportarActivity extends AppCompatActivity {
                 for (Modulo3 modulo3 : modulo3s) {
                     serializer.startTag("", "MODULO3");
                     escribirCampoXml(serializer, SQLConstantes.modulo3_id, modulo3.get_id());
-                    escribirCampoXml(serializer, SQLConstantes.modulo3_id_informante, modulo3.getIdInformante());
+                    escribirCampoXml(serializer, SQLConstantes.modulo3_id_informante, modulo3.getIdInformante());//esta que toma idformante y deberia ser id_informante; debere cambiar la bd principal x idinformante
                     escribirCampoXml(serializer, SQLConstantes.modulo3_id_hogar, modulo3.getIdHogar());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_id_vivienda, modulo3.getIdVivienda());
                     escribirCampoXml(serializer, SQLConstantes.modulo3_c3_p301_d, modulo3.getC3_p301_d());

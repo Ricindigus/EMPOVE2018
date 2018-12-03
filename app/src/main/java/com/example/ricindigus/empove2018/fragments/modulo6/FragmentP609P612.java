@@ -359,7 +359,7 @@ public class FragmentP609P612 extends FragmentPagina {
 
         if (m6_p609_linearlayout.getVisibility() == View.VISIBLE){
             if(c6_p609.equals("-1")){ mostrarMensaje("PREGUNTA 609: DEBE SELECCIONAR UNA OPCION");return false; }
-        }
+        }else c6_p609="";
 
         if(c6_p610_pd.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - DOMINGO: DEBE INGRESAR HORAS TRABAJADAS");return false; }
         if(c6_p610_pl.trim().equals("")){ mostrarMensaje("PREGUNTA 610 PRINCIPAL - LUNES: DEBE INGRESAR HORAS TRABAJADAS");return false; }
