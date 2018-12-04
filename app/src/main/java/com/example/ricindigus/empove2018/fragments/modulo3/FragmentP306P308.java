@@ -234,10 +234,10 @@ public class FragmentP306P308 extends FragmentPagina {
             c3_p301_d = modulo3.getC3_p301_d();
             c3_p301_m = modulo3.getC3_p301_m();
             c3_p301_a = modulo3.getC3_p301_a();
-            c3_p303_d = "01";
             c3_p303_m = modulo3.getC3_p303_m();
             if(c3_p303_m.length()==1) c3_p303_m = "0" + c3_p303_m;
             c3_p303_a = modulo3.getC3_p303_a();
+            c3_p303_d = dia(c3_p301_a,c3_p303_m);
             ArrayList<String> residentes = data.getListaSpinnerResidentesHogar(modulo3.getIdHogar());
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,residentes);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -283,8 +283,8 @@ public class FragmentP306P308 extends FragmentPagina {
         }
         Log.e("fecha_307", "validarDatos: "+ fecha_307);
         Log.e("fecha_303", "validarDatos: "+ fecha_303);
-        if(Integer.parseInt(fecha_307)<Integer.parseInt(fecha_303)){
-            mostrarMensaje("PREGUNTA 307: DEBE SER MAYOR O IGUAL A LA FECHA DE INGRESO ("+c3_p303_d+"/"+c3_p303_m+"/"+c3_p303_a+")");return false;
+        if(Integer.parseInt(fecha_307)>Integer.parseInt(fecha_303)){
+            mostrarMensaje("PREGUNTA 307: DEBE SER MENOR O IGUAL A LA FECHA DE INGRESO ("+c3_p303_d+"/"+c3_p303_m+"/"+c3_p303_a+")");return false;
         }
         if (c3_p308_estado_Spinner.getSelectedItemPosition() == 0){mostrarMensaje("PREGUNTA 308: DEBE INDICAR ESTADO");return false;}
         if (c3_p308_municipio_Spinner.getSelectedItemPosition() == 0){mostrarMensaje("PREGUNTA 308: DEBE INDICAR MUNICIPIO");return false;}
@@ -366,4 +366,17 @@ public class FragmentP306P308 extends FragmentPagina {
         return true;
     }
 
+    public String dia(String anio, String mes){
+        String dia="";
+        int _anio = Integer.parseInt(anio),_mes=Integer.parseInt(mes);
+        switch (_mes){
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12: dia = "31"; break;
+            case 4: case 6: case 9: case 11: dia = "30"; break;
+            case 2: dia = "28"; break;
+        }
+        if (((_anio % 4 == 0) && ((_anio % 100 != 0) || (_anio % 400 == 0))) && _mes==2){
+            dia = "29";
+        }
+        return dia;
+    }
 }

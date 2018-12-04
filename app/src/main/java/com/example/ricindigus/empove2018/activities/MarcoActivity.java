@@ -166,7 +166,8 @@ public class MarcoActivity extends AppCompatActivity {
         itemMarcos = new ArrayList<>();
         Data data = new Data(MarcoActivity.this);
         data.open();
-        itemMarcos = data.getListMarcoFiltrado(Integer.parseInt(anio), Integer.parseInt(mes),Integer.parseInt(periodo),Integer.parseInt(conglomerado));
+//        itemMarcos = data.getListMarcoFiltrado(Integer.parseInt(anio), Integer.parseInt(mes),Integer.parseInt(periodo),Integer.parseInt(conglomerado));
+        itemMarcos = data.getListMarcoFiltrado2(anio, mes,periodo,conglomerado);
         data.close();
         setearAdapter();
     }

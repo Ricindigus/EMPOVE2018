@@ -400,6 +400,33 @@ public class Data {
         return itemMarcos;
     }
 
+    public ArrayList<ItemMarco> getListMarcoFiltrado2(String anio, String mes, String periodo, String zona){
+        ArrayList<ItemMarco> itemMarcos = new ArrayList<>();
+        String[] whereArgs = new String[]{String.valueOf(anio), String.valueOf(mes),String.valueOf(periodo),String.valueOf(zona)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablamarco,
+                    null,SQLConstantes.WHERE_CLAUSE_ANIO + " AND " +
+                            SQLConstantes.WHERE_CLAUSE_MES + " AND " +
+                            SQLConstantes.WHERE_CLAUSE_PERIODO + " AND " +
+                            SQLConstantes.WHERE_CLAUSE_ZONA,whereArgs,null,null,null);
+            while (cursor.moveToNext()){
+                ItemMarco itemMarco = new ItemMarco();
+                itemMarco.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_id)));
+                itemMarco.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_anio)));
+                itemMarco.setMes(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_mes)));
+                itemMarco.setPeriodo(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_periodo)));
+                itemMarco.setZona(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_zona)));
+                itemMarco.setNorden(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_norden)));
+                itemMarco.setEstado(cursor.getString(cursor.getColumnIndex(SQLConstantes.marco_estado)));
+                itemMarcos.add(itemMarco);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return itemMarcos;
+    }
+
     public void insertarVisitaEncuestador(VisitaEncuestador visita){
         ContentValues contentValues = visita.toValues();
         sqLiteDatabase.insert(SQLConstantes.tablavisitasencuestador,null,contentValues);
