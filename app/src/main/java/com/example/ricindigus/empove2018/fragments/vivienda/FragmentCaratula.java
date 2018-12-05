@@ -448,7 +448,10 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
     }
 
     private void disableLocationUpdates() {
-        LocationServices.FusedLocationApi.removeLocationUpdates(apiClient, this);
+        try{
+            LocationServices.FusedLocationApi.removeLocationUpdates(apiClient, this);
+        }catch (Exception e){}
+
     }
 
     private void startLocationUpdates() {
