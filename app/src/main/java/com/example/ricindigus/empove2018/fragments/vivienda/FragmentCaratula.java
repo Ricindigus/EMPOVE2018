@@ -323,9 +323,6 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             manzana_id_TextView.setText(marco.getManzana_id());
             vivienda_TextView.setText(marco.get_id()+"");
 
-            Log.e("Nombre", "cargarDatos: "+marco.getNombre() );
-            Log.e("DNI", "cargarDatos: "+marco.getDni() );
-
             if(!marco.getTipvia().equals("")) tipvia_Spinner.setSelection(Integer.parseInt(marco.getTipvia()));
             nomvia_EditText.setText(marco.getNomvia());
             nropta_EditText.setText(marco.getNropta());
@@ -333,6 +330,7 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
             interior_EditText.setText(marco.getInterior());
             piso_EditText.setText(marco.getPiso());
             mza_EditText.setText(marco.getMza());
+            lote_EditText.setText(marco.getLote());
         }
         data.close();
     }
