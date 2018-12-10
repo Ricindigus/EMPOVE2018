@@ -254,7 +254,7 @@ public class FragmentP101P107 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        boolean verificar_p104_incorrecto=false;
+        boolean verificar_p104_incorrecto=false, verificar_p105_incorrecto=false;
         llenarVariables();
         if (c1_p101 == -1){mostrarMensaje("PREGUNTA 101: DEBE MARCAR UNA OPCIÓN"); return false;}
         else{
@@ -402,9 +402,22 @@ public class FragmentP101P107 extends FragmentPagina {
 
         if (c1_p105.trim().equals("")){mostrarMensaje("PREGUNTA 105: FALTA COMPLETAR LA PREGUNTA");return false;}
         if(Integer.parseInt(c1_p105)==0){mostrarMensaje("PREGUNTA 105: NO PUEDE SER CERO");return false;}
+        if(c1_p101==1 && Integer.parseInt(c1_p105)>15) verificar_p105_incorrecto = true;
+        if((c1_p101==2 || c1_p101==3) && Integer.parseInt(c1_p105)>10) verificar_p105_incorrecto = true;
+        if((c1_p101==4 || c1_p101==5 || c1_p101==8) && Integer.parseInt(c1_p105)>5) verificar_p105_incorrecto = true;
+        if((c1_p101==6 || c1_p101==7) && Integer.parseInt(c1_p105)>8) verificar_p105_incorrecto = true;
+        if(verificar_p105_incorrecto) mostrarMensaje("PREGUNTA 105: EL NUMERO DE HABITACIONES NO CONCUERDA CON EL TIPO DE VIVIENDA");
         if (c1_p106.trim().equals("")){mostrarMensaje("PREGUNTA 106: FALTA COMPLETAR LA PREGUNTA");return false;}
         if(Integer.parseInt(c1_p105)<Integer.parseInt(c1_p106)){
             mostrarMensaje("PREGUNTA 106: DEBE SER MENOR O IGUAL QUE LA PREGUNTA 105");return false;
+        }
+        if((Integer.parseInt(c1_p105)<7 && (Integer.parseInt(c1_p105)<Integer.parseInt(c1_p106))) ||
+           ((Integer.parseInt(c1_p105)>6 && Integer.parseInt(c1_p105)<16) && (Integer.parseInt(c1_p106)==0 || (Integer.parseInt(c1_p105)<Integer.parseInt(c1_p106))))){
+            mostrarMensaje("PREGUNTA 106: EL NUMERO DE HABITACIONES EXCLUSIVAMENTE PARA DORMIR NO CONCUERDA CON EL TOTAL DE HABITACIONES");
+        }
+        if(((c1_p101<5 || c1_p101>5) && (Integer.parseInt(c1_p106)==0 || Integer.parseInt(c1_p106)>7)) ||
+                (c1_p101==5 && (Integer.parseInt(c1_p106)<2 || Integer.parseInt(c1_p106)>7))){
+            mostrarMensaje("PREGUNTA 106: EL NUMERO DE HABITACIONES QUE SE USAN EXCLUSIVAMENTE PARA DORMIR NO CONCUERDA CON EL TIPO DE VIVIENDA");
         }
         if (c1_p107.trim().equals("")){mostrarMensaje("PREGUNTA 107: FALTA COMPLETAR LA PREGUNTA");return false;}
         if(Integer.parseInt(c1_p107)==0){mostrarMensaje("PREGUNTA 107: NO PUEDE SER CERO");return false;}

@@ -48,6 +48,7 @@ public class FragmentP108P113 extends FragmentPagina {
     LinearLayout m1_p108_linearlayout, m1_p109_linearlayout, m1_p110_linearlayout,
             m1_p111_linearlayout, m1_p112_linearlayout, m1_p113_linearlayout;
 
+    private int c1_p101=0;
     private int c1_p108;
     private String c1_p108_o;
     private int c1_p109;
@@ -79,6 +80,13 @@ public class FragmentP108P113 extends FragmentPagina {
     public FragmentP108P113(String idHogar, String idVivienda, Context context) {
         this.idHogar = idHogar;
         this.idVivienda = idVivienda;
+
+        Data data = new Data(context);
+        data.open();
+        Modulo1V modulo1V = data.getModulo1V(idVivienda);
+        if(!modulo1V.getC1_p101().equals("")) c1_p101 = Integer.parseInt(modulo1V.getC1_p101());
+
+        data.close();
         this.context = context;
     }
 
@@ -314,6 +322,9 @@ public class FragmentP108P113 extends FragmentPagina {
         else{
             if (c1_p110 == 8){
                 if (c1_p110_o.trim().equals("")){mostrarMensaje("PREGUNTA 110: DEBE ESPECIFICAR");return false;}
+            }
+            if(c1_p101==5 && !((c1_p110==4) || c1_p110==8)){
+                mostrarMensaje("PREGUNTA 110: LA PROCEDENCIA DEL ABASTECIMIENTO DE AGUA EN SU HOGAR NO CONCUERDA CON TIPO DE VIVIENDA");
             }
         }
 

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -293,10 +294,12 @@ public class MarcoActivity extends AppCompatActivity {
         zonas = new ArrayList<String>();
         data = new Data(this);
         data.open();
+        Log.e("idUsuario", "inicializarDatos: "+idUsuario );
         if (idCargo.equals("1")) itemMarcos = data.getListMarco(idUsuario);
         else itemMarcos = data.getListMarcoSupervisor(idUsuario);
         data.close();
         anios.add("Seleccione");
+        Log.e("itemMarcos.size", "inicializarDatos: "+ itemMarcos.size());
         if (itemMarcos.size()>0) anios.add(String.valueOf(itemMarcos.get(0).getAnio()));
     }
 

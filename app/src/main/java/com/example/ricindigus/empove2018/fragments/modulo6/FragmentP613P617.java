@@ -258,6 +258,8 @@ public class FragmentP613P617 extends FragmentPagina {
         else data.actualizarValor(getNombreTabla(),SQLConstantes.modulo6_COB600,"0",idEncuestado);
         data.actualizarValor(SQLConstantes.tablaresidentes,SQLConstantes.residentes_encuestado_cobertura,"0",idEncuestado);
         data.close();
+        verificar_Fragament618_621();
+        verificar_Fragament622_625();
     }
 
     @Override
@@ -481,5 +483,37 @@ public class FragmentP613P617 extends FragmentPagina {
                 data.getValor(SQLConstantes.tablacoberturafragments,SQLConstantes.cobertura_fragments_cp630,idEncuestado).equals("0")) return false;
         data.close();
         return true;
+    }
+
+    public void verificar_Fragament618_621(){
+        Data data = new Data(context);
+        data.open();
+
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,idEncuestado).equals("1")){
+            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p618,idEncuestado).equals("0") &&
+                    data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p619,idEncuestado).equals("0") &&
+                    data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p620,idEncuestado).equals("0") &&
+                    data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p621,idEncuestado).equals("0")) {
+                    data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p618p621,"-1",idEncuestado);
+            }
+        }
+
+        data.close();
+    }
+
+    public void verificar_Fragament622_625(){
+        Data data = new Data(context);
+        data.open();
+
+        if(data.getValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,idEncuestado).equals("1")){
+            if(data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p622,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p623,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p624,idEncuestado).equals("0") &&
+                data.getValor(SQLConstantes.tablalayouts,SQLConstantes.layouts_p625,idEncuestado).equals("0")) {
+                data.actualizarValor(SQLConstantes.tablafragments,SQLConstantes.fragments_p622p625,"-1",idEncuestado);
+            }
+        }
+
+        data.close();
     }
 }
