@@ -57,6 +57,7 @@ import static android.os.Environment.getExternalStorageDirectory;
 public class ExportarActivity extends AppCompatActivity {
 
     ArrayList<Caratula> marcos;
+    ArrayList<VisitaEncuestador> visitas;
     ArrayList<ExportarItem> exportarItems;
     private String idUsuario;
     private RecyclerView recyclerView;
@@ -116,18 +117,34 @@ public class ExportarActivity extends AppCompatActivity {
         });
     }
     private void inicializarDatos() {
+        boolean con_resultado=true;
+        visitas  = new ArrayList<VisitaEncuestador>();
+
         marcos = new ArrayList<Caratula>();
         exportarItems = new ArrayList<>();
         Data data = new Data(this);
         data.open();
         marcos = data.getAllCaratulasUsuario(idUsuario);
-        data.close();
 
         for(Caratula caratula: marcos){
-            ExportarItem exportarItem = new ExportarItem(0,caratula.get_id()+"",caratula.getAnio(), caratula.getMes(),
-                    caratula.getPeriodo(),caratula.getConglomerado());
-            exportarItems.add(exportarItem);
+            visitas = data.getAllVisitasReult(caratula.get_id()+"");
+            con_resultado = false;
+            for(VisitaEncuestador visita: visitas){
+                con_resultado = true;
+                if(visita.getVis_resu()==null){
+                    con_resultado = false;
+                    break;
+                }
+            }
+            if(con_resultado) {
+                ExportarItem exportarItem = new ExportarItem(0, caratula.get_id() + "", caratula.getAnio(), caratula.getMes(),
+                        caratula.getPeriodo(), caratula.getConglomerado());
+                exportarItems.add(exportarItem);
+            }
         }
+
+
+        data.close();
     }
     public void mostrarMensaje(String m){
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);

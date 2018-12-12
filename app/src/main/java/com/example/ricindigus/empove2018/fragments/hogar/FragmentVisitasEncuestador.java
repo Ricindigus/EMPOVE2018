@@ -20,6 +20,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,6 +38,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -93,6 +95,8 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
     int horaProx;
     int minutoProx;
 
+    ArrayList<VisitaEncuestador> visitas;
+    int cant_visitas=0;
 
     public FragmentVisitasEncuestador() {
         // Required empty public constructor
@@ -104,6 +108,14 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
         this.idVivienda = idVivienda;
         this.context = context;
         this.idCargo = idCargo;
+        Data data = new Data(context);
+        data.open();
+
+        visitas = data.getAllVisitasHogar(idHogar);
+
+        if(visitas!=null) cant_visitas = visitas.size();
+
+        data.close();
     }
 
     @Override
@@ -131,33 +143,68 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
         onItemClickListener = new VisitaEncuestadorAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, final int pos) {
+                Data data = new Data(context);
+                data.open();
+
+                visitas = data.getAllVisitasHogar(idHogar);
+
+                if(visitas!=null) cant_visitas = visitas.size();
+
+                data.close();
                 cursor.moveToPosition(pos);
                 Data dTablas = new Data(context);
                 dTablas.open();
                 String resultadoVisita = cursor.getString(cursor.getColumnIndex(SQLConstantes.visita_encuestador_vis_resu));
                 if (resultadoVisita == null) resultadoVisita = "";
                 dTablas.close();
-                if(resultadoVisita.equals("") && idCargo.equals("1")){
-                    PopupMenu popupMenu = new PopupMenu(context,view);
-                    popupMenu.getMenuInflater().inflate(R.menu.menu_visita,popupMenu.getMenu());
-                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                        @Override
-                        public boolean onMenuItemClick(MenuItem item) {
-                            switch(item.getItemId()){
-                                case R.id.opcion_editar:
-                                    editarVisita(pos);
-                                    break;
-                                case R.id.opcion_eliminar:
-                                    eliminarVisita(pos);
-                                    break;
-                                case R.id.opcion_finalizar:
-                                    finalizarVisita(pos);
-                                    break;
+                Log.e("resultadoVisita", "onItemClick: "+resultadoVisita );
+                Log.e("resultadoVisita pos", "onItemClick: "+pos );
+                if((pos+1)==cant_visitas && idCargo.equals("1")){
+                    Log.e("", "onItemClick: " + "cesar1" );
+                    if(resultadoVisita==""){
+                        PopupMenu popupMenu = new PopupMenu(context,view);
+                        popupMenu.getMenuInflater().inflate(R.menu.menu_visita,popupMenu.getMenu());
+                        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(MenuItem item) {
+                                switch(item.getItemId()){
+                                    case R.id.opcion_editar:
+                                        editarVisita(pos);
+                                        break;
+                                    case R.id.opcion_eliminar:
+                                        eliminarVisita(pos);
+                                        break;
+                                    case R.id.opcion_finalizar:
+                                        finalizarVisita(pos);
+                                        break;
+                                }
+                                return true;
                             }
-                            return true;
-                        }
-                    });
-                    popupMenu.show();
+                        });
+                        popupMenu.show();
+                    }else{
+                        Log.e("", "onItemClick: " + "cesar" );
+                        PopupMenu popupMenu = new PopupMenu(context,view);
+                        popupMenu.getMenuInflater().inflate(R.menu.menu_visita2,popupMenu.getMenu());
+                        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(MenuItem item) {
+                                switch(item.getItemId()){
+                                    case R.id.opcion_editar:
+                                        finalizarVisita(pos);
+                                        break;
+                                    case R.id.opcion_eliminar:
+                                        eliminarVisita(pos);
+                                        break;
+                                    case R.id.opcion_finalizar:
+                                        finalizarVisita(pos);
+                                        break;
+                                }
+                                return true;
+                            }
+                        });
+                        popupMenu.show();
+                    }
                 }
             }
         };
