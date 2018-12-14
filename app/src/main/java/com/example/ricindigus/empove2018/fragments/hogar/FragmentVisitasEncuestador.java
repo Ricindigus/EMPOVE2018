@@ -653,6 +653,7 @@ public class FragmentVisitasEncuestador extends FragmentPagina {
                                 //actualizo visita con datos de finalizar
                                 ContentValues contentValues = new ContentValues();
                                 contentValues.put(SQLConstantes.visita_encuestador_vis_resu,String.valueOf(spResultado.getSelectedItemPosition()));
+                                if(edtEspecifique.isEnabled()) contentValues.put(SQLConstantes.visita_encuestador_vis_resu_esp,edtEspecifique.getText().toString());
                                 contentValues.put(SQLConstantes.visita_encuestador_vis_hor_fin,horaFin);
                                 contentValues.put(SQLConstantes.visita_encuestador_vis_min_fin,minutoFin);
                                 //falta guardar el especifique del resultado otro
