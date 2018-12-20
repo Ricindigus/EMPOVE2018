@@ -120,6 +120,10 @@ public class FragmentCaratula extends FragmentPagina implements GoogleApiClient.
         this.idPeriodo = idPeriodo;
         this.idUsuario = idUsuario;
         this.context = context;
+        Data data = new Data(context);
+        data.open();
+        data.actualizar_municipio_error();
+        data.close();
     }
 
     public FragmentCaratula() {

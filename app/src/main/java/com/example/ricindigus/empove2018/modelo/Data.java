@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.ricindigus.empove2018.modelo.pojos.Caratula;
 import com.example.ricindigus.empove2018.modelo.pojos.CoberturaFragment;
@@ -1494,6 +1495,7 @@ public class Data {
                 modulo3.setC3_p316_o(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p316_o )));
                 modulo3.setC3_p317(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p317 )));
                 modulo3.setC3_p318(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_c3_p318)));
+                modulo3.setObs_cap3(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_obs_cap3)));
                 modulo3.setCOB300(cursor.getString(cursor.getColumnIndex(SQLConstantes.modulo3_COB300)));
                 modulo3s.add(modulo3);
             }
@@ -3003,36 +3005,15 @@ public class Data {
         sqLiteDatabase.execSQL("delete from "+ tabla);
     }
 
+    public void actualizar_municipio_error(){
+        Log.e("entro", "actualizar_municipio_error: "+6 );
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("_id","1611");
+        contentValues.put("cod_municipio","11");
+        contentValues.put("nom_municipio","11.Villalba");
+        contentValues.put("num_municipio","11");
+        contentValues.put("cod_estado","16");
+        contentValues.put("nom_estado","Estado Nueva Esparta");
+        sqLiteDatabase.update("municipios",contentValues,"cod_estado='16' and nom_municipio='01.Villalba'",null);
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
