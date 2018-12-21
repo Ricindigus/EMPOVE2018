@@ -108,9 +108,9 @@ public class FragmentFuncionarios extends FragmentPagina {
 
         configurarEditText(numeroPersonas,layoutPersonas,2,2);
 
-        configurarEditText(nomEncuestador,cvEncuestador,0,30);
-        configurarEditText(nomSupervisor,cvsupervisor,0,30);
-        configurarEditText(nomCoordinador,cvCoordinador,0,30);
+        configurarEditText(nomEncuestador,cvEncuestador,0,100);
+        configurarEditText(nomSupervisor,cvsupervisor,0,100);
+        configurarEditText(nomCoordinador,cvCoordinador,0,100);
 
         radiogroupPersonas.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

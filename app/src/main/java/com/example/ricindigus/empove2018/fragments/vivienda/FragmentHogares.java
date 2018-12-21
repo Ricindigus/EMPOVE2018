@@ -193,7 +193,7 @@ public class FragmentHogares extends FragmentPagina {
         final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.dialog_jefe_hogar, null);
         final EditText jefeEditText = (EditText) dialogView.findViewById(R.id.dialog_jefe_edittext_nombre);
 
-        jefeEditText.setFilters(new InputFilter[] {new InputFilter.AllCaps(),new InputFilter.LengthFilter(40),new InputFilterSoloLetras()});
+        jefeEditText.setFilters(new InputFilter[] {new InputFilter.AllCaps(),new InputFilter.LengthFilter(100),new InputFilterSoloLetras()});
 
         alert.setTitle("AGREGAR HOGAR");
         alert.setView(dialogView);
