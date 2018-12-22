@@ -129,12 +129,6 @@ public class FragmentP101P107 extends FragmentPagina {
                 controlarEspecifiqueRadio(group, checkedId,7,c1_p104_o_EditText);
             }
         });
-
-        configurarEditText(c1_p101_o_EditText,m1_p101_linearlayout,0,100);
-        configurarEditText(c1_p102_o_EditText,m1_p102_linearlayout,0,100);
-        configurarEditText(c1_p103_o_EditText,m1_p103_linearlayout,0,100);
-        configurarEditText(c1_p104_o_EditText,m1_p104_linearlayout,0,100);
-
         configurarEditText(c1_p105_EditText,m1_p105_linearlayout,2,2);
         configurarEditText(c1_p106_EditText,m1_p106_linearlayout,2,2);
         configurarEditText(c1_p107_EditText,m1_p107_linearlayout,2,2);

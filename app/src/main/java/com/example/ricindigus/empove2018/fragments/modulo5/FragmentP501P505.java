@@ -151,6 +151,7 @@ public class FragmentP501P505 extends FragmentPagina {
                 if (pos == 7 || pos == 8){
                     limpiar_p502();
                     ArrayAdapter adapter = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.lista_item,R.id.item, getResources().getStringArray(R.array.array_carreras_tecnicas));
+
                     c5_p502_Autocomplete.setAdapter(adapter);
                     c5_p502_Autocomplete.setOnKeyListener(new View.OnKeyListener() {
                         @Override

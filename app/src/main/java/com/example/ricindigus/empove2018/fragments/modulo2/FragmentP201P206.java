@@ -202,6 +202,19 @@ public class FragmentP201P206 extends FragmentPagina {
                                         else
                                             Toast.makeText(context, "NO PUEDE ELIMINAR AL JEFE DE HOGAR", Toast.LENGTH_SHORT).show();
                                         break;
+                                    case R.id.opcion_ir_800:
+                                        if (residentes.get(position).getC2_p207().equals("2")){
+                                            Toast.makeText(context, "LA ENCUESTA ESta DIRIGIDA SOLO A LA POBLACION VENEZOLANA", Toast.LENGTH_SHORT).show();
+                                        }else{
+                                            String idEncuestado = residentes.get(position).get_id()+"";
+                                            Intent intent1 = new Intent(context, EncuestaActivity.class);
+                                            intent1.putExtra("idEncuestado",idEncuestado);
+                                            intent1.putExtra("numero", residentes.get(position).getNumero() + "");
+                                            intent1.putExtra("idHogar", idHogar);
+                                            intent1.putExtra("idVivienda", idVivienda);
+                                            startActivity(intent1);
+                                        }
+                                        break;
                                 }
 
                                 return true;

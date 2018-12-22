@@ -230,6 +230,7 @@ public class FragmentP306P308 extends FragmentPagina {
         Data data = new Data(context);
         data.open();
         if (data.existeElemento(getNombreTabla(),idEncuestado)){
+            Log.e("idEncuestado", "cargarDatos: "+idEncuestado );
             Modulo3 modulo3 = data.getModulo3(idEncuestado);
             c3_p301_d = modulo3.getC3_p301_d();
             c3_p301_m = modulo3.getC3_p301_m();
@@ -250,7 +251,11 @@ public class FragmentP306P308 extends FragmentPagina {
             c3_p307_TextViewAnio.setText(modulo3.getC3_p307_a());
             if (!modulo3.getC3_p308_e().equals(""))c3_p308_estado_Spinner.setSelection(Integer.parseInt(modulo3.getC3_p308_e()));
             ArrayList<String> municipios = new ArrayList<>();
-            municipios = data.getMunicipios(data.getCodEstado(modulo3.getC3_p308_e()));
+            Log.e("tC3_p308_e", "cargarDatos: "+modulo3.getC3_p308_e() );
+            Log.e("getCodEs", "cargarDatos: "+data.getCodEstado(modulo3.getC3_p308_e() ));
+            if (!modulo3.getC3_p308_e().equals(""))  municipios = data.getMunicipios(data.getCodEstado(Integer.parseInt(modulo3.getC3_p308_e())+""));
+            Log.e("308_e", "cargarDatos: "+modulo3.getC3_p308_e() );
+            Log.e("308_m", "cargarDatos: "+modulo3.getC3_p308_m());
             data.close();
             cargarSpinerMunicipios(municipios);
             if (!modulo3.getC3_p308_m().equals(""))c3_p308_municipio_Spinner.setSelection(Integer.parseInt(modulo3.getC3_p308_m()));
