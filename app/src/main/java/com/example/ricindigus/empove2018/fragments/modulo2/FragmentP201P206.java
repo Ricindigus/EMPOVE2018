@@ -195,26 +195,27 @@ public class FragmentP201P206 extends FragmentPagina {
                                         intent2.putExtra("idHogar", idHogar);
                                         intent2.putExtra("idVivienda", idVivienda);
                                         intent2.putExtra("idJefeHogar", residentes.get(0).get_id());
-                                        startActivity(intent2);
                                         break;
                                     case R.id.opcion_eliminar:
                                         if (position > 0) deseaEliminarDatos(position);
                                         else
                                             Toast.makeText(context, "NO PUEDE ELIMINAR AL JEFE DE HOGAR", Toast.LENGTH_SHORT).show();
                                         break;
-                                    case R.id.opcion_ir_800:
-                                        if (residentes.get(position).getC2_p207().equals("2")){
-                                            Toast.makeText(context, "LA ENCUESTA ESta DIRIGIDA SOLO A LA POBLACION VENEZOLANA", Toast.LENGTH_SHORT).show();
-                                        }else{
-                                            String idEncuestado = residentes.get(position).get_id()+"";
-                                            Intent intent1 = new Intent(context, EncuestaActivity.class);
-                                            intent1.putExtra("idEncuestado",idEncuestado);
-                                            intent1.putExtra("numero", residentes.get(position).getNumero() + "");
-                                            intent1.putExtra("idHogar", idHogar);
-                                            intent1.putExtra("idVivienda", idVivienda);
-                                            startActivity(intent1);
-                                        }
-                                        break;
+//                                    case R.id.opcion_ir_800:
+//                                        if (residentes.get(position).getC2_p207().equals("2")){
+//                                            Toast.makeText(context, "LA ENCUESTA ESta DIRIGIDA SOLO A LA POBLACION VENEZOLANA", Toast.LENGTH_SHORT).show();
+//                                        }else{
+//                                            String idEncuestado = residentes.get(position).get_id()+"";
+//                                            EncuestaActivity encuesta = new EncuestaActivity();
+//                                            encuesta.setIr_modulo8(true);
+//                                            Intent intent1 = new Intent(context, encuesta.getClass());
+//                                            intent1.putExtra("idEncuestado",idEncuestado);
+//                                            intent1.putExtra("numero", residentes.get(position).getNumero() + "");
+//                                            intent1.putExtra("idHogar", idHogar);
+//                                            intent1.putExtra("idVivienda", idVivienda);
+//                                            startActivity(intent1);
+//                                        }
+//                                        break;
                                 }
 
                                 return true;

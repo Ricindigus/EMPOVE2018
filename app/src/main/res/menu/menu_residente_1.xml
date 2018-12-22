@@ -4,7 +4,7 @@
     <item
         android:id="@+id/opcion_iniciar_encuesta"
         android:orderInCategory="100"
-        android:title="Iniciar Encuesta"
+        android:title="Ir Modulo 8"
         app:showAsAction="never" />
     <item
         android:id="@+id/opcion_editar"
@@ -16,9 +16,9 @@
         android:orderInCategory="100"
         android:title="Eliminar"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/opcion_ir_800"
-        android:orderInCategory="100"
-        android:title="Ir Capitulo 800"
-        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/opcion_ir_800"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="Ir Capitulo 800"-->
+        <!--app:showAsAction="never" />-->
 </menu>
