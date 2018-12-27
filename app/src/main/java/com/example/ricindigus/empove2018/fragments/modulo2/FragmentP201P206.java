@@ -195,6 +195,7 @@ public class FragmentP201P206 extends FragmentPagina {
                                         intent2.putExtra("idHogar", idHogar);
                                         intent2.putExtra("idVivienda", idVivienda);
                                         intent2.putExtra("idJefeHogar", residentes.get(0).get_id());
+                                        startActivity(intent2);
                                         break;
                                     case R.id.opcion_eliminar:
                                         if (position > 0) deseaEliminarDatos(position);
