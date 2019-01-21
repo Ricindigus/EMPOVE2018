@@ -248,7 +248,7 @@ public class FragmentP101P107 extends FragmentPagina {
 
     @Override
     public boolean validarDatos() {
-        boolean verificar_p104_incorrecto=false, verificar_p105_incorrecto=false;
+        boolean verificar_p104_incorrecto=false, verificar_p105_incorrecto=false, no_sirve=false;
         llenarVariables();
         if (c1_p101 == -1){mostrarMensaje("PREGUNTA 101: DEBE MARCAR UNA OPCIÓN"); return false;}
         else{
